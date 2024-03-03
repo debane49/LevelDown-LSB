@@ -22,6 +22,117 @@ mission.sections =
             return currentMission == mission.missionId
         end,
 
+        [xi.zone.PASHHOW_MARSHLANDS_S] =
+        {
+           ['Veridical_Conflux'] = -- 17146657
+           {
+             onTrigger = function(player, npc)
+                    if player:getCurrentMission(xi.mission.log_id.WOTG) > xi.mission.id.wotg.TIME_SLIPS_AWAY then
+                   player:startEvent(11)
+                    else
+                       player:messageSpecial(walkOfEchoesID.text.CANNOT_PROGRESS_MISSION, 0, 2)
+                    end
+             end,
+           },
+           onEventFinish =
+            {
+                [11] = function(player, csid, option, npc)
+                if option == 1 then
+                    player:setPos(-700.042, 0.400, -441.301, 192, xi.zone.WALK_OF_ECHOES)
+                end
+                end,
+            },
+        },
+
+        [xi.zone.GRAUBERG_S] =
+        {
+           ['Veridical_Conflux'] = -- 17142630
+           {
+             onTrigger = function(player, npc)
+                    if player:getCurrentMission(xi.mission.log_id.WOTG) > xi.mission.id.wotg.TIME_SLIPS_AWAY then
+                   player:startEvent(29)
+                    else
+                       player:messageSpecial(walkOfEchoesID.text.CANNOT_PROGRESS_MISSION, 0, 2)
+                    end
+             end,
+           },
+           onEventFinish =
+            {
+                [29] = function(player, csid, option, npc)
+                if option == 1 then
+                    player:setPos(-700.042, 0.400, -441.301, 192, xi.zone.WALK_OF_ECHOES)
+                end
+                end,
+            },
+        },
+
+        [xi.zone.BATALLIA_DOWNS] =
+        {
+           ['qm_maw'] = -- 17207974
+           {
+             onTrigger = function(player, npc)
+                if player:getCurrentMission(xi.mission.log_id.WOTG) >= xi.mission.id.wotg.IN_THE_NAME_OF_THE_FATHER then
+                   player:startEvent(22)
+                else
+                   player:messageSpecial(walkOfEchoesID.text.CANNOT_PROGRESS_MISSION, 0, 2)
+                end
+             end,
+           },   
+           onEventFinish =
+            {
+                [22] = function(player, csid, option, npc)
+                if option == 1 then
+                    player:setPos(-700.042, 0.400, -441.301, 192, xi.zone.WALK_OF_ECHOES)
+                end
+                end,
+            },
+        },
+
+        [xi.zone.ROLANBERRY_FIELDS] =
+        {
+           ['qm_maw'] = 
+           {
+             onTrigger = function(player, npc)
+                if player:getCurrentMission(xi.mission.log_id.WOTG) >= xi.mission.id.wotg.IN_THE_NAME_OF_THE_FATHER then
+                   player:startEvent(20)
+                else
+                   player:messageSpecial(walkOfEchoesID.text.CANNOT_PROGRESS_MISSION, 0, 2)
+                end
+             end,
+           },   
+
+           onEventFinish =
+            {
+                [20] = function(player, csid, option, npc)
+                if option == 1 then
+                    player:setPos(-700.042, 0.400, -441.301, 192, xi.zone.WALK_OF_ECHOES)
+                end
+                end,
+            },
+        },
+        
+        [xi.zone.SAUROMUGUE_CHAMPAIGN] =
+        {
+           ['qm_maw'] = 
+           {
+             onTrigger = function(player, npc)
+                if player:getCurrentMission(xi.mission.log_id.WOTG) >= xi.mission.id.wotg.IN_THE_NAME_OF_THE_FATHER then
+                   player:startEvent(904)
+                else
+                   player:messageSpecial(walkOfEchoesID.text.CANNOT_PROGRESS_MISSION, 0, 2)
+                end
+             end,
+           },   
+           onEventFinish =
+            {
+                [904] = function(player, csid, option, npc)
+                if option == 1 then
+                    player:setPos(-700.042, 0.400, -441.301, 192, xi.zone.WALK_OF_ECHOES)
+                end
+                end,
+            },
+        },
+
         [xi.zone.WALK_OF_ECHOES] =
         {
             ['_521'] =
