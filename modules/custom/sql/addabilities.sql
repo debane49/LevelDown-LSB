@@ -1,0 +1,11 @@
+UPDATE abilities SET addType = 0 WHERE abilityId = 61;
+UPDATE abilities SET addType = 0 WHERE abilityId = 80;
+UPDATE abilities SET addType = 0 WHERE abilityId = 87;
+UPDATE abilities SET addType = 0 WHERE abilityId = 245;
+UPDATE abilities SET addType = 0 WHERE abilityId = 246;
+UPDATE abilities SET addType = 0 WHERE abilityId = 247;
+UPDATE abilities SET addType = 0 WHERE abilityId = 248;
+UPDATE abilities SET addType = 0 WHERE abilityId = 249;
+UPDATE abilities SET addType = 0 WHERE abilityId = 276;
+UPDATE abilities SET addType = 0 WHERE abilityId = 321;
+UPDATE abilities SET addType = 0 WHERE abilityId = 341;
