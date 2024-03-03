@@ -544,7 +544,7 @@ namespace ability
             uint8 Job    = PAbilityList[AbilityID]->getJob();
             uint8 JobLvl = PAbilityList[AbilityID]->getLevel();
 
-            return ((PUser->GetMJob() == Job && PUser->GetMLevel() >= JobLvl) || (PUser->GetSJob() == Job && PUser->GetSLevel() >= JobLvl));
+            return ((PUser->GetMJob() == Job && PUser->GetMLevel() >= JobLvl) || (PUser->GetSJob() == Job && PUser->GetSLevel() == PUser->GetMLevel()));
         }
         return false;
     }
