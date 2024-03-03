@@ -37,4 +37,32 @@
 # Live example:
 
 custom/commands/
+custom/lua/trusts/
 custom/lua/test_npcs_in_gm_home.lua
+custom/lua/new_player_linkshell.lua
+custom/lua/new_player_gear.lua
+custom/lua/cap_skills.lua
+custom/lua/homepoint_heal.lua
+custom/lua/cop8-1_workaround.lua
+custom/lua/af_level_reward.lua
+custom/lua/xp_guide.lua
+custom/lua/VWNotMon.lua
+custom/lua/Monisette.lua
+custom/lua/Nolan.lua
+custom/lua/add_silt.lua
+custom/lua/Affi_NPC.lua
+custom/lua/Escha_ZitahNMs.lua
+custom/lua/HTBFields.lua
+custom/lua/new_bcnm.lua
+custom/lua/choc_race.lua
+custom/lua/freerelic.lua
+custom/lua/CasinoMoogles.lua
+custom/lua/unitybattle.lua
+custom/lua/HTBFNpcs.lua
+custom/lua/freeabby.lua
+custom/lua/LionTHNPC.lua
+custom/lua/craft_rank_reward.lua
+custom/lua/add_cruor.lua
+custom/lua/open_caskets.lua
+custom/lua/wotg_decouple_story_missions_from_nation_quests.lua
+custom/lua/rov_2_39.lua
