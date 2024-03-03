@@ -421,7 +421,7 @@ namespace trustutils
 
         // assume level matches master
         PTrust->SetMLevel(PMaster->GetMLevel());
-        PTrust->SetSLevel(std::floor(PMaster->GetMLevel() / 2));
+        PTrust->SetSLevel(PMaster->GetSLevel() + charutils::getItemLevelDifference(PMaster));
 
         LoadTrustStatsAndSkills(PTrust);
 
@@ -543,19 +543,21 @@ namespace trustutils
 
         uint8 grade = 0;
 
-        int32 mainLevelOver30     = std::clamp(mLvl - 30, 0, 30);
-        int32 mainLevelUpTo60     = (mLvl < 60 ? mLvl - 1 : 59);
-        int32 mainLevelOver60To75 = std::clamp(mLvl - 60, 0, 15);
-        int32 mainLevelOver75     = (mLvl < 75 ? 0 : mLvl - 75);
+        int32 mainLevelOver30       = std::clamp(mLvl - 30, 0, 30);
+        int32 mainLevelUpTo60       = (mLvl < 60 ? mLvl - 1 : 59);
+        int32 mainLevelOver60To75   = std::clamp(mLvl - 60, 0, 15);
+        int32 mainLevelOver75       = (mLvl < 75 ? 0 : mLvl - 75);
+        int32 mainLevelOver99To104  = std::clamp(mLvl - 99, 0, 5);
+        int32 mainLevelOver105To109 = std::clamp(mLvl - 105, 0, 4);
+        int32 mainLevelOver110To114 = std::clamp(mLvl - 110, 0, 5);
+        int32 mainLevelOver115To119 = std::clamp(mLvl - 115, 0, 4);
 
         int32 mainLevelOver10           = (mLvl < 10 ? 0 : mLvl - 10);
         int32 mainLevelOver50andUnder60 = std::clamp(mLvl - 50, 0, 10);
         int32 mainLevelOver60           = (mLvl < 60 ? 0 : mLvl - 60);
-
-        int32 subLevelOver10 = std::clamp(sLvl - 10, 0, 20);
-        int32 subLevelOver30 = (sLvl < 30 ? 0 : sLvl - 30);
-
-        grade = scaleToGrade(PTrust->HPscale);
+        int32 subLevelOver10            = std::clamp(sLvl - 10, 0, 20);
+        int32 subLevelOver30            = (sLvl < 30 ? 0 : sLvl - 30);
+        grade                           = scaleToGrade(PTrust->HPscale);
 
         raceStat = grade::GetHPScale(grade, baseValueColumn) + (grade::GetHPScale(grade, scaleTo60Column) * mainLevelUpTo60) +
                    (grade::GetHPScale(grade, scaleOver30Column) * mainLevelOver30) + (grade::GetHPScale(grade, scaleOver60Column) * mainLevelOver60To75) +
@@ -577,6 +579,22 @@ namespace trustutils
                        (grade::GetHPScale(grade, scaleOver30Column) * subLevelOver30) + subLevelOver30 + subLevelOver10;
         }
 
+        if (mLvl >= 115)
+        {
+            bonusStat = (mainLevelOver75 + mainLevelOver115To119) * 8;
+        }
+        else if (mLvl >= 110)
+        {
+            bonusStat = (mainLevelOver75 + mainLevelOver110To114) * 7;
+        }
+        else if (mLvl >= 105)
+        {
+            bonusStat = (mainLevelOver75 + mainLevelOver105To109) * 6;
+        }
+        else if (mLvl >= 99)
+        {
+            bonusStat = (mainLevelOver75 + mainLevelOver99To104) * 5;
+        }
         PTrust->health.maxhp = (int16)(settings::get<float>("map.ALTER_EGO_HP_MULTIPLIER") * (raceStat + jobStat + bonusStat + sJobStat));
 
         // MP
