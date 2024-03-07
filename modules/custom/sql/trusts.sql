@@ -87,3 +87,15 @@ INSERT INTO `mob_spell_lists` (`spell_list_name`, `spell_list_id`, `spell_id`, `
 INSERT INTO `mob_spell_lists` (`spell_list_name`, `spell_list_id`, `spell_id`, `min_level`, `max_level`) VALUES ('TRUST_Ajido-Marujido', 316, 237, 50, 255);
 INSERT INTO `mob_spell_lists` (`spell_list_name`, `spell_list_id`, `spell_id`, `min_level`, `max_level`) VALUES ('TRUST_Ajido-Marujido', 316, 239, 50, 255);
 INSERT INTO `mob_spell_lists` (`spell_list_name`, `spell_list_id`, `spell_id`, `min_level`, `max_level`) VALUES ('TRUST_Ajido-Marujido', 316, 260, 64, 255);
+
+--
+-- Bart / Trion
+--
+UPDATE `mob_skills` SET `mob_skill_id`=3193, `mob_anim_id`=669, `mob_skill_name`='royal_bash', `mob_skill_aoe`=2, `mob_skill_distance`=7.0, `mob_anim_time`=2000, `mob_prepare_time`=500, `mob_valid_targets`=4, `mob_skill_flag`=0, `mob_skill_param`=0, `knockback`=0, `primary_sc`=0, `secondary_sc`=0, `tertiary_sc`=0 WHERE `mob_skill_id`=3193;
+UPDATE `mob_skills` SET `mob_skill_id`=3194, `mob_anim_id`=670, `mob_skill_name`='royal_savior', `mob_skill_aoe`=1, `mob_skill_distance`=7.0, `mob_anim_time`=2000, `mob_prepare_time`=500, `mob_valid_targets`=1, `mob_skill_flag`=0, `mob_skill_param`=0, `knockback`=0, `primary_sc`=0, `secondary_sc`=0, `tertiary_sc`=0 WHERE `mob_skill_id`=3194;
+UPDATE `mob_skill_lists` SET `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=34 WHERE `skill_list_id`=1020 AND `mob_skill_id`=34;
+UPDATE `mob_skill_lists` SET `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=35 WHERE `skill_list_id`=1020 AND `mob_skill_id`=35;
+UPDATE `mob_skill_lists` SET `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=42 WHERE `skill_list_id`=1020 AND `mob_skill_id`=42;
+UPDATE `mob_skill_lists` DELETE `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=3193 WHERE `skill_list_id`=1020 AND `mob_skill_id`=3193;
+UPDATE `mob_skill_lists` DELETE `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=3194 WHERE `skill_list_id`=1020 AND `mob_skill_id`=3194;
+
