@@ -564,7 +564,7 @@ for _, entry in pairs(AbMob) do
     local mobName     = entry[1]
     local zoneName    = entry[2]
   m:addOverride(string.format('xi.zones.%s.mobs.%s.onMobDeath', zoneName, mobName), function(mob, player, isKiller)
-  super(mob)
+  super(mob, player)
     dropper = mob:getID()
     local rand = math.random(100, 200)
     player:addCurrency('cruor', rand)
