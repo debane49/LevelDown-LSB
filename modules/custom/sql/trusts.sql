@@ -99,3 +99,18 @@ UPDATE `mob_skill_lists` SET `skill_list_name`='TRUST_Trion', `skill_list_id`=10
 UPDATE `mob_skill_lists` DELETE `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=3193 WHERE `skill_list_id`=1020 AND `mob_skill_id`=3193;
 UPDATE `mob_skill_lists` DELETE `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=3194 WHERE `skill_list_id`=1020 AND `mob_skill_id`=3194;
 
+--
+-- Bart / Iron Eater
+--
+
+INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Iron_Eater', 1032, 81);
+INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Iron_Eater', 1032, 82);
+INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Iron_Eater', 1032, 84);
+INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Iron_Eater', 1032, 85);
+INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Iron_Eater', 1032, 86);
+INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Iron_Eater', 1032, 87);
+INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Iron_Eater', 1032, 89);
+INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Iron_Eater', 1032, 90);
+INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Iron_Eater', 1032, 91);
+INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Iron_Eater', 1032, 92);
+INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Iron_Eater', 1032, 93);
