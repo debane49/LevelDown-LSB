@@ -35,7 +35,7 @@ m:addOverride('xi.zones.Lower_Jeuno.Zone.onInitialize', function(zone)
             local retItem = item:getName(tostring())
             local thvalue = player:getCharVar('LionTH')
             if player:getCharVar('LionTH') == 14 then
-                   player:printToPlayer('There is nothing more i can offer, My treasure Hunter is perfected....', 0, npc:getPacketName())
+                   player:printToPlayer('There is nothing more i can offer, My treasure Hunter has been perfected....', 0, npc:getPacketName())
             elseif player:getCharVar('LionTH') ~= 14 then
                    local tradedCombo = 0
                    if tradedCombo == 0 then
@@ -61,14 +61,59 @@ m:addOverride('xi.zones.Lower_Jeuno.Zone.onInitialize', function(zone)
     end,
 
         onTrigger = function(player, npc)
+        local Sandung = player:getCharVar('[LTH]_Sandung')
+        local ThiefsK = player:getCharVar('[LTH]_ThiefsK')
+        local WhiteRa = player:getCharVar('[LTH]_WhiteRara')
+        local Assassi = player:getCharVar('[LTH]_AssassArm')
+        local Plunder = player:getCharVar('[LTH]_PlunderArm')
+        local GorneyR = player:getCharVar('[LTH]_GorneyR')
+        local ChaacB  = player:getCharVar('[LTH]_ChaacB')
+
+        if Sandung == 0 then
+        Sandung = 'Sandung Dagger,'
+        else
+        Sandung = ''
+        end
+        if ThiefsK == 0 then
+        ThiefsK = 'Thiefs Knife,'
+        else
+        ThiefsK = ''
+        end
+        if WhiteRa == 0 then
+        WhiteRa = 'White Rarab Cap +1,'
+        else
+        WhiteRa = ''
+        end
+        if Assassi == 0 then
+        Assassi = 'Assassins Armlet +1,'
+        else
+        Assassi = ''
+        end
+        if Plunder == 0 then
+        Plunder = 'Plunderers Armlet +1,'
+        else
+        Plunder = ''
+        end
+        if GorneyR == 0 then
+        GorneyR = 'Gorney Ring,'
+        else
+        GorneyR = ''
+        end
+        if ChaacB == 0 then
+        ChaacB = 'Chaac Belt,'
+        else
+        ChaacB = ''
+        end
              if player:getCharVar('LionTH') <= 0 then
                 player:printToPlayer('I dream of one day becoming a great Thief! To do that i need better armor.', 0, npc:getPacketName())
                 player:printToPlayer('Give me some new armor and i will wear it proudly on the battlefield with you!.', 0, npc:getPacketName())
                 player:printToPlayer('I will accept the following pieces to enhance my shady ways! ', 0, npc:getPacketName())
                 player:printToPlayer('Thiefs Knife, Sandung Dagger, White Rarab Cap +1, Assassins Armlet +1.', 0, npc:getPacketName())
                 player:printToPlayer('Plunderers Armlet +1, Gorney Ring and a Chaac Belt.', 0, npc:getPacketName())
-             elseif player:getCharVar('LionTH') >= 1  and player:getCharVar('LionTH') <= 6 then
+             elseif player:getCharVar('LionTH') >= 1  and player:getCharVar('LionTH') <= 13 then
                     player:printToPlayer(string.format('I am on my way to becoming a legend, My current Treasure Hunter is %s,', player:getCharVar('LionTH')), 0, npc:getPacketName())
+                    player:printToPlayer(string.format('I still hunting for the following items;'), 0, npc:getPacketName())
+                    player:printToPlayer(string.format('%s %s %s %s %s %s %s ',Sandung, ThiefsK, WhiteRa, Assassi, Plunder, GorneyR, ChaacB), 0, npc:getPacketName())
              elseif player:getCharVar('LionTH') == 14 then
                     player:printToPlayer(string.format('You have made me a better Thief, My current Treasure Hunter is %s,', player:getCharVar('LionTH')), 0, npc:getPacketName())
                     player:printToPlayer(string.format('I do not belive i can exceed my curent limits', player:getCharVar('LionTH')), 0, npc:getPacketName())
