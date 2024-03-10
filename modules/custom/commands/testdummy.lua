@@ -117,7 +117,7 @@ commandObj.onTrigger = function(player)
         mob:spawn()
 
         mob:updateEnmity(player)
-        mob:setMobLevel(player:getMainLvl())
+        mob:setMobLevel(player:getAverageItemLevel())
     elseif
         player:getZoneID() == xi.zone.RALA_WATERWAYS and
         player:hasEnmity() and
