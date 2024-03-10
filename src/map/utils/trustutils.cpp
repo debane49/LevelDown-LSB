@@ -430,8 +430,8 @@ namespace trustutils
         PTrust->SetSJob(trustData->sJob);
 
         // assume level matches master
-        PTrust->SetMLevel(PMaster->GetMLevel());
-        PTrust->SetSLevel(PMaster->GetSLevel() + charutils::getItemLevelDifference(PMaster));
+        PTrust->SetMLevel(PMaster->GetMLevel() + charutils::getItemLevelDifference(PMaster));
+        PTrust->SetSLevel(PMaster->GetSLevel());
 
         LoadTrustStatsAndSkills(PTrust);
 
