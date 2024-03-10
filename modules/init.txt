@@ -66,3 +66,4 @@ custom/lua/add_cruor.lua
 custom/lua/open_caskets.lua
 custom/lua/wotg_decouple_story_missions_from_nation_quests.lua
 custom/lua/rov_2_39.lua
+custom/lua/striking_dummies.lua
