@@ -163,7 +163,9 @@ end)
 
 m:addOverride('xi.player.onGameIn', function(player, firstLogin, zoning)
 super(player, firstLogin, zoning)
-        if not firstLogin and not zoning then
+local gmlvl = player:getGMLevel()
+
+        if not firstLogin and not zoning and gmlvl <=0 then
         local openingDecoration = '\129\155'
         local mid1Decoration = '\129\154'
         local mid2Decoration = '\129\154'

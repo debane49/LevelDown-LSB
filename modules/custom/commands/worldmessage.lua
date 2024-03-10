@@ -5,7 +5,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 5,
+    permission = 4,
     parameters = 's'
 }
 local function error(player, msg)
