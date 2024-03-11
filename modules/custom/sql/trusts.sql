@@ -86,7 +86,8 @@ INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id
 INSERT INTO `mob_spell_lists` (`spell_list_name`, `spell_list_id`, `spell_id`, `min_level`, `max_level`) VALUES ('TRUST_Ajido-Marujido', 316, 235, 50, 255);
 INSERT INTO `mob_spell_lists` (`spell_list_name`, `spell_list_id`, `spell_id`, `min_level`, `max_level`) VALUES ('TRUST_Ajido-Marujido', 316, 237, 50, 255);
 INSERT INTO `mob_spell_lists` (`spell_list_name`, `spell_list_id`, `spell_id`, `min_level`, `max_level`) VALUES ('TRUST_Ajido-Marujido', 316, 239, 50, 255);
-INSERT INTO `mob_spell_lists` (`spell_list_name`, `spell_list_id`, `spell_id`, `min_level`, `max_level`) VALUES ('TRUST_Ajido-Marujido', 316, 260, 64, 255);
+-- duplicate below
+-- INSERT INTO `mob_spell_lists` (`spell_list_name`, `spell_list_id`, `spell_id`, `min_level`, `max_level`) VALUES ('TRUST_Ajido-Marujido', 316, 260, 64, 255);
 
 --
 -- Bart / Trion
@@ -96,9 +97,8 @@ UPDATE `mob_skills` SET `mob_skill_id`=3194, `mob_anim_id`=670, `mob_skill_name`
 UPDATE `mob_skill_lists` SET `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=34 WHERE `skill_list_id`=1020 AND `mob_skill_id`=34;
 UPDATE `mob_skill_lists` SET `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=35 WHERE `skill_list_id`=1020 AND `mob_skill_id`=35;
 UPDATE `mob_skill_lists` SET `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=42 WHERE `skill_list_id`=1020 AND `mob_skill_id`=42;
-UPDATE `mob_skill_lists` DELETE `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=3193 WHERE `skill_list_id`=1020 AND `mob_skill_id`=3193;
-UPDATE `mob_skill_lists` DELETE `skill_list_name`='TRUST_Trion', `skill_list_id`=1020, `mob_skill_id`=3194 WHERE `skill_list_id`=1020 AND `mob_skill_id`=3194;
-
+DELETE FROM mob_skill_lists WHERE skill_list_name = 'TRUST_Trion' AND mob_skill_id=3193;
+DELETE FROM mob_skill_lists WHERE skill_list_name = 'TRUST_Trion' AND mob_skill_id=3194;
 --
 -- Bart / Iron Eater
 --
