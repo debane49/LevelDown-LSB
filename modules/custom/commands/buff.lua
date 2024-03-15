@@ -12,7 +12,7 @@ commandObj.cmdprops =
 
 local buffOn = function(player)
     -- Add bonus effects to the player..
-    player:addStatusEffect(xi.effect.REGAIN, 100, 0, 0)
+    player:addStatusEffect(xi.effect.REGAIN, 25, 0, 0)
     player:addStatusEffect(xi.effect.REFRESH, 10, 0, 0)
     player:addStatusEffect(xi.effect.REGEN, 10, 0, 0)
     player:addStatusEffect(xi.effect.DEDICATION, 500, 0, 0, 0, 30000) -- max 30000 or server crash
@@ -66,7 +66,7 @@ commandObj.onTrigger = function(player, tier)
         player:getMainLvl() == 99 then
         player:setCharVar('Buff', 1)
         buffOn(player)
-        player:addStatusEffect(xi.effect.COMMITMENT, 100, 0, 0, 0, 30000)
+        player:addStatusEffect(xi.effect.COMMITMENT, 40, 0, 0, 0, 30000)
         player:PrintToPlayer('Buff enabled.')
     elseif mode == 0 and state == 0 and
         player:getMainLvl() <= 99   then
