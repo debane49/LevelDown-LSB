@@ -68,3 +68,5 @@ custom/lua/wotg_decouple_story_missions_from_nation_quests.lua
 custom/lua/rov_2_39.lua
 custom/lua/striking_dummies.lua
 custom/lua/UnityNpcs.lua
+custom/lua/Tyo_Mythic.lua
+custom/lua/Sanraku_Update.lua
