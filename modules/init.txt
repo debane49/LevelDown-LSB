@@ -70,3 +70,4 @@ custom/lua/striking_dummies.lua
 custom/lua/UnityNpcs.lua
 custom/lua/Tyo_Mythic.lua
 custom/lua/Sanraku_Update.lua
+custom/lua/Alexan_drop.lua

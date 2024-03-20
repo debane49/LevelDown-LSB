@@ -24,6 +24,37 @@ local EZMob =
     {'Eschan_Yztarg'},--
     {'Eschan_Mosquito'},--
 }
+local ERMob =
+{
+{'Eschan_Zdei'},
+{'Eschan_Ilaern_rng'},
+{'Eschan_Ilaern_thf'},
+{'Eschan_Ilaern_blm'},
+{'Eschan_Ilaern_drg'},
+{'Eschan_Phuabo'},
+{'Eschan_Ilaern_war'},
+{'Eschan_Yovra'},
+{'Eschan_Ilaern_whm'},
+{'Eschan_Ilaern_mnk'},
+{'Eschan_Ilaern_bst'},
+{'Eschan_Euvhi'},
+{'Eschan_Clionid'},
+{'Eschan_Hpemde'},
+{'Eschan_Ilaern_pld'},
+{'Eschan_Amoeban'},
+{'Eschan_Ilaern_drk'},
+{'Eschan_Xzomit'},
+{'Eschan_Ilaern_rdm'},
+{'Eschan_Murex'},
+{'Eschan_Ilaern_sam'},
+{'Eschan_Ilaern_smn'},
+{'Eschan_Ghrah'},
+{'Eschan_Limule'},
+{'Eschan_Gargouille'},
+{'Eschan_Porxie'},
+{'Eschan_Ilaern_brd'},
+{'Eschan_Ilaern_nin'},
+}
 
 local ensureTable = function(str)
     local parts = utils.splitStr(str, '.')
@@ -36,23 +67,22 @@ end
 for _, entry in pairs(EZMob) do
 ensureTable(string.format("xi.zones.Escha_ZiTah.mobs.%s", entry[1]))
 end
+for _, entry in pairs(ERMob) do
+ensureTable(string.format("xi.zones.Escha_RuAun.mobs.%s", entry[1]))
+end
 
------------------------------------
-local ID = zones[xi.zone.ESCAH_ZITAH]
 -----------------------------------
 require("modules/module_utils")
 require("scripts/globals/npc_util")
 -----------------------------------
-
-
 
 local m = Module:new("add_silt")
 
 for _, entry in pairs(EZMob) do
     local mobName     = entry[1]
 
-  m:addOverride(string.format('xi.zones.Escha_ZiTah.mobs.%s.onMobDeath', mobName), function(mob, player, isKiller)
---    super(mob)
+  m:addOverride(string.format('xi.zones.Escha_ZiTah.mobs.%s.onMobDeath', mobName), function(mob, player, optParams)
+    super(mob, player, optParams)
     dropper = mob:getID()
     local rand = math.random(5, 30)
     player:addCurrency('escha_silt', rand)
@@ -71,6 +101,18 @@ for _, entry in pairs(EZMob) do
     end
   end)
 end
+
+for _, entry in pairs(ERMob) do
+    local mobNamea     = entry[1]
+  m:addOverride(string.format('xi.zones.Escha_RuAun.mobs.%s.onMobDeath', mobNamea), function(mob, player, optParams)
+    super(mob, player, optParams)
+    dropper = mob:getID()
+    local randx = math.random(15, 45)
+    player:addCurrency('escha_silt', randx)
+    player:printToPlayer(string.format("You obtained %s Escha Silt", randx),xi.msg.channel.SYSTEM_3)
+  end)
+end
+
 return m
 
 --        ESCHA_ZITAH                     = 288,
