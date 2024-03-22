@@ -34,6 +34,7 @@ end
 
 commandObj.onTrigger = function(player, leader)
     if leader == 0 or leader == nil then
+        player:printToPlayer(string.format('Choose a Leader and type !setunityleader(#)'), xi.msg.channel.SYSTEM_3)
         player:printToPlayer(string.format('NONE = 0'), xi.msg.channel.SYSTEM_3)
         player:printToPlayer(string.format('PIEUJE = 1'), xi.msg.channel.SYSTEM_3)
         player:printToPlayer(string.format('AYAME = 2'), xi.msg.channel.SYSTEM_3)
@@ -46,13 +47,38 @@ commandObj.onTrigger = function(player, leader)
         player:printToPlayer(string.format('FLAVIRIA = 9'), xi.msg.channel.SYSTEM_3)
         player:printToPlayer(string.format('YORAN_ORAN = 10'), xi.msg.channel.SYSTEM_3)
         player:printToPlayer(string.format('SYLVIE = 11'), xi.msg.channel.SYSTEM_3)
-    elseif os.time() < player:getCharVar('UnityChangeCD') then
-        player:printToPlayer(string.format('still on cooldown, please wait %i seconds', player:getCharVar('UnityChangeCD') - os.time(), xi.msg.channel.SYSTEM_3))
-    elseif os.time() > player:getCharVar('UnityChangeCD') then
+    elseif VanadielDayOfTheYear() == player:getCharVar('UnityChangeCD') then
+        player:printToPlayer(string.format('still on cooldown, please wait until next game day', xi.msg.channel.SYSTEM_3))
+    elseif VanadielDayOfTheYear() ~= player:getCharVar('UnityChangeCD') then
+        local unityLeader = 'none'
+        if leader == 1 then
+            unityLeader = 'PIEUJE'
+        elseif leader == 2 then
+            unityLeader = 'AYAME'
+        elseif leader == 3 then
+            unityLeader = 'INVINCIBLE SHIELD'
+        elseif leader == 4 then
+            unityLeader = 'APURURU'
+        elseif leader == 5 then
+            unityLeader = 'MAAT'
+        elseif leader == 6 then
+            unityLeader = 'ALDO'
+        elseif leader == 7 then
+            unityLeader = 'JAKOH WAHCONDALO'
+        elseif leader == 8 then
+            unityLeader = 'NAJA SALAHEEM'
+        elseif leader == 9 then
+            unityLeader = 'FLAVIRIA'
+        elseif leader == 10 then
+            unityLeader = 'YORAN-ORAN'
+        elseif leader == 11 then
+            unityLeader = 'SYLVIE'
+        end
+
         player:setUnityLeader(leader)
         player:clearTrusts() --clears existing trusts
-        player:printToPlayer(string.format('Unity Leader set to %i', leader), xi.msg.channel.SYSTEM_3)
-        player:setCharVar('UnityChangeCD', os.time() + 300) --5 min cooldown
+        player:printToPlayer(string.format('Unity Leader set to %s', unityLeader), xi.msg.channel.SYSTEM_3)
+        player:setCharVar('UnityChangeCD', VanadielDayOfTheYear()) --game day cooldown
         player:timer(3000, function(playerArg)
             playerArg:setPos(playerArg:getXPos(), playerArg:getYPos(), playerArg:getZPos(), playerArg:getRotPos(), playerArg:getZoneID())
         end)
