@@ -35,7 +35,7 @@ player:printToPlayer('!library - Teleports you to Celennia Memorial Library', 3,
 player:printToPlayer('!ah - Allows you to open up the AH anywhere in the world', 3, xi.msg.channel.system_3)
 player:printToPlayer('!posfix - Fixes a characters pos who is offline but shows to be online', 3, xi.msg.channel.system_3)
 player:printToPlayer('!resetme - Forces your character to rezone and return to same pos', 3, xi.msg.channel.system_3)
-
+player:printToPlayer('!retrievealex - Allows you to retrieve stored Alexandrite from Ryo', 3, xi.msg.channel.system_3)
 
 
 end
