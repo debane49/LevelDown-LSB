@@ -170,6 +170,42 @@ local mythicupgrade =
 [161]={trade={18852,2609,2619,2629},cost=2200,reward=21070},
 [162]={trade={19163,2609,2619,2629},cost=2200,reward=20753},
 }
+
+local znmtele =
+{
+[163]={trade={2580},zone=51,X= -695.558,Y=    -7.5,Z= -126.721,Rot= 252},
+[164]={trade={2577},zone=51,X=  257.462,Y= -23.433,Z=  120.741,Rot= 187},
+[165]={trade={2575},zone=51,X= -339.551,Y= -31.525,Z=  675.203,Rot= 186},
+[166]={trade={2573},zone=51,X=  276.116,Y=  -0.085,Z= -694.632,Rot= 162},
+[167]={trade={2578},zone=52,X=  331.456,Y=  -10.00,Z=  182.845,Rot= 104},
+[168]={trade={2576},zone=52,X=  -32.405,Y= -32.529,Z=  484.546,Rot= 208},
+[169]={trade={2601},zone=54,X=  490.819,Y=   -2.37,Z=  167.028,Rot=   0},
+[170]={trade={2600},zone=54,X=  313.172,Y=  -3.602,Z=   26.211,Rot=   0},
+[171]={trade={2598},zone=54,X=  177.644,Y=  -4.668,Z=    181.4,Rot=   0},
+[172]={trade={2596},zone=54,X= -453.103,Y=  -7.308,Z=  387.904,Rot=   0},
+[173]={trade={2590},zone=61,X=    402.6,Y= -27.513,Z=  121.544,Rot= 162},
+[174]={trade={2591},zone=61,X=  501.415,Y=  -8.768,Z=   52.986,Rot= 238},
+[175]={trade={2587},zone=61,X=  -363.61,Y=  -14.00,Z=  361.898,Rot=  89},
+[176]={trade={2585},zone=61,X=    88.29,Y= -21.999,Z=   71.916,Rot= 128},
+[177]={trade={2583},zone=61,X=  323.299,Y= -13.999,Z= -601.701,Rot= 159},
+[178]={trade={2589},zone=62,X=  -140.35,Y=  10.222,Z=  464.194,Rot=  95},
+[179]={trade={2588},zone=62,X=   19.145,Y=   -9.78,Z=  216.458,Rot=  32},
+[180]={trade={2586},zone=62,X=  -34.486,Y=   9.999,Z=  339.257,Rot= 250},
+[181]={trade={2581},zone=65,X=  208.856,Y=  14.878,Z=  -285.45,Rot= 124},
+[182]={trade={2579},zone=65,X=  -119.00,Y=    7.10,Z=  -79.000,Rot= 192},
+[183]={trade={2584},zone=68,X= -199.448,Y=    8.76,Z=  -61.712,Rot= 198},
+[184]={trade={2572},zone=68,X=  200.000,Y=  33.991,Z= -140.000,Rot=  70},
+[185]={trade={2602},zone=68,X=  -217.51,Y=  35.363,Z=   13.689,Rot=   0},
+[186]={trade={2592},zone=72,X=  548.991,Y=   0.000,Z= -139.976,Rot= 126},
+[187]={trade={2582},zone=72,X=   -184.6,Y=  -8.398,Z=   20.000,Rot=   0},
+[188]={trade={2574},zone=72,X=  -19.957,Y=  -4.000,Z= -182.656,Rot=   0},
+[189]={trade={2597},zone=72,X=  -20.081,Y=  -3.949,Z=  206.628,Rot=   0},
+[190]={trade={2599},zone=79,X=  417.795,Y= -19.631,Z=  -74.338,Rot=   0},
+[191]={trade={2595},zone=79,X= -771.466,Y=  -11.75,Z=  322.087,Rot=   0},
+[192]={trade={2594},zone=79,X=  697.491,Y=  -7.000,Z=  526.015,Rot=   0},
+[193]={trade={2593},zone=79,X= -756.499,Y= -12.413,Z=   632.74,Rot=   0},
+}
+
 local menu  = {}
 local page1 = {}
 local page2 = {}
@@ -211,7 +247,7 @@ page1 =
     {
         'Retrieve stored Alexandrite!',
         function(player)
-               player:printToPlayer('Please use the command !retrievealex <amount>', 0, 'Tyo')                      
+               player:printToPlayer('Please trade me gil in the amount of alexandrite you wish to withdraw', 0, 'Tyo')                      
         end,
     },
     {
@@ -419,7 +455,7 @@ m:addOverride('xi.zones.Aht_Urhgan_Whitegate.Zone.onInitialize', function(zone)
         widescan = 1,
 
 
-        onTrade = function(player, npc, trade)
+     onTrade = function(player, npc, trade)
          -- store alexandrite
              local storedalex = player:getCharVar('Alexandrite')
              local count = trade:getItemCount()
@@ -455,7 +491,45 @@ m:addOverride('xi.zones.Aht_Urhgan_Whitegate.Zone.onInitialize', function(zone)
                       end
                     end
              end
-        end,
+            -- trade pop item to teleport to znm location
+            local tradedpop = 0
+            if tradedpop == 0 then
+                    for k, v in pairs(znmtele) do
+                        if npcUtil.tradeHasExactly(trade, v.trade) then
+                           player:setPos(v.X, v.Y, v.Z, v.Rot, v.zone)
+                            break
+                        end
+                    end
+            end
+                 -- give alexandrite back base on amount of gil traded, if you have the inventory space
+               if npcUtil.tradeHas(trade, xi.item.GIL) then
+                     local countx = trade:getItemQty(65535)
+                     local quantity  = player:getCharVar('Alexandrite')
+                     local stacks    = math.floor(countx / 99)
+                     local remainder = countx % 99
+                     local slotsNeeded = stacks
+                           if remainder > 0 then
+                              slotsNeeded = slotsNeeded + 1
+                           end
+                                  if countx < quantity then
+                                    if countx > 0 then
+                                     if player:getFreeSlotsCount() < slotsNeeded then
+                                        player:printToPlayer('You cannot withdrawn that amount. ', 0, 'Tyo')
+                                        player:printToPlayer('Please check your inventory and try again. ', 0, 'Tyo')
+                                        return
+                                     else
+                                       player:addItem(2488, countx)
+                                       player:setCharVar('Alexandrite', quantity - countx)
+                                       player:printToPlayer(string.format('You have withdrawn %s alexandrites. ',countx), 0, 'Tyo')
+                                       player:printToPlayer(string.format('Your remaining balance of alexandrite is %s. ',player:getCharVar('Alexandrite')), 0, 'Tyo') 
+                                     end
+                                    end
+                                  else
+                                       player:printToPlayer('You cannot withdrawn that amount. You are trying to withdraw more alexandrite', 0, 'Tyo')
+                                       player:printToPlayer(string.format('than you have. Your current stored alexandrite is %s',quantity), 0, 'Tyo')
+                                  end  
+               end
+    end,
 
         onTrigger = function(player, npc)
                     menu.options = page1
