@@ -24,3 +24,15 @@ UPDATE mob_groups SET HP = "9300" WHERE name = "Locus_Ghost_Crab";
 --						Mob Family settings						--
 UPDATE mob_family_system SET mobradius = "1.0" WHERE familyID = "77";
 UPDATE mob_family_system SET mobradius = "3.0" WHERE familyID = "188";
+--                      Mob Respawn Time
+UPDATE mob_groups SET respawntime = "180" WHERE respawntime = "60"; --All
+UPDATE mob_groups SET respawntime = "180" WHERE respawntime = "300"; --All
+UPDATE mob_groups SET respawntime = "180" WHERE respawntime = "330"; --All
+UPDATE mob_groups SET respawntime = "180" WHERE respawntime = "480"; --All
+UPDATE mob_groups SET respawntime = "420" WHERE respawntime = "600"; --All
+UPDATE mob_groups SET respawntime = "420" WHERE respawntime = "660"; --All
+UPDATE mob_groups SET respawntime = "420" WHERE respawntime = "720"; --All
+UPDATE mob_groups SET respawntime = "420" WHERE respawntime = "792"; --All
+UPDATE mob_groups SET respawntime = "420" WHERE respawntime = "900"; --All
+UPDATE mob_groups SET respawntime = "420" WHERE respawntime = "924"; --All
+UPDATE mob_groups SET respawntime = "420" WHERE respawntime = "960"; --All
