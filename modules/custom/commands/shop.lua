@@ -29,7 +29,7 @@ local page15 = {}
 local page16 = {}
 local page17 = {}
 local page18 = {}
-local page19 = {}
+
 
 
 local delaySendMenu = function(player)
@@ -101,12 +101,6 @@ page2 =
         'Crystals',
          function(player)
             menu.options = xi.shop.general(player, page18)
-         end
-    },
-        {
-        'Mounts',
-         function(player)
-            menu.options = xi.shop.general(player, page19)
          end
     },
          {
@@ -317,7 +311,7 @@ page18 =
             4110,     1000,   -- Light Cluster
             4111,     1000,   -- Dark Cluster
 }
-page19 = {
+--[[page19 = {
 		10049,   1000,   --♪raptor
 		10050,   1000,   --♪tiger
 		10051,   1000,   --♪crab
@@ -354,7 +348,7 @@ page19 = {
 		10082,   1000,   --♪ixion
 		10083,   1000,   --♪phuabo
 }
---[[page20 = {
+page20 = {
         4146,   500,  --REVITALIZER                         = 4146,
         4202,   500,  --DAEDALUS_WING                       = 4202,
         4206,   500,  --BOTTLE_OF_CATHOLICON                = 4206,
