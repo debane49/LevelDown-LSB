@@ -763,18 +763,83 @@ local tradeTablePathD =
 [183] = { trade = { 21215,{ 9086, 6}}, base = 21215, aug1 =  746, aug1MAX = 14, aug2 =   29, aug2MAX = 14, aug3 =   41, aug3MAX =  2, aug4 =  0, aug4MAX = 0 },--Vijaya Bow
 }
 
+local AlixerExch =
+{
+[ 1] = {trade = {{9084, 10}}, reward = 9085, qty =  1},
+[ 2] = {trade = {{9084, 20}}, reward = 9085, qty =  2},
+[ 3] = {trade = {{9084, 30}}, reward = 9085, qty =  3},
+[ 4] = {trade = {{9084, 40}}, reward = 9085, qty =  4},
+[ 5] = {trade = {{9084, 50}}, reward = 9085, qty =  5},
+[ 6] = {trade = {{9084, 60}}, reward = 9085, qty =  6},
+[ 7] = {trade = {{9084, 70}}, reward = 9085, qty =  7},
+[ 8] = {trade = {{9084, 80}}, reward = 9085, qty =  8},
+[ 9] = {trade = {{9084, 90}}, reward = 9085, qty =  9},
+[10] = {trade = {{9085,  3}}, reward = 9086, qty =  1},
+[11] = {trade = {{9085,  6}}, reward = 9086, qty =  2},
+[12] = {trade = {{9085,  9}}, reward = 9086, qty =  3},
+[13] = {trade = {{9085, 12}}, reward = 9086, qty =  4},
+[14] = {trade = {{9085, 15}}, reward = 9086, qty =  5},
+[15] = {trade = {{9085, 18}}, reward = 9086, qty =  6},
+[16] = {trade = {{9085, 21}}, reward = 9086, qty =  7},
+[17] = {trade = {{9085, 24}}, reward = 9086, qty =  8},
+[18] = {trade = {{9085, 27}}, reward = 9086, qty =  9},
+[19] = {trade = {{9085, 30}}, reward = 9086, qty = 10},
+[20] = {trade = {{9085, 33}}, reward = 9086, qty = 11},
+[21] = {trade = {{9085, 36}}, reward = 9086, qty = 12},
+[22] = {trade = {{9085, 39}}, reward = 9086, qty = 13},
+[23] = {trade = {{9085, 42}}, reward = 9086, qty = 14},
+[24] = {trade = {{9085, 45}}, reward = 9086, qty = 15},
+[25] = {trade = {{9085, 48}}, reward = 9086, qty = 16},
+[26] = {trade = {{9085, 51}}, reward = 9086, qty = 17},
+[27] = {trade = {{9085, 54}}, reward = 9086, qty = 18},
+[28] = {trade = {{9085, 57}}, reward = 9086, qty = 19},
+[29] = {trade = {{9085, 60}}, reward = 9086, qty = 20},
+[30] = {trade = {{9085, 63}}, reward = 9086, qty = 21},
+[31] = {trade = {{9085, 66}}, reward = 9086, qty = 22},
+[32] = {trade = {{9085, 69}}, reward = 9086, qty = 23},
+[33] = {trade = {{9085, 72}}, reward = 9086, qty = 24},
+[34] = {trade = {{9085, 75}}, reward = 9086, qty = 25},
+[35] = {trade = {{9085, 78}}, reward = 9086, qty = 26},
+[36] = {trade = {{9085, 81}}, reward = 9086, qty = 27},
+[37] = {trade = {{9085, 84}}, reward = 9086, qty = 28},
+[38] = {trade = {{9085, 87}}, reward = 9086, qty = 29},
+[39] = {trade = {{9085, 90}}, reward = 9086, qty = 30},
+[40] = {trade = {{9085, 93}}, reward = 9086, qty = 31},
+[41] = {trade = {{9085, 96}}, reward = 9086, qty = 32},
+}
 m:addOverride("xi.zones.Norg.npcs.Nolan.onTrade", function(player, npc, trade)
     local amount = player:getCurrency('escha_silt')
-if amount <= 2999 then 
-player:printToPlayer(string.format("You do not have enough Escha Silt to make this transaction. Your currently have %s Silt!", amount,  npc:getPacketName()))
-elseif amount >= 3000 then
+    local tradedAlix = 0
+        if tradedAlix == 0 then
+			for k, v in pairs(AlixerExch) do
+				if npcUtil.tradeHasExactly(trade, v.trade) then
+                tradedAlix = k
+		        npc:setLocalVar("AlixUpg", AlixerExch[tradedAlix].reward)
+                npc:setLocalVar("AlixQty", AlixerExch[tradedAlix].qty)
+                   break
+                end
+            end
+        end
+        if tradedAlix > 0 then
+        local alixreward = npc:getLocalVar("AlixUpg", AlixerExch[tradedAlix].reward)
+        local alixqty = npc:getLocalVar("AlixQty", AlixerExch[tradedAlix].qty)
+           player:printToPlayer('Thank you for your business, we have upgraded your Eschalixer, Here you go!', 0, 'Nolan')
+           player:tradeComplete()
+           npcUtil.giveItem(player, {{alixreward, alixqty}})
+
+
+
+
+elseif tradedAlix == 0 and amount <= 2999 then
+player:printToPlayer("You are attempting to trade an incorrect amount of Eschalixer to upgrade or you do", 0, 'Nolan')
+player:printToPlayer(string.format("not have enough Escha Silt to upgrade your equipment. Your currently have %s Silt!", amount), 0, 'Nolan')
+player:printToPlayer("Please review what you are attempting to trade and try again.", 0, 'Nolan')
+elseif tradedAlix == 0 and amount >= 3000 then
 		local tradeedItem = 0
 		if player:getCharVar("[GFZitah]item") == 0 then
 			for k, v in pairs(tradeTablePathA) do
 				if npcUtil.tradeHasExactly(trade, v.trade) then 
 					tradeedItem = k
- --               else                
-   --                 player:PrintToPlayer(string.format('The combination you are trading is not correct, Please review your trade!',  npc:getPacketName()))
 					break
                 end
 			end
@@ -891,24 +956,28 @@ m:addOverride("xi.zones.Norg.npcs.Nolan.onEventFinish", function(player, csid, o
 					local aug4MAXD = npc:getLocalVar("aug4MAXD")
 					                                        					
 					if player:getCharVar("[Augment]choice") == 1 then
+                    player:printToPlayer("Here is your augmented reward", 0, 'Nolan')
 						player:addItem(reward, 1, aug1A, aug1MAXA, aug2A, aug2MAXA, aug3A, aug3MAXA, aug4A, aug4MAXA)
 						player:setCharVar("[GFZitah]item", 0)
                         player:setCharVar("[Augment]choice", 0)
                         player:delCurrency('escha_silt', 3000)
                         player:tradeComplete()
 					elseif player:getCharVar("[Augment]choice") == 2 then
+                    player:printToPlayer("Here is your augmented reward", 0, 'Nolan')
 						player:addItem(reward, 1, aug1B, aug1MAXB, aug2B, aug2MAXB, aug3B, aug3MAXB, aug4B, aug4MAXB)
 						player:setCharVar("[GFZitah]item", 0)
                         player:setCharVar("[Augment]choice", 0)
                         player:delCurrency('escha_silt', 3000)
                         player:tradeComplete()
-					elseif player:getCharVar("[Augment]choice") == 3 then	
+					elseif player:getCharVar("[Augment]choice") == 3 then
+                    player:printToPlayer("Here is your augmented reward", 0, 'Nolan')
 						player:addItem(reward, 1, aug1C, aug1MAXC, aug2C, aug2MAXC, aug3C, aug3MAXC, aug4C, aug4MAXC)
 						player:setCharVar("[GFZitah]item", 0)
                         player:setCharVar("[Augment]choice", 0)
                         player:delCurrency('escha_silt', 3000)
                         player:tradeComplete()
 					elseif player:getCharVar("[Augment]choice") == 4 then
+                    player:printToPlayer("Here is your augmented reward", 0, 'Nolan')
                     	player:addItem(reward, 1, aug1D, aug1MAXD, aug2D, aug2MAXD, aug3D, aug3MAXD, aug4D, aug4MAXD)
 						player:setCharVar("[GFZitah]item", 0)
                         player:setCharVar("[Augment]choice", 0)
