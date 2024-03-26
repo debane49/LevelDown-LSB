@@ -200,7 +200,7 @@ UPDATE mob_spawn_points SET pos_X = 401.6606,  pos_y = -0.0000, pos_z = -638.980
 UPDATE mob_spawn_points SET pos_X = 403.1004,  pos_y = -0.0000, pos_z = -640.4817,  pos_rot = 125 WHERE mobid = 17957337;
 UPDATE mob_spawn_points SET pos_X = 400.8694,  pos_y = -0.0000, pos_z = -635.8933,  pos_rot = 94  WHERE mobid = 17957385;
 UPDATE mob_spawn_points SET pos_X = -364.7595, pos_y = -0.1233, pos_z = -434.251,   pos_rot = 31  WHERE mobid = 17957334;
-UPDATE mob_spawn_points SET pos_X = -245.3619, pos_y = -0.4082, pos_z = 617.7747,   pos_rot = 16  WHERE mobid = 17957394;
+UPDATE mob_spawn_points SET pos_X = -245.3619, pos_y = -0.4082, pos_z = 617.7747,   pos_rot = 16  WHERE mobid = 17957349;
 UPDATE mob_spawn_points SET pos_X = -10.3273,  pos_y = -0.3153, pos_z = -158.021,   pos_rot = 20  WHERE mobid = 17957347;
 -- add NM spawn points
 INSERT INTO `nm_spawn_points` VALUES (17957278,0,-124.4,-0.268,34.275);
