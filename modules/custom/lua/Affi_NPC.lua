@@ -114,11 +114,11 @@ player:startEvent(9701, 2096160, currency, 117440958, 33554431, 0, 0, 0, 3355443
 end)
 
 m:addOverride("xi.zones.Escha_ZiTah.npcs.Affi.onEventUpdate", function(player, csid, option, npc)
-
+	--player:printToPlayer(string.format('update %s',option))
 end)
 
 m:addOverride("xi.zones.Escha_ZiTah.npcs.Affi.onEventFinish", function(player, csid, option, npc)
-	--player:PrintToPlayer(string.format('%s',option))
+	--player:printToPlayer(string.format('finish %s',option))
     local tradedtier = player:getCharVar("Affi")
         local rewardki = 0
         if rewardki == 0 then
@@ -135,7 +135,16 @@ m:addOverride("xi.zones.Escha_ZiTah.npcs.Affi.onEventFinish", function(player, c
 		               player:setCharVar("Affi", 0)
             else
             		   player:setCharVar("Affi", 0)
-            end			
+            end
+                if option == 1073741824 then
+                   player:printToPlayer('Before you leave, There are 4 additional HELM Notorious Monsters!. ', 0, 'Affi') 
+                   player:printToPlayer('If you wish to summon them, please trade me the items below for the key item!. ', 0, 'Affi') 
+                   player:printToPlayer('To summon Alpluachra, i will require 1 Ashweed, 1 Gravewood Log!. ', 0, 'Affi') 
+                   player:printToPlayer('To summon Blazewing, i will require 1 Duskcrawler, 1 Gravewood Log!. ', 0, 'Affi')
+                   player:printToPlayer('To summon Pazuzu, i will require 1 Ashweed, 1 Duskcrawler!. ', 0, 'Affi')
+                   player:printToPlayer('To summon Wrathare, i will require 1 Ashweed, 1 Duskcrawler, 1 Gravewood!. ', 0, 'Affi')
+                end
+
 end)
 
 return m

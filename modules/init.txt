@@ -35,7 +35,7 @@
 # Will load only custom/cpp/custom_module.cpp and custom/lua/claim_shield.lua.
 #
 # Live example:
-
+custom/sql/
 custom/commands/
 custom/lua/trusts/
 custom/lua/test_npcs_in_gm_home.lua
@@ -71,3 +71,4 @@ custom/lua/UnityNpcs.lua
 custom/lua/Tyo_Mythic.lua
 custom/lua/Sanraku_Update.lua
 custom/lua/Alexan_drop.lua
+custom/lua/the_colosseum.lua
