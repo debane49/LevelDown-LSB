@@ -33,6 +33,7 @@ along with this program.  If not, see http://www.gnu.org/licenses/
 #include "status_effect_container.h"
 #include "utils/battleutils.h"
 #include "utils/zoneutils.h"
+#include "utils/charutils.h"
 
 /************************************************************************
  *                                                                       *
@@ -132,6 +133,11 @@ float CEnmityContainer::CalculateEnmityBonus(CBattleEntity* PEntity)
     if (auto* PChar = dynamic_cast<CCharEntity*>(PEntity))
     {
         enmityBonus += PChar->PMeritPoints->GetMeritValue(MERIT_ENMITY_INCREASE, PChar) - PChar->PMeritPoints->GetMeritValue(MERIT_ENMITY_DECREASE, PChar);
+
+        if (PEntity->GetMJob() == JOB_PLD || PEntity->GetMJob() == JOB_NIN && !PEntity->StatusEffectContainer->HasStatusEffect(EFFECT_INNIN) || PEntity->GetMJob() == JOB_RUN)
+        {
+            enmityBonus += enmityBonus;
+        }
 
         if (PChar->StatusEffectContainer->HasStatusEffect(EFFECT_SOULEATER))
         {
@@ -381,11 +387,30 @@ void CEnmityContainer::SetVE(CBattleEntity* PEntity, const int32 amount)
 void CEnmityContainer::UpdateEnmityFromDamage(CBattleEntity* PEntity, int32 Damage)
 {
     TracyZoneScoped;
-    Damage          = (Damage < 1 ? 1 : Damage);
-    int16 damageMod = battleutils::GetEnmityModDamage(m_EnmityHolder->GetMLevel());
+    Damage                  = (Damage < 1 ? 1 : Damage);
+    int16  level            = m_EnmityHolder->GetMLevel();
+    int16  damageMod        = battleutils::GetEnmityModDamage(level);
+    double lvlScalingFactor = 1;
 
-    int32 CE = (int32)(80.f / damageMod * Damage);
-    int32 VE = (int32)(240.f / damageMod * Damage);
+	if (level >= 51 && level <= 99)
+    {
+        lvlScalingFactor = 1 - ((level - 49) * 0.014);
+    }
+    else if (level > 99 && level <= 120)
+    {
+        lvlScalingFactor = 0.3;
+    }
+    else if (level > 120 && level <= 135)
+    {
+        lvlScalingFactor = 0.2;
+    }
+    else if (level > 135)
+    {
+        lvlScalingFactor = 0.15;
+    }
+
+    int32 CE = (int32)(((80.f / damageMod) * Damage) * lvlScalingFactor);
+    int32 VE = (int32)(((240.f / damageMod) * Damage) * lvlScalingFactor);
 
     UpdateEnmity(PEntity, CE, VE);
 
@@ -394,7 +419,6 @@ void CEnmityContainer::UpdateEnmityFromDamage(CBattleEntity* PEntity, int32 Dama
         m_EnmityHolder->m_HiPCLvl = PEntity->GetMLevel();
     }
 }
-
 /************************************************************************
  *                                                                       *
  *                                                                       *
@@ -474,12 +498,96 @@ CBattleEntity* CEnmityContainer::GetHighestEnmity()
 
 void CEnmityContainer::DecayEnmity()
 {
-    for (auto& it : m_EnmityList)
     {
-        EnmityObject_t& PEnmityObject = it.second;
-        constexpr int   decay_amount  = (int)(60 / server_tick_rate);
+        CBattleEntity* PEntity         = nullptr;
+        int16          playerLevel     = 0;
+        int16          playerItemLevel = 0;
+        int16          decayVE         = 1;
+        int16          decayCE         = 1;
 
-        PEnmityObject.VE -= PEnmityObject.VE > decay_amount ? decay_amount : PEnmityObject.VE;
+        for (auto& it : m_EnmityList)
+        {
+            EnmityObject_t& PEnmityObject = it.second;
+            PEntity                       = PEnmityObject.PEnmityOwner;
+
+            if (PEntity != nullptr && PEnmityObject.CE > 1)
+            {
+                if (PEntity->objtype == TYPE_PC)
+                {
+                    CCharEntity* PChar = (CCharEntity*)PEntity;
+                    playerItemLevel    = (int16)(charutils::getItemLevelDifference(PChar));
+                }
+
+                playerLevel = PEntity->GetMLevel() + playerItemLevel;
+
+                if (playerLevel <= 50)
+                {
+                    decayVE = 50;
+                }
+                else if (playerLevel >= 51 && playerLevel < 99)
+                {
+                    decayVE = (int16)(playerLevel * 2.03);
+                    decayCE = (int16)(playerLevel * 0.3);
+
+                    if (PEntity->GetMJob() == JOB_PLD || PEntity->GetMJob() == JOB_NIN && !PEntity->StatusEffectContainer->HasStatusEffect(EFFECT_INNIN) || PEntity->GetMJob() == JOB_RUN)
+                    {
+                        decayVE = 50;
+                        decayCE = 10;
+                    }
+                }
+                else if (playerLevel >= 99)
+                {
+                    decayVE = 100;
+                    decayCE = 20;
+
+                    if (PEntity->GetMJob() == JOB_PLD || PEntity->GetMJob() == JOB_NIN && !PEntity->StatusEffectContainer->HasStatusEffect(EFFECT_INNIN) || PEntity->GetMJob() == JOB_RUN)
+                    {
+                        decayVE = 60;
+                        decayCE = 15;
+                    }
+                }
+                else if (playerLevel >= 109)
+                {
+                    decayVE = 150;
+                    decayCE = 30;
+
+                    if (PEntity->GetMJob() == JOB_PLD || PEntity->GetMJob() == JOB_NIN && !PEntity->StatusEffectContainer->HasStatusEffect(EFFECT_INNIN) || PEntity->GetMJob() == JOB_RUN)
+                    {
+                        decayVE = 70;
+                        decayCE = 20;
+                    }
+                }
+                else if (playerLevel >= 115)
+                {
+                    decayVE = 200;
+                    decayCE = 40;
+
+                    if (PEntity->GetMJob() == JOB_PLD || PEntity->GetMJob() == JOB_NIN && !PEntity->StatusEffectContainer->HasStatusEffect(EFFECT_INNIN) || PEntity->GetMJob() == JOB_RUN)
+                    {
+                        decayVE = 80;
+                        decayCE = 30;
+                    }
+                }
+
+                int32 ve_decay_amount = (int)(decayVE / server_tick_rate); // constexpr int decay_amount = (int)(60 / server_tick_rate); // server_tick_rate = 2.5s
+                int32 ce_decay_amount = (int)(decayCE / server_tick_rate); // constexpr int ce_decay_amount = (int)(60 / server_tick_rate);
+
+                if (PEnmityObject.CE - ce_decay_amount > 1)
+                {
+                    PEnmityObject.VE -= PEnmityObject.VE > ve_decay_amount ? ve_decay_amount : PEnmityObject.VE;
+                    PEnmityObject.CE -= PEnmityObject.CE > ce_decay_amount ? ce_decay_amount : PEnmityObject.CE;
+                }
+                else
+                {
+                    PEnmityObject.VE -= PEnmityObject.VE > ve_decay_amount ? ve_decay_amount : PEnmityObject.VE;
+                    PEnmityObject.CE = 1;
+                }
+            }
+            else
+            {
+                PEnmityObject.CE = 1;
+            }
+        }
     }
 }
 
