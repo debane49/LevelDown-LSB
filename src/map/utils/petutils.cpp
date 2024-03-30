@@ -1634,10 +1634,10 @@ namespace petutils
 
         auto* PPetData = *maybePetData;
 
-        if (PMaster->GetMJob() != JOB_DRG && PetID == PETID_WYVERN)
-        {
-            return;
-        }
+        // if (PMaster->GetMJob() != JOB_DRG && PetID == PETID_WYVERN)
+        // {
+        //    return;
+        // }
 
         if (PMaster->objtype == TYPE_PC)
         {
