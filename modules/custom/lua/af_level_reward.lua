@@ -144,13 +144,6 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
 		    end
 	    end
 
-    if
-        player:getSubLvl() <= player:getMainLvl() and
-        player:getSubLvl() < 50
-    then
-        player:setsLevel(player:getSubLvl() + 1)
-    end
-
     super(player)
 end)
 return m

@@ -5039,6 +5039,13 @@ namespace charutils
                 luautils::OnPlayerLevelUp(PChar);
                 roeutils::event(ROE_EVENT::ROE_LEVELUP, PChar, RoeDatagramList{});
                 PChar->updatemask |= UPDATE_HP;
+
+                // level up subjob
+                if (PChar->jobs.job[PChar->GetSJob()] < 49 &&
+                    PChar->jobs.job[PChar->GetMJob()] >= PChar->jobs.job[PChar->GetSJob()])
+                {
+                    PChar->jobs.job[PChar->GetSJob()] += 1;
+                }
                 return;
             }
         }
