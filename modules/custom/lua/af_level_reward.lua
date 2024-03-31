@@ -10,19 +10,19 @@ local m = Module:new('af level reward')
 
 local afarmorTable = {
 
-    [160] =    {combo = 160, id = xi.item.FIGHTERS_LORICA},                     -- 12638, 60, 
-    [154] =    {combo = 154, id = xi.item.FIGHTERS_MUFFLERS},                   -- 13961, 54, 
-    [152] =    {combo = 152, id = xi.item.FIGHTERS_CALLIGAE},                   -- 14089, 52, 
-    [158] =    {combo = 158, id = xi.item.FIGHTERS_CUISSES},                    -- 14214, 58, 
-    [156] =    {combo = 156, id = xi.item.FIGHTERS_MASK},                       -- 12511, 56, 
-    [258] =    {combo = 258, id = xi.item.TEMPLE_CYCLAS},                       -- 12639, 58, 
-    [254] =    {combo = 254, id = xi.item.TEMPLE_GLOVES},                       -- 13962, 54, 
-    [252] =    {combo = 252, id = xi.item.TEMPLE_GAITERS},                      -- 14090, 52, 
-    [260] =    {combo = 260, id = xi.item.TEMPLE_HOSE},                         -- 14215, 60, 
-    [256] =    {combo = 256, id = xi.item.TEMPLE_CROWN},                        -- 12512, 56, 
-    [358] =    {combo = 358, id = xi.item.HEALERS_BRIAULT},                     -- 12640, 58, 
+    [160] =    {combo = 160, id = xi.item.FIGHTERS_LORICA},                     -- 12638, 60,
+    [154] =    {combo = 154, id = xi.item.FIGHTERS_MUFFLERS},                   -- 13961, 54,
+    [152] =    {combo = 152, id = xi.item.FIGHTERS_CALLIGAE},                   -- 14089, 52,
+    [158] =    {combo = 158, id = xi.item.FIGHTERS_CUISSES},                    -- 14214, 58,
+    [156] =    {combo = 156, id = xi.item.FIGHTERS_MASK},                       -- 12511, 56,
+    [258] =    {combo = 258, id = xi.item.TEMPLE_CYCLAS},                       -- 12639, 58,
+    [254] =    {combo = 254, id = xi.item.TEMPLE_GLOVES},                       -- 13962, 54,
+    [252] =    {combo = 252, id = xi.item.TEMPLE_GAITERS},                      -- 14090, 52,
+    [260] =    {combo = 260, id = xi.item.TEMPLE_HOSE},                         -- 14215, 60,
+    [256] =    {combo = 256, id = xi.item.TEMPLE_CROWN},                        -- 12512, 56,
+    [358] =    {combo = 358, id = xi.item.HEALERS_BRIAULT},                     -- 12640, 58,
     [360] =    {combo = 360, id = xi.item.HEALERS_MITTS},                       -- 13963, 60,
-    [352] =    {combo = 352, id = xi.item.HEALERS_DUCKBILLS},                   -- 14091, 52, 
+    [352] =    {combo = 352, id = xi.item.HEALERS_DUCKBILLS},                   -- 14091, 52,
     [356] =    {combo = 356, id = xi.item.HEALERS_PANTALOONS},                  -- 14216, 56,
     [354] =    {combo = 354, id = xi.item.HEALERS_CAP},                         -- 13855, 54,
     [458] =    {combo = 458, id = xi.item.WIZARDS_COAT},                        -- 12641, 58,
@@ -42,12 +42,12 @@ local afarmorTable = {
     [654] =    {combo = 654, id = xi.item.ROGUES_BONNET},                       -- 12514, 54,
     [760] =    {combo = 760, id = xi.item.GALLANT_SURCOAT},                     -- 12644, 60,
     [754] =    {combo = 754, id = xi.item.GALLANT_GAUNTLETS},                   -- 13967, 54,
-    [752] =    {combo = 752, id = xi.item.GALLANT_LEGGINGS},                    -- 14095, 52, 
+    [752] =    {combo = 752, id = xi.item.GALLANT_LEGGINGS},                    -- 14095, 52,
     [758] =    {combo = 758, id = xi.item.GALLANT_BREECHES},                    -- 14220, 58,
     [756] =    {combo = 756, id = xi.item.GALLANT_CORONET},                     -- 12515, 56,
     [858] =    {combo = 858, id = xi.item.CHAOS_CUIRASS},                       -- 12645, 58,
     [854] =    {combo = 854, id = xi.item.CHAOS_GAUNTLETS},                     -- 13968, 54,
-    [852] =    {combo = 852, id = xi.item.CHAOS_SOLLERETS},                     -- 14096, 52, 
+    [852] =    {combo = 852, id = xi.item.CHAOS_SOLLERETS},                     -- 14096, 52,
     [856] =    {combo = 856, id = xi.item.CHAOS_FLANCHARD},                     -- 14221, 56,
     [860] =    {combo = 860, id = xi.item.CHAOS_BURGEONET},                     -- 12516, 60,
     [958] =    {combo = 958, id = xi.item.BEAST_JACKCOAT},                      -- 12646, 58,
@@ -109,7 +109,7 @@ local afarmorTable = {
     [1966] =    {combo = 1966, id = xi.item.DANCERS_TOE_SHOES_M},                 -- 15746, 56,
     [1964] =    {combo = 1964, id = xi.item.DANCERS_TIARA_M},                     -- 16138, 54,
     [1962] =    {combo = 1962, id = xi.item.DANCERS_BANGLES_M},                   -- 15002, 52,
-    [1968] =    {combo = 1968, id = xi.item.DANCERS_TIGHTS_M},                    -- 15659, 58, 
+    [1968] =    {combo = 1968, id = xi.item.DANCERS_TIGHTS_M},                    -- 15659, 58,
     [1952] =    {combo = 1952, id = xi.item.DANCERS_BANGLES_F},                   -- 15003, 52,
     [1960] =    {combo = 1960, id = xi.item.DANCERS_CASAQUE_F},                   -- 14579, 60,
     [1956] =    {combo = 1956, id = xi.item.DANCERS_TOE_SHOES_F},                 -- 15747, 56,
@@ -124,7 +124,7 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
     local job = player:getMainJob()
     local jafl = job * 100 + levelMilestones
     local afRew = afarmorTable
- 
+
         for k, v in pairs(afarmorTable) do
             if job == 19 then
                 if gender == 1 and v.combo == jafl then
@@ -143,6 +143,13 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
                return
 		    end
 	    end
+
+    if
+        player:getSubLvl() <= player:getMainLvl() and
+        player:getSubLvl() < 50
+    then
+        player:setsLevel(player:getSubLvl() + 1)
+    end
 
     super(player)
 end)
