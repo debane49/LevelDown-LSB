@@ -110,8 +110,16 @@ local function doStatusBreath(target, player)
     return false
 end
 
+
 xi.pets.wyvern.onMobSpawn = function(mob)
+
     local master = mob:getMaster()
+    local skin = master:getCharVar('DrgSkin')
+        if skin == 0 then
+           return else
+                local pet = master:getPet()
+                      pet:setModelId(skin)
+        end
 
     if master:getMod(xi.mod.WYVERN_SUBJOB_TRAITS) > 0 then
         mob:addJobTraits(master:getSubJob(), master:getSubLvl())
