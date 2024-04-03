@@ -121,13 +121,6 @@ end
 xi.pets.wyvern.onMobSpawn = function(mob)
 
     local master = mob:getMaster()
-    local skin = master:getCharVar('DrgSkin')
-        if skin == 0 then
-           return else
-                local pet = master:getPet()
-                      pet:setModelId(skin)
-        end
-
     if master:getMod(xi.mod.WYVERN_SUBJOB_TRAITS) > 0 then
         mob:addJobTraits(master:getSubJob(), master:getSubLvl())
     end
@@ -189,6 +182,14 @@ xi.pets.wyvern.onMobSpawn = function(mob)
     master:addListener('EXPERIENCE_POINTS', 'PET_WYVERN_EXP', function(playerObj, mobObj, exp)
         xi.job_utils.dragoon.addWyvernExp(playerObj, exp)
     end)
+
+
+    local skin = master:getCharVar('DrgSkin')
+        if skin == 0 then
+           return else
+                local pet = master:getPet()
+                      pet:setModelId(skin)
+        end
 end
 
 local function removeWyvernLevels(mob)
