@@ -67,22 +67,22 @@ commandObj.onTrigger = function(player, tier)
         player:setCharVar('Buff', 1)
         buffOn(player)
         player:addStatusEffect(xi.effect.COMMITMENT, 40, 0, 0, 0, 30000)
-        player:PrintToPlayer('Buff enabled.')
+        player:printToPlayer('Buff enabled.')
     elseif mode == 0 and state == 0 and
         player:getMainLvl() <= 99   then
         player:setCharVar('Buff', 1)
         buffOn(player)
-        player:PrintToPlayer('Buff enabled.')
+        player:printToPlayer('Buff enabled.')
     elseif mode == 0 and state == 1 then
         player:setCharVar('Buff', 0)
         buffOff(player)
-        player:PrintToPlayer('Buff disabled.')
+        player:printToPlayer('Buff disabled.')
     elseif mode == 0 and state == 1 and
         player:getMainLvl() == 99 then
         player:setCharVar('Buff', 0)
         buffOff(player)
         player:delStatusEffect(xi.effect.COMMITMENT)
-        player:PrintToPlayer('Buff disabled.')
+        player:printToPlayer('Buff disabled.')
 
     end
 end
