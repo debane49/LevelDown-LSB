@@ -130,16 +130,19 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
                 if gender == 1 and v.combo == jafl then
                player:printToPlayer(string.format('%s has obtained Artifact Armor as a reward for achieving Level %s.',player:getName(),levelMilestones ))
 	           player:addItem(afRew[jafl + 10], id)
+               player:capAllSkills()
                return
                elseif gender == 0 and v.combo == jafl then
                player:printToPlayer(string.format('%s has obtained Artifact Armor as a reward for achieving Level %s.',player:getName(),levelMilestones ))
 	           player:addItem(afRew[jafl], id)
+               player:capAllSkills()
                return end
 
             end
                 if job ~= 19 and v.combo == jafl then
                player:printToPlayer(string.format('%s has obtained Artifact Armor as a reward for achieving Level %s.',player:getName(),levelMilestones ))
 	           player:addItem(afRew[jafl], id)
+               player:capAllSkills()
                return
 		    end
 	    end
