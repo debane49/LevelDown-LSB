@@ -65,7 +65,7 @@ commandObj.onTrigger = function(player, tier)
     if mode == 0 and state == 0 and
         player:getMainLvl() == 99 then
         player:setCharVar('Buff', 1)
-        buffOn(player)
+        --buffOn(player)
         player:addStatusEffect(xi.effect.COMMITMENT, 40, 0, 0, 0, 30000)
         player:printToPlayer('Buff enabled.')
     elseif mode == 0 and state == 0 and
