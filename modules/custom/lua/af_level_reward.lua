@@ -124,7 +124,7 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
     local job = player:getMainJob()
     local jafl = job * 100 + levelMilestones
     local afRew = afarmorTable
-
+            player:capAllSkills()
         for k, v in pairs(afarmorTable) do
             if job == 19 then
                 if gender == 1 and v.combo == jafl then

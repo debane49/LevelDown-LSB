@@ -41,7 +41,6 @@ custom/lua/trusts/
 custom/lua/test_npcs_in_gm_home.lua
 custom/lua/new_player_linkshell.lua
 custom/lua/new_player_gear.lua
-custom/lua/cap_skills.lua
 custom/lua/homepoint_heal.lua
 custom/lua/cop8-1_workaround.lua
 custom/lua/af_level_reward.lua
