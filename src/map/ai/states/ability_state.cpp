@@ -96,6 +96,7 @@ void CAbilityState::ApplyEnmity()
         else if (PTarget->allegiance == m_PEntity->allegiance)
         {
             battleutils::GenerateInRangeEnmity(m_PEntity, m_PAbility->getCE(), m_PAbility->getVE());
+        }
     }
 }
 
