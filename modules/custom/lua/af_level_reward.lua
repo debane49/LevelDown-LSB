@@ -124,7 +124,18 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
     local job = player:getMainJob()
     local jafl = job * 100 + levelMilestones
     local afRew = afarmorTable
+    local mlvl = player:getJobLevel(job)
+    local sbjob = player:getSubJob()
+    local slvl = player:getJobLevel(sbjob)
             player:capAllSkills()
+    if slvl < 50 then
+        if slvl < mlvl then
+            if slvl >= mlvl - 5 then
+               player:setsLevel(slvl + 1)
+               player:printToPlayer(string.format('%s attains sublevel %s', player:getName() , slvl +1),xi.msg.channel.SYSTEM_3)
+            end
+        end
+    end
         for k, v in pairs(afarmorTable) do
             if job == 19 then
                 if gender == 1 and v.combo == jafl + 10 then
@@ -146,6 +157,9 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
                return
 		    end
 	    end
+
+
+
 
     super(player)
 end)
