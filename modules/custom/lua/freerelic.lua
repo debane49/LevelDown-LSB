@@ -257,6 +257,7 @@ local freeaf =
 
 m:addOverride('xi.zones.Celennia_Memorial_Library.npcs.Reja_Ygridhi.onTrigger', function(player, npc, csid, option)
     if player:getRank(player:getNation()) == 10 and
+       player:getCharVar('NaMiSkipComp') == 0 and
        player:getCharVar('FreeRelic') ~= 2 then
        player:setCharVar('FreeRelic', 1)
        player:printToPlayer('Congradulations on reaching Rank 10, as a reward you may choose one', 0, npc:getPacketName())

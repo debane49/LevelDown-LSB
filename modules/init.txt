@@ -72,3 +72,4 @@ custom/lua/Sanraku_Update.lua
 custom/lua/Alexan_drop.lua
 custom/lua/the_colosseum.lua
 custom/lua/petskin.lua
+custom/lua/skiprankmission.lua
