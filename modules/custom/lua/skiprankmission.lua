@@ -326,7 +326,7 @@ m:addOverride('xi.zones.Windurst_Walls.Zone.onInitialize', function(zone)
         if player:getCharVar('NaMiSkipy') == 0 and
            player:getCharVar('NaMiSkipComp') == 0 then
              player:printToPlayer('So... you want to know how to skip dont ya?', 0, npc:getPacketName())
-             player:printToPlayer('Bring me a Windurstian tea and i will tell you whom might know?', 0, npc:getPacketName())
+             player:printToPlayer('Bring me a Windurstian tea leave and i will tell you whom might know?', 0, npc:getPacketName())
         elseif player:getCharVar('NaMiSkipy') == 1 and
                player:getCharVar('NaMiSkip') == 0 and
                player:getCharVar('NaMiSkipper') == 0 then
