@@ -1494,10 +1494,12 @@ xi.regime.checkRegime = function(player, mob, regimeId, index, regimeType)
         player:setCharVar('[regime]lastReward', vanadielEpoch)
     end
 
+    local exprate = player:getCharVar('[regime]repeatxpb') / 100
+    local expfact = reward * xi.settings.main.BOOK_EXP_RATE * exprate
     -- Award EXP for page completion
     -- Player must be equal or greater than REGIME_REWARD_THRESHOLD levels below the minimum suggested level
     if player:getMainLvl() >= math.max(1, page[5] - xi.settings.main.REGIME_REWARD_THRESHOLD) then
-        player:addExp(reward * xi.settings.main.BOOK_EXP_RATE)
+       player:addExp(reward * xi.settings.main.BOOK_EXP_RATE + expfact)
     end
 
     -- repeating regimes
@@ -1507,7 +1509,11 @@ xi.regime.checkRegime = function(player, mob, regimeId, index, regimeType)
         end
 
         player:messageBasic(xi.msg.basic.FOV_REGIME_BEGINS_ANEW)
+        if player:getCharVar('[regime]repeatxpb') < 200 then 
+           player:setCharVar('[regime]repeatxpb', exprate +4)
+        end
     else
         xi.regime.clearRegimeVars(player)
+        player:setCharVar('[regime]repeatxpb', 0)
     end
 end
