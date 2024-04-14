@@ -33,8 +33,8 @@ player:printToPlayer('!ah - Allows you to open up the AH anywhere in the world',
 player:printToPlayer('!posfix - Fixes a characters pos who is offline but shows to be online', 3, xi.msg.channel.system_3)
 player:printToPlayer('!resetme - Forces your character to rezone and return to same pos', 3, xi.msg.channel.system_3)
 player:printToPlayer('!oldccfix - Adds all valid spells EXCEPT TRUSTS to the given target. If no target then to the current player.', 3, xi.msg.channel.system_3)
-
-
+player:printToPlayer('!nmhuntone # - Displays the NMHunt kill count per tier, replace # with tier 1 - 3', 3, xi.msg.channel.system_3)
+player:printToPlayer('!nmhunttwo # - Displays the NMHunt kill count per tier, replace # with tier 4 - 6', 3, xi.msg.channel.system_3)
 
 end
 
