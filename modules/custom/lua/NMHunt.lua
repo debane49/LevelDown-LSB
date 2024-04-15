@@ -132,9 +132,9 @@ local NMHuntone  =
 {'Igor', 23, 145, '00002d0400000000000000000000000000000000', xi.zone.RANGUEMONT_PASS, 125.987, 3.561, -57.222, 127, 'Ranguemont_Pass'}, 
 {'Ithi', 46, 100, '0000680b00000000000000000000000000000000', xi.zone.WEST_SARUTABARUTA, -348.723, 2.397, -435.091, 13, 'West_Sarutabaruta'}, 
 {'Jhaan', 76, 136, '00004f0500000000000000000000000000000000', xi.zone.GHELSBA_OUTPOST, -190, -10, 50, 96, 'Ghelsba_Outpost'}, 
-{'Keara', 3, 203, '00001d0300000000000000000000000000000000', xi.zone.EAST_RONFAURE, -369.617, -51.133, 384.805, 95, 'East_Ronfaure'}, 
+{'Keara', 3, 203, '00001d0300000000000000000000000000000000', xi.zone.EAST_RONFAURE, 318.9226, -20.000, -157.6521, 95, 'East_Ronfaure'}, 
 {'Kyla', 53, 121, '0000b00100000000000000000000000000000000', xi.zone.INNER_HORUTOTO_RUINS, -302.031, -0.054, -96.892, 96, 'Inner_Horutoto_Ruins'}, 
-{'Lavatius', 53, 194, '0000180100000000000000000000000000000000', xi.zone.YUGHOTT_GROTTO, -194.238, -1.799, -89.693, 127, 'Yughott_Grotto'}, 
+{'Lavatius', 53, 194, '0000180100000000000000000000000000000000', xi.zone.YUGHOTT_GROTTO, 418.2748, -40.2850, 95.4236, 127, 'Yughott_Grotto'}, 
 {'Lunarex', 44, 97, '0000dc0700000000000000000000000000000000', xi.zone.EAST_SARUTABARUTA, -238.093, -22.999, 656.609, 126, 'East_Sarutabaruta'}, 
 {'Malumka', 38, 98, '0000bc0100000000000000000000000000000000', xi.zone.LA_THEINE_PLATEAU, -832.536, 15.778, 478.473, 127, 'La_Theine_Plateau'}, 
 {'Misi', 44, 110, '0000f90100000000000000000000000000000000', xi.zone.NORTH_GUSTABERG, 234.104, -40.332, 462.288, 127, 'North_Gustaberg'}, 
@@ -144,7 +144,7 @@ local NMHuntone  =
 {'Olwyn', 17, 143, '0000870200000000000000000000000000000000', xi.zone.KING_RANPERRES_TOMB, -206.69, 5.973, 14.909, 127, 'King_Ranperres_Tomb'}, 
 {'Orym ', 28, 116, '00008c0100000000000000000000000000000000', xi.zone.KONSCHTAT_HIGHLANDS, 176, 0, -436, 14, 'Konschtat_Highlands'}, 
 {'Pondra', 31, 96, '0000e50200000000000000000000000000000000', xi.zone.GIDDEUS, -58, -1, -448, 13, 'Giddeus'}, 
-{'Ragna', 37, 108, '0000540100000000000000000000000000000000', xi.zone.SOUTH_GUSTABERG, -81.99, 1.699, 220.305, 101, 'South_Gustaberg'}, 
+{'Ragna', 37, 108, '0000540100000000000000000000000000000000', xi.zone.SOUTH_GUSTABERG, -71.9601, -0.0442, -199.6062, 101, 'South_Gustaberg'}, 
 {'Rennyn', 36, 100, '00000c0100000000000000000000000000000000', xi.zone.PALBOROUGH_MINES, 14, -31, -94, 16, 'Palborough_Mines'}, 
 {'Sabir ', 1958, 56, '0600ca0700000000000000000000000000000000', xi.zone.TAHRONGI_CANYON, -483.435, -40.169, -128.289, 191, 'Tahrongi_Canyon'}, 
 {'Sapphire', 7, 67, '0100010100102320233023402350006000700000', xi.zone.GHELSBA_OUTPOST, -188, -10, 45, 127, 'Ghelsba_Outpost'}, 
@@ -154,7 +154,7 @@ local NMHuntone  =
 {'Sunshine', 14, 145, '00000a0000000000000000000000000000000000', xi.zone.WEST_RONFAURE, -477.675, -20.59, -207.093, 48, 'West_Ronfaure'}, 
 {'Tanulia', 29, 101, '0000980100000000000000000000000000000000', xi.zone.EAST_SARUTABARUTA, 112.816, -4.761, -40.004, 6, 'East_Sarutabaruta'}, 
 {'Tisnip', 72, 104, '0000840100000000000000000000000000000000', xi.zone.EAST_SARUTABARUTA, -359.996, -0.336, -156.495, 127, 'East_Sarutabaruta'}, 
-{'Turvass', 70, 137, '0000fa0700000000000000000000000000000000', xi.zone.WEST_SARUTABARUTA, -356.598, -17.427, 312.453, 127, 'West_Sarutabaruta'}, 
+{'Turvass', 70, 137, '0000fa0700000000000000000000000000000000', xi.zone.WEST_SARUTABARUTA, 97.6485, -0.2714, -73.9662, 77, 'West_Sarutabaruta'}, 
 {'Vaegon ', 19, 122, '00009c0100000000000000000000000000000000', xi.zone.TAHRONGI_CANYON, -513, 8, 318, 50, 'Tahrongi_Canyon'}, 
 {'Vinelle', 33, 107, '0000480100000000000000000000000000000000', xi.zone.KONSCHTAT_HIGHLANDS, 160, 24, 121, 0, 'Konschtat_Highlands'}, 
 {'Wilkass', 7, 140, '0000ea0300000000000000000000000000000000', xi.zone.GIDDEUS, -176.625, -0.776, 174.952, 127, 'Giddeus'}, 
@@ -162,10 +162,10 @@ local NMHuntone  =
 local NMHunttwo  = 
 {
 {'Akibrus', 45, 103, '0000c00100000000000000000000000000000000', xi.zone.LA_THEINE_PLATEAU, -819.312, 13.927, 491.376, 118, 'La_Theine_Plateau'}, 
-{'Amerstal', 2, 21, '0000730400000000000000000000000000000000', xi.zone.PASHHOW_MARSHLANDS, -492.691, 23.89, -439.952, 127, 'Pashhow_Marshlands'}, 
+{'Amerstal', 2, 21, '0000730400000000000000000000000000000000', xi.zone.PASHHOW_MARSHLANDS, 296.9673, 25.000, 391.7409, 103, 'Pashhow_Marshlands'}, 
 {'Asralyn', 36, 106, '0000950200000000000000000000000000000000', xi.zone.LABYRINTH_OF_ONZOZO, 129, 15, 215, 49, 'Labyrinth_of_Onzozo'}, 
-{'Ayldrad', 22, 143, '00008b0200000000000000000000000000000000', xi.zone.VALKURM_DUNES, -795.41, -4.2, 77.382, 22, 'Valkurm_Dunes'}, 
-{'Bellesta', 39, 118, '00005c0200000000000000000000000000000000', xi.zone.BEADEAUX, -184, 1, -136, 127, 'Beadeaux'}, 
+{'Ayldrad', 22, 143, '00008b0200000000000000000000000000000000', xi.zone.VALKURM_DUNES, 648.1425, 0.1967, -21.0683, 22, 'Valkurm_Dunes'}, 
+{'Bellesta', 39, 118, '00005c0200000000000000000000000000000000', xi.zone.BEADEAUX, 237.0848, -3.2500, -3.0019, 127, 'Beadeaux'}, 
 {'Bonnwynn', 12, 147, '00008c0200000000000000000000000000000000', xi.zone.ORDELLES_CAVES, -84.74, 1.499, 613.137, 152, 'Ordelles_Caves'}, 
 {'Brobek', 3, 21, '0000610400000000000000000000000000000000', xi.zone.LOWER_DELKFUTTS_TOWER, 548.553, 15.591, 34.062, 127, 'Lower_Delkfutts_Tower'}, 
 {'Chalia', 8, 1, '0000410500000000000000000000000000000000', xi.zone.CARPENTERS_LANDING, 120.383, -5.733, -390.01, 43, 'Carpenters_Landing'}, 
@@ -176,7 +176,7 @@ local NMHunttwo  =
 {'Dray', 6, 110, '00008c0100000000000000000000000000000000', xi.zone.YUHTUNGA_JUNGLE, -626.739, -0.76, 27.452, 57, 'Yuhtunga_Jungle'}, 
 {'Eiki', 1, 146, '0000a40100000000000000000000000000000000', xi.zone.GUSGEN_MINES, -90, -24, 339, 75, 'Gusgen_Mines'}, 
 {'Elwin', 54, 103, '0000890200000000000000000000000000000000', xi.zone.ROLANBERRY_FIELDS, -406.194, -7.875, -249.45, 218, 'Rolanberry_Fields'}, 
-{'Fabien', 38, 103, '0000fe0100000000000000000000000000000000', xi.zone.QUFIM_ISLAND, -248, -19, 376, 127, 'Qufim_Island'}, 
+{'Fabien', 38, 103, '0000fe0100000000000000000000000000000000', xi.zone.QUFIM_ISLAND, -291.8047, -20.2489, 51.3799, 127, 'Qufim_Island'}, 
 {'Flammedra', 58, 109, '0000850200000000000000000000000000000000', xi.zone.LOWER_DELKFUTTS_TOWER, 341.809, -0.5, 8.751, 69, 'Lower_Delkfutts_Tower'}, 
 {'Gaemon', 24, 146, '0000a00100000000000000000000000000000000', xi.zone.MAZE_OF_SHAKHRAMI, -100.6, -27.98, -206.67, 209, 'Maze_of_Shakhrami'}, 
 {'Gembelle', 60, 103, '00008f0200000000000000000000000000000000', xi.zone.BUBURIMU_PENINSULA, -81.741, 19.635, -325.773, 94, 'Buburimu_Peninsula'}, 
@@ -189,7 +189,7 @@ local NMHunttwo  =
 {'Kymil', 26, 4, '00000d0100000000000000000000000000000000', xi.zone.LABYRINTH_OF_ONZOZO, -124.003, -0.189, 126.307, 56, 'Labyrinth_of_Onzozo'}, 
 {'Lavinia', 2, 46, '00005d0100000000000000000000000000000000', xi.zone.KORROLOKA_TUNNEL, -383.629, -5, 72.13, 129, 'Korroloka_Tunnel'}, 
 {'Lymseia ', 38, 198, '0000800100000000000000000000000000000000', xi.zone.JUGNER_FOREST, -333.937, -1.242, -118.985, 139, 'Jugner_Forest'}, 
-{'Merlara', 19, 190, '0000700100000000000000000000000000000000', xi.zone.PASHHOW_MARSHLANDS, -429.953, 24.5, -305.45, 127, 'Pashhow_Marshlands'}, 
+{'Merlara', 19, 190, '0000700100000000000000000000000000000000', xi.zone.PASHHOW_MARSHLANDS, -148.0522, 25.000, 411.3506, 158, 'Pashhow_Marshlands'}, 
 {'Misma', 67, 104, '0000750200000000000000000000000000000000', xi.zone.PASHHOW_MARSHLANDS, -488.107, 25.012, -440.112, 127, 'Pashhow_Marshlands'}, 
 {'Mystique', 54, 104, '0000980100000000000000000000000000000000', xi.zone.YUHTUNGA_JUNGLE, -423.903, 16.796, -325.448, 29, 'Yuhtunga_Jungle'}, 
 {'Nesterin ', 18, 149, '0000640200000000000000000000000000000000', xi.zone.BIBIKI_BAY, 452.358, -20.485, 789.918, 139, 'Bibiki_Bay'}, 
@@ -217,7 +217,7 @@ local NMHuntthree  =
 {'Akkar', 8, 152, '00004f0200000000000000000000000000000000', xi.zone.QUICKSAND_CAVES, -938.853, 16.716, -350.715, 38, 'Quicksand_Caves'}, 
 {'Angor', 31, 111, '0000b00100000000000000000000000000000000', xi.zone.GARLAIGE_CITADEL, -361.299, 18.5, 283.13, 19, 'Garlaige_Citadel'}, 
 {'Astra', 10, 179, '05009c0700000000000000000000000000000000', xi.zone.YUHTUNGA_JUNGLE, -749.922, -9.201, -572.935, 4, 'Yuhtunga_Jungle'}, 
-{'Azariah', 1, 10, '0000790400000000000000000000000000000000', xi.zone.BEHEMOTHS_DOMINION, 212, 3, -77, 93, 'Behemoths_Dominion'}, 
+{'Azariah', 1, 10, '0000790400000000000000000000000000000000', xi.zone.BEHEMOTHS_DOMINION, 203.4112, 4.000, -85.3405, 93, 'Behemoths_Dominion'}, 
 {'Belstram', 42, 102, '0000580100000000000000000000000000000000', xi.zone.MISAREAUX_COAST, -235.987, -31.895, 145.642, 121, 'Misareaux_Coast'}, 
 {'Bragi', 70, 24, '0000760200000000000000000000000000000000', xi.zone.QUICKSAND_CAVES, -293.956, 1.475, 349.329, 47, 'Quicksand_Caves'}, 
 {'Brulin', 2, 165, '0000160300000000000000000000000000000000', xi.zone.THE_BOYAHDA_TREE, -18, -19.2, -176.4, 0, 'The_Boyahda_Tree'}, 
@@ -241,14 +241,14 @@ local NMHuntthree  =
 {'Killin', 14, 13, '0000170300000000000000000000000000000000', xi.zone.KUFTAL_TUNNEL, 119, -0.01, 38, 127, 'Kuftal_Tunnel'}, 
 {'Kyra', 13, 13, '0000180000000000000000000000000000000000', xi.zone.SEA_SERPENT_GROTTO, 10.799, -0.665, 102.446, 127, 'Sea_Serpent_Grotto'}, 
 {'Lija', 59, 114, '0000040500000000000000000000000000000000', xi.zone.LABYRINTH_OF_ONZOZO, -2.466, 0.194, -133.18, 127, 'Labyrinth_of_Onzozo'}, 
-{'Lyra', 49, 121, '0000f00100000000000000000000000000000000', xi.zone.YUHTUNGA_JUNGLE, -384, 17, -390, 127, 'Yuhtunga_Jungle'}, 
+{'Lyra', 49, 121, '0000f00100000000000000000000000000000000', xi.zone.YHOATOR_JUNGLE, 298.9530, -1.1000, -447.6169, 205, 'Yhoator_Jungle'}, 
 {'Midnight', 71, 24, '00007d0200000000000000000000000000000000', xi.zone.LUFAISE_MEADOWS, -374.644, -16.575, 112.638, 10, 'Lufaise_Meadows'}, 
-{'Mistmael', 19, 123, '0000a00100000000000000000000000000000000', xi.zone.YUHTUNGA_JUNGLE, -227.735, 0.506, -359.595, 95, 'Yuhtunga_Jungle'}, 
+{'Mistmael', 19, 123, '0000a00100000000000000000000000000000000', xi.zone.YHOATOR_JUNGLE, 217.5260, 0.5234, -208.9858, 179, 'Yhoator_Jungle'}, 
 {'Nalra', 1, 9, '0000310100000000000000000000000000000000', xi.zone.RANGUEMONT_PASS, -140.325, -43.994, 152.523, 86, 'Ranguemont_Pass'}, 
 {'Night Moon', 1, 211, '00001b0300000000000000000000000000000000', xi.zone.TORAIMARAI_CANAL, 14.972, 15.512, -97.315, 65, 'Toraimarai_Canal'}, 
 {'Norok', 42, 120, '0000e50100000000000000000000000000000000', xi.zone.SEA_SERPENT_GROTTO, -295.103, 50.746, -284.661, 146, 'Sea_Serpent_Grotto'}, 
 {'Onnyx', 10, 3, '0000600100000000000000000000000000000000', xi.zone.BEHEMOTHS_DOMINION, -70.571, -4.375, -85.672, 53, 'Behemoths_Dominion'}, 
-{'Peregrine', 36, 146, '00003d0100000000000000000000000000000000', xi.zone.YUHTUNGA_JUNGLE, -432.804, -0.436, -235.467, 127, 'Yuhtunga_Jungle'}, 
+{'Peregrine', 36, 146, '00003d0100000000000000000000000000000000', xi.zone.YHOATOR_JUNGLE, 8.0049, 0.4623, -370.2314, 84, 'Yhoator_Jungle'}, 
 {'Prodos', 16, 29, '0000220100000000000000000000000000000000', xi.zone.TORAIMARAI_CANAL, -94.759, 15.5, 101.384, 192, 'Toraimarai_Canal'}, 
 {'Rainbow', 5, 60, '05006b0700000000000000000000000000000000', xi.zone.LABYRINTH_OF_ONZOZO, -180.89, 9.336, -76.762, 127, 'Labyrinth_of_Onzozo'}, 
 {'Rhenalyrr', 35, 157, '00005e0400000000000000000000000000000000', xi.zone.ROMAEVE, -109, -8.5, 39, 185, 'RoMaeve'}, 
@@ -261,7 +261,7 @@ local NMHuntthree  =
 {'Tendris', 46, 112, '0000eb0200000000000000000000000000000000', xi.zone.MISAREAUX_COAST, -89.58, 8.19, -148.69, 181, 'Misareaux_Coast'}, 
 {'Tiznys', 61, 206, '0000310900000000000000000000000000000000', xi.zone.THE_BOYAHDA_TREE, 14.206, 5.548, 109.486, 122, 'The_Boyahda_Tree'}, 
 {'Twinkle', 1, 64, '00000a0700000000000000000000000000000000', xi.zone.EASTERN_ALTEPA_DESERT, -307, 8, -206, 127, 'Eastern_Altepa_Desert'}, 
-{'Vasha', 35, 28, '0500fa0300000000000000000000000000000000', xi.zone.YUHTUNGA_JUNGLE, 491, 20, 303, 85, 'Yuhtunga_Jungle'}, 
+{'Vasha', 35, 28, '0500fa0300000000000000000000000000000000', xi.zone.YHOATOR_JUNGLE, -238.2320, 0.5261, -133.0550, 89, 'Yhoator_Jungle'}, 
 {'Vixen', 7, 58, '0000bb0600000000000000000000000000000000', xi.zone.BEHEMOTHS_DOMINION, -279.065, -20.484, -0.456, 18, 'Behemoths_Dominion'}, 
 {'Wispmaral', 1, 165, '0000150300000000000000000000000000000000', xi.zone.MISAREAUX_COAST, -57.008, -15.669, 39.833, 135, 'Misareaux_Coast'}, 
 }
@@ -305,12 +305,12 @@ local NMHuntfour  =
 {'Pyrder ', 34, 139, '0000580100000000000000000000000000000000', xi.zone.CAEDARVA_MIRE, -288.9, 7.326, -480.29, 177, 'Caedarva_Mire'}, 
 {'Rammir', 36, 204, '0000280200000000000000000000000000000000', xi.zone.ARRAPAGO_REMNANTS, -384.7, -1.5, -619.19, 206, 'Arrapago_Remnants'}, 
 {'Rijjat', 21, 150, '00007a0200000000000000000000000000000000', xi.zone.ARRAPAGO_REMNANTS, -246.4, -0.093, 171.893, 51, 'Arrapago_Remnants'}, 
-{'Salvor', 31, 159, '0000de0400000000000000000000000000000000', xi.zone.WAJAOM_WOODLANDS, -640.692, -10.5, -133.755, 237, 'Wajaom_Woodlands'}, 
+{'Salvor', 40, 74, '00002d0100000000000000000000000000000000', xi.zone.WAJAOM_WOODLANDS, -640.692, -10.5, -133.755, 237, 'Wajaom_Woodlands'}, 
 {'Séverin', 37, 204, '0000260200000000000000000000000000000000', xi.zone.CAPE_TERIGGAN, 45.6, -0.4, 176, 127, 'Cape_Teriggan'}, 
 {'Silvyr ', 1, 6, '00001b0100000000000000000000000000000000', xi.zone.THE_BOYAHDA_TREE, -85.32, 8.734, 80.22, 57, 'The_Boyahda_Tree'}, 
 {'Soldelle', 43, 188, '00003e0400000000000000000000000000000000', xi.zone.CASTLE_OZTROJA, -223, 1, 119, 127, 'Castle_Oztroja'}, 
 {'Sterling', 6, 144, '0000870200000000000000000000000000000000', xi.zone.WAJAOM_WOODLANDS, 577.1, -26.898, 351.106, 228, 'Wajaom_Woodlands'}, 
-{'Syfyn', 6, 38, '0000360100000000000000000000000000000000', xi.zone.CRAWLERS_NEST, 139.119, -32.817, -23.193, 127, 'Crawlers_Nest'}, 
+{'Syfyn', 6, 38, '0000360100000000000000000000000000000000', xi.zone.CRAWLERS_NEST, 62.0737, -0.5164, 93.8409, 198, 'Crawlers_Nest'}, 
 {'Thalia', 26, 135, '0000220400000000000000000000000000000000', xi.zone.QUICKSAND_CAVES, 597.529, 8.72, -542.094, 5, 'Quicksand_Caves'}, 
 {'Toki', 17, 77, '0000710100000000000000000000000000000000', xi.zone.BIBIKI_BAY, 89.097, -46.465, 918.895, 66, 'Bibiki_Bay'}, 
 {'Uldreiyn', 5, 13, '00004b0500000000000000000000000000000000', xi.zone.QUICKSAND_CAVES, -553.761, 0.338, 736.461, 78, 'Quicksand_Caves'}, 
@@ -444,8 +444,9 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         groupZoneId  =  entry[3],
 
         onMobSpawn  =  function(mob,   playerArg,   optParams)
-            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   45)
+            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   15)
             mob:setMobMod(xi.mobMod.CHECK_AS_NM,   1)
+            mob:setMobMod(xi.mobMod.NO_AGGRO, 1)
         end,  
 
         onMobFight  =  function(mob, target)
@@ -456,6 +457,10 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         local mobName  =  mob:getName(mob)
         local varName  =  '[NMHunt]DE_' .. entry[1]
         local killcount  =  playerArg:getCharVar('[NMHunt]DE_' .. entry[1])
+        local totalkill = playerArg:getCharVar('[NMHunt]TOneKills')
+        if killcount == 0 then
+        playerArg:setCharVar('[NMHunt]TOneKills', totalkill + 1)
+        end
         playerArg:setCharVar(varName,   killcount + 1)
         npcUtil.giveItem(playerArg, {{4049, 1}})
         end,  
@@ -484,8 +489,9 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         groupZoneId  =  entry[3],
 
         onMobSpawn  =  function(mob,   playerArg,   optParams)
-            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   45)
+            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   15)
             mob:setMobMod(xi.mobMod.CHECK_AS_NM,   1)
+            mob:setMobMod(xi.mobMod.NO_AGGRO, 1)
         end,  
 
         onMobFight  =  function(mob, target)
@@ -496,6 +502,10 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         local mobName  =  mob:getName(mob)
         local varName  =  '[NMHunt]DE_' .. entry[1]
         local killcount  =  playerArg:getCharVar('[NMHunt]DE_' .. entry[1])
+        local totalkill = playerArg:getCharVar('[NMHunt]TTwoKills')
+        if killcount == 0 then
+        playerArg:setCharVar('[NMHunt]TTwoKills', totalkill + 1)
+        end
         playerArg:setCharVar(varName,   killcount + 1)
         npcUtil.giveItem(playerArg, {{4049, math.random(1,2)}})
         end,  
@@ -524,8 +534,9 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         groupZoneId  =  entry[3],
 
         onMobSpawn  =  function(mob,   playerArg,   optParams)
-            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   45)
+            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   15)
             mob:setMobMod(xi.mobMod.CHECK_AS_NM,   1)
+            mob:setMobMod(xi.mobMod.NO_AGGRO, 1)
         end,  
 
         onMobFight  =  function(mob, target)
@@ -536,6 +547,10 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         local mobName  =  mob:getName(mob)
         local varName  =  '[NMHunt]DE_' .. entry[1]
         local killcount  =  playerArg:getCharVar('[NMHunt]DE_' .. entry[1])
+        local totalkill = playerArg:getCharVar('[NMHunt]TThreeKills')
+        if killcount == 0 then
+        playerArg:setCharVar('[NMHunt]TThreeoKills', totalkill + 1)
+        end
         playerArg:setCharVar(varName,   killcount + 1)
         npcUtil.giveItem(playerArg, {{4049, math.random(1,4)}})
 
@@ -565,8 +580,9 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         groupZoneId  =  entry[3],
 
         onMobSpawn  =  function(mob,   playerArg,   optParams)
-            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   45)
+            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   15)
             mob:setMobMod(xi.mobMod.CHECK_AS_NM,   1)
+            mob:setMobMod(xi.mobMod.NO_AGGRO, 1)
         end,  
 
         onMobFight  =  function(mob, target)
@@ -577,6 +593,10 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         local mobName  =  mob:getName(mob)
         local varName  =  '[NMHunt]DE_' .. entry[1]
         local killcount  =  playerArg:getCharVar('[NMHunt]DE_' .. entry[1])
+        local totalkill = playerArg:getCharVar('[NMHunt]TFourKills')
+        if killcount == 0 then
+        playerArg:setCharVar('[NMHunt]TFourKills', totalkill + 1)
+        end
         playerArg:setCharVar(varName,   killcount + 1)
         npcUtil.giveItem(playerArg, {{4049, math.random(2,6)}})
         end,  
@@ -605,8 +625,9 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         groupZoneId  =  entry[3],
 
         onMobSpawn  =  function(mob,   playerArg,   optParams)
-            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   45)
+            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   15)
             mob:setMobMod(xi.mobMod.CHECK_AS_NM,   1)
+            mob:setMobMod(xi.mobMod.NO_AGGRO, 1)
         end,  
 
         onMobFight  =  function(mob, target)
@@ -617,6 +638,10 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         local mobName  =  mob:getName(mob)
         local varName  =  '[NMHunt]DE_' .. entry[1]
         local killcount  =  playerArg:getCharVar('[NMHunt]DE_' .. entry[1])
+        local totalkill = playerArg:getCharVar('[NMHunt]TFiveKills')
+        if killcount == 0 then
+        playerArg:setCharVar('[NMHunt]TFiveKills', totalkill + 1)
+        end
         playerArg:setCharVar(varName,   killcount + 1)
         npcUtil.giveItem(playerArg, {{4049, math.random(4,8)}})
         end,  
@@ -645,8 +670,9 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         groupZoneId  =  entry[3],
 
         onMobSpawn  =  function(mob,   playerArg,   optParams)
-            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   45)
+            mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   15)
             mob:setMobMod(xi.mobMod.CHECK_AS_NM,   1)
+            mob:setMobMod(xi.mobMod.NO_AGGRO, 1)
         end,  
 
         onMobFight  =  function(mob, target)
@@ -657,6 +683,10 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         local mobName  =  mob:getName(mob)
         local varName  =  '[NMHunt]DE_' .. entry[1]
         local killcount  =  playerArg:getCharVar('[NMHunt]DE_' .. entry[1])
+        local totalkill = playerArg:getCharVar('[NMHunt]TSixKills')
+        if killcount == 0 then
+        playerArg:setCharVar('[NMHunt]TSixKills', totalkill + 1)
+        end
         playerArg:setCharVar(varName,   killcount + 1)
         npcUtil.giveItem(playerArg, {{4049, math.random(6,10)}})
         end,  
