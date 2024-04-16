@@ -74,6 +74,7 @@ custom/lua/the_colosseum.lua
 custom/lua/petskin.lua
 custom/lua/skiprankmission.lua
 custom/lua/NMHunt.lua
-
+custom/lua/NMHuntNPC.lua
+custom/lua/reapplybuff.lua
 
 
