@@ -36,37 +36,45 @@ ensureTable('xi.zones.Aht_Urhgan_Whitegate.npcs.Gate_Chocobo_Circuit')
 require("modules/module_utils")
 -----------------------------------
 
-    npc =
-    {
-                PORTALS      =
-        {               --   West X     Y    South Z    East X   Y    North Z
-            { coords = {    -511,      -1,    -359,      -507,   3,    -355 }, event = 249          }, -- TA1  Sandy to GCS
-            { coords = {    -361,      -4.5,  -460,      -357,   0,    -456 }, event = 250          }, -- TA2  GSC to Sandy
-            { coords = {    -487,      -1,    -535,      -483,   3,    -531 }, event = 251          }, -- TA3  Bas to GCS 
-            { coords = {    -362,      -4.5,  -504,      -358,   0,    -500 }, event = 252          }, -- TA4  GCS to Bas 
-            { coords = {    -152,      -1,    -550,      -148,   3,    -546 }, event = 253          }, -- TA5  Win to GCS 
-            { coords = {    -282,      -4.5,  -504,      -278,   0,    -500 }, event = 254          }, -- TA6  GCS to Win 
-            { coords = {    -328,      -1,    -289,      -324,   3,    -285 }, event = 255          }, -- TA7  Jeu to GCS 
-            { coords = {    -320,      -4.5,  -442,      -316,   0,    -438 }, event = 256          }, -- TA8  GCS to Jeu 
-            { coords = {    -166,      -1,    -370,      -162,   3,    -366 }, event = 257          }, -- TA9  Whi to GCS 
-            { coords = {    -282,      -4.5,  -460,      -278,   0,    -456 }, event = 258          }, -- TA10 GCS to Whi
-        }
-    }
-
 local m = Module:new("choc_race")
 -----------------------------------------------------------------------------------
 --- below code to activate the portals---------------------------------------------
 -----------------------------------------------------------------------------------
 m:addOverride('xi.zones.Chocobo_Circuit.Zone.onInitialize', function(zone)
-    super()
-        for k, v in pairs(npc.PORTALS) do
-        zone:registerTriggerArea(k, unpack(v['coords']))
-        end
+    super(super)
+
+                     -- Event    West X      Y    South Z    East X   Y    North Z
+zone:registerTriggerArea(249,    -511,      -1,    -359,      -507,   3,    -355 ) -- TA1  Sandy to GCS
+zone:registerTriggerArea(250,    -361,      -4.5,  -460,      -357,   0,    -456 ) -- TA2  GSC to Sandy
+zone:registerTriggerArea(251,    -487,      -1,    -535,      -483,   3,    -531 ) -- TA3  Bas to GCS 
+zone:registerTriggerArea(252,    -362,      -4.5,  -504,      -358,   0,    -500 ) -- TA4  GCS to Bas 
+zone:registerTriggerArea(253,    -152,      -1,    -550,      -148,   3,    -546 ) -- TA5  Win to GCS 
+zone:registerTriggerArea(254,    -282,      -4.5,  -504,      -278,   0,    -500 ) -- TA6  GCS to Win 
+zone:registerTriggerArea(255,    -328,      -1,    -289,      -324,   3,    -285 ) -- TA7  Jeu to GCS 
+zone:registerTriggerArea(256,    -320,      -4.5,  -442,      -316,   0,    -438 ) -- TA8  GCS to Jeu 
+zone:registerTriggerArea(257,    -166,      -1,    -370,      -162,   3,    -366 ) -- TA9  Whi to GCS 
+zone:registerTriggerArea(258,    -282,      -4.5,  -460,      -278,   0,    -456 ) -- TA10 GCS to Whi
+
 end)
 
 m:addOverride('xi.zones.Chocobo_Circuit.Zone.onTriggerAreaEnter', function(player, triggerArea)
-local p = npc.PORTALS[triggerArea:GetTriggerAreaID()]
-player:startOptionalCutscene(p['event'])
+
+local teleportEventsByArea =
+{
+    [ 249] = 249,
+    [ 250] = 250,
+    [ 251] = 251,
+    [ 252] = 252,
+    [ 253] = 253,
+    [ 254] = 254,
+    [ 255] = 255,
+    [ 256] = 256,
+    [ 257] = 257,
+    [ 258] = 258,
+}
+local areaId = triggerArea:GetTriggerAreaID()
+player:startEvent(teleportEventsByArea[areaId])
+
 end)
 --------------------------------------------------------------------------------------
 ------------ add events to npcs inside of grand central station to get to and from chocobo race
