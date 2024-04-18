@@ -177,7 +177,7 @@ if amount == 4 then
 
 player:printToPlayer(string.format('-------------------------------------------------------------------------------------------'), xi.msg.channel.SYSTEM_3)
 
-player:printToPlayer(string.format('NM Hunt Kill Count Tier 4------------------------------------------------------------------'), xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('NM Hunt Kill Count Tier 4--Current Kills are %s of 50--------------------------------------',player:getCharVar('[NMHunt]TFourKills')), xi.msg.channel.SYSTEM_3)
 
 player:printToPlayer(string.format('-------------------------------------------------------------------------------------------'),  xi.msg.channel.SYSTEM_3)
 player:printToPlayer(string.format('Alea %s | Angun %s | Aura %s | Azryat %s | Blissia %s | ',fu,fv,fw,fx,fy), 3, xi.msg.channel.system_3)
@@ -195,7 +195,7 @@ elseif amount == 5 then
 
 player:printToPlayer(string.format('-------------------------------------------------------------------------------------------'), xi.msg.channel.SYSTEM_3)
 
-player:printToPlayer(string.format('NM Hunt Kill Count Tier 5------------------------------------------------------------------'), xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('NM Hunt Kill Count Tier 5--Current Kills are %s of 50--------------------------------------',player:getCharVar('[NMHunt]TFiveKills')), xi.msg.channel.SYSTEM_3)
 
 player:printToPlayer(string.format('-------------------------------------------------------------------------------------------'),  xi.msg.channel.SYSTEM_3)
 player:printToPlayer(string.format('Aleera %s | Anya %s | Auris %s | Azura %s | Blossom %s | ',hs,ht,hu,hv,hw), 3, xi.msg.channel.system_3)
@@ -213,7 +213,7 @@ elseif amount == 6 then
 
 player:printToPlayer(string.format('-------------------------------------------------------------------------------------------'), xi.msg.channel.SYSTEM_3)
 
-player:printToPlayer(string.format('NM Hunt Kill Count Tier 6------------------------------------------------------------------'), xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('NM Hunt Kill Count Tier 6--Current Kills are %s of 50--------------------------------------',player:getCharVar('[NMHunt]TSixKills')), xi.msg.channel.SYSTEM_3)
 
 player:printToPlayer(string.format('-------------------------------------------------------------------------------------------'),  xi.msg.channel.SYSTEM_3)
 player:printToPlayer(string.format('Alva %s | Aqrilla %s | Austi %s | Balrus %s | Bonesnapper %s | ',jq,jr,js,jt,ju), 3, xi.msg.channel.system_3)
