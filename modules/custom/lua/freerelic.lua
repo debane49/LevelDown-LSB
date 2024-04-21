@@ -282,7 +282,7 @@ m:addOverride('xi.zones.Celennia_Memorial_Library.npcs.Reja_Ygridhi.onTrigger', 
                  player:printToPlayer('Please check your inventory and try again!')
                  return
               else
-                 player:printToPlayer('As an achievement award for reaching level 99, We give you, your first Reforged Artifact Armor +1...', 0, npc:getPacketName())
+                 player:printToPlayer('As an achievement award for reaching level 99, We give you, your first Reforged Artifact Armor...', 0, npc:getPacketName())
             			for k, v in pairs(freeaf) do
                              if job == k then
                                 npcUtil.giveItem(player, v.reward)

@@ -15,6 +15,10 @@ local page1 = {}
 local page2 = {}
 local page3 = {}
 local page4 = {}
+local page5 = {}
+local page6 = {}
+local page7 = {}
+local page8 = {}
 
 local delaySendMenu = function(player)
     player:timer(50, function(playerArg)
