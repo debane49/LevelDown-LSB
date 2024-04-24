@@ -842,9 +842,21 @@ xi.unitywanted.qmOnTrigger = function(player, npc, mob, target)
              end
                     return false
     end
+    local function player_vwnm ()
+     local party = player:getParty()
+             for _, partyMember in pairs(party) do
+                         local a, b = partyMember:getCharVar('[VWNM]TKills'), 66
+                    if a~=b then
+                        return true
+                    end
+             end
+                    return false
+    end
 
      if player_level() == true or
-        player_rank() == true then
+        player_rank() == true or
+        player_vwnm() == true then
+             player:printToPlayer('This content is locked behind VWNM completion, if you have completed VWNM then')
              player:printToPlayer('You or a Party member do not meet the requirements to use the Ethereal Junction, Check your level and or Rank!')
      elseif player:getZoneID() == 113 then
             player:startEvent(9003, 858, 919)

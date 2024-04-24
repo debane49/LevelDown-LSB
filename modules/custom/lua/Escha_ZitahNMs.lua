@@ -39,7 +39,36 @@ local mobnames =
 {'Wepwawet',             WEPWAWET_QM},
 {'Wrathare',             WRATHARE_QM},
 }
-
+local nmmobname =
+{
+{'Aglaophotis',          AGLAOPHOTIS_QM},
+{'Alpluachra',           ALPLUACHRA_QM},
+{'Angrboda',             ANGRBODA_QM},
+{'Blazewing',            BLAZEWING_QM},
+{'Brittlis',             BRITTLIS_QM},
+{'Bucca',                BUCCA_QM},
+{'Cunnast',              CUNNAST_QM},
+{'Ferrodon',             FERRODON_QM},
+{'Fleetstalker',         FLEETSTALKER_QM},
+{'Gestalt',              GESTALT_QM},
+{'Gulltop',              GULLTOP_QM},
+{'Ionos',                IONOS_QM},
+{'Kamohoalii',           KAMOHOALII_QM},
+{'Lustful_Lydia',        LUSTFUL_LYDIA_QM},
+{'Nosoi',                NOSOI_QM},
+{'Pazuzu',               PAZUZU_QM},
+{'Puca',                 PUCA_QM},
+{'Revetaur',             REVETAUR_QM},
+{'Sensual_Sandy',        SENSUAL_SANDY_QM},
+{'Shockmaw',             SHOCKMAW_QM},
+{'Tangata_Manu',         TANGATA_MANU_QM},
+{'Umdhlebi',             UMDHLEBI_QM},
+{'Urmahlullu',           URMAHLULLU_QM},
+{'Vidala',               VIDALA_QM},
+{'Vyala',                VYALA_QM},
+{'Wepwawet',             WEPWAWET_QM},
+{'Wrathare',             WRATHARE_QM},
+}
 
 
 local ensureTable = function(str)
@@ -418,6 +447,25 @@ m:addOverride(string.format('xi.zones.Escha_ZiTah.mobs.%s.onMobDespawn', entry[1
       GetNPCByID(ID.npc.BRITTLIS_QM):updateNPCHideTime(15, xi.settings.main.FORCE_SPAWN_QM_RESET_TIME)
       GetNPCByID(ID.npc.UMDHLEBI_QM):updateNPCHideTime(15, xi.settings.main.FORCE_SPAWN_QM_RESET_TIME)
       GetNPCByID(ID.npc.SHOCKMAW_QM):updateNPCHideTime(15, xi.settings.main.FORCE_SPAWN_QM_RESET_TIME)
+end)
+end
+for _, entry in pairs(nmmobname) do 
+m:addOverride(string.format("xi.zones.Escha_ZiTah.mobs.%s.onMobSpawn", entry[1]), function(mob)
+        mob:setMobMod(xi.mobMod.IDLE_DESPAWN, 15)
+
+    if mob:getMainLvl() > 119 and mob:getMainLvl() <= 125 then
+        mob:addMod(xi.mod.ATT, 1400)
+        mob:addMod(xi.mod.DEF, 250)
+        mob:addMod(xi.mod.ACC, 700)
+        mob:addMod(xi.mod.EVA, 200)
+        mob:addMod(xi.mod.MATT, 100)
+        mob:addMod(xi.mod.MDEF, 250)
+        mob:addMod(xi.mod.MACC, 700)
+        mob:addMod(xi.mod.MEVA, 200)
+        mob:addMod(xi.mod.HASTE_MAGIC, 15)
+        mob:addMod(xi.mod.REGEN, 25)
+        mob:addMod(xi.mod.REFRESH, 25)
+    end
 end)
 end
 

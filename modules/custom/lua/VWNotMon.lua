@@ -383,6 +383,43 @@ m:addOverride(string.format("xi.zones.%s.mobs.%s.onMobInitialize", entry[2], ent
 end)
 
 m:addOverride(string.format("xi.zones.%s.mobs.%s.onMobSpawn", entry[2], entry[1]), function(mob, npc)
+if mob:getMainLvl() > 104 and mob:getMainLvl() <= 115 then
+        mob:addMod(xi.mod.ATT, 1000)
+        mob:addMod(xi.mod.DEF, 150)
+        mob:addMod(xi.mod.ACC, 500)
+        mob:addMod(xi.mod.EVA, 150)
+        mob:addMod(xi.mod.MATT, 50)
+        mob:addMod(xi.mod.MDEF, 150)
+        mob:addMod(xi.mod.MACC, 500)
+        mob:addMod(xi.mod.MEVA, 150)
+        mob:addMod(xi.mod.HASTE_MAGIC, 10)
+elseif mob:getMainLvl() > 116 and mob:getMainLvl() <= 119 then
+        mob:addMod(xi.mod.ATT, 1400)
+        mob:addMod(xi.mod.DEF, 250)
+        mob:addMod(xi.mod.ACC, 700)
+        mob:addMod(xi.mod.EVA, 200)
+        mob:addMod(xi.mod.MATT, 100)
+        mob:addMod(xi.mod.MDEF, 250)
+        mob:addMod(xi.mod.MACC, 700)
+        mob:addMod(xi.mod.MEVA, 200)
+        mob:addMod(xi.mod.HASTE_MAGIC, 15)
+        mob:addMod(xi.mod.REGEN, 10)
+        mob:addMod(xi.mod.REFRESH, 10)
+elseif mob:getMainLvl() > 120 and mob:getMainLvl() <= 122 then
+        mob:addMod(xi.mod.ATT, 1800)
+        mob:addMod(xi.mod.DEF, 350)
+        mob:addMod(xi.mod.ACC, 900)
+        mob:addMod(xi.mod.EVA, 250)
+        mob:addMod(xi.mod.MATT, 150)
+        mob:addMod(xi.mod.MDEF, 350)
+        mob:addMod(xi.mod.MACC, 900)
+        mob:addMod(xi.mod.MEVA, 250)
+        mob:addMod(xi.mod.HASTE_MAGIC, 20)
+        mob:addMod(xi.mod.REGEN, 20)
+        mob:addMod(xi.mod.REFRESH, 20)
+        mob:addMod(xi.mod.REGAIN, 20)
+end
+
 end)
 
 m:addOverride(string.format("xi.zones.%s.mobs.%s.onAdditionalEffect", entry[2], entry[1]), function(mob, target, damage)
@@ -396,14 +433,24 @@ m:addOverride(string.format("xi.zones.%s.mobs.%s.onMobDeath", entry[2], entry[1]
         local mobName = entry[1]
         local varName = '[VWNM] ' .. mobName
         local varib = player:getCharVar(varName)
-                npcUtil.giveItem(player, {{4059, entry[3]}})
+              --  npcUtil.giveItem(player, {{4059, entry[3]}})
               --  if player:isPC() == true -- and
                -- not player:setCharVar(varName, 1)
               -- if varib >= 0 
               --  then
+        local randb = math.random(10,25) * entry[3]
+                 --   npcUtil.giveCurrency(player, 'bayld', math.random(10,25) * entry[3])
+          player:addCurrency('bayld', randb)
+          player:printToPlayer(string.format("You obtained %s Bayld!", randb),xi.msg.channel.SYSTEM_3)
                    varib = varib +1
-                   player:setCharVar(varName, varib)
+
               --  end
+        local totalkill = player:getCharVar('[VWNM]TKills')
+        local killcount = player:getCharVar(varName)
+        if killcount == 0 then
+        player:setCharVar('[VWNM]TKills', totalkill + 1)
+        end
+                   player:setCharVar(varName, varib)
 end)
 
 m:addOverride(string.format("xi.zones.%s.mobs.%s.onMobDespawn", entry[2], entry[1]), function(mob, npc)
