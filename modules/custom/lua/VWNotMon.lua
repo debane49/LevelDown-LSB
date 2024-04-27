@@ -451,6 +451,18 @@ m:addOverride(string.format("xi.zones.%s.mobs.%s.onMobDeath", entry[2], entry[1]
         player:setCharVar('[VWNM]TKills', totalkill + 1)
         end
                    player:setCharVar(varName, varib)
+        local kirand = math.random(1,20)
+        if not player:hasKeyItem(xi.keyItem.VIAL_OF_TRANSLURRY) then
+            if kirand == 10 then 
+               npcUtil.giveKeyItem(player, xi.ki.VIAL_OF_TRANSLURRY)
+            end
+        end
+
+        if not player:hasKeyItem(xi.keyItem.VIAL_OF_TRANSMELANGE) then
+            if kirand == 7 then
+               npcUtil.giveKeyItem(player, xi.ki.VIAL_OF_TRANSMELANGE)
+            end
+        end
 end)
 
 m:addOverride(string.format("xi.zones.%s.mobs.%s.onMobDespawn", entry[2], entry[1]), function(mob, npc)
