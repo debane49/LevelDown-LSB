@@ -77,5 +77,8 @@ custom/lua/NMHunt.lua
 custom/lua/NMHuntNPC.lua
 custom/lua/reapplybuff.lua
 custom/lua/gmeventnpc.lua
+custom/lua/West_Audou_NPCs.lua
+custom/lua/add_stones.lua
+
 
 

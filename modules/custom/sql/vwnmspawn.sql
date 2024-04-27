@@ -40,3 +40,4 @@ UPDATE npc_list SET status = 0 WHERE npcid = 17269278;
 UPDATE npc_list SET status = 0 WHERE npcid = 17179522;
 UPDATE npc_list SET status = 0 WHERE npcid = 17105694;
 
+UPDATE npc_list SET look = 0x0100010814102720173015401550006000700000 WHERE npcid = 17826146;
