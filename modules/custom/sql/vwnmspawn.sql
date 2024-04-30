@@ -40,7 +40,8 @@ UPDATE npc_list SET status = 0 WHERE npcid = 17269279;
 UPDATE npc_list SET status = 0 WHERE npcid = 17179523;
 UPDATE npc_list SET status = 0 WHERE npcid = 17105695;
 
-UPDATE npc_list SET look = 0x0100010814102720173015401550006000700000 WHERE npcid = 17826146;
+UPDATE npc_list SET look = 0x0100060800106620003002400250006000700000 WHERE npcid = 17826146;
+                           
 
 INSERT INTO mob_droplist VALUES(5001,0,0,250,28192,500);-- cizin breeches / VWNM Sallow Seymour
 INSERT INTO mob_droplist VALUES(5001,0,0,250,28333,500);-- otronif boots / VWNM Sallow Seymour
