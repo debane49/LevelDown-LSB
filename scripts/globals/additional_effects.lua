@@ -148,6 +148,7 @@ xi.additionalEffect.attack = function(attacker, defender, baseAttackDamage, item
         ABSORB_STATUS = 11,
         SELF_BUFF     = 12,
         DEATH         = 13,
+        DAMAGEHP      = 14, 
     }
 
     -- If player is level synced below the level of the item, do no proc
@@ -300,6 +301,16 @@ xi.additionalEffect.attack = function(attacker, defender, baseAttackDamage, item
             msgParam = xi.effect.KO
             defender:setHP(0)
         end
+    elseif addType == procType.DAMAGEHP then
+        local adddmghp = attacker:getHP() *.25
+        damage = xi.additionalEffect.calcDamage(attacker, element, defender, damage + adddmghp)
+        msgID  = xi.msg.basic.ADD_EFFECT_DMG
+
+        if damage < 0 then
+            msgID = xi.msg.basic.ADD_EFFECT_HEAL
+        end
+
+        msgParam = damage
     end
 
     --[[
