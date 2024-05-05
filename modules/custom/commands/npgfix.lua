@@ -1,52 +1,50 @@
--- Set new player gear & parameters
 -----------------------------------
-require('modules/module_utils')
-require('scripts/globals/player')
-require('scripts/enum/item')
+-- func: addallhp's'
+-- desc: Adds all homepoints to the given player.
 -----------------------------------
-local m = Module:new('new_player_gear')
+local commandObj = {}
 
+commandObj.cmdprops =
+{
+    permission = 4,
+    parameters = 's'
+}
 
-m:addOverride('xi.player.charCreate', function(player)
-        super(player)
-        if xi.settings.main.NEW_CHARACTER_CUTSCENE == 0 then 
-            player:addItem(xi.item.DESTRIER_BERET)
-            player:addItem(xi.item.CHOCOBO_SHIRT)
-            player:setNewPlayer(false)
-            player:unlockJob(xi.job.RUN)
-            player:unlockJob(xi.job.GEO)
-	        player:addKeyItem(xi.ki.JOB_BREAKER)
-	        player:addKeyItem(xi.ki.LIMIT_BREAKER)
-	        player:addKeyItem(xi.ki.HEART_OF_THE_BUSHIN)
-                    -- fame
-            player:addFame(xi.fameArea.BASTOK, 30000)
-            player:addFame(xi.fameArea.SANDORIA, 30000)
-            player:addFame(xi.fameArea.JEUNO, 30000)
-            player:addFame(xi.fameArea.NORG, 30000)
-            player:addFame(xi.fameArea.WINDURST, 30000)
+local function error(player, msg)
+    player:printToPlayer(msg)
+    player:printToPlayer('!npgfix (player)')
+end
+
+commandObj.onTrigger = function(player, target)
+local target = player:getCursorTarget()
+            -- fame
+            target:addFame(xi.fameArea.BASTOK, 30000)
+            target:addFame(xi.fameArea.SANDORIA, 30000)
+            target:addFame(xi.fameArea.JEUNO, 30000)
+            target:addFame(xi.fameArea.NORG, 30000)
+            target:addFame(xi.fameArea.WINDURST, 30000)
             -- pet names
-            player:setPetName(xi.petType.WYVERN, math.random(1,32))
-            player:setPetName(xi.petType.AUTOMATON, math.random(118, 149))
-        end
+            target:setPetName(xi.petType.WYVERN, math.random(1,32))
+            target:setPetName(xi.petType.AUTOMATON, math.random(118, 149))
 
-        if not player:hasItem(xi.item.SAN_DORIAN_RING) or
-           not player:hasItem(xi.item.BASTOKAN_RING) or
-           not player:hasItem(xi.item.WINDURSTIAN_RING) then
-               player:addItem(xi.item.SAN_DORIAN_RING)
-               player:addItem(xi.item.BASTOKAN_RING)
-               player:addItem(xi.item.WINDURSTIAN_RING)
+        if not target:hasItem(xi.item.SAN_DORIAN_RING) or
+           not target:hasItem(xi.item.BASTOKAN_RING) or
+           not target:hasItem(xi.item.WINDURSTIAN_RING) then
+               target:addItem(xi.item.SAN_DORIAN_RING)
+               target:addItem(xi.item.BASTOKAN_RING)
+               target:addItem(xi.item.WINDURSTIAN_RING)
         elseif
-        player:hasItem(xi.item.SAN_DORIAN_RING) then
-        player:addItem(xi.item.BASTOKAN_RING)
-        player:addItem(xi.item.WINDURSTIAN_RING)
+        target:hasItem(xi.item.SAN_DORIAN_RING) then
+        target:addItem(xi.item.BASTOKAN_RING)
+        target:addItem(xi.item.WINDURSTIAN_RING)
         elseif
-        player:hasItem(xi.item.BASTOKAN_RING) then
-        player:addItem(xi.item.WINDURSTIAN_RING)
-        player:addItem(xi.item.SAN_DORIAN_RING)
+        target:hasItem(xi.item.BASTOKAN_RING) then
+        target:addItem(xi.item.WINDURSTIAN_RING)
+        target:addItem(xi.item.SAN_DORIAN_RING)
         elseif
-        player:hasItem(xi.item.WINDURSTIAN_RING) then
-        player:addItem(xi.item.SAN_DORIAN_RING)
-        player:addItem(xi.item.BASTOKAN_RING)
+        target:hasItem(xi.item.WINDURSTIAN_RING) then
+        target:addItem(xi.item.SAN_DORIAN_RING)
+        target:addItem(xi.item.BASTOKAN_RING)
         end
 	    -- add all learned weaponskills
 	    targ = player
@@ -68,8 +66,8 @@ m:addOverride('xi.player.charCreate', function(player)
     }
 
         for _, v in ipairs(keyIds) do
-        if not player:hasTeleport(xi.teleport.type.HOMEPOINT,  v % 32, math.floor(v / 32)) then
-        player:addTeleport(xi.teleport.type.HOMEPOINT, v % 32, math.floor(v / 32))
+        if not target:hasTeleport(xi.teleport.type.HOMEPOINT,  v % 32, math.floor(v / 32)) then
+        target:addTeleport(xi.teleport.type.HOMEPOINT, v % 32, math.floor(v / 32))
         end
         end
 
@@ -85,8 +83,8 @@ m:addOverride('xi.player.charCreate', function(player)
 
 
     for _, v in ipairs(keyIdz) do
-        if not player:hasTeleport(xi.teleport.type.SURVIVAL,  v % 32, math.floor(v / 32)) then
-        player:addTeleport(xi.teleport.type.SURVIVAL,v % 32, math.floor(v / 32))
+        if not target:hasTeleport(xi.teleport.type.SURVIVAL,  v % 32, math.floor(v / 32)) then
+        target:addTeleport(xi.teleport.type.SURVIVAL,v % 32, math.floor(v / 32))
     end
     end
 
@@ -202,47 +200,8 @@ local ValidAttachments = {
         end
 
         targ:unlockAttachment(ValidAttachments[i], silent, save, sendUpdate)
-
     end
 
-----------------------------------------
-local openingDecoration = '\129\155'
-local mid1Decoration = '\129\154'
-local mid2Decoration = '\129\154'
-local closingDecoration = '\129\155'
-local end1Decoration = '\129\154'
-local end2Decoration = '\129\154'
 
-
-local checkWorldServerVar = function(player, varName, worldMessage)
-
-    if  player:getLocalVar('gameLogin') == 1 then
-        local decoratedMessage = string.format('%s %s %s %s %s %s %s', openingDecoration, mid1Decoration, mid2Decoration, worldMessage, end1Decoration, end2Decoration, closingDecoration)
-        player:printToArea(decoratedMessage, xi.msg.channel.SYSTEM_3, 0, '')
-    end
 end
-        checkWorldServerVar(player,
-        'gameLogin',
-        string.format('%s has logged in for the first time!', player:getName()))
-
-end)
-
-m:addOverride('xi.player.onGameIn', function(player, firstLogin, zoning)
-super(player, firstLogin, zoning)
-local gmlvl = player:getGMLevel()
-
-        if not firstLogin and not zoning and gmlvl <=0 then
-        local openingDecoration = '\129\155'
-        local mid1Decoration = '\129\154'
-        local mid2Decoration = '\129\154'
-        local closingDecoration = '\129\155'
-        local end1Decoration = '\129\154'
-        local end2Decoration = '\129\154'
-        local message = string.format('%s has logged in!', player:getName())
-        local decoratedMessage = string.format('%s %s %s %s %s %s %s', openingDecoration, mid1Decoration, mid2Decoration, message, end1Decoration, end2Decoration, closingDecoration)
-        player:printToArea(decoratedMessage, xi.msg.channel.SYSTEM_3, 0)        
-        end
-end)
-
-return m
-
+return commandObj
