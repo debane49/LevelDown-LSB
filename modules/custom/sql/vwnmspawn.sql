@@ -29,16 +29,17 @@ UPDATE mob_spawn_points SET pos_X = 446.041,  pos_y = 19.737,  pos_z = -199.369,
 UPDATE mob_spawn_points SET pos_X = 562.442,  pos_y = -10.519, pos_z = 606.098,  pos_rot = 116 WHERE mobid = 17138409;
 
 
-UPDATE npc_list SET status = 0 WHERE npcid = 17809535;
-UPDATE npc_list SET status = 0 WHERE npcid = 17752374;
+UPDATE npc_list SET status = 0 WHERE npcid = 17809534;
+UPDATE npc_list SET status = 0 WHERE npcid = 17752373;
 UPDATE npc_list SET status = 0 WHERE npcid = 17134277;
 UPDATE npc_list SET status = 0 WHERE npcid = 17122262;
-UPDATE npc_list SET status = 0 WHERE npcid = 17801355;
-UPDATE npc_list SET status = 0 WHERE npcid = 17789017;
+UPDATE npc_list SET status = 0 WHERE npcid = 17801354;
+UPDATE npc_list SET status = 0 WHERE npcid = 17789016;
 UPDATE npc_list SET status = 0 WHERE npcid = 17228394;
 UPDATE npc_list SET status = 0 WHERE npcid = 17269279;
 UPDATE npc_list SET status = 0 WHERE npcid = 17179523;
 UPDATE npc_list SET status = 0 WHERE npcid = 17105695;
+
 
 UPDATE npc_list SET look = 0x0100060800106620003002400250006000700000 WHERE npcid = 17826146;
                            
