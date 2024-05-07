@@ -91,17 +91,17 @@ page1 =
     {
         'List of Rewards for Tier Completion!',
          function(player)
-               player:printToPlayer('By defeating all 50 notorious monsters in each tier you ', 0, 'Draider')
-               player:printToPlayer('will automatically be eligible for a reward! ', 0, 'Draider')
+               player:printToPlayer('By defeating notorious monsters you will unlock tiered rewards', 0, 'Draider')
+               player:printToPlayer('based on total number or NMs killed. ', 0, 'Draider')
                player:printToPlayer('Dont forget to check your kill counts! ', 0, 'Draider') 
-               player:printToPlayer('Tier 1 Reward - 1 Sky Abj Set +1, Unlocks Trust Shop', 0, 'Draider')
-               player:printToPlayer('Tier 2 Reward - 1 Voidwatch / Legion Abj Set +1, Unlocks Style Lock Weapon Shop', 0, 'Draider')
-               player:printToPlayer('Tier 3 Reward - 1 Escha RuAun Abj Set NQ, Unlocks Style Lock Armor Shop', 0, 'Draider')
-               player:printToPlayer('Tier 4 Reward - 1 Seekers of Aoulin Ring +1, Unlocks JSE Ambuscade Cape Shop', 0, 'Draider')
-               player:printToPlayer('Tier 5 Reward - 1 Escha RuAun Torque, Unlocks JSE Reive / Incursion Cape Shop', 0, 'Draider')
-               player:printToPlayer('Tier 6 Reward - 1 Kaja Weapon, Unlocks JSE Neck Shop', 0, 'Draider')
+               player:printToPlayer('Tier 1 Reward - 50 Kills - 1 Sky Abj Set +1, Unlocks Trust Shop', 0, 'Draider')
+               player:printToPlayer('Tier 2 Reward - 100 Kills - 1 Voidwatch / Legion Abj Set +1, Unlocks Style Lock Weapon Shop', 0, 'Draider')
+               player:printToPlayer('Tier 3 Reward - 150 Kills - 1 Escha RuAun Abj Set NQ, Unlocks Style Lock Armor Shop', 0, 'Draider')
+               player:printToPlayer('Tier 4 Reward - 200 Kills - 1 Seekers of Aoulin Ring +1, Unlocks JSE Ambuscade Cape Shop', 0, 'Draider')
+               player:printToPlayer('Tier 5 Reward - 250 Kills - 1 Escha RuAun Torque, Unlocks JSE Reive / Incursion Cape Shop', 0, 'Draider')
+               player:printToPlayer('Tier 6 Reward - 300 Kills - 1 Kaja Weapon, Unlocks JSE Neck Shop', 0, 'Draider')
                player:printToPlayer('For those of you who have chosen to skip missions', 0, 'Draider')
-               player:printToPlayer('you may obtain your Free Relic here by completing Tier 1 & 2 NMs', 0, 'Draider') 
+               player:printToPlayer('you may obtain your Free Relic here by completing 100 Kills', 0, 'Draider') 
          end
     },
     {
@@ -130,7 +130,8 @@ page2 =
     {
         'Shop Trusts 50 Coins',
          function(player)
-          if player:getCharVar('[NMHunt]TOneKills') == 50 then
+        local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+           if totalkillc >= 50 then
                   local amount = player:getCharVar('StoredRC')
                   if amount >= 50 then
                     menu.options = page4
@@ -140,14 +141,15 @@ page2 =
                   end
           else
             player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-            player:printToPlayer(string.format('You have currently killed %s of 50 Tier 1 NMs',player:getCharVar('[NMHunt]TOneKills')), 0, 'Draider')
+            player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 50+ Kills to unlock!',totalkillc), 0, 'Draider')
           end
          end,
     },
     {
         'Shop Style Lock Weapons 100 Coins',
         function(player)
-          if player:getCharVar('[NMHunt]TTwoKills') == 50 then
+        local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+           if totalkillc >= 100 then
                   local amount = player:getCharVar('StoredRC')
                   if amount >= 100 then
                     menu.options = page5
@@ -157,14 +159,15 @@ page2 =
                   end
           else
             player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-            player:printToPlayer(string.format('You have currently killed %s of 50 Tier 2 NMs',player:getCharVar('[NMHunt]TTwoKills')), 0, 'Draider')
+            player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 100+ Kills to unlock!',totalkillc), 0, 'Draider')
           end        
         end,
     },
     {
         'Shop Style Lock Armor 250 Coins',
         function(player)
-          if player:getCharVar('[NMHunt]TThreeKills') == 50 then
+        local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+           if totalkillc >= 150 then
                   local amount = player:getCharVar('StoredRC')
                   if amount >= 250 then
                     menu.options = page6
@@ -174,14 +177,15 @@ page2 =
                   end
           else
             player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-            player:printToPlayer(string.format('You have currently killed %s of 50 Tier 3 NMs',player:getCharVar('[NMHunt]TThreeKills')), 0, 'Draider')        
+            player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 150+ Kills to unlock!',totalkillc), 0, 'Draider')        
           end
         end,
     },
     {
         'Free Relic',
         function(player)
-          if player:getCharVar('[NMHunt]TTwoKills') == 50 and
+        local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+          if totalkillc >= 100 and
              player:getCharVar('FreeRelic') ~= 1 and
              player:getCharVar('FreeRelic') ~= 2 and
              player:getCharVar('FreeRelic') ~= 3 and
@@ -190,6 +194,7 @@ page2 =
                     delaySendMenu(player)
           else
             player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
+            player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 100+ Kills to unlock!',totalkillc), 0, 'Draider') 
             player:printToPlayer('This is only available to players who have chosen to skip missions / rank!', 0, 'Draider')
           end
         end,
@@ -214,7 +219,8 @@ page3 =
     {
         'JSE Ambuscade Cape 750 Coins',
          function(player)
-          if player:getCharVar('[NMHunt]TFourKills') == 50 then 
+        local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+          if totalkillc >= 200 then 
                   local amount = player:getCharVar('StoredRC')
                   if amount >= 750 then
                     menu.options = page7
@@ -224,14 +230,15 @@ page3 =
                   end
           else
             player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-            player:printToPlayer(string.format('You have currently killed %s of 50 Tier 4 NMs',player:getCharVar('[NMHunt]TFourKills')), 0, 'Draider')
+            player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 200+ Kills to unlock!',totalkillc), 0, 'Draider')
           end
          end,
     },
     {
         'JSE Reive/Incursion Cape 1000 Coins',
         function(player)
-          if player:getCharVar('[NMHunt]TFiveKills') == 50 then
+        local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+          if totalkillc >= 250 then
                   local amount = player:getCharVar('StoredRC')
                   if amount >= 1000 then
                     menu.options = page8
@@ -241,14 +248,15 @@ page3 =
                   end
           else
             player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-            player:printToPlayer(string.format('You have currently killed %s of 50 Tier 5 NMs',player:getCharVar('[NMHunt]TFiveKills')), 0, 'Draider')          
+            player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 250+ Kills to unlock!',totalkillc), 0, 'Draider')          
           end
         end,
     },
     {
         'JSE Neck 1500 Coins',
         function(player)
-          if player:getCharVar('[NMHunt]TSixKills') == 50 then
+        local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+          if totalkillc >= 300 then
                   local amount = player:getCharVar('StoredRC')
                   if amount >= 1500 then
                     menu.options = page9
@@ -258,7 +266,7 @@ page3 =
                   end
           else
             player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-            player:printToPlayer(string.format('You have currently killed %s of 50 Tier 6 NMs',player:getCharVar('[NMHunt]TSixKills')), 0, 'Draider')
+            player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 300 Kills to unlock!',totalkillc), 0, 'Draider')
           end 
         end,
     },
@@ -3235,90 +3243,96 @@ page65 =
     {
         'Tier 1 Rewards',
          function(player)
+         local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
             if player:getCharVar('NMTRewOneComp') == 1 then
                player:printToPlayer('You have alredy redeemed your reward!', 0, 'Draider')
-            elseif player:getCharVar('[NMHunt]TOneKills') == 50 and
+            elseif totalkillc >= 50 and
                player:getCharVar('NMTRewSixComp') ~= 1 then
                menu.options = page43
                delaySendMenu(player)
             else
                player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-               player:printToPlayer(string.format('You have currently killed %s of 50 Tier 1 NMs',player:getCharVar('[NMHunt]TOneKills')), 0, 'Draider')
+               player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 50+ Kills to unlock!',totalkillc), 0, 'Draider')
             end 
          end
     },
     {
         'Tier 2 Rewards',
          function(player)
-            if player:getCharVar('NMTRewTwoComp') == 1 then
+         local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+             if player:getCharVar('NMTRewTwoComp') == 1 then
                player:printToPlayer('You have alredy redeemed your reward!', 0, 'Draider')
-            elseif player:getCharVar('[NMHunt]TTwoKills') == 50 and
+            elseif totalkillc >= 100 and
                player:getCharVar('NMTRewTwoComp') ~= 1 then
                menu.options = page46
                delaySendMenu(player)
             else
                player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-               player:printToPlayer(string.format('You have currently killed %s of 50 Tier 2 NMs',player:getCharVar('[NMHunt]TTwoKills')), 0, 'Draider')
+               player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 100+ Kills to unlock!',totalkillc), 0, 'Draider')
             end 
          end
     },
     {
         'Tier 3 Rewards',
          function(player)
-            if player:getCharVar('NMTRewThreeComp') == 1 then
+         local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+             if player:getCharVar('NMTRewThreeComp') == 1 then
                player:printToPlayer('You have alredy redeemed your reward!', 0, 'Draider')
-            elseif player:getCharVar('[NMHunt]TThreeKills') == 50 and
+            elseif totalkillc >= 150 and
                player:getCharVar('NMTRewThreeComp') ~= 1 then
                menu.options = page48
                delaySendMenu(player)
             else
                player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-               player:printToPlayer(string.format('You have currently killed %s of 50 Tier 3 NMs',player:getCharVar('[NMHunt]TThreeKills')), 0, 'Draider')
+               player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 150+ Kills to unlock!',totalkillc), 0, 'Draider')
             end 
          end
     },
     {
         'Tier 4 Rewards',
          function(player)
-            if player:getCharVar('NMTRewFourComp') == 1 then
+         local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+             if player:getCharVar('NMTRewFourComp') == 1 then
                player:printToPlayer('You have alredy redeemed your reward!', 0, 'Draider')
-            elseif player:getCharVar('[NMHunt]TFourKills') == 50 and
+            elseif totalkillc >= 200 and
                player:getCharVar('NMTRewFourComp') ~= 1 then
                menu.options = page52
                delaySendMenu(player)
             else
                player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-               player:printToPlayer(string.format('You have currently killed %s of 50 Tier 4 NMs',player:getCharVar('[NMHunt]TFourKills')), 0, 'Draider')
+               player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 200+ Kills to unlock!',totalkillc), 0, 'Draider')
             end 
          end
     },
     {
         'Tier 5 Rewards',
          function(player)
-            if player:getCharVar('NMTRewFiveComp') == 1 then
+         local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+             if player:getCharVar('NMTRewFiveComp') == 1 then
                player:printToPlayer('You have alredy redeemed your reward!', 0, 'Draider')
-            elseif player:getCharVar('[NMHunt]TFiveKills') == 50 and
+            elseif totalkillc >= 250 and
                player:getCharVar('NMTRewFiveComp') ~= 1 then
                menu.options = page56
                delaySendMenu(player)
             else
                player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-               player:printToPlayer(string.format('You have currently killed %s of 50 Tier 5 NMs',player:getCharVar('[NMHunt]TFiveKills')), 0, 'Draider')
+               player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 250+ Kills to unlock!',totalkillc), 0, 'Draider')
             end 
          end
     },
     {
         'Tier 6 Rewards',
          function(player)
-            if player:getCharVar('NMTRewSixComp') == 1 then
+         local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
+             if player:getCharVar('NMTRewSixComp') == 1 then
                player:printToPlayer('You have alredy redeemed your reward!', 0, 'Draider')
-            elseif player:getCharVar('[NMHunt]TSixKills') == 50 and
+            elseif totalkillc >= 300 and
                player:getCharVar('NMTRewSixComp') ~= 1 then
                menu.options = page59
                delaySendMenu(player)
             else
                player:printToPlayer('You do not meet the requirements to access this shop!', 0, 'Draider')
-               player:printToPlayer(string.format('You have currently killed %s of 50 Tier 6 NMs',player:getCharVar('[NMHunt]TSixKills')), 0, 'Draider')
+               player:printToPlayer(string.format('You have currently killed %s of 300 NMs, You need 300 Kills to unlock!',totalkillc), 0, 'Draider')
             end 
          end
     },
@@ -3392,7 +3406,9 @@ m:addOverride('xi.zones.Rabao.Zone.onInitialize', function(zone)
     end,
 
         onTrigger = function(player, npc)
+         local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
              player:printToPlayer('Welcome to the Notorious Monster Hunt Shop!', 0, 'Draider')
+             player:printToPlayer(string.format('You have currently killed %s of 300 NMs!',totalkillc), 0, 'Draider') 
              menu.options = page64
              delaySendMenu(player)
         end,
