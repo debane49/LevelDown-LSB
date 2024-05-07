@@ -549,7 +549,7 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
         local killcount  =  playerArg:getCharVar('[NMHunt]DE_' .. entry[1])
         local totalkill = playerArg:getCharVar('[NMHunt]TThreeKills')
         if killcount == 0 then
-        playerArg:setCharVar('[NMHunt]TThreeoKills', totalkill + 1)
+        playerArg:setCharVar('[NMHunt]TThreeKills', totalkill + 1)
         end
         playerArg:setCharVar(varName,   killcount + 1)
         npcUtil.giveItem(playerArg, {{4049, math.random(1,4)}})
