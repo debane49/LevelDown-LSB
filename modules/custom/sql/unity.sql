@@ -461,6 +461,8 @@ UPDATE mob_groups SET poolid = 5372 WHERE name = 'Lumber_Jill';
 UPDATE mob_groups SET poolid = 630  WHERE name = 'Sybaritic_Samantha';
 UPDATE mob_groups SET poolid = 6998 WHERE name = 'Emperor_Arthro';
 
+UPDATE item_usable SET reuseDelay = 300 WHERE itemid = 11538;
+
 
 
 
