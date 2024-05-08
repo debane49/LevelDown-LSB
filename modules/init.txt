@@ -52,7 +52,6 @@ custom/lua/Nolan.lua
 custom/lua/add_silt.lua
 custom/lua/Affi_NPC.lua
 custom/lua/Escha_ZitahNMs.lua
-custom/lua/HTBFields.lua
 custom/lua/new_bcnm.lua
 custom/lua/choc_race.lua
 custom/lua/freerelic.lua
