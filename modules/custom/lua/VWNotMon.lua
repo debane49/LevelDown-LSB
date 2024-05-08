@@ -162,7 +162,7 @@ local VWCharVar =
 {'[VWNM] Malleator_Maurok',     1, 'Path_Zilart',     3000000},
 {'[VWNM] Fjalar',               1, 'Path_Tavnazia',   30000},
 {'[VWNM] Abununnu',             1, 'Path_Tavnazia',   30000},
-{'[VWNM] Tsui-Goab',            1, 'Path_Tavnazia',   30000},
+{'[VWNM] Tsui_Goab',            1, 'Path_Tavnazia',   30000},
 {'[VWNM] Isarukitsck',          1, 'Path_Tavnazia',   30000},
 {'[VWNM] Dimgruzub',            1, 'Path_Aht_Urhgan', 300000},
 {'[VWNM] Brekekekex',           1, 'Path_Aht_Urhgan', 300000},
@@ -171,7 +171,7 @@ local VWCharVar =
 {'[VWNM] Lorbulcrud',           2, 'Path_Bastok',     50},
 {'[VWNM] Krabimanjaro',         2, 'Path_Sandoria',   350},
 {'[VWNM] Ogbunabali',           2, 'Path_Windurst',   3000},
-{'[VWNM] Roly-Poly',            2, 'Path_Jeuno',      1},
+{'[VWNM] Roly_Poly',            2, 'Path_Jeuno',      1},
 {'[VWNM] Laidly_Laurence',      2, 'Path_Jeuno',      1},
 {'[VWNM] Mellonia',             2, 'Path_Jeuno',      1},
 {'[VWNM] Nympha_Eunomia',       2, 'Path_Jeuno',      1},
@@ -206,7 +206,7 @@ local VWCharVar =
 {'[VWNM] Gaunab',               6, 'Path_JeunoII',    1},
 {'[VWNM] Ocythoe',              6, 'Path_JeunoII',    1},
 {'[VWNM] Kalasutrax',           6, 'Path_JeunoII',    1},
-{'[VWNM] Ig-Alima',             6, 'Path_JeunoII',    1},
+{'[VWNM] Ig_Alima',             6, 'Path_JeunoII',    1},
 {'[VWNM] Botulus_Rex',          6, 'Path_JeunoII',    1},
 }
 
