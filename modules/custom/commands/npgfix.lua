@@ -47,7 +47,7 @@ local target = player:getCursorTarget()
         target:addItem(xi.item.BASTOKAN_RING)
         end
 	    -- add all learned weaponskills
-	    targ = player
+	    targ = target
     		for i = 1, 63 do
         targ:addLearnedWeaponskill(i)
    		 end
