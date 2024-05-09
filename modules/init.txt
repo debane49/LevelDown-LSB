@@ -75,10 +75,10 @@ custom/lua/petskin.lua
 custom/lua/skiprankmission.lua
 custom/lua/NMHunt.lua
 custom/lua/NMHuntNPC.lua
-custom/lua/reapplybuff.lua
 custom/lua/gmeventnpc.lua
 custom/lua/Audoulin_NPCs.lua
 custom/lua/add_stones.lua
+custom/lua/reapplybuff.lua
 
 
 

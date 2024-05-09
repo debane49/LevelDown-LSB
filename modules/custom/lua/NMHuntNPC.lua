@@ -436,6 +436,14 @@ page13 = -- free relic
             delaySendMenu(player)
          end
     },
+        {
+        'Aegis',
+         function(player)
+           player:setLocalVar('RelicSelect', 11927)
+           menu.options = page14
+            delaySendMenu(player)
+         end
+    },
          {
         'Previous Page',
          function(player)

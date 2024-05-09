@@ -194,6 +194,14 @@ page3 =
             delaySendMenu(player)
          end
     },
+        {
+        'Aegis',
+         function(player)
+           player:setLocalVar('RelicSelect', 11927)
+           menu.options = page4
+            delaySendMenu(player)
+         end
+    },
          {
         'Previous Page',
          function(player)
