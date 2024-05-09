@@ -85,6 +85,31 @@ commandObj.onTrigger = function(player, tier)
         player:printToPlayer('Buff disabled.')
 
     end
+
+
+player:setCharVar('BuffJob', player:getMainJob())
+player:addListener('TICK', 'CHANGE_JOB', function(player)
+
+local job = player:getMainJob()
+if job ~= player:getCharVar('BuffJob') then
+    player:setCharVar('Buff', 0)
+    player:delStatusEffect(xi.effect.REGAIN)
+    player:delStatusEffect(xi.effect.REFRESH)
+    player:delStatusEffect(xi.effect.REGEN)
+    player:delStatusEffect(xi.effect.DEDICATION)
+    player:delStatusEffect(xi.effect.COMMITMENT)
+    player:delMod(xi.mod.RACC, 50)
+    player:delMod(xi.mod.RATT, 50)
+    player:delMod(xi.mod.ACC, 50)
+    player:delMod(xi.mod.ATT, 50)
+    player:delMod(xi.mod.MATT, 50)
+    player:delMod(xi.mod.MACC, 50)
+    player:delMod(xi.mod.RDEF, 50)
+    player:delMod(xi.mod.DEF, 50)
+    player:delMod(xi.mod.MDEF, 50)
+        end
+
+end)
 end
 
 return commandObj
