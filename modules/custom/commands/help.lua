@@ -35,6 +35,7 @@ player:printToPlayer('!resetme - Forces your character to rezone and return to s
 player:printToPlayer('!oldccfix - Adds all valid spells EXCEPT TRUSTS to the given target. If no target then to the current player.', 3, xi.msg.channel.system_3)
 player:printToPlayer('!nmhuntone # - Displays the NMHunt kill count per tier, replace # with tier 1 - 3', 3, xi.msg.channel.system_3)
 player:printToPlayer('!nmhunttwo # - Displays the NMHunt kill count per tier, replace # with tier 4 - 6', 3, xi.msg.channel.system_3)
+player:printToPlayer('!addallconflux - Gives players all confluxs Abyssea zones.', 3, xi.msg.channel.system_3)
 
 end
 
