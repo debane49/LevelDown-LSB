@@ -172,6 +172,93 @@ local ValidAttachments = {
     8619, 8641, 8642, 8643, 8644, 8645, 8646, 8648, 8651,
     8673, 8674, 8675, 8676, 8677, 8678, 8680, 8682, 9138, 9143, 9230,
 }
+    local confIds =
+    {
+        -- [xi.zone.ABYSSEA_KONSCHTAT] 
+        {0, 0},
+        {0, 1},
+        {0, 2},
+        {0, 3},
+        {0, 4},
+        {0, 5},
+        {0, 6},
+        {0, 7},
+        -- [xi.zone.ABYSSEA_TAHRONGI]
+        {1, 0},
+        {1, 1},
+        {1, 2},
+        {1, 3},
+        {1, 4},
+        {1, 5},
+        {1, 6},
+        {1, 7},
+        -- [xi.zone.ABYSSEA_LA_THEINE]
+        {2, 0},
+        {2, 1},
+        {2, 2},
+        {2, 3},
+        {2, 4},
+        {2, 5},
+        {2, 6},
+        {2, 7},
+        -- [xi.zone.ABYSSEA_ATTOHWA]
+        {3, 0},
+        {3, 1},
+        {3, 2},
+        {3, 3},
+        {3, 4},
+        {3, 5},
+        {3, 6},
+        {3, 7},
+        {3, 8},
+        -- [xi.zone.ABYSSEA_MISAREAUX]
+        {4, 0},
+        {4, 1},
+        {4, 2},
+        {4, 3},
+        {4, 4},
+        {4, 5},
+        {4, 6},
+        {4, 7},
+        {4, 8},
+        -- [xi.zone.ABYSSEA_VUNKERL]
+        {5, 0},
+        {5, 1},
+        {5, 2},
+        {5, 3},
+        {5, 4},
+        {5, 5},
+        {5, 6},
+        {5, 7},
+        {5, 8},
+        -- [xi.zone.ABYSSEA_ALTEPA]
+        {6, 0},
+        {6, 1},
+        {6, 2},
+        {6, 3},
+        {6, 4},
+        {6, 5},
+        {6, 6},
+        {6, 7},
+        -- [xi.zone.ABYSSEA_ULEGUERAND]
+        {7, 0},
+        {7, 1},
+        {7, 2},
+        {7, 3},
+        {7, 4},
+        {7, 5},
+        {7, 6},
+        {7, 7},
+        -- [xi.zone.ABYSSEA_GRAUBERG]
+        {8, 0},
+        {8, 1},
+        {8, 2},
+        {8, 3},
+        {8, 4},
+        {8, 5},
+        {8, 6},
+        {8, 7},
+    }
     -- add all spells
     local save = true
     local silent = true
@@ -202,6 +289,11 @@ local ValidAttachments = {
         end
 
         targ:unlockAttachment(ValidAttachments[i], silent, save, sendUpdate)
+
+    end
+    -- add conflux
+    for _, v in ipairs(confIds) do
+        targ:addTeleport(xi.teleport.type.ABYSSEA_CONFLUX, v[1], v[2])
 
     end
 
