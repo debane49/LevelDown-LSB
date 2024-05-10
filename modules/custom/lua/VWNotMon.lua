@@ -135,9 +135,9 @@ local atmparam =
 {xi.ki.WHITE_STRATUM_ABYSSITE,          4096,           26, 'Path_Jeuno'},
 {xi.ki.WHITE_STRATUM_ABYSSITE_II,       8192,            6, 'Path_Jeuno'},
 {xi.ki.WHITE_STRATUM_ABYSSITE_III,      16384,          12, 'Path_Jeuno'},
-{xi.ki.WHITE_STRATUM_ABYSSITE_IV,       32768,          15, 'Path_JeunoII'},
-{xi.ki.WHITE_STRATUM_ABYSSITE_V,        2097152,        18, 'Path_JeunoII'},
-{xi.ki.WHITE_STRATUM_ABYSSITE_VI,       4194304,        21, 'Path_JeunoII'},
+{xi.ki.WHITE_STRATUM_ABYSSITE_IV,       32768,          15, 'Path_Jeuno'},
+{xi.ki.WHITE_STRATUM_ABYSSITE_V,        2097152,        18, 'Path_Jeuno'},
+{xi.ki.WHITE_STRATUM_ABYSSITE_VI,       4194304,        21, 'Path_Jeuno'},
 }
 
 local VWCharVar =
@@ -197,17 +197,17 @@ local VWCharVar =
 {'[VWNM] Celaeno',              4, 'Path_Bastok',     50},
 {'[VWNM] Hahava',               4, 'Path_Sandoria',   350},
 {'[VWNM] Voidwrought',          4, 'Path_Windurst',   3000},
-{'[VWNM] Lancing_Lamorak',      4, 'Path_JeunoII',    1},
-{'[VWNM] Bhishani',             4, 'Path_JeunoII',    1},
-{'[VWNM] Rw_Nw_Prt_M_Hrw',      4, 'Path_JeunoII',    1},
-{'[VWNM] Stachysaurus',         5, 'Path_JeunoII',    1},
-{'[VWNM] Gwynn_ap_Nudd',        5, 'Path_JeunoII',    1},
-{'[VWNM] Smierc',               5, 'Path_JeunoII',    1},
-{'[VWNM] Gaunab',               6, 'Path_JeunoII',    1},
-{'[VWNM] Ocythoe',              6, 'Path_JeunoII',    1},
-{'[VWNM] Kalasutrax',           6, 'Path_JeunoII',    1},
-{'[VWNM] Ig-Alima',             6, 'Path_JeunoII',    1},
-{'[VWNM] Botulus_Rex',          6, 'Path_JeunoII',    1},
+{'[VWNM] Lancing_Lamorak',      4, 'Path_Jeuno',    1},
+{'[VWNM] Bhishani',             4, 'Path_Jeuno',    1},
+{'[VWNM] Rw_Nw_Prt_M_Hrw',      4, 'Path_Jeuno',    1},
+{'[VWNM] Stachysaurus',         5, 'Path_Jeuno',    1},
+{'[VWNM] Gwynn_ap_Nudd',        5, 'Path_Jeuno',    1},
+{'[VWNM] Smierc',               5, 'Path_Jeuno',    1},
+{'[VWNM] Gaunab',               6, 'Path_Jeuno',    1},
+{'[VWNM] Ocythoe',              6, 'Path_Jeuno',    1},
+{'[VWNM] Kalasutrax',           6, 'Path_Jeuno',    1},
+{'[VWNM] Ig-Alima',             6, 'Path_Jeuno',    1},
+{'[VWNM] Botulus_Rex',          6, 'Path_Jeuno',    1},
 }
 
 local atmtele =

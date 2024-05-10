@@ -81,6 +81,7 @@ commandObj.onTrigger = function(player, tier)
                                 player:removeListener('CHANGE_JOB')
                                 player:setCharVar('BuffJob', 0)
                                 player:setCharVar('Buff', 0)
+                                buffOff(player)
                         end
                 end)
 end
