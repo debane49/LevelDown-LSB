@@ -268,7 +268,8 @@ m:addOverride("xi.items.abyssdivers_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80,  8981  }, -- Abyssdivers Feather
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -345,7 +346,8 @@ m:addOverride("xi.items.arkes_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8989    }, -- Arkes Wing
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -422,7 +424,8 @@ m:addOverride("xi.items.ayapecs_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9057    }, -- Ayapecs Shell
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -499,7 +502,8 @@ m:addOverride("xi.items.azraels_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9059    }, -- Azraels Eye
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -576,7 +580,8 @@ m:addOverride("xi.items.azure-toothed_clawberrys_coffer.onItemUse", function(tar
     local loottwo =
     {
         {   80, 9094    }, -- Azure-toothed Clawberrys Coat
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -653,7 +658,8 @@ m:addOverride("xi.items.bakunawas_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9093    }, -- Bakunawas Ink
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -730,7 +736,8 @@ m:addOverride("xi.items.bambroxs_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9209    }, -- Bambroxs Shawl
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -807,7 +814,8 @@ m:addOverride("xi.items.beists_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8991    }, -- Beists Blood
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -888,7 +896,8 @@ m:addOverride("xi.items.borealis_shadows_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9060    }, -- Ethereal Incense
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -965,7 +974,8 @@ m:addOverride("xi.items.bounding_belindas_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8975    }, -- Belindas Hide
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1042,7 +1052,8 @@ m:addOverride("xi.items.camahuetos_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9051    }, -- Camahuetos Fur
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1119,7 +1130,8 @@ m:addOverride("xi.items.carousing_celines_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9208    }, -- Celines Vine
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1196,7 +1208,8 @@ m:addOverride("xi.items.catrot_velozs_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8993    }, -- Velozs Needle
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1273,7 +1286,8 @@ m:addOverride("xi.items.centurio_xx-is_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9104    }, -- Centurio XX-Is Armor
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1350,7 +1364,8 @@ m:addOverride("xi.items.cocas_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9056    }, -- Cocas Wing
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1427,7 +1442,8 @@ m:addOverride("xi.items.douma_weapons_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9029    }, -- Doumas Shard
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1504,7 +1520,8 @@ m:addOverride("xi.items.emperor_arthros_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8983    }, -- Emperor Arthros Shell
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1581,7 +1598,8 @@ m:addOverride("xi.items.garbage_gels_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9092    }, -- Garbage Gels Mucus
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1658,7 +1676,8 @@ m:addOverride("xi.items.glazemanes_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9207    }, -- Glazemanes Fang
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1735,7 +1754,8 @@ m:addOverride("xi.items.grand_grenades_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9098    }, -- Grand Grenades Ash
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1814,7 +1834,8 @@ m:addOverride("xi.items.hidhaeggs_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9149    }, -- Hidhaeggs Scale
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1889,7 +1910,8 @@ m:addOverride("xi.items.hugemaw_harolds_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8974    }, -- Harolds Ore
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -1966,7 +1988,8 @@ m:addOverride("xi.items.immanibugards_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9047    }, -- Immanibugards Hide
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2043,7 +2066,8 @@ m:addOverride("xi.items.intuilas_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8982    }, -- Intuilas Hide
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2120,7 +2144,8 @@ m:addOverride("xi.items.ironhorn_baldurnos_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8977    }, -- Baldurnos Horn
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2197,7 +2222,8 @@ m:addOverride("xi.items.jester_malatrixs_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8992    }, -- Malatrixs Shard
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2274,7 +2300,8 @@ m:addOverride("xi.items.joyous_greens_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8986    }, -- Joyouss Moss
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2351,7 +2378,8 @@ m:addOverride("xi.items.keeper_of_heiligtums_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9028    }, -- Heiligtums Moss
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2427,7 +2455,8 @@ m:addOverride("xi.items.king_uropygids_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9030    }, -- Uropygids Needle
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2504,7 +2533,8 @@ m:addOverride("xi.items.largantuas_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8990    }, -- Largantuas Shard
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2581,7 +2611,8 @@ m:addOverride("xi.items.lumber_jills_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8985    }, -- Jills Spittle
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2658,7 +2689,8 @@ m:addOverride("xi.items.mephitass_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9055    }, -- Mephitass Claw
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2735,7 +2767,8 @@ m:addOverride("xi.items.mhuufyas_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9097    }, -- Mhuufyas Beak
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2812,7 +2845,8 @@ m:addOverride("xi.items.muuts_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9048    }, -- Muuts Vestment
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2889,7 +2923,8 @@ m:addOverride("xi.items.orcfeltraps_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8984    }, -- Orcfeltraps Leaf
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -2966,7 +3001,8 @@ m:addOverride("xi.items.prickly_pitrivs_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8976    }, -- Pitrivs Thread
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3045,7 +3081,8 @@ m:addOverride("xi.items.saramas_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9205    }, -- Saramas Hide
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3122,7 +3159,8 @@ m:addOverride("xi.items.serpopard_ninlils_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8980    }, -- Ninlils Bones
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3201,7 +3239,8 @@ m:addOverride("xi.items.shedus_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9206    }, -- Shedus Mane
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3278,7 +3317,8 @@ m:addOverride("xi.items.sleepy_mabels_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8978    }, -- Mabels Fur
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3358,7 +3398,8 @@ m:addOverride("xi.items.sovereign_behemoths_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9151    }, -- Sovereign Behemoths Hide
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3435,7 +3476,8 @@ m:addOverride("xi.items.specter_worms_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9058    }, -- Specters Ore
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3512,7 +3554,8 @@ m:addOverride("xi.items.strixs_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8987    }, -- Strixs Tailfeather
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3589,7 +3632,8 @@ m:addOverride("xi.items.sybaritic_samanthas_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9027    }, -- Sybaritic Samanthas Vine
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3668,7 +3712,8 @@ m:addOverride("xi.items.thubans_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9204    }, -- Thubans Scale
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3745,7 +3790,8 @@ m:addOverride("xi.items.tiyanaks_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9046    }, -- Tiyanaks Fang
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3824,7 +3870,8 @@ m:addOverride("xi.items.tolbas_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9150    }, -- Tolbas Shell
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3903,7 +3950,8 @@ m:addOverride("xi.items.tumult_curators_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9203    }, -- Tumults Blood
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -3980,7 +4028,8 @@ m:addOverride("xi.items.valkurm_imperators_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8979    }, -- Imperators Wing
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -4057,7 +4106,8 @@ m:addOverride("xi.items.vedrfolnirs_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9031    }, -- Vedrfolnirs Wing
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -4134,7 +4184,8 @@ m:addOverride("xi.items.vermillion_fishflys_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9095    }, -- Vermillions Wing
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -4211,7 +4262,8 @@ m:addOverride("xi.items.vidmapires_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9103    }, -- Vidmapires Claw
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -4288,7 +4340,8 @@ m:addOverride("xi.items.volatile_clusters_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9096    }, -- Volatile Clusters Ash
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -4365,7 +4418,8 @@ m:addOverride("xi.items.vosos_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 9054    }, -- Vosos Hide
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -4442,7 +4496,8 @@ m:addOverride("xi.items.warblade_beaks_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8988    }, -- Warblade Beaks Hide
-        {   20, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
@@ -4519,7 +4574,8 @@ m:addOverride("xi.items.woodland_menders_coffer.onItemUse", function(target)
     local loottwo =
     {
         {   80, 8994   }, -- Menders Log
-        {   10, xi.item.NONE  },
+        {   10,  3502  }, -- Umbral Marrow
+        {   10,  3503  }, -- Mulcibars Scoria
     }
     local lootthree = -- Reforged AF +1 items
     {
