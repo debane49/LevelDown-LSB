@@ -429,7 +429,7 @@ INSERT INTO `mob_groups` VALUES (52,3992,9,'Treasure_Chest',0,128,0,0,0,55,60,0)
 INSERT INTO `mob_groups` VALUES (53,6387,9,'Gazer',924,0,315,0,0,42,44,0);
 INSERT INTO `mob_groups` VALUES (54,1040,9,'Diremite',924,0,657,0,0,42,46,0);
 INSERT INTO `mob_groups` VALUES (55,3685,9,'Snowball',924,0,2286,0,0,43,46,0);
-INSERT INTO `mob_groups` VALUES (56,6963,9,'Gyre-Carlin',0,32,1260,0,0,75,80,0);
+INSERT INTO `mob_groups` VALUES (56,6963,9,'Gyre-Carlin',0,32,1260,4883,0,50,50,0);
 INSERT INTO `mob_groups` VALUES (57,2922,9,'Nunyunuwi',0,128,0,3500,0,56,58,0);
 INSERT INTO `mob_groups` VALUES (58,292,9,'Avalanche',960,0,30,0,0,75,75,0);
 INSERT INTO `mob_groups` VALUES (59,3231,9,'Purgatory_Bat',960,0,234,0,0,72,76,0);
@@ -5473,7 +5473,7 @@ INSERT INTO `mob_groups` VALUES (29,71,89,'Air_Elemental',330,4,38,0,0,75,75,0);
 INSERT INTO `mob_groups` VALUES (30,1793,89,'Grauberg_Hippogryph',330,0,1219,0,0,73,75,0);
 INSERT INTO `mob_groups` VALUES (31,4869,89,'Kotan-kor_Kamuy',0,32,2950,13000,0,80,80,0);
 INSERT INTO `mob_groups` VALUES (32,74,89,'Ajattara',330,0,42,0,0,79,83,0);
-INSERT INTO `mob_groups` VALUES (33,3501,89,'Scitalis',0,32,2182,0,0,80,82,0);
+INSERT INTO `mob_groups` VALUES (33,3501,89,'Scitalis',0,32,2182,10800,0,83,83,0);
 INSERT INTO `mob_groups` VALUES (34,3617,89,'Sidhe',330,0,2001,0,0,75,77,0);
 INSERT INTO `mob_groups` VALUES (35,523,89,'Brasscap',330,0,346,0,0,59,61,0);
 INSERT INTO `mob_groups` VALUES (36,3114,89,'Peiste',330,0,1986,0,0,66,70,0);
