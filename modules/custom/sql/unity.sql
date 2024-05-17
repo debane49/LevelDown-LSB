@@ -394,6 +394,8 @@ UPDATE mob_spawn_points SET pos_x = -232.7992, pos_y = 0.0718,   pos_z = -352.30
 UPDATE mob_spawn_points SET pos_x = 93.0893,   pos_y = 0.527,    pos_z = -402.6354, pos_rot = 113 WHERE mobid = 17285606; -- no pool id 5034
 UPDATE mob_spawn_points SET pos_x = -78.2717,  pos_y = 0.0653,   pos_z = 211.5531,  pos_rot = 119 WHERE mobid = 17645822;
 UPDATE mob_spawn_points SET pos_x = -203.108,  pos_y = -0.0529,  pos_z = 171.3419,  pos_rot = 11  WHERE mobid = 17645840;
+UPDATE mob_spawn_points SET pos_x = -599.2849, pos_y = -4.000,   pos_z = 119.4738,  pos_rot = 255 WHERE mobid = 16806271;
+UPDATE mob_spawn_points SET pos_x = -240.2201, pos_y = -4.000,   pos_z = -81.0189,  pos_rot = 182 WHERE mobid = 16806280;
 -- add in mobs
 INSERT INTO mob_spawn_points VALUES (17285607,'Woodland_Mender','Woodland Mender',64,43.7292,0,116.6937,158); -- no pool id 5034
 -- add coffers to item_usable table
