@@ -231,7 +231,7 @@ end)
 m:addOverride(string.format("xi.zones.%s.mobs.%s.onMobFight", entry[1], entry[2]), function(mob, player, params, npc)
     local timeLeft = mob:getLocalVar('Unity_Time') - os.time()
     local party = player:getParty()
-
+    --[[
     if timeLeft <= 0 or
        not player:hasStatusEffect(xi.effect.BATTLEFIELD) then
                  for _, partyMemeber in pairs(party) do
@@ -240,6 +240,15 @@ m:addOverride(string.format("xi.zones.%s.mobs.%s.onMobFight", entry[1], entry[2]
        end
        DespawnMob(mob:getID())
     end
+    ]]--
+    if timeLeft <= 0 then
+                     for _, partyMemeber in pairs(party) do
+       player:countdown()
+       end
+       DespawnMob(mob:getID())
+       end
+
+
 end)
 end
 

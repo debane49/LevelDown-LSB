@@ -963,9 +963,9 @@ xi.unitywanted.qmOnEventFinish = function(player, npc, mob, option)
 
                  ---------------------------------------------------
                  ---------------------------------------------------
-                 mob:addStatusEffect(xi.effect.BATTLEFIELD, 2, 0, 0, 0, 0, 0, 0, 0)
+                -- mob:addStatusEffect(xi.effect.BATTLEFIELD, 2, 0, 0, 0, 0, 0, 0, 0)
                  for _, partyMemeber in pairs(party) do 
-                 partyMemeber:addStatusEffect(xi.effect.BATTLEFIELD, 2, 0, 0, 0, 0, 0, 0, 0)
+                -- partyMemeber:addStatusEffect(xi.effect.BATTLEFIELD, 2, 0, 0, 0, 0, 0, 0, 0)
                  partyMemeber:countdown(entry[3])
                  end
                  ---------------------------------------------------
