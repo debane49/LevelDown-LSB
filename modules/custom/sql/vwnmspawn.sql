@@ -46,250 +46,262 @@ UPDATE npc_list SET look = 0x0100060800106620003002400250006000700000 WHERE npci
 
 INSERT INTO mob_droplist VALUES(3853,0,0,250,28192,500);-- cizin breeches / VWNM Sallow_Seymour
 INSERT INTO mob_droplist VALUES(3853,0,0,250,28333,500);-- otronif boots / VWNM Sallow_Seymour
-INSERT INTO mob_droplist VALUES(3853,0,1,1000,4272,500);-- Dragon Meat / VWNM Sallow_Seymour
-INSERT INTO mob_droplist VALUES(3853,0,1,1000,4272,500);-- Dragon Meat / VWNM Sallow_Seymour
+INSERT INTO mob_droplist VALUES(3853,1,1,1000,4272,500);-- Dragon Meat / VWNM Sallow_Seymour
+INSERT INTO mob_droplist VALUES(3853,1,1,1000,4272,500);-- Dragon Meat / VWNM Sallow_Seymour
 INSERT INTO mob_droplist VALUES(3854,0,0,250,28332,500);-- cizin greaves / VWNM Ushumgal
 INSERT INTO mob_droplist VALUES(3854,0,0,250,28193,500);-- otronif brais / VWNM Ushumgal
-INSERT INTO mob_droplist VALUES(3854,0,1,1000,3318,500);-- Breeze Gem / VWNM Ushumgal
-INSERT INTO mob_droplist VALUES(3854,0,1,1000,1764,500);-- Kejusu Satin / VWNM Ushumgal
+INSERT INTO mob_droplist VALUES(3854,1,1,1000,3318,500);-- Breeze Gem / VWNM Ushumgal
+INSERT INTO mob_droplist VALUES(3854,1,1,1000,1764,500);-- Kejusu Satin / VWNM Ushumgal
 INSERT INTO mob_droplist VALUES(3855,0,0,250,27768,500);-- cizin helm / VWNM Sarimanok
 INSERT INTO mob_droplist VALUES(3855,0,0,250,28052,500);-- otronif gloves / VWNM Sarimanok
-INSERT INTO mob_droplist VALUES(3855,0,1,1000,1305,500);-- Light Bead / VWNM Sarimanok
-INSERT INTO mob_droplist VALUES(3855,0,1,1000,3319,500);-- Soil Gem / VWNM Sarimanok
+INSERT INTO mob_droplist VALUES(3855,1,1,1000,1305,500);-- Light Bead / VWNM Sarimanok
+INSERT INTO mob_droplist VALUES(3855,1,1,1000,3319,500);-- Soil Gem / VWNM Sarimanok
 INSERT INTO mob_droplist VALUES(3856,0,0,250,27912,500);-- cizin mail / VWNM Cottus
 INSERT INTO mob_droplist VALUES(3856,0,0,250,27913,500);-- otronif harness / VWNM Cottus
-INSERT INTO mob_droplist VALUES(3856,0,1,1000,735,500);-- Thokcha Ingot / VWNM Cottus
-INSERT INTO mob_droplist VALUES(3856,0,1,1000,1713,500);-- Cashmere Thread / VWNM Cottus
+INSERT INTO mob_droplist VALUES(3856,1,1,1000,735,500);-- Thokcha Ingot / VWNM Cottus
+INSERT INTO mob_droplist VALUES(3856,1,1,1000,1713,500);-- Cashmere Thread / VWNM Cottus
 INSERT INTO mob_droplist VALUES(3857,0,0,250,28051,500);-- cizin mufflers / VWNM Virvatuli
 INSERT INTO mob_droplist VALUES(3857,0,0,250,27769,500);-- otronif mask / VWNM Virvatuli
-INSERT INTO mob_droplist VALUES(3857,0,1,1000,1302,500);-- Earth Bead / VWNM Virvatuli
-INSERT INTO mob_droplist VALUES(3857,0,1,1000,3320,500);-- Thunder Gem / VWNM Virvatuli
+INSERT INTO mob_droplist VALUES(3857,1,1,1000,1302,500);-- Earth Bead / VWNM Virvatuli
+INSERT INTO mob_droplist VALUES(3857,1,1,1000,3320,500);-- Thunder Gem / VWNM Virvatuli
 INSERT INTO mob_droplist VALUES(3858,0,0,250,27915,500);-- gendewitha bliaut / VWNM Pancimanci
 INSERT INTO mob_droplist VALUES(3858,0,0,250,28334,500);-- iuitl gaiters / VWNM Pancimanci
-INSERT INTO mob_droplist VALUES(3858,0,1,1000,3319,500);-- Soil Gem / VWNM Pancimanci
-INSERT INTO mob_droplist VALUES(3858,0,1,1000,1304,500);-- Water Bead / VWNM Pancimanci
+INSERT INTO mob_droplist VALUES(3858,1,1,1000,3319,500);-- Soil Gem / VWNM Pancimanci
+INSERT INTO mob_droplist VALUES(3858,1,1,1000,1304,500);-- Water Bead / VWNM Pancimanci
 INSERT INTO mob_droplist VALUES(3859,0,0,250,27771,500);-- gendewitha caubeen / VWNM Goji
 INSERT INTO mob_droplist VALUES(3859,0,0,250,27770,500);-- iuitl headgear / VWNM Goji
-INSERT INTO mob_droplist VALUES(3859,0,1,1000,3317,500);-- Snow Gem / VWNM Goji
-INSERT INTO mob_droplist VALUES(3859,0,1,1000,1301,500);-- Wind Bead / VWNM Goji
+INSERT INTO mob_droplist VALUES(3859,1,1,1000,3317,500);-- Snow Gem / VWNM Goji
+INSERT INTO mob_droplist VALUES(3859,1,1,1000,1301,500);-- Wind Bead / VWNM Goji
 INSERT INTO mob_droplist VALUES(3860,0,0,250,28054,500);-- gendewitha gages / VWNM Gugalanna
 INSERT INTO mob_droplist VALUES(3860,0,0,250,28194,500);-- iuitl tights / VWNM Gugalanna
-INSERT INTO mob_droplist VALUES(3860,0,1,1000,1304,500);-- Water Bead / VWNM Gugalanna
-INSERT INTO mob_droplist VALUES(3860,0,1,1000,3323,500);-- Shadow Gem / VWNM Gugalanna
+INSERT INTO mob_droplist VALUES(3860,1,1,1000,1304,500);-- Water Bead / VWNM Gugalanna
+INSERT INTO mob_droplist VALUES(3860,1,1,1000,3323,500);-- Shadow Gem / VWNM Gugalanna
 INSERT INTO mob_droplist VALUES(3861,0,0,250,28335,500);-- gendewitha galoshes / VWNM Yatagarasu
 INSERT INTO mob_droplist VALUES(3861,0,0,250,27914,500);-- iuitl vest / VWNM Yatagarasu
-INSERT INTO mob_droplist VALUES(3861,0,1,1000,1301,500);-- Wind Bead / VWNM Yatagarasu
-INSERT INTO mob_droplist VALUES(3861,0,1,1000,1302,500);-- Earth Bead / VWNM Yatagarasu
+INSERT INTO mob_droplist VALUES(3861,1,1,1000,1301,500);-- Wind Bead / VWNM Yatagarasu
+INSERT INTO mob_droplist VALUES(3861,1,1,1000,1302,500);-- Earth Bead / VWNM Yatagarasu
 INSERT INTO mob_droplist VALUES(3862,0,0,250,28195,500);-- gendewitha spats / VWNM Agathos
 INSERT INTO mob_droplist VALUES(3862,0,0,250,28053,500);-- iuitl wristbands / VWNM Agathos
-INSERT INTO mob_droplist VALUES(3862,0,1,1000,3321,500);-- Aqua Gem / VWNM Agathos
-INSERT INTO mob_droplist VALUES(3862,0,1,1000,3316,500);-- Flame Gem / VWNM Agathos
+INSERT INTO mob_droplist VALUES(3862,1,1,1000,3321,500);-- Aqua Gem / VWNM Agathos
+INSERT INTO mob_droplist VALUES(3862,1,1,1000,3316,500);-- Flame Gem / VWNM Agathos
 INSERT INTO mob_droplist VALUES(3863,0,0,250,27916,500);-- hagondes coat / VWNM Cherufe
 INSERT INTO mob_droplist VALUES(3863,0,0,250,28192,500);-- cizin breeches / VWNM Cherufe
-INSERT INTO mob_droplist VALUES(3863,0,1,1000,3923,500);-- Rhodium Ingot / VWNM Cherufe
-INSERT INTO mob_droplist VALUES(3863,0,1,1000,1300,500);-- Ice Bead / VWNM Cherufe
+INSERT INTO mob_droplist VALUES(3863,1,1,1000,3923,500);-- Rhodium Ingot / VWNM Cherufe
+INSERT INTO mob_droplist VALUES(3863,1,1,1000,1300,500);-- Ice Bead / VWNM Cherufe
 INSERT INTO mob_droplist VALUES(3864,0,0,250,28055,500);-- hagondes cuffs / VWNM Taweret
 INSERT INTO mob_droplist VALUES(3864,0,0,250,28332,500);-- cizin greaves / VWNM Taweret
-INSERT INTO mob_droplist VALUES(3864,0,1,1000,1713,500);-- Cashmere Thread / VWNM Taweret
-INSERT INTO mob_droplist VALUES(3864,0,1,1000,1133,500);-- Dragon Blood / VWNM Taweret
+INSERT INTO mob_droplist VALUES(3864,1,1,1000,1713,500);-- Cashmere Thread / VWNM Taweret
+INSERT INTO mob_droplist VALUES(3864,1,1,1000,1133,500);-- Dragon Blood / VWNM Taweret
 INSERT INTO mob_droplist VALUES(3865,0,0,250,27772,500);-- hagondes hat / VWNM Holy_Moly
 INSERT INTO mob_droplist VALUES(3865,0,0,250,27768,500);-- cizin helm / VWNM Holy_Moly
-INSERT INTO mob_droplist VALUES(3865,0,1,1000,1303,500);-- Lightning Bead / VWNM Holy_Moly
-INSERT INTO mob_droplist VALUES(3865,0,1,1000,3317,500);-- Snow Gem / VWNM Holy_Moly
+INSERT INTO mob_droplist VALUES(3865,1,1,1000,1303,500);-- Lightning Bead / VWNM Holy_Moly
+INSERT INTO mob_droplist VALUES(3865,1,1,1000,3317,500);-- Snow Gem / VWNM Holy_Moly
 INSERT INTO mob_droplist VALUES(3866,0,0,250,28196,500);-- hagondes pants / VWNM Ildebrann
 INSERT INTO mob_droplist VALUES(3866,0,0,250,27912,500);-- cizin mail / VWNM Ildebrann
-INSERT INTO mob_droplist VALUES(3866,0,1,1000,3322,500);-- Light Gem / VWNM Ildebrann
-INSERT INTO mob_droplist VALUES(3866,0,1,1000,735,500);-- Thokcha Ingot / VWNM Ildebrann
+INSERT INTO mob_droplist VALUES(3866,1,1,1000,3322,500);-- Light Gem / VWNM Ildebrann
+INSERT INTO mob_droplist VALUES(3866,1,1,1000,735,500);-- Thokcha Ingot / VWNM Ildebrann
 INSERT INTO mob_droplist VALUES(3867,0,0,250,28336,500);-- hagondes sabots / VWNM Neith
 INSERT INTO mob_droplist VALUES(3867,0,0,250,28051,500);-- cizin mufflers / VWNM Neith
-INSERT INTO mob_droplist VALUES(3867,0,1,1000,3926,500);-- Urunday Log / VWNM Neith
-INSERT INTO mob_droplist VALUES(3867,0,1,1000,1303,500);-- Lightning Bead / VWNM Neith
+INSERT INTO mob_droplist VALUES(3867,1,1,1000,3926,500);-- Urunday Log / VWNM Neith
+INSERT INTO mob_droplist VALUES(3867,1,1,1000,1303,500);-- Lightning Bead / VWNM Neith
 INSERT INTO mob_droplist VALUES(3868,0,0,250,28334,500);-- iuitl gaiters / VWNM Sabotender_Campeador
 INSERT INTO mob_droplist VALUES(3868,0,0,250,27916,500);-- hagondes coat / VWNM Sabotender_Campeador
-INSERT INTO mob_droplist VALUES(3868,0,1,1000,1300,500);-- Ice Bead / VWNM Sabotender_Campeador
-INSERT INTO mob_droplist VALUES(3868,0,1,1000,3318,500);-- Breeze Gem / VWNM Sabotender_Campeador
+INSERT INTO mob_droplist VALUES(3868,1,1,1000,1300,500);-- Ice Bead / VWNM Sabotender_Campeador
+INSERT INTO mob_droplist VALUES(3868,1,1,1000,3318,500);-- Breeze Gem / VWNM Sabotender_Campeador
 INSERT INTO mob_droplist VALUES(3869,0,0,250,27770,500);-- iuitl headgear / VWNM Tangaroa
 INSERT INTO mob_droplist VALUES(3869,0,0,250,28055,500);-- hagondes cuffs / VWNM Tangaroa
-INSERT INTO mob_droplist VALUES(3869,0,1,1000,1299,500);-- Fire Bead / VWNM Tangaroa
-INSERT INTO mob_droplist VALUES(3869,0,1,1000,3321,500);-- Aqua Gem / VWNM Tangaroa
+INSERT INTO mob_droplist VALUES(3869,1,1,1000,1299,500);-- Fire Bead / VWNM Tangaroa
+INSERT INTO mob_droplist VALUES(3869,1,1,1000,3321,500);-- Aqua Gem / VWNM Tangaroa
 INSERT INTO mob_droplist VALUES(3870,0,0,250,28194,500);-- iuitl tights / VWNM Malleator_Maurok
 INSERT INTO mob_droplist VALUES(3870,0,0,250,27772,500);-- hagondes hat / VWNM Malleator_Maurok
-INSERT INTO mob_droplist VALUES(3870,0,1,1000,1306,500);-- Dark Bead / VWNM Malleator_Maurok
-INSERT INTO mob_droplist VALUES(3870,0,1,1000,1306,500);-- Dark Bead / VWNM Malleator_Maurok
+INSERT INTO mob_droplist VALUES(3870,1,1,1000,1306,500);-- Dark Bead / VWNM Malleator_Maurok
+INSERT INTO mob_droplist VALUES(3870,1,1,1000,1306,500);-- Dark Bead / VWNM Malleator_Maurok
 INSERT INTO mob_droplist VALUES(3871,0,0,250,27914,500);-- iuitl vest / VWNM Fjalar
 INSERT INTO mob_droplist VALUES(3871,0,0,250,28196,500);-- hagondes pants / VWNM Fjalar
-INSERT INTO mob_droplist VALUES(3871,0,1,1000,3919,500);-- Midrium Ingot / VWNM Fjalar
-INSERT INTO mob_droplist VALUES(3871,0,1,1000,1299,500);-- Fire Bead / VWNM Fjalar
+INSERT INTO mob_droplist VALUES(3871,1,1,1000,3919,500);-- Midrium Ingot / VWNM Fjalar
+INSERT INTO mob_droplist VALUES(3871,1,1,1000,1299,500);-- Fire Bead / VWNM Fjalar
 INSERT INTO mob_droplist VALUES(3872,0,0,250,28053,500);-- iuitl wristbands / VWNM Abununnu
 INSERT INTO mob_droplist VALUES(3872,0,0,250,28336,500);-- hagondes sabots / VWNM Abununnu
-INSERT INTO mob_droplist VALUES(3872,0,1,1000,747,500);-- Orichalcum Ingot / VWNM Abununnu
-INSERT INTO mob_droplist VALUES(3872,0,1,1000,3322,500);-- Light Gem / VWNM Abununnu
+INSERT INTO mob_droplist VALUES(3872,1,1,1000,747,500);-- Orichalcum Ingot / VWNM Abununnu
+INSERT INTO mob_droplist VALUES(3872,1,1,1000,3322,500);-- Light Gem / VWNM Abununnu
 INSERT INTO mob_droplist VALUES(3873,0,0,250,28333,500);-- otronif boots / VWNM Tsui-Goab
 INSERT INTO mob_droplist VALUES(3873,0,0,250,27915,500);-- gendewitha bliaut / VWNM Tsui-Goab
-INSERT INTO mob_droplist VALUES(3873,0,1,1000,3320,500);-- Thunder Gem / VWNM Tsui-Goab
-INSERT INTO mob_droplist VALUES(3873,0,1,1000,3919,500);-- Midrium Ingot / VWNM Tsui-Goab
+INSERT INTO mob_droplist VALUES(3873,1,1,1000,3320,500);-- Thunder Gem / VWNM Tsui-Goab
+INSERT INTO mob_droplist VALUES(3873,1,1,1000,3919,500);-- Midrium Ingot / VWNM Tsui-Goab
 INSERT INTO mob_droplist VALUES(3874,0,0,250,28193,500);-- otronif brais / VWNM Isarukitsck
 INSERT INTO mob_droplist VALUES(3874,0,0,250,27771,500);-- gendewitha caubeen / VWNM Isarukitsck
-INSERT INTO mob_droplist VALUES(3874,0,1,1000,3316,500);-- Flame Gem / VWNM Isarukitsck
-INSERT INTO mob_droplist VALUES(3874,0,1,1000,3926,500);-- Urunday Log / VWNM Isarukitsck
+INSERT INTO mob_droplist VALUES(3874,1,1,1000,3316,500);-- Flame Gem / VWNM Isarukitsck
+INSERT INTO mob_droplist VALUES(3874,1,1,1000,3926,500);-- Urunday Log / VWNM Isarukitsck
 INSERT INTO mob_droplist VALUES(3875,0,0,250,28052,500);-- otronif gloves / VWNM Dimgruzub
 INSERT INTO mob_droplist VALUES(3875,0,0,250,28054,500);-- gendewitha gages / VWNM Dimgruzub
-INSERT INTO mob_droplist VALUES(3875,0,1,1000,3323,500);-- Shadow Gem / VWNM Dimgruzub
-INSERT INTO mob_droplist VALUES(3875,0,1,1000,942,500);-- Philosophers Stone / VWNM Dimgruzub
+INSERT INTO mob_droplist VALUES(3875,1,1,1000,3323,500);-- Shadow Gem / VWNM Dimgruzub
+INSERT INTO mob_droplist VALUES(3875,1,1,1000,942,500);-- Philosophers Stone / VWNM Dimgruzub
 INSERT INTO mob_droplist VALUES(3876,0,0,250,27913,500);-- otronif harness / VWNM Brekekekex
 INSERT INTO mob_droplist VALUES(3876,0,0,250,28335,500);-- gendewitha galoshes / VWNM Brekekekex
-INSERT INTO mob_droplist VALUES(3876,0,1,1000,1764,500);-- Kejusu Satin / VWNM Brekekekex
-INSERT INTO mob_droplist VALUES(3876,0,1,1000,747,500);-- Orichalcum Ingot / VWNM Brekekekex
+INSERT INTO mob_droplist VALUES(3876,1,1,1000,1764,500);-- Kejusu Satin / VWNM Brekekekex
+INSERT INTO mob_droplist VALUES(3876,1,1,1000,747,500);-- Orichalcum Ingot / VWNM Brekekekex
 INSERT INTO mob_droplist VALUES(3877,0,0,250,27769,500);-- otronif mask / VWNM Yalungur
 INSERT INTO mob_droplist VALUES(3877,0,0,250,28195,500);-- gendewitha spats / VWNM Yalungur
-INSERT INTO mob_droplist VALUES(3877,0,1,1000,1133,500);-- Dragon Blood / VWNM Yalungur
-INSERT INTO mob_droplist VALUES(3877,0,1,1000,1305,500);-- Light Bead / VWNM Yalungur
+INSERT INTO mob_droplist VALUES(3877,1,1,1000,1133,500);-- Dragon Blood / VWNM Yalungur
+INSERT INTO mob_droplist VALUES(3877,1,1,1000,1305,500);-- Light Bead / VWNM Yalungur
 INSERT INTO mob_droplist VALUES(3878,0,0,250,27771,500);-- gendewitha caubeen / VWNM Vanasarvik
 INSERT INTO mob_droplist VALUES(3878,0,0,250,27770,500);-- iuitl headgear / VWNM Vanasarvik
-INSERT INTO mob_droplist VALUES(3878,0,1,1000,942,500);-- Philosophers Stone / VWNM Vanasarvik
-INSERT INTO mob_droplist VALUES(3878,0,1,1000,3923,500);-- Rhodium Ingot / VWNM Vanasarvik
+INSERT INTO mob_droplist VALUES(3878,1,1,1000,942,500);-- Philosophers Stone / VWNM Vanasarvik
+INSERT INTO mob_droplist VALUES(3878,1,1,1000,3923,500);-- Rhodium Ingot / VWNM Vanasarvik
 INSERT INTO mob_droplist VALUES(3879,0,0,250,28662,333);-- beatific shield / VWNM Lorbulcrud
 INSERT INTO mob_droplist VALUES(3879,0,0,250,20553,333);-- ninzas / VWNM Lorbulcrud
 INSERT INTO mob_droplist VALUES(3879,0,0,250,20641,334);-- leisilonu / VWNM Lorbulcrud
-INSERT INTO mob_droplist VALUES(3879,0,1,1000,3317,500);-- Snow Gem / VWNM Lorbulcrud
-INSERT INTO mob_droplist VALUES(3879,0,1,1000,1764,500);-- Kejusu Satin / VWNM Lorbulcrud
+INSERT INTO mob_droplist VALUES(3879,1,1,1000,3317,500);-- Snow Gem / VWNM Lorbulcrud
+INSERT INTO mob_droplist VALUES(3879,1,1,1000,1764,500);-- Kejusu Satin / VWNM Lorbulcrud
 INSERT INTO mob_droplist VALUES(3880,0,0,250,20553,333);-- ninzas / VWNM Krabimanjaro
 INSERT INTO mob_droplist VALUES(3880,0,0,250,20641,333);-- leisilonu / VWNM Krabimanjaro
 INSERT INTO mob_droplist VALUES(3880,0,0,250,21208,334);-- lehbrailg / VWNM Krabimanjaro
-INSERT INTO mob_droplist VALUES(3880,0,1,1000,1304,500);-- Water Bead / VWNM Krabimanjaro
-INSERT INTO mob_droplist VALUES(3880,0,1,1000,735,500);-- Thokcha Ingot / VWNM Krabimanjaro
+INSERT INTO mob_droplist VALUES(3880,1,1,1000,1304,500);-- Water Bead / VWNM Krabimanjaro
+INSERT INTO mob_droplist VALUES(3880,1,1,1000,735,500);-- Thokcha Ingot / VWNM Krabimanjaro
 INSERT INTO mob_droplist VALUES(3881,0,0,250,20641,333);-- leisilonu / VWNM Ogbunabali
 INSERT INTO mob_droplist VALUES(3881,0,0,250,20742,333);-- iztaasu / VWNM Ogbunabali
 INSERT INTO mob_droplist VALUES(3881,0,0,250,21294,334);-- hgafircian / VWNM Ogbunabali
-INSERT INTO mob_droplist VALUES(3881,0,1,1000,1301,500);-- Wind Bead / VWNM Ogbunabali
-INSERT INTO mob_droplist VALUES(3881,0,1,1000,1303,500);-- Lightning Bead / VWNM Ogbunabali
+INSERT INTO mob_droplist VALUES(3881,1,1,1000,1301,500);-- Wind Bead / VWNM Ogbunabali
+INSERT INTO mob_droplist VALUES(3881,1,1,1000,1303,500);-- Lightning Bead / VWNM Ogbunabali
 INSERT INTO mob_droplist VALUES(3882,0,0,250,20742,333);-- iztaasu / VWNM Roly-Poly
 INSERT INTO mob_droplist VALUES(3882,0,0,250,20924,333);-- iizamal / VWNM Roly-Poly
 INSERT INTO mob_droplist VALUES(3882,0,0,250,21132,334);-- aedold / VWNM Roly-Poly
-INSERT INTO mob_droplist VALUES(3882,0,1,1000,3321,500);-- Aqua Gem / VWNM Roly-Poly
-INSERT INTO mob_droplist VALUES(3882,0,1,1000,3318,500);-- Breeze Gem / VWNM Roly-Poly
+INSERT INTO mob_droplist VALUES(3882,1,1,1000,3321,500);-- Aqua Gem / VWNM Roly-Poly
+INSERT INTO mob_droplist VALUES(3882,1,1,1000,3318,500);-- Breeze Gem / VWNM Roly-Poly
 INSERT INTO mob_droplist VALUES(3883,0,0,250,20924,333);-- iizamal / VWNM Laidly_Laurence
 INSERT INTO mob_droplist VALUES(3883,0,0,250,20967,333);-- qatsunoci / VWNM Laidly_Laurence
 INSERT INTO mob_droplist VALUES(3883,0,0,250,21013,334);-- kannakiri / VWNM Laidly_Laurence
-INSERT INTO mob_droplist VALUES(3883,0,1,1000,3923,500);-- Rhodium Ingot / VWNM Laidly_Laurence
-INSERT INTO mob_droplist VALUES(3883,0,1,1000,3321,500);-- Aqua Gem / VWNM Laidly_Laurence
+INSERT INTO mob_droplist VALUES(3883,1,1,1000,3923,500);-- Rhodium Ingot / VWNM Laidly_Laurence
+INSERT INTO mob_droplist VALUES(3883,1,1,1000,3321,500);-- Aqua Gem / VWNM Laidly_Laurence
 INSERT INTO mob_droplist VALUES(3884,0,0,250,20967,333);-- qatsunoci / VWNM Mellonia
 INSERT INTO mob_droplist VALUES(3884,0,0,250,21058,333);-- shichishito / VWNM Mellonia
 INSERT INTO mob_droplist VALUES(3884,0,0,250,20877,334);-- iclamar / VWNM Mellonia
-INSERT INTO mob_droplist VALUES(3884,0,1,1000,1713,500);-- Cashmere Thread / VWNM Mellonia
-INSERT INTO mob_droplist VALUES(3884,0,1,1000,1306,500);-- Dark Bead / VWNM Mellonia
+INSERT INTO mob_droplist VALUES(3884,1,1,1000,1713,500);-- Cashmere Thread / VWNM Mellonia
+INSERT INTO mob_droplist VALUES(3884,1,1,1000,1306,500);-- Dark Bead / VWNM Mellonia
 INSERT INTO mob_droplist VALUES(3885,0,0,250,21058,333);-- shichishito / VWNM Nympha_Eunomia
 INSERT INTO mob_droplist VALUES(3885,0,0,250,21209,333);-- uffrat / VWNM Nympha_Eunomia
 INSERT INTO mob_droplist VALUES(3885,0,0,250,20833,334);-- faizzeer / VWNM Nympha_Eunomia
-INSERT INTO mob_droplist VALUES(3885,0,1,1000,1303,500);-- Lightning Bead / VWNM Nympha_Eunomia
-INSERT INTO mob_droplist VALUES(3885,0,1,1000,1299,500);-- Fire Bead / VWNM Nympha_Eunomia
+INSERT INTO mob_droplist VALUES(3885,1,1,1000,1303,500);-- Lightning Bead / VWNM Nympha_Eunomia
+INSERT INTO mob_droplist VALUES(3885,1,1,1000,1299,500);-- Fire Bead / VWNM Nympha_Eunomia
 INSERT INTO mob_droplist VALUES(3886,0,0,250,21209,333);-- uffrat / VWNM Gasha
 INSERT INTO mob_droplist VALUES(3886,0,0,250,21242,333);-- bocluamni / VWNM Gasha
 INSERT INTO mob_droplist VALUES(3886,0,0,250,20787,334);-- crobaci / VWNM Gasha
-INSERT INTO mob_droplist VALUES(3886,0,1,1000,3322,500);-- Light Gem / VWNM Gasha
-INSERT INTO mob_droplist VALUES(3886,0,1,1000,3322,500);-- Light Gem / VWNM Gasha
+INSERT INTO mob_droplist VALUES(3886,1,1,1000,3322,500);-- Light Gem / VWNM Gasha
+INSERT INTO mob_droplist VALUES(3886,1,1,1000,3322,500);-- Light Gem / VWNM Gasha
 INSERT INTO mob_droplist VALUES(3887,0,0,250,21242,333);-- bocluamni / VWNM Giltine
 INSERT INTO mob_droplist VALUES(3887,0,0,250,20787,333);-- crobaci / VWNM Giltine
 INSERT INTO mob_droplist VALUES(3887,0,0,250,20553,334);-- ninzas / VWNM Giltine
-INSERT INTO mob_droplist VALUES(3887,0,1,1000,3926,500);-- Urunday Log / VWNM Giltine
-INSERT INTO mob_droplist VALUES(3887,0,1,1000,3919,500);-- Midrium Ingot / VWNM Giltine
+INSERT INTO mob_droplist VALUES(3887,1,1,1000,3926,500);-- Urunday Log / VWNM Giltine
+INSERT INTO mob_droplist VALUES(3887,1,1,1000,3919,500);-- Midrium Ingot / VWNM Giltine
 INSERT INTO mob_droplist VALUES(3888,0,0,250,20787,333);-- crobaci / VWNM Cath_Palug
 INSERT INTO mob_droplist VALUES(3888,0,0,250,20833,333);-- faizzeer / VWNM Cath_Palug
 INSERT INTO mob_droplist VALUES(3888,0,0,250,21209,334);-- uffrat / VWNM Cath_Palug
-INSERT INTO mob_droplist VALUES(3888,0,1,1000,1300,500);-- Ice Bead / VWNM Cath_Palug
-INSERT INTO mob_droplist VALUES(3888,0,1,1000,3926,500);-- Urunday Log / VWNM Cath_Palug
+INSERT INTO mob_droplist VALUES(3888,1,1,1000,1300,500);-- Ice Bead / VWNM Cath_Palug
+INSERT INTO mob_droplist VALUES(3888,1,1,1000,3926,500);-- Urunday Log / VWNM Cath_Palug
 INSERT INTO mob_droplist VALUES(3889,0,0,250,20833,333);-- faizzeer / VWNM Modron
 INSERT INTO mob_droplist VALUES(3889,0,0,250,20877,333);-- iclamar / VWNM Modron
 INSERT INTO mob_droplist VALUES(3889,0,0,250,21058,334);-- shichishito / VWNM Modron
-INSERT INTO mob_droplist VALUES(3889,0,1,1000,1299,500);-- Fire Bead / VWNM Modron
-INSERT INTO mob_droplist VALUES(3889,0,1,1000,942,500);-- Philosophers Stone / VWNM Modron
+INSERT INTO mob_droplist VALUES(3889,1,1,1000,1299,500);-- Fire Bead / VWNM Modron
+INSERT INTO mob_droplist VALUES(3889,1,1,1000,942,500);-- Philosophers Stone / VWNM Modron
 INSERT INTO mob_droplist VALUES(3890,0,0,250,20877,333);-- iclamar / VWNM Mimic_King
 INSERT INTO mob_droplist VALUES(3890,0,0,250,21013,333);-- kannakiri / VWNM Mimic_King
 INSERT INTO mob_droplist VALUES(3890,0,0,250,20967,334);-- qatsunoci / VWNM Mimic_King
-INSERT INTO mob_droplist VALUES(3890,0,1,1000,1306,500);-- Dark Bead / VWNM Mimic_King
-INSERT INTO mob_droplist VALUES(3890,0,1,1000,747,500);-- Orichalcum Ingot / VWNM Mimic_King
+INSERT INTO mob_droplist VALUES(3890,1,1,1000,1306,500);-- Dark Bead / VWNM Mimic_King
+INSERT INTO mob_droplist VALUES(3890,1,1,1000,747,500);-- Orichalcum Ingot / VWNM Mimic_King
 INSERT INTO mob_droplist VALUES(3891,0,0,250,21013,333);-- kannakiri / VWNM Bismarck
 INSERT INTO mob_droplist VALUES(3891,0,0,250,21132,333);-- aedold / VWNM Bismarck
 INSERT INTO mob_droplist VALUES(3891,0,0,250,20924,334);-- iizamal / VWNM Bismarck
-INSERT INTO mob_droplist VALUES(3891,0,1,1000,3919,500);-- Midrium Ingot / VWNM Bismarck
-INSERT INTO mob_droplist VALUES(3891,0,1,1000,1305,500);-- Light Bead / VWNM Bismarck
+INSERT INTO mob_droplist VALUES(3891,1,1,1000,3919,500);-- Midrium Ingot / VWNM Bismarck
+INSERT INTO mob_droplist VALUES(3891,1,1,1000,1305,500);-- Light Bead / VWNM Bismarck
 INSERT INTO mob_droplist VALUES(3892,0,0,250,21132,333);-- aedold / VWNM Morta
 INSERT INTO mob_droplist VALUES(3892,0,0,250,21294,333);-- hgafircian / VWNM Morta
 INSERT INTO mob_droplist VALUES(3892,0,0,250,20742,334);-- iztaasu / VWNM Morta
-INSERT INTO mob_droplist VALUES(3892,0,1,1000,747,500);-- Orichalcum Ingot / VWNM Morta
-INSERT INTO mob_droplist VALUES(3892,0,1,1000,3923,500);-- Rhodium Ingot / VWNM Morta
+INSERT INTO mob_droplist VALUES(3892,1,1,1000,747,500);-- Orichalcum Ingot / VWNM Morta
+INSERT INTO mob_droplist VALUES(3892,1,1,1000,3923,500);-- Rhodium Ingot / VWNM Morta
 INSERT INTO mob_droplist VALUES(3893,0,0,250,26092,333);-- Hretha Earring / VWNM Murk-Veined_Baneberry
 INSERT INTO mob_droplist VALUES(3893,0,0,250,20530,333);-- Ohrmazd / VWNM Murk-Veined_Baneberry
 INSERT INTO mob_droplist VALUES(3893,0,0,250,21476,334);-- doomsday / VWNM Murk-Veined_Baneberry
-INSERT INTO mob_droplist VALUES(3893,0,1,1000,4272,500);-- Dragon Meat / VWNM Murk-Veined_Baneberry
+INSERT INTO mob_droplist VALUES(3893,1,1,1000,4272,500);-- Dragon Meat / VWNM Murk-Veined_Baneberry
 INSERT INTO mob_droplist VALUES(3894,0,0,250,26089,333);-- Ran Earring / VWNM Melancholic_Moira
 INSERT INTO mob_droplist VALUES(3894,0,0,250,20616,333);-- ipetam / VWNM Melancholic_Moira
 INSERT INTO mob_droplist VALUES(3894,0,0,250,21224,334);-- phaosphaelia / VWNM Melancholic_Moira
-INSERT INTO mob_droplist VALUES(3894,0,1,1000,1764,500);-- Kejusu Satin / VWNM Melancholic_Moira
+INSERT INTO mob_droplist VALUES(3894,1,1,1000,1764,500);-- Kejusu Satin / VWNM Melancholic_Moira
 INSERT INTO mob_droplist VALUES(3895,0,0,250,26091,333);-- Foresti Earring / VWNM Belphoebe
 INSERT INTO mob_droplist VALUES(3895,0,0,250,20759,333);-- macbain / VWNM Belphoebe
 INSERT INTO mob_droplist VALUES(3895,0,0,250,20946,334);-- olyndicus / VWNM Belphoebe
-INSERT INTO mob_droplist VALUES(3895,0,1,1000,3319,500);-- Soil Gem / VWNM Belphoebe
+INSERT INTO mob_droplist VALUES(3895,1,1,1000,3319,500);-- Soil Gem / VWNM Belphoebe
 INSERT INTO mob_droplist VALUES(3896,0,0,250,26090,333);-- Hermodr Earring / VWNM Kholomodumo
 INSERT INTO mob_droplist VALUES(3896,0,0,250,20901,333);-- inanna / VWNM Kholomodumo
 INSERT INTO mob_droplist VALUES(3896,0,0,250,21105,334);-- nehushtan / VWNM Kholomodumo
-INSERT INTO mob_droplist VALUES(3896,0,1,1000,1713,500);-- Cashmere Thread / VWNM Kholomodumo
+INSERT INTO mob_droplist VALUES(3896,1,1,1000,1713,500);-- Cashmere Thread / VWNM Kholomodumo
 INSERT INTO mob_droplist VALUES(3897,0,0,250,26093,333);-- Saxnot Earring / VWNM Lord_Asag
 INSERT INTO mob_droplist VALUES(3897,0,0,250,20809,333);-- kumbhakarna / VWNM Lord_Asag
 INSERT INTO mob_droplist VALUES(3897,0,0,250,21169,334);-- keraunos / VWNM Lord_Asag
-INSERT INTO mob_droplist VALUES(3897,0,1,1000,3320,500);-- Thunder Gem / VWNM Lord_Asag
+INSERT INTO mob_droplist VALUES(3897,1,1,1000,3320,500);-- Thunder Gem / VWNM Lord_Asag
 INSERT INTO mob_droplist VALUES(3898,0,0,250,26098,333);-- Meili Earring / VWNM Akupara
 INSERT INTO mob_droplist VALUES(3898,0,0,250,20857,333);-- svarga / VWNM Akupara
 INSERT INTO mob_droplist VALUES(3898,0,0,250,20718,334);-- claidheamh soluis / VWNM Akupara
-INSERT INTO mob_droplist VALUES(3898,0,1,1000,1304,500);-- Water Bead / VWNM Akupara
+INSERT INTO mob_droplist VALUES(3898,1,1,1000,1304,500);-- Water Bead / VWNM Akupara
 INSERT INTO mob_droplist VALUES(3899,0,0,250,26095,333);-- Mimir Earring / VWNM Kaggen
 INSERT INTO mob_droplist VALUES(3899,0,0,250,20718,333);-- claidheamh soluis / VWNM Kaggen
 INSERT INTO mob_droplist VALUES(3899,0,0,250,20857,334);-- svarga / VWNM Kaggen
-INSERT INTO mob_droplist VALUES(3899,0,1,1000,1301,500);-- Wind Bead / VWNM Kaggen
+INSERT INTO mob_droplist VALUES(3899,1,1,1000,1301,500);-- Wind Bead / VWNM Kaggen
+INSERT INTO mob_droplist VALUES(3899,1,2,1000,3492,1000);-- Kaggens Cuticle / VWNM Kaggen
+INSERT INTO mob_droplist VALUES(3899,1,2,1000,3492,500);-- Kaggens Cuticle / VWNM Kaggen
 INSERT INTO mob_droplist VALUES(3900,0,0,250,26096,333);-- Vor Earring / VWNM Akvan
 INSERT INTO mob_droplist VALUES(3900,0,0,250,21169,333);-- keraunos / VWNM Akvan
 INSERT INTO mob_droplist VALUES(3900,0,0,250,20809,334);-- kumbhakarna / VWNM Akvan
-INSERT INTO mob_droplist VALUES(3900,0,1,1000,3323,500);-- Shadow Gem / VWNM Akvan
+INSERT INTO mob_droplist VALUES(3900,1,1,1000,3323,500);-- Shadow Gem / VWNM Akvan
+INSERT INTO mob_droplist VALUES(3900,1,2,1000,3491,1000);-- Akvans Pennon / VWNM Akvan
+INSERT INTO mob_droplist VALUES(3900,1,2,1000,3491,500);-- Akvans Pennon / VWNM Akvan
 INSERT INTO mob_droplist VALUES(3901,0,0,250,26097,333);-- Ilmr Earring / VWNM Pil
 INSERT INTO mob_droplist VALUES(3901,0,0,250,21105,333);-- nehushtan / VWNM Pil
 INSERT INTO mob_droplist VALUES(3901,0,0,250,20901,334);-- inanna / VWNM Pil
-INSERT INTO mob_droplist VALUES(3901,0,1,1000,1302,500);-- Earth Bead / VWNM Pil
+INSERT INTO mob_droplist VALUES(3901,1,1,1000,1302,500);-- Earth Bead / VWNM Pil
+INSERT INTO mob_droplist VALUES(3901,1,2,1000,3490,1000);-- Pils Tuille / VWNM Pil
+INSERT INTO mob_droplist VALUES(3901,1,2,1000,3490,500);-- Pils Tuille / VWNM Pil
 INSERT INTO mob_droplist VALUES(3902,0,0,250,26094,333);-- Mani Earring / VWNM Aello
 INSERT INTO mob_droplist VALUES(3902,0,0,250,20946,333);-- olyndicus / VWNM Aello
 INSERT INTO mob_droplist VALUES(3902,0,0,250,20759,334);-- macbain / VWNM Aello
-INSERT INTO mob_droplist VALUES(3902,0,1,1000,3316,500);-- Flame Gem / VWNM Aello
+INSERT INTO mob_droplist VALUES(3902,1,1,1000,3316,500);-- Flame Gem / VWNM Aello
 INSERT INTO mob_droplist VALUES(3903,0,0,250,26099,333);-- Lodurr Earring / VWNM Uptala
 INSERT INTO mob_droplist VALUES(3903,0,0,250,21224,333);-- phaosphaelia / VWNM Uptala
 INSERT INTO mob_droplist VALUES(3903,0,0,250,20616,334);-- ipetam / VWNM Uptala
-INSERT INTO mob_droplist VALUES(3903,0,1,1000,1300,500);-- Ice Bead / VWNM Uptala
+INSERT INTO mob_droplist VALUES(3903,1,1,1000,1300,500);-- Ice Bead / VWNM Uptala
 INSERT INTO mob_droplist VALUES(3904,0,0,250,26104,333);-- Njordr Earring / VWNM Qilin
 INSERT INTO mob_droplist VALUES(3904,0,0,250,21476,333);-- doomsday / VWNM Qilin
 INSERT INTO mob_droplist VALUES(3904,0,0,250,20530,334);-- Ohrmazd / VWNM Qilin
-INSERT INTO mob_droplist VALUES(3904,0,1,1000,1133,500);-- Dragon Blood / VWNM Qilin
+INSERT INTO mob_droplist VALUES(3904,1,1,1000,1133,500);-- Dragon Blood / VWNM Qilin
 INSERT INTO mob_droplist VALUES(3905,0,0,250,26101,333);-- Bragi Earring / VWNM Celaeno
 INSERT INTO mob_droplist VALUES(3905,0,0,250,21037,333);-- nenekirimaru / VWNM Celaeno
 INSERT INTO mob_droplist VALUES(3905,0,0,250,20759,334);-- macbain / VWNM Celaeno
-INSERT INTO mob_droplist VALUES(3905,0,1,1000,3919,500);-- Midrium Ingot / VWNM Celaeno
+INSERT INTO mob_droplist VALUES(3905,1,1,1000,3919,500);-- Midrium Ingot / VWNM Celaeno
+INSERT INTO mob_droplist VALUES(3905,1,2,1000,3449,1000);-- Celaenos Cloth / VWNM Celaeno
+INSERT INTO mob_droplist VALUES(3905,1,2,1000,3449,500);-- Celaenos Cloth / VWNM Celaeno
 INSERT INTO mob_droplist VALUES(3906,0,0,250,26103,333);-- Dellingr Earring / VWNM Hahava
 INSERT INTO mob_droplist VALUES(3906,0,0,250,20989,333);-- izuna / VWNM Hahava
 INSERT INTO mob_droplist VALUES(3906,0,0,250,20901,334);-- inanna / VWNM Hahava
-INSERT INTO mob_droplist VALUES(3906,0,1,1000,3926,500);-- Urunday Log / VWNM Hahava
+INSERT INTO mob_droplist VALUES(3906,1,1,1000,3926,500);-- Urunday Log / VWNM Hahava
+INSERT INTO mob_droplist VALUES(3906,1,2,1000,3445,1000);-- Hahavas Mail / VWNM Hahava
+INSERT INTO mob_droplist VALUES(3906,1,2,1000,3445,500);-- Hahavas Mail / VWNM Hahava
 INSERT INTO mob_droplist VALUES(3907,0,0,250,26102,333);-- Gersemi Earring / VWNM Voidwrought
 INSERT INTO mob_droplist VALUES(3907,0,0,250,27627,333);-- svalinn / VWNM Voidwrought
 INSERT INTO mob_droplist VALUES(3907,0,0,250,20809,334);-- kumbhakarna / VWNM Voidwrought
-INSERT INTO mob_droplist VALUES(3907,0,1,1000,942,500);-- Philosophers Stone / VWNM Voidwrought
+INSERT INTO mob_droplist VALUES(3907,1,1,1000,942,500);-- Philosophers Stone / VWNM Voidwrought
+INSERT INTO mob_droplist VALUES(3907,1,2,1000,3447,1000);-- Voidwrought Plate / VWNM Voidwrought
+INSERT INTO mob_droplist VALUES(3907,1,2,1000,3447,500);-- Voidwrought Plate / VWNM Voidwrought
 INSERT INTO mob_droplist VALUES(3908,0,0,250,26100,333);-- Hnoss Earring / VWNM Lancing_Lamorak
 INSERT INTO mob_droplist VALUES(3908,0,0,250,21404,333);-- linos / VWNM Lancing_Lamorak
 INSERT INTO mob_droplist VALUES(3908,0,0,250,20857,334);-- svarga / VWNM Lancing_Lamorak
-INSERT INTO mob_droplist VALUES(3908,0,1,1000,747,500);-- Orichalcum Ingot / VWNM Lancing_Lamorak
+INSERT INTO mob_droplist VALUES(3908,1,1,1000,747,500);-- Orichalcum Ingot / VWNM Lancing_Lamorak
 INSERT INTO mob_droplist VALUES(3909,0,0,250,26105,333);-- Gna Earring / VWNM Bhishani
 INSERT INTO mob_droplist VALUES(3909,0,0,250,20530,333);-- Ohrmazd / VWNM Bhishani
 INSERT INTO mob_droplist VALUES(3909,0,0,250,20718,334);-- claidheamh soluis / VWNM Bhishani
-INSERT INTO mob_droplist VALUES(3909,0,1,1000,1305,500);-- Light Bead / VWNM Bhishani
+INSERT INTO mob_droplist VALUES(3909,1,1,1000,1305,500);-- Light Bead / VWNM Bhishani
 INSERT INTO mob_droplist VALUES(3910,0,0,250,26106,333);-- Fulla Earring / VWNM RW_NW_Prt_M_Hrw
 INSERT INTO mob_droplist VALUES(3910,0,0,250,20616,333);-- ipetam / VWNM RW_NW_Prt_M_Hrw
 INSERT INTO mob_droplist VALUES(3910,0,0,250,21169,334);-- keraunos / VWNM RW_NW_Prt_M_Hrw
-INSERT INTO mob_droplist VALUES(3910,0,1,1000,3923,500);-- Rhodium Ingot / VWNM RW_NW_Prt_M_Hrw
+INSERT INTO mob_droplist VALUES(3910,1,1,1000,3923,500);-- Rhodium Ingot / VWNM RW_NW_Prt_M_Hrw
 INSERT INTO mob_droplist VALUES(3911,0,0,250,27046,200);-- Acro Gauntlets / VWNM Stachysaurus
 INSERT INTO mob_droplist VALUES(3911,0,0,250,27045,200);-- Yorium Gauntlets / VWNM Stachysaurus
 INSERT INTO mob_droplist VALUES(3911,0,0,250,27047,200);-- Taeon Gloves / VWNM Stachysaurus
@@ -307,41 +319,29 @@ INSERT INTO mob_droplist VALUES(3913,0,0,250,27405,200);-- Telchine Pigaches / V
 INSERT INTO mob_droplist VALUES(3913,0,0,250,27406,200);-- Helios Boots / VWNM Smierc
 INSERT INTO mob_droplist VALUES(3914,0,0,250,26892,500);-- Acro Surcoat / VWNM Gaunab
 INSERT INTO mob_droplist VALUES(3914,0,0,250,26734,500);-- Acro Helm / VWNM Gaunab
-INSERT INTO mob_droplist VALUES(3914,0,1,1000,3954,333);-- Ghastly Stone / VWNM Gaunab
-INSERT INTO mob_droplist VALUES(3914,0,1,1000,4033,333);-- Verdigris Stone / VWNM Gaunab
-INSERT INTO mob_droplist VALUES(3914,0,1,1000,3951,334);-- Wailing Stone / VWNM Gaunab
+INSERT INTO mob_droplist VALUES(3914,1,1,1000,3954,333);-- Ghastly Stone / VWNM Gaunab
+INSERT INTO mob_droplist VALUES(3914,1,1,1000,4033,333);-- Verdigris Stone / VWNM Gaunab
+INSERT INTO mob_droplist VALUES(3914,1,1,1000,3951,334);-- Wailing Stone / VWNM Gaunab
 INSERT INTO mob_droplist VALUES(3915,0,0,250,26895,500);-- Helios Jacket / VWNM Ocythoe
 INSERT INTO mob_droplist VALUES(3915,0,0,250,26737,500);-- Helios Band / VWNM Ocythoe
-INSERT INTO mob_droplist VALUES(3915,0,1,1000,3954,333);-- Ghastly Stone / VWNM Ocythoe
-INSERT INTO mob_droplist VALUES(3915,0,1,1000,4033,333);-- Verdigris Stone / VWNM Ocythoe
-INSERT INTO mob_droplist VALUES(3915,0,1,1000,3951,334);-- Wailing Stone / VWNM Ocythoe
+INSERT INTO mob_droplist VALUES(3915,1,1,1000,3954,333);-- Ghastly Stone / VWNM Ocythoe
+INSERT INTO mob_droplist VALUES(3915,1,1,1000,4033,333);-- Verdigris Stone / VWNM Ocythoe
+INSERT INTO mob_droplist VALUES(3915,1,1,1000,3951,334);-- Wailing Stone / VWNM Ocythoe
 INSERT INTO mob_droplist VALUES(3916,0,0,250,26893,500);-- Taeon Tabard / VWNM Kalasutrax
 INSERT INTO mob_droplist VALUES(3916,0,0,250,26735,500);-- Taeon Chapeau / VWNM Kalasutrax
-INSERT INTO mob_droplist VALUES(3916,0,1,1000,3954,333);-- Ghastly Stone / VWNM Kalasutrax
-INSERT INTO mob_droplist VALUES(3916,0,1,1000,4033,333);-- Verdigris Stone / VWNM Kalasutrax
-INSERT INTO mob_droplist VALUES(3916,0,1,1000,3951,334);-- Wailing Stone / VWNM Kalasutrax
+INSERT INTO mob_droplist VALUES(3916,1,1,1000,3954,333);-- Ghastly Stone / VWNM Kalasutrax
+INSERT INTO mob_droplist VALUES(3916,1,1,1000,4033,333);-- Verdigris Stone / VWNM Kalasutrax
+INSERT INTO mob_droplist VALUES(3916,1,1,1000,3951,334);-- Wailing Stone / VWNM Kalasutrax
 INSERT INTO mob_droplist VALUES(3917,0,0,250,26891,500);-- Yorium Cuirass / VWNM Ig-Alima
 INSERT INTO mob_droplist VALUES(3917,0,0,250,26733,500);-- Yorium Barbuta / VWNM Ig-Alima
-INSERT INTO mob_droplist VALUES(3917,0,1,1000,3954,333);-- Ghastly Stone / VWNM Ig-Alima
-INSERT INTO mob_droplist VALUES(3917,0,1,1000,4033,333);-- Verdigris Stone / VWNM Ig-Alima
-INSERT INTO mob_droplist VALUES(3917,0,1,1000,3951,334);-- Wailing Stone / VWNM Ig-Alima
+INSERT INTO mob_droplist VALUES(3917,1,1,1000,3954,333);-- Ghastly Stone / VWNM Ig-Alima
+INSERT INTO mob_droplist VALUES(3917,1,1,1000,4033,333);-- Verdigris Stone / VWNM Ig-Alima
+INSERT INTO mob_droplist VALUES(3917,1,1,1000,3951,334);-- Wailing Stone / VWNM Ig-Alima
 INSERT INTO mob_droplist VALUES(3918,0,0,250,26894,500);-- Telchine Chas. / VWNM Botulus_Rex
 INSERT INTO mob_droplist VALUES(3918,0,0,250,26736,500);-- Telchine Cap / VWNM Botulus_Rex
-INSERT INTO mob_droplist VALUES(3918,0,1,1000,3954,333);-- Ghastly Stone / VWNM Botulus_Rex
-INSERT INTO mob_droplist VALUES(3918,0,1,1000,4033,333);-- Verdigris Stone / VWNM Botulus_Rex
-INSERT INTO mob_droplist VALUES(3918,0,1,1000,3951,334);-- Wailing Stone / VWNM Botulus_Rex
-INSERT INTO mob_droplist VALUES(3899,0,2,1000,3492,1000);-- Kaggens Cuticle / VWNM Kaggen
-INSERT INTO mob_droplist VALUES(3899,0,2,1000,3492,500);-- Kaggens Cuticle / VWNM Kaggen
-INSERT INTO mob_droplist VALUES(3900,0,2,1000,3491,1000);-- Akvans Pennon / VWNM Akvan
-INSERT INTO mob_droplist VALUES(3900,0,2,1000,3491,500);-- Akvans Pennon / VWNM Akvan
-INSERT INTO mob_droplist VALUES(3901,0,2,1000,3490,1000);-- Pils Tuille / VWNM Pil
-INSERT INTO mob_droplist VALUES(3901,0,2,1000,3490,500);-- Pils Tuille / VWNM Pil
-INSERT INTO mob_droplist VALUES(3905,0,2,1000,3449,1000);-- Celaenos Cloth / VWNM Celaeno
-INSERT INTO mob_droplist VALUES(3905,0,2,1000,3449,500);-- Celaenos Cloth / VWNM Celaeno
-INSERT INTO mob_droplist VALUES(3906,0,2,1000,3445,1000);-- Hahavas Mail / VWNM Hahava
-INSERT INTO mob_droplist VALUES(3906,0,2,1000,3445,500);-- Hahavas Mail / VWNM Hahava
-INSERT INTO mob_droplist VALUES(3907,0,2,1000,3447,1000);-- Voidwrought Plate / VWNM Voidwrought
-INSERT INTO mob_droplist VALUES(3907,0,2,1000,3447,500);-- Voidwrought Plate / VWNM Voidwrought
+INSERT INTO mob_droplist VALUES(3918,1,1,1000,3954,333);-- Ghastly Stone / VWNM Botulus_Rex
+INSERT INTO mob_droplist VALUES(3918,1,1,1000,4033,333);-- Verdigris Stone / VWNM Botulus_Rex
+INSERT INTO mob_droplist VALUES(3918,1,1,1000,3951,334);-- Wailing Stone / VWNM Botulus_Rex
 
 UPDATE mob_groups SET dropid = 3907 WHERE name =  'Voidwrought'AND groupid =  69;
 UPDATE mob_groups SET dropid = 3914 WHERE name =  'Gaunab'AND groupid =  151;
