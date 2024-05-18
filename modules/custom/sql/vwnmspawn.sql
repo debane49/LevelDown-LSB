@@ -330,7 +330,18 @@ INSERT INTO mob_droplist VALUES(3918,0,0,250,26736,500);-- Telchine Cap / VWNM B
 INSERT INTO mob_droplist VALUES(3918,0,1,1000,3954,333);-- Ghastly Stone / VWNM Botulus_Rex
 INSERT INTO mob_droplist VALUES(3918,0,1,1000,4033,333);-- Verdigris Stone / VWNM Botulus_Rex
 INSERT INTO mob_droplist VALUES(3918,0,1,1000,3951,334);-- Wailing Stone / VWNM Botulus_Rex
-
+INSERT INTO mob_droplist VALUES(3899,0,2,1000,3492,1000);-- Kaggens Cuticle / VWNM Kaggen
+INSERT INTO mob_droplist VALUES(3899,0,2,1000,3492,500);-- Kaggens Cuticle / VWNM Kaggen
+INSERT INTO mob_droplist VALUES(3900,0,2,1000,3491,1000);-- Akvans Pennon / VWNM Akvan
+INSERT INTO mob_droplist VALUES(3900,0,2,1000,3491,500);-- Akvans Pennon / VWNM Akvan
+INSERT INTO mob_droplist VALUES(3901,0,2,1000,3490,1000);-- Pils Tuille / VWNM Pil
+INSERT INTO mob_droplist VALUES(3901,0,2,1000,3490,500);-- Pils Tuille / VWNM Pil
+INSERT INTO mob_droplist VALUES(3905,0,2,1000,3449,1000);-- Celaenos Cloth / VWNM Celaeno
+INSERT INTO mob_droplist VALUES(3905,0,2,1000,3449,500);-- Celaenos Cloth / VWNM Celaeno
+INSERT INTO mob_droplist VALUES(3906,0,2,1000,3445,1000);-- Hahavas Mail / VWNM Hahava
+INSERT INTO mob_droplist VALUES(3906,0,2,1000,3445,500);-- Hahavas Mail / VWNM Hahava
+INSERT INTO mob_droplist VALUES(3907,0,2,1000,3447,1000);-- Voidwrought Plate / VWNM Voidwrought
+INSERT INTO mob_droplist VALUES(3907,0,2,1000,3447,500);-- Voidwrought Plate / VWNM Voidwrought
 
 UPDATE mob_groups SET dropid = 3907 WHERE name =  'Voidwrought'AND groupid =  69;
 UPDATE mob_groups SET dropid = 3914 WHERE name =  'Gaunab'AND groupid =  151;

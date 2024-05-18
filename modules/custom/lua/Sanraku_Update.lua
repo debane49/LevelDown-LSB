@@ -140,9 +140,9 @@ super(player, npc, trade)
     -- Make sure we exactly 1 item
     if trade:getItemCount() ~= 1 then return end
        local tradeItemId = trade:getItemId(0) -- only 1 item, get first
-        --[[
+        
         if tradeItemId == 2477 then -- Soul Plate
-        zeni = math.random(1,200) -- random value since soul plates aren't implemented yet.
+        zeni = math.random(200,400) -- random value since soul plates aren't implemented yet.
         player:tradeComplete()
         player:addCurrency("zeni_point", zeni)
         player:startEvent(910, zeni)
@@ -150,7 +150,7 @@ super(player, npc, trade)
         player:tradeComplete();
         player:addCurrency("zeni_point", customTradeItemIds[tradeItemId]);
         else
-        ]]--
+        
         for i,znm in pairs(znms) do
             if tradeItemId == znm.trophy then
                 if player:hasKeyItem(znm.seal) == false then
@@ -164,7 +164,7 @@ super(player, npc, trade)
                 break
             end
         end
-    -- end
+     end
 end)
 
 m:addOverride('xi.zones.Aht_Urhgan_Whitegate.npcs.Sanraku.onTrigger', function(player, npc)
