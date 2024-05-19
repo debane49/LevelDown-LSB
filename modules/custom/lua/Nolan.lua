@@ -25,7 +25,7 @@ local tradeTablePathA =
 [  6] = { trade = { 26792,{ 9086, 6}}, base = 26792, aug1 =  78, aug1MAX = 24, aug2 = 514, aug2MAX =  9, aug3 = 356, aug3MAX =  4, aug4 =  0, aug4MAX = 0 }, -- Despair Helm
 [  7] = { trade = { 26948,{ 9086, 6}}, base = 26948, aug1 =  78, aug1MAX = 24, aug2 = 514, aug2MAX =  9, aug3 = 356, aug3MAX =  4, aug4 =  0, aug4MAX = 0 }, -- Despair Mail
 [  8] = { trade = { 27098,{ 9086, 6}}, base = 27098, aug1 =  78, aug1MAX = 24, aug2 = 514, aug2MAX =  9, aug3 = 356, aug3MAX =  4, aug4 =  0, aug4MAX = 0 }, -- Despair Finger Gauntlets
-[  9] = { trade = { 27283,{ 9086, 6}}, base = 27293, aug1 =  78, aug1MAX = 24, aug2 = 514, aug2MAX =  9, aug3 = 356, aug3MAX =  4, aug4 =  0, aug4MAX = 0 }, -- Despair Cuisses
+[  9] = { trade = { 27283,{ 9086, 6}}, base = 27283, aug1 =  78, aug1MAX = 24, aug2 = 514, aug2MAX =  9, aug3 = 356, aug3MAX =  4, aug4 =  0, aug4MAX = 0 }, -- Despair Cuisses
 [ 10] = { trade = { 27458,{ 9086, 6}}, base = 27458, aug1 =  78, aug1MAX = 24, aug2 = 514, aug2MAX =  9, aug3 = 356, aug3MAX =  4, aug4 =  0, aug4MAX = 0 }, -- Despair Greaves
 [ 11] = { trade = { 26793,{ 9086, 6}}, base = 26793, aug1 = 512, aug1MAX =  9, aug2 =  23, aug2MAX = 14, aug3 = 195, aug3MAX =  6, aug4 =  0, aug4MAX = 0 }, -- Naga Somen
 [ 12] = { trade = { 26949,{ 9086, 6}}, base = 26949, aug1 = 512, aug1MAX =  9, aug2 =  23, aug2MAX = 14, aug3 = 195, aug3MAX =  6, aug4 =  0, aug4MAX = 0 }, -- Naga Samue
@@ -212,7 +212,7 @@ local tradeTablePathB =
 [  6] = { trade = { 26792,{ 9086, 6}}, base = 26792, aug1 = 512, aug1MAX = 11, aug2 = 514, aug2MAX =  6, aug3 =  49, aug3MAX =  1, aug4 =  0, aug4MAX = 0 }, -- Despair Helm
 [  7] = { trade = { 26948,{ 9086, 6}}, base = 26948, aug1 = 512, aug1MAX = 11, aug2 = 514, aug2MAX =  6, aug3 =  49, aug3MAX =  1, aug4 =  0, aug4MAX = 0 }, -- Despair Mail
 [  8] = { trade = { 27098,{ 9086, 6}}, base = 27098, aug1 = 512, aug1MAX = 11, aug2 = 514, aug2MAX =  6, aug3 =  49, aug3MAX =  1, aug4 =  0, aug4MAX = 0 }, -- Despair Finger Gauntlets
-[  9] = { trade = { 27283,{ 9086, 6}}, base = 27293, aug1 = 512, aug1MAX = 11, aug2 = 514, aug2MAX =  6, aug3 =  49, aug3MAX =  1, aug4 =  0, aug4MAX = 0 }, -- Despair Cuisses
+[  9] = { trade = { 27283,{ 9086, 6}}, base = 27283, aug1 = 512, aug1MAX = 11, aug2 = 514, aug2MAX =  6, aug3 =  49, aug3MAX =  1, aug4 =  0, aug4MAX = 0 }, -- Despair Cuisses
 [ 10] = { trade = { 27458,{ 9086, 6}}, base = 27458, aug1 = 512, aug1MAX = 11, aug2 = 514, aug2MAX =  6, aug3 =  49, aug3MAX =  1, aug4 =  0, aug4MAX = 0 }, -- Despair Greaves
 [ 11] = { trade = { 26793,{ 9086, 6}}, base = 26793, aug1 =  78, aug1MAX = 24, aug2 = 514, aug2MAX =  9, aug3 =  31, aug3MAX = 19, aug4 =  0, aug4MAX = 0 }, -- Naga Somen
 [ 12] = { trade = { 26949,{ 9086, 6}}, base = 26949, aug1 =  78, aug1MAX = 24, aug2 = 514, aug2MAX =  9, aug3 =  31, aug3MAX = 19, aug4 =  0, aug4MAX = 0 }, -- Naga Samue
@@ -399,7 +399,7 @@ local tradeTablePathC =
 [  6] = { trade = { 26792,{ 9086, 6}}, base = 26792, aug1 =   23, aug1MAX =  9, aug2 = 1794, aug2MAX =  6, aug3 =  112, aug3MAX =  2, aug4 =  0, aug4MAX = 0 }, -- Despair Helm
 [  7] = { trade = { 26948,{ 9086, 6}}, base = 26948, aug1 =   23, aug1MAX =  9, aug2 = 1794, aug2MAX =  6, aug3 =  112, aug3MAX =  2, aug4 =  0, aug4MAX = 0 }, -- Despair Mail
 [  8] = { trade = { 27098,{ 9086, 6}}, base = 27098, aug1 =   23, aug1MAX =  9, aug2 = 1794, aug2MAX =  6, aug3 =  112, aug3MAX =  2, aug4 =  0, aug4MAX = 0 }, -- Despair Finger Gauntlets
-[  9] = { trade = { 27283,{ 9086, 6}}, base = 27293, aug1 =   23, aug1MAX =  9, aug2 = 1794, aug2MAX =  6, aug3 =  112, aug3MAX =  2, aug4 =  0, aug4MAX = 0 }, -- Despair Cuisses
+[  9] = { trade = { 27283,{ 9086, 6}}, base = 27283, aug1 =   23, aug1MAX =  9, aug2 = 1794, aug2MAX =  6, aug3 =  112, aug3MAX =  2, aug4 =  0, aug4MAX = 0 }, -- Despair Cuisses
 [ 10] = { trade = { 27458,{ 9086, 6}}, base = 27458, aug1 =   23, aug1MAX =  9, aug2 = 1794, aug2MAX =  6, aug3 =  112, aug3MAX =  2, aug4 =  0, aug4MAX = 0 }, -- Despair Greaves
 [ 11] = { trade = { 26793,{ 9086, 6}}, base = 26793, aug1 = 1474, aug1MAX = 30, aug2 = 1475, aug2MAX =  3, aug3 = 1476, aug3MAX =  2, aug4 =  0, aug4MAX = 0 }, -- Naga Somen
 [ 12] = { trade = { 26949,{ 9086, 6}}, base = 26949, aug1 = 1474, aug1MAX = 30, aug2 = 1475, aug2MAX =  3, aug3 = 1476, aug3MAX =  2, aug4 =  0, aug4MAX = 0 }, -- Naga Samue
@@ -586,7 +586,7 @@ local tradeTablePathD =
 [  6] = { trade = { 26792,{ 9086, 6}}, base = 26792, aug1 =  512, aug1MAX = 15, aug2 =   39, aug2MAX =  6, aug3 =  142, aug3MAX =  2, aug4 =  0, aug4MAX = 0 }, -- Despair Helm
 [  7] = { trade = { 26948,{ 9086, 6}}, base = 26948, aug1 =   25, aug1MAX = 24, aug2 =   37, aug2MAX = 19, aug3 =  143, aug3MAX =  2, aug4 =  0, aug4MAX = 0 }, -- Despair Mail
 [  8] = { trade = { 27098,{ 9086, 6}}, base = 27098, aug1 =   27, aug1MAX = 24, aug2 =   29, aug2MAX = 19, aug3 =  212, aug3MAX =  9, aug4 =  0, aug4MAX = 0 }, -- Despair Finger Gauntlets
-[  9] = { trade = { 27283,{ 9086, 6}}, base = 27293, aug1 =  515, aug1MAX =  9, aug2 =   31, aug2MAX = 19, aug3 =  195, aug3MAX =  6, aug4 =  0, aug4MAX = 0 }, -- Despair Cuisses
+[  9] = { trade = { 27283,{ 9086, 6}}, base = 27283, aug1 =  515, aug1MAX =  9, aug2 =   31, aug2MAX = 19, aug3 =  195, aug3MAX =  6, aug4 =  0, aug4MAX = 0 }, -- Despair Cuisses
 [ 10] = { trade = { 27458,{ 9086, 6}}, base = 27458, aug1 =  513, aug1MAX =  9, aug2 =  512, aug2MAX =  6, aug3 =   54, aug3MAX =  2, aug4 =  0, aug4MAX = 0 }, -- Despair Greaves
 [ 11] = { trade = { 26793,{ 9086, 6}}, base = 26793, aug1 =   23, aug1MAX = 14, aug2 =   27, aug2MAX = 24, aug3 =   40, aug3MAX =  5, aug4 =  0, aug4MAX = 0 }, -- Naga Somen
 [ 12] = { trade = { 26949,{ 9086, 6}}, base = 26949, aug1 =   79, aug1MAX = 25, aug2 =  513, aug2MAX =  9, aug3 =   25, aug3MAX = 19, aug4 = 78, aug4MAX = 0 }, -- Naga Samue
