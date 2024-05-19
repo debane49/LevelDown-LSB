@@ -135,20 +135,21 @@ local customTradeItemIds = {
 }
 
 m:addOverride('xi.zones.Aht_Urhgan_Whitegate.npcs.Sanraku.onTrade', function(player, npc, trade)
-super(player, npc, trade)
+--super(player, npc, trade)
     -- Guardian clauses
     -- Make sure we exactly 1 item
     if trade:getItemCount() ~= 1 then return end
        local tradeItemId = trade:getItemId(0) -- only 1 item, get first
         
         if tradeItemId == 2477 then -- Soul Plate
-        zeni = math.random(200,400) -- random value since soul plates aren't implemented yet.
+        local zeni = math.random(200,400) -- random value since soul plates aren't implemented yet.
         player:tradeComplete()
         player:addCurrency("zeni_point", zeni)
         player:startEvent(910, zeni)
         elseif customTradeItemIds[tradeItemId] then
         player:tradeComplete();
         player:addCurrency("zeni_point", customTradeItemIds[tradeItemId]);
+                    player:printToPlayer('Thank you, Here is you 1000 Zeni!', 0, 'Sanraku')
         else
         
         for i,znm in pairs(znms) do
@@ -164,7 +165,7 @@ super(player, npc, trade)
                 break
             end
         end
-     end
+    end
 end)
 
 m:addOverride('xi.zones.Aht_Urhgan_Whitegate.npcs.Sanraku.onTrigger', function(player, npc)
@@ -270,7 +271,7 @@ m:addOverride('xi.zones.Aht_Urhgan_Whitegate.npcs.Sanraku.onEventUpdate', functi
 end)
 
 m:addOverride('xi.zones.Aht_Urhgan_Whitegate.npcs.Sanraku.onEventFinish', function(player, csid, option, npc)
-super(player, csid, option, npc)
+--super(player, csid, option, npc)
     -- Handle ZeniStatus event
     if csid == 908 then
         player:setCharVar("ZeniStatus", 1)
