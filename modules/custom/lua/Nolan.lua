@@ -904,7 +904,6 @@ m:addOverride("xi.zones.Norg.npcs.Nolan.onEventUpdate", function(player, csid, o
 end)
 
 m:addOverride("xi.zones.Norg.npcs.Nolan.onEventFinish", function(player, csid, option, npc)
-
 	if csid == 9502 and
 		option == 65542 then -- option A
 					player:setCharVar("[Augment]choice", 1)
@@ -917,6 +916,9 @@ m:addOverride("xi.zones.Norg.npcs.Nolan.onEventFinish", function(player, csid, o
 
 		elseif option == 262150 then -- option D
 					player:setCharVar("[Augment]choice", 4)
+        elseif option == 1073741824 then
+						player:setCharVar("[GFZitah]item", 0)
+                        player:setCharVar("[Augment]choice", 0)
 	end
 					local reward = player:getCharVar("[GFZitah]item")
 					local aug1A = npc:getLocalVar("aug1A")
