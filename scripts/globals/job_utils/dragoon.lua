@@ -658,11 +658,11 @@ xi.job_utils.dragoon.useDamageBreath = function(wyvern, target, skill, action, d
     local deepBreathingMultiplier = 0
 
     if wyvern:hasStatusEffect(xi.effect.MAGIC_ATK_BOOST) then
-        deepBreathingMultiplier = 0.75 + (0.25 * deepBreathingMerits)
+        deepBreathingMultiplier = 3 + (0.35 * deepBreathingMerits)
 
         -- add in augment power, +0.1 per merit level (including first)
         if master:getMod(xi.mod.ENHANCE_DEEP_BREATHING) > 0 then
-            deepBreathingMultiplier = deepBreathingMultiplier + deepBreathingMerits * 0.1
+            deepBreathingMultiplier = deepBreathingMultiplier + deepBreathingMerits * 0.2
         end
 
         wyvern:delStatusEffect(xi.effect.MAGIC_ATK_BOOST)
