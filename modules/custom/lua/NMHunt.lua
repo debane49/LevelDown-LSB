@@ -106,7 +106,8 @@ require("scripts/zones/Marjami_Ravine/Zone")
 -------------------------
 
 
-local NMHuntone  = 
+local NMHuntone  =
+-- mob name / groupid (sql) / zonegroupid(sql) / look (sql) / zone / X / Y / Z / Rotation / Zone in text formatgroupZoneId (sq
 {
 {'Ailmar', 5, 192, '00003c0200000000000000000000000000000000', xi.zone.NORTH_GUSTABERG, -563.458, 39.861, 87.275, 30, 'North_Gustaberg'}, 
 {'Amara', 47, 82, '0000f10700000000000000000000000000000000', xi.zone.WEST_RONFAURE, -328.279, -52.661, 257.137, 96, 'West_Ronfaure'}, 
@@ -159,7 +160,8 @@ local NMHuntone  =
 {'Vinelle', 33, 107, '0000480100000000000000000000000000000000', xi.zone.KONSCHTAT_HIGHLANDS, 160, 24, 121, 0, 'Konschtat_Highlands'}, 
 {'Wilkass', 7, 140, '0000ea0300000000000000000000000000000000', xi.zone.GIDDEUS, -176.625, -0.776, 174.952, 127, 'Giddeus'}, 
 }
-local NMHunttwo  = 
+local NMHunttwo  =
+-- mob name / groupid (sql) / l) / look (sql) / zone / X / Y / Z / Rotation / Zone in text formatgroupZoneId (sq
 {
 {'Akibrus', 45, 103, '0000c00100000000000000000000000000000000', xi.zone.LA_THEINE_PLATEAU, -399.3134, 0.2918, -310.1421, 214, 'La_Theine_Plateau'}, 
 {'Amerstal', 2, 21, '0000730400000000000000000000000000000000', xi.zone.PASHHOW_MARSHLANDS, 296.9673, 25.000, 391.7409, 103, 'Pashhow_Marshlands'}, 
@@ -212,7 +214,8 @@ local NMHunttwo  =
 {'Virfi', 19, 144, '0000bc0100000000000000000000000000000000', xi.zone.CARPENTERS_LANDING, -278.9129, -6.0000, -80.3542, 59, 'Carpenters_Landing'}, 
 {'Wiska', 39, 110, '00007c0100000000000000000000000000000000', xi.zone.MAZE_OF_SHAKHRAMI, -217.799, 16.483, -48.543, 41, 'Maze_of_Shakhrami'}, 
 }
-local NMHuntthree  = 
+local NMHuntthree  =
+-- mob name / groupid (sql) / l) / look (sql) / zone / X / Y / Z / Rotation / Zone in text formatgroupZoneId (sq
 {
 {'Akkar', 8, 152, '00004f0200000000000000000000000000000000', xi.zone.QUICKSAND_CAVES, -938.853, 16.716, -350.715, 38, 'Quicksand_Caves'}, 
 {'Angor', 31, 111, '0000b00100000000000000000000000000000000', xi.zone.GARLAIGE_CITADEL, -361.299, 18.5, 283.13, 19, 'Garlaige_Citadel'}, 
@@ -265,7 +268,8 @@ local NMHuntthree  =
 {'Vixen', 7, 58, '0000bb0600000000000000000000000000000000', xi.zone.BEHEMOTHS_DOMINION, -279.065, -20.484, -0.456, 18, 'Behemoths_Dominion'}, 
 {'Wispmaral', 1, 165, '0000150300000000000000000000000000000000', xi.zone.MISAREAUX_COAST, -57.008, -15.669, 39.833, 135, 'Misareaux_Coast'}, 
 }
-local NMHuntfour  = 
+local NMHuntfour  =
+-- mob name / groupid (sql) / l) / look (sql) / zone / X / Y / Z / Rotation / Zone in text formatgroupZoneId (sq
 {
 {'Alea', 2, 202, '0000d40100000000000000000000000000000000', xi.zone.THE_BOYAHDA_TREE, 179.34, 8.555, -122.01, 199, 'The_Boyahda_Tree'}, 
 {'Angun', 32, 76, '0000910100000000000000000000000000000000', xi.zone.MOUNT_ZHAYOLM, 13.769, -15.49, 101.096, 148, 'Mount_Zhayolm'}, 
@@ -318,7 +322,8 @@ local NMHuntfour  =
 {'Voggur', 41, 124, '0000130500000000000000000000000000000000', xi.zone.TEMPLE_OF_UGGALEPIH, -100, -11, -131, 119, 'Temple_of_Uggalepih'}, 
 {'Wistari', 87, 54, '0000de0600000000000000000000000000000000', xi.zone.CAPE_TERIGGAN, -281, -0.5, 471, 127, 'Cape_Teriggan'}, 
 }
-local NMHuntfive  = 
+local NMHuntfive  =
+-- mob name / groupid (sql) / l) / look (sql) / zone / X / Y / Z / Rotation / Zone in text formatgroupZoneId (sq
 {
 {'Aleera', 11, 135, '0000d10100000000000000000000000000000000', xi.zone.GUSTAV_TUNNEL, 166, -9, -83, 127, 'Gustav_Tunnel'}, 
 {'Anya', 41, 62, '06009a0600000000000000000000000000000000', xi.zone.ABYSSEA_ALTEPA, -740, -15, -696, 121, 'Abyssea-Altepa'}, 
@@ -371,7 +376,8 @@ local NMHuntfive  =
 {'Vyn', 30, 178, '0000350100000000000000000000000000000000', xi.zone.ABYSSEA_VUNKERL, -562.517, -48.168, -445.353, 0, 'Abyssea-Vunkerl'}, 
 {'Withil', 57, 182, '00008e0800000000000000000000000000000000', xi.zone.DANGRUF_WADI, -378, 3, -95, 127, 'Dangruf_Wadi'}, 
 }
-local NMHuntsix  = 
+local NMHuntsix  =
+-- mob name / groupid (sql) / groupZoneId (sql) / look (sql) / zone / X / Y / Z / Rotation / Zone in text format
 {
 {'Alva', 25, 266, '0000bd0100000000000000000000000000000000', xi.zone.NORTH_GUSTABERG_S, -332.994, 40.81, 369.101, 42, 'North_Gustaberg_[S]'}, 
 {'Aqrilla', 33, 270, '00002d0100000000000000000000000000000000', xi.zone.THE_ELDIEME_NECROPOLIS_S, 185.666, -28.25, 156.949, 188, 'The_Eldieme_Necropolis_[S]'}, 
@@ -379,7 +385,7 @@ local NMHuntsix  =
 {'Balrus', 29, 265, '0000fc0600000000000000000000000000000000', xi.zone.BATALLIA_DOWNS_S, -196.313, -40.5, -275.081, 10, 'Batallia_Downs_[S]'}, 
 {'Bonesnapper', 34, 270, '0000c90800000000000000000000000000000000', xi.zone.CASTLE_ZVAHL_KEEP, -22.521, 20.773, -2.683, 127, 'Castle_Zvahl_Keep'}, 
 {'Brilbelle', 34, 107, '0000100800000000000000000000000000000000', xi.zone.MERIPHATAUD_MOUNTAINS_S, -532.725, 0.76, 308.058, 137, 'Meriphataud_Mountains_[S]'}, 
-{'Caldor', 43, 196, '0000250100000000000000000000000000000000', xi.zone.SIH_GATES, -364.9, -20.7, -53.667, 248, 'Sih_Gates'}, 
+{'Caldor', 43, 196, '0000250100000000000000000000000000000000', xi.zone.SIH_GATES, -125.0805, -10.0624, -242.5629, 18, 'Sih_Gates'}, -- Artox  
 {'Ciscra', 44, 288, '00008f0700000000000000000000000000000000', xi.zone.NORTH_GUSTABERG_S, -233.741, -0.445, 225.515, 99, 'North_Gustaberg_[S]'}, 
 {'Daealla', 40, 174, '0000520500000000000000000000000000000000', xi.zone.CIRDAS_CAVERNS, -120, 18.5, 22, 69, 'Cirdas_Caverns'}, 
 {'Darfin', 20, 268, '0000e80900000000000000000000000000000000', xi.zone.MORIMAR_BASALT_FIELDS, -70.686, -16.256, -128.179, 231, 'Morimar_Basalt_Fields'}, 
