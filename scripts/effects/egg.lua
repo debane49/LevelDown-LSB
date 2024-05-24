@@ -12,6 +12,8 @@ effectObject.onEffectGain = function(target, effect)
                     
                        for i = xi.slot.MAIN, xi.slot.BACK do
                            targetArg:unequipItem(i)
+                           target:setMod(xi.mod.MOVE_SPEED_OVERIDE, 255)
+                           target:setSpeed(255)
                        end
                     end)
               end
@@ -31,6 +33,8 @@ end
 effectObject.onEffectLose = function(target, effect)
 local ExistLvl = tonumber(target:getCharVar('NakedRun'))
                       target:setLevel(ExistLvl)
+                      target:delMod(xi.mod.MOVE_SPEED_OVERIDE, 255)
+                      target:setSpeed(50)
                       target:setCharVar('NakedRun', 0)
                       target:removeListener('NAKEDRUN_TICK')
 end
