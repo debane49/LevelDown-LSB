@@ -41,12 +41,18 @@ page1 =
          end
          end,
     },
-    --[[
     {
-        'Another event!',
+        'Naked run to Jeuno',
          function(player)
+         if player:getCharVar('[GMEvent]NR') == 1 then
+                    menu.options = page2
+                    delaySendMenu(player)
+         else
+            player:printToPlayer('You are not a winner in this event!. ', 0, 'General')                    
          end
+         end,
     },
+    --[[
     {
         'Another Event!',
          function(player)              
@@ -525,10 +531,12 @@ m:addOverride('xi.zones.Celennia_Memorial_Library.Zone.onInitialize', function(z
         widescan = 1,
 
         onTrigger = function(player, npc)
-            if player:getCharVar('[GMEvent]HS') == 0 then
+            if player:getCharVar('[GMEvent]HS') == 0 or
+               player:getCharVar('[GMEvent]NR') == 0 then
                player:printToPlayer('I am here to distribute rewards to the winners for the GM Events!. ', 0, 'General')
                player:printToPlayer('I do not show that you have won any events yet, come back after you have won!. ', 0, 'General')
-            elseif player:getCharVar('[GMEvent]HS') == 1 then
+            elseif player:getCharVar('[GMEvent]HS') == 1 or
+                   player:getCharVar('[GMEvent]NR') == 1 then
                player:printToPlayer('Congratulations on your win, please select a reward!. ', 0, 'General')
                     menu.options = page1
                     delaySendMenu(player)
