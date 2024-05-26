@@ -32,8 +32,9 @@ zones[xi.zone.CLOISTER_OF_TIDES] =
     },
     mob =
     {
-        LEVIATHAN_PRIME     = GetFirstID('Leviathan_Prime_Trial'),
-        LEVIATHAN_PRIME_ASA = GetFirstID('Leviathan_Prime_ASA'),
+        LEVIATHAN_PRIME      = GetFirstID('Leviathan_Prime_Trial'),
+        LEVIATHAN_PRIME_ASA  = GetFirstID('Leviathan_Prime_ASA'),
+        LEVIATHAN_PRIME_HTBF = GetFirstID('Leviathan_Prime_HTBF'),
     },
     npc =
     {

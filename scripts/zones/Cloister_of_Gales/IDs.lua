@@ -18,17 +18,22 @@ zones[xi.zone.CLOISTER_OF_GALES] =
         CONQUEST_BASE                    = 7064, -- Tallying conquest results...
         YOU_CANNOT_ENTER_THE_BATTLEFIELD = 7225, -- You cannot enter the battlefield at present. Please wait a little longer.
         PROTOCRYSTAL                     = 7249, -- It is a giant crystal.
+        MEMBERS_OF_YOUR_PARTY            = 7534, -- Currently, # members of your party (including yourself) have clearance to enter the battlefield.
+        MEMBERS_OF_YOUR_ALLIANCE         = 7535, -- Currently, # members of your alliance (including yourself) have clearance to enter the battlefield.
+        TIME_LIMIT_FOR_THIS_BATTLE_IS    = 7537, -- The time limit for this battle is <number> minutes.
         PARTY_MEMBERS_HAVE_FALLEN        = 7573, -- All party members have fallen in battle. Now leaving the battlefield.
         THE_PARTY_WILL_BE_REMOVED        = 7580, -- If all party members' HP are still zero after # minute[/s], the party will be removed from the battlefield.
         GARUDA_UNLOCKED                  = 7583, -- You are now able to summon [Ifrit/Titan/Leviathan/Garuda/Shiva/Ramuh].
         ATTACH_SEAL                      = 7767, -- <player> attaches <item> to the protocrystal.
         POWER_STYMIES                    = 7768, -- An unseen power stymies your efforts to attach <item> to the protocrystal.
+        ENTERING_THE_BATTLEFIELD_FOR     = 7671, -- Entering the battlefield for [Trial by Wind/Trial-Size Trial by Wind/Waking the Beast/Trial by Wind]!
     },
     mob =
     {
-        GARUDA_PRIME     = GetFirstID('Garuda_Prime_Trial'),
-        GARUDA_PRIME_ASA = GetFirstID('Garuda_Prime_ASA'),
-        OGMIOS           = GetFirstID('Ogmios'),
+        GARUDA_PRIME      = GetFirstID('Garuda_Prime_Trial'),
+        GARUDA_PRIME_ASA  = GetFirstID('Garuda_Prime_ASA'),
+        OGMIOS            = GetFirstID('Ogmios'),
+        GARUDA_PRIME_HTBF = GetFirstID('Garuda_Prime_HTBF'),
     },
     npc =
     {

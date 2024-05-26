@@ -32,8 +32,9 @@ zones[xi.zone.CLOISTER_OF_FLAMES] =
     },
     mob =
     {
-        IFRIT_PRIME     = GetFirstID('Ifrit_Prime_Trial'),
-        IFRIT_PRIME_ASA = GetFirstID('Ifrit_Prime_ASA'),
+        IFRIT_PRIME      = GetFirstID('Ifrit_Prime_Trial'),
+        IFRIT_PRIME_ASA  = GetFirstID('Ifrit_Prime_ASA'),
+        IFRIT_PRIME_HTBF = GetFirstID('Ifrit_Prime_HTBF'),
     },
     npc =
     {
