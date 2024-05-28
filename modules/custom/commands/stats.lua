@@ -47,13 +47,13 @@ player:printToPlayer(string.format('ATT: [%i] ACC: [%i] R.ATT: [%i] R.ACC: [%i]'
 
 player:printToPlayer(string.format('DEF: [%i] Magic DEF: [%i] EVA: [%i] Magic EAV: [%i]', target:getStat(xi.mod.DEF), target:getMod(xi.mod.MDEF), target:getStat(xi.mod.EVA), target:getMod(xi.mod.MEVA)), xi.msg.channel.SYSTEM_3)
 
-player:printToPlayer(string.format('Dmg Taken: [%i%%] Magic DT: [%i%%] Magic DT II: [%i%%] Phy DT: [%i%%] Phy DT II: [%i%%]', target:getMod(xi.mod.DMG)/100, target:getMod(xi.mod.DMGMAGIC)/100, target:getMod(xi.mod.DMGMAGIC_II)/100, target:getMod(xi.mod.DMGPHYS)/100, target:getMod(xi.mod.DMGPHYS_II)/100), xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Dmg Taken: [%i%%] Magic DT: [%i%%] Magic DT II: [%i%%] Phy DT: [%i%%] Phy DT II: [%i%%]', target:getMod(xi.mod.DMG) * .01, target:getMod(xi.mod.DMGMAGIC) * .01, target:getMod(xi.mod.DMGMAGIC_II) * .01, target:getMod(xi.mod.DMGPHYS) * .01, target:getMod(xi.mod.DMGPHYS_II) * .01), xi.msg.channel.SYSTEM_3)
 
 player:printToPlayer(string.format('Magic ACC: [%i] Magic ATT: [%i] Magic Burst: [%i%%] Magic Damage: [%i]', target:getMod(xi.mod.MACC), target:getMod(xi.mod.MATT), target:getMod(xi.mod.MAG_BURST_BONUS), target:getMod(xi.mod.MAGIC_DAMAGE)), xi.msg.channel.SYSTEM_3)
 
-player:printToPlayer(string.format('Haste Ability: [%i%%] Haste Magic: [%i%%] Haste Gear: [%i%%] Fast Cast: [%i%%]', target:getMod(xi.mod.HASTE_ABILITY), target:getMod(xi.mod.HASTE_MAGIC), target:getMod(xi.mod.HASTE_GEAR), target:getMod(xi.mod.FASTCAST)), xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Haste Ability: [%i%%] Haste Magic: [%i%%] Haste Gear: [%i%%] Fast Cast: [%i%%]', target:getMod(xi.mod.HASTE_ABILITY) * .01, target:getMod(xi.mod.HASTE_MAGIC) * .01, target:getMod(xi.mod.HASTE_GEAR) * .01, target:getMod(xi.mod.FASTCAST)), xi.msg.channel.SYSTEM_3)
 
-player:printToPlayer(string.format('Subtle Blow: [%i%%] Subtle Blow II: [%i%%] Store TP: [%i] Dual Wield: [%i]', target:getMod(xi.mod.SUBTLE_BLOW), target:getMod(xi.mod.SUBTLE_BLOW_II), target:getMod(xi.mod.STORETP), target:getMod(xi.mod.DUAL_WIELD)), xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Subtle Blow: [%i%%] Subtle Blow II: [%i%%] Store TP: [%i] Dual Wield: [%i]', target:getMod(xi.mod.SUBTLE_BLOW) * .01, target:getMod(xi.mod.SUBTLE_BLOW_II) * .01, target:getMod(xi.mod.STORETP), target:getMod(xi.mod.DUAL_WIELD)), xi.msg.channel.SYSTEM_3)
 
 player:printToPlayer(string.format('Refresh / Tick: [%i] Regen / Tick: [%i] Regain / Tick: [%i]', target:getMod(xi.mod.REFRESH), target:getMod(xi.mod.REGEN), target:getMod(xi.mod.REGAIN)), xi.msg.channel.SYSTEM_3)
 
@@ -96,7 +96,7 @@ player:printToPlayer(string.format('--------------------------------------------
         -- Todo: check if raged and/or how long mobs ragetimer is.
     end
 
-
+--player:printToPlayer(string.format('Attack Per: [%i]', target:getMod(xi.mod.FOOD_ATTP)), xi.msg.channel.SYSTEM_3)
 
 
 
@@ -105,6 +105,15 @@ player:printToPlayer(string.format('--------------------------------------------
 
     -- player:printToPlayer(string.format('Total Subtle Blow: %i ', target:getMod(xi.mod.SUBTLE_BLOW)), xi.msg.channel.SYSTEM_3)
     -- player:printToPlayer(string.format('Total Store TP: %i ', target:getMod(xi.mod.STORETP)), xi.msg.channel.SYSTEM_3)
+
+    target:getMod(xi.mod.FOOD_HPP)                      
+    target:getMod(xi.mod.FOOD_MPP)                       
+    target:getMod(xi.mod.FOOD_ATTP)                      
+    target:getMod(xi.mod.FOOD_DEFP)                      
+    target:getMod(xi.mod.FOOD_ACCP)                      
+    target:getMod(xi.mod.FOOD_RATTP)                    
+    target:getMod(xi.mod.FOOD_RACCP)                     
+    target:getMod(xi.mod.FOOD_MACCP)                    
 
 
 
