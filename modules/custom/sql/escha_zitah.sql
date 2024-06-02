@@ -215,4 +215,19 @@ INSERT INTO `nm_spawn_points` VALUES (17957281,0,-36.69,-0.328,-350.24);
 INSERT INTO `nm_spawn_points` VALUES (17957282,0,-44.051,-0.341,-150.481);
 INSERT INTO `nm_spawn_points` VALUES (17957279,0,-493.9,0.18,231.925);
 INSERT INTO `nm_spawn_points` VALUES (17957291,0,-340.23,2.046,166.833);
+-- Shockmaw
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512, 501, 65, 255); -- waterja
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512, 173, 65, 255); -- water v
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512, 854, 65, 255); -- water vi
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512, 215, 65, 255); -- flood 2
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512, 500, 65, 255); -- thunderja
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512, 168, 65, 255); -- thunder v
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512, 853, 65, 255); -- thunder vi
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512, 213, 65, 255); -- burst 2
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512,  46, 65, 255); -- protect iv
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512,  47, 65, 255); -- protect v
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512,  51, 65, 255); -- shell iv
+INSERT INTO mob_spell_lists VALUES ('Shockmaw', 512,  52, 65, 255); -- shell v
+UPDATE mob_pools SET spellList = 512 WHERE poolid = 5721 AND name = 'Shockmaw';
+
 

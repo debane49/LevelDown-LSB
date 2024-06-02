@@ -126,3 +126,49 @@ INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id
 --
 INSERT INTO `mob_skill_lists` (`skill_list_name`, `skill_list_id`, `mob_skill_id`) VALUES ('TRUST_Koru-Moru', 1067, 173);
 
+--
+-- General / Arciela II
+--
+
+INSERT INTO mob_spell_lists VALUES ('TRUST_Arciela_II',426,43,7,255); -- protect
+INSERT INTO mob_spell_lists VALUES ('TRUST_Arciela_II',426,44,27,255); -- protect_ii
+INSERT INTO mob_spell_lists VALUES ('TRUST_Arciela_II',426,45,47,255); -- protect_iii
+INSERT INTO mob_spell_lists VALUES ('TRUST_Arciela_II',426,46,63,255); -- protect_iv
+INSERT INTO mob_spell_lists VALUES ('TRUST_Arciela_II',426,47,77,255); -- protect_v
+INSERT INTO mob_spell_lists VALUES ('TRUST_Arciela_II',426,48,17,255); -- shell
+INSERT INTO mob_spell_lists VALUES ('TRUST_Arciela_II',426,51,68,255); -- shell_iv
+INSERT INTO mob_spell_lists VALUES ('TRUST_Arciela_II',426,49,37,255); -- shell_ii
+INSERT INTO mob_spell_lists VALUES ('TRUST_Arciela_II',426,50,57,255); -- shell_iii
+INSERT INTO mob_spell_lists VALUES ('TRUST_Arciela_II',426,52,76,255); -- shell_v
+
+INSERT INTO mob_skill_lists VALUES ('TRUST_Arciela_II',1132, 2448); -- Ascension
+INSERT INTO mob_skill_lists VALUES ('TRUST_Arciela_II',1132, 2449); -- Descension
+INSERT INTO mob_skill_lists VALUES ('TRUST_Arciela_II',1132, 2450); -- Expunge Magic
+INSERT INTO mob_skill_lists VALUES ('TRUST_Arciela_II',1132, 2451); -- harmonic displacement
+INSERT INTO mob_skill_lists VALUES ('TRUST_Arciela_II',1132, 2452); -- sight unseen
+INSERT INTO mob_skill_lists VALUES ('TRUST_Arciela_II',1132, 2453); -- darkest hour
+INSERT INTO mob_skill_lists VALUES ('TRUST_Arciela_II',1132, 2454); -- unceasing dread
+INSERT INTO mob_skill_lists VALUES ('TRUST_Arciela_II',1132, 2455); -- dignified awe
+INSERT INTO mob_skill_lists VALUES ('TRUST_Arciela_II',1132, 2456); -- naakuals vengance
+
+UPDATE mob_skills SET mob_anim_id = 2448 WHERE mob_skill_id = 3697; -- Ascension
+UPDATE mob_skills SET mob_anim_id = 2449 WHERE mob_skill_id = 3698; -- Descension
+UPDATE mob_skills SET mob_anim_id = 2450, primary_sc =  6, secondary_sc =  4 WHERE mob_skill_id = 3699; -- Expunge Magic Disctortion 6 / Scission 4
+UPDATE mob_skills SET mob_anim_id = 2451, primary_sc = 11, secondary_sc =  5 WHERE mob_skill_id = 3700; -- harmonic displacement Fusion 11 / Reverberation 5
+UPDATE mob_skills SET mob_anim_id = 2452, primary_sc =  9, secondary_sc =  3 WHERE mob_skill_id = 3701; -- sight unseen Gravitation 9 / Liquification 3
+UPDATE mob_skills SET mob_anim_id = 2453, primary_sc = 12, secondary_sc =  2 WHERE mob_skill_id = 3702; -- darkest hour Fragmentation 12 / Compression 2
+UPDATE mob_skills SET mob_anim_id = 2454 WHERE mob_skill_id = 3703; -- unceasing dread -- adds Paralyze
+UPDATE mob_skills SET mob_anim_id = 2455 WHERE mob_skill_id = 3704; -- dignified awe -- Adds Amnesia
+UPDATE mob_skills SET mob_anim_id = 2456, primary_sc = 13, secondary_sc = 11 WHERE mob_skill_id = 3705; -- naakuals vengance Light 13 / Fusion 11 -- Recovers Own HP & MP Fully 5 Minute Cool down
+
+--
+-- General / Joachim / custom
+--
+
+INSERT INTO mob_spell_lists VALUES ('TRUST_Joachim', 323, 394, 99, 255);	-- valor_minuet
+INSERT INTO mob_spell_lists VALUES ('TRUST_Joachim', 323, 395, 99, 255);	-- valor_minuet_ii
+INSERT INTO mob_spell_lists VALUES ('TRUST_Joachim', 323, 396, 99, 255);	-- valor_minuet_iii
+INSERT INTO mob_spell_lists VALUES ('TRUST_Joachim', 323, 397, 99, 255);	-- valor_minuet_iv
+INSERT INTO mob_spell_lists VALUES ('TRUST_Joachim', 323, 398, 99, 255);	-- valor_minuet_v
+INSERT INTO mob_spell_lists VALUES ('TRUST_Joachim', 323, 417, 99, 255);	-- honor march
+UPDATE spell_list SET name = 'honor_march', jobs = 0x00000000000000000063000000000000000000000000 WHERE spellid = 417;

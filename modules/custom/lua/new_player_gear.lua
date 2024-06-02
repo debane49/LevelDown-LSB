@@ -48,6 +48,7 @@ m:addOverride('xi.player.charCreate', function(player)
         player:addItem(xi.item.SAN_DORIAN_RING)
         player:addItem(xi.item.BASTOKAN_RING)
         end
+        player:addItem(xi.item.ANIMATOR)
 	    -- add all learned weaponskills
 	    targ = player
     		for i = 1, 63 do

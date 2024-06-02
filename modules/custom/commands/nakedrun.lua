@@ -56,45 +56,6 @@ commandObj.onTrigger = function(player)
                                 partyMember:printToPlayer('     1',xi.msg.channel.SYSTEM_3)                   
                             end)
                 end
-
-    local zone = GetZone(xi.zone.BATALLIA_DOWNS)
-    local zoneOrInstanceObj = player:getZone()
-    local instance = player:getInstance()
-    if instance then
-        zoneOrInstanceObj = instance
-    end
-    local npc = zoneOrInstanceObj:insertDynamicEntity({
-
-        -- NPC or MOB
-        objtype = xi.objType.NPC,
-        name = 'Event NPC',
-        look = 2423,
-        x = 446.1063,
-        y = 8.1920,
-        z = -154.1094,
-        rotation = 139,
-        widescan = 0,
-
-        onTrigger = function(player, npc)
-        if player:getCharVar('NakedRun') >= 1 then
-        local playerz = player:getName()
-        player:printToArea(string.format('GM %s : Congratulations %s, you have made it in 1st place!!!!!!', namez, playerz), xi.msg.channel.SYSTEM_3, 0, '')
-        player:printToArea(string.format('GM %s : Please see the GM Event NPC in the Library to claim your reward!',namez), xi.msg.channel.SYSTEM_3, 0, '')
-        player:printToArea(string.format('GM %s : Thank you to everyone who participated in the event!',namez), xi.msg.channel.SYSTEM_3, 0, '')
-        player:setCharVar('[GMEvent] NR', 1)
-        npc:setStatus(xi.status.DISAPPEAR)
-            local alliance = player:getAlliance()
-                for _, partyMember in ipairs(alliance) do
-                    if partyMember:getCharVar('NakedRun') >= 1 then
-                       partyMember:delStatusEffect(xi.effect.EGG)
-                    end
-                end
-        else
-        player:printToPlayer('Your are not a participant in the Run to Jeuno event!')
-        end
-        end,
-    })
-    utils.unused(npc)
 end
 
 return commandObj

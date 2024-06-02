@@ -547,6 +547,74 @@ m:addOverride('xi.zones.Celennia_Memorial_Library.Zone.onInitialize', function(z
     utils.unused(GMNpc)
 end)
 
+m:addOverride('xi.zones.Celennia_Memorial_Library.Zone.onInitialize', function(zone)
+    -- Call the zone's original function for onInitialize
+    super(zone)
+    local GMNpc = zone:insertDynamicEntity({
+
+        -- NPC or MOB
+        objtype = xi.objType.NPC,
+        name = 'GM Event NPC',
+        look = 1548,
+        x = -114.8606,
+        y = -2.1500,
+        z = -88.3228,
+        rotation = 32,
+        widescan = 1,
+
+        onTrigger = function(player, npc)
+            if player:getCharVar('[GMEvent]HS') == 0 or
+               player:getCharVar('[GMEvent]NR') == 0 then
+               player:printToPlayer('I am here to distribute rewards to the winners for the GM Events!. ', 0, 'General')
+               player:printToPlayer('I do not show that you have won any events yet, come back after you have won!. ', 0, 'General')
+            elseif player:getCharVar('[GMEvent]HS') == 1 or
+                   player:getCharVar('[GMEvent]NR') == 1 then
+               player:printToPlayer('Congratulations on your win, please select a reward!. ', 0, 'General')
+                    menu.options = page1
+                    delaySendMenu(player)
+            end
+        end,
+
+    })
+    utils.unused(GMNpc)
+end)
+
+
+m:addOverride('xi.zones.Batallia_Downs.Zone.onInitialize', function(zone)
+    -- Call the zone's original function for onInitialize
+    super(zone)
+    local npc = zone:insertDynamicEntity({
+
+        -- NPC or MOB
+        objtype = xi.objType.NPC,
+        name = 'Event NPC',
+        look = 2423,
+        x = 446.1063,
+        y = 8.1920,
+        z = -154.1094,
+        rotation = 139,
+        widescan = 0,
+
+        onTrigger = function(player, npc)
+        if player:getCharVar('NakedRun') >= 1 then
+        local playerz = player:getName()
+        player:printToArea(string.format('GM General : Congratulations %s, you have made it in 1st place!!!!!!', playerz), xi.msg.channel.SYSTEM_3, 0, '')
+        player:printToArea(string.format('GM General : Please see the GM Event NPC in the Library to claim your reward!'), xi.msg.channel.SYSTEM_3, 0, '')
+        player:printToArea(string.format('GM General : Thank you to everyone who participated in the event!'), xi.msg.channel.SYSTEM_3, 0, '')
+        player:setCharVar('[GMEvent] NR', 1)
+            local alliance = player:getAlliance()
+                for _, partyMember in ipairs(alliance) do
+                    if partyMember:getCharVar('NakedRun') >= 1 then
+                       partyMember:delStatusEffect(xi.effect.EGG)
+                    end
+                end
+        else
+        player:printToPlayer('Your are not a participant in the Run to Jeuno event!')
+        end
+        end,
+    })
+    utils.unused(npc)
+end)
 return m
 
 
