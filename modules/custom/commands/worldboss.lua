@@ -211,7 +211,7 @@ local rand = math.random(1, 29)
 
         onMobSpawn = function(mob, playerArg, optParams)
         player:printToArea('----------------WORLD BOSS ANNOUCEMENT----------------', xi.msg.channel.SYSTEM_3, 0)
-        player:printToArea(string.format('GM General : %s has been spotted in %s, Please help,  vanqish this evil demo!', namez, mob:getZoneName()), xi.msg.channel.SYSTEM_3, 0)
+        player:printToArea(string.format('GM General : %s has been spotted in %s, Please help,  vanqish this evil demon!', namez, mob:getZoneName()), xi.msg.channel.SYSTEM_3, 0)
         mob:setMobMod(xi.mobMod.ROAM_DISTANCE, 45)
         mob:setMobMod(xi.mobMod.ALWAYS_AGGRO, 1)
         mob:setMobMod(xi.mobMod.IDLE_DESPAWN, 5)
@@ -289,110 +289,3 @@ local rand = math.random(1, 29)
 end
 end
 return commandObj
-
-
---[[
-drop id 184
-
-Drops  -
-Zendik Robe
-Makira Meikogai
-Annointed Kalasiris
-Kubira Meikogai
-Mekosu. Harness
-Enforcers Harness
-Tartarus Platemail
-Gyve Doublet
-
-Weapon ----
-Xoanon
-Ullr
-Lycurgos
-Maxentius
-Drepanum
-Gokotai
-Karambit
-Hachimonji
-Naegling
-Shinging one
-Tauret
-Nandaka
-Dolichenus
-Taming Sari
-Khonsu grip
-
-Accessories ------
-Niqmaddu Ring
-Ilabrat ring
-Crepuscular ring
-Cornelia's Ring
-Cath Palug ring
-Thrud earring
-Telos earring
-Sherida Earring
-Regal earring
-Malignance Earring
-Enervating earring
-
-Kupon W-Rema
-Mog Kupon W-Rema
-Ice Brand - 20672
-Air Knife - 21570
-Dragon Fangs - 21528
-Drastic Axe - 21764
-Miracle Cheer - 22249
-Pandits Staff - 22101
-Ebisu Fishing Rod +1 - 19321
-Onion Sword III - 21640
-Zanmato +2 - 21980
-Artenises Bow +2 - 22145
-Final Sickle - 21814
-
-crafting shields - 
-Kupo Shield - 26406
-Brewers Eschutcheon - 26457
-Ossifiers Eschutcheon - 26452
-Plaiters Eschutcheon - 26442
-Chefs Eschutcheon - 26462
-Toreutic Eschutcheon - 26437
-Bevelers Eschutcheon - 26447
-Smythes Eschutcheon - 26432
-Joiners Eschutcheon - 26427
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-]]
