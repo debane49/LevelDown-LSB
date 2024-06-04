@@ -32,8 +32,10 @@ zones[xi.zone.FULL_MOON_FOUNTAIN] =
     },
     mob =
     {
-        FENRIR_PRIME = GetFirstID('Fenrir_Prime'),
-        ACE_OF_CUPS  = GetFirstID('Ace_of_Cups'),
+        FENRIR_PRIME         = GetFirstID('Fenrir_Prime'),
+        ACE_OF_CUPS          = GetFirstID('Ace_of_Cups'),
+        FENRIR_PRIME_HTBF    = GetFirstID('Fenrir_Prime_HTBF'),
+        CARBUNCLE_PRIME_HTBF = GetFirstID('Carbuncle_Prime_HTBF'),
     },
     npc =
     {

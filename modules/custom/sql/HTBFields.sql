@@ -19,7 +19,7 @@ INSERT INTO mob_droplist VALUES(3921,0,0,1000,4069,1000); -- Rem's Tale Ch. 6
 INSERT INTO mob_droplist VALUES(3921,1,1,500,4069,250); -- Rem's Tale Ch. 6
 INSERT INTO mob_droplist VALUES(3921,1,2,1000,20615,333); -- Levante Dagger
 INSERT INTO mob_droplist VALUES(3921,1,2,1000,20808,333); -- Tramontane Axe
-INSERT INTO mob_droplist VALUES(3921,1,2,1000,28538,3334); -- Lebeche Ring
+INSERT INTO mob_droplist VALUES(3921,1,2,1000,28538,334); -- Lebeche Ring
 INSERT INTO mob_droplist VALUES(3921,1,3,1000,28441,500); -- Ponente Sash
 INSERT INTO mob_droplist VALUES(3921,1,3,1000,28286,500); -- Ostro Greaves
 INSERT INTO mob_droplist VALUES(3921,1,4,1000,8720,200); -- Maliyakaleya Coral
@@ -47,7 +47,7 @@ INSERT INTO mob_droplist VALUES(3923,0,0,1000,4070,1000); -- Rem's Tale Ch. 7
 INSERT INTO mob_droplist VALUES(3923,1,1,500,4070,250); -- Rem's Tale Ch. 7
 INSERT INTO mob_droplist VALUES(3923,1,2,1000,21166,333); -- Staccato Staff
 INSERT INTO mob_droplist VALUES(3923,1,2,1000,21274,333); -- Donar Gun
-INSERT INTO mob_droplist VALUES(3923,1,2,1000,28354,3334); -- Voltsurge Torque
+INSERT INTO mob_droplist VALUES(3923,1,2,1000,28354,334); -- Voltsurge Torque
 INSERT INTO mob_droplist VALUES(3923,1,3,1000,28432,500); -- Ukko Sash
 INSERT INTO mob_droplist VALUES(3923,1,3,1000,28142,500); -- Brontes Cuisses
 INSERT INTO mob_droplist VALUES(3923,1,4,1000,8720,200); -- Maliyakaleya Coral
@@ -75,7 +75,7 @@ INSERT INTO mob_droplist VALUES(3922,0,0,1000,4073,1000); -- Rem's Tale Ch. 10
 INSERT INTO mob_droplist VALUES(3922,1,1,500,4073,250); -- Rem's Tale Ch. 10
 INSERT INTO mob_droplist VALUES(3922,1,2,1000,20529,333); -- Calved Claws
 INSERT INTO mob_droplist VALUES(3922,1,2,1000,21167,333); -- Frazil Staff
-INSERT INTO mob_droplist VALUES(3922,1,2,1000,28495,3334); -- Rimeice Earring
+INSERT INTO mob_droplist VALUES(3922,1,2,1000,28495,334); -- Rimeice Earring
 INSERT INTO mob_droplist VALUES(3922,1,3,1000,28008,500); -- Nilas Gloves
 INSERT INTO mob_droplist VALUES(3922,1,3,1000,21366,500); -- Floestone
 INSERT INTO mob_droplist VALUES(3922,1,4,1000,8720,200); -- Maliyakaleya Coral
@@ -83,6 +83,34 @@ INSERT INTO mob_droplist VALUES(3922,1,4,1000,8721,200); -- Hepatizon Ore
 INSERT INTO mob_droplist VALUES(3922,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3922,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3922,1,4,1000,8727,200); -- Sif's Lock
+-- Leviathan Prim HTBF updated
+INSERT INTO `bcnm_battlefield` VALUES ( 612, 1,17641497,3); 
+INSERT INTO `bcnm_battlefield` VALUES ( 612, 2,17641498,3);
+INSERT INTO `bcnm_battlefield` VALUES ( 612, 3,17641499,3);
+INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 203, 65, 255); -- Waterga V
+INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 215, 65, 255); -- Flood 2
+INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509,  79, 65, 255); -- Slow II
+INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509,  80, 65, 255); -- Paralyze II
+INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 105, 65, 255); -- Enwater
+INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 172, 65, 255); -- Water IV
+INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 173, 65, 255); -- Water V
+INSERT INTO mob_pools VALUES (40003, 'Leviathan_Prime_HTBF', 'Leviathan_Prime', 323, 0x00001b0300000000000000000000000000000000, 1, 4, 8, 240, 100, 0, 1, 1, 1, 18, 1, 0, 0, 3, 0, 0, 509, 0, 0, 40, 40);  
+UPDATE mob_spawn_points SET pos_X =  505.3401, pos_y =   41.5271, pos_z = -367.2156,  pos_rot = 102 WHERE mobid = 17641497;
+UPDATE mob_spawn_points SET pos_X =   25.9310, pos_y =  -18.6385, pos_z =   33.1422,  pos_rot = 100 WHERE mobid = 17641498;
+UPDATE mob_spawn_points SET pos_X = -375.2288, pos_y =  -78.4145, pos_z =  513.0482,  pos_rot =  99 WHERE mobid = 17641499;
+UPDATE mob_groups SET poolid = 40003, dropid = 3920, HP = 115000, MP = 5000, minLevel = 100, maxLevel = 110 WHERE name = 'Leviathan_Prime_HTBF' AND groupid = 6;
+INSERT INTO mob_droplist VALUES(3920,0,0,1000,4072,1000); -- Rem's Tale Ch. 9
+INSERT INTO mob_droplist VALUES(3920,1,1,500,4072,250); -- Rem's Tale Ch. 9
+INSERT INTO mob_droplist VALUES(3920,1,2,1000,20944,333); -- Pelagos Lance
+INSERT INTO mob_droplist VALUES(3920,1,2,1000,21103,333); -- Vadose Rod
+INSERT INTO mob_droplist VALUES(3920,1,2,1000,20856,334); -- Phreatic Axe
+INSERT INTO mob_droplist VALUES(3920,1,3,1000,21420,500); -- Benthos Grip
+INSERT INTO mob_droplist VALUES(3920,1,3,1000,28493,500); -- Neritic Earring
+INSERT INTO mob_droplist VALUES(3920,1,4,1000,8720,200); -- Maliyakaleya Coral
+INSERT INTO mob_droplist VALUES(3920,1,4,1000,8721,200); -- Hepatizon Ore
+INSERT INTO mob_droplist VALUES(3920,1,4,1000,8723,200); -- Beryllium Ore
+INSERT INTO mob_droplist VALUES(3920,1,4,1000,8725,200); -- Exalted Log
+INSERT INTO mob_droplist VALUES(3920,1,4,1000,8727,200); -- Sif's Lock
 -- Ifrit Prim HTBF updated
 INSERT INTO `bcnm_battlefield` VALUES ( 548, 1,17625113,3);
 INSERT INTO `bcnm_battlefield` VALUES ( 548, 2,17625114,3);
@@ -103,7 +131,7 @@ INSERT INTO mob_droplist VALUES(3924,0,0,1000,4072,1000); -- Rem's Tale Ch. 9
 INSERT INTO mob_droplist VALUES(3924,1,1,500,4072,250); -- Rem's Tale Ch. 9
 INSERT INTO mob_droplist VALUES(3924,1,2,1000,20716,333); -- Perfervid Sword
 INSERT INTO mob_droplist VALUES(3924,1,2,1000,21036,333); -- Atakigiri
-INSERT INTO mob_droplist VALUES(3924,1,2,1000,28285,3334); -- Coalrake Sabots
+INSERT INTO mob_droplist VALUES(3924,1,2,1000,28285,334); -- Coalrake Sabots
 INSERT INTO mob_droplist VALUES(3924,1,3,1000,27594,500); -- Annealed Mantle
 INSERT INTO mob_droplist VALUES(3924,1,3,1000,21421,500); -- Immolation Grip
 INSERT INTO mob_droplist VALUES(3924,1,4,1000,8720,200); -- Maliyakaleya Coral
@@ -131,7 +159,7 @@ INSERT INTO mob_droplist VALUES(3925,0,0,1000,4071,1000); -- Rem's Tale Ch. 8
 INSERT INTO mob_droplist VALUES(3925,1,1,500,4071,250); -- Rem's Tale Ch. 8
 INSERT INTO mob_droplist VALUES(3925,1,2,1000,21102,333); -- Mafic Cudgel
 INSERT INTO mob_droplist VALUES(3925,1,2,1000,20757,333); -- Foreshock Sword
-INSERT INTO mob_droplist VALUES(3925,1,2,1000,21357,3334); -- Togakushi Shuriken
+INSERT INTO mob_droplist VALUES(3925,1,2,1000,21357,334); -- Togakushi Shuriken
 INSERT INTO mob_droplist VALUES(3925,1,3,1000,28535,500); -- Supershear Ring
 INSERT INTO mob_droplist VALUES(3925,1,3,1000,21358,500); -- Plumose Sachet
 INSERT INTO mob_droplist VALUES(3925,1,4,1000,8720,200); -- Maliyakaleya Coral
@@ -139,34 +167,56 @@ INSERT INTO mob_droplist VALUES(3925,1,4,1000,8721,200); -- Hepatizon Ore
 INSERT INTO mob_droplist VALUES(3925,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3925,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3925,1,4,1000,8727,200); -- Sif's Lock
--- Leviathan Prim HTBF updated
-INSERT INTO `bcnm_battlefield` VALUES ( 612, 1,17641497,3); 
-INSERT INTO `bcnm_battlefield` VALUES ( 612, 2,17641498,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 612, 3,17641499,3);
-INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 203, 65, 255); -- Waterga V
-INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 215, 65, 255); -- Flood 2
-INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509,  79, 65, 255); -- Slow II
-INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509,  80, 65, 255); -- Paralyze II
-INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 105, 65, 255); -- Enwater
-INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 172, 65, 255); -- Water IV
-INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 173, 65, 255); -- Water V
-INSERT INTO mob_pools VALUES (40003, 'Leviathan_Prime_HTBF', 'Leviathan_Prime', 323, 0x00001b0300000000000000000000000000000000, 1, 4, 8, 240, 100, 0, 1, 1, 1, 18, 1, 0, 0, 3, 0, 0, 509, 0, 0, 40, 40);  
-UPDATE mob_spawn_points SET pos_X =  505.3401, pos_y =   41.5271, pos_z = -367.2156,  pos_rot = 102 WHERE mobid = 17641497;
-UPDATE mob_spawn_points SET pos_X =   25.9310, pos_y =  -18.6385, pos_z =   33.1422,  pos_rot = 100 WHERE mobid = 17641498;
-UPDATE mob_spawn_points SET pos_X = -375.2288, pos_y =  -78.4145, pos_z =  513.0482,  pos_rot =  99 WHERE mobid = 17641499;
-UPDATE mob_groups SET poolid = 40003, dropid = 3920, HP = 115000, MP = 5000, minLevel = 100, maxLevel = 110 WHERE name = 'Leviathan_Prime_HTBF' AND groupid = 6;
-INSERT INTO mob_droplist VALUES(3920,0,0,1000,4072,1000); -- Rem's Tale Ch. 9
-INSERT INTO mob_droplist VALUES(3920,1,1,500,4072,250); -- Rem's Tale Ch. 9
-INSERT INTO mob_droplist VALUES(3920,1,2,1000,20944,333); -- Pelagos Lance
-INSERT INTO mob_droplist VALUES(3920,1,2,1000,21103,333); -- Vadose Rod
-INSERT INTO mob_droplist VALUES(3920,1,2,1000,20856,3334); -- Phreatic Axe
-INSERT INTO mob_droplist VALUES(3920,1,3,1000,21420,500); -- Benthos Grip
-INSERT INTO mob_droplist VALUES(3920,1,3,1000,28493,500); -- Neritic Earring
-INSERT INTO mob_droplist VALUES(3920,1,4,1000,8720,200); -- Maliyakaleya Coral
-INSERT INTO mob_droplist VALUES(3920,1,4,1000,8721,200); -- Hepatizon Ore
-INSERT INTO mob_droplist VALUES(3920,1,4,1000,8723,200); -- Beryllium Ore
-INSERT INTO mob_droplist VALUES(3920,1,4,1000,8725,200); -- Exalted Log
-INSERT INTO mob_droplist VALUES(3920,1,4,1000,8727,200); -- Sif's Lock
+-- Fenrir Prim HTBF updated
+INSERT INTO `bcnm_battlefield` VALUES ( 228, 1,17473651,3);
+INSERT INTO `bcnm_battlefield` VALUES ( 228, 2,17473652,3);
+INSERT INTO `bcnm_battlefield` VALUES ( 228, 3,17473653,3);
+INSERT INTO mob_pools VALUES (40006, 'Fenrir_Prime_HTBF', 'Fenrir_Prime', 325, 0x0000180300000000000000000000000000000000, 8, 4, 6, 240, 100, 0, 1, 1, 1, 18, 1, 0, 0, 3, 0, 0, 0, 0, 0, 40001, 36);  
+UPDATE mob_spawn_points SET mobname = 'Fenrir_Prime_HTBF', pos_X =  339.4457, pos_y =   47.5105, pos_z = -341.6085,  pos_rot =  64 WHERE mobid = 17473651;
+UPDATE mob_spawn_points SET mobname = 'Fenrir_Prime_HTBF', pos_X =  -59.9329, pos_y =    9.4368, pos_z =   59.3577,  pos_rot =  64 WHERE mobid = 17473652;
+UPDATE mob_spawn_points SET mobname = 'Fenrir_Prime_HTBF', pos_X = -380.1290, pos_y =  -52.5273, pos_z =  418.5986,  pos_rot =  64 WHERE mobid = 17473653;
+UPDATE mob_groups SET poolid = 40006, dropid = 3926, HP = 155000, MP = 5000, minLevel = 110, maxLevel = 120 WHERE name = 'Fenrir_Prime_HTBF' AND groupid = 31;
+INSERT INTO mob_skill_lists VALUES ('Fenrir_Prime_HTBF', 40001, 831); -- moonlit charge
+INSERT INTO mob_skill_lists VALUES ('Fenrir_Prime_HTBF', 40001, 832); -- crescent fang
+INSERT INTO mob_skill_lists VALUES ('Fenrir_Prime_HTBF', 40001, 833); -- lunar cry
+INSERT INTO mob_skill_lists VALUES ('Fenrir_Prime_HTBF', 40001, 834); -- ecliptic growl
+INSERT INTO mob_skill_lists VALUES ('Fenrir_Prime_HTBF', 40001, 835); -- lunar roar
+INSERT INTO mob_skill_lists VALUES ('Fenrir_Prime_HTBF', 40001, 836); -- eclipse bite
+INSERT INTO mob_skill_lists VALUES ('Fenrir_Prime_HTBF', 40001, 837); -- ecliptic howl
+INSERT INTO mob_skill_lists VALUES ('Fenrir_Prime_HTBF', 40001, 839); -- howling moon
+INSERT INTO mob_droplist VALUES(3926,0,0,1000,4069,1000); -- Rem's Tale Ch. 6
+INSERT INTO mob_droplist VALUES(3926,1,1,500,4069,250); -- Rem's Tale Ch. 6
+INSERT INTO mob_droplist VALUES(3926,1,2,1000,20707,333); -- Medeina Kilij
+INSERT INTO mob_droplist VALUES(3926,1,2,1000,21412,333); -- Capitoline Strap
+INSERT INTO mob_droplist VALUES(3926,1,2,1000,25600,3334); -- Ma'iitsoh Haube
+INSERT INTO mob_droplist VALUES(3926,1,3,1000,26969,500); -- Vrikodara Jupon
+INSERT INTO mob_droplist VALUES(3926,1,3,1000,27608,500); -- Lupine Cape
+INSERT INTO mob_droplist VALUES(3926,1,4,1000,8720,200); -- Maliyakaleya Coral
+INSERT INTO mob_droplist VALUES(3926,1,4,1000,8721,200); -- Hepatizon Ore
+INSERT INTO mob_droplist VALUES(3926,1,4,1000,8723,200); -- Beryllium Ore
+INSERT INTO mob_droplist VALUES(3926,1,4,1000,8725,200); -- Exalted Log
+INSERT INTO mob_droplist VALUES(3926,1,4,1000,8727,200); -- Sif's Lock
+-- Carbuncle Prim HTBF updated Carbuncle_Prime_HTBF
+INSERT INTO `bcnm_battlefield` VALUES ( 229, 1,17473666,3);
+INSERT INTO `bcnm_battlefield` VALUES ( 229, 2,17473667,3);
+INSERT INTO `bcnm_battlefield` VALUES ( 229, 3,17473668,3);
+INSERT INTO mob_pools VALUES (40007, 'Carbuncle_Prime_HTBF', 'Carbuncle_Prime', 34, 0x0000170300000000000000000000000000000000, 3, 4, 7, 240, 100, 0, 1, 1, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34, 34);  
+UPDATE mob_spawn_points SET mobname = 'Carbuncle_Prime_HTBF', pos_X =  339.6589, pos_y =   47.5315, pos_z = -342.1236,  pos_rot =  64 WHERE mobid = 17473666;
+UPDATE mob_spawn_points SET mobname = 'Carbuncle_Prime_HTBF', pos_X =  -59.7994, pos_y =    9.4894, pos_z =   58.6598,  pos_rot =  64 WHERE mobid = 17473667;
+UPDATE mob_spawn_points SET mobname = 'Carbuncle_Prime_HTBF', pos_X = -380.2636, pos_y =  -52.5487, pos_z =  419.2726,  pos_rot =  64 WHERE mobid = 17473668;
+UPDATE mob_groups SET poolid = 40007, dropid = 3927, HP = 155000, MP = 5000, minLevel = 110, maxLevel = 120 WHERE name = 'Carbuncle_Prime_HTBF' AND groupid = 32;
+INSERT INTO mob_droplist VALUES(3927,0,0,1000,4070,1000); -- Rem's Tale Ch. 7
+INSERT INTO mob_droplist VALUES(3927,1,1,500,4070,250); -- Rem's Tale Ch. 7
+INSERT INTO mob_droplist VALUES(3927,1,2,1000,21155,333); -- Marquetry Staff
+INSERT INTO mob_droplist VALUES(3927,1,2,1000,26970,333); -- Lapidary Tunic
+INSERT INTO mob_droplist VALUES(3927,1,2,1000,27466,334); -- Diamantaire Sollerets
+INSERT INTO mob_droplist VALUES(3927,1,3,1000,27516,500); -- Satlada Necklace
+INSERT INTO mob_droplist VALUES(3927,1,3,1000,28414,500); -- Engraved Belt
+INSERT INTO mob_droplist VALUES(3927,1,4,1000,8720,200); -- Maliyakaleya Coral
+INSERT INTO mob_droplist VALUES(3927,1,4,1000,8721,200); -- Hepatizon Ore
+INSERT INTO mob_droplist VALUES(3927,1,4,1000,8723,200); -- Beryllium Ore
+INSERT INTO mob_droplist VALUES(3927,1,4,1000,8725,200); -- Exalted Log
+INSERT INTO mob_droplist VALUES(3927,1,4,1000,8727,200); -- Sif's Lock
 /*
 
 -- Diablos Prim HTBF updated
@@ -176,20 +226,6 @@ UPDATE mob_spawn_points SET mobname = 'Diabolos_HTBF' WHERE mobid = 16818227;
 INSERT INTO `bcnm_battlefield` VALUES ( 707, 1,16818225,3);
 INSERT INTO `bcnm_battlefield` VALUES ( 707, 2,16818226,3);
 INSERT INTO `bcnm_battlefield` VALUES ( 707, 3,16818227,3);
--- Fenrir Prim HTBF updated
-UPDATE mob_spawn_points SET mobname = 'Fenrir_Prime_HTBF' WHERE mobid = 17473639;
-UPDATE mob_spawn_points SET mobname = 'Fenrir_Prime_HTBF' WHERE mobid = 17473640;
-UPDATE mob_spawn_points SET mobname = 'Fenrir_Prime_HTBF' WHERE mobid = 17473641;
-INSERT INTO `bcnm_battlefield` VALUES ( 228, 1,17473639,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 228, 2,17473640,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 228, 3,17473641,3);
--- Carbuncle Prim HTBF updated Carbuncle_Prime_HTBF
-UPDATE mob_spawn_points SET mobname = 'Carbuncle_Prime_HTBF' WHERE mobid = 17473654;
-UPDATE mob_spawn_points SET mobname = 'Carbuncle_Prime_HTBF' WHERE mobid = 17473655;
-UPDATE mob_spawn_points SET mobname = 'Carbuncle_Prime_HTBF' WHERE mobid = 17473656;
-INSERT INTO `bcnm_battlefield` VALUES ( 229, 1,17473654,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 229, 2,17473655,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 229, 3,17473656,3);
 -- The celestial nexus - single bf - updated
 INSERT INTO `bcnm_battlefield` VALUES ( 321, 1,17518682,3); 
 INSERT INTO `bcnm_battlefield` VALUES ( 321, 1,17518598,0); 
@@ -410,7 +446,7 @@ UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.36
 -- update pool ids
 UPDATE mob_groups SET poolid = 5106 WHERE name = 'Promathia_htbf';
 UPDATE mob_groups SET poolid = 636 WHERE name = 'Carbuncle_Prime_HTBF';
-UPDATE mob_groups SET poolid = 4648 WHERE name = 'Fenrir_Prime_HTBF';
+
 
 
 -- insert mob ability
