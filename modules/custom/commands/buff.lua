@@ -45,6 +45,23 @@ local buffOff = function(player)
     player:delMod(xi.mod.DEF, 50)
     player:delMod(xi.mod.MDEF, 50)
 end
+local buffOffnn = function(player)
+    -- Remove bonus effects..
+    player:delStatusEffect(xi.effect.REGAIN)
+    player:delStatusEffect(xi.effect.REFRESH)
+    player:delStatusEffect(xi.effect.REGEN)
+    player:delStatusEffect(xi.effect.DEDICATION)
+    -- Remove bonus mods..
+    player:delMod(xi.mod.RACC, 50)
+    player:delMod(xi.mod.RATT, 50)
+    player:delMod(xi.mod.ACC, 50)
+    player:delMod(xi.mod.ATT, 50)
+    player:delMod(xi.mod.MATT, 50)
+    player:delMod(xi.mod.MACC, 50)
+    player:delMod(xi.mod.RDEF, 50)
+    player:delMod(xi.mod.DEF, 50)
+    player:delMod(xi.mod.MDEF, 50)
+end
 
 commandObj.onTrigger = function(player, tier)
   local mode = utils.clamp(tier or 0, 0, 2)
@@ -56,7 +73,7 @@ commandObj.onTrigger = function(player, tier)
         player:addStatusEffect(xi.effect.COMMITMENT, 40, 0, 0, 0, 30000)
         player:printToPlayer('Buff enabled.')
     elseif mode == 0 and state == 0 and
-        player:getMainLvl() <= 99   then
+        player:getMainLvl() <= 98 then
         player:setCharVar('Buff', 1)
         player:setCharVar('BuffJob', player:getMainJob())
         buffOn(player)
@@ -83,6 +100,18 @@ commandObj.onTrigger = function(player, tier)
                                 player:setCharVar('Buff', 0)
                                 buffOff(player)
                         end
-                end)
+                end) 
+                if player:getMainLvl() ~= 99 and
+                   player:getCharVar('Buff') == 1 then
+                   player:addListener('TICK', 'LEVEL_UP', function(player)
+                    local lvl = player:getMainLvl()
+                      if lvl == 99 and
+                         player:getCharVar('Buff') == 1 then
+                                player:setCharVar('Buff', 0)
+                                player:removeListener('LEVEL_UP')
+                                buffOffnn(player)
+                      end
+                   end)
+                end 
 end
 return commandObj
