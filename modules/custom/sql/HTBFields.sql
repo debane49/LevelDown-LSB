@@ -1,3 +1,35 @@
+-- assign BCNM info into battle fields
+INSERT INTO `bcnm_info` VALUES (166,165,'shadow_lord_battle_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (263,179,'return_to_delkfutts_tower_ii','nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (228,170,'moonlit_path_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (229,170,'waking_the_beast_fullmoon_ii','nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (294,180,'ark_angels_hm_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (295,180,'ark_angels_tt_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (296,180,'ark_angels_mr_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (297,180,'ark_angels_ev_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (298,180,'ark_angels_gk_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (299,180,'divine_might_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (321,181,'celestial_nexus_ii'          ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (421,201,'trial_by_wind_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (453,202,'trial_by_lightning_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (485,203,'trial_by_ice_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (548,207,'trial_by_fire_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (581,209,'trial_by_earth_ii'           ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (612,211,'trial_by_water_ii'           ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (680,  8,'head_wind_ii'                ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (707, 10,'waking_dreams_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (968, 31,'savage_ii'                   ,'nobody',0,1800,1800,99,6,0,5,0); 
+INSERT INTO `bcnm_info` VALUES (994, 32,'warriors_path_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (995, 32,'one_to_be_feared_ii'         ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (1059,36,'dawn_ii'                     ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (1093,57,'legacy_of_the_lost_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
+INSERT INTO `bcnm_info` VALUES (1157,67,'puppet_in_peril_ii'          ,'nobody',0,1800,1800,99,6,0,5,0);
+UPDATE bcnm_info SET levelcap = 99 WHERE name = 'call_to_arms';
+UPDATE bcnm_info SET levelcap = 99 WHERE name = 'compliments_to_the_chef';
+UPDATE bcnm_info SET levelcap = 99 WHERE name = 'tough_nut_to_crack';
+UPDATE bcnm_info SET levelcap = 99 WHERE name = 'happy_caster';
+UPDATE bcnm_info SET levelcap = 99 WHERE name = 'making_a_mockery';
+UPDATE bcnm_info SET levelcap = 99 WHERE name = 'shadows_of_the_mind';
 -- assign Mobs into battle fields
 -- Garuda Prim HTBF updated
 INSERT INTO `bcnm_battlefield` VALUES ( 421, 1,17600540,3); 
@@ -325,39 +357,7 @@ INSERT INTO `bcnm_battlefield` VALUES (1088, 3,17010710,2);
 INSERT INTO `bcnm_battlefield` VALUES (1088, 3,17010711,2);
 */
 
--- assign BCNM info into battle fields
-INSERT INTO `bcnm_info` VALUES (166,165,'shadow_lord_battle_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (263,179,'return_to_delkfutts_tower_ii','nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (228,170,'moonlit_path_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (229,170,'waking_the_beast_fullmoon_ii','nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (294,180,'ark_angels_hm_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (295,180,'ark_angels_tt_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (296,180,'ark_angels_mr_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (297,180,'ark_angels_ev_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (298,180,'ark_angels_gk_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (299,180,'divine_might_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (321,181,'celestial_nexus_ii'          ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (421,201,'trial_by_wind_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (453,202,'trial_by_lightning_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (485,203,'trial_by_ice_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (548,207,'trial_by_fire_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (581,209,'trial_by_earth_ii'           ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (612,211,'trial_by_water_ii'           ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (680,  8,'head_wind_ii'                ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (707, 10,'waking_dreams_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (968, 31,'savage_ii'                   ,'nobody',0,1800,1800,99,6,0,5,0); 
-INSERT INTO `bcnm_info` VALUES (994, 32,'warriors_path_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (995, 32,'one_to_be_feared_ii'         ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (1059,36,'dawn_ii'                     ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (1093,57,'legacy_of_the_lost_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (1157,67,'puppet_in_peril_ii'          ,'nobody',0,1800,1800,99,6,0,5,0);
 
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'call_to_arms';
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'compliments_to_the_chef';
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'tough_nut_to_crack';
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'happy_caster';
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'making_a_mockery';
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'shadows_of_the_mind';
 
 -- WAS ALREADY COMMIT PRIOR --
 -- INSERT INTO `bcnm_info` VALUES (1088,57,'call_to_arms'                ,'nobody',0,1800,1800,99,6,0,5,0);
