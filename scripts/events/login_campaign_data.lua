@@ -23,23 +23,22 @@ local prizes =
 1452, -- ordelle bronzepiece
 1449, -- tukuku whiteshell
 1875, -- ancient beastcoin
+--[[
 --- Month 1 ---------------------------------------------
 6377, -- imperial chair set
 6378, -- decorative chair set
 6379, -- ornate stool set
 --- Month 2 ---------------------------------------------
---[[
+
 6380, -- refined chair set
 6408, -- portable container
 6409, -- ephramadian throne
 ]]--
 --- Month 3 ---------------------------------------------
---[[
 6410, -- shadow throne
 6411, -- chocobo chair
 6412, -- leaf bench
 6413, -- astral cube
-]]--
         },
     },
 
@@ -48,6 +47,7 @@ local prizes =
         ['price'] = 100,
         ['items'] =
         {
+--[[
 --- Month 1 ---------------------------------------------
 10124, -- cipher of luzafs alter ego
 10125, -- cipher of najeliths alter ego
@@ -61,7 +61,6 @@ local prizes =
 10070, -- ♪raaz
 10129, -- cipher of d. shantottos alter ego
 --- Month 2 ---------------------------------------------
---[[
 10134, -- cipher of star sibyls alter ego
 10142, -- cipher of karahas alter ego
 10149, -- cipher of areuhats alter ego
@@ -73,7 +72,6 @@ local prizes =
 10076, -- ♪golden bomb
 ]]--
 --- Month 3 ---------------------------------------------
---[[
 10179, -- cipher of teodors alter ego
 10183, -- cipher of darrcuilns alter ego
 10178, -- cipher of ullegores alter ego
@@ -82,7 +80,6 @@ local prizes =
 10079, -- ♪iron giant
 10080, -- ♪byakko
 10082, -- ♪ixion
-]]--
         },
     },
 
@@ -91,6 +88,7 @@ local prizes =
         ['price'] = 100,
         ['items'] =
         {
+--[[
 --- Month 1 ---------------------------------------------
 10136, -- cipher of ukas alter ego
 10141, -- cipher of kuyins alter ego
@@ -104,7 +102,6 @@ local prizes =
 10054, -- ♪ram
 10150, -- cipher of lhes alter ego
 --- Month 2 ---------------------------------------------
---[[
 10151, -- cipher of mayakovs alter ego
 10155, -- cipher of brygids alter ego
 10156, -- cipher of mildaurions alter ego
@@ -116,7 +113,6 @@ local prizes =
 10060, -- ♪magic pot
 ]]--
 --- Month 3 ---------------------------------------------
---[[
 10161, -- cipher of rongeloutss alter ego
 10166, -- cipher of robel-akbels alter ego
 10187, -- cipher of shantottos alter ego ii
@@ -125,7 +121,6 @@ local prizes =
 10063, -- ♪xzomit
 10064, -- ♪hippogryph
 10083, -- ♪phuabo
-]]--
         },
     },
 
@@ -134,12 +129,14 @@ local prizes =
         ['price'] = 300,
         ['items'] =
         {
+
 --- Alway active ----------------------------------------
 4064, -- copy of rems tale, chapter 1
 4065, -- copy of rems tale, chapter 2
 4066, -- copy of rems tale, chapter 3
 4067, -- copy of rems tale, chapter 4
 4068, -- copy of rems tale, chapter 5
+--[[
 --- Month 1 ---------------------------------------------
 27760, -- chocobo masque +1
 27906, -- chocobo suit +1
@@ -149,7 +146,6 @@ local prizes =
 27297, -- Starlet Skirt
 27468, -- Starlet Boots
 --- Month 2 ---------------------------------------------
---[[
 25658, -- Wyrm. Masque +1
 25757, -- Wyrmking Suit +1
 25606, -- Agent Hood
@@ -159,7 +155,6 @@ local prizes =
 27467, -- Agent Boots
 ]]--
 --- Month 3 ---------------------------------------------
---[[
 1854, -- deed of moderation
 1851, -- deed of placidity
 1870, -- deed of sensibility
@@ -167,7 +162,6 @@ local prizes =
 26955, -- behemoth suit +1
 10250, -- moogle suit
 10429, -- moogle masque
-]]--
         },
     },
 
@@ -176,6 +170,7 @@ local prizes =
         ['price'] = 500,
         ['items'] =
         {
+--[[
 --- Alway active ----------------------------------------
 15515, -- peacock amulet
 15351, -- bounding boots
@@ -191,7 +186,6 @@ local prizes =
 10252, -- decennial dress
 10593, -- Decennial tights
 --- Month 2 ---------------------------------------------
---[[
 20668, -- Fire Tongue
 21965, -- Zanmato
 10594, -- decennial hose
@@ -201,7 +195,6 @@ local prizes =
 11953, -- Novennial Hose
 ]]--
 --- Month 3 ---------------------------------------------
---[[
 1850, -- first virtue
 1853, -- second virtue
 1856, -- third virtue
@@ -209,7 +202,6 @@ local prizes =
 20665, -- kamlanauts sword
 11355, -- Dinner Jacket
 16378, -- Dinner Hose
-]]--
         },
 
     },
@@ -229,12 +221,12 @@ local prizes =
 3353, -- Barbaric Bijou
 3354, -- Steelwall BiJou
 3356, -- Roving Bijou
+--[[
 --- Month 1 ---------------------------------------------
 3339, -- Honey Wine
 3341, -- Beastly Shank
 3343, -- Blue Pond Water
 --- Month 2 ---------------------------------------------
---[[
 1419, -- Spring Stone
 1421, -- Summer Stone
 1423, -- Autumn Stone
@@ -245,11 +237,9 @@ local prizes =
 1420, -- Gem of the South
 ]]--
 --- Month 3 ---------------------------------------------
---[[
 1848, -- fourth virtue
 1847, -- fifth virtue
 1849, -- sixth virtue
-]]--
         },
     },
 
@@ -273,23 +263,21 @@ local prizes =
 3458, -- undying juju
 3459, -- heralds juju
 3358, -- Shrouded Bijou
+--[[
 --- Month 1 ---------------------------------------------
 15543, -- rajas ring
 15544, -- sattva ring
 15545, -- tamas ring
 --- Month 2 ---------------------------------------------
---[[
 15807, -- balrahns ring
 15808, -- ulthalams ring
 15809, -- jalzahns ring
 ]]--
 --- Month 3 ---------------------------------------------
---[[
 15962, -- static earring
 15963, -- magnetic earring
 15964, -- hollow earring
 15965, -- ethereal earring
-]]--
         },
     },
 
@@ -303,13 +291,13 @@ local prizes =
 3342, -- Savory Shank
 3344, -- Red Pondweed
 8720, -- Maliya. Coral Orb
+--[[
 --- Month 1 ---------------------------------------------
 10193, -- cipher of monberauxs alter ego
 28419, -- hachirin-no-obi
 18852, -- octave club
 25679, -- white rarab cap +1
 --- Month 2 ---------------------------------------------
---[[
 8722, -- Hepatizon Ingot
 8724, -- Beryllium Ingot
 10120, -- cipher of lehkos alter ego
@@ -317,13 +305,11 @@ local prizes =
 28450, -- chaac belt
 ]]--
 --- Month 3 ---------------------------------------------
---[[
 8726, -- Exalted Lumber
 8728, -- Sif's Macrame
 27510, -- fotia gorget
 28420, -- fotia belt
 27585, -- gorney ring
-]]--
         },
     },
 }
