@@ -66,50 +66,48 @@ end
 commandObj.onTrigger = function(player, tier)
   local mode = utils.clamp(tier or 0, 0, 2)
   local state = player:getCharVar('Buff')
-    if mode == 0 and state == 0 and
+    if state == 0 and
         player:getMainLvl() == 99 then
         player:setCharVar('Buff', 1)
-        player:setCharVar('BuffJob', player:getMainJob())
         player:addStatusEffect(xi.effect.COMMITMENT, 40, 0, 0, 0, 30000)
         player:printToPlayer('Buff enabled.')
-    elseif mode == 0 and state == 0 and
+    elseif state == 0 and
         player:getMainLvl() <= 98 then
         player:setCharVar('Buff', 1)
-        player:setCharVar('BuffJob', player:getMainJob())
         buffOn(player)
         player:printToPlayer('Buff enabled.')
-    elseif mode == 0 and state == 1 then
+    elseif state == 1 and
+        player:getMainLvl() <= 98 then
         player:setCharVar('Buff', 0)
-        player:setCharVar('BuffJob', 0)
-        player:removeListener('CHANGE_JOB')
         buffOff(player)
         player:printToPlayer('Buff disabled.')
-    elseif mode == 0 and state == 1 and
+    elseif state == 1 and
         player:getMainLvl() == 99 then
         player:setCharVar('Buff', 0)
-        player:setCharVar('BuffJob', 0)
-        player:removeListener('CHANGE_JOB')
         buffOff(player)
         player:printToPlayer('Buff disabled.')
     end
-                player:addListener('TICK', 'CHANGE_JOB', function(player)
-                    local job = player:getMainJob()
-                      if job ~= player:getCharVar('BuffJob') then
-                                player:removeListener('CHANGE_JOB')
-                                player:setCharVar('BuffJob', 0)
-                                player:setCharVar('Buff', 0)
-                                buffOff(player)
-                        end
-                end) 
+
                 if player:getMainLvl() ~= 99 and
                    player:getCharVar('Buff') == 1 then
-                   player:addListener('TICK', 'LEVEL_UP', function(player)
+                   player:addListener('TICK', 'PLAYER_LEVEL', function(player)
                     local lvl = player:getMainLvl()
                       if lvl == 99 and
                          player:getCharVar('Buff') == 1 then
                                 player:setCharVar('Buff', 0)
-                                player:removeListener('LEVEL_UP')
                                 buffOffnn(player)
+                                player:removeListener('PLAYER_LEVEL')
+                      end
+                   end)
+                elseif player:getMainLvl() == 99 and
+                       player:getCharVar('Buff') == 1 then
+                       player:addListener('TICK', 'PLAYER_LEVEL', function(player)
+                        local lvl = player:getMainLvl()
+                          if lvl ~= 99 and
+                             player:getCharVar('Buff') == 1 then
+                                player:setCharVar('Buff', 0)
+                                buffOff(player)
+                                player:removeListener('PLAYER_LEVEL')
                       end
                    end)
                 end 
