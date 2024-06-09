@@ -37,6 +37,7 @@
 # Live example:
 custom/sql/
 custom/commands/
+custom/hokutens/
 custom/lua/trusts/
 custom/lua/test_npcs_in_gm_home.lua
 custom/lua/new_player_linkshell.lua
@@ -75,9 +76,10 @@ custom/lua/skiprankmission.lua
 custom/lua/NMHunt.lua
 custom/lua/NMHuntNPC.lua
 custom/lua/gmeventnpc.lua
-custom/lua/Audoulin_NPCs.lua
+custom/lua/Adoulin_NPCs.lua
 custom/lua/add_stones.lua
 custom/lua/reapplybuff.lua
 custom/lua/Supremes.lua
+custom/lua/Adoulin_blockage.lua
 
 

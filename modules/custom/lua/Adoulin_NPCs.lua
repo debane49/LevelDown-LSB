@@ -14,7 +14,7 @@ require("modules/module_utils")
 require("scripts/globals/npc_util")
 
 
-local m = Module:new("Audoulin_NPCs")
+local m = Module:new("Adoulin_NPCs")
 
 m:addOverride("xi.zones.Western_Adoulin.npcs.Ornery_Dhole.onTrade", function(player, npc, trade)
             local count = trade:getItemCount()
