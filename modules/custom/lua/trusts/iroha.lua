@@ -135,18 +135,21 @@ end)
 -----------------------------------------------
 m:addOverride('xi.actions.spells.trust.iroha_ii.onMobSpawn', function(mob)
     xi.trust.message(mob, xi.trust.messageOffset.SPAWN)
-
-    mob:addMod(xi.mod.REGAIN, 25)
+ if mob:getMaster():getMainLvl() == 99 then
     local Bonus = mob:getMainLvl() * 2.5
+ else
+    local Bonus = mob:getMainLvl() * 1
+ end
+    mob:addMod(xi.mod.REGAIN, 25)
     mob:addMod(xi.mod.ATT, Bonus)
     mob:addMod(xi.mod.ACC, Bonus + 200)
     mob:addMod(xi.mod.DEF, Bonus)
     mob:setMod(xi.mod.MAIN_DMG_RATING, 33)
     mob:setMod(xi.mod.DOUBLE_ATTACK, 25)
-    mob:setMod(xi.mod.SAVETP, 400)
-    mob:setMod(xi.mod.STORETP, 300)
+    mob:setMod(xi.mod.SAVETP, Bonus)
+    mob:setMod(xi.mod.STORETP, Bonus)
     mob:setMod(xi.mod.FASTCAST, 80)
-    mob:addStatusEffect(xi.effect.MAX_MP_BOOST, 250, 0, 0)
+    mob:addStatusEffect(xi.effect.MAX_MP_BOOST, Bonus, 0, 0)
     mob:setMP(mob:getMaxMP())
     mob:addSimpleGambit(ai.t.SELF, ai.c.NOT_STATUS, xi.effect.HASSO, ai.r.JA, ai.s.SPECIFIC, xi.ja.HASSO)
     mob:addSimpleGambit(ai.t.SELF, ai.c.HAS_TOP_ENMITY, 0, ai.r.JA, ai.s.SPECIFIC, xi.ja.THIRD_EYE)
@@ -171,31 +174,39 @@ m:addOverride('xi.actions.spells.trust.iroha_ii.onMobSpawn', function(mob)
                     mobArg:useMobAbility(3736)
                     end)
             end
-
+     local ptyslp = mob:getLocalVar('IrohaSlp')
+     local RoAT   = mob:getLocalVar('IrohaRoAT')
         for _, partyMember in ipairs(mob:getMaster():getPartyWithTrusts()) do
             if  partyMember:hasStatusEffect(xi.effect.SLEEP_I) or
                 partyMember:hasStatusEffect(xi.effect.SLEEP_II) or
                 partyMember:hasStatusEffect(xi.effect.LULLABY) then
-                mob:setLocalVar('IrohaSlp', 1)
+                ptyslp = ptyslp + 1
             end
         end
 
-        if mob:getLocalVar('IrohaSlp') == 1 and mob:getTP() > 1000 then
+        if mob:getLocalVar('IrohaSlp') >= 3 and
+           mob:getTP() > 1000 and
+           RoAT <= os.time() then
                         mob:useMobAbility(3738)
                         mob:setLocalVar('IrohaSlp', 0)
+                        mob:setLocalVar('IrohaRoAT', os.time() + 300)
         end
-            local hpdown = mobArg:getLocalVar('IrohaRoA')
-            local party = mobArg:getMaster():getPartyWithTrusts()
+
+
+
+            local hpdown = mob:getLocalVar('IrohaRoA')
+            local party = mob:getMaster():getPartyWithTrusts()
                 for _, partyMember in ipairs(party) do
                     if partyMember:getHPP() <= 75 then
                        hpdown = hpdown +1
                     end
                 end
-            if hpdown >= 3 and mob:getTP() >= 1000 then
+            if hpdown >= 3 and
+               mob:getTP() >= 1000 and
+               RoAT <= os.time() then
                mob:useMobAbility(3738)
-               mobArg:setLocalVar('IrohaRoA', 1)
-            else
-               mobArg:setLocalVar('IrohaRoA', 1)
+               mob:setLocalVar('IrohaRoA', 0)
+               mob:setLocalVar('IrohaRoAT', os.time() + 300)
             end
          end)
 end)
