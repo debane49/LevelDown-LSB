@@ -1,3 +1,7 @@
+-----------------------------------
+require("modules/module_utils")
+require("scripts/globals/npc_util")
+-----------------------------------
 
 local EZMob =
 {
@@ -27,33 +31,19 @@ local EZMob =
 local ERMob =
 {
 {'Eschan_Zdei'},
-{'Eschan_Ilaern_rng'},
-{'Eschan_Ilaern_thf'},
-{'Eschan_Ilaern_blm'},
-{'Eschan_Ilaern_drg'},
+{'Eschan_Ilaern'},
 {'Eschan_Phuabo'},
-{'Eschan_Ilaern_war'},
 {'Eschan_Yovra'},
-{'Eschan_Ilaern_whm'},
-{'Eschan_Ilaern_mnk'},
-{'Eschan_Ilaern_bst'},
 {'Eschan_Euvhi'},
 {'Eschan_Clionid'},
 {'Eschan_Hpemde'},
-{'Eschan_Ilaern_pld'},
 {'Eschan_Amoeban'},
-{'Eschan_Ilaern_drk'},
 {'Eschan_Xzomit'},
-{'Eschan_Ilaern_rdm'},
 {'Eschan_Murex'},
-{'Eschan_Ilaern_sam'},
-{'Eschan_Ilaern_smn'},
 {'Eschan_Ghrah'},
 {'Eschan_Limule'},
-{'Eschan_Gargouille'},
+--{'Eschan_Gargouille'},
 {'Eschan_Porxie'},
-{'Eschan_Ilaern_brd'},
-{'Eschan_Ilaern_nin'},
 }
 
 local ensureTable = function(str)
@@ -71,23 +61,31 @@ for _, entry in pairs(ERMob) do
 ensureTable(string.format("xi.zones.Escha_RuAun.mobs.%s", entry[1]))
 end
 
------------------------------------
-require("modules/module_utils")
-require("scripts/globals/npc_util")
------------------------------------
-
 local m = Module:new("add_silt")
 
 for _, entry in pairs(EZMob) do
-    local mobName     = entry[1]
+    local mobName = entry[1]
 
-  m:addOverride(string.format('xi.zones.Escha_ZiTah.mobs.%s.onMobDeath', mobName), function(mob, player, optParams)
+  m:addOverride(string.format('xi.zones.Escha_ZiTah.mobs.%s.onMobInitialize', entry[1]), function(mob)
+  super(mob)
+  end)
+
+  m:addOverride(string.format('xi.zones.Escha_ZiTah.mobs.%s.onMobSpawn', entry[1]), function(mob)
+  super(mob)
+  end)
+
+  m:addOverride(string.format('xi.zones.Escha_ZiTah.mobs.%s.onMobEngage', entry[1]), function(mob, target)
+  super(mob, target)
+  end)
+
+
+  m:addOverride(string.format('xi.zones.Escha_ZiTah.mobs.%s.onMobDeath', entry[1]), function(mob, player, optParams)
     super(mob, player, optParams)
     dropper = mob:getID()
     local rand = math.random(5, 30)
     player:addCurrency('escha_silt', rand)
     player:printToPlayer(string.format("You obtained %s Escha Silt", rand),xi.msg.channel.SYSTEM_3)
-    if mobName == 'Eschan_Puk' or
+    if entry[1] == 'Eschan_Puk' or
               'Eschan_Shadow_Dragon' or
               'Eschan_Tarichuk' or
               'Eschan_Bugard' or
@@ -102,9 +100,20 @@ for _, entry in pairs(EZMob) do
   end)
 end
 
-for _, entry in pairs(ERMob) do
-    local mobNamea     = entry[1]
-  m:addOverride(string.format('xi.zones.Escha_RuAun.mobs.%s.onMobDeath', mobNamea), function(mob, player, optParams)
+for _, entryx in pairs(ERMob) do
+  m:addOverride(string.format('xi.zones.Escha_RuAun.mobs.%s.onMobInitialize', entryx[1]), function(mob)
+  super(mob)
+  end)
+
+  m:addOverride(string.format('xi.zones.Escha_RuAun.mobs.%s.onMobSpawn', entryx[1]), function(mob)
+  super(mob)
+  end)
+
+  m:addOverride(string.format('xi.zones.Escha_RuAun.mobs.%s.onMobEngage', entryx[1]), function(mob, target)
+  super(mob, target)
+  end)
+
+  m:addOverride(string.format('xi.zones.Escha_RuAun.mobs.%s.onMobDeath', entryx[1]), function(mob, player, optParams)
     super(mob, player, optParams)
     dropper = mob:getID()
     local randx = math.random(15, 45)
@@ -113,8 +122,25 @@ for _, entry in pairs(ERMob) do
   end)
 end
 
-return m
+  m:addOverride('xi.zones.Escha_RuAun.mobs.Eschan_Gargouille.onMobInitialize', function(mob)
+  super(mob)
+  end)
 
---        ESCHA_ZITAH                     = 288,
---        ESCHA_RUAUN                     = 289,
--- 9084 eschlixer nq
+  m:addOverride('xi.zones.Escha_RuAun.mobs.Eschan_Gargouille.onMobSpawn', function(mob)
+  super(mob)
+  end)
+
+  m:addOverride('xi.zones.Escha_RuAun.mobs.Eschan_Gargouille.onMobEngage', function(mob, target)
+  super(mob, target)
+  end)
+
+  m:addOverride('xi.zones.Escha_RuAun.mobs.Eschan_Gargouille.onMobDeath', function(mob, player, optParams)
+    super(mob, player, optParams)
+    dropper = mob:getID()
+    local randx = math.random(15, 45)
+    player:addCurrency('escha_silt', randx)
+    player:printToPlayer(string.format("You obtained %s Escha Silt", randx),xi.msg.channel.SYSTEM_3)
+  end)
+
+
+return m
