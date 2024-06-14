@@ -31,7 +31,16 @@ local function player_hate()
                         end
                         return false
          end 
-    end
+end
+local function warpPlayerToHomePoint(player)
+    -- Inject action packet for animation (replace animation ID as needed)
+    player:injectActionPacket(player:getID(), 6, 643, 0, 0, 0, 10, 1)
+    -- Delay warp using a timer
+    player:timer(1000, function()
+        -- Warp the player to their home point
+        player:warp()
+    end)
+end
          if player_hate() == true then
             player:printToPlayer('You or someone in your party has Enmity, please try again when you are clear!')
          else
@@ -59,7 +68,7 @@ local function player_hate()
                   player:setCharVar('[MogRot]', player:getRotPos())
                   player:setCharVar('[MogZID]', player:getZoneID())
                   player:setCharVar('[MoghTele]', os.time() +300)
-                  player:warp()
+                  warpPlayerToHomePoint(player)
          end
 end
 
