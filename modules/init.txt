@@ -39,6 +39,7 @@ custom/sql/
 custom/commands/
 custom/hokutens/
 custom/lua/trusts/
+custom/lua/weaponskills/
 custom/lua/test_npcs_in_gm_home.lua
 custom/lua/new_player_linkshell.lua
 custom/lua/nexuscape_update.lua
@@ -80,6 +81,9 @@ custom/lua/Adoulin_NPCs.lua
 custom/lua/add_stones.lua
 custom/lua/reapplybuff.lua
 custom/lua/Supremes.lua
+custom/lua/three_mage_door_open.lua
+custom/lua/guild_shops_always_open.lua
+custom/lua/remove_limbus_lockout.lua
 custom/lua/Adoulin_blockage.lua
 
 
