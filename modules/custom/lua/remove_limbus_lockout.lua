@@ -3,7 +3,7 @@ require("modules/module_utils")
 
 local m = Module:new("remove_limbus_lockout")
 
-m:addOverride("xi.zones.Port_Jeuno.npcs.Sagheera.getCOSMO_CLEANSETime", function(player)
+m:addOverride("xi.zones.Port_Jeuno.npcs.Sagheera.getCosmoCleanseTime", function(player)
     local cosmoWaitTime = 0
     local lastCosmoTime = player:getCharVar("Cosmo_Cleanse_TIME")
 
