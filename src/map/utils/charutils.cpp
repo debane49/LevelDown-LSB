@@ -5456,6 +5456,41 @@ namespace charutils
         _sql->Query(Query, PChar->profile.nation, PChar->id);
     }
 
+
+    /************************************************************************
+     *                                                                       *
+     *  Save character's face changes                                      *
+     *                                                                       *
+     ************************************************************************/
+
+    void SaveCharFace(CCharEntity* PChar)
+    {
+        TracyZoneScoped;
+
+        const char* Query = "UPDATE char_look "
+                            "SET face = %u "
+                            "WHERE charid = %u";
+
+        _sql->Query(Query, PChar->look.face, PChar->id);
+    }
+
+    /************************************************************************
+     *                                                                       *
+     *  Save character's race changes                                      *
+     *                                                                       *
+     ************************************************************************/
+
+    void SaveCharRace(CCharEntity* PChar)
+    {
+        TracyZoneScoped;
+
+        const char* Query = "UPDATE char_look "
+                            "SET race = %u "
+                            "WHERE charid = %u";
+
+        _sql->Query(Query, PChar->look.race, PChar->id);
+    }
+
     /************************************************************************
      *                                                                       *
      *  Save character's current campaign allegiance                         *

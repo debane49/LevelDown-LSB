@@ -5265,6 +5265,48 @@ void CLuaBaseEntity::setModelId(uint16 modelId, sol::object const& slotObj)
 }
 
 /************************************************************************
+ *  Function: setFace()
+ *  Purpose : displays teh players face id
+ *  Example : player:setFace()
+ *  Notes   : Humanoid entities can be passed a slot to change the modelid of that equipment
+ ************************************************************************/
+
+void CLuaBaseEntity::setFace(uint8 face)
+{
+    if (m_PBaseEntity->objtype != TYPE_PC)
+    {
+        ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
+        return;
+    }
+
+    auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
+
+    PChar->look.face = face;
+    charutils::SaveCharFace(PChar);
+}
+
+/************************************************************************
+ *  Function: setRace()
+ *  Purpose : displays teh players race id
+ *  Example : player:setRace()
+ *  Notes   : Humanoid entities can be passed a slot to change the modelid of that equipment
+ ************************************************************************/
+
+void CLuaBaseEntity::setRace(uint8 race)
+{
+    if (m_PBaseEntity->objtype != TYPE_PC)
+    {
+        ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
+        return;
+    }
+
+    auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
+
+    PChar->look.race = race;
+    charutils::SaveCharRace(PChar);
+}
+
+/************************************************************************
  *  Function: getCostume()
  *  Purpose : Returns the PC's appearance
  *  Example : player:getCostume()
@@ -17939,6 +17981,8 @@ void CLuaBaseEntity::Register()
 
     // Player Appearance
     SOL_REGISTER("getRace", CLuaBaseEntity::getRace);
+    SOL_REGISTER("setFace", CLuaBaseEntity::setFace);
+    SOL_REGISTER("setRace", CLuaBaseEntity::setRace);
     SOL_REGISTER("getGender", CLuaBaseEntity::getGender);
     SOL_REGISTER("getName", CLuaBaseEntity::getName);
     SOL_REGISTER("getPacketName", CLuaBaseEntity::getPacketName);
