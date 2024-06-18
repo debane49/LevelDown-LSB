@@ -3,19 +3,13 @@ require("modules/module_utils")
 
 local m = Module:new("remove_limbus_lockout")
 
-m:addOverride("xi.zones.Port_Jeuno.npcs.Sagheera.getCosmoCleanseTime", function(player)
+m:addOverride("xi.zones.Port_Jeuno.npcs.Sagheera.onTrigger", function(player, npc)
     local cosmoWaitTime = 0
     local lastCosmoTime = player:getCharVar("Cosmo_Cleanse_TIME")
-
-    if lastCosmoTime ~= 0 then
-        lastCosmoTime = lastCosmoTime + cosmoWaitTime
+        if lastCosmoTime ~= 0 then
+        player:setCharVar("Cosmo_Cleanse_TIME", 0)
     end
-
-    if lastCosmoTime <= os.time() then
-        return COSMO_READY
-    end
-
-    return (lastCosmoTime - 1009843200) - 39600 -- (os.time number - BITMASK for the event) - 11 hours in seconds. Only works in this format (strangely).
+    super(player, npc)
 end)
 
 return m 
