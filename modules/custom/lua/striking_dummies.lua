@@ -10,7 +10,7 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
     super(zone)
     local mob1 = zone:insertDynamicEntity({
         objtype = xi.objType.MOB,
-        name = 'Striking Dummy',
+        name = 'Striking Dummya',
         look = 431,
         x = 359,
         y = -12.5101,
@@ -35,8 +35,18 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
             mob1:setAutoAttackEnabled(false)
         end,
 
+        onMobEngage = function(mob1, target)
+            mob1:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob1)
+            if not target:isEngaged() then
+               mob1:disengage()
+               mob1:resetEnmity(target)
+            end
+            end)
+        end,
+
         onMobDisengage = function(mob1)
             mob1:setPos(359, -12.5101, -414.0013, 192)
+            mob1:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob1, target)
@@ -57,7 +67,7 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
     })
     local mob2 = zone:insertDynamicEntity({
         objtype = xi.objType.MOB,
-        name = 'Striking Dummy',
+        name = 'Striking Dummyb',
         look = 431,
         x = 361,
         y = -12.5101,
@@ -82,8 +92,18 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
             mob2:setAutoAttackEnabled(false)
         end,
 
+        onMobEngage = function(mob2, target)
+            mob2:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob2)
+            if not target:isEngaged() then
+               mob2:disengage()
+               mob2:resetEnmity(target)
+            end
+            end)
+        end,
+
         onMobDisengage = function(mob2)
             mob2:setPos(361, -12.5101, -414.0013, 192)
+            mob2:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob2, target)
@@ -104,7 +124,7 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
     })
     local mob3 = zone:insertDynamicEntity({
         objtype = xi.objType.MOB,
-        name = 'Striking Dummy',
+        name = 'Striking Dummyc',
         look = 431,
         x = 357,
         y = -12.5101,
@@ -129,8 +149,18 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
             mob3:setAutoAttackEnabled(false)
         end,
 
+        onMobEngage = function(mob3, target)
+            mob3:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob3)
+            if not target:isEngaged() then
+               mob3:disengage()
+               mob3:resetEnmity(target)
+            end
+            end)
+        end,
+
         onMobDisengage = function(mob3)
             mob3:setPos(357, -12.5101, -414.0013, 192)
+            mob3:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob3, target)
@@ -151,7 +181,7 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
     })
     local mob4 = zone:insertDynamicEntity({
         objtype = xi.objType.MOB,
-        name = 'Striking Dummy',
+        name = 'Striking Dummyd',
         look = 431,
         x = 359,
         y = -12.5101,
@@ -175,8 +205,18 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
             mob4:setAutoAttackEnabled(false)
         end,
 
+        onMobEngage = function(mob4, target)
+            mob4:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob4)
+            if not target:isEngaged() then
+               mob4:disengage()
+               mob4:resetEnmity(target)
+            end
+            end)
+        end,
+
         onMobDisengage = function(mob4)
             mob4:setPos(359, -12.5101, -386.4066, 64)
+            mob4:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob4, target)
@@ -196,7 +236,7 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
     })
     local mob5 = zone:insertDynamicEntity({
         objtype = xi.objType.MOB,
-        name = 'Striking Dummy',
+        name = 'Striking Dummye',
         look = 431,
         x = 361,
         y = -12.5101,
@@ -220,8 +260,18 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
             mob5:setAutoAttackEnabled(false)
         end,
 
+        onMobEngage = function(mob5, target)
+            mob5:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob5)
+            if not target:isEngaged() then
+               mob5:disengage()
+               mob5:resetEnmity(target)
+            end
+            end)
+        end,
+
         onMobDisengage = function(mob5)
             mob5:setPos(361, -12.5101, -386.4066, 64)
+            mob5:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob5, target)
@@ -241,7 +291,7 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
     })
     local mob6 = zone:insertDynamicEntity({
         objtype = xi.objType.MOB,
-        name = 'Striking Dummy',
+        name = 'Striking Dummyf',
         look = 431,
         x = 357,
         y = -12.5101,
@@ -265,8 +315,18 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
             mob6:setAutoAttackEnabled(false)
         end,
 
+        onMobEngage = function(mob6, target)
+            mob6:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob6)
+            if not target:isEngaged() then
+               mob6:disengage()
+               mob6:resetEnmity(target)
+            end
+            end)
+        end,
+
         onMobDisengage = function(mob6)
-            mob6:setPos(359, -12.5101, -386.4066, 64)
+            mob6:setPos(357, -12.5101, -386.4066, 64)
+            mob6:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob6, target)
