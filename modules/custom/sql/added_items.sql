@@ -41,8 +41,8 @@ INSERT INTO `item_equipment` VALUES (23814,'sapphire gaunlets',1,0,4194303,483,0
 INSERT INTO `item_equipment` VALUES (23815,'sapphire trousers',1,0,4194303,483,0,0,128,0,0); -- legs
 INSERT INTO `item_equipment` VALUES (23816,'sapphire leggings',1,0,4194303,483,0,0,256,0,0); -- feat
 
-INSERT INTO `item_equipment` VALUES (20593,'hedron_dagger',1,0,4194303,775,0,0,3,0,0);
-INSERT INTO `item_equipment` VALUES (21571,'ethereal_dagger',1,0,4194303,929,0,0,3,0,0);
+INSERT INTO `item_equipment` VALUES (20593,'hedron_dagger',1,0,4194303,775,0,0,1,0,0);
+INSERT INTO `item_equipment` VALUES (21571,'ethereal_dagger',1,0,4194303,929,0,0,1,0,0);
 INSERT INTO `item_equipment` VALUES (21520,'ethereal_fists',1,0,4194303,473,0,0,1,0,0);
 INSERT INTO `item_equipment` VALUES (21624,'ethereal_sword',1,0,4194303,930,0,0,1,0,0);
 INSERT INTO `item_equipment` VALUES (21771,'ethereal_great_axe',1,0,4194303,932,0,0,1,0,0);
@@ -58,19 +58,19 @@ INSERT INTO `item_equipment` VALUES (20931,'celestial_spear',1,0,4194303,777,0,0
 INSERT INTO `item_equipment` VALUES (22165,'ethereal_gun',1,0,4194303,155,0,0,4,0,0);
 INSERT INTO `item_equipment` VALUES (22146,'ethereal_bow',1,0,4194303,154,0,0,4,0,0);
 
-INSERT INTO `item_weapon` VALUES (20931,'celestial_spear',1,0,0,0,0,1,1,396,1,0);
-INSERT INTO `item_weapon` VALUES (20593,'hedron_dagger',1,0,0,0,0,1,1,150,1,0);
+INSERT INTO `item_weapon` VALUES (20931,'celestial_spear',8,0,0,0,0,1,1,396,1,0);
+INSERT INTO `item_weapon` VALUES (20593,'hedron_dagger',2,0,0,0,0,1,1,150,1,0);
 INSERT INTO `item_weapon` VALUES (21520,'ethereal_fists',1,0,0,0,0,4,1,96,1,0);
-INSERT INTO `item_weapon` VALUES (21624,'ethereal_sword',1,0,0,0,0,2,1,240,1,0);
-INSERT INTO `item_weapon` VALUES (21771,'ethereal_great_axe',1,0,0,0,0,2,1,540,1,0);
-INSERT INTO `item_weapon` VALUES (21838,'ethereal_scythe',1,0,0,0,0,2,1,480,1,0);
-INSERT INTO `item_weapon` VALUES (21962,'ethereal_tachi',1,0,0,0,0,2,1,450,1,0);
-INSERT INTO `item_weapon` VALUES (22090,'ethereal_staff',1,0,0,0,0,3,1,366,1,0); 
-INSERT INTO `item_weapon` VALUES (22146,'ethereal_bow',1,0,0,0,0,1,1,540,1,0);
-INSERT INTO `item_weapon` VALUES (21571,'ethereal_dagger',1,0,0,0,0,1,1,180,1,0);
-INSERT INTO `item_weapon` VALUES (21713,'ethereal_axe',1,0,0,0,0,2,1,288,1,0);
-INSERT INTO `item_weapon` VALUES (21666,'ethereal_g._sword',1,0,0,0,0,2,1,480,1,0); 
-INSERT INTO `item_weapon` VALUES (21911,'ethereal_katana',1,0,0,0,0,2,1,227,1,0);
-INSERT INTO `item_weapon` VALUES (22053,'ethereal_club',1,0,0,0,0,3,1,288,1,0);
-INSERT INTO `item_weapon` VALUES (21873,'ethereal_spear',1,0,0,0,0,1,1,480,1,0);
-INSERT INTO `item_weapon` VALUES (22165,'ethereal_gun',1,0,0,0,0,1,1,600,1,0);
+INSERT INTO `item_weapon` VALUES (21624,'ethereal_sword',3,0,0,0,0,2,1,240,1,0);
+INSERT INTO `item_weapon` VALUES (21771,'ethereal_great_axe',6,0,0,0,0,2,1,540,1,0);
+INSERT INTO `item_weapon` VALUES (21838,'ethereal_scythe',7,0,0,0,0,2,1,480,1,0);
+INSERT INTO `item_weapon` VALUES (21962,'ethereal_tachi',9,0,0,0,0,2,1,450,1,0);
+INSERT INTO `item_weapon` VALUES (22090,'ethereal_staff',12,0,0,0,0,3,1,366,1,0); 
+INSERT INTO `item_weapon` VALUES (22146,'ethereal_bow',25,0,0,0,0,1,1,540,1,0);
+INSERT INTO `item_weapon` VALUES (21571,'ethereal_dagger',2,0,0,0,0,1,1,180,1,0);
+INSERT INTO `item_weapon` VALUES (21713,'ethereal_axe',5,0,0,0,0,2,1,288,1,0);
+INSERT INTO `item_weapon` VALUES (21666,'ethereal_g._sword',4,0,0,0,0,2,1,480,1,0); 
+INSERT INTO `item_weapon` VALUES (21911,'ethereal_katana',9,0,0,0,0,2,1,227,1,0);
+INSERT INTO `item_weapon` VALUES (22053,'ethereal_club',11,0,0,0,0,3,1,288,1,0);
+INSERT INTO `item_weapon` VALUES (21873,'ethereal_spear',8,0,0,0,0,1,1,480,1,0);
+INSERT INTO `item_weapon` VALUES (22165,'ethereal_gun',26,0,0,0,0,1,1,600,1,0);
