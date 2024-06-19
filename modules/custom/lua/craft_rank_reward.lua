@@ -24,7 +24,7 @@ local rankrewardbc =
 }
 local rankrewardcc =
 {
-    [1] = {reward = 18673, var = 0}, -- TRAINEE_SCISSORS
+    [1] = {reward = 18763, var = 0}, -- TRAINEE_SCISSORS
     [3] = {reward = 15822, var = 3}, -- TAILORS_RING
     [5] = {reward = 13946, var = 5}, -- Magnifying Spectacles
     [7] = {reward = 14395, var = 7}, -- Weavers Apron

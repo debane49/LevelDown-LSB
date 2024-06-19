@@ -22,7 +22,7 @@ local rankrewardxx =
     [ 8] = {reward = 13947, var = 54, ran = 5}, -- Protective Spectacles
     [ 9] = {reward = 14397, var = 54, ran = 7}, -- Boneworkers Apron
     [10] = {reward = xi.ki.WAY_OF_THE_BONEWORKER, var = 54, ran = 9}, -- WAY_OF_THE_BONEWORKER
-    [11] = {reward = 18673, var = 52, ran = 1}, -- TRAINEE_SCISSORS
+    [11] = {reward = 18763, var = 52, ran = 1}, -- TRAINEE_SCISSORS
     [12] = {reward = 15822, var = 52, ran = 3}, -- TAILORS_RING
     [13] = {reward = 13946, var = 52, ran = 5}, -- Magnifying Spectacles
     [14] = {reward = 14395, var = 52, ran = 7}, -- Weavers Apron
