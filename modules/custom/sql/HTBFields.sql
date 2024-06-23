@@ -1,40 +1,71 @@
 -- assign BCNM info into battle fields
-INSERT INTO `bcnm_info` VALUES (166,165,'shadow_lord_battle_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (263,179,'return_to_delkfutts_tower_ii','nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (228,170,'moonlit_path_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (229,170,'waking_the_beast_fullmoon_ii','nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (294,180,'ark_angels_hm_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (295,180,'ark_angels_tt_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (296,180,'ark_angels_mr_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (297,180,'ark_angels_ev_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (298,180,'ark_angels_gk_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (299,180,'divine_might_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (321,181,'celestial_nexus_ii'          ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (421,201,'trial_by_wind_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (453,202,'trial_by_lightning_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (485,203,'trial_by_ice_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (548,207,'trial_by_fire_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (581,209,'trial_by_earth_ii'           ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (612,211,'trial_by_water_ii'           ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (680,  8,'head_wind_ii'                ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (707, 10,'waking_dreams_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (968, 31,'savage_ii'                   ,'nobody',0,1800,1800,99,6,0,5,0); 
-INSERT INTO `bcnm_info` VALUES (994, 32,'warriors_path_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (995, 32,'one_to_be_feared_ii'         ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (1059,36,'dawn_ii'                     ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (1093,57,'legacy_of_the_lost_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
-INSERT INTO `bcnm_info` VALUES (1157,67,'puppet_in_peril_ii'          ,'nobody',0,1800,1800,99,6,0,5,0);
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'call_to_arms';
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'compliments_to_the_chef';
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'tough_nut_to_crack';
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'happy_caster';
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'making_a_mockery';
-UPDATE bcnm_info SET levelcap = 99 WHERE name = 'shadows_of_the_mind';
+-- INSERT INTO `bcnm_info` VALUES (166,165,'shadow_lord_battle_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (263,179,'return_to_delkfutts_tower_ii','nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (228,170,'moonlit_path_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (229,170,'waking_the_beast_fullmoon_ii','nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (294,180,'ark_angels_hm_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (295,180,'ark_angels_tt_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (296,180,'ark_angels_mr_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (297,180,'ark_angels_ev_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (298,180,'ark_angels_gk_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (299,180,'divine_might_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (321,181,'celestial_nexus_ii'          ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (421,201,'trial_by_wind_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (453,202,'trial_by_lightning_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (485,203,'trial_by_ice_ii'             ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (548,207,'trial_by_fire_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (581,209,'trial_by_earth_ii'           ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (612,211,'trial_by_water_ii'           ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (680,  8,'head_wind_ii'                ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (707, 10,'waking_dreams_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (968, 31,'savage_ii'                   ,'nobody',0,1800,1800,99,6,0,5,0); 
+-- INSERT INTO `bcnm_info` VALUES (994, 32,'warriors_path_ii'            ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (995, 32,'one_to_be_feared_ii'         ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (1059,36,'dawn_ii'                     ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (1093,57,'legacy_of_the_lost_ii'       ,'nobody',0,1800,1800,99,6,0,5,0);
+-- INSERT INTO `bcnm_info` VALUES (1157,67,'puppet_in_peril_ii'          ,'nobody',0,1800,1800,99,6,0,5,0);
+-- UPDATE bcnm_info SET levelcap = 99 WHERE name = 'call_to_arms';
+-- UPDATE bcnm_info SET levelcap = 99 WHERE name = 'compliments_to_the_chef';
+-- UPDATE bcnm_info SET levelcap = 99 WHERE name = 'tough_nut_to_crack';
+-- UPDATE bcnm_info SET levelcap = 99 WHERE name = 'happy_caster';
+-- UPDATE bcnm_info SET levelcap = 99 WHERE name = 'making_a_mockery';
+-- UPDATE bcnm_info SET levelcap = 99 WHERE name = 'shadows_of_the_mind';
 -- assign Mobs into battle fields
 -- Garuda Prim HTBF updated
-INSERT INTO `bcnm_battlefield` VALUES ( 421, 1,17600540,3); 
-INSERT INTO `bcnm_battlefield` VALUES ( 421, 2,17600541,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 421, 3,17600542,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 421, 1,17600540,3); 
+-- INSERT INTO `bcnm_battlefield` VALUES ( 421, 2,17600541,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 421, 3,17600542,3);
+INSERT INTO `bcnm_records` VALUES (166,165,'shadow_lord_battle_ii'       ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (263,179,'return_to_delkfutts_tower_ii','nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (228,170,'moonlit_path_ii'             ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (229,170,'waking_the_beast_fullmoon_ii','nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (294,180,'ark_angels_hm_ii'            ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (295,180,'ark_angels_tt_ii'            ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (296,180,'ark_angels_mr_ii'            ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (297,180,'ark_angels_ev_ii'            ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (298,180,'ark_angels_gk_ii'            ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (299,180,'divine_might_ii'             ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (321,181,'celestial_nexus_ii'          ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (421,201,'trial_by_wind_ii'            ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (453,202,'trial_by_lightning_ii'       ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (485,203,'trial_by_ice_ii'             ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (548,207,'trial_by_fire_ii'            ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (581,209,'trial_by_earth_ii'           ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (612,211,'trial_by_water_ii'           ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (680,  8,'head_wind_ii'                ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (707, 10,'waking_dreams_ii'            ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (968, 31,'savage_ii'                   ,'nobody',0,1800); 
+INSERT INTO `bcnm_records` VALUES (994, 32,'warriors_path_ii'            ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (995, 32,'one_to_be_feared_ii'         ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (1059,36,'dawn_ii'                     ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (1093,57,'legacy_of_the_lost_ii'       ,'nobody',0,1800);
+INSERT INTO `bcnm_records` VALUES (1157,67,'puppet_in_peril_ii'          ,'nobody',0,1800);
+
+
+
+
+
+
 INSERT INTO mob_spell_lists VALUES ('Garuda_Prime_HTBF', 506, 188, 65, 255); -- Aeroga V
 INSERT INTO mob_spell_lists VALUES ('Garuda_Prime_HTBF', 506, 209, 65, 255); -- Tornado 2
 INSERT INTO mob_spell_lists VALUES ('Garuda_Prime_HTBF', 506,  79, 65, 255); -- Slow II
@@ -60,9 +91,9 @@ INSERT INTO mob_droplist VALUES(3921,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3921,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3921,1,4,1000,8727,200); -- Sif's Lock
 -- Ramuh Prim HTBF updated
-INSERT INTO `bcnm_battlefield` VALUES ( 453, 1,17604639,3); 
-INSERT INTO `bcnm_battlefield` VALUES ( 453, 2,17604640,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 453, 3,17604641,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 453, 1,17604639,3); 
+-- INSERT INTO `bcnm_battlefield` VALUES ( 453, 2,17604640,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 453, 3,17604641,3);
 INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507, 198, 65, 255); -- Thundega V
 INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507, 213, 65, 255); -- Burst 2
 INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507,  79, 65, 255); -- Slow II
@@ -88,9 +119,9 @@ INSERT INTO mob_droplist VALUES(3923,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3923,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3923,1,4,1000,8727,200); -- Sif's Lock
 -- Shiva Prim HTBF updated
-INSERT INTO `bcnm_battlefield` VALUES ( 485, 1,17608747,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 485, 2,17608748,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 485, 3,17608749,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 485, 1,17608747,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 485, 2,17608748,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 485, 3,17608749,3);
 INSERT INTO mob_spell_lists VALUES ('Shiva_Prime_HTBF', 508, 183, 65, 255); -- Blizzaga V
 INSERT INTO mob_spell_lists VALUES ('Shiva_Prime_HTBF', 508, 207, 65, 255); -- Freeze 2
 INSERT INTO mob_spell_lists VALUES ('Shiva_Prime_HTBF', 508,  79, 65, 255); -- Slow II
@@ -116,9 +147,9 @@ INSERT INTO mob_droplist VALUES(3922,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3922,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3922,1,4,1000,8727,200); -- Sif's Lock
 -- Leviathan Prim HTBF updated
-INSERT INTO `bcnm_battlefield` VALUES ( 612, 1,17641497,3); 
-INSERT INTO `bcnm_battlefield` VALUES ( 612, 2,17641498,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 612, 3,17641499,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 612, 1,17641497,3); 
+-- INSERT INTO `bcnm_battlefield` VALUES ( 612, 2,17641498,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 612, 3,17641499,3);
 INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 203, 65, 255); -- Waterga V
 INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 215, 65, 255); -- Flood 2
 INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509,  79, 65, 255); -- Slow II
@@ -144,9 +175,9 @@ INSERT INTO mob_droplist VALUES(3920,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3920,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3920,1,4,1000,8727,200); -- Sif's Lock
 -- Ifrit Prim HTBF updated
-INSERT INTO `bcnm_battlefield` VALUES ( 548, 1,17625113,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 548, 2,17625114,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 548, 3,17625115,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 548, 1,17625113,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 548, 2,17625114,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 548, 3,17625115,3);
 INSERT INTO mob_spell_lists VALUES ('Ifrit_Prime_HTBF', 510, 178, 65, 255); -- firaga V
 INSERT INTO mob_spell_lists VALUES ('Ifrit_Prime_HTBF', 510, 205, 65, 255); -- flare 2
 INSERT INTO mob_spell_lists VALUES ('Ifrit_Prime_HTBF', 510,  79, 65, 255); -- Slow II
@@ -172,9 +203,9 @@ INSERT INTO mob_droplist VALUES(3924,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3924,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3924,1,4,1000,8727,200); -- Sif's Lock
 -- Titan Prim HTBF updated
-INSERT INTO `bcnm_battlefield` VALUES ( 581, 1,17633308,3);  
-INSERT INTO `bcnm_battlefield` VALUES ( 581, 2,17633309,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 581, 3,17633310,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 581, 1,17633308,3);  
+-- INSERT INTO `bcnm_battlefield` VALUES ( 581, 2,17633309,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 581, 3,17633310,3);
 INSERT INTO mob_spell_lists VALUES ('Titan_Prime_HTBF', 511, 193, 65, 255); -- stonega V
 INSERT INTO mob_spell_lists VALUES ('Titan_Prime_HTBF', 511, 211, 65, 255); -- quake 2
 INSERT INTO mob_spell_lists VALUES ('Titan_Prime_HTBF', 511,  79, 65, 255); -- Slow II
@@ -200,9 +231,9 @@ INSERT INTO mob_droplist VALUES(3925,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3925,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3925,1,4,1000,8727,200); -- Sif's Lock
 -- Fenrir Prim HTBF updated
-INSERT INTO `bcnm_battlefield` VALUES ( 228, 1,17473651,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 228, 2,17473652,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 228, 3,17473653,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 228, 1,17473651,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 228, 2,17473652,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 228, 3,17473653,3);
 INSERT INTO mob_pools VALUES (40006, 'Fenrir_Prime_HTBF', 'Fenrir_Prime', 325, 0x0000180300000000000000000000000000000000, 8, 4, 6, 240, 100, 0, 1, 1, 1, 18, 1, 0, 0, 3, 0, 0, 0, 0, 0, 40001, 36);  
 UPDATE mob_spawn_points SET mobname = 'Fenrir_Prime_HTBF', pos_X =  339.4457, pos_y =   47.5105, pos_z = -341.6085,  pos_rot =  64 WHERE mobid = 17473651;
 UPDATE mob_spawn_points SET mobname = 'Fenrir_Prime_HTBF', pos_X =  -59.9329, pos_y =    9.4368, pos_z =   59.3577,  pos_rot =  64 WHERE mobid = 17473652;
@@ -229,9 +260,9 @@ INSERT INTO mob_droplist VALUES(3926,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3926,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3926,1,4,1000,8727,200); -- Sif's Lock
 -- Carbuncle Prim HTBF updated Carbuncle_Prime_HTBF
-INSERT INTO `bcnm_battlefield` VALUES ( 229, 1,17473666,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 229, 2,17473667,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 229, 3,17473668,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 229, 1,17473666,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 229, 2,17473667,3);
+-- INSERT INTO `bcnm_battlefield` VALUES ( 229, 3,17473668,3);
 INSERT INTO mob_pools VALUES (40007, 'Carbuncle_Prime_HTBF', 'Carbuncle_Prime', 34, 0x0000170300000000000000000000000000000000, 3, 4, 7, 240, 100, 0, 1, 1, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34, 34);  
 UPDATE mob_spawn_points SET mobname = 'Carbuncle_Prime_HTBF', pos_X =  339.6589, pos_y =   47.5315, pos_z = -342.1236,  pos_rot =  64 WHERE mobid = 17473666;
 UPDATE mob_spawn_points SET mobname = 'Carbuncle_Prime_HTBF', pos_X =  -59.7994, pos_y =    9.4894, pos_z =   58.6598,  pos_rot =  64 WHERE mobid = 17473667;
@@ -459,3 +490,23 @@ INSERT INTO `mob_skill_lists` VALUES ('ShadowLord', 225, 3290);
 -- update loot pools
 -- INSERT INTO `mob_droplist` VALUES (3827,0,0,1000,9084,1000);
 
+/*
+[06/07/24 08:05:52:420][map][debug] SpawnMob: 16986355 <Hydra> is already spawned (luautils::SpawnMob:1633)
+[06/07/24 08:05:52:458][map][debug] SpawnMob: 16998862 <Medusa> is already spawned (luautils::SpawnMob:1633)
+[06/07/24 08:05:52:463][map][debug] SpawnMob: 17027458 <Cerberus> is already spawned (luautils::SpawnMob:1633)
+[06/07/24 08:05:52:464][map][debug] SpawnMob: 17031592 <Gurfurlur_the_Menacing> is already spawned (luautils::SpawnMob:1633)
+[06/07/24 08:05:52:467][map][debug] SpawnMob: 17043875 <Gulool_Ja_Ja> is already spawned (luautils::SpawnMob:1633)
+[06/07/24 08:05:52:467][map][debug] SpawnMob: 17043665 <Hundredfaced_Hapool_Ja> is already spawned (luautils::SpawnMob:1633)
+[06/07/24 08:05:52:496][map][debug] UpdateNMSpawnPoint: SQL error: No entries for mobid <17101197> found. (luautils::UpdateNMSpawnPoint:4863)
+[06/07/24 08:05:52:657][map][debug] SpawnMob: 17277127 <Shikigami_Weapon> is already spawned (luautils::SpawnMob:1633)
+[06/07/24 08:05:52:735][map][debug] DisallowRespawn: mob <17539172> not found (luautils::DisallowRespawn:4844)
+[06/07/24 08:05:52:735][map][debug] SpawnMob: mob <17539172> not found (luautils::SpawnMob:1639)
+[06/07/24 08:05:52:735][map][debug] DisallowRespawn: mob <17539267> not found (luautils::DisallowRespawn:4844)
+[06/07/24 08:05:52:735][map][debug] SpawnMob: mob <17539267> not found (luautils::SpawnMob:1639)
+[06/07/24 08:05:52:735][map][debug] DisallowRespawn: mob <17539275> not found (luautils::DisallowRespawn:4844)
+[06/07/24 08:05:52:735][map][debug] SpawnMob: mob <17539275> not found (luautils::SpawnMob:1639)
+[06/07/24 08:05:52:735][map][debug] DisallowRespawn: mob <17539287> not found (luautils::DisallowRespawn:4844)
+[06/07/24 08:05:52:735][map][debug] SpawnMob: mob <17539287> not found (luautils::SpawnMob:1639)
+[06/07/24 08:05:52:735][map][debug] DisallowRespawn: mob <17539294> not found (luautils::DisallowRespawn:4844)
+[06/07/24 08:05:52:735][map][debug] SpawnMob: mob <17539294> not found (luautils::SpawnMob:1639)
+/*
