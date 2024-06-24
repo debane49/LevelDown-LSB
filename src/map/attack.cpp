@@ -658,36 +658,4 @@ void CAttack::ProcessDamage()
             m_attacker->addModifier(Mod::ALL_WSDMG_FIRST_HIT, boostPerRound);
         }
     }
-
-    if (m_isFirstSwing && m_attacker->StatusEffectContainer->HasStatusEffect(EFFECT_IMPETUS))
-    {
-        CStatusEffect* effect = m_attacker->StatusEffectContainer->GetStatusEffect(EFFECT_IMPETUS);
-
-        if (effect == nullptr)
-        {
-            ShowError("Impetus effect was null.");
-            return;
-        } 
-        if (effect->GetPower() < 100)
-        {
-            float boostPerHit = (effect->GetPower() + 2);
-            if (effect->GetPower() + boostPerHit > 100)
-            {
-                boostPerHit = 100 - effect->GetSubPower();
-            }
-            effect->SetPower(effect->GetPower() + boostPerHit);
-            m_attacker->addModifier(Mod::ATT, boostPerHit);
-        }
-        if (effect->GetSubPower() < 50)
-        {
-            float boostPerHits = (effect->GetSubPower() + 1);
-            if (effect->GetSubPower() + boostPerHits > 50)
-            {
-                boostPerHits = 50 - effect->GetSubPower();
-            }
-            effect->SetSubPower(effect->GetSubPower() + boostPerHits);
-            m_attacker->addModifier(Mod::CRITHITRATE, boostPerHits);
-        }
-    }
-
 }
