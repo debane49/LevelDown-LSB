@@ -35,6 +35,7 @@ zones[xi.zone.CEIZAK_BATTLEGROUNDS] =
     },
     npc =
     {
+        COLLISIONA   = 17846762,
     },
     reive =
     {
