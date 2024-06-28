@@ -20,6 +20,7 @@ local content = Limbus:new({
     requiredItems    = { xi.item.METAL_CHIP },
     name             = 'CENTRAL_TEMENOS_BASEMENT',
     timeExtension    = 5,
+    allowTrusts      = true,
 })
 
 content.groups =

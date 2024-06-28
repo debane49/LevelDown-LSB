@@ -20,6 +20,7 @@ local content = Limbus:new({
     requiredKeyItems = { xi.ki.COSMO_CLEANSE, xi.ki.WHITE_CARD, message = ID.text.YOU_INSERT_THE_CARD_POLISHED },
     requiredItems    = { xi.item.SCARLET_CHIP },
     name             = 'CENTRAL_TEMENOS_2ND_FLOOR',
+    allowTrusts      = true,
 })
 
 local function weakenCarbuncle(elementalMod, bonusMod, bonusAmount, battlefield, mob, count)

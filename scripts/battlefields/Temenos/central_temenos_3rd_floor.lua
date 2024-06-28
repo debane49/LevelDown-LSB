@@ -20,6 +20,7 @@ local content = Limbus:new({
     requiredKeyItems = { xi.ki.COSMO_CLEANSE, xi.ki.WHITE_CARD, message = ID.text.YOU_INSERT_THE_CARD_POLISHED },
     requiredItems    = { xi.item.IVORY_CHIP },
     name             = 'CENTRAL_TEMENOS_3RD_FLOOR',
+    allowTrusts      = true,
 })
 
 function content:handleWeakenBoss(name, battlefield, mob)

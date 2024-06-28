@@ -57,7 +57,7 @@ player:printToPlayer(string.format('Subtle Blow: [%i%%] Subtle Blow II: [%i%%] S
 
 player:printToPlayer(string.format('Refresh / Tick: [%i] Regen / Tick: [%i] Regain / Tick: [%i]', target:getMod(xi.mod.REFRESH), target:getMod(xi.mod.REGEN), target:getMod(xi.mod.REGAIN)), xi.msg.channel.SYSTEM_3)
 
-player:printToPlayer(string.format('Crit Hit Rate: [%i]', target:getMod(xi.mod.CRITHITRATE)), xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Crit Hit Rate: [%i%%]', target:getMod(xi.mod.CRITHITRATE)), xi.msg.channel.SYSTEM_3)
 
 
 player:printToPlayer(string.format('-------------------------------------------------------------------------------------------'),  xi.msg.channel.SYSTEM_3)

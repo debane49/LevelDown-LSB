@@ -21,6 +21,7 @@ local content = Limbus:new({
     name             = 'SE_APOLLYON',
     exitLocation     = 1,
     timeExtension    = 10,
+    allowTrusts      = true,
 })
 
 content.paths =

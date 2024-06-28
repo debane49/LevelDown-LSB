@@ -19,6 +19,7 @@ local content = Limbus:new({
     requiredKeyItems = { xi.ki.COSMO_CLEANSE, xi.ki.WHITE_CARD, message = ID.text.YOU_INSERT_THE_CARD_POLISHED },
     name             = 'TEMENOS_NORTHERN_TOWER',
     timeExtension    = 15,
+    allowTrusts      = true,
 })
 
 content.handleMobDeathVortex = function(floor, battlefield, mob, count)

@@ -20,6 +20,7 @@ local content = Limbus:new({
     requiredKeyItems = { xi.ki.COSMO_CLEANSE, xi.ki.WHITE_CARD, message = ID.text.YOU_INSERT_THE_CARD_POLISHED },
     requiredItems    = { xi.item.EMERALD_CHIP },
     name             = 'CENTRAL_TEMENOS_1ST_FLOOR',
+    allowTrusts      = true,
 })
 
 function content:handleMobPartnerDeath(mobs, battlefield, mob, count)

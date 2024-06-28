@@ -21,6 +21,7 @@ local content = Limbus:new({
     requiredItems    = { xi.item.METAL_CHIP },
     name             = 'CS_APOLLYON',
     timeExtension    = 5,
+    allowTrusts      = true,
 })
 
 function content:onEntryEventUpdate(player, csid, option, npc)

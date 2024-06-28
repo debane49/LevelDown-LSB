@@ -21,6 +21,7 @@ local content = Limbus:new({
     name             = 'NE_APOLLYON',
     exitLocation     = 1,
     timeExtension    = 5,
+    allowTrusts      = true,
 })
 
 function content:onBattlefieldInitialise(battlefield)

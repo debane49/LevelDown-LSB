@@ -19,6 +19,7 @@ local content = Limbus:new({
     requiredKeyItems = { xi.ki.COSMO_CLEANSE, xi.ki.RED_CARD, message = ID.text.YOU_INSERT_THE_CARD_POLISHED },
     name             = 'NW_APOLLYON',
     timeExtension   = 5,
+    allowTrusts      = true,
 })
 
 function content:onBattlefieldInitialise(battlefield)

@@ -19,6 +19,7 @@ local content = Limbus:new({
     requiredKeyItems = { xi.ki.COSMO_CLEANSE, xi.ki.WHITE_CARD, message = ID.text.YOU_INSERT_THE_CARD_POLISHED },
     name             = 'TEMENOS_EASTERN_TOWER',
     timeExtension    = 15,
+    allowTrusts      = true,
 })
 
 local despawnFloorMobs = function(crateOffset, count)
