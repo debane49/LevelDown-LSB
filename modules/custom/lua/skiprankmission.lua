@@ -9,10 +9,11 @@ local m = Module:new("skiprankmission")
     local missionCoP = {101, 110, 118, 128, 138, 218, 228, 238, 248, 257, 258, 318, 325, 335, 341, 350, 358, 368, 418, 428, 438, 448,
                         518, 530, 543, 552, 560, 568, 578, 618, 628, 638, 648, 718, 728, 738, 748, 758, 800, 818, 828, 840, 850}
     for i = 1, #missionCoP do
+        if not player:hasCompletedMission(6, missionCoP[i]) then
         player:addMission(6, missionCoP[i])
         player:completeMission(6, missionCoP[i])
+        end
     end
-        player:addMission(6, 850) -- CoP: The Last Verse
         player:addKeyItem(708) -- Mysterious Amulet
         player:addKeyItem(591) -- Light of Dem
         player:addKeyItem(590) -- Light of Holla
@@ -25,10 +26,11 @@ local m = Module:new("skiprankmission")
     local function skip_roz (player)
     local missionZM = {0, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 23, 24, 26, 27, 28, 30}
     for i = 1, #missionZM do
+        if not player:hasCompletedMission(3, missionZM[i]) then
         player:addMission(3, missionZM[i])
         player:completeMission(3, missionZM[i])
+        end
     end
-        player:addMission(3, 31) -- RoZ: Awakening
         player:addKeyItem(238) -- Sacrifical Chamber Key
         player:addKeyItem(247) -- Prismatic Fragment
         player:addKeyItem(452) -- Cerulean Crystal
@@ -38,10 +40,11 @@ local m = Module:new("skiprankmission")
     local missionTOAU = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
                        30 ,31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47}
     for i = 1, #missionTOAU do
+        if not player:hasCompletedMission(4, missionTOAU[i]) then
         player:addMission(4, missionTOAU[i])
         player:completeMission(4, missionTOAU[i])
+        end
     end
-        player:addMission(4, 47) -- 
         player:addKeyItem(780) -- PSC Wildcat Badge
         player:addKeyItem(783) -- PFC Wildcat Badge
         player:addKeyItem(784) -- SP Wildcat Badge
@@ -61,10 +64,11 @@ local m = Module:new("skiprankmission")
     local missionWOTG = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
                        30 ,31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53}
     for i = 1, #missionWOTG do
+        if not player:hasCompletedMission(5, missionWOTG[i]) then
         player:addMission(5, missionWOTG[i])
         player:completeMission(5, missionWOTG[i])
+        end
     end
-        player:addMission(5, 53) -- 
         player:addKeyItem(910) -- Pure White Feather
     end
 
@@ -74,10 +78,11 @@ local m = Module:new("skiprankmission")
                         126, 130, 132, 136, 142, 144, 146, 150, 152, 154, 155, 156, 158, 160, 161, 162, 164, 166, 170, 172, 174, 178,
                         180, 184, 188, 190, 192, 194, 196, 198, 200, 202, 206, 210, 212, 216, 218, 220, 222, 224, 226}
     for i = 1, #missionROV do
+        if not player:hasCompletedMission(13, missionROV[i]) then
         player:addMission(13, missionROV[i])
         player:completeMission(13, missionROV[i])
+        end
     end
-        player:addMission(13, 226) -- 
         player:addKeyItem(2884) -- Rhapsody of white
         player:addKeyItem(2885) -- Rhapsody of umber
         player:addKeyItem(2886) -- Rhapsody of azure
@@ -96,8 +101,10 @@ local m = Module:new("skiprankmission")
     local function skip_srank (player)
     local missionSR = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}
         for i = 1, #missionSR do
+        if not player:hasCompletedMission(0, missionSR[i]) then
              player:addMission(0, missionSR[i])
              player:completeMission(0, missionSR[i])
+             end
         end
             player:setRank(10)
             player:addMission(0, 23) -- 
@@ -108,8 +115,10 @@ local m = Module:new("skiprankmission")
     local function skip_brank (player)
     local missionBR = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}
          for i = 1, #missionBR do
+        if not player:hasCompletedMission(1, missionBR[i]) then
              player:addMission(1, missionBR[i])
              player:completeMission(1, missionBR[i])
+             end
         end
             player:setRank(10)
             player:addMission(1, 23) -- 
@@ -120,8 +129,10 @@ local m = Module:new("skiprankmission")
     local function skip_wrank (player)
     local missionWR = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}
         for i = 1, #missionWR do
+        if not player:hasCompletedMission(2, missionWR[i]) then
              player:addMission(2, missionWR[i])
              player:completeMission(2, missionWR[i])
+             end
         end
             player:setRank(10)
             player:addMission(2, 23) -- 
