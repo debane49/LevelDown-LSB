@@ -110,6 +110,12 @@ player:printToArea('GM: Help us stop them, We have 10 minutes before they disapp
             end
         end,
 
+        onMobRoam = function(mob)
+            if mob:getLocalVar('MoleDespawn') <= os.time() then
+                DespawnMob(mob:getID())
+            end
+        end,
+
         onMobDeath = function(mob, playerArg, optParams)
         end,
 

@@ -117,7 +117,8 @@ local locationWindy =
 }
 
 local menu = {}
-local page1 = {} 
+local page1 = {}
+local page2 = {}
 
 
 local delaySendMenu = function(player)
@@ -174,6 +175,41 @@ page1 =
         end,
     },
 }
+page2 =
+{
+    {
+        'Yes',
+        function(player)
+                       local ExistLvlS = tonumber(player:getCharVar('[LPFSEvent] PlayerLevel'))
+                       local playercountS = GetServerVariable('[LPFSEvent] PlayerCount')
+                       local ExistLvlB = tonumber(player:getCharVar('[LPFBEvent] PlayerLevel'))
+                       local playercountB = GetServerVariable('[LPFBEvent] PlayerCount')
+                       local ExistLvlW = tonumber(player:getCharVar('[LPFWEvent] PlayerLevel'))
+                       local playercountW = GetServerVariable('[LPFWEvent] PlayerCount')
+                             if player:hasStatusEffect(xi.effect.BATTLEFIELD) then
+                                player:delStatusEffect(xi.effect.BATTLEFIELD)
+                             end
+                             if ExistLvlS > 0 then
+                             player:setLevel(ExistLvlS)
+                             player:setCharVar('[LPFSEvent] PlayerLevel', 0)
+                             SetServerVariable('[LPFSEvent] PlayerCount', playercountS - 1)
+                             elseif ExistLvlB > 0 then
+                             player:setLevel(ExistLvlB)
+                             player:setCharVar('[LPFBEvent] PlayerLevel', 0)
+                             SetServerVariable('[LPFBEvent] PlayerCount', playercountB - 1)
+                             elseif ExistLvlW > 0 then
+                             player:setLevel(ExistLvlW)
+                             player:setCharVar('[LPFWEvent] PlayerLevel', 0)
+                             SetServerVariable('[LPFWEvent] PlayerCount', playercountW - 1)
+                             end
+        end,
+    },
+    {
+        'No',
+        function(player)
+        end,
+    }
+}
 
 commandObj.onTrigger = function(player, area)
 -- validate area to populate
@@ -200,7 +236,7 @@ commandObj.onTrigger = function(player, area)
 
 
   player:printToArea(string.format('GM: The Pigs are taking over the city, they have been spotted in %s!', areaName), xi.msg.channel.SYSTEM_3, 0)
-  player:printToArea('GM: Help us stop them from stealing our valuables!', xi.msg.channel.SYSTEM_3, 0)
+  player:printToArea('GM: Help us stop them from stealing our valuables, they will be gone in 10 minutes!', xi.msg.channel.SYSTEM_3, 0)
   player:printToArea(string.format('GM: Please see the GM NPC %s.', npcLocation), xi.msg.channel.SYSTEM_3, 0)
  if area == 1 then
     -------------------------------------------------------------------------------------------
@@ -249,10 +285,23 @@ commandObj.onTrigger = function(player, area)
                         end
                 end
             end)
+          mob:setLocalVar('PigDespawn', os.time() + 600) -- 600 = 10 minutes
 		end,
-
+    
+		onMobRoam = function(mob)
+            if mob:getLocalVar('PigDespawn') <= os.time() then
+                DespawnMob(mob:getID())
+            end
+		end,
 		onMobFight = function(mob, target)
+            if mob:getLocalVar('PigDespawn') <= os.time() then
+                DespawnMob(mob:getID())
+            end
 		end,
+        onMobDespawn = function(mob)
+			local LPFBEvent = GetServerVariable('[LPFSEvent] PigCount') -- Let Pigs Fly Bastok Event
+				SetServerVariable('[LPFSEvent] PigCount', LPFSEvent -1)
+        end,
 	
 		onMobDeath = function(mob, player, optParams)
 		    local droppool = math.random(1,100)
@@ -328,6 +377,11 @@ commandObj.onTrigger = function(player, area)
                    player:printToPlayer('Welcome and Thank you for joining the GM Event Let Pigs Fly!',xi.msg.channel.SYSTEM_3)
                    menu.options = page1
                    delaySendMenu(player)
+                elseif LPFSEvent > 1 and
+                   player:getCharVar('[LPFSEvent] PlayerLevel') > 0 then
+                   player:printToPlayer('You wish to leave the event early?!',xi.msg.channel.SYSTEM_3)
+                   menu.options = page2
+                   delaySendMenu(player)
                 elseif LPFSEvent == 0 and
                        player:getCharVar('[LPFSEvent] PlayerLevel') > 0 and
                        GetServerVariable('[LPFSEvent] PlayerCount') > 1 then
@@ -345,6 +399,9 @@ commandObj.onTrigger = function(player, area)
                              player:setCharVar('[LPFSEvent] PlayerLevel', 0)
                              SetServerVariable('[LPFSEvent] PlayerCount', playercount - 1)
                              npc:setStatus(xi.status.DISAPPEAR)
+                elseif LPFSEvent == 0 and
+                       GetServerVariable('[LPFSEvent] PlayerCount') == 0 then
+                             npc:setStatus(xi.status.DISAPPEAR) 
                 end
         end,
         releaseIdOnDisappear = true,
@@ -393,10 +450,23 @@ for i = 1, 21 do
                         end
                 end
             end)
+          mob:setLocalVar('PigDespawn', os.time() + 600) -- 600 = 10 minutes
 		end,
 
-		onMobFight = function(mob, target)
+		onMobRoam = function(mob)
+            if mob:getLocalVar('PigDespawn') <= os.time() then
+                DespawnMob(mob:getID())
+            end
 		end,
+		onMobFight = function(mob, target)
+            if mob:getLocalVar('PigDespawn') <= os.time() then
+                DespawnMob(mob:getID())
+            end
+		end,
+        onMobDespawn = function(mob)
+			local LPFBEvent = GetServerVariable('[LPFBEvent] PigCount') -- Let Pigs Fly Bastok Event
+				SetServerVariable('[LPFBEvent] PigCount', LPFBEvent -1)
+        end,
 	
 		onMobDeath = function(mob, player, optParams)
 		    local droppool = math.random(1,100)
@@ -472,6 +542,11 @@ for i = 1, 21 do
                    player:printToPlayer('Welcome and Thank you for joining the GM Event Let Pigs Fly!',xi.msg.channel.SYSTEM_3)
                    menu.options = page1
                    delaySendMenu(player)
+                elseif LPFBEvent > 1 and
+                   player:getCharVar('[LPFBEvent] PlayerLevel') > 0 then
+                   player:printToPlayer('You wish to leave the event early?!',xi.msg.channel.SYSTEM_3)
+                   menu.options = page2
+                   delaySendMenu(player)
                 elseif LPFBEvent == 0 and
                        player:getCharVar('[LPFBEvent] PlayerLevel') > 0 and
                        GetServerVariable('[LPFBEvent] PlayerCount') > 1 then
@@ -489,6 +564,9 @@ for i = 1, 21 do
                              player:setCharVar('[LPFBEvent] PlayerLevel', 0)
                              SetServerVariable('[LPFBEvent] PlayerCount', playercount - 1)
                              npc:setStatus(xi.status.DISAPPEAR)
+                elseif LPFBEvent == 0 and
+                       GetServerVariable('[LPFBEvent] PlayerCount') == 0 then
+                             npc:setStatus(xi.status.DISAPPEAR) 
                 end
         end,
         releaseIdOnDisappear = true,
@@ -496,7 +574,7 @@ for i = 1, 21 do
     utils.unused(npcb)
 elseif area == 3 then
     -------------------------------------------------------------------------------------------
-    -------------------------- Flying Pigs - Bastok Mines
+    -------------------------- Flying Pigs - Windy Woods
     -------------------------------------------------------------------------------------------
  for i = 1, 21 do 
             for k, v in pairs(locationWindy) do
@@ -537,10 +615,23 @@ elseif area == 3 then
                         end
                 end
             end)
+          mob:setLocalVar('PigDespawn', os.time() + 600) -- 600 = 10 minutes
 		end,
 
-		onMobFight = function(mob, target)
+		onMobRoam = function(mob)
+            if mob:getLocalVar('PigDespawn') <= os.time() then
+                DespawnMob(mob:getID())
+            end
 		end,
+		onMobFight = function(mob, target)
+            if mob:getLocalVar('PigDespawn') <= os.time() then
+                DespawnMob(mob:getID())
+            end
+		end,
+        onMobDespawn = function(mob)
+			local LPFBEvent = GetServerVariable('[LPFWEvent] PigCount') -- Let Pigs Fly Bastok Event
+				SetServerVariable('[LPFWEvent] PigCount', LPFWEvent -1)
+        end,
 	
 		onMobDeath = function(mob, player, optParams)
 		    local droppool = math.random(1,100)
@@ -616,6 +707,11 @@ elseif area == 3 then
                    player:printToPlayer('Welcome and Thank you for joining the GM Event Let Pigs Fly!',xi.msg.channel.SYSTEM_3)
                    menu.options = page1
                    delaySendMenu(player)
+                elseif LPFWEvent > 1 and
+                   player:getCharVar('[LPFWEvent] PlayerLevel') > 0 then
+                   player:printToPlayer('You wish to leave the event early?!',xi.msg.channel.SYSTEM_3)
+                   menu.options = page2
+                   delaySendMenu(player)
                 elseif LPFWEvent == 0 and
                        player:getCharVar('[LPFWEvent] PlayerLevel') > 0 and
                        GetServerVariable('[LPFWEvent] PlayerCount') > 1 then
@@ -633,6 +729,9 @@ elseif area == 3 then
                              player:setCharVar('[LPFWEvent] PlayerLevel', 0)
                              SetServerVariable('[LPFWEvent] PlayerCount', playercount - 1)
                              npc:setStatus(xi.status.DISAPPEAR)
+                elseif LPFWEvent == 0 and
+                       GetServerVariable('[LPFWEvent] PlayerCount') == 0 then
+                             npc:setStatus(xi.status.DISAPPEAR)                      
                 end
         end,
         releaseIdOnDisappear = true,
