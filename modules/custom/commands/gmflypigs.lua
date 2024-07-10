@@ -299,11 +299,12 @@ commandObj.onTrigger = function(player, area)
             end
 		end,
         onMobDespawn = function(mob)
-			local LPFBEvent = GetServerVariable('[LPFSEvent] PigCount') -- Let Pigs Fly Bastok Event
-				SetServerVariable('[LPFSEvent] PigCount', LPFSEvent -1)
+			local LPFSEvent = GetServerVariable('[LPFSEvent] PigCount') -- Let Pigs Fly Sandy Event
+				-- SetServerVariable('[LPFSEvent] PigCount', LPFSEvent -1)
         end,
 	
 		onMobDeath = function(mob, player, optParams)
+        if optParams.isKiller then
 		    local droppool = math.random(1,100)
 			 if droppool >= 1 and droppool <= 50 then 
                local randz = math.random(1, 6)
@@ -332,13 +333,14 @@ commandObj.onTrigger = function(player, area)
 	      local lpfsEvent	= GetServerVariable('[LPFSEvent] PigCount')
            SetServerVariable('[LPFSEvent] PigCount', lpfsEvent -1)
 			if lpfsEvent > 1 then
-                local pigcount = lpfsEvent -1
-				player:printToArea(string.format('GM: There are currently %s pigs still tormenting the citizens in San dOria!', pigcount), xi.msg.channel.SYSTEM_3, 0)
+                local pigcounts = lpfsEvent -1
+				player:printToArea(string.format('GM: There are currently %s pigs still tormenting the citizens in San dOria!', pigcounts), xi.msg.channel.SYSTEM_3, 0)
 			elseif lpfsEvent == 1 then  
 				player:printToArea(string.format('GM: Congratulations!! All the Flying pigs have been defeated in San dOria.', lpfsEvent), xi.msg.channel.SYSTEM_3, 0)	
 				player:printToArea(string.format('GM: Please return to the GM NPC to have your level returned', lpfsEvent), xi.msg.channel.SYSTEM_3, 0)	
 				SetServerVariable('[LPFSEvent] PigCount', 0)
 			end
+        end
 			mob:removeListener('PIG_TAKE_DAMAGE')
 		end,
 		specialSpawnAnimation = false,
@@ -465,10 +467,11 @@ for i = 1, 21 do
 		end,
         onMobDespawn = function(mob)
 			local LPFBEvent = GetServerVariable('[LPFBEvent] PigCount') -- Let Pigs Fly Bastok Event
-				SetServerVariable('[LPFBEvent] PigCount', LPFBEvent -1)
+				-- SetServerVariable('[LPFBEvent] PigCount', LPFBEvent -1)
         end,
 	
 		onMobDeath = function(mob, player, optParams)
+        if optParams.isKiller then
 		    local droppool = math.random(1,100)
 			 if droppool >= 1 and droppool <= 50 then 
                local randz = math.random(1, 6)
@@ -495,15 +498,16 @@ for i = 1, 21 do
                         end
 			 end
 	      local LPFBEvent	= GetServerVariable('[LPFBEvent] PigCount')
-           SetServerVariable('[LPFBEvent] PigCount', LPFBEvent -1)
+            SetServerVariable('[LPFBEvent] PigCount', LPFBEvent -1)
 			if LPFBEvent > 1 then
-                local pigcount = LPFBEvent -1
-				player:printToArea(string.format('GM: There are currently %s pigs still tormenting the citizens in Bastok!', pigcount), xi.msg.channel.SYSTEM_3, 0)
+                local pigcountb = LPFBEvent -1
+				player:printToArea(string.format('GM: There are currently %s pigs still tormenting the citizens in Bastok!', pigcountb), xi.msg.channel.SYSTEM_3, 0)
 			elseif LPFBEvent == 1 then  
 				player:printToArea(string.format('GM: Congratulations!! All the Flying pigs have been defeated in Bastok.', LPFBEvent), xi.msg.channel.SYSTEM_3, 0)	
 				player:printToArea(string.format('GM: Please return to the GM NPC to have your level returned', LPFBEvent), xi.msg.channel.SYSTEM_3, 0)	
 				SetServerVariable('[LPFBEvent] PigCount', 0)
 			end
+        end
 			mob:removeListener('PIG_TAKE_DAMAGE')
 		end,
 		specialSpawnAnimation = false,
@@ -629,11 +633,12 @@ elseif area == 3 then
             end
 		end,
         onMobDespawn = function(mob)
-			local LPFBEvent = GetServerVariable('[LPFWEvent] PigCount') -- Let Pigs Fly Bastok Event
-				SetServerVariable('[LPFWEvent] PigCount', LPFWEvent -1)
+			local LPFWEvent = GetServerVariable('[LPFWEvent] PigCount') -- Let Pigs Fly Windy Event
+				-- SetServerVariable('[LPFWEvent] PigCount', LPFWEvent -1)
         end,
 	
 		onMobDeath = function(mob, player, optParams)
+        if optParams.isKiller then
 		    local droppool = math.random(1,100)
 			 if droppool >= 1 and droppool <= 50 then 
                local randz = math.random(1, 6)
@@ -660,15 +665,16 @@ elseif area == 3 then
                         end
 			 end
 	      local LPFWEvent	= GetServerVariable('[LPFWEvent] PigCount')
-           SetServerVariable('[LPFWEvent] PigCount', LPFWEvent -1)
+            SetServerVariable('[LPFWEvent] PigCount', LPFWEvent -1)
 			if LPFWEvent > 1 then
-                local pigcount = LPFWEvent -1
-				player:printToArea(string.format('GM: There are currently %s pigs still tormenting the citizens in Windurst!', pigcount), xi.msg.channel.SYSTEM_3, 0)
+                local pigcountw = LPFWEvent -1
+				player:printToArea(string.format('GM: There are currently %s pigs still tormenting the citizens in Windurst!', pigcountw), xi.msg.channel.SYSTEM_3, 0)
 			elseif LPFWEvent == 1 then  
 				player:printToArea(string.format('GM: Congratulations!! All the Flying pigs have been defeated in Windurst.', LPFWEvent), xi.msg.channel.SYSTEM_3, 0)	
 				player:printToArea(string.format('GM: Please return to the GM NPC to have your level returned', LPFWEvent), xi.msg.channel.SYSTEM_3, 0)	
 				SetServerVariable('[LPFWEvent] PigCount', 0)
 			end
+        end
 			mob:removeListener('PIG_TAKE_DAMAGE')
 		end,
 		specialSpawnAnimation = false,
