@@ -4,7 +4,7 @@
 require('modules/module_utils')
 require('scripts/globals/trust')
 -----------------------------------
-local m = Module:new('maat')
+local m = Module:new('maat_trust')
 
 
 m:addOverride("xi.actions.spells.trust.maat.onSpellCast", function(caster, target, spell)

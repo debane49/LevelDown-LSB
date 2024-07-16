@@ -4,7 +4,7 @@
 require('modules/module_utils')
 require('scripts/globals/trust')
 -----------------------------------
-local m = Module:new('aahm')
+local m = Module:new('ark_angel_hm')
 
 m:addOverride("xi.actions.spells.trust.aahm.onSpellCast", function(caster, target, spell)
     local trust = caster:spawnTrust(spell:getID())
