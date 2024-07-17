@@ -278,14 +278,14 @@ commandObj.onTrigger = function(player, area)
 				mob:setMobLevel(10)
 				mob:setMobMod(xi.mobMod.CHECK_AS_NM, 1)
             mob:addListener('TAKE_DAMAGE', 'PIG_TAKE_DAMAGE', function(mob, damage, attacker, attackType, damageType)
-                if attackType == xi.attackType.PHYSICAL then
+                if attackType == xi.attackType.PHYSICAL or attackType == xi.attackType.RANGED or attackType == xi.attackType.MAGICAL then
                     local rand = math.random(1,3)
                         if rand == 2 then
                            npcUtil.giveItem(attacker, { { xi.item.GIL, math.random(100, 1000) } })
                         end
                 end
             end)
-          mob:setLocalVar('PigDespawn', os.time() + 600) -- 600 = 10 minutes
+          mob:setLocalVar('PigDespawn', os.time() + 1200) -- 600 = 10 minutes
 		end,
     
 		onMobRoam = function(mob)
@@ -303,8 +303,8 @@ commandObj.onTrigger = function(player, area)
 				-- SetServerVariable('[LPFSEvent] PigCount', LPFSEvent -1)
         end,
 	
-		onMobDeath = function(mob, player, optParams)
-        if optParams.isKiller then
+        onMobDeath = function(mob, player, optParams)
+        if optParams.isKiller then 
 		    local droppool = math.random(1,100)
 			 if droppool >= 1 and droppool <= 50 then 
                local randz = math.random(1, 6)
@@ -339,8 +339,8 @@ commandObj.onTrigger = function(player, area)
 				player:printToArea(string.format('GM: Congratulations!! All the Flying pigs have been defeated in San dOria.', lpfsEvent), xi.msg.channel.SYSTEM_3, 0)	
 				player:printToArea(string.format('GM: Please return to the GM NPC to have your level returned', lpfsEvent), xi.msg.channel.SYSTEM_3, 0)	
 				SetServerVariable('[LPFSEvent] PigCount', 0)
-			end
-        end
+            end
+        end    
 			mob:removeListener('PIG_TAKE_DAMAGE')
 		end,
 		specialSpawnAnimation = false,
@@ -445,14 +445,14 @@ for i = 1, 21 do
 				mob:setMobLevel(10)
 				mob:setMobMod(xi.mobMod.CHECK_AS_NM, 1)
             mob:addListener('TAKE_DAMAGE', 'PIG_TAKE_DAMAGE', function(mob, damage, attacker, attackType, damageType)
-                if attackType == xi.attackType.PHYSICAL then
+                if attackType == xi.attackType.PHYSICAL or attackType == xi.attackType.RANGED or attackType == xi.attackType.MAGICAL then
                     local rand = math.random(1,3)
                         if rand == 2 then
                            npcUtil.giveItem(attacker, { { xi.item.GIL, math.random(100, 1000) } })
                         end
                 end
             end)
-          mob:setLocalVar('PigDespawn', os.time() + 600) -- 600 = 10 minutes
+          mob:setLocalVar('PigDespawn', os.time() + 1200) -- 600 = 10 minutes
 		end,
 
 		onMobRoam = function(mob)
@@ -470,8 +470,8 @@ for i = 1, 21 do
 				-- SetServerVariable('[LPFBEvent] PigCount', LPFBEvent -1)
         end,
 	
-		onMobDeath = function(mob, player, optParams)
-        if optParams.isKiller then
+        onMobDeath = function(mob, player, optParams)
+        if optParams.isKiller then    
 		    local droppool = math.random(1,100)
 			 if droppool >= 1 and droppool <= 50 then 
                local randz = math.random(1, 6)
@@ -506,8 +506,8 @@ for i = 1, 21 do
 				player:printToArea(string.format('GM: Congratulations!! All the Flying pigs have been defeated in Bastok.', LPFBEvent), xi.msg.channel.SYSTEM_3, 0)	
 				player:printToArea(string.format('GM: Please return to the GM NPC to have your level returned', LPFBEvent), xi.msg.channel.SYSTEM_3, 0)	
 				SetServerVariable('[LPFBEvent] PigCount', 0)
-			end
-        end
+            end
+        end    
 			mob:removeListener('PIG_TAKE_DAMAGE')
 		end,
 		specialSpawnAnimation = false,
@@ -612,14 +612,14 @@ elseif area == 3 then
 				mob:setMobLevel(10)
 				mob:setMobMod(xi.mobMod.CHECK_AS_NM, 1)
             mob:addListener('TAKE_DAMAGE', 'PIG_TAKE_DAMAGE', function(mob, damage, attacker, attackType, damageType)
-                if attackType == xi.attackType.PHYSICAL then
+                if attackType == xi.attackType.PHYSICAL or attackType == xi.attackType.RANGED or attackType == xi.attackType.MAGICAL then
                     local rand = math.random(1,3)
                         if rand == 2 then
                            npcUtil.giveItem(attacker, { { xi.item.GIL, math.random(100, 1000) } })
                         end
                 end
             end)
-          mob:setLocalVar('PigDespawn', os.time() + 600) -- 600 = 10 minutes
+          mob:setLocalVar('PigDespawn', os.time() + 1200) -- 600 = 10 minutes
 		end,
 
 		onMobRoam = function(mob)
@@ -637,8 +637,8 @@ elseif area == 3 then
 				-- SetServerVariable('[LPFWEvent] PigCount', LPFWEvent -1)
         end,
 	
-		onMobDeath = function(mob, player, optParams)
-        if optParams.isKiller then
+        onMobDeath = function(mob, player, optParams)
+        if optParams.isKiller then    
 		    local droppool = math.random(1,100)
 			 if droppool >= 1 and droppool <= 50 then 
                local randz = math.random(1, 6)
@@ -673,8 +673,8 @@ elseif area == 3 then
 				player:printToArea(string.format('GM: Congratulations!! All the Flying pigs have been defeated in Windurst.', LPFWEvent), xi.msg.channel.SYSTEM_3, 0)	
 				player:printToArea(string.format('GM: Please return to the GM NPC to have your level returned', LPFWEvent), xi.msg.channel.SYSTEM_3, 0)	
 				SetServerVariable('[LPFWEvent] PigCount', 0)
-			end
-        end
+            end
+        end    
 			mob:removeListener('PIG_TAKE_DAMAGE')
 		end,
 		specialSpawnAnimation = false,
