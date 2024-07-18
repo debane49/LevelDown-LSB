@@ -34,7 +34,7 @@ effectObject.onEffectLose = function(target, effect)
 local ExistLvl = tonumber(target:getCharVar('NakedRun'))
                       target:setLevel(ExistLvl)
                       target:delMod(xi.mod.MOVE_SPEED_OVERIDE, 255)
-                      target:setSpeed(50)
+                      target:setSpeed(80)
                       target:setCharVar('NakedRun', 0)
                       target:removeListener('NAKEDRUN_TICK')
 end
