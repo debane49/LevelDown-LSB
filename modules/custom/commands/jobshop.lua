@@ -13,7 +13,7 @@ commandObj.cmdprops =
 }
 
 commandObj.onTrigger = function(player)
-    player:printToPlayer("Job Shop for BNET.cc Players.", 0xF);
+    player:printToPlayer("Job Shop Players.", 0xF);
     if(player:getMainJob() == xi.job.WAR) then -- WAR
         local stock =
         {
@@ -308,8 +308,12 @@ commandObj.onTrigger = function(player)
         xi.shop.general(player, stock);
 
     elseif(player:getMainJob() == xi.job.GEO) then -- GEO
-        error(player, "The FBI want's to know your location!! GEO is Broken, don't get banned!!!");
-		return;
+        local stock =
+        {
+            -- AF1
+            21460,1000, -- Mantre bell
+        }
+        xi.shop.general(player, stock);
     elseif(player:getMainJob() == xi.job.RUN) then -- RUN
         error(player, "he FBI want's to know your location!! RUN is Broken, don't get banned!!!");
 		return;
