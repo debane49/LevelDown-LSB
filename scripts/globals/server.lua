@@ -29,6 +29,20 @@ xi.server.getServerMessage = function(language)
         if xi.settings.main.ENABLE_TRUST_ALTER_EGO_EXPO_ANNOUNCE == 1 then
             serverMessage = serverMessage .. xi.settings.main.TRUST_ALTER_EGO_EXPO_MESSAGE
         end
+
+        if xi.settings.main.SPARKS_RATE > 1 then
+            serverMessage = serverMessage .. xi.settings.main.SPARKS_CAMPAIGN_MESSAGE
+        end
+
+        if xi.settings.main.CAPACITY_RATE > 1 then
+            serverMessage = serverMessage .. xi.settings.main.CAPACITY_CAMPAIGN_MESSAGE
+        end
+
+        if xi.settings.main.EXP_RATE > 1 then
+            serverMessage = serverMessage .. xi.settings.main.EXPERIENCE_CAMPAIGN_MESSAGE
+        end
+        
+
     end
 
     return serverMessage
