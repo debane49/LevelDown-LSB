@@ -49,7 +49,7 @@ player:printToPlayer(string.format('DEF: [%i] Magic DEF: [%i] EVA: [%i] Magic EA
 
 player:printToPlayer(string.format('Dmg Taken: [%i%%] Magic DT: [%i%%] Magic DT II: [%i%%] Phy DT: [%i%%] Phy DT II: [%i%%]', target:getMod(xi.mod.DMG) * .01, target:getMod(xi.mod.DMGMAGIC) * .01, target:getMod(xi.mod.DMGMAGIC_II) * .01, target:getMod(xi.mod.DMGPHYS) * .01, target:getMod(xi.mod.DMGPHYS_II) * .01), xi.msg.channel.SYSTEM_3)
 
-player:printToPlayer(string.format('Magic ACC: [%i] Magic ATT: [%i] Magic Burst: [%i%%] Magic Damage: [%i]', target:getMod(xi.mod.MACC), target:getMod(xi.mod.MATT), target:getMod(xi.mod.MAG_BURST_BONUS), target:getMod(xi.mod.MAGIC_DAMAGE)), xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Magic ACC: [%i] Magic ATT: [%i] Magic Burst: [%i%%] Magic Damage: [%i]', target:getMod(xi.mod.MACC), target:getMod(xi.mod.MATT), target:getMod(xi.mod.MAGIC_BURST_BONUS_CAPPED), target:getMod(xi.mod.MAGIC_DAMAGE)), xi.msg.channel.SYSTEM_3)
 
 player:printToPlayer(string.format('Haste Ability: [%i%%] Haste Magic: [%i%%] Haste Gear: [%i%%] Fast Cast: [%i%%]', target:getMod(xi.mod.HASTE_ABILITY) * .01, target:getMod(xi.mod.HASTE_MAGIC) * .01, target:getMod(xi.mod.HASTE_GEAR) * .01, target:getMod(xi.mod.FASTCAST)), xi.msg.channel.SYSTEM_3)
 
