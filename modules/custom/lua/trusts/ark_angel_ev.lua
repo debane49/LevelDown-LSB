@@ -9,6 +9,15 @@ local m = Module:new('ark_angel_ev')
 
 m:addOverride("xi.actions.spells.trust.aaev.onSpellCast", function(caster, target, spell)
     local trust = caster:spawnTrust(spell:getID())
+
+    local aaevLevel = trust:getMainLvl()
+
+    -- Increase HP & MP
+    trust:setMod(xi.mod.HP, 9 * aaevLevel)
+    trust:setMod(xi.mod.HP, 3 * aaevLevel)
+    trust:updateHealth()
+    trust:addHP(trust:getMaxHP())
+    trust:addHP(trust:getMaxMP())
     
     trust:addSimpleGambit(ai.t.TARGET, ai.c.NOT_STATUS, xi.effect.FLASH, ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.FLASH)
     trust:addSimpleGambit(ai.t.SELF, ai.c.NOT_STATUS, xi.effect.RAMPART, ai.r.JA, ai.s.SPECIFIC, xi.ja.RAMPART)
@@ -20,7 +29,7 @@ m:addOverride("xi.actions.spells.trust.aaev.onSpellCast", function(caster, targe
     
     trust:setTrustTPSkillSettings(ai.tp.ASAP, ai.s.RANDOM)
     
-    local power = trust:getMainLvl()
+    local power = trust:getMainLvl() * 1.7
     trust:addMod(xi.mod.MATT, power)
     trust:addMod(xi.mod.MACC, power)
     trust:addMod(xi.mod.DEF, power)
