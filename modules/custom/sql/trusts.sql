@@ -363,3 +363,7 @@ INSERT INTO `mob_skill_lists` VALUES ('TRUST_Zeid',1021,983); -- abyssal strike
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Zeid',1021,982); -- Abyssal drain
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Zeid',1021,981); -- Ground Strike
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Zeid',1021,980); -- Freeze bite
+--
+-- General - AAMR
+--
+UPDATE mob_pools SET mJob = 1, sJob = 13, spellList = 405, name = 'aamr' WHERE poolid = 5994;

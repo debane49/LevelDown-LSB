@@ -8,7 +8,7 @@ require("scripts/globals/magic")
 require("scripts/globals/utils")
 require("scripts/globals/weaponskills")
 -----------------------------------
-local m = Module:new('zeid')
+local m = Module:new('trust_zeid')
 
 m:addOverride("xi.actions.spells.trust.zeid.onMobSpawn", function(mob)
     xi.trust.message(mob, xi.trust.messageOffset.SPAWN)
