@@ -56,7 +56,7 @@ m:addOverride('xi.zones.Aht_Urhgan_Whitegate.Zone.onInitialize', function(zone)
            player:printToPlayer('1 Zeni point will be awareded for every Imperial Bronze peice you trade me.', 0, 'Pyo')
            player:printToPlayer('5 Zeni points will be awareded for every Imperial Silver peice you trade me.', 0, 'Pyo')
            player:printToPlayer('10 Zeni points will be awareded for every Imperial Mythril peice you trade me.', 0, 'Pyo')
-           player:printToPlayer('20 Zeni points will be awareded for every Imperial Gold peice you trade me.', 0, 'Pyo')
+           player:printToPlayer('15 Zeni points will be awareded for every Imperial Gold peice you trade me.', 0, 'Pyo')
            player:printToPlayer(string.format('Your current Zeni balance is %s.',player:getCurrency('zeni_point')), 0, 'Pyo')
         end,
     })
