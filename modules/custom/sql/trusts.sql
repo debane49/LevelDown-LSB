@@ -367,3 +367,12 @@ INSERT INTO `mob_skill_lists` VALUES ('TRUST_Zeid',1021,980); -- Freeze bite
 -- General - AAMR
 --
 UPDATE mob_pools SET mJob = 1, sJob = 13, spellList = 405, name = 'aamr' WHERE poolid = 5994;
+
+--
+-- General - Lhe Lhangavo
+--
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Lhe_Lhangavo',1079,11); -- ascetics_fury
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Lhe_Lhangavo',1079,14); -- victory_smite
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Lhe_Lhangavo',1079,1033); -- Dragon Kick
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Lhe_Lhangavo',1079,1034); -- Asuran Fists
+

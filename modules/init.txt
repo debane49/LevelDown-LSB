@@ -86,5 +86,6 @@ custom/lua/guild_shops_always_open.lua
 custom/lua/remove_limbus_lockout.lua
 custom/lua/Adoulin_blockage.lua
 custom/lua/RaceFaceChange.lua
+custom/lua/Mapitoto.lua
 
 
