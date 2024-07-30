@@ -37,7 +37,7 @@
 # Live example:
 custom/sql/
 custom/commands/
-custom/hokutens/
+custom/lua/npcs/
 custom/lua/trusts/
 custom/lua/weaponskills/
 custom/lua/test_npcs_in_gm_home.lua
@@ -47,45 +47,28 @@ custom/lua/new_player_gear.lua
 custom/lua/homepoint_heal.lua
 custom/lua/cop8-1_workaround.lua
 custom/lua/af_level_reward.lua
-custom/lua/xp_guide.lua
 custom/lua/VWNotMon.lua
-custom/lua/Monisette.lua
-custom/lua/Nolan.lua
 custom/lua/add_silt.lua
-custom/lua/Affi_NPC.lua
 custom/lua/Escha_ZitahNMs.lua
 custom/lua/choc_race.lua
 custom/lua/freerelic.lua
-custom/lua/CasinoMoogles.lua
 custom/lua/unitybattle.lua
-custom/lua/HTBFNpcs.lua
 custom/lua/freeabby.lua
-custom/lua/LionTHNPC.lua
 custom/lua/craft_rank_reward.lua
 custom/lua/add_cruor.lua
 custom/lua/open_caskets.lua
 custom/lua/wotg_decouple_story_missions_from_nation_quests.lua
 custom/lua/rov_2_39.lua
-custom/lua/striking_dummies.lua
-custom/lua/UnityNpcs.lua
-custom/lua/Tyo_Mythic.lua
-custom/lua/Sanraku_Update.lua
 custom/lua/Alexan_drop.lua
 custom/lua/the_colosseum.lua
-custom/lua/petskin.lua
-custom/lua/skiprankmission.lua
 custom/lua/NMHunt.lua
-custom/lua/NMHuntNPC.lua
-custom/lua/gmeventnpc.lua
-custom/lua/Adoulin_NPCs.lua
 custom/lua/add_stones.lua
 custom/lua/reapplybuff.lua
 custom/lua/Supremes.lua
 custom/lua/three_mage_door_open.lua
-custom/lua/guild_shops_always_open.lua
 custom/lua/remove_limbus_lockout.lua
 custom/lua/Adoulin_blockage.lua
-custom/lua/RaceFaceChange.lua
-custom/lua/Mapitoto.lua
+
+
 
 
