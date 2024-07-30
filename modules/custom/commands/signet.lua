@@ -293,7 +293,7 @@ if zone == entry[1] then
     player:delStatusEffect(xi.effect.SIGNET)
     player:delStatusEffect(xi.effect.SIGIL)
     player:delStatusEffect(xi.effect.IONIS)
-    player:addStatusEffect(entry[3], 0, 0, 18000)
+    player:addStatusEffect(entry[3], 0, 0, 28800)
     end
     end
 
