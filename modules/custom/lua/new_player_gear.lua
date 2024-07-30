@@ -266,6 +266,62 @@ local ValidAttachments = {
         {8, 6},
         {8, 7},
     }
+
+    local adoulinPortals =
+    {
+        {0, 0},
+        {1, 1},
+        {2, 2},
+        {3, 3},
+        {4, 4},
+        {5, 5},
+        {6, 6},
+        {7, 7},
+        {8, 8},
+        {15, 9},
+        {16, 10},
+        {17, 11},
+        {18, 12},
+        {19, 13},
+        {20, 14},
+        {21, 15},
+        {22, 16},
+        {23, 17},
+        {38, 22},
+        {39, 23},
+        {40, 24},
+        {41, 25},
+        {32, 18},
+        {33, 19},
+        {34, 20},
+        {35, 21},
+        {64, 26},
+        {65, 27},
+        {66, 28},
+        {67, 29},
+        {68, 30},
+        {70, 31},
+        {71, 32},
+        {72, 33},
+        {73, 34},
+        {74, 35},
+        {75, 36},
+        {96, 37},
+        {97, 38},
+        {98, 39},
+        {99, 40},
+        {102, 41},
+        {103, 42},
+        {104, 43},
+        {105, 44},
+        {106, 45},
+        {134, 46},
+        {135, 47},
+        {136, 48},
+        {137, 49},
+        {138, 50},
+    }
+
     -- add all spells
     local save = true
     local silent = true
@@ -306,6 +362,11 @@ local ValidAttachments = {
     -- add conflux
     for _, v in ipairs(confIds) do
         targ:addTeleport(xi.teleport.type.ABYSSEA_CONFLUX, v[1], v[2])
+    end
+
+    -- add all waypoints
+    for _, v in ipairs(adoulinPortals) do
+        targ:addTeleport(xi.teleport.type.WAYPOINT, v[1], v[2])
     end
 
 ----------------------------------------
