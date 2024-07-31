@@ -395,7 +395,7 @@ UPDATE mob_groups SET dropid = 3867 WHERE name =  'Neith'AND groupid =  48;
 UPDATE mob_groups SET dropid = 3885 WHERE name =  'Nympha_Eunomia'AND groupid =  120;
 UPDATE mob_groups SET dropid = 3915 WHERE name =  'Ocythoe'AND groupid =  156;
 UPDATE mob_groups SET dropid = 3858 WHERE name =  'Pancimanci'AND groupid =  164;
-UPDATE mob_groups SET dropid = 3901 WHERE name =  'Pil'AND groupid =  17;
+UPDATE mob_groups SET dropid = 3901 WHERE name =  'Pil-VNM'AND groupid =  17;
 UPDATE mob_groups SET dropid = 3904 WHERE name =  'Qilin'AND groupid =  33;
 UPDATE mob_groups SET dropid = 3882 WHERE name =  'Roly-Poly'AND groupid =  44;
 UPDATE mob_groups SET dropid = 3853 WHERE name =  'Sallow_Seymour'AND groupid =  49;
