@@ -157,7 +157,7 @@ xi.crafting.guildMasterOnTrigger = function(player, npc)
         xi.crafting.hasJoinedGuild(player, guildId) and
         guildId ~= xi.guild.FISHING
     then
-        if player:getLocalVar('skipRenounceDialog') == 0 then
+        if player:getLocalVar('skipRenounceDialog') == 1 then -- adjusted to 1 inplace of 0 to avoid RenounceDialog
             local rankChecked       = 0
             local highestSkillId    = 0
             local highestSkillLevel = 0
@@ -238,8 +238,8 @@ xi.crafting.guildMasterOnEventFinish = function(player, csid, option, npc)
             option >= xi.skill.WOODWORKING and
             option <= xi.skill.COOKING
         then
-            player:setSkillRank(option, xi.craftRank.CRAFTSMAN)
-            player:setSkillLevel(option, 700)
+         --   player:setSkillRank(option, xi.craftRank.CRAFTSMAN)
+         --   player:setSkillLevel(option, 700)
             player:messageSpecial(ID.text.RENOUNCE_CRAFTSMAN, 0, option - 49)
         end
 
