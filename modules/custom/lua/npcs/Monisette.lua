@@ -45,7 +45,7 @@ local afRArmorPlusOne =
 [28] = { trade = {27948, {4071, 8}, 2476, 8724}, reward = 27969},
 [29] = { trade = {28095, {4072, 8}, 2476, 8726}, reward = 28116},
 [30] = { trade = {28228, {4073, 8}, 2476, 8728}, reward = 28249},
-[31] = { trade = {27669, {4069, 8}, 668, 8720}, reward = 27690},
+[31] = { trade = {27669, {4069, 8}, 668, 8720}, reward = 27690}, -- rev coronet to rev coronet +1
 [32] = { trade = {27813, {4070, 8}, 668, 8722}, reward = 27834},
 [33] = { trade = {27949, {4071, 8}, 668, 8724}, reward = 27970},
 [34] = { trade = {28096, {4072, 8}, 668, 8726}, reward = 28117},
@@ -1248,7 +1248,7 @@ local remChap =
 end)
 
 m:addOverride("xi.zones.Port_Jeuno.npcs.Monisette.onTrigger", function(player, npc)
- if player:getCharVar('SagheeraInteractions') <= 0 then -- require limbus access to proceed
+ if player:getCharVar('SagheeraInteractions') >= 10 then -- require limbus access to proceed -- updated to not require limbus access due to being able to skip missions.
     player:startEvent(384)
     else
     
