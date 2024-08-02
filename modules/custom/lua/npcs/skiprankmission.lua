@@ -12,6 +12,7 @@ local m = Module:new("skiprankmission")
         player:addMission(6, missionCoP[i])
         player:completeMission(6, missionCoP[i])
     end
+        player:addMission(6, 850) -- 
         player:addKeyItem(708) -- Mysterious Amulet
         player:addKeyItem(591) -- Light of Dem
         player:addKeyItem(590) -- Light of Holla
@@ -27,6 +28,7 @@ local m = Module:new("skiprankmission")
         player:addMission(3, missionZM[i])
         player:completeMission(3, missionZM[i])
     end
+        player:addMission(3, 30) -- 
         player:addKeyItem(238) -- Sacrifical Chamber Key
         player:addKeyItem(247) -- Prismatic Fragment
         player:addKeyItem(452) -- Cerulean Crystal
@@ -39,6 +41,7 @@ local m = Module:new("skiprankmission")
         player:addMission(4, missionTOAU[i])
         player:completeMission(4, missionTOAU[i])
     end
+        player:addMission(4, 47) -- 
         player:addKeyItem(780) -- PSC Wildcat Badge
         player:addKeyItem(783) -- PFC Wildcat Badge
         player:addKeyItem(784) -- SP Wildcat Badge
@@ -61,6 +64,7 @@ local m = Module:new("skiprankmission")
         player:addMission(5, missionWOTG[i])
         player:completeMission(5, missionWOTG[i])
     end
+        player:addMission(5, 53) -- 
         player:addKeyItem(910) -- Pure White Feather
     end
 
@@ -73,6 +77,7 @@ local m = Module:new("skiprankmission")
         player:addMission(13, missionROV[i])
         player:completeMission(13, missionROV[i])
     end
+        player:addMission(13, 226) -- 
         player:addKeyItem(2884) -- Rhapsody of white
         player:addKeyItem(2885) -- Rhapsody of umber
         player:addKeyItem(2886) -- Rhapsody of azure
