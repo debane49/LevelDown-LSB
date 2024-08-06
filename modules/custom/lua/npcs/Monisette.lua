@@ -1124,29 +1124,27 @@ local remChap =
             player:startEvent(388)
         else
 -------------------------------------ChaptersTrade-------------------------------------------------
-        local chaptrade = 0
-        
-        if chaptrade == 0 then
-            for k, v in pairs(remChap) do
-                if npcUtil.tradeHasExactly(trade, v.trade) then
-                    chaptrade = v.item
-                    break
-                end
-            end
-        end
-
-        if chaptrade > 0 then
-              for _, entry in pairs(remChapTrade) do
-                local total = player:getCurrency(entry[2]) + countc
-                    if chaptrade == entry[6] then
-                       player:addCurrency(entry[2], countc)
-                       remvala = tonumber(total * 256 + countc + entry[3])
-                       player:tradeComplete()
-                                           player:startEvent(401, remvala)
+            local chaptrade = 0 
+                if chaptrade == 0 then
+                    for k, v in pairs(remChap) do
+                        if npcUtil.tradeHasExactly(trade, v.trade) then
+                            chaptrade = v.item
+                            break
+                        end
                     end
-              end
+                end
+                if chaptrade > 0 then
+                    for _, entry in pairs(remChapTrade) do
+                        local total = player:getCurrency(entry[2]) + countc
+                            if chaptrade == entry[6] then
+                               player:addCurrency(entry[2], countc)
+                               remvala = tonumber(total * 256 + countc + entry[3])
+                               player:tradeComplete()
+                               player:startEvent(401, remvala)
+                            end
+                    end
+                end
         end
-         end
 end)
 
 m:addOverride("xi.zones.Port_Jeuno.npcs.Monisette.onTrigger", function(player, npc)  
