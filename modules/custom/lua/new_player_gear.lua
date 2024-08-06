@@ -27,6 +27,11 @@ m:addOverride('xi.player.charCreate', function(player)
             -- pet names
             player:setPetName(xi.petType.WYVERN, math.random(1,32))
             player:setPetName(xi.petType.AUTOMATON, math.random(118, 149))
+            -- moghouse
+            player:changeContainerSize(xi.inv.MOGSAFE,  80)
+            player:changeContainerSize(xi.inv.MOGSACK,  80)
+            player:changeContainerSize(xi.inv.MOGLOCKER,  80)
+
         end
 
         if not player:hasItem(xi.item.SAN_DORIAN_RING) or
