@@ -407,6 +407,8 @@ xi.battlefield.itemUses =
 
 Battlefield         = setmetatable({}, { __index = Container })
 Battlefield.__index = Battlefield
+
+---@diagnostic disable-next-line: duplicate-set-field
 Battlefield.__eq    = function(m1, m2)
     return m1.id == m2.id
 end
@@ -434,6 +436,7 @@ end
 --  - title: Title given to players upon victory (optional)
 --  - grantXP: Amount of XP to grant upon victory (optional)
 --  - lossEventParams: Parameters given to the loss event (32002). Defaults to none. (optional)
+---@diagnostic disable-next-line: duplicate-set-field
 function Battlefield:new(data)
     local obj = Container:new(Battlefield.getVarPrefix(data.battlefieldId))
 
@@ -1055,9 +1058,11 @@ function Battlefield:onBattlefieldStatusChange(battlefield, status)
     end
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function Battlefield:battlefieldEntry(player, battlefield)
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function Battlefield:onBattlefieldEnter(player, battlefield)
     player:setLocalVar('battlefieldID', battlefield:getID())
 
@@ -1143,9 +1148,11 @@ function Battlefield:onBattlefieldEnter(player, battlefield)
     self:battlefieldEntry(player, battlefield)
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function Battlefield:onBattlefieldDestroy(battlefield)
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function Battlefield:onBattlefieldLeave(player, battlefield, leavecode)
     if leavecode == xi.battlefield.leaveCode.WON then
         self:onBattlefieldWin(player, battlefield)
@@ -1347,6 +1354,8 @@ end
 
 BattlefieldMission         = setmetatable({ }, { __index = Battlefield })
 BattlefieldMission.__index = BattlefieldMission
+
+---@diagnostic disable-next-line: duplicate-set-field
 BattlefieldMission.__eq    = function(m1, m2)
     return m1.name == m2.name
 end
@@ -1360,6 +1369,7 @@ end
 --  - requiredMissionStatus: The required mission status to enter
 --  - skipMissionStatus: The required mission status to skip the cutscene. Defaults to the required mission status.
 --  - canLoseExp: Determines if a character loses experience points upon death while inside the battlefield. Defaults to false. (optional)
+---@diagnostic disable-next-line: duplicate-set-field
 function BattlefieldMission:new(data)
     local obj = Battlefield:new(data)
 
@@ -1378,6 +1388,7 @@ function BattlefieldMission:new(data)
     return obj
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function BattlefieldMission:checkRequirements(player, npc, isRegistrant, trade)
     if not Battlefield.checkRequirements(self, player, npc, isRegistrant, trade) then
         return false
@@ -1410,6 +1421,7 @@ function BattlefieldMission:checkRequirements(player, npc, isRegistrant, trade)
     end
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function BattlefieldMission:checkSkipCutscene(player)
     local missionArea       = self.missionArea or player:getNation()
     local current           = player:getCurrentMission(missionArea)
@@ -1421,6 +1433,7 @@ function BattlefieldMission:checkSkipCutscene(player)
         (self.requiredValue and current == self.mission and player:getCharVar(self.requiredVar) > self.requiredValue)
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function BattlefieldMission:onBattlefieldWin(player, battlefield)
     local missionArea       = self.missionArea or player:getNation()
     local current           = player:getCurrentMission(missionArea)
@@ -1438,6 +1451,7 @@ function BattlefieldMission:onBattlefieldWin(player, battlefield)
     player:startEvent(32001, battlefield:getArea(), clearTime, partySize, battlefield:getTimeInside(), player:getZoneID(), self.index, canSkipCS)
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function BattlefieldMission:onEventFinishWin(player, csid, option, npc)
     if self.title then
         player:addTitle(self.title)
@@ -1452,6 +1466,8 @@ end
 
 BattlefieldQuest         = setmetatable({ }, { __index = Battlefield })
 BattlefieldQuest.__index = BattlefieldQuest
+
+---@diagnostic disable-next-line: duplicate-set-field
 BattlefieldQuest.__eq    = function(m1, m2)
     return m1.name == m2.name
 end
@@ -1463,6 +1479,7 @@ BattlefieldQuest.isQuest = true
 --  - questArea: The quest area this battlefield is associated with (optional)
 --  - quest: The quest this battlefield is associated with (optional)
 --  - canLoseExp: Determines if a character loses experience points upon death while inside the battlefield. Defaults to false. (optional)
+---@diagnostic disable-next-line: duplicate-set-field
 function BattlefieldQuest:new(data)
     local obj = Battlefield:new(data)
     setmetatable(obj, self)
@@ -1474,6 +1491,7 @@ function BattlefieldQuest:new(data)
     return obj
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function BattlefieldQuest:checkRequirements(player, npc, isRegistrant, trade)
     if not Battlefield.checkRequirements(self, player, npc, isRegistrant, trade) then
         return false
@@ -1496,10 +1514,12 @@ function BattlefieldQuest:checkRequirements(player, npc, isRegistrant, trade)
     end
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function BattlefieldQuest:checkSkipCutscene(player)
     return player:getQuestStatus(self.questArea, self.quest) == xi.questStatus.QUEST_COMPLETED
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function BattlefieldQuest:onBattlefieldWin(player, battlefield)
     local status = player:getQuestStatus(self.questArea, self.quest)
 
