@@ -7756,7 +7756,14 @@ void SmallPacket0x102(map_session_data_t* const PSession, CCharEntity* const PCh
                 auto* PSpell  = spell::GetSpell(spellId);
                 if (CBlueSpell* PBlueSpell = dynamic_cast<CBlueSpell*>(PSpell))
                 {
-                    PChar->PRecastContainer->Add(RECAST_MAGIC, static_cast<uint16>(PBlueSpell->getID()), 60);
+                    if (!PChar->PNotorietyContainer->hasEnmity())
+                    {
+                        PChar->PRecastContainer->Add(RECAST_MAGIC, static_cast<uint16>(PBlueSpell->getID()), 0);
+                    }
+                    else
+                    {
+                        PChar->PRecastContainer->Add(RECAST_MAGIC, static_cast<uint16>(PBlueSpell->getID()), 60);
+                    }
                 }
             }
         }
