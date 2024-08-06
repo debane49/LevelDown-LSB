@@ -1228,7 +1228,6 @@ local remChap =
         if tradedCombo > 0 then
             player:confirmTrade()
             player:setCharVar('AFRupgrade', tradedCombo)
-            player:setCharVar('AFRupgradeDay', getVanaMidnight()) -- Current time + Remaining minutes in the hour in seconds (Day Change)
             player:startEvent(388)
         else
 -------------------------------------ChaptersTrade-------------------------------------------------
@@ -1247,19 +1246,11 @@ local remChap =
          end
 end)
 
-m:addOverride("xi.zones.Port_Jeuno.npcs.Monisette.onTrigger", function(player, npc)
- if player:getCharVar('SagheeraInteractions') >= 10 then -- require limbus access to proceed -- updated to not require limbus access due to being able to skip missions.
-    player:startEvent(384)
-    else
-    
+m:addOverride("xi.zones.Port_Jeuno.npcs.Monisette.onTrigger", function(player, npc)  
         local arg3 = 0
-        local arg4 = 0
         local afUpgrade = player:getCharVar('AFRupgrade')
         if afUpgrade > 0 then
-            arg3 = afUpgrade
-            if player:getCharVar('AFRupgradeDay') > os.time() then
-                arg4 = afUpgrade
-            end              
+            arg3 = afUpgrade           
         player:startEvent(386, arg3)
         
 
@@ -1277,7 +1268,6 @@ local remCount910 = player:getCurrency('rems_ch9') +
                     player:getCurrency('rems_ch10') *256 
 player:startEvent(385, 0, 1, 1984, 1, remCount14, remCount58, remCount910, 0)
       end
-   end
 end)
 
 m:addOverride("xi.zones.Port_Jeuno.npcs.Monisette.onEventUpdate", function(player, csid, option, npc)
@@ -1318,7 +1308,6 @@ local handleMainEvent = function(player, option, coinAmount)
         -- found a valid reward
         if info and npcUtil.giveItem(player, info.reward) then
             player:setCharVar('AFRupgrade', 0)
-            player:setCharVar('AFRupgradeDay', 0)
         end
     end
 end

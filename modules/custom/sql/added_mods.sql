@@ -3335,3 +3335,7 @@ INSERT INTO `item_mods` VALUES (27642,25,7);
 INSERT INTO `item_mods` VALUES (27642,10,5);
 INSERT INTO `item_mods` VALUES (27642,8,5);
 
+INSERT INTO `item_mods` VALUES (27513,1,9); -- Sublety Sepctales
+INSERT INTO `item_mods` VALUES (27513,2,20); -- Sublety Sepctales
+INSERT INTO `item_mods` VALUES (27513,25,15); -- Sublety Sepctales
+INSERT INTO `item_mods` VALUES (27513,289,4); -- Sublety Sepctales

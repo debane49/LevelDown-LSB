@@ -28,7 +28,7 @@ local m = Module:new("skiprankmission")
         player:addMission(3, missionZM[i])
         player:completeMission(3, missionZM[i])
     end
-        player:addMission(3, 30) -- 
+        player:addMission(3, 31) -- RoZ: Awakening
         player:addKeyItem(238) -- Sacrifical Chamber Key
         player:addKeyItem(247) -- Prismatic Fragment
         player:addKeyItem(452) -- Cerulean Crystal

@@ -451,7 +451,7 @@ end)
 end
 for _, entry in pairs(nmmobname) do 
 m:addOverride(string.format("xi.zones.Escha_ZiTah.mobs.%s.onMobSpawn", entry[1]), function(mob)
-        mob:setMobMod(xi.mobMod.IDLE_DESPAWN, 15)
+        mob:setMobMod(xi.mobMod.IDLE_DESPAWN, 180)
 
     if mob:getMainLvl() > 119 and mob:getMainLvl() <= 125 then
         mob:addMod(xi.mod.ATT, 1400)
