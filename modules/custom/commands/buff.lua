@@ -36,30 +36,47 @@ local buffOn = function(player)
 end
 
 local buffOff = function(player)
-    player:setCharVar('BuffLvl', 0)
-    player:setCharVar('BuffJob', 0)
-    player:setCharVar('Buff', 0)
     -- remove listeners
     player:removeListener('PLAYER_EFFECT')
     player:removeListener('PLAYER_LEVEL')
+    player:setCharVar('Buff', 0)
+    player:setCharVar('BuffLvl', 0)
+    player:setCharVar('BuffJob', 0)
     -- Remove bonus effects..
     player:delStatusEffect(xi.effect.REGAIN)
+    player:delStatusEffect(xi.effect.DEDICATION)
     player:delStatusEffect(xi.effect.REFRESH)
     player:delStatusEffect(xi.effect.REGEN)
-    player:delStatusEffect(xi.effect.DEDICATION)
-    player:delStatusEffect(xi.effect.COMMITMENT)
     -- Remove bonus mods..
+    player:delMod(xi.mod.ATT, 50)
     player:delMod(xi.mod.RACC, 50)
     player:delMod(xi.mod.RATT, 50)
     player:delMod(xi.mod.ACC, 50)
-    player:delMod(xi.mod.ATT, 50)
     player:delMod(xi.mod.MATT, 50)
     player:delMod(xi.mod.MACC, 50)
     player:delMod(xi.mod.RDEF, 50)
     player:delMod(xi.mod.DEF, 50)
     player:delMod(xi.mod.MDEF, 50)
-
 end
+
+
+local buffOnCap = function(player)
+    player:addStatusEffect(xi.effect.COMMITMENT, 40, 0, 0, 0, 30000)
+    player:setCharVar('BuffLvl', player:getMainLvl())
+    player:setCharVar('BuffJob', player:getMainJob())
+    player:setCharVar('Buff', 2)
+end
+
+local buffOffCap = function(player)
+    player:setCharVar('Buff', 0)
+    player:setCharVar('BuffLvl', 0)
+    player:setCharVar('BuffJob', 0)
+    -- remove listeners
+    player:removeListener('PLAYER_EFFECT')
+    player:removeListener('PLAYER_LEVEL')
+    player:delStatusEffect(xi.effect.COMMITMENT)
+end
+
 
 commandObj.onTrigger = function(player, tier)
   local mode = utils.clamp(tier or 0, 0, 2)
@@ -73,26 +90,27 @@ commandObj.onTrigger = function(player, tier)
         if player:hasStatusEffect(xi.effect.COMMITMENT) then
             return
             else
-                player:setCharVar('BuffLvl', player:getMainLvl())
-                player:setCharVar('BuffJob', player:getMainJob())
-                player:setCharVar('Buff', 2)
-                player:addStatusEffect(xi.effect.COMMITMENT, 40, 0, 0, 0, 30000)
+                buffOnCap(player)
                 player:printToPlayer('Buff enabled.')
             end
     elseif state == 0 and -- add dedication and buffs for below 99
         player:getMainLvl() <= 98 then
-        player:setCharVar('Buff', 1)
         buffOn(player)
         player:printToPlayer('Buff enabled.')
-    elseif state == 1 or state == 2 then -- remove buff
-        player:setCharVar('Buff', 0)
+    elseif state == 1 then -- remove buff from below 99
         buffOff(player)
         player:printToPlayer('Buff disabled.')
+    elseif state == 2 then -- remove buff from 99
+        buffOffCap(player)
+        player:printToPlayer('Buff disabled.')
     end
+
+
+
+
                    player:addListener('TICK', 'PLAYER_LEVEL', function(player)
                       if player:getCharVar('BuffLvl') < player:getMainLvl() and
-                         player:getCharVar('Buff') == 1 or
-                         player:getCharVar('Buff') == 2 then
+                         player:getCharVar('Buff') == 1 then
                          player:setCharVar('BuffLvl', player:getMainLvl())
                       end
                       if player:getCharVar('BuffLvl') == 99 and
@@ -100,16 +118,31 @@ commandObj.onTrigger = function(player, tier)
                                 player:printToPlayer('Buff disabled.')
                                 buffOff(player)
                       end
-                      if player:getCharVar('BuffJob') ~= player:getMainJob() then
+                      if player:getCharVar('BuffJob') ~= player:getMainJob() and
+                         player:getCharVar('Buff') == 1 then
                                 player:printToPlayer('Buff disabled.')
                                 buffOff(player)
                       end
+                      if player:getCharVar('BuffJob') ~= player:getMainJob() and
+                         player:getCharVar('Buff') == 2 then
+                                player:printToPlayer('Buff disabled.')
+                                buffOffCap(player)
+                      end
                    end)
+
                        player:addListener('EFFECT_GAIN', 'PLAYER_EFFECT', function(player)
-                            if player:hasStatusEffect(xi.effect.BATTLEFIELD) then
+                            if player:hasStatusEffect(xi.effect.BATTLEFIELD) and
+                               player:getMainLvl() ~= 99 and
+                               player:getCharVar('Buff') == 1 then
                                buffOff(player)
                                player:printToPlayer('Buff disabled.')
                                player:printToPlayer('You cannot use or have !buff in battlefields.')
+                            elseif player:hasStatusEffect(xi.effect.BATTLEFIELD) and
+                                   player:getMainLvl() == 99 and
+                                   player:getCharVar('Buff') == 2 then
+                                   buffOffCap(player)
+                                   player:printToPlayer('Buff disabled.')
+                                   player:printToPlayer('You cannot use or have !buff in battlefields.')
                             end
                        end)
   end
