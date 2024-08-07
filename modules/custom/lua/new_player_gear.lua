@@ -370,9 +370,15 @@ local ValidAttachments = {
     end
 
     -- add all waypoints
-    for _, v in ipairs(adoulinPortals) do
-        targ:addTeleport(xi.teleport.type.WAYPOINT, v[1], v[2])
+    for i = 1,50 do
+    targ:addTeleport(xi.teleport.type.WAYPOINT, i)
     end
+
+    -- add all Runic Portals
+    for i = 1,6 do
+    targ:addTeleport(xi.teleport.type.RUNIC_PORTAL, i)
+    end
+
 
 ----------------------------------------
 local openingDecoration = '\129\155'
