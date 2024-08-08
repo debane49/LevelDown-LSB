@@ -63,9 +63,13 @@ xi.mobSkill =
 
     RANGED_ATTACK_15  = 1949,
 
+    ECLOSION          = 1970,
+
     ROAR_3            = 2406,
 
     SHEEP_SONG_3      = 3433,
+
+    LIGHT_BLADE       = 3471,
 
     FOOT_KICK_3       = 3840,
     DUST_CLOUD_3      = 3841,
