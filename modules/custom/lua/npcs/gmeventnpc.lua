@@ -1090,10 +1090,16 @@ local EGtrade =
 
 }
         local tradedCombo = 0
+        local eggreward = 0
+        local eggrewardaug = 0
+        local eggrewardaugmax = 0
         if tradedCombo == 0 then
             for k, v in pairs(EGtrade) do
                 if npcUtil.tradeHasExactly(trade, v.trade) then
                     tradedCombo = k
+                    eggreward = v.reward
+                    eggrewardaug = v.aug1
+                    eggrewardaugmax = v.aug1MAX
                     break
                 end
             end
@@ -1121,14 +1127,15 @@ local EGtrade =
             elseif tradedCombo == 32 or
                    tradedCombo == 33 then
                player:tradeComplete()
-               npcUtil.giveItem(player, { { tradedCombo.reward, 1 } })
-               player:printToPlayer('Congratulations, you have received a Moogle Mount!.', 0, 'General')
+               npcUtil.giveItem(player, { { eggreward, 1 } })
             elseif tradedCombo == 0 or
                tradedCombo == nil then
                player:printToPlayer('This is not a valid word!.', 0, 'General')
                return
             else
-               player:addItem(tradedCombo.reward, 1, tradedCombo.aug1, tradedCombo.aug1Max)
+               player:addItem(eggreward, 1, eggrewardaug, eggrewardaugmax)
+               player:printToPlayer(string.format('Congratulations, you have obtained %s!.',GetItemByID(eggreward):getName()), 0, 'General')
+               player:tradeComplete()
             end
         end,
 
