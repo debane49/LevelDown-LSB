@@ -27,7 +27,7 @@ m:addOverride('xi.player.charCreate', function(player)
             -- pet names
             player:setPetName(xi.petType.WYVERN, math.random(1,32))
             player:setPetName(xi.petType.AUTOMATON, math.random(118, 149))
-            -- moghouse
+                        -- moghouse
             player:changeContainerSize(xi.inv.MOGSAFE,  80)
             player:changeContainerSize(xi.inv.MOGSACK,  80)
             player:changeContainerSize(xi.inv.MOGLOCKER,  80)
@@ -270,7 +270,7 @@ local ValidAttachments = {
         {8, 5},
         {8, 6},
         {8, 7},
-    }
+    } 
 
     -- add all spells
     local save = true
@@ -319,11 +319,10 @@ local ValidAttachments = {
     targ:addTeleport(xi.teleport.type.WAYPOINT, i)
     end
 
-    -- add all Runic Portals
+        -- add all Runic Portals
     for i = 1,6 do
     targ:addTeleport(xi.teleport.type.RUNIC_PORTAL, i)
     end
-
 
 ----------------------------------------
 local openingDecoration = '\129\155'

@@ -123,7 +123,7 @@ commandObj.onTrigger = function(player, target)
         targ:addTeleport(xi.teleport.type.ESCHAN_PORTAL, v)
     end
 
-    -- add all Runic Portals
+        -- add all Runic Portals
     for i = 1,6 do
     targ:addTeleport(xi.teleport.type.RUNIC_PORTAL, i)
     end
