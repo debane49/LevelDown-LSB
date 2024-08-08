@@ -69,6 +69,8 @@ local page62 = {} --  Tier 6 Miles Stone Reward page 4
 local page63 = {} --  Tier 6 Miles Stone Reward yes or no
 local page64 = {} -- Tier reward menu or main menu
 local page65 = {} -- Tier reward menu
+local page66 = {} -- trusts shop page 5
+local page67 = {} -- trusts shop page 6
 
 local delaySendMenu = function(player)
       player:timer(50, function(playerArg)
@@ -1613,6 +1615,24 @@ page28 = -- Trusts page 4
          end
     },
     {
+        'Previous Page',
+         function(player)
+           menu.options = page27
+           delaySendMenu(player)
+         end
+    },
+    {
+         'Next Page',
+         function(player)
+           menu.options = page66
+           delaySendMenu(player)
+         end
+    },
+
+}
+page66 =
+{
+    {
         'Cipher Of Kupofried',
          function(player)
            player:setLocalVar('NMSTrust', 10162)
@@ -1621,9 +1641,82 @@ page28 = -- Trusts page 4
          end
     },
     {
+        'Cipher Of Lilisette',
+         function(player)
+           player:setLocalVar('NMSTrust', 10137)
+           menu.options = page36
+            delaySendMenu(player)
+         end
+    },
+    {
+        'Spell: Trust Prishe',
+         function(player)
+           player:setLocalVar('NMSTrustSpell', 913)
+           menu.options = page36
+            delaySendMenu(player)
+         end
+    },
+    {
+        'Spell: Trust Shikaree Z',
+         function(player)
+           player:setLocalVar('NMSTrustSpell', 915)
+           menu.options = page36
+            delaySendMenu(player)
+         end
+    },
+    {
         'Previous Page',
          function(player)
-           menu.options = page27
+           menu.options = page28
+           delaySendMenu(player)
+         end
+    },
+    {
+         'Next Page',
+         function(player)
+           menu.options = page67
+           delaySendMenu(player)
+         end
+    },
+}
+page67 =
+{
+    {
+        'Spell: Trust Cherukiki',
+         function(player)
+           player:setLocalVar('NMSTrustSpell', 916)
+           menu.options = page36
+            delaySendMenu(player)
+         end
+    },
+    {
+        'Spell: Trust Ulima',
+         function(player)
+           player:setLocalVar('NMSTrustSpell', 914)
+           menu.options = page36
+            delaySendMenu(player)
+         end
+    },
+    {
+        'Spell: Trust Arciela',
+         function(player)
+           player:setLocalVar('NMSTrustSpell', 965)
+           menu.options = page36
+            delaySendMenu(player)
+         end
+    },
+    {
+        'Spell: Trust Ingrid',
+         function(player)
+           player:setLocalVar('NMSTrustSpell', 921)
+           menu.options = page36
+            delaySendMenu(player)
+         end
+    },
+    {
+        'Previous Page',
+         function(player)
+           menu.options = page66
            delaySendMenu(player)
          end
     },
@@ -1635,14 +1728,25 @@ page36 = -- Trusts yes or no
          function(player)
          local amount = player:getCharVar('StoredRC')
          local NMTr = player:getLocalVar('NMSTrust')
-               if player:hasItem(NMTr) or
-               player:getFreeSlotsCount() < 1 then
-               player:printToPlayer('Please check your inventory and try again!')
-               return
-               else
-               npcUtil.giveItem(player, NMTr)
-               player:setCharVar('StoredRC', amount - 50)
-               end
+         local NMTrs = player:getLocalVar('NMSTrustSpell')
+               if NMTr > 0 then
+                  if player:hasItem(NMTr) or
+                     player:getFreeSlotsCount() < 1 then
+                     player:printToPlayer('Please check your inventory and try again!')
+                  return
+                  else
+                     npcUtil.giveItem(player, NMTr)
+                     player:setCharVar('StoredRC', amount - 50)
+                  end
+               elseif NMTrs > 0 then
+                   if player:hasSpell(NMTrs) then
+                      player:printToPlayer('You have already obtained that spell!')
+                   return
+                   else
+                      player:addSpell(NMTrs)
+                      player:setCharVar('StoredRC', amount - 50)
+                   end
+                end
          end
     },
         {

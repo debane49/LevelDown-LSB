@@ -13,6 +13,8 @@ local page3  = {}
 local page4  = {}
 local page5  = {}
 local page6  = {}
+local page7  = {}
+local page8  = {}
 
 local delaySendMenu = function(player)
     player:timer(50, function(playerArg)
@@ -35,36 +37,60 @@ page1 =
     {
         'Fireworks',
          function(player)
-            menu.options = xi.shop.general(player, page2)
+            menu.options = xi.shop.general(player, page3)
          end
     },
     {
         'Seasonal Events Wear 1',
          function(player)
-            menu.options = xi.shop.general(player, page3)
+            menu.options = xi.shop.general(player, page4)
          end
     },
     {
         'Seasonal Events Wear 2',
          function(player)
-            menu.options = xi.shop.general(player, page4)
+            menu.options = xi.shop.general(player, page5)
          end
     },
     {
         'Seasonal Events Wear 3',
          function(player)
-            menu.options = xi.shop.general(player, page5)
-         end
-    },
-    {
-        'Seasonal Events Wear 4',
-         function(player)
             menu.options = xi.shop.general(player, page6)
          end
     },
+    {
+        'Next Page!',
+        function(player)
+         menu.options = page2
+         delaySendMenu(player)   
+        end
+    },
+
+}
+page2 =
+{
+    {
+        'Seasonal Events Wear 4',
+         function(player)
+            menu.options = xi.shop.general(player, page7)
+         end
+    },
+    {
+        'Seasonal Events Wear 5',
+         function(player)
+            menu.options = xi.shop.general(player, page8)
+         end
+    },
+    {
+        'Previous Page!',
+        function(player)
+         menu.options = page1
+         delaySendMenu(player)   
+        end
+    },
 }
 
-page2 =
+page3 =
 {
 4218, 10, -- Air Rider
 4216, 10, -- Brilliant Snow
@@ -101,7 +127,7 @@ page2 =
 4253, 10, -- Spirit Masque
 4252, 10, -- Summer Fan
 }
-page3 =
+page4 =
 {
 22048,1000, -- Adenium Mallet
 10446,1000, -- Ahriman Cap
@@ -154,7 +180,7 @@ page3 =
 16328,1000, -- Elder Trunks
 16336,1000, -- Elder Trunks +1
 }
-page4 =
+page5 =
 {
 14452,1000, -- Elvaan Gilet
 14459,1000, -- Elvaan Gilet +1
@@ -207,7 +233,7 @@ page4 =
 11276,1000, -- Magna Top +1
 16323,1000, -- Magna Trunks
 }
-page5 =
+page6 =
 {
 16331,1000, -- Magna Trunks +1
 26706,1000, -- Mandragora Masque +1
@@ -260,7 +286,7 @@ page5 =
 16327,1000, -- Savage Shorts
 16335,1000, -- Savage Shorts +1
 }
-page6 =
+page7 =
 {
 11271,1000, -- Savage Top
 11279,1000, -- Savage Top +1
@@ -303,6 +329,15 @@ page6 =
 10341,1000, -- Woodsy Shorts +1
 10259,1000, -- Woodsy Top
 10267,1000, -- Woodsy Top +1
+}
+page8 =
+{
+25774,1000, -- fancy gilet
+25775,1000, -- fancy top
+25838,1000, -- fancy trunks
+25839,1000, -- fancy shorts
+23810,1000, -- knit cap
+23811,1000, -- knit cap +1
 }
 
 m:addOverride('xi.zones.Celennia_Memorial_Library.Zone.onInitialize', function(zone)

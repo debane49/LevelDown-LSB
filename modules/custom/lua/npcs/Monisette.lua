@@ -45,7 +45,7 @@ local afRArmorPlusOne =
 [28] = { trade = {27948, {4071, 8}, 2476, 8724}, reward = 27969},
 [29] = { trade = {28095, {4072, 8}, 2476, 8726}, reward = 28116},
 [30] = { trade = {28228, {4073, 8}, 2476, 8728}, reward = 28249},
-[31] = { trade = {27669, {4069, 8}, 668, 8720}, reward = 27690},
+[31] = { trade = {27669, {4069, 8}, 668, 8720}, reward = 27690}, -- rev coronet to rev coronet +1
 [32] = { trade = {27813, {4070, 8}, 668, 8722}, reward = 27834},
 [33] = { trade = {27949, {4071, 8}, 668, 8724}, reward = 27970},
 [34] = { trade = {28096, {4072, 8}, 668, 8726}, reward = 28117},
@@ -125,9 +125,6 @@ local afRArmorPlusOne =
 [108] = { trade = {28067, {4071, 8}, 658, 8724}, reward = 27986},
 [109] = { trade = {28207, {4072, 8}, 658, 8726}, reward = 28133},
 [110] = { trade = {28347, {4073, 8}, 658, 8728}, reward = 28266},
-}
-local relicRArmorPlusOne =
-{
 [111] = { trade = {26624, 3447, 3977, {4069, 8}}, reward = 26625},
 [112] = { trade = {26800, 3447, 4014, {4070, 8}}, reward = 26801},
 [113] = { trade = {26976, 3447, 3980, {4071, 8}}, reward = 26977},
@@ -237,9 +234,6 @@ local relicRArmorPlusOne =
 [218] = { trade = {27018, 3449, 3980, {4071, 8}}, reward = 27019},
 [219] = { trade = {27194, 3449, 4012, {4072, 8}}, reward = 27195},
 [220] = { trade = {27370, 3449, 3979, {4073, 8}}, reward = 27371},
-}
-local empRArmorPlusOne =
-{
 [221] = { trade ={ 26740, 9007, {4069, 8}, {9009, 15}}, reward = 26741},
 [222] = { trade ={ 26898, 9062, {4070, 8}, {9009, 25}}, reward = 26899},
 [223] = { trade ={ 27052, 9005, {4071, 8}, {9009, 15}}, reward = 27053},
@@ -350,10 +344,6 @@ local empRArmorPlusOne =
 [328] = { trade ={ 27094, 9005, {4071, 8}, {9009, 15}}, reward = 27095},
 [329] = { trade ={ 27279, 9064, {4072, 8}, {9009, 20}}, reward = 27280},
 [330] = { trade ={ 27453, 9002, {4073, 8}, {9009, 15}}, reward = 27454},
-}
-
-local afArmorNQ =
-{
 [331] = { trade = {12638, 855, 837, { 4065, 10}}, reward = 27807},
 [332] = { trade = {12639, 823, 837, { 4065, 10}}, reward = 27808},
 [333] = { trade = {12640, 2340, 837, { 4065, 10}}, reward = 27809},
@@ -464,9 +454,6 @@ local afArmorNQ =
 [438] = { trade = {16311, 1699, 836, { 4067, 10}}, reward = 28110},
 [439] = { trade = {16314, 1699, 836, { 4067, 5}}, reward = 28206},
 [440] = { trade = {12838, 823, 836, { 4067, 10}}, reward = 28207},
-}
-local afArmorNQPlusOne =
-{
 [441] = { trade = {15561, 855, 836, { 4067, 5}}, reward = 28090},
 [442] = { trade = {15562, 823, 836, { 4067, 5}}, reward = 28091},
 [443] = { trade = {15563, 2340, 836, { 4067, 5}}, reward = 28092},
@@ -567,9 +554,6 @@ local afArmorNQPlusOne =
 [538] = { trade = {11470, 2288, 844, { 4064, 5}}, reward = 27680},
 [539] = { trade = {11475, 823, 844, { 4064, 5}}, reward = 27681},
 [540] = { trade = {11477, 1699, 844, { 4064, 5}}, reward = 27683},
-}
-local empArmorNQPlusOne =
-{
 [541] = { trade = {11184, 2929, 837, {4065, 10}}, reward = 26898}, 
 [542] = { trade = {11185, 2962, 837, {4065, 10}}, reward = 26900}, 
 [543] = { trade = {11186, 3287, 837, {4065, 10}}, reward = 26902}, 
@@ -680,9 +664,6 @@ local empArmorNQPlusOne =
 [648] = { trade = {11243, 2967, 836, {4067, 10}}, reward = 27275}, 
 [649] = { trade = {16342, 2967, 836, {4067, 10}}, reward = 27277}, 
 [650] = { trade = {16343, 2930, 836, {4067, 10}}, reward = 27279}, 
-}
-local empArmorNQPlusTwo =
-{
 [651] = { trade = {11124, 2929, 836, {4067, 5}}, reward = 27237}, 
 [652] = { trade = {11125, 2962, 836, {4067, 5}}, reward = 27239}, 
 [653] = { trade = {11126, 3287, 836, {4067, 5}}, reward = 27241}, 
@@ -783,9 +764,6 @@ local empArmorNQPlusTwo =
 [748] = { trade = {11081, 2930, 844, {4064, 5}}, reward = 26774}, 
 [749] = { trade = {11082, 2928, 844, {4064, 5}}, reward = 26776}, 
 [750] = { trade = {11083, 2967, 844, {4064, 5}}, reward = 26778}, 
-}
-local relicArmorNQ =
-{
 [751] = { trade = {15087, 1469, 837, {1456, 2},  {4065, 10}}, reward =  26800},
 [752] = { trade = {15088, 1516, 837, {1456, 2},  {4065, 10}}, reward =  26802},
 [753] = { trade = {15089, 1470, 837, {1453, 2},  {4065, 10}}, reward =  26804},
@@ -895,9 +873,6 @@ local relicArmorNQ =
 [858] = { trade = {16362, 1464, 836, {1456, 2},  {4067, 10}}, reward =  27190},
 [859] = { trade = {28140, 1516, 836, {1456, 2},  {4067, 10}}, reward =  27192},
 [860] = { trade = {28139, 1469, 836, {1453, 2},  {4067, 10}}, reward =  27194},
-}
-local relicArmorNQPlusOne =
-{
 [861] = { trade = {14500, 1469, 837, 1456,  {4065, 10}}, reward =  26800},
 [862] = { trade = {14501, 1516, 837, 1456,  {4065, 10}}, reward =  26802},
 [863] = { trade = {14502, 1470, 837, 1453,  {4065, 10}}, reward =  26804},
@@ -997,9 +972,6 @@ local relicArmorNQPlusOne =
 [958] = { trade = {16353, 1464, 836, 1450,  {4067, 10}}, reward =  27186},
 [959] = { trade = {16361, 1458, 836, 1453,  {4067, 10}}, reward =  27188},
 [960] = { trade = {16363, 1464, 836, 1456,  {4067, 10}}, reward =  27190},
-}
-local relicArmorNQPlusTwo =
-{
 [961] = { trade = {10710, 1469, 836,  {4067, 10}}, reward =  27152},
 [962] = { trade = {10711, 1516, 836,  {4067, 10}}, reward =  27154},
 [963] = { trade = {10712, 1470, 836,  {4067, 10}}, reward =  27156},
@@ -1115,29 +1087,22 @@ local remChapTrade =
     {xi.item.COPY_OF_REMS_TALE_CHAPTER_10, 'rems_ch10', 589824, 257, 10, 4073 }, 
 }
 
+
 m:addOverride("xi.zones.Port_Jeuno.npcs.Monisette.onTrade", function(player, npc, trade)
-local slots = {
-{trade:getItemId(0), trade:getSlotQty(0)},
-{trade:getItemId(1), trade:getSlotQty(1)},
-{trade:getItemId(2), trade:getSlotQty(2)},
-{trade:getItemId(3), trade:getSlotQty(3)},
-{trade:getItemId(4), trade:getSlotQty(4)},
-{trade:getItemId(5), trade:getSlotQty(5)},
-{trade:getItemId(6), trade:getSlotQty(6)},
-{trade:getItemId(7), trade:getSlotQty(7)},
-}
-local remChap = 
+
+local countc = trade:getItemCount()
+local remChap =
 {
-    xi.item.COPY_OF_REMS_TALE_CHAPTER_1,
-    xi.item.COPY_OF_REMS_TALE_CHAPTER_2, 
-    xi.item.COPY_OF_REMS_TALE_CHAPTER_3, 
-    xi.item.COPY_OF_REMS_TALE_CHAPTER_4, 
-    xi.item.COPY_OF_REMS_TALE_CHAPTER_5, 
-    xi.item.COPY_OF_REMS_TALE_CHAPTER_6,
-    xi.item.COPY_OF_REMS_TALE_CHAPTER_7,
-    xi.item.COPY_OF_REMS_TALE_CHAPTER_8,
-    xi.item.COPY_OF_REMS_TALE_CHAPTER_9,
-    xi.item.COPY_OF_REMS_TALE_CHAPTER_10, 
+[1061] = { trade = {{4064, countc}}, item = 4064},
+[1062] = { trade = {{4065, countc}}, item = 4065},
+[1063] = { trade = {{4066, countc}}, item = 4066},
+[1064] = { trade = {{4067, countc}}, item = 4067},
+[1065] = { trade = {{4068, countc}}, item = 4068},
+[1066] = { trade = {{4069, countc}}, item = 4069},
+[1067] = { trade = {{4070, countc}}, item = 4070},
+[1068] = { trade = {{4071, countc}}, item = 4071},
+[1069] = { trade = {{4072, countc}}, item = 4072},
+[1070] = { trade = {{4073, countc}}, item = 4073},
 }
 
 -------------------------------------ArmorUpgrade-------------------------------------------------
@@ -1152,114 +1117,45 @@ local remChap =
                 end
             end
         end
-                if tradedCombo == 0 then
-            for k, v in pairs(relicRArmorPlusOne) do
-                if npcUtil.tradeHasExactly(trade, v.trade) then
-                    tradedCombo = k
-                    break
-                end
-            end
-        end
-                if tradedCombo == 0 then
-            for k, v in pairs(empRArmorPlusOne) do
-                if npcUtil.tradeHasExactly(trade, v.trade) then
-                    tradedCombo = k
-                    break
-                end
-            end
-        end
-                if tradedCombo == 0 then
-            for k, v in pairs(relicArmorNQPlusTwo) do
-                if npcUtil.tradeHasExactly(trade, v.trade) then
-                    tradedCombo = k
-                    break
-                end
-            end
-        end
-                if tradedCombo == 0 then
-            for k, v in pairs(relicArmorNQPlusOne) do
-                if npcUtil.tradeHasExactly(trade, v.trade) then
-                    tradedCombo = k
-                    break
-                end
-            end
-        end
-                if tradedCombo == 0 then
-            for k, v in pairs(relicArmorNQ) do
-                if npcUtil.tradeHasExactly(trade, v.trade) then
-                    tradedCombo = k
-                    break
-                end
-            end
-        end
-                if tradedCombo == 0 then
-            for k, v in pairs(empArmorNQPlusTwo) do
-                if npcUtil.tradeHasExactly(trade, v.trade) then
-                    tradedCombo = k
-                    break
-                end
-            end
-        end
-                if tradedCombo == 0 then
-            for k, v in pairs(empArmorNQPlusOne) do
-                if npcUtil.tradeHasExactly(trade, v.trade) then
-                    tradedCombo = k
-                    break
-                end
-            end
-        end
-                if tradedCombo == 0 then
-            for k, v in pairs(afArmorNQPlusOne) do
-                if npcUtil.tradeHasExactly(trade, v.trade) then
-                    tradedCombo = k
-                    break
-                end
-            end
-        end
-                if tradedCombo == 0 then
-            for k, v in pairs(afArmorNQ) do
-                if npcUtil.tradeHasExactly(trade, v.trade) then
-                    tradedCombo = k
-                    break
-                end
-            end
-        end
         -- found a match
         if tradedCombo > 0 then
             player:confirmTrade()
             player:setCharVar('AFRupgrade', tradedCombo)
-            player:setCharVar('AFRupgradeDay', getVanaMidnight()) -- Current time + Remaining minutes in the hour in seconds (Day Change)
             player:startEvent(388)
         else
 -------------------------------------ChaptersTrade-------------------------------------------------
-            for v, line in pairs(slots) do
-              for _, entry in pairs(remChapTrade) do
-                local count = line[2]
-                local total = player:getCurrency(entry[2]) + count
-                    if line[1] == entry[6] then
-                       player:addCurrency(entry[2], count)
-                       remvala = tonumber(total * 256 + count + entry[3])
-                       player:tradeComplete()
-                                           player:startEvent(401, remvala)
+            local chaptrade = 0 
+                if chaptrade == 0 then
+                    for k, v in pairs(remChap) do
+                        if npcUtil.tradeHasExactly(trade, v.trade) then
+                            chaptrade = v.item
+                            break
+                        end
                     end
-              end     
-            end
-         end
+                end
+                if chaptrade > 0 then
+                    for _, entry in pairs(remChapTrade) do
+                        local total = player:getCurrency(entry[2]) + countc
+                            if chaptrade == entry[6] then
+                               player:addCurrency(entry[2], countc)
+                               remvala = tonumber(total * 256 + countc + entry[3])
+                               player:tradeComplete()
+                               player:startEvent(401, remvala)
+                            end
+                    end
+                end
+        end
 end)
 
-m:addOverride("xi.zones.Port_Jeuno.npcs.Monisette.onTrigger", function(player, npc)
- if player:getCharVar('SagheeraInteractions') <= 0 then -- require limbus access to proceed
-    player:startEvent(384)
-    else
-    
+m:addOverride("xi.zones.Port_Jeuno.npcs.Monisette.onTrigger", function(player, npc)  
         local arg3 = 0
-        local arg4 = 0
         local afUpgrade = player:getCharVar('AFRupgrade')
         if afUpgrade > 0 then
-            arg3 = afUpgrade
-            if player:getCharVar('AFRupgradeDay') > os.time() then
-                arg4 = afUpgrade
-            end              
+            for k, v in pairs(afRArmorPlusOne) do
+                if afUpgrade == k then
+                   arg3 = v.reward
+                end
+            end
         player:startEvent(386, arg3)
         
 
@@ -1277,7 +1173,6 @@ local remCount910 = player:getCurrency('rems_ch9') +
                     player:getCurrency('rems_ch10') *256 
 player:startEvent(385, 0, 1, 1984, 1, remCount14, remCount58, remCount910, 0)
       end
-   end
 end)
 
 m:addOverride("xi.zones.Port_Jeuno.npcs.Monisette.onEventUpdate", function(player, csid, option, npc)
@@ -1288,37 +1183,9 @@ local handleMainEvent = function(player, option, coinAmount)
             if option == 0 then
         local afUpgrade = player:getCharVar('AFRupgrade')
         local info = afRArmorPlusOne[afUpgrade]
-        if info == nil then
-            info = relicRArmorPlusOne[afUpgrade]
-            if info == nil then
-                info = empRArmorPlusOne[afUpgrade]
-                if info == nil then
-                    info = relicArmorNQPlusTwo[afUpgrade]
-                    if info == nil then
-                        info = relicArmorNQPlusOne[afUpgrade]
-                        if info == nil then
-                            info = relicArmorNQ[afUpgrade]
-                            if info == nil then
-                                info = empArmorNQPlusTwo[afUpgrade]
-                                if info == nil then
-                                    info = empArmorNQPlusOne[afUpgrade]
-                                    if info == nil then
-                                        info = afArmorNQPlusOne[afUpgrade]
-                                        if info == nil then
-                                            info = afArmorNQ[afUpgrade]
-                                        end
-                                    end
-                                end
-                            end
-                        end
-                    end
-                end
-            end
-        end
         -- found a valid reward
         if info and npcUtil.giveItem(player, info.reward) then
             player:setCharVar('AFRupgrade', 0)
-            player:setCharVar('AFRupgradeDay', 0)
         end
     end
 end

@@ -137,32 +137,32 @@ INSERT INTO `mob_droplist` VALUES (3852,0,0,1000,27555,350);	 -- Wardens Ring
 INSERT INTO `mob_droplist` VALUES (3852,0,0,1000,26962,250);	 -- Enforcers Harness
 INSERT INTO `mob_droplist` VALUES (3852,0,0,1000,9086,1000);	 -- Eschalixir +2
 INSERT INTO `mob_droplist` VALUES (3846,0,1,1000,9078,333); -- Ashweed
-INSERT INTO `mob_droplist` VALUES (3846,0,1,1000,9078,333); -- Duskcrawler
-INSERT INTO `mob_droplist` VALUES (3846,0,1,1000,9078,333); -- Gravewood Log
+INSERT INTO `mob_droplist` VALUES (3846,0,1,1000,9077,333); -- Duskcrawler
+INSERT INTO `mob_droplist` VALUES (3846,0,1,1000,9076,333); -- Gravewood Log
 INSERT INTO `mob_droplist` VALUES (3847,0,1,1000,9078,333); -- Ashweed
-INSERT INTO `mob_droplist` VALUES (3847,0,1,1000,9078,333); -- Duskcrawler
-INSERT INTO `mob_droplist` VALUES (3847,0,1,1000,9078,333); -- Gravewood Log
+INSERT INTO `mob_droplist` VALUES (3847,0,1,1000,9077,333); -- Duskcrawler
+INSERT INTO `mob_droplist` VALUES (3847,0,1,1000,9076,333); -- Gravewood Log
 INSERT INTO `mob_droplist` VALUES (3848,0,1,1000,9078,333); -- Ashweed
-INSERT INTO `mob_droplist` VALUES (3848,0,1,1000,9078,333); -- Duskcrawler
-INSERT INTO `mob_droplist` VALUES (3848,0,1,1000,9078,333); -- Gravewood Log
+INSERT INTO `mob_droplist` VALUES (3848,0,1,1000,9077,333); -- Duskcrawler
+INSERT INTO `mob_droplist` VALUES (3848,0,1,1000,9076,333); -- Gravewood Log
 INSERT INTO `mob_droplist` VALUES (3840,0,1,500,9078,100); -- Ashweed
-INSERT INTO `mob_droplist` VALUES (3840,0,1,500,9078,100); -- Duskcrawler
-INSERT INTO `mob_droplist` VALUES (3840,0,1,500,9078,100); -- Gravewood Log
+INSERT INTO `mob_droplist` VALUES (3840,0,1,500,9077,100); -- Duskcrawler
+INSERT INTO `mob_droplist` VALUES (3840,0,1,500,9076,100); -- Gravewood Log
 INSERT INTO `mob_droplist` VALUES (3841,0,1,500,9078,100); -- Ashweed
-INSERT INTO `mob_droplist` VALUES (3841,0,1,500,9078,100); -- Duskcrawler
-INSERT INTO `mob_droplist` VALUES (3841,0,1,500,9078,100); -- Gravewood Log
+INSERT INTO `mob_droplist` VALUES (3841,0,1,500,9077,100); -- Duskcrawler
+INSERT INTO `mob_droplist` VALUES (3841,0,1,500,9076,100); -- Gravewood Log
 INSERT INTO `mob_droplist` VALUES (3842,0,1,500,9078,100); -- Ashweed
-INSERT INTO `mob_droplist` VALUES (3842,0,1,500,9078,100); -- Duskcrawler
-INSERT INTO `mob_droplist` VALUES (3842,0,1,500,9078,100); -- Gravewood Log
+INSERT INTO `mob_droplist` VALUES (3842,0,1,500,9077,100); -- Duskcrawler
+INSERT INTO `mob_droplist` VALUES (3842,0,1,500,9076,100); -- Gravewood Log
 INSERT INTO `mob_droplist` VALUES (3843,0,1,500,9078,100); -- Ashweed
-INSERT INTO `mob_droplist` VALUES (3843,0,1,500,9078,100); -- Duskcrawler
-INSERT INTO `mob_droplist` VALUES (3843,0,1,500,9078,100); -- Gravewood Log
+INSERT INTO `mob_droplist` VALUES (3843,0,1,500,9077,100); -- Duskcrawler
+INSERT INTO `mob_droplist` VALUES (3843,0,1,500,9076,100); -- Gravewood Log
 INSERT INTO `mob_droplist` VALUES (3844,0,1,500,9078,100); -- Ashweed
-INSERT INTO `mob_droplist` VALUES (3844,0,1,500,9078,100); -- Duskcrawler
-INSERT INTO `mob_droplist` VALUES (3844,0,1,500,9078,100); -- Gravewood Log
+INSERT INTO `mob_droplist` VALUES (3844,0,1,500,9077,100); -- Duskcrawler
+INSERT INTO `mob_droplist` VALUES (3844,0,1,500,9076,100); -- Gravewood Log
 INSERT INTO `mob_droplist` VALUES (3845,0,1,500,9078,100); -- Ashweed
-INSERT INTO `mob_droplist` VALUES (3845,0,1,500,9078,100); -- Duskcrawler
-INSERT INTO `mob_droplist` VALUES (3845,0,1,500,9078,100); -- Gravewood Log
+INSERT INTO `mob_droplist` VALUES (3845,0,1,500,9077,100); -- Duskcrawler
+INSERT INTO `mob_droplist` VALUES (3845,0,1,500,9076,100); -- Gravewood Log
 -- Update NMs dropid
 UPDATE `mob_groups` SET dropid = 3827 WHERE name = 'Abyssdiver' AND zoneid = 288;
 UPDATE `mob_groups` SET dropid = 3830 WHERE name = 'Aglaophotis' AND zoneid = 288;

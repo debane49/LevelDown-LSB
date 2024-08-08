@@ -62,6 +62,7 @@ m:addOverride(string.format('xi.actions.spells.trust.%s.onMobSpawn', trustToRepl
     mob:addMod(xi.mod.MND, power)
     mob:addMod(xi.mod.CHR, power)
 	mob:addMod(xi.mod.DEF, power)
+    mob:addMod(xi.mod.SUBTLE_BLOW, power / 2)
    end
 end)
 
