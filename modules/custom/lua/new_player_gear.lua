@@ -27,6 +27,11 @@ m:addOverride('xi.player.charCreate', function(player)
             -- pet names
             player:setPetName(xi.petType.WYVERN, math.random(1,32))
             player:setPetName(xi.petType.AUTOMATON, math.random(118, 149))
+                        -- moghouse
+            player:changeContainerSize(xi.inv.MOGSAFE,  80)
+            player:changeContainerSize(xi.inv.MOGSACK,  80)
+            player:changeContainerSize(xi.inv.MOGLOCKER,  80)
+
         end
 
         if not player:hasItem(xi.item.SAN_DORIAN_RING) or
@@ -312,6 +317,11 @@ local ValidAttachments = {
     -- add all waypoints
     for i = 1,50 do
     targ:addTeleport(xi.teleport.type.WAYPOINT, i)
+    end
+
+        -- add all Runic Portals
+    for i = 1,6 do
+    targ:addTeleport(xi.teleport.type.RUNIC_PORTAL, i)
     end
 
 ----------------------------------------
