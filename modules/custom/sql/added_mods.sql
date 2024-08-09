@@ -3339,3 +3339,25 @@ INSERT INTO `item_mods` VALUES (27513,1,9); -- Sublety Sepctales
 INSERT INTO `item_mods` VALUES (27513,2,20); -- Sublety Sepctales
 INSERT INTO `item_mods` VALUES (27513,25,15); -- Sublety Sepctales
 INSERT INTO `item_mods` VALUES (27513,289,4); -- Sublety Sepctales
+
+INSERT INTO `item_mods` VALUES (26014,116,10); -- Deceivers Torque - Dark magic skill
+INSERT INTO `item_mods` VALUES (26014,120,10); -- Deceivers Torque - String instrument skill
+INSERT INTO `item_mods` VALUES (26014,122,10); -- Deceivers Torque - Blue Magic skill
+INSERT INTO `item_mods` VALUES (26014,123,10); -- Deceivers Torque - Geomancy skill
+
+INSERT INTO `item_mods` VALUES (26105,1,20); -- Gna Earring - Def
+INSERT INTO `item_mods` VALUES (26105,123,10); -- Gna Earring - Geomancy skill
+
+INSERT INTO `item_mods` VALUES (21070,30,25); -- Idris - macc
+INSERT INTO `item_mods` VALUES (21070,28,25); -- Idris - matb
+INSERT INTO `item_mods` VALUES (21070,311,155); -- Idris - mdmg
+INSERT INTO `item_mods` VALUES (21070,123,10); -- Idris - Geomancy skill
+INSERT INTO `item_mods` VALUES (21070,256,40); -- Idris - After math
+INSERT INTO `item_mods_pet` VALUES (21070,160,-2500, 7); -- Idris - lupon dmg taken 
+
+INSERT INTO `item_mods` VALUES (21080,30,40); -- Idris III - macc
+INSERT INTO `item_mods` VALUES (21080,28,40); -- Idris III - matb
+INSERT INTO `item_mods` VALUES (21080,311,217); -- Idris III - mdmg
+INSERT INTO `item_mods` VALUES (21080,123,10); -- Idris III - Geomancy skill
+INSERT INTO `item_mods` VALUES (21080,256,40); -- Idris III - After math
+INSERT INTO `item_mods_pet` VALUES (21080,160,-2500, 7); -- Idris III - lupon dmg taken 
