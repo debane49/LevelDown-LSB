@@ -29,6 +29,7 @@ local page15 = {}
 local page16 = {}
 local page17 = {}
 local page18 = {}
+local page19 = {}
 
 
 
@@ -102,7 +103,13 @@ page2 =
          function(player)
             menu.options = xi.shop.general(player, page18)
          end
-    },
+        },
+        {
+        'Dyna Pops',
+         function(player)
+            menu.options = xi.shop.general(player, page19)
+         end
+        },
          {
         'Previous Page',
          function(player)
@@ -129,7 +136,7 @@ page12 =
             4165,     500,   -- Silent Oil
             4166,     250,   -- Deodorizer
             4172,    1000,   -- Reraiser
-	    4153,     500,   -- Antacid
+	        4153,     500,   -- Antacid
     }
 
 page13 =
@@ -310,6 +317,19 @@ page18 =
             4109,     500,   -- Water Cluster
             4110,     1000,   -- Light Cluster
             4111,     1000,   -- Dark Cluster
+}
+page19 =
+{
+            3353,     1000000,   -- Barbaric Bijou
+            3354,     1000000,   -- Steelwell Bijou
+            3355,     1000000,   -- Divine Bijou
+            3356,     1000000,   -- Roving Bijou
+            3357,     1000000,   -- Leering Bijou
+            3358,     1000000,   -- Shrouded Bijou
+            3456,     1500000,   -- Creepers Juju
+            3457,     1500000,   -- Revelatory Juju
+            3458,     1500000,   -- Undying Juju
+            3459,     1500000,   -- Heralds Juju
 }
 --[[page19 = {
 		10049,   1000,   --♪raptor
