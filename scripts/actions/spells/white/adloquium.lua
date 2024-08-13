@@ -1,0 +1,28 @@
+-----------------------------------
+-- Spell: Adoquium
+-----------------------------------
+local spellObject = {}
+
+spellObject.onMagicCastingCheck = function(caster, target, spell)
+    return 0
+end
+
+spellObject.onSpellCast = function(caster, target, spell)
+    local power    = 10
+    local duration = 180
+    local handSlot = caster:getEquipID(xi.slot.HANDS)
+
+    if caster:hasStatusEffect(xi.effect.PERPETUANCE) then
+       duration = 360
+    elseif caster:hasStatusEffect(xi.effect.PERPETUANCE) and
+           handSlot == 27091 then -- Arbatel Bracers +1
+           duration = 453
+    end
+
+    local returnEffect = target:addStatusEffect(xi.effect.REGAIN, power, 0, duration)
+
+
+    return returnEffect
+end
+
+return spellObject
