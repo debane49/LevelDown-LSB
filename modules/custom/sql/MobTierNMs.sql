@@ -162,12 +162,12 @@ UPDATE mob_groups SET HP = 225000, minLevel = 129, maxLevel = 129 WHERE name = '
 UPDATE mob_groups SET HP = 225000, minLevel = 129, maxLevel = 129 WHERE name = 'Glazemane' AND zoneid = 113;
 UPDATE mob_groups SET HP = 225000, minLevel = 129, maxLevel = 129 WHERE name = 'Wyvernhunter_Bambrox' AND zoneid = 212;
 --  					    130 HP 245000 - 135
-UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Hidhaegg' AND zoneid = 212;
-UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Sovereign_Behemoth' AND zoneid = 212;
-UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Tolba' AND zoneid = 212;
-UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Thuban' AND zoneid = 212;
-UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Sarama' AND zoneid = 212;
-UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Shedu' AND zoneid = 212;
+UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Hidhaegg' AND zoneid = 153;
+UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Sovereign_Behemoth' AND zoneid = 127;
+UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Tolba' AND zoneid = 128;
+UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Thuban' AND zoneid = 51;
+UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Sarama' AND zoneid = 61;
+UPDATE mob_groups SET HP = 245000, minLevel = 130, maxLevel = 130 WHERE name = 'Shedu' AND zoneid = 79;
 --  					    135 HP 345000 - 145
 UPDATE mob_groups SET HP = 345000, minLevel = 135, maxLevel = 135 WHERE name = 'Tumult_Curator' AND zoneid = 68;
 --				Zitah NMs			120 HP 45000 Tier I
