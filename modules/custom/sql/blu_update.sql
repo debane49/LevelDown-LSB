@@ -62,12 +62,12 @@ INSERT INTO `blue_spell_list` VALUES (711,2041,7,15,8,0,0,0);
 INSERT INTO `blue_spell_list` VALUES (712,2040,6,31,8,0,0,0);
 INSERT INTO `blue_spell_list` VALUES (713,2054,6,20,8,0,0,0);
 INSERT INTO `blue_spell_list` VALUES (714,2073,6,32,8,8,5,0);
-INSERT INTO `blue_spell_list` VALUES (736,378,0,0,0,0,0,0);
--- INSERT INTO `blue_spell_list` VALUES (737,807,0,0,0,0,0,0); -- 
-INSERT INTO `blue_spell_list` VALUES (738,957,0,0,0,0,0,0);
+-- INSERT INTO `blue_spell_list` VALUES (736,378,0,0,0,0,0,0);
+-- INSERT INTO `blue_spell_list` VALUES (737,807,0,0,0,0,0,0); 
+-- INSERT INTO `blue_spell_list` VALUES (738,957,0,0,0,0,0,0);
 -- INSERT INTO `blue_spell_list` VALUES (739,1790,0,0,0,0,0,0); 
 -- INSERT INTO `blue_spell_list` VALUES (740,2024,0,0,0,13,12,0);
-INSERT INTO `blue_spell_list` VALUES (741,1829,0,0,0,0,0,0);
+-- INSERT INTO `blue_spell_list` VALUES (741,1829,0,0,0,0,0,0);
 -- INSERT INTO `blue_spell_list` VALUES (742,2118,0,0,0,14,9,0);
 -- INSERT INTO `blue_spell_list` VALUES (743,2106,0,0,0,14,10,0);
 INSERT INTO `blue_spell_list` VALUES (723,2991,7,33,8,12,10,0);

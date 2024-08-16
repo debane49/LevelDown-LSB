@@ -973,37 +973,6 @@ page15 =
         end,
     },
 }
-m:addOverride('xi.zones.Celennia_Memorial_Library.Zone.onInitialize', function(zone)
-    -- Call the zone's original function for onInitialize
-    super(zone)
-    local GMNpc = zone:insertDynamicEntity({
-
-        -- NPC or MOB
-        objtype = xi.objType.NPC,
-        name = 'GM Event NPC',
-        look = 1548,
-        x = -114.8606,
-        y = -2.1500,
-        z = -88.3228,
-        rotation = 32,
-        widescan = 1,
-
-        onTrigger = function(player, npc)
-            if player:getCharVar('[GMEvent]HS') == 0 or
-               player:getCharVar('[GMEvent]NR') == 0 then
-               player:printToPlayer('I am here to distribute rewards to the winners for the GM Events!. ', 0, 'General')
-               player:printToPlayer('I do not show that you have won any events yet, come back after you have won!. ', 0, 'General')
-            elseif player:getCharVar('[GMEvent]HS') == 1 or
-                   player:getCharVar('[GMEvent]NR') == 1 then
-               player:printToPlayer('Congratulations on your win, please select a reward!. ', 0, 'General')
-                    menu.options = page1
-                    delaySendMenu(player)
-            end
-        end,
-
-    })
-    utils.unused(GMNpc)
-end)
 
 m:addOverride('xi.zones.Celennia_Memorial_Library.Zone.onInitialize', function(zone)
     -- Call the zone's original function for onInitialize
@@ -1140,7 +1109,7 @@ local EGtrade =
         end,
 
         onTrigger = function(player, npc)
-            if player:getCharVar('[GMEvent]HS') == 0 or
+            if player:getCharVar('[GMEvent]HS') == 0 and
                player:getCharVar('[GMEvent]NR') == 0 then
                player:printToPlayer('I am here to distribute rewards to the winners for the GM Events!. ', 0, 'General')
                player:printToPlayer('I do not show that you have won any events yet, come back after you have won!. ', 0, 'General')
