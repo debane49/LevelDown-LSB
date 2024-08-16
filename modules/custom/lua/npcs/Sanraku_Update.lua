@@ -142,7 +142,7 @@ m:addOverride('xi.zones.Aht_Urhgan_Whitegate.npcs.Sanraku.onTrade', function(pla
        local tradeItemId = trade:getItemId(0) -- only 1 item, get first
         
         if tradeItemId == 2477 then -- Soul Plate
-        local zeni = math.random(200,400) -- random value since soul plates aren't implemented yet.
+        local zeni = math.random(500,1000) -- random value since soul plates aren't implemented yet.
         player:tradeComplete()
         player:addCurrency("zeni_point", zeni)
         player:startEvent(910, zeni)

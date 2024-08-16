@@ -4973,7 +4973,7 @@ namespace charutils
             // Should this user be awarded imperial standing..
             if (PChar->StatusEffectContainer->HasStatusEffect(EFFECT_SANCTION) && (region >= REGION_TYPE::WEST_AHT_URHGAN && region <= REGION_TYPE::ALZADAAL))
             {
-                charutils::AddPoints(PChar, "imperial_standing", (int32)(exp * 0.1f));
+                charutils::AddPoints(PChar, "imperial_standing", (int32)(exp * 0.2f));
                 PChar->pushPacket(new CConquestPacket(PChar));
             }
 

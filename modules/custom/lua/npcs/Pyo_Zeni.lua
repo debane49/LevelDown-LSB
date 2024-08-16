@@ -22,10 +22,10 @@ m:addOverride('xi.zones.Aht_Urhgan_Whitegate.Zone.onInitialize', function(zone)
         local count = trade:getItemCount()
         local impcurrency =
         {
-        [ 1] = {trade = {{2184, count}}, zeniValue =  1}, -- Imperial Bronze Piece
-        [ 2] = {trade = {{2185, count}}, zeniValue =  5}, -- Imperial Silver Piece
-        [ 3] = {trade = {{2186, count}}, zeniValue = 10}, -- Imperial Mythril Piece
-        [ 4] = {trade = {{2187, count}}, zeniValue = 15}, -- Imperial Gold Piece
+        [ 1] = {trade = {{2184, count}}, zeniValue = 10}, -- Imperial Bronze Piece
+        [ 2] = {trade = {{2185, count}}, zeniValue = 20}, -- Imperial Silver Piece
+        [ 3] = {trade = {{2186, count}}, zeniValue = 30}, -- Imperial Mythril Piece
+        [ 4] = {trade = {{2187, count}}, zeniValue = 50}, -- Imperial Gold Piece
         }
         local tradeditem  = 0
         local zeniValues  = 0
