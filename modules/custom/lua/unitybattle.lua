@@ -219,9 +219,10 @@ m:addOverride(string.format("xi.zones.%s.mobs.%s.onMobDeath", entry[1], entry[2]
                      for _, partyMemeber in pairs(party) do
         player:delStatusEffect(xi.effect.BATTLEFIELD)
         player:countdown()
+                     end
         npcUtil.giveItem(player, {{4061, entry[5]}})
         npcUtil.giveItem(player, {{entry[3], 1}})
-                     end
+
 end)
 
 m:addOverride(string.format("xi.zones.%s.mobs.%s.onMobDespawn", entry[1], entry[2]), function(mob, player, params, npc)

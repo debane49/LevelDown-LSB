@@ -17,6 +17,9 @@ spellObject.onSpellCast = function(caster, target, spell)
     elseif caster:hasStatusEffect(xi.effect.PERPETUANCE) and
            handSlot == 27091 then -- Arbatel Bracers +1
            duration = 453
+    elseif caster:hasStatusEffect(xi.effect.PERPETUANCE) and
+           handSlot == 23238 then -- Arbatel Bracers +2
+           duration = 453
     end
 
     local returnEffect = target:addStatusEffect(xi.effect.REGAIN, power, 0, duration)
@@ -26,3 +29,6 @@ spellObject.onSpellCast = function(caster, target, spell)
 end
 
 return spellObject
+
+
+-- +2 23238

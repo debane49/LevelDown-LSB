@@ -21,54 +21,86 @@ end)
 m:addOverride("xi.zones.Nashmau.npcs.Rararoon.onTrigger", function(player, npc)
     local stock =
     {
-        2347,222300, -- Reactive Shield
-        8460,112632, -- Tension Spring IV
-        8461,112632, -- Heat Capacitor II
-        9880,118560, -- Tension Spring V
-        8465,82992, -- Magniplug
-        8466,112632, -- Magniplug II
-        2348,222300, -- Tranquilizer
-        8490,100776, -- Tranquilizer II
-        8492,112632, -- Loudspeaker IV
-        8493,112632, -- Tranquilizer III
-        8494,112632, -- Amplifier II
-        8495,118560, -- Loudspeaker V
-        8496,118560, -- Tranquilizer IV
-        8497,82992, -- Arcanoclutch
-        8498,112632, -- Arcanoclutch II
-        2349,222300, -- Turbo Charger
-        2415,750880, -- Turbo Charger II
-        8525,112632, -- Accelerator IV
-        8526,112632, -- Scope III
-        8527,118560, -- Scope IV
-        8528,112632, -- Truesights
-        2350,222300, -- Schurzen
-        8553,100776, -- Shock Absorber II
-        8556,112632, -- Armor Plate IV
-        8557,112632, -- Shock Absorber III
-        2351,222300, -- Dynamo
-        2413,185250, -- Coiler
-        8586,100776, -- Coiler II
-        8587,100776, -- Dynamo II
-        8588,112632, -- Stabilizer IV
-        8589,112632, -- Dynamo III
-        8590,118560, -- Stabilizer V
-        8622,185250, -- Mana Channeler II
-        2352,222300, -- Condenser
-        2414,185250, -- Steam Jacket
-        8620,88920, -- Resister II
-        8621,112632, -- Mana Jammer IV
-        2353,222300, -- Optic Fiber
-        8654,321100, -- Optic Fiber II
-        2416,750880, -- Vivi-Valve II
-        8650,88920, -- Auto-Repair Kit III
-        8653,112632, -- Auto-Repair Kit IV
-        8652,88920, -- Arcanic Cell II
-        8655,112632, -- Damage Gauge II
-        2354,222300, -- Economizer
-        8681,88920, -- Mana Tank III
-        8682,112632, -- Regulator
-        8683,112632, -- Mana Tank IV
+2241,29640, -- Tension Spring II
+2244,29640, -- Scanner
+2245,29640, -- Loudspeaker II
+2249,29640, -- Accelerator II
+2253,29640, -- Armor Plate II
+2257,29640, -- Stabilizer II
+2261,29640, -- Mana Jammer II
+2412,41496, -- Hammermill
+9068,41496, -- Barrier Module
+9070,41496, -- Resister
+2265,41496, -- Auto-Repair Kit II
+9072,41496, -- Arcanic Cell
+2269,41496, -- Mana Tank II
+9032,53352, -- Strobe II
+9033,65208, -- Tension Spring III
+9034,65208, -- Loudspeaker III
+9066,65208, -- Amplifier
+9037,65208, -- Accelerator III
+9036,65208, -- Scope II
+9039,65208, -- Armor Plate III
+9040,65208, -- Stabilizer III
+9042,65208, -- Mana Jammer III
+9065,82992, -- Inhibitor II
+9230,82992, -- Speedloader II
+9067,82992, -- Repeater
+9043,82992, -- Stealth Screen II
+9071,88920, -- Resister II
+9044,88920, -- Auto-Repair Kit III
+9073,88920, -- Arcanic Cell II
+9045,88920, -- Mana Tank III
+9035,100776, -- Tranquilizer II
+9038,100776, -- Shock Absorber II
+9041,100776, -- Coiler II
+9069,100776, -- Dynamo II
+9131,112632, -- Tension Spring IV
+9132,112632, -- Heat Capacitor II
+9133,112632, -- Loudspeaker IV
+9134,112632, -- Tranquilizer III
+9135,112632, -- Amplifier II
+9136,112632, -- Accelerator IV
+9137,112632, -- Scope III
+9138,112632, -- Armor Plate IV
+9139,112632, -- Shock Absorber III
+9140,112632, -- Stabilizer IV
+9141,112632, -- Dynamo III
+9142,112632, -- Mana Jammer IV
+9143,112632, -- Auto-Repair Kit IV
+9074,112632, -- Regulator
+9144,112632, -- Mana Tank IV
+9889,112632, -- Truesights
+2322,118560, -- Attuner
+3307,118560, -- Heat Capacitor
+2323,118560, -- Tactical Processor
+3308,118560, -- Power Cooler
+2324,118560, -- Drum Magazine
+3309,118560, -- Barrage Turbine
+2325,118560, -- Equalizer
+3310,118560, -- Barrier Module II
+2326,118560, -- Target Marker
+3311,118560, -- Galvanizer
+2327,118560, -- Mana Channeler
+3312,118560, -- Percolator
+2328,118560, -- Eraser
+3313,118560, -- Vivi-Valve
+2329,118560, -- Smoke Screen
+3314,118560, -- Disruptor
+2413,185250, -- Coiler
+9233,185250, -- Mana Channeler II
+2414,185250, -- Steam Jacket
+2347,222300, -- Reactive Shield
+2348,222300, -- Tranquilizer
+2349,222300, -- Turbo Charger
+2350,222300, -- Schurzen
+2351,222300, -- Dynamo
+2352,222300, -- Condenser
+2353,222300, -- Optic Fiber
+2354,222300, -- Economizer
+9234,321100, -- Optic Fiber II
+2415,750880, -- Turbo Charger II
+2416,750880, -- Vivi-Valve II
     }
     xi.shop.general(player, stock)
 
