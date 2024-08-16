@@ -28,7 +28,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.divisor1 = 2.5
     params.constant1 = 950
     params.powerThreshold2 = 400
-    params.divisor2 = 5 / 3
+    params.divisor2 = 5
     params.constant2 = 1090
 
 
