@@ -89,6 +89,7 @@ player:printToPlayer(string.format('--------------------------------------------
     elseif targetType == xi.objType.PET then
         -- not needed yet, but we don't want to run MOB so just die in empty conditionals
     elseif targetType == xi.objType.TRUST then
+        player:printToPlayer(string.format('%s\'s base Treasure Hunter with current equipment: %i', target:getName(), target:getMod(xi.mod.TREASURE_HUNTER)), xi.msg.channel.SYSTEM_3)
         -- see above
     elseif targetType == xi.objType.FELLOW then
         -- see above
