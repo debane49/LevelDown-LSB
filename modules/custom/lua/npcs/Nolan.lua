@@ -171,12 +171,12 @@ local tradeTablePathA =
 [152] = { trade = { 21273,{ 9086, 6}}, base = 21273, aug1 = 512, aug1MAX = 9,  aug2 =  27, aug2MAX = 14, aug3 = 142, aug3MAX =  2, aug4 =  0, aug4MAX = 0 },--Nibiru Gun
 [153] = { trade = { 21399,{ 9086, 6}}, base = 21399, aug1 =  10, aug1MAX = 17, aug2 =  35, aug2MAX =  9, aug3 =  67, aug3MAX =  1, aug4 =  0, aug4MAX = 0 },--Nibiru Harp
 [154] = { trade = { 20600,{ 9086, 6}}, base = 20600, aug1 =  23, aug1MAX = 19, aug2 =  25, aug2MAX = 14, aug3 =  31, aug3MAX = 19, aug4 =  0, aug4MAX = 0 },--Nibiru Knife
-[155] = { trade = { 20939,{ 9086, 6}}, base = 20939, aug1 = 512, aug1MAX = 9,  aug2 =  23, aug2MAX = 19, aug3 = 143, aug3MAX =  2, aug4 =  0, aug4MAX = 0 },--Nibiru Lance
-[156] = { trade = { 20524,{ 9086, 6}}, base = 20524, aug1 =  23, aug1MAX = 24, aug2 = 512, aug2MAX =  6, aug3 = 195, aug3MAX =  6, aug4 =  0, aug4MAX = 0 },--Nibiru Sainti
-[157] = { trade = { 27642,{ 9086, 6}}, base = 27642, aug1 =   3, aug1MAX = 15, aug2 =  39, aug2MAX =  6, aug3 =  54, aug3MAX =  4, aug4 =  0, aug4MAX = 0 },--Nibiru Shield
-[158] = { trade = { 20895,{ 9086, 6}}, base = 20895, aug1 = 512, aug1MAX = 9,  aug2 =  25, aug2MAX = 24, aug3 = 516, aug3MAX =  6, aug4 =  0, aug4MAX = 0 },--Nibiru Sickle
-[159] = { trade = { 21156,{ 9086, 6}}, base = 21156, aug1 =  11, aug1MAX = 15, aug2 = 133, aug2MAX = 24, aug3 =  40, aug3MAX =  4, aug4 =  0, aug4MAX = 0 },--Nibiru Staff
-[160] = { trade = { 20801,{ 9086, 6}}, base = 20801, aug1 = 512, aug1MAX = 9,  aug2 =  25, aug2MAX = 19, aug3 = 107, aug3MAX = 19, aug4 =  0, aug4MAX = 0 },--Nibiru Tabar
+[155] = { trade = { 20939,{ 9086, 6}}, base = 20939, aug1 = 110, aug1MAX = 2,  aug2 = 106, aug2MAX = 19, aug3 = 107, aug3MAX = 19, aug4 =  0, aug4MAX = 0 },--Nibiru Lance
+[156] = { trade = { 20524,{ 9086, 6}}, base = 20524, aug1 =  31, aug1MAX = 19, aug2 =  39, aug2MAX =  6, aug3 =  54, aug3MAX =  2, aug4 =  0, aug4MAX = 0 },--Nibiru Sainti
+[157] = { trade = { 27642,{ 9086, 6}}, base = 27642, aug1 = 517, aug1MAX = 14, aug2 = 329, aug2MAX =  4, aug3 = 356, aug3MAX =  4, aug4 =  0, aug4MAX = 0 },--Nibiru Shield
+[158] = { trade = { 20895,{ 9086, 6}}, base = 20895, aug1 =  23, aug1MAX = 19, aug2 =  25, aug2MAX = 14, aug3 = 142, aug3MAX =  2, aug4 =  0, aug4MAX = 0 },--Nibiru Sickle
+[159] = { trade = { 21156,{ 9086, 6}}, base = 21156, aug1 = 110, aug1MAX = 1,  aug2 = 100, aug2MAX = 19, aug3 = 101, aug3MAX = 24, aug4 =  0, aug4MAX = 0 },--Nibiru Staff
+[160] = { trade = { 20801,{ 9086, 6}}, base = 20801, aug1 = 107, aug1MAX = 24, aug2 = 101, aug2MAX = 14, aug3 = 104, aug3MAX =  6, aug4 =  0, aug4MAX = 0 },--Nibiru Tabar
 [161] = { trade = { 21031,{ 9086, 6}}, base = 21031, aug1 = 513, aug1MAX = 6,  aug2 =  23, aug2MAX = 19, aug3 = 142, aug3MAX =  4, aug4 =  0, aug4MAX = 0 },--Sensui
 [162] = { trade = { 20979,{ 9086, 6}}, base = 20979, aug1 = 740, aug1MAX = 14, aug2 = 512, aug2MAX = 14, aug3 =  25, aug3MAX = 14, aug4 =  0, aug4MAX = 0 },--Aizushintogo
 [163] = { trade = { 21150,{ 9086, 6}}, base = 21150, aug1 =  11, aug1MAX = 15, aug2 = 516, aug2MAX = 19, aug3 = 133, aug3MAX = 19, aug4 =  0, aug4MAX = 0 },--Akademos
@@ -548,7 +548,7 @@ local tradeTablePathC =
 [155] = { trade = { 20939,{ 9086, 6}}, base = 20939, aug1 =   31, aug1MAX = 19, aug2 =  106, aug2MAX = 19, aug3 =  107, aug3MAX = 19, aug4 =  0, aug4MAX = 0 },--Nibiru Lance
 [156] = { trade = { 20524,{ 9086, 6}}, base = 20524, aug1 =  517, aug1MAX = 14, aug2 =   39, aug2MAX =  6, aug3 =   54, aug3MAX =  2, aug4 =  0, aug4MAX = 0 },--Nibiru Sainti
 [157] = { trade = { 27642,{ 9086, 6}}, base = 27642, aug1 =   23, aug1MAX = 19, aug2 =  329, aug2MAX =  4, aug3 =  356, aug3MAX =  4, aug4 =  0, aug4MAX = 0 },--Nibiru Shield
-[158] = { trade = { 20895,{ 9086, 6}}, base = 20895, aug1 =  110, aug1MAX =  1, aug2 =   25, aug2MAX = 14, aug3 =  142, aug3MAX =  2, aug4 =  0, aug4MAX = 0 },--Nibiru Sickle
+[158] = { trade = { 20895,{ 9086, 6}}, base = 20895, aug1 =   23, aug1MAX = 19, aug2 =   25, aug2MAX = 14, aug3 =  142, aug3MAX =  2, aug4 =  0, aug4MAX = 0 },--Nibiru Sickle
 [159] = { trade = { 21156,{ 9086, 6}}, base = 21156, aug1 =  107, aug1MAX = 24, aug2 =  100, aug2MAX = 19, aug3 =  101, aug3MAX = 24, aug4 =  0, aug4MAX = 0 },--Nibiru Staff
 [160] = { trade = { 20801,{ 9086, 6}}, base = 20801, aug1 =  515, aug1MAX =  9, aug2 =  101, aug2MAX = 14, aug3 =  104, aug3MAX =  6, aug4 =  0, aug4MAX = 0 },--Nibiru Tabar
 [161] = { trade = { 21031,{ 9086, 6}}, base = 21031, aug1 =  515, aug1MAX =  9, aug2 =   27, aug2MAX = 14, aug3 =   29, aug3MAX = 19, aug4 =  0, aug4MAX = 0 },--Sensui
