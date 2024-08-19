@@ -30,6 +30,7 @@ local page16 = {}
 local page17 = {}
 local page18 = {}
 local page19 = {}
+local page20 = {}
 
 
 
@@ -110,15 +111,20 @@ page2 =
             menu.options = xi.shop.general(player, page19)
          end
         },
+        {
+        'Corsair',
+         function(player)
+            menu.options = xi.shop.general(player, page20)
+         end
+        },
          {
         'Previous Page',
          function(player)
            menu.options = page1
            delaySendMenu(player)
          end
-    },
+         },
 }
-
 page12 =
     {
             4112,     300,   -- Potion
@@ -136,7 +142,7 @@ page12 =
             4165,     500,   -- Silent Oil
             4166,     250,   -- Deodorizer
             4172,    1000,   -- Reraiser
-	        4153,     500,   -- Antacid
+            4153,     500,   -- Antacid
     }
 
 page13 =
@@ -331,6 +337,20 @@ page19 =
             3458,     1500000,   -- Undying Juju
             3459,     1500000,   -- Heralds Juju
 }
+
+page20 =
+{
+        2176,    48,    -- Fire Card
+        2177,    48,    -- Ice Card
+        2178,    48,    -- Wind Card
+        2179,    48,    -- Earth Card
+        2180,    48,    -- Thunder Card
+        2181,    48,    -- Water Card
+        2182,    48,    -- Light Card
+        2183,    48,    -- Dark Card
+        2974,    50,    -- Trump Card
+}
+
 --[[page19 = {
 		10049,   1000,   --♪raptor
 		10050,   1000,   --♪tiger
