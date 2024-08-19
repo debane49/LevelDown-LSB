@@ -992,34 +992,34 @@ m:addOverride('xi.zones.Celennia_Memorial_Library.Zone.onInitialize', function(z
         onTrade = function(player, npc, trade)
 local EGtrade =
 { -- [ 2] = { trade = {1506, 1509, {1488, 2}, {1507, 2}}, reward = 15544}, --SATTVA Sattva Ring
-[ 1] = { trade = {1505, 1497, 1506, 1508, 1494, {1488, 3}},        reward = 15543, aug1 = 327, aug1MAX = 25}, --RAJASAUG Rajas Ring
-[ 2] = { trade = {1506, 1509, 1508, 1494, {1488, 2}, {1507, 2}},   reward = 15544, aug1 =  71, aug1MAX = 25}, --SATTVAUG Sattva Ring
-[ 3] = { trade = {1507, 1500, 1506, 1508, 1494, {1488, 3}},        reward = 15545, aug1 = 140, aug1MAX = 25}, --TAMASAUG Tamas Ring
-[ 4] = { trade = {1503, 1505, 1507, 1496, 1508, 1494, {1488, 2}},  reward = 28498, aug1 = 339, aug1MAX = 25}, --PRATIAUG Pratik earring
-[ 5] = { trade = {1488, 1494, {1498, 2},{1502, 2}, {1508, 2}},     reward = 10295, aug1 = 142, aug1MAX = 25}, --KOKOUAUG Kokous earring
-[ 6] = { trade = {1499, 1492, 1500, 1503, 1502, 1488, 1508, 1494}, reward = 27538, aug1 =  80, aug1MAX = 25}, --LEMPOAUG Lempo earring
-[ 7] = { trade = {1507, 1495, 1505, 1488, 1508, 1494, {1492, 2}},  reward = 15965, aug1 =  49, aug1MAX = 25}, --ETHERAUG Ethereal earring
-[ 8] = { trade = {1495, 1488, 1508, 1494, {1502, 2}, {1499, 2}},   reward = 15964, aug1 = 132, aug1MAX = 25}, --HOLLOAUG Hollow Earring
-[ 9] = { trade = {1500, 1501, 1492, 1508, {1494, 2}, {1488, 2}},   reward = 15963, aug1 = 138, aug1MAX = 25}, --MAGNEAUG Magnetic Earring
-[10] = { trade = {1506, 1496, 1508, 1494, {1507, 2}, {1488, 2}},   reward = 15962, aug1 =  80, aug1MAX = 25}, --STATIAUG Static Earring
-[11] = { trade = {1501, 1497, 1506, 1508, 1494, {1488, 3}},        reward = 26219, aug1 = 323, aug1MAX = 25}, --NAJASAUG Najis loop
-[12] = { trade = {1499, 1513, 1493, 1494, {1488, 2}, {1508, 2}},   reward = 15810, aug1 = 340, aug1MAX = 25}, --LUZAFAUG Luzafs ring
-[13] = { trade = {1506, 1499, 1497, 1502, 1505, 1488, 1508, 1494}, reward = 10799, aug1 = 332, aug1MAX = 25}, --SLJORAUG Sljor ring
-[14] = { trade = {1491, 1500, 1498, 1494, {1488, 2}, {1508, 2}},   reward = 28530, aug1 = 144, aug1MAX = 25}, --DUMAKAUG Dumakulems ring
-[15] = { trade = {1500, 1507, 1501, 1508, 1494, {1488, 3}},        reward = 28468, aug1 =  29, aug1MAX = 25}, --MATANAUG Matanki earring
-[16] = { trade = {1490, 1501, 1491, 1492, 1508, 1494, {1488, 2}},  reward = 28532, aug1 = 326, aug1MAX = 25}, --CANDEAUG Candent ring
-[17] = { trade = {1490, 1495, 1505, 1496, 1508, 1494, {1488, 2}},  reward = 10296, aug1 = 109, aug1MAX = 25}, --CHARIAUG Charivari earring
-[18] = { trade = {1492, 1501, 1490, 1495, 1508, 1494, {1488, 2}},  reward = 28494, aug1 = 322, aug1MAX = 25}, --ENCHAAUG enchanter earring +1
-[19] = { trade = {1489, 1505, 1507, 1494, {1488, 2}, {1508, 2}},   reward = 14813, aug1 = 142, aug1MAX = 25}, --BRUTAAUG Brutal earring
-[20] = { trade = {1499, 1502, 1504, 1494, {1488, 2}, {1508, 2}},   reward = 14812, aug1 = 140, aug1MAX = 25}, --LOQUAAUG Loquacious earring
-[21] = { trade = {1489, 1502, 1511, 1492, 1505, 1488, 1508, 1494}, reward = 15477, aug1 = 137, aug1MAX = 25}, --BOXERAUG boxer mantle
-[22] = { trade = {1507, 1500, 1503, 1488, 1508, 1494, {1492, 2}},  reward = 15513, aug1 = 322, aug1MAX = 25}, --TEMPEAUG temperance torque
-[23] = { trade = {1493, 1502, 1505, 1507, 1496, 1488, 1508, 1494}, reward = 15511, aug1 =  39, aug1MAX = 25}, --FORTIAUG fortitude torque
-[24] = { trade = {1493, 1496, 1507, 1495, 1508, 1494, {1488, 2}},  reward = 15512, aug1 = 132, aug1MAX = 25}, --FAITHAUG faith torque
-[25] = { trade = {1495, 1502, 1503, 1492, 1507, 1488, 1508, 1494}, reward = 15509, aug1 =  49, aug1MAX = 25}, --HOPETAUG hope torque
-[26] = { trade = {1497, 1508, 1506, 1507, 1496, 1488, 1508, 1494}, reward = 15508, aug1 = 132, aug1MAX = 25}, --JUSTIAUG justice torque
-[27] = { trade = {1499, 1502, 1509, 1492, 1507, 1488, 1508, 1494}, reward = 15514, aug1 = 144, aug1MAX = 25}, --LOVETAUG love torque
-[28] = { trade = {1503, 1505, 1491, 1492, 1488, 1494, {1508, 2}},  reward = 15510, aug1 =  80, aug1MAX = 25}, --PRUDEAUG prudence torque
+[ 1] = { trade = {1505, 1497, 1506, 1508, 1494, {1488, 3}},        reward = 15543, aug1 = 327, aug1MAX =  5}, --RAJASAUG Rajas Ring
+[ 2] = { trade = {1506, 1509, 1508, 1494, {1488, 2}, {1507, 2}},   reward = 15544, aug1 =  71, aug1MAX =  5}, --SATTVAUG Sattva Ring
+[ 3] = { trade = {1507, 1500, 1506, 1508, 1494, {1488, 3}},        reward = 15545, aug1 = 140, aug1MAX =  5}, --TAMASAUG Tamas Ring
+[ 4] = { trade = {1503, 1505, 1507, 1496, 1508, 1494, {1488, 2}},  reward = 28498, aug1 = 339, aug1MAX = 10}, --PRATIAUG Pratik earring
+[ 5] = { trade = {1488, 1494, {1498, 2},{1502, 2}, {1508, 2}},     reward = 10295, aug1 = 142, aug1MAX =  5}, --KOKOUAUG Kokous earring
+[ 6] = { trade = {1499, 1492, 1500, 1503, 1502, 1488, 1508, 1494}, reward = 27538, aug1 =  80, aug1MAX =  5}, --LEMPOAUG Lempo earring
+[ 7] = { trade = {1507, 1495, 1505, 1488, 1508, 1494, {1492, 2}},  reward = 15965, aug1 =  49, aug1MAX =  5}, --ETHERAUG Ethereal earring
+[ 8] = { trade = {1495, 1488, 1508, 1494, {1502, 2}, {1499, 2}},   reward = 15964, aug1 = 132, aug1MAX =  5}, --HOLLOAUG Hollow Earring
+[ 9] = { trade = {1500, 1501, 1492, 1508, {1494, 2}, {1488, 2}},   reward = 15963, aug1 = 138, aug1MAX =  2}, --MAGNEAUG Magnetic Earring
+[10] = { trade = {1506, 1496, 1508, 1494, {1507, 2}, {1488, 2}},   reward = 15962, aug1 =  80, aug1MAX =  5}, --STATIAUG Static Earring
+[11] = { trade = {1501, 1497, 1506, 1508, 1494, {1488, 3}},        reward = 26219, aug1 = 323, aug1MAX = 10}, --NAJASAUG Najis loop
+[12] = { trade = {1499, 1513, 1493, 1494, {1488, 2}, {1508, 2}},   reward = 15810, aug1 = 340, aug1MAX = 10}, --LUZAFAUG Luzafs ring
+[13] = { trade = {1506, 1499, 1497, 1502, 1505, 1488, 1508, 1494}, reward = 10799, aug1 = 332, aug1MAX =  5}, --SLJORAUG Sljor ring
+[14] = { trade = {1491, 1500, 1498, 1494, {1488, 2}, {1508, 2}},   reward = 28530, aug1 = 144, aug1MAX =  5}, --DUMAKAUG Dumakulems ring
+[15] = { trade = {1500, 1507, 1501, 1508, 1494, {1488, 3}},        reward = 28468, aug1 =  29, aug1MAX = 10}, --MATANAUG Matanki earring
+[16] = { trade = {1490, 1501, 1491, 1492, 1508, 1494, {1488, 2}},  reward = 28532, aug1 = 326, aug1MAX = 10}, --CANDEAUG Candent ring
+[17] = { trade = {1490, 1495, 1505, 1496, 1508, 1494, {1488, 2}},  reward = 10296, aug1 = 109, aug1MAX = 10}, --CHARIAUG Charivari earring
+[18] = { trade = {1492, 1501, 1490, 1495, 1508, 1494, {1488, 2}},  reward = 28494, aug1 = 322, aug1MAX =  5}, --ENCHAAUG enchanter earring +1
+[19] = { trade = {1489, 1505, 1507, 1494, {1488, 2}, {1508, 2}},   reward = 14813, aug1 = 142, aug1MAX =  5}, --BRUTAAUG Brutal earring
+[20] = { trade = {1499, 1502, 1504, 1494, {1488, 2}, {1508, 2}},   reward = 14812, aug1 = 140, aug1MAX =  5}, --LOQUAAUG Loquacious earring
+[21] = { trade = {1489, 1502, 1511, 1492, 1505, 1488, 1508, 1494}, reward = 15477, aug1 = 137, aug1MAX =  5}, --BOXERAUG boxer mantle
+[22] = { trade = {1507, 1500, 1503, 1488, 1508, 1494, {1492, 2}},  reward = 15513, aug1 = 322, aug1MAX =  7}, --TEMPEAUG temperance torque
+[23] = { trade = {1493, 1502, 1505, 1507, 1496, 1488, 1508, 1494}, reward = 15511, aug1 =  39, aug1MAX =  9}, --FORTIAUG fortitude torque
+[24] = { trade = {1493, 1496, 1507, 1495, 1508, 1494, {1488, 2}},  reward = 15512, aug1 = 132, aug1MAX =  5}, --FAITHAUG faith torque
+[25] = { trade = {1495, 1502, 1503, 1492, 1507, 1488, 1508, 1494}, reward = 15509, aug1 =  49, aug1MAX =  5}, --HOPETAUG hope torque
+[26] = { trade = {1497, 1508, 1506, 1507, 1496, 1488, 1508, 1494}, reward = 15508, aug1 = 132, aug1MAX =  5}, --JUSTIAUG justice torque
+[27] = { trade = {1499, 1502, 1509, 1492, 1507, 1488, 1508, 1494}, reward = 15514, aug1 = 144, aug1MAX =  5}, --LOVETAUG love torque
+[28] = { trade = {1503, 1505, 1491, 1492, 1488, 1494, {1508, 2}},  reward = 15510, aug1 =  80, aug1MAX =  5}, --PRUDEAUG prudence torque
 [29] = { trade = {1499, 1502, 1494, 1496, 1501}, reward = 'login_points'}, --LOGIN 1500 Log in points
 [30] = { trade = {1506, 1503, 1488, 1505, 1498, 1506}, reward = 'spark_of_eminence'}, --SPARKS 25k sparks
 [31] = { trade = {1488, 1490, 1490, 1502, 1499, 1488, 1491, 1492}, reward = 'unity_accolades'}, --ACCOLADE 10k Accolades
@@ -1028,34 +1028,34 @@ local EGtrade =
 [34] = { trade = {1493, 1488, 1490, 1492}, reward = '[GMEvent]freefc'}, --FACE free face change
 [35] = { trade = {1505, 1488, 1490, 1492}, reward = '[GMEvent]freerc'}, --RACE free race change
 -- trade egss + item to get augment
-[36] = { trade = {1505, 1497, 1506, 1508, 15543, {1488, 3}},        reward = 15543, aug1 = 327, aug1MAX = 25}, --RAJASAU Rajas Ring
-[37] = { trade = {1506, 1509, 1508, 15544, {1488, 2}, {1507, 2}},   reward = 15544, aug1 =  71, aug1MAX = 25}, --SATTVAU Sattva Ring
-[38] = { trade = {1507, 1500, 1506, 1508, 15545, {1488, 3}},        reward = 15545, aug1 = 140, aug1MAX = 25}, --TAMASAU Tamas Ring
-[39] = { trade = {1503, 1505, 1507, 1496, 1508, 28498, {1488, 2}},  reward = 28498, aug1 = 339, aug1MAX = 25}, --PRATIAU Pratik earring
-[40] = { trade = {1488, 10295, {1498, 2},{1502, 2}, {1508, 2}},     reward = 10295, aug1 = 142, aug1MAX = 25}, --KOKOUAU Kokous earring
-[41] = { trade = {1499, 1492, 1500, 1503, 1502, 1488, 1508, 27538}, reward = 27538, aug1 =  80, aug1MAX = 25}, --LEMPOAU Lempo earring
-[42] = { trade = {1507, 1495, 1505, 1488, 1508, 15965, {1492, 2}},  reward = 15965, aug1 =  49, aug1MAX = 25}, --ETHERAU Ethereal earring
-[43] = { trade = {1495, 1488, 1508, 15964, {1502, 2}, {1499, 2}},   reward = 15964, aug1 = 132, aug1MAX = 25}, --HOLLOAU Hollow Earring
-[44] = { trade = {1500, 1494, 1501, 1492, 1508, 15962, {1488, 2}},  reward = 15963, aug1 = 138, aug1MAX = 25}, --MAGNEAU Magnetic Earring
-[45] = { trade = {1506, 1496, 1508, 15962, {1507, 2}, {1488, 2}},   reward = 15962, aug1 =  80, aug1MAX = 25}, --STATIAU Static Earring
-[46] = { trade = {1501, 1497, 1506, 1508, 26219, {1488, 3}},        reward = 26219, aug1 = 323, aug1MAX = 25}, --NAJASAU Najis loop
-[47] = { trade = {1499, 1513, 1493, 15810, {1488, 2}, {1508, 2}},   reward = 15810, aug1 = 340, aug1MAX = 25}, --LUZAFAU Luzafs ring
-[48] = { trade = {1506, 1499, 1497, 1502, 1505, 1488, 1508, 10799}, reward = 10799, aug1 = 332, aug1MAX = 25}, --SLJORAU Sljor ring
-[49] = { trade = {1491, 1500, 1498, 28530, {1488, 2}, {1508, 2}},   reward = 28530, aug1 = 144, aug1MAX = 25}, --DUMAKAU Dumakulems ring
-[50] = { trade = {1500, 1507, 1501, 1508, 28468, {1488, 3}},        reward = 28468, aug1 =  29, aug1MAX = 25}, --MATANAU Matanki earring
-[51] = { trade = {1490, 1501, 1491, 1492, 1508, 28532, {1488, 2}},  reward = 28532, aug1 = 326, aug1MAX = 25}, --CANDEAU Candent ring
-[52] = { trade = {1490, 1495, 1505, 1496, 1508, 10296, {1488, 2}},  reward = 10296, aug1 = 109, aug1MAX = 25}, --CHARIAU Charivari earring
-[53] = { trade = {1492, 1501, 1490, 1495, 1508, 28494, {1488, 2}},  reward = 28494, aug1 = 322, aug1MAX = 25}, --ENCHAAU enchanter earring +1
-[54] = { trade = {1489, 1505, 1507, 14813, {1488, 2}, {1508, 2}},   reward = 14813, aug1 = 142, aug1MAX = 25}, --BRUTAAU Brutal earring
-[55] = { trade = {1499, 1502, 1504, 14812, {1488, 2}, {1508, 2}},   reward = 14812, aug1 = 140, aug1MAX = 25}, --LOQUAAU Loquacious earring
-[56] = { trade = {1489, 1502, 1511, 1492, 1505, 1488, 1508, 15477}, reward = 15477, aug1 = 137, aug1MAX = 25}, --BOXERAU boxer mantle
-[57] = { trade = {1507, 1500, 1503, 1488, 1508, 15513, {1492, 2}},  reward = 15513, aug1 = 322, aug1MAX = 25}, --TEMPEAU temperance torque
-[58] = { trade = {1493, 1502, 1505, 1507, 1496, 1488, 1508, 15511}, reward = 15511, aug1 =  39, aug1MAX = 25}, --FORTIAU fortitude torque
-[59] = { trade = {1493, 1496, 1507, 1495, 1508, 15512, {1488, 2}},  reward = 15512, aug1 = 132, aug1MAX = 25}, --FAITHAU faith torque
-[60] = { trade = {1495, 1502, 1503, 1492, 1507, 1488, 1508, 15509}, reward = 15509, aug1 =  49, aug1MAX = 25}, --HOPETAU hope torque
-[61] = { trade = {1497, 1508, 1506, 1507, 1496, 1488, 1508, 15508}, reward = 15508, aug1 = 132, aug1MAX = 25}, --JUSTIAU justice torque
-[62] = { trade = {1499, 1502, 1509, 1492, 1507, 1488, 1508, 15514}, reward = 15514, aug1 = 144, aug1MAX = 25}, --LOVETAU love torque
-[63] = { trade = {1503, 1505, 1491, 1492, 1488, 15510, {1508, 2}},  reward = 15510, aug1 =  80, aug1MAX = 25}, --PRUDEAU prudence torque
+[36] = { trade = {1505, 1497, 1506, 1508, 15543, {1488, 3}},        reward = 15543, aug1 = 327, aug1MAX =  5}, --RAJASAU Rajas Ring
+[37] = { trade = {1506, 1509, 1508, 15544, {1488, 2}, {1507, 2}},   reward = 15544, aug1 =  71, aug1MAX =  5}, --SATTVAU Sattva Ring
+[38] = { trade = {1507, 1500, 1506, 1508, 15545, {1488, 3}},        reward = 15545, aug1 = 140, aug1MAX =  5}, --TAMASAU Tamas Ring
+[39] = { trade = {1503, 1505, 1507, 1496, 1508, 28498, {1488, 2}},  reward = 28498, aug1 = 339, aug1MAX = 10}, --PRATIAU Pratik earring
+[40] = { trade = {1488, 10295, {1498, 2},{1502, 2}, {1508, 2}},     reward = 10295, aug1 = 142, aug1MAX =  5}, --KOKOUAU Kokous earring
+[41] = { trade = {1499, 1492, 1500, 1503, 1502, 1488, 1508, 27538}, reward = 27538, aug1 =  80, aug1MAX =  5}, --LEMPOAU Lempo earring
+[42] = { trade = {1507, 1495, 1505, 1488, 1508, 15965, {1492, 2}},  reward = 15965, aug1 =  49, aug1MAX =  5}, --ETHERAU Ethereal earring
+[43] = { trade = {1495, 1488, 1508, 15964, {1502, 2}, {1499, 2}},   reward = 15964, aug1 = 132, aug1MAX =  5}, --HOLLOAU Hollow Earring
+[44] = { trade = {1500, 1494, 1501, 1492, 1508, 15962, {1488, 2}},  reward = 15963, aug1 = 138, aug1MAX =  2}, --MAGNEAU Magnetic Earring
+[45] = { trade = {1506, 1496, 1508, 15962, {1507, 2}, {1488, 2}},   reward = 15962, aug1 =  80, aug1MAX =  5}, --STATIAU Static Earring
+[46] = { trade = {1501, 1497, 1506, 1508, 26219, {1488, 3}},        reward = 26219, aug1 = 323, aug1MAX = 10}, --NAJASAU Najis loop
+[47] = { trade = {1499, 1513, 1493, 15810, {1488, 2}, {1508, 2}},   reward = 15810, aug1 = 340, aug1MAX = 10}, --LUZAFAU Luzafs ring
+[48] = { trade = {1506, 1499, 1497, 1502, 1505, 1488, 1508, 10799}, reward = 10799, aug1 = 332, aug1MAX =  5}, --SLJORAU Sljor ring
+[49] = { trade = {1491, 1500, 1498, 28530, {1488, 2}, {1508, 2}},   reward = 28530, aug1 = 144, aug1MAX =  5}, --DUMAKAU Dumakulems ring
+[50] = { trade = {1500, 1507, 1501, 1508, 28468, {1488, 3}},        reward = 28468, aug1 =  29, aug1MAX = 10}, --MATANAU Matanki earring
+[51] = { trade = {1490, 1501, 1491, 1492, 1508, 28532, {1488, 2}},  reward = 28532, aug1 = 326, aug1MAX = 10}, --CANDEAU Candent ring
+[52] = { trade = {1490, 1495, 1505, 1496, 1508, 10296, {1488, 2}},  reward = 10296, aug1 = 109, aug1MAX = 10}, --CHARIAU Charivari earring
+[53] = { trade = {1492, 1501, 1490, 1495, 1508, 28494, {1488, 2}},  reward = 28494, aug1 = 322, aug1MAX =  5}, --ENCHAAU enchanter earring +1
+[54] = { trade = {1489, 1505, 1507, 14813, {1488, 2}, {1508, 2}},   reward = 14813, aug1 = 142, aug1MAX =  5}, --BRUTAAU Brutal earring
+[55] = { trade = {1499, 1502, 1504, 14812, {1488, 2}, {1508, 2}},   reward = 14812, aug1 = 140, aug1MAX =  5}, --LOQUAAU Loquacious earring
+[56] = { trade = {1489, 1502, 1511, 1492, 1505, 1488, 1508, 15477}, reward = 15477, aug1 = 137, aug1MAX =  5}, --BOXERAU boxer mantle
+[57] = { trade = {1507, 1500, 1503, 1488, 1508, 15513, {1492, 2}},  reward = 15513, aug1 = 322, aug1MAX =  7}, --TEMPEAU temperance torque
+[58] = { trade = {1493, 1502, 1505, 1507, 1496, 1488, 1508, 15511}, reward = 15511, aug1 =  39, aug1MAX =  9}, --FORTIAU fortitude torque
+[59] = { trade = {1493, 1496, 1507, 1495, 1508, 15512, {1488, 2}},  reward = 15512, aug1 = 132, aug1MAX =  5}, --FAITHAU faith torque
+[60] = { trade = {1495, 1502, 1503, 1492, 1507, 1488, 1508, 15509}, reward = 15509, aug1 =  49, aug1MAX =  5}, --HOPETAU hope torque
+[61] = { trade = {1497, 1508, 1506, 1507, 1496, 1488, 1508, 15508}, reward = 15508, aug1 = 132, aug1MAX =  5}, --JUSTIAU justice torque
+[62] = { trade = {1499, 1502, 1509, 1492, 1507, 1488, 1508, 15514}, reward = 15514, aug1 = 144, aug1MAX =  5}, --LOVETAU love torque
+[63] = { trade = {1503, 1505, 1491, 1492, 1488, 15510, {1508, 2}},  reward = 15510, aug1 =  80, aug1MAX =  5}, --PRUDEAU prudence torque
 
 }
         local tradedCombo = 0
