@@ -18,15 +18,15 @@ spellObject.onMagicCastingCheck = function(caster, target, spell)
     else
         return spell:setMsg(xi.msg.basic.STATUS_PREVENTS)
     end
+end
 spellObject.onSpellCast = function(caster, target, spell)
     local params = {}
     params.ecosystem = xi.ecosystem.UNDEAD
     params.attackType = xi.attackType.MAGICAL
     params.damageType = xi.damageType.DARK
-
-    params.addedEffect = xi.effect.DOOM
+    params.effect = xi.effect.DOOM
     local power = 50
-    local tick = 1
+    local tick = 3
     local duration = 60
     local resistThreshold = 0.0
     local isGaze = false
