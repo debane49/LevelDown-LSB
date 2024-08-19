@@ -37,6 +37,7 @@
 # Live example:
 custom/sql/
 custom/commands/
+custom/lua/hangout/
 custom/lua/npcs/
 custom/lua/trusts/
 custom/lua/weaponskills/
