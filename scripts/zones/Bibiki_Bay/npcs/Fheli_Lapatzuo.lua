@@ -10,6 +10,9 @@ local timekeeperLocation = xi.manaclipper.location.SUNSET_DOCKS
 local timekeeperEventId = 18
 
 entity.onTrade = function(player, npc, trade)
+if trade:getItemQty(xi.item.GIL, 0) == 1000 then
+   player:setPos(-393.5172, -3.0001, -389.4102, 66, 4)
+end
 end
 
 entity.onTrigger = function(player, npc)
