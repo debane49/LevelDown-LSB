@@ -178,7 +178,52 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
                     end
 		        end
 	    end
+local buffOff = function(player)
+    player:setCharVar('Buff', 0)
+    player:setCharVar('BuffLvl', 0)
+    player:setCharVar('BuffJob', 0)
+    -- Remove bonus effects..
+    player:delStatusEffect(xi.effect.REGAIN)
+    player:delStatusEffect(xi.effect.DEDICATION)
+    player:delStatusEffect(xi.effect.REFRESH)
+    player:delStatusEffect(xi.effect.REGEN)
+    -- Remove bonus mods..
+    player:delMod(xi.mod.ATT, 50)
+    player:delMod(xi.mod.RACC, 50)
+    player:delMod(xi.mod.RATT, 50)
+    player:delMod(xi.mod.ACC, 50)
+    player:delMod(xi.mod.MATT, 50)
+    player:delMod(xi.mod.MACC, 50)
+    player:delMod(xi.mod.RDEF, 50)
+    player:delMod(xi.mod.DEF, 50)
+    player:delMod(xi.mod.MDEF, 50)
+end
 
+local buffOffCap = function(player)
+    player:setCharVar('Buff', 0)
+    player:setCharVar('BuffLvl', 0)
+    player:setCharVar('BuffJob', 0)
+    player:delStatusEffect(xi.effect.COMMITMENT)
+end
+                      if player:getCharVar('BuffLvl') < player:getMainLvl() and
+                         player:getCharVar('Buff') == 1 then
+                         player:setCharVar('BuffLvl', player:getMainLvl())
+                      end
+                      if player:getCharVar('BuffLvl') == 99 and
+                         player:getCharVar('Buff') == 1 then
+                                player:printToPlayer('Buff disabled.')
+                                buffOff(player)
+                      end
+                      if player:getCharVar('BuffJob') ~= player:getMainJob() and
+                         player:getCharVar('Buff') == 1 then
+                                player:printToPlayer('Buff disabled.')
+                                buffOff(player)
+                      end
+                      if player:getCharVar('BuffJob') ~= player:getMainJob() and
+                         player:getCharVar('Buff') == 2 then
+                                player:printToPlayer('Buff disabled.')
+                                buffOffCap(player)
+                      end
 
 
 
