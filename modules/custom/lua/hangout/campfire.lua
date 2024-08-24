@@ -9,7 +9,7 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize', function(zone)
     super(zone)
     local campFirea = zone:insertDynamicEntity({
         objtype = xi.objType.NPC,
-        name = 'Moogle',
+        name = 'campFirea',
         look = 82,
         x         = 346.3627,
         y         = -4.4337,

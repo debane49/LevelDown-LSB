@@ -300,7 +300,7 @@ local NMHuntfour  =
 {'Narbeth', 11, 69, '0600760600000000000000000000000000000000', xi.zone.ULEGUERAND_RANGE, -220.3, -41.382, -505.308, 150, 'Uleguerand_Range'}, 
 {'Nightshade', 8, 144, '0000e50200000000000000000000000000000000', xi.zone.CRAWLERS_NEST, -30, -1, 292, 127, 'Crawlers_Nest'}, 
 {'Nym', 85, 136, '0000b10800000000000000000000000000000000', xi.zone.FEIYIN, -162, -15, 154, 213, 'FeiYin'}, 
-{'Ophelia', 28, 56, '0000c50100000000000000000000000000000000', xi.zone.DANGRUF_WADI, -363, 3, -69, 127, 'Dangruf_Wadi'}, 
+{'Ophelia', 1, 170, '0000180300000000000000000000000000000000', xi.zone.DANGRUF_WADI, -363, 3, -69, 127, 'Dangruf_Wadi'}, 
 {'Pharom', 42, 81, '0000e20700000000000000000000000000000000', xi.zone.ATTOHWA_CHASM, 330.8952, 20.0193, 232.3120, 73, 'Attohwa_Chasm'},--Artox 
 {'Pyrder', 28, 35, '00005f0500000000000000000000000000000000', xi.zone.CAEDARVA_MIRE, -288.9, 7.326, -480.29, 177, 'Caedarva_Mire'}, 
 {'Rammir', 36, 204, '0000280200000000000000000000000000000000', xi.zone.ALZADAAL_UNDERSEA_RUINS, 98.4658, 0.0000, -103.4263, 22, 'Alzadaal_Undersea_Ruins'},--Artox 
@@ -427,7 +427,7 @@ local NMHuntsix  =
 
 local m = Module:new('NMHunt')
 
-  for _,  entry in pairs(NMHuntone) do
+  for _,  entry in pairs(NMHuntone) do -- level 1-20
 m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), function(zone)
 	super(zone)
     local namez = string.char(0x93).. entry[1]
@@ -472,7 +472,7 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
 end)
 end
 
-  for _,  entry in pairs(NMHunttwo) do
+  for _,  entry in pairs(NMHunttwo) do -- level 21-40
 m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), function(zone)
 	super(zone)
     local namez = string.char(0x93).. entry[1]
@@ -517,7 +517,7 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
 end)
 end
 
-  for _,  entry in pairs(NMHuntthree) do
+  for _,  entry in pairs(NMHuntthree) do -- level 41-60
 m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), function(zone)
 	super(zone)
     local namez = string.char(0x93).. entry[1]
@@ -563,7 +563,7 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
 end)
 end
 
-  for _,  entry in pairs(NMHuntfour) do
+  for _,  entry in pairs(NMHuntfour) do -- level 61-80
 m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), function(zone)
 	super(zone)
     local namez = string.char(0x93).. entry[1]
@@ -583,6 +583,12 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
             mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   15)
             mob:setMobMod(xi.mobMod.CHECK_AS_NM,   1)
             mob:setMobMod(xi.mobMod.NO_AGGRO, 1)
+            local mobLevel = math.random(61, 80)
+            mob:setMobLevel(mobLevel)
+            -- Increase HP & MP
+            mob:setMod(xi.mod.HP, 9 * mobLevel)
+            mob:updateHealth()
+            mob:addHP(mob:getMaxHP())
         end,  
 
         onMobFight  =  function(mob, target)
@@ -608,7 +614,7 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
 end)
 end
 
-  for _,  entry in pairs(NMHuntfive) do
+  for _,  entry in pairs(NMHuntfive) do -- level 81-100
 m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), function(zone)
 	super(zone)
     local namez = string.char(0x93).. entry[1]
@@ -628,6 +634,12 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
             mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   15)
             mob:setMobMod(xi.mobMod.CHECK_AS_NM,   1)
             mob:setMobMod(xi.mobMod.NO_AGGRO, 1)
+            local mobLevel = math.random(81, 110)
+            mob:setMobLevel(mobLevel)
+            -- Increase HP & MP
+            mob:setMod(xi.mod.HP, 9 * mobLevel)
+            mob:updateHealth()
+            mob:addHP(mob:getMaxHP())
         end,  
 
         onMobFight  =  function(mob, target)
@@ -653,7 +665,7 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
 end)
 end
 
-  for _,  entry in pairs(NMHuntsix) do
+  for _,  entry in pairs(NMHuntsix) do -- level 101-120
 m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), function(zone)
 	super(zone)
     local namez = string.char(0x93).. entry[1]
@@ -673,6 +685,12 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
             mob:setMobMod(xi.mobMod.ROAM_DISTANCE,   15)
             mob:setMobMod(xi.mobMod.CHECK_AS_NM,   1)
             mob:setMobMod(xi.mobMod.NO_AGGRO, 1)
+            local mobLevel = math.random(111, 120)
+            mob:setMobLevel(mobLevel)
+            -- Increase HP & MP
+            mob:setMod(xi.mod.HP, 9 * mobLevel)
+            mob:updateHealth()
+            mob:addHP(mob:getMaxHP())
         end,  
 
         onMobFight  =  function(mob, target)
