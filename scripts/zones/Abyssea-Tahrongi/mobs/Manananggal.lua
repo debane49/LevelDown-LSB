@@ -6,6 +6,14 @@ mixins = { require('scripts/mixins/families/qutrub') }
 -----------------------------------
 local entity = {}
 
+
+entity.onMobSpawn = function(mob)
+            mob:setUntargetable(false)
+end
+
+entity.onMobRoam = function(mob)
+end
+
 entity.onMobDeath = function(mob, player, optParams)
 end
 

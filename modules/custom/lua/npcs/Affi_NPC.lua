@@ -129,6 +129,10 @@ m:addOverride("xi.zones.Escha_ZiTah.npcs.Affi.onEventFinish", function(player, c
                 end
             end
         end
+        if player:hasKeyItem(rewardki) then
+                   player:printToPlayer('It appears you are you already have this keyitem!. ', 0, 'Affi')
+           return
+        elseif not player:hasKeyItem(rewardki) then
             if option ~= 1073741824 then
                        player:tradeComplete()
                        npcUtil.giveKeyItem(player, rewardki)
@@ -136,6 +140,7 @@ m:addOverride("xi.zones.Escha_ZiTah.npcs.Affi.onEventFinish", function(player, c
             else
             		   player:setCharVar("Affi", 0)
             end
+        end
                 if option == 1073741824 then
                    player:printToPlayer('Before you leave, There are 4 additional HELM Notorious Monsters!. ', 0, 'Affi') 
                    player:printToPlayer('If you wish to summon them, please trade me the items below for the key item!. ', 0, 'Affi') 

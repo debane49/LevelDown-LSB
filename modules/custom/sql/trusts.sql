@@ -319,7 +319,7 @@ INSERT INTO `mob_spell_lists` VALUES ('TRUST_Ingrid', 333, 143, 32, 255);
 -- General - Selhteus
 --
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Selh_teus',1094,1508); -- Luminous Lance
-INSERT INTO `mob_skill_lists` VALUES ('TRUST_Selh_teus',1094,1509); -- Rejuvination
+-- INSERT INTO `mob_skill_lists` VALUES ('TRUST_Selh_teus',1094,1509); -- Rejuvination removed so we could control time of use
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Selh_teus',1094,1510); -- Revelation
 UPDATE mob_pools SET sJob = 12, skill_list_id = 1094, name = 'selh_teus' WHERE poolid = 5979;
 

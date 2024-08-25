@@ -215,7 +215,7 @@ local NMHunttwo  =
 local NMHuntthree  = 
 {
 {'Akkar', 8, 152, '00004f0200000000000000000000000000000000', xi.zone.QUICKSAND_CAVES, -938.853, 16.716, -350.715, 38, 'Quicksand_Caves'}, 
-{'Angor', 31, 111, '0000b00100000000000000000000000000000000', xi.zone.GARLAIGE_CITADEL, -361.299, 18.5, 283.13, 19, 'Garlaige_Citadel'}, 
+{'Angor', 31, 111, '0000b00100000000000000000000000000000000', xi.zone.GARLAIGE_CITADEL, -140.1770, 0.0000, 276.2675, 200, 'Garlaige_Citadel'}, 
 {'Astra', 10, 179, '05009c0700000000000000000000000000000000', xi.zone.YUHTUNGA_JUNGLE, 373.4058, 21.5830, 232.1948, 255, 'Yuhtunga_Jungle'}, 
 {'Azariah', 1, 10, '0000790400000000000000000000000000000000', xi.zone.BEHEMOTHS_DOMINION, 203.4112, 4.000, -85.3405, 93, 'Behemoths_Dominion'}, 
 {'Belstram', 42, 102, '0000580100000000000000000000000000000000', xi.zone.MISAREAUX_COAST, -235.987, -31.895, 145.642, 121, 'Misareaux_Coast'}, 
@@ -244,7 +244,7 @@ local NMHuntthree  =
 {'Lyra', 49, 121, '0000f00100000000000000000000000000000000', xi.zone.YHOATOR_JUNGLE, 298.9530, -1.1000, -447.6169, 205, 'Yhoator_Jungle'}, 
 {'Midnight', 71, 24, '00007d0200000000000000000000000000000000', xi.zone.LUFAISE_MEADOWS, -374.644, -16.575, 112.638, 10, 'Lufaise_Meadows'}, 
 {'Mistmael', 19, 123, '0000a00100000000000000000000000000000000', xi.zone.YHOATOR_JUNGLE, 217.5260, 0.5234, -208.9858, 179, 'Yhoator_Jungle'}, 
-{'Nalra', 1, 9, '0000310100000000000000000000000000000000', xi.zone.RANGUEMONT_PASS, -140.325, -43.994, 152.523, 86, 'Ranguemont_Pass'}, 
+{'Nalra', 1, 9, '0000310100000000000000000000000000000000', xi.zone.RANGUEMONT_PASS, 156.6128, 23.7322, -202.0327, 244, 'Ranguemont_Pass'}, 
 {'Night Moon', 1, 211, '00001b0300000000000000000000000000000000', xi.zone.TORAIMARAI_CANAL, -245.2953, 16.0465, 219.9081, 126, 'Toraimarai_Canal'}, 
 {'Norok', 42, 120, '0000e50100000000000000000000000000000000', xi.zone.SEA_SERPENT_GROTTO, -295.103, 50.746, -284.661, 146, 'Sea_Serpent_Grotto'}, 
 {'Onnyx', 10, 3, '0000600100000000000000000000000000000000', xi.zone.BEHEMOTHS_DOMINION, -70.571, -4.375, -85.672, 53, 'Behemoths_Dominion'}, 
@@ -253,7 +253,7 @@ local NMHuntthree  =
 {'Rainbow', 5, 60, '05006b0700000000000000000000000000000000', xi.zone.LABYRINTH_OF_ONZOZO, -180.89, 9.336, -76.762, 127, 'Labyrinth_of_Onzozo'}, 
 {'Rhenalyrr', 35, 157, '00005e0400000000000000000000000000000000', xi.zone.ROMAEVE, -109, -8.5, 39, 185, 'RoMaeve'}, 
 {'Sakakara', 55, 94, '0000420800000000000000000000000000000000', xi.zone.MISAREAUX_COAST, 111.363, -17, 30.344, 141, 'Misareaux_Coast'}, 
-{'Serpretus', 14, 176, '0000340200000000000000000000000000000000', xi.zone.RANGUEMONT_PASS, -280.1532, -46.0000, 204.2480, 15, 'Ranguemont_Pass'}, 
+{'Serpretus', 14, 176, '0000340200000000000000000000000000000000', xi.zone.RANGUEMONT_PASS, -62.9823, -6.0027, -58.9409, 56, 'Ranguemont_Pass'}, 
 {'Silver Star', 53, 124, '0000d10400000000000000000000000000000000', xi.zone.SAUROMUGUE_CHAMPAIGN, 329, 40, 372, 16, 'Sauromugue_Champaign'}, 
 {'Sola', 6, 60, '05006a0700000000000000000000000000000000', xi.zone.ROMAEVE, -255.05, 3.499, -47.281, 2, 'RoMaeve'}, 
 {'Stardust', 51, 114, '0000f80400000000000000000000000000000000', xi.zone.SEA_SERPENT_GROTTO, 112.5, 0.8, -126.2, 158, 'Sea_Serpent_Grotto'}, 
@@ -290,7 +290,7 @@ local NMHuntfour  =
 {'Horar', 14, 69, '0500b20700000000000000000000000000000000', xi.zone.IFRITS_CAULDRON, 171.26, 0.042, -25.204, 225, 'Ifrits_Cauldron'}, 
 {'Ingivald', 1, 179, '00001f0300000000000000000000000000000000', xi.zone.MONASTIC_CAVERN, -27.164, -1.432, -337.689, 37, 'Monastic_Cavern'}, 
 {'Jassin', 16, 153, '00000c0100000000000000000000000000000000', xi.zone.MOUNT_ZHAYOLM, 552.84, -14.49, 3.186, 112, 'Mount_Zhayolm'}, 
-{'Josidiah', 32, 56, '0000d50100000000000000000000000000000000', xi.zone.BHAFLAU_THICKETS, 34.7979, -19.7476, 302.7057, 185, 'Bhaflau_Thickets'}, 
+{'Josidiah', 7, 58, '0000bb0600000000000000000000000000000000', xi.zone.BHAFLAU_THICKETS, 34.7979, -19.7476, 302.7057, 185, 'Bhaflau_Thickets'}, 
 {'Klayden', 44, 5, '00004d0500000000000000000000000000000000', xi.zone.ATTOHWA_CHASM, -359.252, -4.222, 230.453, 59, 'Attohwa_Chasm'}, 
 {'Kystal', 1, 61, '0000650100000000000000000000000000000000', xi.zone.CRAWLERS_NEST, 99, -32, -196, 127, 'Crawlers_Nest'}, 
 {'Lipith', 88, 84, '0000190400000000000000000000000000000000', xi.zone.CAEDARVA_MIRE, 842, -1, 365, 127, 'Caedarva_Mire'}, 
@@ -640,6 +640,23 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
             mob:setMod(xi.mod.HP, 9 * mobLevel)
             mob:updateHealth()
             mob:addHP(mob:getMaxHP())
+        mob:addMod(xi.mod.STR, 100) 
+        mob:addMod(xi.mod.VIT, 100) 
+        mob:addMod(xi.mod.INT, 100) 
+        mob:addMod(xi.mod.MND, 100) 
+        mob:addMod(xi.mod.CHR, 100) 
+        mob:addMod(xi.mod.AGI, 100) 
+        mob:addMod(xi.mod.DEX, 100) 
+        mob:addMod(xi.mod.DEF, 100) 
+        mob:addMod(xi.mod.RATT, 175) 
+        mob:addMod(xi.mod.ACC, 450) 
+        mob:addMod(xi.mod.ATT, 550) 
+        mob:addMod(xi.mod.MATT, 150)
+        mob:addMod(xi.mod.MACC, 450) 
+        mob:addMod(xi.mod.MEVA, 250) 
+        mob:addMod(xi.mod.MDEF, 150)
+        mob:setMod(xi.mod.EVA, 200)
+        mob:setMod(xi.mod.DEF, 200)
         end,  
 
         onMobFight  =  function(mob, target)
@@ -691,6 +708,23 @@ m:addOverride(string.format('xi.zones.%s.Zone.onInitialize', entry[10]), functio
             mob:setMod(xi.mod.HP, 9 * mobLevel)
             mob:updateHealth()
             mob:addHP(mob:getMaxHP())
+        mob:addMod(xi.mod.STR, 100) 
+        mob:addMod(xi.mod.VIT, 100) 
+        mob:addMod(xi.mod.INT, 100) 
+        mob:addMod(xi.mod.MND, 100) 
+        mob:addMod(xi.mod.CHR, 100) 
+        mob:addMod(xi.mod.AGI, 100) 
+        mob:addMod(xi.mod.DEX, 100) 
+        mob:addMod(xi.mod.DEF, 100) 
+        mob:addMod(xi.mod.RATT, 175) 
+        mob:addMod(xi.mod.ACC, 450) 
+        mob:addMod(xi.mod.ATT, 550) 
+        mob:addMod(xi.mod.MATT, 150)
+        mob:addMod(xi.mod.MACC, 450) 
+        mob:addMod(xi.mod.MEVA, 250) 
+        mob:addMod(xi.mod.MDEF, 150)
+        mob:setMod(xi.mod.EVA, 200)
+        mob:setMod(xi.mod.DEF, 200)
         end,  
 
         onMobFight  =  function(mob, target)

@@ -46,7 +46,6 @@ custom/lua/new_player_linkshell.lua
 custom/lua/nexuscape_update.lua
 custom/lua/new_player_gear.lua
 custom/lua/homepoint_heal.lua
-custom/lua/cop8-1_workaround.lua
 custom/lua/af_level_reward.lua
 custom/lua/VWNotMon.lua
 custom/lua/add_silt.lua

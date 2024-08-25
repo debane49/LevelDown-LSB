@@ -15,18 +15,18 @@ UPDATE mob_spawn_points SET pos_X = 73.656,   pos_y = -0.000,  pos_z = -205.806,
 UPDATE mob_spawn_points SET pos_X = 75.799,   pos_y = -20.168, pos_z = 247.353,  pos_rot = 89  WHERE mobid = 17293650;
 UPDATE mob_spawn_points SET pos_X = 80.351,   pos_y = 31.494,  pos_z = 326.033,  pos_rot = 83  WHERE mobid = 17269128;
 UPDATE mob_spawn_points SET pos_X = 178.939,  pos_y = -20.521, pos_z = -312.068, pos_rot = 30  WHERE mobid = 17109720;
-UPDATE mob_spawn_points SET pos_X = 182.288,  pos_y = -21.185, pos_z = -309.345, pos_rot = 66  WHERE mobid = 17256919;
+UPDATE mob_spawn_points SET pos_X = 208.212,  pos_y = 14.9838, pos_z = -680.000, pos_rot = 124 WHERE mobid = 17256919;
 UPDATE mob_spawn_points SET pos_X = 240.951,  pos_y = -24.265, pos_z = 565.048,  pos_rot = 72  WHERE mobid = 17252818;
 UPDATE mob_spawn_points SET pos_X = 245.318,  pos_y = -0.294,  pos_z = -641.355, pos_rot = 247 WHERE mobid = 17215957;
 UPDATE mob_spawn_points SET pos_X = 279.958,  pos_y = -0.040,  pos_z = 563.950,  pos_rot = 130 WHERE mobid = 17113827;
 UPDATE mob_spawn_points SET pos_X = 281.265,  pos_y = -60.000, pos_z = 364.232,  pos_rot = 192 WHERE mobid = 17109718;
 UPDATE mob_spawn_points SET pos_X = 281.302,  pos_y = 4.6,     pos_z = 219.454,  pos_rot = 71  WHERE mobid = 17281500;
-UPDATE mob_spawn_points SET pos_X = 287.118,  pos_y = -61.087, pos_z = 365.069,  pos_rot = 183 WHERE mobid = 17256920;
 UPDATE mob_spawn_points SET pos_X = 365.333,  pos_y = 20.686,  pos_z = 224.015,  pos_rot = 110 WHERE mobid = 16806258;
 UPDATE mob_spawn_points SET pos_X = 403.066,  pos_y = -1.251,  pos_z = -236.960, pos_rot = 104 WHERE mobid = 17215956;
 UPDATE mob_spawn_points SET pos_X = 439.332,  pos_y = -50.110, pos_z = 325.739,  pos_rot = 58  WHERE mobid = 17109719;
 UPDATE mob_spawn_points SET pos_X = 446.041,  pos_y = 19.737,  pos_z = -199.369, pos_rot = 125 WHERE mobid = 16806254;
 UPDATE mob_spawn_points SET pos_X = 562.442,  pos_y = -10.519, pos_z = 606.098,  pos_rot = 116 WHERE mobid = 17138409;
+UPDATE mob_spawn_points SET pos_X = 200.167,  pos_y = -24.028, pos_z = -164.006, pos_rot = 198 WHERE mobid = 17256920;
 
 
 UPDATE npc_list SET status = 0 WHERE npcid = 17809534;
@@ -411,3 +411,4 @@ UPDATE mob_groups SET dropid = 3877 WHERE name =  'Yalungur'AND groupid =  69;
 UPDATE mob_groups SET dropid = 3861 WHERE name =  'Yatagarasu'AND groupid =  57;
 
 UPDATE mob_pools SET roamflag = 0 WHERE name =  'Agathos'AND poolid =  4701;
+

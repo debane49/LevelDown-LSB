@@ -26,7 +26,7 @@ local getNearestMob = function(fistule, mobs)
 end
 
 entity.onMobSpawn = function(mob)
-    mob:setUntargetable(true)
+    mob:setUntargetable(false)
 end
 
 entity.onMobRoam = function(mob)
