@@ -3864,12 +3864,52 @@ INSERT INTO `item_mods` VALUES (23620, 8, 39); --futhark trousers +3 -- STR
 INSERT INTO `item_mods` VALUES (23620, 1, 139); --futhark trousers +3 -- DEF
 INSERT INTO `item_mods` VALUES (23620, 14, 21); --futhark trousers +3 -- CHR
 INSERT INTO `item_mods` VALUES (23553, 1008, 9); --futhark mitons +3 -- SWORDPLAY
-
 INSERT INTO `item_mods` VALUES (21689,  2, 70); -- Montante +1 -- HP
 INSERT INTO `item_mods` VALUES (21689, 23, 34); -- Montante +1 -- ATT
 INSERT INTO `item_mods` VALUES (21689, 73, 11); -- Montante +1 -- Store TP
-
 INSERT INTO `item_mods` VALUES (20757, 10, 8); -- Forshock sword -- VIT
 INSERT INTO `item_mods` VALUES (20757, 12, 13); -- Forshock sword  -- INT
 INSERT INTO `item_mods` VALUES (20757, 25, 15); -- Forshock sword  -- ACC
 INSERT INTO `item_mods` VALUES (20757, 23, 26); -- Forshock sword  -- ATT
+
+INSERT INTO `item_mods` VALUES (27548, 8, 2); -- Odnowa earring -- str
+INSERT INTO `item_mods` VALUES (27548, 10, 2); -- Odnowa earring -- vit
+INSERT INTO `item_mods` VALUES (27548, 4, 100); -- Odnowa earring -- convert mp to hp
+INSERT INTO `item_mods` VALUES (27548, 163, -100); -- Odnowa earring -- magic damage taken
+
+INSERT INTO `item_mods` VALUES (27542, 9, 3); -- dominance earring -- dex
+INSERT INTO `item_mods` VALUES (27542, 251, 10); -- dominance earring -- resist stun
+INSERT INTO `item_mods` VALUES (27542, 9, 4); -- dominance earring +1 -- dex
+INSERT INTO `item_mods` VALUES (27542, 251, 11); -- dominance earring +1 -- resist stun
+
+INSERT INTO `item_mods` VALUES (27542, 1, 90); -- gazu bracelets -- Def
+INSERT INTO `item_mods` VALUES (27542, 2, 27); -- gazu bracelets -- hp
+INSERT INTO `item_mods` VALUES (27542, 8, 10); -- gazu bracelets -- str
+INSERT INTO `item_mods` VALUES (27542, 9, 32); -- gazu bracelets -- dex
+INSERT INTO `item_mods` VALUES (27542, 10, 32); -- gazu bracelets -- vit
+INSERT INTO `item_mods` VALUES (27542, 11, 6); -- gazu bracelets -- agi
+INSERT INTO `item_mods` VALUES (27542, 12, 14); -- gazu bracelets -- int
+INSERT INTO `item_mods` VALUES (27542, 13, 29); -- gazu bracelets -- mnd
+INSERT INTO `item_mods` VALUES (27542, 14, 19); -- gazu bracelets -- chr
+INSERT INTO `item_mods` VALUES (27542, 25, 30); -- gazu bracelets -- acc
+INSERT INTO `item_mods` VALUES (27542, 23, -18); -- gazu bracelets -- att
+INSERT INTO `item_mods` VALUES (27542, 68, 22); -- gazu bracelets -- eva
+INSERT INTO `item_mods` VALUES (27542, 31, 43); -- gazu bracelets -- mag eva
+INSERT INTO `item_mods` VALUES (27542, 29, 2); -- gazu bracelets -- mdef
+INSERT INTO `item_mods` VALUES (27542, 384, 500); -- gazu bracelets -- haste
+
+INSERT INTO `item_mods` VALUES (27542, 1, 91); -- gazu bracelets +1 -- Def
+INSERT INTO `item_mods` VALUES (27542, 2, 27); -- gazu bracelets +1 -- hp
+INSERT INTO `item_mods` VALUES (27542, 8, 10); -- gazu bracelets +1 -- str
+INSERT INTO `item_mods` VALUES (27542, 9, 32); -- gazu bracelets +1 -- dex
+INSERT INTO `item_mods` VALUES (27542, 10, 32); -- gazu bracelets +1 -- vit
+INSERT INTO `item_mods` VALUES (27542, 11, 6); -- gazu bracelets +1 -- agi
+INSERT INTO `item_mods` VALUES (27542, 12, 14); -- gazu bracelets +1 -- int
+INSERT INTO `item_mods` VALUES (27542, 13, 29); -- gazu bracelets +1 -- mnd
+INSERT INTO `item_mods` VALUES (27542, 14, 19); -- gazu bracelets +1 -- chr
+INSERT INTO `item_mods` VALUES (27542, 25, 31); -- gazu bracelets +1 -- acc
+INSERT INTO `item_mods` VALUES (27542, 23, -17); -- gazu bracelets +1 -- att
+INSERT INTO `item_mods` VALUES (27542, 68, 22); -- gazu bracelets +1 -- eva
+INSERT INTO `item_mods` VALUES (27542, 31, 43); -- gazu bracelets +1 -- mag eva
+INSERT INTO `item_mods` VALUES (27542, 29, 2); -- gazu bracelets +1 -- mdef
+INSERT INTO `item_mods` VALUES (27542, 384, 500); -- gazu bracelets +1 -- haste
