@@ -74,3 +74,5 @@ INSERT INTO `item_weapon` VALUES (21911,'ethereal_katana',9,0,0,0,0,2,1,227,1,0)
 INSERT INTO `item_weapon` VALUES (22053,'ethereal_club',11,0,0,0,0,3,1,288,1,0);
 INSERT INTO `item_weapon` VALUES (21873,'ethereal_spear',8,0,0,0,0,1,1,480,1,0);
 INSERT INTO `item_weapon` VALUES (22165,'ethereal_gun',26,0,0,0,0,1,1,600,1,0);
+
+INSERT INTO `item_usable` VALUES (6311,'decimating_bullet_pouch',1,1,55,0,0,0,0,0)

@@ -7047,6 +7047,7 @@ xi.item =
     LIVING_BULLET                       = 21326,
     ERADICATING_BULLET                  = 21327,
     DIVINE_BULLET                       = 21328,
+    DECIMATING_BULLET                   = 21330,
     ANIMIKII_BULLET                     = 21334,
     GHASTLY_TATHLUM_P1                  = 21344,
     WINGCUTTER_P1                       = 21350,
