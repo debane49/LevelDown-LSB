@@ -90,7 +90,7 @@ INSERT INTO `item_mods` VALUES (25854, 25, 38); --arjuna breeches -- ACC
 INSERT INTO `item_mods` VALUES (25854, 29, 3); --arjuna breeches -- MDEF
 INSERT INTO `item_mods` VALUES (25854, 31, 86); --arjuna breeches -- MEVA
 INSERT INTO `item_mods` VALUES (25854, 68, 19); --arjuna breeches -- EVA
-INSERT INTO `item_mods` VALUES (25854, 161, -4); --arjuna breeches -- DMGPHYS
+INSERT INTO `item_mods` VALUES (25854, 161, -400); --arjuna breeches -- DMGPHYS
 INSERT INTO `item_mods` VALUES (25854, 170, 4); --arjuna breeches -- FASTCAST
 INSERT INTO `item_mods` VALUES (25854, 384, 500); --arjuna breeches -- HASTE_GEAR
 INSERT INTO `item_mods` VALUES (25854, 518, 3); --arjuna breeches -- SHIELDBLOCKRATE
@@ -235,7 +235,7 @@ INSERT INTO `item_mods` VALUES (25920, 27, 7); --ahosi leggings -- ENMITY
 INSERT INTO `item_mods` VALUES (25920, 29, 5); --ahosi leggings -- MDEF
 INSERT INTO `item_mods` VALUES (25920, 31, 107); --ahosi leggings -- MEVA
 INSERT INTO `item_mods` VALUES (25920, 68, 77); --ahosi leggings -- EVA
-INSERT INTO `item_mods` VALUES (25920, 161, -4); --ahosi leggings -- DMGPHYS
+INSERT INTO `item_mods` VALUES (25920, 161, -400); --ahosi leggings -- DMGPHYS
 INSERT INTO `item_mods` VALUES (25920, 384, 400); --ahosi leggings -- HASTE_GEAR
 INSERT INTO `item_mods` VALUES (25920, 15, 15); --ahosi leggings -- FIRE_MEVA
 INSERT INTO `item_mods` VALUES (25920, 16, 15); --ahosi leggings -- ICE_MEVA
@@ -422,7 +422,7 @@ INSERT INTO `item_mods` VALUES (25656, 29, 2); --ynglinga sallet -- MDEF
 INSERT INTO `item_mods` VALUES (25656, 31, 48); --ynglinga sallet -- MEVA
 INSERT INTO `item_mods` VALUES (25656, 48, 20); --ynglinga sallet -- WSACC
 INSERT INTO `item_mods` VALUES (25656, 68, 36); --ynglinga sallet -- EVA
-INSERT INTO `item_mods` VALUES (25656, 161, -3); --ynglinga sallet -- DMGPHYS
+INSERT INTO `item_mods` VALUES (25656, 161, -300); --ynglinga sallet -- DMGPHYS
 INSERT INTO `item_mods` VALUES (25656, 384, 700); --ynglinga sallet -- HASTE_GEAR
 INSERT INTO `item_mods` VALUES (25592, 11, 16); --hjarrandi helm -- AGI
 INSERT INTO `item_mods` VALUES (25592, 12, 26); --hjarrandi helm -- INT
@@ -2606,7 +2606,7 @@ INSERT INTO `item_mods` VALUES (20847, 430, 4); --router -- QUAD_ATTACK
 INSERT INTO `item_mods` VALUES (20847, 174, 6); --router -- SKILLCHAINBONUS
 INSERT INTO `item_mods` VALUES (20847, 23, 40); --router -- ATT
 INSERT INTO `item_mods` VALUES (20847, 8, 20); --router -- STR
-INSERT INTO `item_mods` VALUES (20848, 161, -3); --nibiru chopper -- DMGPHYS
+INSERT INTO `item_mods` VALUES (20848, 161, -300); --nibiru chopper -- DMGPHYS
 INSERT INTO `item_mods` VALUES (20848, 23, 10); --nibiru chopper -- ATT
 INSERT INTO `item_mods` VALUES (20848, 9, 7); --nibiru chopper -- DEX
 INSERT INTO `item_mods` VALUES (20848, 8, 7); --nibiru chopper -- STR
@@ -2894,7 +2894,7 @@ INSERT INTO `item_mods` VALUES (26958, 8, 37); --swellers harness -- STR
 INSERT INTO `item_mods` VALUES (26958, 2, 59); --swellers harness -- HP
 INSERT INTO `item_mods` VALUES (26958, 1, 129); --swellers harness -- DEF
 INSERT INTO `item_mods` VALUES (26959, 384, 300); --kubira meikogai -- HASTE_GEAR
-INSERT INTO `item_mods` VALUES (26959, 161, -10); --kubira meikogai -- DMGPHYS
+INSERT INTO `item_mods` VALUES (26959, 161, -1000); --kubira meikogai -- DMGPHYS
 INSERT INTO `item_mods` VALUES (26959, 68, 36); --kubira meikogai -- EVA
 INSERT INTO `item_mods` VALUES (26959, 31, 69); --kubira meikogai -- MEVA
 INSERT INTO `item_mods` VALUES (26959, 29, 4); --kubira meikogai -- MDEF
@@ -3434,7 +3434,7 @@ INSERT INTO `item_mods` VALUES (23481, 68, 69); --lanun frac +3 -- EVA
 INSERT INTO `item_mods` VALUES (23481, 31, 84); --lanun frac +3 -- MEVA
 INSERT INTO `item_mods` VALUES (23481, 29, 8); --lanun frac +3 -- MDEF
 INSERT INTO `item_mods` VALUES (23481, 384, 400); --lanun frac +3 -- HASTE_GEAR
-INSERT INTO `item_mods` VALUES (23481, 161, -6); --lanun frac +3 -- DMGPHYS
+INSERT INTO `item_mods` VALUES (23481, 161, -600); --lanun frac +3 -- DMGPHYS
 INSERT INTO `item_mods` VALUES (23548, 1, 109); --lanun gants +3 -- DEF
 INSERT INTO `item_mods` VALUES (23548, 2, 65); --lanun gants +3 -- HP
 INSERT INTO `item_mods` VALUES (23548, 8, 26); --lanun gants +3 -- STR
@@ -3674,7 +3674,7 @@ INSERT INTO `item_mods` VALUES (23412, 371, -5); --glyphic horn +3 -- AVATAR_PER
 INSERT INTO `item_mods` VALUES (23617, 25, 45); --horos tights +3 -- ACC
 INSERT INTO `item_mods` VALUES (23550, 291, 6); --horos bangles +3 -- COUNTER
 INSERT INTO `item_mods` VALUES (23550, 14, 36); --horos bangles +3 -- CHR
-INSERT INTO `item_mods` VALUES (23483, 161, -6); --horos casaque +3 -- DMGPHYS
+INSERT INTO `item_mods` VALUES (23483, 161, -600); --horos casaque +3 -- DMGPHYS
 INSERT INTO `item_mods` VALUES (23483, 12, 33); --horos casaque +3 -- INT
 INSERT INTO `item_mods` VALUES (23416, 29, 4); --horos tiara +3 -- MDEF
 INSERT INTO `item_mods` VALUES (23416, 10, 25); --horos tiara +3 -- VIT
@@ -3808,7 +3808,7 @@ INSERT INTO `item_mods` VALUES (23419, 31, 73); --futhark bandeau +3 -- MEVA
 INSERT INTO `item_mods` VALUES (23419, 29, 4); --futhark bandeau +3 -- MDEF
 INSERT INTO `item_mods` VALUES (23419, 384, 800); --futhark bandeau +3 -- HASTE_GEAR
 INSERT INTO `item_mods` VALUES (23419, 301, 7); --futhark bandeau +3 -- PHALANX
-INSERT INTO `item_mods` VALUES (23419, 161, -6); --futhark bandeau +3 -- DMGPHYS
+INSERT INTO `item_mods` VALUES (23419, 161, -600); --futhark bandeau +3 -- DMGPHYS
 INSERT INTO `item_mods` VALUES (23486, 1, 156); --futhark coat +3 -- DEF
 INSERT INTO `item_mods` VALUES (23486, 2, 119); --futhark coat +3 -- HP
 INSERT INTO `item_mods` VALUES (23486, 5, 104); --futhark coat +3 -- MP
