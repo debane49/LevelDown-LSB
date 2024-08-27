@@ -51,7 +51,6 @@ custom/lua/VWNotMon.lua
 custom/lua/add_silt.lua
 custom/lua/Escha_ZitahNMs.lua
 custom/lua/choc_race.lua
-custom/lua/freerelic.lua
 custom/lua/unitybattle.lua
 custom/lua/freeabby.lua
 custom/lua/craft_rank_reward.lua

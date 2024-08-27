@@ -2156,16 +2156,16 @@ page15 =
 }
 
 
-m:addOverride('xi.zones.Celennia_Memorial_Library.Zone.onInitialize', function(zone)
+m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize', function(zone)
     super(zone)
     local npc = zone:insertDynamicEntity({
         objtype = xi.objType.NPC,
         name = 'Alfred',
         look = '01000001cd10e620e630eb40eb50006000700000',
-        x = -107.8952,
-        y = -2.1500,
-        z = -92.4143,
-        rotation = 29,
+        x = 376.0488,
+        y = -2.2232,
+        z = -568.0360,
+        rotation = 119,
 
         onTrade = function(player, npc, trade)
             -- Do stuff

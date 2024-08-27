@@ -974,7 +974,7 @@ page15 =
     },
 }
 
-m:addOverride('xi.zones.Celennia_Memorial_Library.Zone.onInitialize', function(zone)
+m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize', function(zone)
     -- Call the zone's original function for onInitialize
     super(zone)
     local GMNpc = zone:insertDynamicEntity({
@@ -983,10 +983,10 @@ m:addOverride('xi.zones.Celennia_Memorial_Library.Zone.onInitialize', function(z
         objtype = xi.objType.NPC,
         name = 'GM Event NPC',
         look = 1548,
-        x = -114.8606,
-        y = -2.1500,
-        z = -88.3228,
-        rotation = 32,
+        x = 376.5812,
+        y = -2.1266,
+        z = -570.4529,
+        rotation = 115,
         widescan = 1,
 
         onTrade = function(player, npc, trade)

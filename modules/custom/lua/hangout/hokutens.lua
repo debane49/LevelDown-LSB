@@ -340,16 +340,16 @@ page8 =
 23811,1000, -- knit cap +1
 }
 
-m:addOverride('xi.zones.Celennia_Memorial_Library.Zone.onInitialize', function(zone)
+m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize', function(zone)
     super(zone)
     local draconius = zone:insertDynamicEntity({
         objtype = xi.objType.NPC,
         name = 'Hokutens',
         look = 3110,
-        x         = -102.1218,
-        y         = -2.1500,
-        z         = -97.6942,
-        rotation = 159,
+        x         = 377.8299,
+        y         = -3.7896,
+        z         = -560.0650,
+        rotation = 123,
         widescan = 1,
         onTrade = function(player, npc, trade)
         end,
