@@ -33,47 +33,72 @@ local function getAuraLdr(player)
     return auraLdr
 end
 
-effectObject.onEffectGain = function(target, effect)
-local auraLdra = getAuraLdr(target)
-local bodyAura = 0
-local power = 0
-local party = target:getParty()
-
-local equipItem = auraLdra:getEquipID(xi.slot.BODY)
-if bodyAura == 0 then 
-   for k, v in ipairs(auraBonuses) do
-        if equipItem == v[3] then
-           bodyAura = v[1]
-           power    = v[2]
-        end
-   end
+local function getAuraTableAdd(target, effect)
+            local bodyAura = 0
+            local power = 0
+            local party = target:getParty()
+            local leaders = {}
+                for _, member in ipairs(party) do
+                    if member:hasStatusEffect(xi.effect.HUM) then
+                    table.insert(leaders, {name = member})
+                    end
+                end
+            local auraTable = {}
+                for _, aleader in ipairs(leaders) do 
+                    for k, v in ipairs(auraBonuses) do
+                        if aleader.name:getEquipID(xi.slot.BODY) == v[3] then
+                          -- target:printToPlayer(string.format('%s', aleader.name))
+                           table.insert(auraTable, {bodyAura = v[1], power = v[2]})
+                        end
+                    end
+                end
+            for _, addAuras in ipairs(auraTable) do
+             --   target:printToPlayer(string.format('%s %s',addAuras.bodyAura,addAuras.power ))
+                target:addMod(addAuras.bodyAura, addAuras.power)
+                target:setCharVar('[BodyAura]', 1)
+            end
 end
-       target:addMod(bodyAura, power)
+
+local function getAuraTableRemove(target, effect)
+            local bodyAura = 0
+            local power = 0
+            local party = target:getParty()
+            local leaders = {}
+                for _, member in ipairs(party) do
+                    if member:hasStatusEffect(xi.effect.HUM) then
+                    table.insert(leaders, {name = member})
+                    end
+                end
+            local auraTable = {}
+                for _, aleader in ipairs(leaders) do 
+                    for k, v in ipairs(auraBonuses) do
+                        if aleader.name:getEquipID(xi.slot.BODY) == v[3] then
+                          -- target:printToPlayer(string.format('%s', aleader.name))
+                           table.insert(auraTable, {bodyAura = v[1], power = v[2]})
+                        end
+                    end
+                end
+            for _, addAuras in ipairs(auraTable) do
+             --   target:printToPlayer(string.format('%s %s',addAuras.bodyAura,addAuras.power ))
+                target:delMod(addAuras.bodyAura, addAuras.power)
+                target:setCharVar('[BodyAura]', 1)
+            end
+end
+
+effectObject.onEffectGain = function(target, effect)
+    if target:getCharVar('[BodyAura]') == 0 then
+       getAuraTableAdd(target)
+    end
 end
 
 effectObject.onEffectTick = function(target, effect)
-    local auraLdra = getAuraLdr(target)
-        if auraLdra:checkDistance(target) >= 10 then
-           target:delStatusEffect(xi.effect.ENSPHERE)
-        end
+if target:getCharVar('[BodyAura]') == 1 then
+return
+end
 end
 
 effectObject.onEffectLose = function(target, effect)
-local auraLdra = getAuraLdr(target)
-local bodyAura = 0
-local power = 0
-local party = target:getParty()
-
-local equipItem = auraLdra:getEquipID(xi.slot.BODY)
-if bodyAura == 0 then 
-   for k, v in ipairs(auraBonuses) do
-        if equipItem == v[3] then
-           bodyAura = v[1]
-           power    = v[2]
-        end
-   end
-end
-       target:delMod(bodyAura, power)
+       getAuraTableRemove(target)
 end
 
 return effectObject

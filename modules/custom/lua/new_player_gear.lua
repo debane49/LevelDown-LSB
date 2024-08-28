@@ -361,6 +361,7 @@ local gmlvl = player:getGMLevel()
         local decoratedMessage = string.format('%s %s %s %s %s %s %s', openingDecoration, mid1Decoration, mid2Decoration, message, end1Decoration, end2Decoration, closingDecoration)
         player:printToArea(decoratedMessage, xi.msg.channel.SYSTEM_3, 0)        
         end
+        player:setCharVar('[BodyAura]', 0) -- remove aftermath of Sphere gear if crash or log out 
 end)
 
 return m
