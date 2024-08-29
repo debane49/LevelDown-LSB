@@ -1,8 +1,9 @@
 -----------------------------------
--- Area: Full Moon Fountain
---  Mob: Fenrir Prime
--- Involved in Quest: the moonlit path II HTBF
-local ID = zones[xi.zone.FULL_MOON_FOUNTAIN]
+-- Area: The Shrouded Maw
+--  Mob: Diabolos Prime HTBF
+-----------------------------------
+local ID = zones[xi.zone.THE_SHROUDED_MAW]
+-----------------------------------
 -----------------------------------
 mixins = { require('scripts/mixins/job_special') }
 -----------------------------------
@@ -44,12 +45,11 @@ entity.onMobSpawn = function(mob)
         mob:setMod(xi.mod.FASTCAST, 50)
         mob:addStatusEffect(xi.effect.REGEN,  25, 3, 0)
         mob:addStatusEffect(xi.effect.REGAIN, 10, 3, 0)
-
     xi.mix.jobSpecial.config(mob, {
         specials =
         {
-            { id = 839, hpp = math.random(60, 85) }, -- uses howling moon once while near 50% HPP.
-            { id = 839, hpp = math.random(20, 45) }, -- uses howling moon once while near 50% HPP.
+            { id = 1911, hpp = math.random(60, 85) }, -- uses  Ruinous Omen once while near 75% HPP.
+            { id = 1911, hpp = math.random(20, 45) }, -- uses  Ruinous Omen once while near 30% HPP.
         },
     })
 end

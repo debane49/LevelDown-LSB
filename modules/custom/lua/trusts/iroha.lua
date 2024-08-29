@@ -85,17 +85,22 @@ end)
 m:addOverride('xi.actions.spells.trust.iroha.onMobSpawn', function(mob)
     xi.trust.message(mob, xi.trust.messageOffset.SPAWN)
     local heal = mob:getMaxHP()
-    local Bonus = mob:getMainLvl() * 2
+    local Bonus = 0
+ if mob:getMaster():getMainLvl() == 99 then
+     Bonus = mob:getMainLvl() * 2.5
+ else
+     Bonus = mob:getMainLvl() * 1
+ end
     mob:setLocalVar('IrohaRaise', 1)
     mob:setUnkillable(true)
     mob:addMod(xi.mod.REGAIN, 15)
     mob:addMod(xi.mod.ATT, Bonus)
-    mob:addMod(xi.mod.ACC, Bonus + 200)
+    mob:addMod(xi.mod.ACC, Bonus + 100)
     mob:addMod(xi.mod.DEF, Bonus)
     mob:setMod(xi.mod.MAIN_DMG_RATING, 33)
     mob:setMod(xi.mod.DOUBLE_ATTACK, 25)
-    mob:setMod(xi.mod.SAVETP, 400)
-    mob:setMod(xi.mod.STORETP, 300)
+    mob:setMod(xi.mod.SAVETP, 200)
+    mob:setMod(xi.mod.STORETP, 150)
     mob:addStatusEffect(xi.effect.MAX_MP_BOOST, 100, 0, 0)
     mob:setMP(mob:getMaxMP())
      
@@ -135,14 +140,15 @@ end)
 -----------------------------------------------
 m:addOverride('xi.actions.spells.trust.iroha_ii.onMobSpawn', function(mob)
     xi.trust.message(mob, xi.trust.messageOffset.SPAWN)
+    local Bonus = 0
  if mob:getMaster():getMainLvl() == 99 then
-    local Bonus = mob:getMainLvl() * 2.5
+     Bonus = mob:getMainLvl() * 2.5
  else
-    local Bonus = mob:getMainLvl() * 1
+     Bonus = mob:getMainLvl() * 1
  end
     mob:addMod(xi.mod.REGAIN, 25)
     mob:addMod(xi.mod.ATT, Bonus)
-    mob:addMod(xi.mod.ACC, Bonus + 200)
+    mob:addMod(xi.mod.ACC, Bonus + 100)
     mob:addMod(xi.mod.DEF, Bonus)
     mob:setMod(xi.mod.MAIN_DMG_RATING, 33)
     mob:setMod(xi.mod.DOUBLE_ATTACK, 25)
