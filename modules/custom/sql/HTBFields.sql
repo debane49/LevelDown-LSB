@@ -340,9 +340,207 @@ INSERT INTO mob_spell_lists VALUES('Diabolos_Prime_HTBF', 515, 260, 1, 255); -- 
 INSERT INTO mob_spell_lists VALUES('Diabolos_Prime_HTBF', 515, 252, 1, 255); -- stun
 
 
-
-
-
+-- Ark Angel HTBF HTBF updates
+INSERT INTO `mob_pools` VALUES (40009,'Ark_Angel_EV_HTBF','Ark_Angel_EV',352,0x0000110300000000000000000000000000000000,7,3,3,240,125,0,1,1,1,18,0,32,1595,1051,0,0,518,0,0,352,352);
+INSERT INTO `mob_pools` VALUES (40010,'Ark_Angel_GK_HTBF','Ark_Angel_GK',353,0x0000140300000000000000000000000000000000,12,14,10,240,125,0,1,1,1,18,0,32,693,1179,0,0,0,0,0,353,353);
+INSERT INTO `mob_pools` VALUES (40011,'Ark_Angel_HM_HTBF','Ark_Angel_HM',354,0x0000100300000000000000000000000000000000,1,13,3,240,125,0,1,1,1,18,0,32,3139,1179,0,0,517,0,0,354,354);
+INSERT INTO `mob_pools` VALUES (40012,'Ark_Angel_MR_HTBF','Ark_Angel_MR',355,0x0000120300000000000000000000000000000000,9,6,2,240,125,0,1,1,1,18,0,32,4504,1051,0,0,0,0,0,355,355);
+INSERT INTO `mob_pools` VALUES (40013,'Ark_Angel_TT_HTBF','Ark_Angel_TT',356,0x0000130300000000000000000000000000000000,4,8,7,240,125,2,1,1,1,18,0,32,1129,1179,0,0,516,0,0,356,356);
+INSERT INTO `mob_pools` VALUES (40014,'Ark_Angels_Mandragora','Ark_Angels_Mandragora',178,0x00002D0100000000000000000000000000000000,2,2,1,480,100,0,1,0,1,18,0,0,0,1667,8,0,0,0,0,178,178);
+INSERT INTO `mob_pools` VALUES (40015,'Ark_Angels_Tiger','Ark_Angels_Tiger',242,0x0000340100000000000000000000000000000000,1,1,7,240,100,0,1,0,1,18,0,0,0,1153,0,0,0,0,0,242,242);
+INSERT INTO `mob_pools` VALUES (40016,'Ark_Angels_Wyvern','Ark_Angels_Wyvern',193,0x00000C0300000000000000000000000000000000,14,1,7,200,100,0,1,0,1,18,0,0,0,1157,0,0,0,0,0,714,193);
+INSERT INTO `mob_groups` VALUES (11500, 40009, 180, 'Ark_Angel_EV_HTBF',0,128,3929,155000,9999,115,120,0);
+INSERT INTO `mob_groups` VALUES (11501, 40010, 180, 'Ark_Angel_GK_HTBF',0,128,3930,155000,9999,115,120,0);
+INSERT INTO `mob_groups` VALUES (11502, 40011, 180, 'Ark_Angel_HM_HTBF',0,128,3931,155000,9999,115,120,0);
+INSERT INTO `mob_groups` VALUES (11503, 40012, 180, 'Ark_Angel_MR_HTBF',0,128,3932,155000,9999,115,120,0);
+INSERT INTO `mob_groups` VALUES (11504, 40013, 180, 'Ark_Angel_TT_HTBF',0,128,3933,155000,9999,115,120,0);
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_EV_HTBF',     groupid = 11500, pos_X = -13.9772,   pos_y = -18.7160,  pos_z = 14.2155,  pos_rot =  33 WHERE mobid = 17514701;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_EV_HTBF',     groupid = 11500, pos_X = -562.3348,  pos_y = 242.6680,  pos_z = 56.3998,  pos_rot =  33 WHERE mobid = 17514702;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_EV_HTBF',     groupid = 11500, pos_X = -477.6799,  pos_y = -317.6700, pos_z = 79.2236,  pos_rot =  33 WHERE mobid = 17514703;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_TT_HTBF',     groupid = 11504, pos_X = -13.9772,   pos_y = -18.7160,  pos_z = 14.2155,  pos_rot =  33 WHERE mobid = 17514704;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_TT_HTBF',     groupid = 11504, pos_X = -562.3348,  pos_y = 242.6680,  pos_z = 56.3998,  pos_rot =  33 WHERE mobid = 17514705;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_TT_HTBF',     groupid = 11504, pos_X = -477.6799,  pos_y = -317.6700, pos_z = 79.2236,  pos_rot =  33 WHERE mobid = 17514706;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_GK_HTBF',     groupid = 11501, pos_X = -13.9772,   pos_y = -18.7160,  pos_z = 14.2155,  pos_rot =  33 WHERE mobid = 17514707;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_GK_HTBF',     groupid = 11501, pos_X = -562.3348,  pos_y = 242.6680,  pos_z = 56.3998,  pos_rot =  33 WHERE mobid = 17514708;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_GK_HTBF',     groupid = 11501, pos_X = -477.6799,  pos_y = -317.6700, pos_z = 79.2236,  pos_rot =  33 WHERE mobid = 17514709;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Wyvern',                      pos_X = -13.9772,   pos_y = -18.7160,  pos_z = 14.2155,  pos_rot =  33 WHERE mobid = 17514710;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Wyvern',                      pos_X = -562.3348,  pos_y = 242.6680,  pos_z = 56.3998,  pos_rot =  33 WHERE mobid = 17514711;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Wyvern',                      pos_X = -477.6799,  pos_y = -317.6700, pos_z = 79.2236,  pos_rot =  33 WHERE mobid = 17514712;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_HM_HTBF',     groupid = 11502, pos_X = -13.9772,   pos_y = -18.7160,  pos_z = 14.2155,  pos_rot =  33 WHERE mobid = 17514737;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_HM_HTBF',     groupid = 11502, pos_X = -562.3348,  pos_y = 242.6680,  pos_z = 56.3998,  pos_rot =  33 WHERE mobid = 17514738;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_HM_HTBF',     groupid = 11502, pos_X = -477.6799,  pos_y = -317.6700, pos_z = 79.2236,  pos_rot =  33 WHERE mobid = 17514739;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_MR_HTBF',     groupid = 11503, pos_X = -13.9772,   pos_y = -18.7160,  pos_z = 14.2155,  pos_rot =  33 WHERE mobid = 17514740;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_MR_HTBF',     groupid = 11503, pos_X = -562.3348,  pos_y = 242.6680,  pos_z = 56.3998,  pos_rot =  33 WHERE mobid = 17514741;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_MR_HTBF',     groupid = 11503, pos_X = -477.6799,  pos_y = -317.6700, pos_z = 79.2236,  pos_rot =  33 WHERE mobid = 17514742;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Tiger',                       pos_X = -13.9772,   pos_y = -18.7160,  pos_z = 14.2155,  pos_rot =  33 WHERE mobid = 17514743;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Tiger',                       pos_X = -562.3348,  pos_y = 242.6680,  pos_z = 56.3998,  pos_rot =  33 WHERE mobid = 17514744;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Tiger',                       pos_X = -477.6799,  pos_y = -317.6700, pos_z = 79.2236,  pos_rot =  33 WHERE mobid = 17514745;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Mandragora',                  pos_X = -13.9772,   pos_y = -18.7160,  pos_z = 14.2155,  pos_rot =  33 WHERE mobid = 17514746;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Mandragora',                  pos_X = -562.3348,  pos_y = 242.6680,  pos_z = 56.3998,  pos_rot =  33 WHERE mobid = 17514747;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Mandragora',                  pos_X = -477.6799,  pos_y = -317.6700, pos_z = 79.2236,  pos_rot =  33 WHERE mobid = 17514748;
+INSERT INTO mob_droplist VALUES(3931,0,0,1000,4069,1000); -- Rem Tale Ch 6
+INSERT INTO mob_droplist VALUES(3931,0,0,250,4069,1000); -- Rem Tale Ch 6
+INSERT INTO mob_droplist VALUES(3931,1,1,750,8710,375); -- Buried Vestige
+INSERT INTO mob_droplist VALUES(3931,1,1,750,8719,375); -- Maliyakaleya Coral
+INSERT INTO mob_droplist VALUES(3931,1,2,500,20864,250); -- Castigation
+INSERT INTO mob_droplist VALUES(3931,1,2,500,20733,250); -- Anahera Saber
+INSERT INTO mob_droplist VALUES(3931,1,3,750,27744,225); -- Lithelimb Cap
+INSERT INTO mob_droplist VALUES(3931,1,3,750,21427,225); -- Bloodrain Strap
+INSERT INTO mob_droplist VALUES(3931,1,3,750,28311,200); -- Manabyss Pigaches
+INSERT INTO mob_droplist VALUES(3933,0,0,1000,4073,1000); -- Rem Tale Ch 10
+INSERT INTO mob_droplist VALUES(3933,0,0,250,4073,1000); -- Rem Tale Ch 10
+INSERT INTO mob_droplist VALUES(3933,1,1,1000,8710,375); -- Buried Vestige
+INSERT INTO mob_droplist VALUES(3933,1,1,1000,8721,375); -- Hepatizon Ore
+INSERT INTO mob_droplist VALUES(3933,1,2,1000,20913,250); -- Anahera Scythe
+INSERT INTO mob_droplist VALUES(3933,1,2,1000,21181,250); -- Venabulum
+INSERT INTO mob_droplist VALUES(3933,1,3,1000,28174,225); -- Theurgists Slacks
+INSERT INTO mob_droplist VALUES(3933,1,3,1000,28312,225); -- Scamps Sollerets
+INSERT INTO mob_droplist VALUES(3933,1,3,1000,28616,200); -- Fravashi Mantle
+INSERT INTO mob_droplist VALUES(3932,0,0,1000,4072,1000); -- Rem Tale Ch 8
+INSERT INTO mob_droplist VALUES(3932,0,0,250,4072,1000); -- Rem Tale Ch 8
+INSERT INTO mob_droplist VALUES(3932,1,1,1000,8710,375); -- Buried Vestige
+INSERT INTO mob_droplist VALUES(3932,1,1,1000,8723,375); -- Beryllium Ore
+INSERT INTO mob_droplist VALUES(3932,1,2,1000,20997,250); -- Raimitsukane
+INSERT INTO mob_droplist VALUES(3932,1,2,1000,20822,250); -- Anahera Tabar
+INSERT INTO mob_droplist VALUES(3932,1,3,1000,28025,225); -- Regimen Mittens
+INSERT INTO mob_droplist VALUES(3932,1,3,1000,27745,225); -- Felistris Mask
+INSERT INTO mob_droplist VALUES(3932,1,3,1000,28461,200); -- Sekhmet Corset
+INSERT INTO mob_droplist VALUES(3929,0,0,1000,4070,1000); -- Rem Tale Ch 7
+INSERT INTO mob_droplist VALUES(3929,0,0,250,4070,1000); -- Rem Tale Ch 7
+INSERT INTO mob_droplist VALUES(3929,1,1,1000,8710,375); -- Buried Vestige
+INSERT INTO mob_droplist VALUES(3929,1,1,1000,8725,375); -- Exalted Log
+INSERT INTO mob_droplist VALUES(3929,1,2,1000,20734,250); -- Anahera Sword
+INSERT INTO mob_droplist VALUES(3929,1,2,1000,21116,250); -- Cagliostros Rod
+INSERT INTO mob_droplist VALUES(3929,1,3,1000,28173,225); -- Osmium Cuisses
+INSERT INTO mob_droplist VALUES(3929,1,3,1000,28578,225); -- Patricius Ring
+INSERT INTO mob_droplist VALUES(3929,1,3,1000,28034,200); -- Dynasty Mitts
+INSERT INTO mob_droplist VALUES(3930,0,0,1000,4072,1000); -- Rem Tale Ch 9
+INSERT INTO mob_droplist VALUES(3930,0,0,250,4072,1000); -- Rem Tale Ch 9
+INSERT INTO mob_droplist VALUES(3930,1,1,1000,8710,375); -- Buried Vestige
+INSERT INTO mob_droplist VALUES(3930,1,1,1000,8727,375); -- Sifs Lock
+INSERT INTO mob_droplist VALUES(3930,1,2,1000,20765,250); -- Tunglmyrkvi
+INSERT INTO mob_droplist VALUES(3930,1,2,1000,21049,250); -- Anahera Blade
+INSERT INTO mob_droplist VALUES(3930,1,3,1000,28389,225); -- Agitators Collar
+INSERT INTO mob_droplist VALUES(3930,1,3,1000,28035,225); -- Lurid Mitts
+INSERT INTO mob_droplist VALUES(3930,1,3,1000,28313,200); -- Daihanshi Habaki
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,148,1,255); -- fire_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,153,1,255); -- blizzard_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,158,1,255); -- aero_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,163,1,255); -- stone_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,168,1,255); -- thunder_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,173,1,255); -- water_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,178,1,255); -- firaga_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,183,1,255); -- blizzaga_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,188,1,255); -- aeroga_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,193,1,255); -- stonega_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,198,1,255); -- thundaga_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,203,1,255); -- waterga_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,205,1,255); -- flare_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,207,1,255); -- freeze_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,209,1,255); -- tornado_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,211,1,255); -- quake_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,213,1,255); -- burst_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,215,1,255); -- flood_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,221,1,255); -- poison_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,226,1,255); -- poisonga_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,232,1,255); -- bio_iii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,246,1,255); -- drain_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,248,1,255); -- aspir_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,249,1,255); -- blaze_spikes
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,252,1,255); -- stun
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,259,1,255); -- sleep_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,266,1,255); -- absorb-str
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,267,1,255); -- absorb-dex
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,268,1,255); -- absorb-vit
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,269,1,255); -- absorb-agi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,270,1,255); -- absorb-int
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,271,1,255); -- absorb-mnd
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,272,1,255); -- absorb-chr
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,274,1,255); -- sleepga_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelTTHTBF',516,275,1,255); -- absorb-tp
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,508,1,255); -- yurin_ichi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,319,1,255); -- aisha_ichi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,507,1,255); -- myoshu_ichi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,509,1,255); -- kakka_ichi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,410,1,255); -- puppets_operetta
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,320,1,255); -- katon_ichi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,321,1,255); -- katon_ni
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,322,1,255); -- katon_san
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,323,1,255); -- hyoton_ichi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,324,1,255); -- hyoton_ni
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,325,1,255); -- hyoton_san
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,326,1,255); -- huton_ichi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,327,1,255); -- huton_ni
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,328,1,255); -- huton_san
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,329,1,255); -- doton_ichi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,330,1,255); -- doton_ni
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,331,1,255); -- doton_san
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,332,1,255); -- raiton_ichi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,333,1,255); -- raiton_ni
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,334,1,255); -- raiton_san
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,335,1,255); -- suiton_ichi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,336,1,255); -- suiton_ni
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,337,1,255); -- suiton_san
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,338,1,255); -- utsusemi_ichi
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,339,1,255); -- utsusemi_ni
+INSERT INTO mob_spell_lists VALUES ('ArkAngelHM',517,340,1,255); -- utsusemi_san
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,5,1,255); -- cure_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,14,1,255); -- poisona
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,15,1,255); -- paralyna
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,16,1,255); -- blindna
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,17,1,255); -- silena
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,18,1,255); -- stona
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,22,1,255); -- holy_ii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,25,1,255); -- dia_iii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,32,1,255); -- banish_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,35,1,255); -- diaga_iii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,47,1,255); -- protect_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,52,1,255); -- shell_v
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,53,1,255); -- blink
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,54,1,255); -- stoneskin
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,111,1,255); -- regen_iii
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,112,1,255); -- flash
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,106,1,255); -- phalanx
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,97,1,255); -- reprisal
+INSERT INTO mob_spell_lists VALUES ('ArkAngelEV',518,855,1,255); -- enlight_ii
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_EV_HTBF',     groupid = 11500, pos_X = -13.9772,   pos_y = -18.7160,  pos_z = 14.2155,  pos_rot =  33 WHERE mobid = 17514781;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_TT_HTBF',     groupid = 11504, pos_X = -16.0718,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  54 WHERE mobid = 17514782;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_GK_HTBF',     groupid = 11501, pos_X = -18.6289,   pos_y = -18.7163,  pos_z = 14.2155,  pos_rot =  50 WHERE mobid = 17514783;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Wyvern',                      pos_X = -18.6289,   pos_y = -18.7163,  pos_z = 14.2155,  pos_rot =  50 WHERE mobid = 17514784;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_HM_HTBF',     groupid = 11502, pos_X =  -9.1463,   pos_y = -18.7163,  pos_z = 14.2155,  pos_rot =  43 WHERE mobid = 17514777;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angel_MR_HTBF',     groupid = 11503, pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17514778;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Tiger',                       pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17514779;
+UPDATE mob_spawn_points SET mobname = 'Ark_Angels_Mandragora',                  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17514780;
+INSERT INTO mob_droplist VALUES (3934,1,2,1000,4069,200); -- Rem Tale Ch 6
+INSERT INTO mob_droplist VALUES (3934,1,2,1000,4070,200); -- Rem Tale Ch 7
+INSERT INTO mob_droplist VALUES (3934,1,2,1000,4072,200); -- Rem Tale Ch 8
+INSERT INTO mob_droplist VALUES (3934,1,2,1000,4072,200); -- Rem Tale Ch 9
+INSERT INTO mob_droplist VALUES (3934,1,2,1000,4073,200); -- Rem Tale Ch 10
+INSERT INTO mob_droplist VALUES (3934,1,2,500,4069,100); -- Rem Tale Ch 6
+INSERT INTO mob_droplist VALUES (3934,1,2,500,4070,100); -- Rem Tale Ch 7
+INSERT INTO mob_droplist VALUES (3934,1,2,500,4072,100); -- Rem Tale Ch 8
+INSERT INTO mob_droplist VALUES (3934,1,2,500,4072,100); -- Rem Tale Ch 9
+INSERT INTO mob_droplist VALUES (3934,1,2,500,4073,100); -- Rem Tale Ch 10
+INSERT INTO mob_droplist VALUES (3934,1,3,1000,8710,166); -- Buried Vestige
+INSERT INTO mob_droplist VALUES (3934,1,3,1000,8719,167); -- Maliyakaleya Coral
+INSERT INTO mob_droplist VALUES (3934,1,3,1000,8721,166); -- Hepatizon Ore
+INSERT INTO mob_droplist VALUES (3934,1,3,1000,8723,167); -- Beryllium Ore
+INSERT INTO mob_droplist VALUES (3934,1,3,1000,8725,167); -- Exalted Log
+INSERT INTO mob_droplist VALUES (3934,1,3,1000,8727,167); -- Sifs Lock
+INSERT INTO mob_droplist VALUES (3934,1,4,750,21381,250); -- Seraphicaller
+INSERT INTO mob_droplist VALUES (3934,1,4,750,21452,250); -- Divinator
+INSERT INTO mob_droplist VALUES (3934,1,4,750,22261,250); -- Divinator II
+INSERT INTO mob_droplist VALUES (3934,1,5,1000,21425,145); -- Lentus Grip
+INSERT INTO mob_droplist VALUES (3934,1,5,1000,27888,145); -- Kyujutsugi
+INSERT INTO mob_droplist VALUES (3934,1,5,1000,28517,142); -- Crematio Earring
+INSERT INTO mob_droplist VALUES (3934,1,5,1000,28515,142); -- Trux Earring
+INSERT INTO mob_droplist VALUES (3934,1,5,1000,28519,142); -- Tripudio Earring
+INSERT INTO mob_droplist VALUES (3934,1,5,1000,28516,142); -- Sanare Earring
+INSERT INTO mob_droplist VALUES (3934,1,5,1000,28518,142); -- Gelai Earring
+-- tt           
+--  -13.9772   -18.7160  14.2155 33
+--  -562.3348  -242.6680 56.3998 33
+--  - 477.6799 -317.6700 79.2236 33
 
 /*
 
