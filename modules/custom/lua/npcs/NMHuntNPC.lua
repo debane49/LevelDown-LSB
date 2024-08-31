@@ -188,7 +188,6 @@ page2 =
         function(player)
         local totalkillc = player:getCharVar('[NMHunt]TOneKills') + player:getCharVar('[NMHunt]TTwoKills') + player:getCharVar('[NMHunt]TThreeKills') + player:getCharVar('[NMHunt]TFourKills') + player:getCharVar('[NMHunt]TFiveKills') + player:getCharVar('[NMHunt]TSixKills')
           if totalkillc >= 100 and
-             player:getCharVar('FreeRelic') ~= 1 and
              player:getCharVar('FreeRelic') ~= 2 and
              player:getCharVar('FreeRelic') ~= 3 and
              player:getCharVar('NaMiSkipComp') == 1 then

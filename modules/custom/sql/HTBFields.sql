@@ -33,14 +33,8 @@ INSERT INTO `bcnm_records` VALUES (1059,36,'dawn_ii'                     ,'nobod
 INSERT INTO `bcnm_records` VALUES (1093,57,'legacy_of_the_lost_ii'       ,'nobody',0,1800);
 INSERT INTO `bcnm_records` VALUES (1157,67,'puppet_in_peril_ii'          ,'nobody',0,1800);
 
-
-
-
 -- assign Mobs into battle fields
 -- Garuda Prim HTBF updated
--- INSERT INTO `bcnm_battlefield` VALUES ( 421, 1,17600540,3); 
--- INSERT INTO `bcnm_battlefield` VALUES ( 421, 2,17600541,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 421, 3,17600542,3);
 INSERT INTO mob_spell_lists VALUES ('Garuda_Prime_HTBF', 506, 188, 65, 255); -- Aeroga V
 INSERT INTO mob_spell_lists VALUES ('Garuda_Prime_HTBF', 506, 209, 65, 255); -- Tornado 2
 INSERT INTO mob_spell_lists VALUES ('Garuda_Prime_HTBF', 506,  79, 65, 255); -- Slow II
@@ -66,9 +60,6 @@ INSERT INTO mob_droplist VALUES(3921,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3921,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3921,1,4,1000,8727,200); -- Sif's Lock
 -- Ramuh Prim HTBF updated
--- INSERT INTO `bcnm_battlefield` VALUES ( 453, 1,17604639,3); 
--- INSERT INTO `bcnm_battlefield` VALUES ( 453, 2,17604640,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 453, 3,17604641,3);
 INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507, 198, 65, 255); -- Thundega V
 INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507, 213, 65, 255); -- Burst 2
 INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507,  79, 65, 255); -- Slow II
@@ -94,9 +85,6 @@ INSERT INTO mob_droplist VALUES(3923,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3923,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3923,1,4,1000,8727,200); -- Sif's Lock
 -- Shiva Prim HTBF updated
--- INSERT INTO `bcnm_battlefield` VALUES ( 485, 1,17608747,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 485, 2,17608748,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 485, 3,17608749,3);
 INSERT INTO mob_spell_lists VALUES ('Shiva_Prime_HTBF', 508, 183, 65, 255); -- Blizzaga V
 INSERT INTO mob_spell_lists VALUES ('Shiva_Prime_HTBF', 508, 207, 65, 255); -- Freeze 2
 INSERT INTO mob_spell_lists VALUES ('Shiva_Prime_HTBF', 508,  79, 65, 255); -- Slow II
@@ -122,9 +110,6 @@ INSERT INTO mob_droplist VALUES(3922,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3922,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3922,1,4,1000,8727,200); -- Sif's Lock
 -- Leviathan Prim HTBF updated
--- INSERT INTO `bcnm_battlefield` VALUES ( 612, 1,17641497,3); 
--- INSERT INTO `bcnm_battlefield` VALUES ( 612, 2,17641498,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 612, 3,17641499,3);
 INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 203, 65, 255); -- Waterga V
 INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509, 215, 65, 255); -- Flood 2
 INSERT INTO mob_spell_lists VALUES ('Leviathan_Prime_HTBF', 509,  79, 65, 255); -- Slow II
@@ -150,9 +135,6 @@ INSERT INTO mob_droplist VALUES(3920,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3920,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3920,1,4,1000,8727,200); -- Sif's Lock
 -- Ifrit Prim HTBF updated
--- INSERT INTO `bcnm_battlefield` VALUES ( 548, 1,17625113,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 548, 2,17625114,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 548, 3,17625115,3);
 INSERT INTO mob_spell_lists VALUES ('Ifrit_Prime_HTBF', 510, 178, 65, 255); -- firaga V
 INSERT INTO mob_spell_lists VALUES ('Ifrit_Prime_HTBF', 510, 205, 65, 255); -- flare 2
 INSERT INTO mob_spell_lists VALUES ('Ifrit_Prime_HTBF', 510,  79, 65, 255); -- Slow II
@@ -178,9 +160,6 @@ INSERT INTO mob_droplist VALUES(3924,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3924,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3924,1,4,1000,8727,200); -- Sif's Lock
 -- Titan Prim HTBF updated
--- INSERT INTO `bcnm_battlefield` VALUES ( 581, 1,17633308,3);  
--- INSERT INTO `bcnm_battlefield` VALUES ( 581, 2,17633309,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 581, 3,17633310,3);
 INSERT INTO mob_spell_lists VALUES ('Titan_Prime_HTBF', 511, 193, 65, 255); -- stonega V
 INSERT INTO mob_spell_lists VALUES ('Titan_Prime_HTBF', 511, 211, 65, 255); -- quake 2
 INSERT INTO mob_spell_lists VALUES ('Titan_Prime_HTBF', 511,  79, 65, 255); -- Slow II
@@ -206,9 +185,6 @@ INSERT INTO mob_droplist VALUES(3925,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3925,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3925,1,4,1000,8727,200); -- Sif's Lock
 -- Fenrir Prim HTBF updated
--- INSERT INTO `bcnm_battlefield` VALUES ( 228, 1,17473651,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 228, 2,17473652,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 228, 3,17473653,3);
 INSERT INTO mob_pools VALUES (40006, 'Fenrir_Prime_HTBF', 'Fenrir_Prime', 325, 0x0000180300000000000000000000000000000000, 8, 4, 6, 240, 100, 0, 1, 1, 1, 18, 1, 0, 0, 3, 0, 0, 0, 0, 0, 40001, 36);  
 UPDATE mob_spawn_points SET mobname = 'Fenrir_Prime_HTBF', pos_X =  339.4457, pos_y =   47.5105, pos_z = -341.6085,  pos_rot =  64 WHERE mobid = 17473651;
 UPDATE mob_spawn_points SET mobname = 'Fenrir_Prime_HTBF', pos_X =  -59.9329, pos_y =    9.4368, pos_z =   59.3577,  pos_rot =  64 WHERE mobid = 17473652;
@@ -235,27 +211,6 @@ INSERT INTO mob_droplist VALUES(3926,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3926,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3926,1,4,1000,8727,200); -- Sif's Lock
 -- Carbuncle Prim HTBF updated Carbuncle_Prime_HTBF
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 1,17473562,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 1,17473563,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 1,17473564,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 1,17473565,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 1,17473566,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 1,17473567,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 1,17473568,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 2,17473573,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 2,17473574,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 2,17473575,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 2,17473576,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 2,17473577,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 2,17473578,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 2,17473579,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 3,17473584,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 3,17473585,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 3,17473586,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 3,17473587,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 3,17473588,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 3,17473589,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 229, 3,17473590,3);
 INSERT INTO mob_pools VALUES (40007, 'Carbuncle_Prime_HTBF', 'Carbuncle_Prime', 34, 0x0000170300000000000000000000000000000000, 3, 4, 7, 240, 100, 0, 1, 1, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34, 34);  
 UPDATE mob_spawn_points SET mobname = 'Carbuncle_Prime_HTBF', groupid = 32, pos_X =  339.6589, pos_y =   47.5315, pos_z = -342.1236,  pos_rot =  64 WHERE mobid = 17473562;
 UPDATE mob_spawn_points SET mobname = 'Carbuncle_Prime_HTBF', groupid = 32, pos_X =  -59.7994, pos_y =    9.4894, pos_z =   58.6598,  pos_rot =  64 WHERE mobid = 17473573;
@@ -298,9 +253,6 @@ INSERT INTO mob_droplist VALUES(3927,1,4,1000,8723,200); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3927,1,4,1000,8725,200); -- Exalted Log
 INSERT INTO mob_droplist VALUES(3927,1,4,1000,8727,200); -- Sif's Lock
 -- Diablos Prim HTBF updated
--- INSERT INTO `bcnm_battlefield` VALUES ( 707, 1,16818226,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 707, 2,16818227,3);
--- INSERT INTO `bcnm_battlefield` VALUES ( 707, 3,16818228,3);
 INSERT INTO mob_pools VALUES (40008, 'Diabolos_Prime_HTBF', 'Diabolos_Prime', 35, 0x0000790400000000000000000000000000000000, 4, 5, 12, 240, 100, 0, 1, 1, 0, 18, 0, 0, 0, 0, 0, 0, 515, 0, 0, 40002, 35);  
 UPDATE mob_spawn_points SET mobname = 'Diabolos_Prime_HTBF', pos_X =  -240.0419, pos_y =   -32.0000, pos_z = 291.0711,  pos_rot =  69 WHERE mobid = 16818226;
 UPDATE mob_spawn_points SET mobname = 'Diabolos_Prime_HTBF', pos_X =  -59.7994, pos_y =    9.4894, pos_z =   58.6598,  pos_rot =  64 WHERE mobid = 16818227;
@@ -338,8 +290,6 @@ INSERT INTO mob_spell_lists VALUES('Diabolos_Prime_HTBF', 515, 259, 1, 255); -- 
 INSERT INTO mob_spell_lists VALUES('Diabolos_Prime_HTBF', 515, 274, 1, 255); -- sleepga ii
 INSERT INTO mob_spell_lists VALUES('Diabolos_Prime_HTBF', 515, 260, 1, 255); -- dispel
 INSERT INTO mob_spell_lists VALUES('Diabolos_Prime_HTBF', 515, 252, 1, 255); -- stun
-
-
 -- Ark Angel HTBF HTBF updates
 INSERT INTO `mob_pools` VALUES (40009,'Ark_Angel_EV_HTBF','Ark_Angel_EV',352,0x0000110300000000000000000000000000000000,7,3,3,240,125,0,1,1,1,18,0,32,1595,1051,0,0,518,0,0,352,352);
 INSERT INTO `mob_pools` VALUES (40010,'Ark_Angel_GK_HTBF','Ark_Angel_GK',353,0x0000140300000000000000000000000000000000,12,14,10,240,125,0,1,1,1,18,0,32,693,1179,0,0,0,0,0,353,353);
@@ -537,210 +487,90 @@ INSERT INTO mob_droplist VALUES (3934,1,5,1000,28515,142); -- Trux Earring
 INSERT INTO mob_droplist VALUES (3934,1,5,1000,28519,142); -- Tripudio Earring
 INSERT INTO mob_droplist VALUES (3934,1,5,1000,28516,142); -- Sanare Earring
 INSERT INTO mob_droplist VALUES (3934,1,5,1000,28518,142); -- Gelai Earring
--- tt           
---  -13.9772   -18.7160  14.2155 33
---  -562.3348  -242.6680 56.3998 33
---  - 477.6799 -317.6700 79.2236 33
-
-/*
-
--- The celestial nexus - single bf - updated
-INSERT INTO `bcnm_battlefield` VALUES ( 321, 1,17518682,3); 
-INSERT INTO `bcnm_battlefield` VALUES ( 321, 1,17518598,0); 
-INSERT INTO `bcnm_battlefield` VALUES ( 321, 1,17518666,3); 
--- Return to Delkfut Tower updated
-UPDATE mob_spawn_points SET mobname = 'Kamlanaut_HTBF' WHERE mobid = 17510473;
-UPDATE mob_spawn_points SET mobname = 'Kamlanaut_HTBF' WHERE mobid = 17510474;
-UPDATE mob_spawn_points SET mobname = 'Kamlanaut_HTBF' WHERE mobid = 17510475;
-INSERT INTO `bcnm_battlefield` VALUES ( 263, 1,17510473,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 263, 2,17510474,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 263, 3,17510475,3);
--- ark angels hm htbf updated
-INSERT INTO `bcnm_battlefield` VALUES ( 294, 1,17514595,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 294, 2,17514596,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 294, 3,17514597,3);
--- ark angels tt htbf updated
-INSERT INTO `bcnm_battlefield` VALUES ( 295, 1,17514752,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 295, 2,17514753,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 295, 3,17514754,3);
--- ark angels mr htbf updated
-INSERT INTO `bcnm_battlefield` VALUES ( 296, 1,17514598,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 296, 2,17514599,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 296, 3,17514600,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 296, 1,17514695,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 296, 2,17514696,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 296, 3,17514697,3);
--- ark angels ev htbf updated
-INSERT INTO `bcnm_battlefield` VALUES ( 297, 1,17514701,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 297, 2,17514702,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 297, 3,17514703,3);
--- ark angels gk htbf updated
-INSERT INTO `bcnm_battlefield` VALUES ( 298, 1,17514707,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 298, 2,17514708,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 298, 3,17514709,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 298, 1,17514710,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 298, 2,17514711,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 298, 3,17514712,3);
-
-
-
--- divine_might_ii htbf - single bf - updated
-INSERT INTO `bcnm_battlefield` VALUES ( 299, 1,17514633,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 299, 1,17514630,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 299, 1,17514570,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 299, 1,17514601,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 299, 1,17514781,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 299, 1,17514631,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 299, 1,17514784,3);
---
-INSERT INTO `bcnm_battlefield` VALUES ( 166, 1,17453265,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 166, 1,17453264,2);
-INSERT INTO `bcnm_battlefield` VALUES ( 680, 1,16810177,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 680, 1,16810189,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 680, 1,16810166,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 680, 1,16810170,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 680, 1,16810143,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 968, 1,16904295,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 994, 1,16908362,3);
-INSERT INTO `bcnm_battlefield` VALUES ( 995, 1,16908392,3);  
-INSERT INTO `bcnm_battlefield` VALUES ( 995, 1,16908399,3);
-INSERT INTO `bcnm_battlefield` VALUES (1059, 1,16924720,3);
-INSERT INTO `bcnm_battlefield` VALUES (1089, 1,17010713,3); 
-INSERT INTO `bcnm_battlefield` VALUES (1093, 1,17010752,3);
-INSERT INTO `bcnm_battlefield` VALUES (1120, 1,17039361,3);
-INSERT INTO `bcnm_battlefield` VALUES (1121, 1,17039367,3);
-INSERT INTO `bcnm_battlefield` VALUES (1152, 1,17051649,3);
-INSERT INTO `bcnm_battlefield` VALUES (1157, 1,17051697,3);
-INSERT INTO `bcnm_battlefield` VALUES (1153, 1,17051655,3);
-INSERT INTO `bcnm_battlefield` VALUES (1153, 1,17051656,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 1,17051657,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 1,17051658,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 1,17051659,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 2,17051661,3); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 2,17051662,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 2,17051663,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 2,17051664,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 2,17051665,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 3,17051667,3); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 3,17051668,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 3,17051669,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 3,17051670,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1153, 3,17051671,0); 
-INSERT INTO `bcnm_battlefield` VALUES (1088, 1,17010695,3);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 1,17010696,2);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 1,17010697,2);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 1,17010698,2);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 1,17010699,2);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 2,17010701,3);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 2,17010702,2);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 2,17010703,2);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 2,17010704,2);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 2,17010705,2);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 3,17010707,3);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 3,17010708,2);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 3,17010709,2);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 3,17010710,2);
-INSERT INTO `bcnm_battlefield` VALUES (1088, 3,17010711,2);
-*/
+-- puppet in peril HTBF
+UPDATE mob_pools SET name = 'Lancelord_Gaheel_HTBF',   spellList = 519 WHERE name = 'Lancelord_Gaheel_Ja'  AND poolid = 2370;
+UPDATE mob_pools SET name = 'Mamool_Unseen_HTBF'       WHERE name = 'Mamool_Ja_Unseen'      AND poolid = 6958;
+UPDATE mob_pools SET name = 'Mamool_Flamerearer_HTBF'  WHERE name = 'Mamool_Ja_Flamerearer' AND poolid = 6959;
+UPDATE mob_pools SET name = 'Mamool_Isangoma_HTBF'     WHERE name = 'Mamool_Ja_Isangoma'    AND poolid = 6955;
+UPDATE mob_pools SET name = 'Mamool_Profligate_HTBF'   WHERE name = 'Mamool_Ja_Profligate'  AND poolid = 6957;
+UPDATE mob_pools SET name = 'Mamool_Polemicist_HTBF'   WHERE name = 'Mamool_Ja_Polemicist'  AND poolid = 6956;
+UPDATE mob_groups SET dropid = 3935, HP = 175000, MP = 9999, minLevel = 120, maxLevel = 125, name = 'Lancelord_Gaheel_HTBF'   WHERE poolid = 2370 AND name = 'Lancelord_Gaheel_Ja'; 
+UPDATE mob_groups SET HP = 75000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Mamool_Unseen_HTBF'      WHERE poolid = 6958 AND name = 'Mamool_Ja_Unseen'; 
+UPDATE mob_groups SET HP = 75000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Mamool_Flamerearer_HTBF' WHERE poolid = 6959 AND name = 'Mamool_Ja_Flamerearer'; 
+UPDATE mob_groups SET HP = 75000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Mamool_Isangoma_HTBF'    WHERE poolid = 6955 AND name = 'Mamool_Ja_Isangoma'; 
+UPDATE mob_groups SET HP = 75000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Mamool_Profligate_HTBF'  WHERE poolid = 6957 AND name = 'Mamool_Ja_Profligate'; 
+UPDATE mob_groups SET HP = 75000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Mamool_Polemicist_HTBF'  WHERE poolid = 6956 AND name = 'Mamool_Ja_Polemicist'; 
+UPDATE mob_spawn_points SET mobname = 'Lancelord_Gaheel_HTBF',   pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051760;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Unseen_HTBF',      pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051761;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Flamerearer_HTBF', pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051762;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Isangoma_HTBF',    pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051763;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Profligate_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051764;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Polemicist_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051765;
+UPDATE mob_spawn_points SET pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051766; -- Scorched-snout Wyvern
+UPDATE mob_spawn_points SET mobname = 'Lancelord_Gaheel_HTBF',   pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051767;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Unseen_HTBF',      pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051768;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Flamerearer_HTBF', pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051769;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Isangoma_HTBF',    pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051770;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Profligate_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051771;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Polemicist_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051772;
+UPDATE mob_spawn_points SET pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051773; -- Scorched-snout Wyvern
+UPDATE mob_spawn_points SET mobname = 'Lancelord_Gaheel_HTBF',   pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051774;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Unseen_HTBF',      pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051775;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Flamerearer_HTBF', pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051776;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Isangoma_HTBF',    pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051777;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Profligate_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051778;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Polemicist_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051779;
+UPDATE mob_spawn_points SET pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051780; -- Scorched-snout Wyvern
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,1,1,255); -- cure
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,2,1,255); -- cure_ii
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,3,1,255); -- cure_iii
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,4,1,255); -- cure_iv
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,28,1,255); -- banish
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,29,1,255); -- banish_ii
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,43,1,255); -- protect
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,44,1,255); -- protect_ii
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,45,1,255); -- protect_iii
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,46,1,255); -- protect_iv
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,47,1,255); -- protect_v
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,48,1,255); -- shell
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,49,1,255); -- shell_ii
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,50,1,255); -- shell_iii
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,51,1,255); -- shell_iv
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,112,1,255); -- flash
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,5,1,255); -- cure v
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,6,1,255); -- cure vi
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,52,1,255); -- shell v
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,40,1,255); -- banishga iii
+INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,35,1,255); -- diaga iii
+INSERT INTO mob_droplist VALUES(3935,0,0,1000,4073,1000); -- Rem Tale Ch 10
+INSERT INTO mob_droplist VALUES(3935,1,1,500,4073,500); -- Rem Tale Ch 10
+INSERT INTO mob_droplist VALUES(3935,1,2,1000,8719,333); -- Maliyakaleya Coral
+INSERT INTO mob_droplist VALUES(3935,1,2,1000,8725,333); -- Exalted Log
+INSERT INTO mob_droplist VALUES(3935,1,2,1000,8727,3334); -- Sif's Lock
+INSERT INTO mob_droplist VALUES(3935,1,3,750,21368,250); -- Bestas Bane
+INSERT INTO mob_droplist VALUES(3935,1,3,750,21381,250); -- Seraphicaller
+INSERT INTO mob_droplist VALUES(3935,1,3,750,21452,250); -- Divinator
+INSERT INTO mob_droplist VALUES(3935,1,3,750,22261,250); -- Divinator II
+INSERT INTO mob_droplist VALUES(3935,1,4,400,27862,100); -- Savas Jawshan
+INSERT INTO mob_droplist VALUES(3935,1,4,400,28151,100); -- Sifahir Slacks
+INSERT INTO mob_droplist VALUES(3935,1,4,400,27710,100); -- Sahip Helm
+INSERT INTO mob_droplist VALUES(3935,1,4,400,28498,100); -- Pratik Earring
 
 
 
--- WAS ALREADY COMMIT PRIOR --
--- INSERT INTO `bcnm_info` VALUES (1088,57,'call_to_arms'                ,'nobody',0,1800,1800,99,6,0,5,0);
--- INSERT INTO `bcnm_info` VALUES (1089,57,'compliments_to_the_chef'     ,'nobody',0,1800,1800,99,6,0,5,0); 
--- INSERT INTO `bcnm_info` VALUES (1120,64,'tough_nut_to_crack'          ,'nobody',0,1800,1800,99,6,0,5,0);
--- INSERT INTO `bcnm_info` VALUES (1121,64,'happy_caster'                ,'nobody',0,1800,1800,99,6,0,5,0);
--- INSERT INTO `bcnm_info` VALUES (1152,67,'making_a_mockery'            ,'nobody',0,1800,1800,99,6,0,5,0);
--- INSERT INTO `bcnm_info` VALUES (1153,67,'shadows_of_the_mind'         ,'nobody',0,1800,1800,99,6,0,5,0);
-/**
--- update spawn points
-UPDATE mob_spawn_points SET pos_X = -465.4395, pos_y = -167.2311, pos_z = -240.1722,  pos_rot =255 WHERE mobid = 17453264;
-UPDATE mob_spawn_points SET pos_X = 0.3556,    pos_y = 202.5,     pos_z = -360.2336,  pos_rot =64  WHERE mobid = 17510577;
-UPDATE mob_spawn_points SET pos_X = -13.7793,  pos_y = -18.716,   pos_z = 13.7825,    pos_rot =38  WHERE mobid = 17514689;
-UPDATE mob_spawn_points SET pos_X = -13.7793,  pos_y = -18.716,   pos_z = 13.7825,    pos_rot =38  WHERE mobid = 17514574;
-UPDATE mob_spawn_points SET pos_X = -13.7793,  pos_y = -18.716,   pos_z = 13.7825,    pos_rot =38  WHERE mobid = 17514646;
-UPDATE mob_spawn_points SET pos_X = -14.4887,  pos_y = -18.7161,  pos_z = 15.1491,    pos_rot =38  WHERE mobid = 17514771;
-UPDATE mob_spawn_points SET pos_X = -13.7793,  pos_y = -18.716,   pos_z = 13.7825,    pos_rot =38  WHERE mobid = 17514573;
-UPDATE mob_spawn_points SET pos_X = -13.7793,  pos_y = -18.716,   pos_z = 13.7825,    pos_rot =38  WHERE mobid = 17514735;
-UPDATE mob_spawn_points SET pos_X = -14.4887,  pos_y = -18.7161,  pos_z = 15.1491,    pos_rot =38  WHERE mobid = 17514576;
-UPDATE mob_spawn_points SET pos_X = -13.7793,  pos_y = -18.716,   pos_z = 13.7825,    pos_rot =38  WHERE mobid = 17514633;
-UPDATE mob_spawn_points SET pos_X = -16.6021,  pos_y = -18.7162,  pos_z = 11.1549,    pos_rot =29  WHERE mobid = 17514630;
-UPDATE mob_spawn_points SET pos_X = -12.5777,  pos_y = -18.7162,  pos_z = 16.5445,    pos_rot =44  WHERE mobid = 17514570;
-UPDATE mob_spawn_points SET pos_X = -13.1592,  pos_y = -18.7163,  pos_z = 18.3561,    pos_rot =39  WHERE mobid = 17514601;
-UPDATE mob_spawn_points SET pos_X = -12.873,   pos_y = -18.7161,  pos_z = 12.157,     pos_rot =42  WHERE mobid = 17514781;
-UPDATE mob_spawn_points SET pos_X = -17.7029,  pos_y = -18.7166,  pos_z = 8.2761,     pos_rot =30  WHERE mobid = 17514631;
-UPDATE mob_spawn_points SET pos_X = -18.7929,  pos_y = -18.7166,  pos_z = 9.1704,     pos_rot =27  WHERE mobid = 17514784;
-UPDATE mob_spawn_points SET groupid = 1, pos_X = -32.1095, pos_y = -18.1303, pos_z = -25.0494,  pos_rot =127 WHERE mobid = 17518682;
-UPDATE mob_spawn_points SET mobname = 'Ealdnarche_2', groupid = 3, pos_X = -32.1095, pos_y = -18.1303, pos_z = -25.0494,  pos_rot =127 WHERE mobid = 17518612;
-UPDATE mob_spawn_points SET groupid = 2, pos_X = -32.1095, pos_y = -18.1303, pos_z = -25.0494,  pos_rot =127 WHERE mobid = 17518666;
-UPDATE mob_spawn_points SET pos_X = -602.4497, pos_y = 82.2,      pos_z = -0.5236,    pos_rot =0   WHERE mobid = 16904295;
-UPDATE mob_spawn_points SET pos_X = -560.4644, pos_y = 0,         pos_z = -477.4255,  pos_rot =127 WHERE mobid = 16810177;
-UPDATE mob_spawn_points SET pos_X = -559.0723, pos_y = 0.0672,    pos_z = -477.3101,  pos_rot =127 WHERE mobid = 16810189;
-UPDATE mob_spawn_points SET pos_X = -558.6032, pos_y = -0.0021,   pos_z = -479.9971,  pos_rot =125 WHERE mobid = 16810166;
-UPDATE mob_spawn_points SET pos_X = -561.4904, pos_y = 0.2129,    pos_z = -472.2969,  pos_rot =109 WHERE mobid = 16810170;
-UPDATE mob_spawn_points SET pos_X = -562.0448, pos_y = 0.1913,    pos_z = -470.6137,  pos_rot =109 WHERE mobid = 16810143;
-UPDATE mob_spawn_points SET pos_X = -639.8851, pos_y = -231.3477, pos_z = 512.536,    pos_rot =189 WHERE mobid = 16908392;
-UPDATE mob_spawn_points SET pos_X = -639.8851, pos_y = -231.3477, pos_z = 512.536,    pos_rot =189 WHERE mobid = 16908399;
-UPDATE mob_spawn_points SET pos_X = -639.7784, pos_y = -231.3476, pos_z = 528.151,    pos_rot =66  WHERE mobid = 16908362;
-UPDATE mob_spawn_points SET pos_X = -519.9426, pos_y = -120,      pos_z = 525.5723,   pos_rot =62  WHERE mobid = 16924720;
-UPDATE mob_spawn_points SET pos_X = 242.0675,  pos_y = -31.5,     pos_z = 238.1919,   pos_rot =159 WHERE mobid = 17051697;
-UPDATE mob_spawn_points SET pos_X = -178.578,  pos_y = 39.658,    pos_z = 181.3888,   pos_rot =68  WHERE mobid = 17010752;
-UPDATE mob_spawn_points SET pos_X = 504.919,   pos_y = 41.553,    pos_z = -366.891,   pos_rot =105 WHERE mobid = 17625121;
-UPDATE mob_spawn_points SET pos_X = 504.8676,  pos_y = 41.5439,   pos_z = -366.713,   pos_rot =102 WHERE mobid = 17608749;
-UPDATE mob_spawn_points SET pos_X = 505.2479,  pos_y = 41.4935,   pos_z = -366.8473,  pos_rot =98  WHERE mobid = 17600548;
-UPDATE mob_spawn_points SET pos_X = 504.4999,  pos_y = 41.6654,   pos_z = -367.6415,  pos_rot =97  WHERE mobid = 17633319;
-UPDATE mob_spawn_points SET pos_X = 504.501,   pos_y = 41.6916,   pos_z = -367.9862,  pos_rot =98  WHERE mobid = 17641505;
-UPDATE mob_spawn_points SET pos_X = 504.8835,  pos_y = 41.604,    pos_z = -367.3168,  pos_rot =98  WHERE mobid = 17604645;
-UPDATE mob_spawn_points SET pos_X = 339.4833,  pos_y = 47.5469,   pos_z = -342.2661,  pos_rot =64  WHERE mobid = 17473648;
-UPDATE mob_spawn_points SET pos_X = 340.2175,  pos_y = 47.465,    pos_z = -341.2038,  pos_rot =63  WHERE mobid = 17473666;
-UPDATE mob_spawn_points SET pos_X = -240.0028, pos_y = -32,       pos_z = 291.9999,   pos_rot =64  WHERE mobid = 16818239;
-UPDATE mob_spawn_points SET pos_X = -179.5685, pos_y = 39.6542,   pos_z = 183.1523,   pos_rot =64  WHERE mobid = 17010713;
-UPDATE mob_spawn_points SET pos_X = 382.8363,  pos_y = -116,      pos_z = 380.9192,   pos_rot =128 WHERE mobid = 17039361;
-UPDATE mob_spawn_points SET pos_X = 382.365,   pos_y = -116,      pos_z = 380.432,    pos_rot =130 WHERE mobid = 17039367;
-UPDATE mob_spawn_points SET pos_X = 242.4376,  pos_y = -31.356,   pos_z = 237.352,    pos_rot =155 WHERE mobid = 17051649;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051655;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051656;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051657;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051658;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051659;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051661;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051662;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051663;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051664;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051665;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051667;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051668;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051669;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051670;
-UPDATE mob_spawn_points SET pos_X = 242.8706,  pos_y = -31.3176,  pos_z = 237.5289,   pos_rot =158 WHERE mobid = 17051671;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010695;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010696;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010697;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010698;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010699;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010701;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010702;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010703;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010704;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010705;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010707;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010708;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010709;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010710;
-UPDATE mob_spawn_points SET pos_X = -179.6779, pos_y = 39.6355,   pos_z = 182.3663,   pos_rot =64  WHERE mobid = 17010711;
-*/
--- update pool ids
+
+
+
+
+
+
+
+
+
 UPDATE mob_groups SET poolid = 5106 WHERE name = 'Promathia_htbf';
-
-
-
 
 -- insert mob ability
 INSERT INTO `mob_skills` VALUES (1712,1183,'bugle_call',1,10.0,2000,1500,4,4,0,0,0,0,0); -- imp -- bugal call
 INSERT INTO `mob_skills` VALUES (1980,1197,'boreas_mantle',0,7.0,2000,1500,1,4,0,0,0,0,0); -- phantom puk
 INSERT INTO `mob_skills` VALUES (3290,3034,'bowels_of_agony',0,7.0,2000,0,4,0,0,0,0,0,0); -- Bowels of Agony - Shadow Lord
-
 INSERT INTO `mob_skill_lists` VALUES ('ShadowLord', 225, 3290);
-
--- update loot pools
--- INSERT INTO `mob_droplist` VALUES (3827,0,0,1000,9084,1000);

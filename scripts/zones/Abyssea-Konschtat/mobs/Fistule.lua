@@ -56,6 +56,18 @@ entity.onMobDeath = function(mob, player, isKiller)
     if player ~= nil and not player:hasTitle(xi.title.FISTULE_DRAINER) then
         player:addTitle(xi.title.FISTULE_DRAINER)
     end
+    local ID = zones[player:getZoneID()]
+    local party = player:getParty()
+     for _, member in pairs(party) do 
+        if member:getFreeSlotsCount() == 0 then
+            member:messageSpecial(ID.text.ITEM_CANNOT_BE_OBTAINED, 2931)
+        else
+            local obtained = member:addItem(2931, 1)
+            if obtained then
+               member:messageSpecial(ID.text.ITEM_OBTAINED, 2931)
+            end
+        end
+     end
 end
 
 return entity

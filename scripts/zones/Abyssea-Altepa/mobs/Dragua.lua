@@ -1,22 +1,22 @@
 -----------------------------------
--- Area: Abyssea - Konschtat (15)
---   NM: Kukulkan
------------------------------------
-mixins = { require('scripts/mixins/families/peiste') }
+-- Area: Abyssea - Altepa
+--   NM: Dragua
 -----------------------------------
 local entity = {}
 
+entity.onMobFight = function(mob, target)
+end
+
 entity.onMobDeath = function(mob, player, optParams)
-    player:addTitle(xi.title.KUKULKAN_DEFANGER)
     local ID = zones[player:getZoneID()]
     local party = player:getParty()
      for _, member in pairs(party) do 
         if member:getFreeSlotsCount() == 0 then
-            member:messageSpecial(ID.text.ITEM_CANNOT_BE_OBTAINED, 2932)
+            member:messageSpecial(ID.text.ITEM_CANNOT_BE_OBTAINED, 3288)
         else
-            local obtained = member:addItem(2932, 1)
+            local obtained = member:addItem(3288, 1)
             if obtained then
-               member:messageSpecial(ID.text.ITEM_OBTAINED, 2932)
+               member:messageSpecial(ID.text.ITEM_OBTAINED, 3288)
             end
         end
      end

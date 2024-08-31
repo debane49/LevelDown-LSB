@@ -18,6 +18,8 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize', function(zone)
         onTrade = function(player, npc, trade)
         end,
         onTrigger = function(player, npc)
+        player:setHP(player:getMaxHP())
+        player:setMP(player:getMaxMP())
 local menu   = {}
 local page1 =  {}
 local page2 =  {}
