@@ -89,6 +89,7 @@ zones[xi.zone.ABYSSEA_GRAUBERG] =
         ALFARD_OFFSET       = GetFirstID('Alfard'),
         AZDAJA_OFFSET       = GetFirstID('Azdaja'),
         AMPHITRITE_OFFSET   = GetFirstID('Amphitrite'),
+        MAERE               = GetFirstID('Maere'),
     },
     npc =
     {

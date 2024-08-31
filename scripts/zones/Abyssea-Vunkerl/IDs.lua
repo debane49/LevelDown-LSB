@@ -71,6 +71,8 @@ zones[xi.zone.ABYSSEA_VUNKERL] =
     },
     mob =
     {
+        SEDNA          = GetFirstID('Sedna'),
+        BUKHIS         = GetFirstID('Bukhis'),
     },
     npc =
     {

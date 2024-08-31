@@ -74,6 +74,9 @@ zones[xi.zone.ABYSSEA_ULEGUERAND] =
     },
     mob =
     {
+        APADEMAK                   = GetFirstID('Apademak'),
+        ISGEBIND                   = GetFirstID('Isgebind'),
+        IRONCLAD_TRITURATOR        = GetFirstID('Ironclad_Triturator'),
     },
     npc =
     {

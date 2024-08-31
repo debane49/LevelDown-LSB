@@ -89,6 +89,7 @@ zones[xi.zone.ABYSSEA_ALTEPA] =
         CHICKCHARNEY        = GetFirstID('Chickcharney'),
         VADLEANY            = GetFirstID('Vadleany'),
         BUGUL_NOZ           = GetFirstID('Bugul_Noz'),
+        BRULO               = GetFirstID('Brulo'),
     },
     npc =
     {

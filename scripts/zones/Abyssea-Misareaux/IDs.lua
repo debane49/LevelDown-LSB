@@ -71,6 +71,8 @@ zones[xi.zone.ABYSSEA_MISAREAUX] =
     },
     mob =
     {
+        SOBEK           = GetFirstID('Sobek'),
+        CIREIN_CROIN    = GetFirstID('Cirein-croin'),
     },
     npc =
     {
