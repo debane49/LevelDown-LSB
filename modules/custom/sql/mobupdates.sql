@@ -519,7 +519,7 @@ UPDATE mob_groups SET HP = 115000, minLevel = 121, maxLevel = 121 WHERE name = '
 UPDATE mob_groups SET HP = 115000, minLevel = 121, maxLevel = 121 WHERE name = 'Dark_Elemental' AND zoneid = 254;
 UPDATE mob_groups SET HP = 115000, minLevel = 121, maxLevel = 121 WHERE name = 'Gamayun' AND zoneid = 254;
 UPDATE mob_groups SET respawntime = 900, spawntype = 0, HP = 115000, minLevel = 121, maxLevel = 121 WHERE name = 'Maere' AND zoneid = 254;
-UPDATE mob_spawn_points SET pos_x = 463.7532, pos_y = 55.0195, pos_z = -694.4987, pos_rot = 216 WHERE mobid = 17818070;
+UPDATE mob_spawn_points SET pos_x = 511.0331, pos_y = 55.5410, pos_z = 672.2692, pos_rot = 216 WHERE mobid = 17818070;
 --						    122 HP 145000 Abyssea Grauberg
 UPDATE mob_groups SET HP = 145000, minLevel = 122, maxLevel = 122 WHERE name = 'Alfard' AND zoneid = 254;
 UPDATE mob_groups SET HP = 145000, minLevel = 122, maxLevel = 122 WHERE name = 'Bomblix_Flamefinger' AND zoneid = 254;
