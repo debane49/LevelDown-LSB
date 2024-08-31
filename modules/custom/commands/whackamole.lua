@@ -86,24 +86,26 @@ player:printToArea('GM: Help us stop them, We have 10 minutes before they disapp
         end,
 
         onMobFight = function(mob, target)
-            if mob:getHP() <= mob:getMaxHP() then
+             mob:addListener('TAKE_DAMAGE', 'MOLE_TAKE_DAMAGE', function(mob, damage, attacker, attackType, damageType)
+             if damage > 0 then
                 for i = xi.slot.MAIN, xi.slot.BACK do
-                    target:unequipItem(i)
+                    attacker:unequipItem(i)
                 end
-            end
-            mob:addListener('TAKE_DAMAGE', 'MOLE_TAKE_DAMAGE', function(mob, damage, attacker, attackType, damageType)
-            if attackType == xi.attackType.PHYSICAL then
+             end
+            if attackType == xi.attackType.PHYSICAL and
+               damageType == xi.damageType.NONE then
                local rand = math.random(1,20)
-               local randz = math.random(1, 340)
+               local randz = math.random(1, 540)
                     if rand == 5 then
-                       npcUtil.giveItem(target, { { xi.item.GIL, math.random(100, 1000) } })
+                       npcUtil.giveItem(attacker, { { xi.item.GIL, math.random(100, 1000) } })
                     end
                         for k, v in pairs(drops) do
                           if randz == k then
-                             npcUtil.giveItem(target, { { v.reward, 1 } })
+                             npcUtil.giveItem(attacker, { { v.reward, 1 } })
                           end
                         end
             end
+
             end)
             if mob:getLocalVar('MoleDespawn') <= os.time() then
                 DespawnMob(mob:getID())
