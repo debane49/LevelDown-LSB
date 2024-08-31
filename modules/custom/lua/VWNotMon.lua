@@ -503,11 +503,7 @@ m:addOverride(string.format('xi.zones.%s.npcs.%s.onEventFinish', entry[1], entry
         local blah = hours - timer
         local count =   blah / 21600  
         local vsgive = math.floor(count)
-    if csid == entry[3] and option == 65537 then -- give one
-                    player:addCurrency('voidstones', 1)
-                    player:setCharVar('VSTimer', os.time() + 21600) -- 6 hours
-                    player:printToPlayer('You have obtained 1 Voidstone.', 0, npc:getPacketName())
-    elseif csid ==  entry[3] and option == 1 then -- fill me up
+    if csid ==  entry[3] and option == 1 or 65537 then -- fill me up
                     if player:getCharVar('VSTimer') == 0 then
                        player:addCurrency('voidstones', 1)
                        player:setCharVar('VSTimer', os.time() + 21600) -- 6 hours
