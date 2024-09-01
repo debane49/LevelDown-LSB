@@ -5,8 +5,6 @@
 local entity = {}
 
 
-end
-
 entity.onMobSpawn = function(mob)
 end
 

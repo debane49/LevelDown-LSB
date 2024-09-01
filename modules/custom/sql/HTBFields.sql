@@ -489,37 +489,37 @@ INSERT INTO mob_droplist VALUES (3934,1,5,1000,28516,142); -- Sanare Earring
 INSERT INTO mob_droplist VALUES (3934,1,5,1000,28518,142); -- Gelai Earring
 -- puppet in peril HTBF
 UPDATE mob_pools SET name = 'Lancelord_Gaheel_HTBF',   spellList = 519 WHERE name = 'Lancelord_Gaheel_Ja'  AND poolid = 2370;
-UPDATE mob_pools SET name = 'Mamool_Unseen_HTBF'       WHERE name = 'Mamool_Ja_Unseen'      AND poolid = 6958;
+UPDATE mob_pools SET name = 'Mamool_Unseen_HTBF',      spellList = 517 WHERE name = 'Mamool_Ja_Unseen'      AND poolid = 6958;
 UPDATE mob_pools SET name = 'Mamool_Flamerearer_HTBF'  WHERE name = 'Mamool_Ja_Flamerearer' AND poolid = 6959;
-UPDATE mob_pools SET name = 'Mamool_Isangoma_HTBF'     WHERE name = 'Mamool_Ja_Isangoma'    AND poolid = 6955;
+UPDATE mob_pools SET name = 'Mamool_Isangoma_HTBF',    spellList = 520 WHERE name = 'Mamool_Ja_Isangoma'    AND poolid = 6955;
 UPDATE mob_pools SET name = 'Mamool_Profligate_HTBF'   WHERE name = 'Mamool_Ja_Profligate'  AND poolid = 6957;
-UPDATE mob_pools SET name = 'Mamool_Polemicist_HTBF'   WHERE name = 'Mamool_Ja_Polemicist'  AND poolid = 6956;
+UPDATE mob_pools SET name = 'Mamool_Polemicist_HTBF',  spellList = 516 WHERE name = 'Mamool_Ja_Polemicist'  AND poolid = 6956;
 UPDATE mob_groups SET dropid = 3935, HP = 175000, MP = 9999, minLevel = 120, maxLevel = 125, name = 'Lancelord_Gaheel_HTBF'   WHERE poolid = 2370 AND name = 'Lancelord_Gaheel_Ja'; 
 UPDATE mob_groups SET HP = 75000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Mamool_Unseen_HTBF'      WHERE poolid = 6958 AND name = 'Mamool_Ja_Unseen'; 
 UPDATE mob_groups SET HP = 75000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Mamool_Flamerearer_HTBF' WHERE poolid = 6959 AND name = 'Mamool_Ja_Flamerearer'; 
 UPDATE mob_groups SET HP = 75000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Mamool_Isangoma_HTBF'    WHERE poolid = 6955 AND name = 'Mamool_Ja_Isangoma'; 
 UPDATE mob_groups SET HP = 75000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Mamool_Profligate_HTBF'  WHERE poolid = 6957 AND name = 'Mamool_Ja_Profligate'; 
 UPDATE mob_groups SET HP = 75000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Mamool_Polemicist_HTBF'  WHERE poolid = 6956 AND name = 'Mamool_Ja_Polemicist'; 
-UPDATE mob_spawn_points SET mobname = 'Lancelord_Gaheel_HTBF',   pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051760;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Unseen_HTBF',      pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051761;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Flamerearer_HTBF', pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051762;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Isangoma_HTBF',    pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051763;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Profligate_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051764;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Polemicist_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051765;
+UPDATE mob_spawn_points SET mobname = 'Lancelord_Gaheel_HTBF',   pos_X = 241.7711,   pos_y = -31.5431,  pos_z = 239.0438,  pos_rot =  159 WHERE mobid = 17051760;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Unseen_HTBF',      pos_X = 241.7711,   pos_y = -31.5431,  pos_z = 239.0438,  pos_rot =  159 WHERE mobid = 17051761;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Flamerearer_HTBF', pos_X = 244.7644,   pos_y = -31.1628,  pos_z = 239.6185,  pos_rot =  144 WHERE mobid = 17051762;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Isangoma_HTBF',    pos_X = 246.1002,   pos_y = -31.0492,  pos_z = 243.0372,  pos_rot =  121 WHERE mobid = 17051763;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Profligate_HTBF',  pos_X = 241.5989,   pos_y = -31.1523,  pos_z = 235.0241,  pos_rot =  174 WHERE mobid = 17051764;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Polemicist_HTBF',  pos_X = 239.5683,   pos_y = -31.0689,  pos_z = 233.3579,  pos_rot =  191 WHERE mobid = 17051765;
 UPDATE mob_spawn_points SET pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051766; -- Scorched-snout Wyvern
-UPDATE mob_spawn_points SET mobname = 'Lancelord_Gaheel_HTBF',   pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051767;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Unseen_HTBF',      pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051768;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Flamerearer_HTBF', pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051769;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Isangoma_HTBF',    pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051770;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Profligate_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051771;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Polemicist_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051772;
+UPDATE mob_spawn_points SET mobname = 'Lancelord_Gaheel_HTBF',   pos_X = 0.789,   pos_y = 8.5000,  pos_z = -0.2412,  pos_rot =  158 WHERE mobid = 17051767;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Unseen_HTBF',      pos_X = 0.789,   pos_y = 8.5000,  pos_z = -0.2412,  pos_rot =  158 WHERE mobid = 17051768;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Flamerearer_HTBF', pos_X = 3.2212,  pos_y = 8.6344,  pos_z = 1.7963,   pos_rot =  117 WHERE mobid = 17051769;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Isangoma_HTBF',    pos_X = 2.8961,  pos_y = 8.8946,  pos_z = 4.2043,   pos_rot =  99 WHERE mobid = 17051770;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Profligate_HTBF',  pos_X = 3.6058,  pos_y = 8.7719,  pos_z = -2.3333,  pos_rot =  165 WHERE mobid = 17051771;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Polemicist_HTBF',  pos_X = 2.2063,  pos_y = 8.8454,  pos_z = -4.9297,  pos_rot =  181 WHERE mobid = 17051772;
 UPDATE mob_spawn_points SET pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051773; -- Scorched-snout Wyvern
-UPDATE mob_spawn_points SET mobname = 'Lancelord_Gaheel_HTBF',   pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051774;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Unseen_HTBF',      pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051775;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Flamerearer_HTBF', pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051776;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Isangoma_HTBF',    pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051777;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Profligate_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051778;
-UPDATE mob_spawn_points SET mobname = 'Mamool_Polemicist_HTBF',  pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051779;
+UPDATE mob_spawn_points SET mobname = 'Lancelord_Gaheel_HTBF',   pos_X = -240.5868,  pos_y = 48.5000,  pos_z = -239.1030,  pos_rot =  158 WHERE mobid = 17051774;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Unseen_HTBF',      pos_X = -240.5868,  pos_y = 48.5000,  pos_z = -239.1030,  pos_rot =  158 WHERE mobid = 17051775;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Flamerearer_HTBF', pos_X = -238.7326,  pos_y = 48.5000,  pos_z = -238.6066,  pos_rot =  129 WHERE mobid = 17051776;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Isangoma_HTBF',    pos_X = -237.811,   pos_y = 48.6941,  pos_z = -236.6441,  pos_rot =  121 WHERE mobid = 17051777;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Profligate_HTBF',  pos_X = -238.2886,  pos_y = 48.5472,  pos_z = -242.3815,  pos_rot =  170 WHERE mobid = 17051778;
+UPDATE mob_spawn_points SET mobname = 'Mamool_Polemicist_HTBF',  pos_X = -239.4235,  pos_y = 48.8254,  pos_z = -244.5281,  pos_rot =  179 WHERE mobid = 17051779;
 UPDATE mob_spawn_points SET pos_X = -12.1318,   pos_y = -18.7161,  pos_z = 14.2155,  pos_rot =  39 WHERE mobid = 17051780; -- Scorched-snout Wyvern
 INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,1,1,255); -- cure
 INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,2,1,255); -- cure_ii
@@ -542,6 +542,22 @@ INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,6,1,255); -- cure vi
 INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,52,1,255); -- shell v
 INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,40,1,255); -- banishga iii
 INSERT INTO mob_spell_lists VALUES ('LancelordGaheelJa',519,35,1,255); -- diaga iii
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,5,1,255); -- Cure v
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,6,1,255); -- Cure vi
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,10,1,255); -- Curega v
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,11,1,255); -- Curega vi
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,35,1,255); -- diaga iii
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,40,1,255); -- banishga iii
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,53,1,255); -- blink
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,54,1,255); -- stoneskin
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,111,1,255); -- regen_iii
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,112,1,255); -- flash
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,106,1,255); -- phalanx
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,14,1,255); -- poisona
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,15,1,255); -- paralyna
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,16,1,255); -- blindna
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,17,1,255); -- silena
+INSERT INTO mob_spell_lists VALUES ('MammolIsangomaHTBF',520,18,1,255); -- stona
 INSERT INTO mob_droplist VALUES(3935,0,0,1000,4073,1000); -- Rem Tale Ch 10
 INSERT INTO mob_droplist VALUES(3935,1,1,500,4073,500); -- Rem Tale Ch 10
 INSERT INTO mob_droplist VALUES(3935,1,2,1000,8719,333); -- Maliyakaleya Coral
