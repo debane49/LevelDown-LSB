@@ -494,7 +494,7 @@ m:addOverride(string.format('xi.zones.%s.npcs.%s.onEventUpdate', entry[1], entry
           else
              player:updateEvent(1)
           end
-        end   
+        end
 end)
 
 m:addOverride(string.format('xi.zones.%s.npcs.%s.onEventFinish', entry[1], entry[2]),  function(player, csid, option, npc)
@@ -503,7 +503,11 @@ m:addOverride(string.format('xi.zones.%s.npcs.%s.onEventFinish', entry[1], entry
         local blah = hours - timer
         local count =   blah / 21600  
         local vsgive = math.floor(count)
-    if csid ==  entry[3] and option == 1 or 65537 then -- fill me up
+      --  player:printToPlayer(string.format('finish csid %s option %s', csid, option))
+    if csid == entry[3] and not option == 1 or not option == 65537 then -- fill me up
+       return
+       elseif csid == entry[3] and option == 1 or option == 65537 then
+    --   player:printToPlayer(string.format('finish csid %s option %s', csid, option))
                     if player:getCharVar('VSTimer') == 0 then
                        player:addCurrency('voidstones', 1)
                        player:setCharVar('VSTimer', os.time() + 21600) -- 6 hours
@@ -513,7 +517,6 @@ m:addOverride(string.format('xi.zones.%s.npcs.%s.onEventFinish', entry[1], entry
                        player:setCharVar('VSTimer', os.time() + 21600) -- 6 hours
                        player:printToPlayer(string.format('You have obtained %s Voidstone.', vsgive), 0, npc:getPacketName())
                     end
-
     end
 end)
 end
