@@ -32,8 +32,12 @@ zones[xi.zone.SEALIONS_DEN] =
     },
     mob =
     {
-        MAMMET_22_ZETA = GetFirstID('Mammet-22_Zeta'),
-        TENZEN         = GetFirstID('Tenzen'),
+        MAMMET_22_ZETA       = GetFirstID('Mammet-22_Zeta'),
+        TENZEN               = GetFirstID('Tenzen'),
+        TENZEN_HTBF          = GetFirstID('Tenzen_HTBF'),
+        CHERUKIKI_HTBF       = GetFirstID('Cherukiki_HTBF'),
+        KUKKI_CHEBUKKI_HTBF  = GetFirstID('Kukki-Chebukki_HTBF'),
+        MAKKI_CHEBUKKI_HTBF  = GetFirstID('Makki-Chebukki_HTBF'),
     },
     npc =
     {

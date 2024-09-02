@@ -571,12 +571,59 @@ INSERT INTO mob_droplist VALUES(3935,1,4,400,27862,100); -- Savas Jawshan
 INSERT INTO mob_droplist VALUES(3935,1,4,400,28151,100); -- Sifahir Slacks
 INSERT INTO mob_droplist VALUES(3935,1,4,400,27710,100); -- Sahip Helm
 INSERT INTO mob_droplist VALUES(3935,1,4,400,28498,100); -- Pratik Earring
+-- Warriors Path THTBF
+UPDATE mob_groups SET dropid = 3936,HP = 155000,  MP = 9999, minLevel = 120, maxLevel = 125, name = 'Tenzen_HTBF' WHERE groupid = 10 AND name = 'Tenzen'; 
+UPDATE mob_groups SET HP = 155000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Cherukiki_HTBF'       WHERE groupid = 13 AND name = 'Cherukiki'; 
+UPDATE mob_groups SET HP = 155000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Kukki-Chebukki_HTBF'  WHERE groupid = 12 AND name = 'Kukki-Chebukki'; 
+UPDATE mob_groups SET HP = 155000,  MP = 9999, minLevel = 110, maxLevel = 115, name = 'Makki-Chebukki_HTBF'  WHERE groupid = 11 AND name = 'Makki-Chebukki'; 
+UPDATE mob_pools SET name = 'Tenzen_HTBF'                                             WHERE name = 'Tenzen'          AND poolid = 6956;
+UPDATE mob_pools SET spellList = 520, skill_list_id = 0, name = 'Cherukiki_HTBF'      WHERE name = 'Cherukiki'       AND poolid = 710;
+UPDATE mob_pools SET spellList = 516, skill_list_id = 0, name = 'Kukki-Chebukki_HTBF' WHERE name = 'Kukki-Chebukki'  AND poolid = 2293;
+UPDATE mob_pools SET skill_list_id = 0,                  name = 'Makki-Chebukki_HTBF' WHERE name = 'Makki-Chebukki'  AND poolid = 2492;
 
+UPDATE mob_spawn_points SET mobname = 'Tenzen_HTBF',           pos_x = -640.0229,  pos_y = -231.3476,  pos_z = 529.5814,  pos_rot =  61 WHERE mobid = 16908370;
+UPDATE mob_spawn_points SET mobname = 'Makki-Chebukki_HTBF'    WHERE mobid = 16908371;
+UPDATE mob_spawn_points SET mobname = 'Kukki-Chebukki_HTBF'    WHERE mobid = 16908372;
+UPDATE mob_spawn_points SET mobname = 'Cherukiki_HTBF'         WHERE mobid = 16908373;
+UPDATE mob_spawn_points SET mobname = 'Tenzen_HTBF',           pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908374;
+UPDATE mob_spawn_points SET mobname = 'Makki-Chebukki_HTBF'    WHERE mobid = 16908375;
+UPDATE mob_spawn_points SET mobname = 'Kukki-Chebukki_HTBF'    WHERE mobid = 16908376;
+UPDATE mob_spawn_points SET mobname = 'Cherukiki_HTBF'         WHERE mobid = 16908377;
+UPDATE mob_spawn_points SET mobname = 'Tenzen_HTBF',           pos_x = 640.1404,   pos_y = -71.3476,  pos_z = -189.8488,  pos_rot =  61 WHERE mobid = 16908378;
+UPDATE mob_spawn_points SET mobname = 'Makki-Chebukki_HTBF'    WHERE mobid = 16908379;
+UPDATE mob_spawn_points SET mobname = 'Kukki-Chebukki_HTBF'    WHERE mobid = 16908380;
+UPDATE mob_spawn_points SET mobname = 'Cherukiki_HTBF'         WHERE mobid = 16908381;
 
+INSERT INTO mob_droplist VALUES(3936,0,0,1000,4072,1000); -- Rem Tale Ch 9
+INSERT INTO mob_droplist VALUES(3936,1,1,500,4072,500); -- Rem Tale Ch 9
+INSERT INTO mob_droplist VALUES(3936,1,2,1000,8721,250); -- Hepatizon Ore
+INSERT INTO mob_droplist VALUES(3936,1,2,1000,8723,250); -- Beryllium Ore
+INSERT INTO mob_droplist VALUES(3936,1,2,1000,8727,250); -- Sifs Lock
+INSERT INTO mob_droplist VALUES(3936,1,2,1000,687,250); -- Scarletite Ingot
+INSERT INTO mob_droplist VALUES(3936,1,3,750,21371,150); -- Ginsen
+INSERT INTO mob_droplist VALUES(3936,1,3,750,21227,150); -- Hangaku-no-Yumi
+INSERT INTO mob_droplist VALUES(3936,1,3,750,21381,150); -- Seraphicaller
+INSERT INTO mob_droplist VALUES(3936,1,3,750,21452,150); -- Divinator
+INSERT INTO mob_droplist VALUES(3936,1,3,750,22261,150); -- Divinator II
+INSERT INTO mob_droplist VALUES(3936,1,4,600,27719,200); -- Sukeroku Hachimaki
+INSERT INTO mob_droplist VALUES(3936,1,4,600,28292,200); -- Battlecast Gaiters
+INSERT INTO mob_droplist VALUES(3936,1,4,600,28379,200); -- Mizukage-no-Kubikazari
 
+-- One to e Feared HBF
 
-
-
+INSERT INTO mob_droplist VALUES(3937,0,0,1000,4073,1000); -- Rem Tale Ch 10
+INSERT INTO mob_droplist VALUES(3937,1,1,500,4073,500); -- Rem Tale Ch 10
+INSERT INTO mob_droplist VALUES(3937,1,2,1000,8719,200); -- Maliyakaleya Coral
+INSERT INTO mob_droplist VALUES(3937,1,2,1000,8721,200); -- Hepatizon Ore
+INSERT INTO mob_droplist VALUES(3937,1,2,1000,8723,200); -- Beryllium Ore
+INSERT INTO mob_droplist VALUES(3937,1,2,1000,8725,200); -- Exalted Log
+INSERT INTO mob_droplist VALUES(3937,1,2,1000,8727,200); -- Sifs Lock
+INSERT INTO mob_droplist VALUES(3937,1,3,750,20516,375); -- Denouements
+INSERT INTO mob_droplist VALUES(3937,1,3,750,26400,375); -- Culminus
+INSERT INTO mob_droplist VALUES(3937,1,4,400,25634,100); -- Terminal Helm
+INSERT INTO mob_droplist VALUES(3937,1,4,400,25707,100); -- Terminal Plate
+INSERT INTO mob_droplist VALUES(3937,1,4,400,27541,100); -- Cessance Earring
+INSERT INTO mob_droplist VALUES(3937,1,4,400,26000,100); -- Consummation Torque
 
 
 
