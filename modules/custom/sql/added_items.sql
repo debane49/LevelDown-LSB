@@ -64,7 +64,7 @@ INSERT INTO `item_weapon` VALUES (21520,'ethereal_fists',1,0,0,0,0,4,1,96,1,0);
 INSERT INTO `item_weapon` VALUES (21624,'ethereal_sword',3,0,0,0,0,2,1,240,1,0);
 INSERT INTO `item_weapon` VALUES (21771,'ethereal_great_axe',6,0,0,0,0,2,1,540,1,0);
 INSERT INTO `item_weapon` VALUES (21838,'ethereal_scythe',7,0,0,0,0,2,1,480,1,0);
-INSERT INTO `item_weapon` VALUES (21962,'ethereal_tachi',9,0,0,0,0,2,1,450,1,0);
+INSERT INTO `item_weapon` VALUES (21962,'ethereal_tachi',10,0,0,0,0,2,1,450,1,0);
 INSERT INTO `item_weapon` VALUES (22090,'ethereal_staff',12,0,0,0,0,3,1,366,1,0); 
 INSERT INTO `item_weapon` VALUES (22146,'ethereal_bow',25,0,0,0,0,1,1,540,1,0);
 INSERT INTO `item_weapon` VALUES (21571,'ethereal_dagger',2,0,0,0,0,1,1,180,1,0);
