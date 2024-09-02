@@ -12,16 +12,26 @@ tenzenFunctions.firstMeikyo = function(mob)
 end
 
 tenzenFunctions.secondMeikyo = function(mob)
+    mob:setAnimationSub(0)
     mob:useMobAbility(730) -- meikyo_shisui
     mob:setLocalVar('meikyo', 1)
     mob:setLocalVar('step', 1)
     mob:setLocalVar('twohourtrigger', 3)
+    mob:setLocalVar('twohourthreshold', math.random(5, 25)) -- set next meikyo hpp threshold
+end
+
+tenzenFunctions.thirdMeikyo = function(mob)
+    mob:setAnimationSub(0)
+    mob:useMobAbility(730) -- meikyo_shisui
+    mob:setLocalVar('meikyo', 1)
+    mob:setLocalVar('step', 1)
+    mob:setLocalVar('twohourtrigger', 5)
 end
 
 tenzenFunctions.wsSequence = function(mob)
     local step = mob:getLocalVar('step')
     local meikyo = mob:getLocalVar('meikyo')
-
+        local twohourtrigger   = mob:getLocalVar('twohourtrigger')
     if
         step == 1 and
         meikyo == 1
@@ -45,34 +55,20 @@ tenzenFunctions.wsSequence = function(mob)
             mobArg:setLocalVar('step', 4)
         end)
     elseif step == 4 then
-        if mob:getLocalVar('skillchain') > 75 then -- 25% chance to trigger skillchain
-            mob:timer(250, function(mobArg)
-                if mobArg:getLocalVar('skillchain') > 75 then
-                    mobArg:useMobAbility(1395) -- Tsukikage
-                    mobArg:setLocalVar('step', 5)
-                    mobArg:getBattlefield():setLocalVar('fireworks', 1)
-                end
-            end)
-        else
-            mob:setLocalVar('changeTime', mob:getBattleTime()) -- don't go back to bow form right away
-            mob:setLocalVar('step', 0)
-            mob:setLocalVar('meikyo', 0) -- reset for next meikyo and allow tenzen to now swap to bow form
-            mob:setLocalVar('skillchain', math.random(1, 100)) -- calculate next skillchain success chance
-            mob:setMobAbilityEnabled(true)
-            mob:setAutoAttackEnabled(true)
-
-            if mob:getLocalVar('twohourtrigger') == 1 then
-                mob:setLocalVar('twohourtrigger', 2) -- prevent tenzen from using second meikyo while first one is active
-            end
-        end
-    elseif step == 5 then
-        mob:useMobAbility(1399) -- Cosmic Elucidation
-        mob:setLocalVar('step', 6)
-        mob:timer(3000, function(mobArg)
-
-            mobArg:setMobMod(xi.mobMod.NO_MOVE, 1)
-            mobArg:showText(mobArg, ID.text.TENZEN_MSG_OFFSET + 1)
+        mob:timer(250, function(mobArg)
+            mobArg:useMobAbility(1395) -- Tsukikage
+            mobArg:setLocalVar('step', 5)
         end)
+    elseif step == 5 then
+        mob:timer(250, function(mobArg)
+            mobArg:useMobAbility(1399) -- Cosmic Elucidation
+            mobArg:setLocalVar('step', 6)
+        end)
+    end
+    if twohourtrigger == 1 then
+       mob:setLocalVar('twohourtrigger', 2)
+    elseif twohourtrigger == 3 then
+       mob:setLocalVar('twohourtrigger', 4)
     end
 end
 
@@ -105,32 +101,6 @@ tenzenFunctions.formSwap = function(mob)
             mob:setMobSkillAttack(0)
             mob:setMod(xi.mod.DELAY, 0) -- attack slower back to great katana
             mob:setLocalVar('changeTime', mob:getBattleTime())
-        end
-    end
-end
-
-tenzenFunctions.riceBall = function(mob, target, busyState)
-    local battlefield = mob:getBattlefield()
-
-    if
-        mob:actionQueueEmpty() and
-        not busyState
-    then
-        if
-            mob:getHPP() <= 70 and
-            mob:getLocalVar('riceball') == 0
-        then
-            if battlefield:getLocalVar('fireworks') ~= 1 then
-                mob:showText(target, ID.text.TENZEN_MSG_OFFSET + 3)
-                mob:useMobAbility(1398)
-                mob:addMod(xi.mod.ATT, 50)
-                mob:addMod(xi.mod.DEF, 30)
-                mob:setMod(xi.mod.DOUBLE_ATTACK, 5)
-                mob:addMod(xi.mod.DEX, 4)
-                mob:addMod(xi.mod.VIT, 4)
-                mob:addMod(xi.mod.CHR, 4)
-                mob:setLocalVar('riceball', 1)
-            end
         end
     end
 end
