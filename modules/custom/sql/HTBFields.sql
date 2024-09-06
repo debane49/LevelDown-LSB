@@ -580,7 +580,6 @@ UPDATE mob_pools SET name = 'Tenzen_HTBF'                                       
 UPDATE mob_pools SET spellList = 520, skill_list_id = 0, name = 'Cherukiki_HTBF'      WHERE name = 'Cherukiki'       AND poolid = 710;
 UPDATE mob_pools SET spellList = 516, skill_list_id = 0, name = 'Kukki-Chebukki_HTBF' WHERE name = 'Kukki-Chebukki'  AND poolid = 2293;
 UPDATE mob_pools SET skill_list_id = 0,                  name = 'Makki-Chebukki_HTBF' WHERE name = 'Makki-Chebukki'  AND poolid = 2492;
-
 UPDATE mob_spawn_points SET mobname = 'Tenzen_HTBF',           pos_x = -640.0229,  pos_y = -231.3476,  pos_z = 529.5814,  pos_rot =  61 WHERE mobid = 16908370;
 UPDATE mob_spawn_points SET mobname = 'Makki-Chebukki_HTBF'    WHERE mobid = 16908371;
 UPDATE mob_spawn_points SET mobname = 'Kukki-Chebukki_HTBF'    WHERE mobid = 16908372;
@@ -593,7 +592,6 @@ UPDATE mob_spawn_points SET mobname = 'Tenzen_HTBF',           pos_x = 640.1404,
 UPDATE mob_spawn_points SET mobname = 'Makki-Chebukki_HTBF'    WHERE mobid = 16908379;
 UPDATE mob_spawn_points SET mobname = 'Kukki-Chebukki_HTBF'    WHERE mobid = 16908380;
 UPDATE mob_spawn_points SET mobname = 'Cherukiki_HTBF'         WHERE mobid = 16908381;
-
 INSERT INTO mob_droplist VALUES(3936,0,0,1000,4072,1000); -- Rem Tale Ch 9
 INSERT INTO mob_droplist VALUES(3936,1,1,500,4072,500); -- Rem Tale Ch 9
 INSERT INTO mob_droplist VALUES(3936,1,2,1000,8721,250); -- Hepatizon Ore
@@ -611,6 +609,16 @@ INSERT INTO mob_droplist VALUES(3936,1,4,600,28379,200); -- Mizukage-no-Kubikaza
 
 -- One to e Feared HBF
 
+INSERT INTO `mob_pools` VALUES (40018,'Omega_HTBF','Omega',54,0x0000350400000000000000000000000000000000,1,1,6,240,100,0,1,1,0,34,22528,32,7,1691,13,0,0,0,0,54,54);
+INSERT INTO `mob_pools` VALUES (40017,'Ultima_HTBF','Ultima',54,0x0000330400000000000000000000000000000000,1,1,6,240,100,0,1,1,0,34,22528,32,2635,1691,13,0,0,0,0,728,54);
+UPDATE mob_groups SET poolid = 40017, dropid = 3937,HP = 155000,  MP = 9999, minLevel = 120, maxLevel = 125, name = 'Ultima_HTBF' WHERE groupid = 9 AND name = 'Ultima_HTBF'; 
+UPDATE mob_groups SET poolid = 40018,               HP = 155000,  MP = 9999, minLevel = 120, maxLevel = 125, name = 'Omega_HTBF' WHERE groupid = 8 AND name = 'Omega_HTBF'; 
+UPDATE mob_spawn_points SET mobname = 'Omega_HTBF', groupid = 8,          pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908406; 
+UPDATE mob_spawn_points SET mobname = 'Omega_HTBF', groupid = 8,          pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908408; 
+UPDATE mob_spawn_points SET mobname = 'Omega_HTBF', groupid = 8,          pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908410; 
+UPDATE mob_spawn_points SET mobname = 'Ultima_HTBF', groupid = 9,         pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908407;
+UPDATE mob_spawn_points SET mobname = 'Ultima_HTBF', groupid = 9,         pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908409;
+UPDATE mob_spawn_points SET mobname = 'Ultima_HTBF', groupid = 9,         pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908411;
 INSERT INTO mob_droplist VALUES(3937,0,0,1000,4073,1000); -- Rem Tale Ch 10
 INSERT INTO mob_droplist VALUES(3937,1,1,500,4073,500); -- Rem Tale Ch 10
 INSERT INTO mob_droplist VALUES(3937,1,2,1000,8719,200); -- Maliyakaleya Coral

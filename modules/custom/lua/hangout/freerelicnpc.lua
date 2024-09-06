@@ -188,14 +188,6 @@ page3 =
          end
     },
         {
-        'Aegis',
-         function(player)
-           player:setLocalVar('RelicSelect', 11927)
-           menu.options = page5
-            delaySendMenu(player)
-         end
-    },
-        {
         'Tizona',
          function(player)
            player:setLocalVar('RelicSelect', 19834)
