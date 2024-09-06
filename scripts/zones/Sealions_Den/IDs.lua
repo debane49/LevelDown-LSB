@@ -38,6 +38,8 @@ zones[xi.zone.SEALIONS_DEN] =
         CHERUKIKI_HTBF       = GetFirstID('Cherukiki_HTBF'),
         KUKKI_CHEBUKKI_HTBF  = GetFirstID('Kukki-Chebukki_HTBF'),
         MAKKI_CHEBUKKI_HTBF  = GetFirstID('Makki-Chebukki_HTBF'),
+        OMEGA_HTBF           = GetFirstID('Omega_HTBF'),
+        ULTIMA_HTBF          = GetFirstID('Ultima_HTBF'),
     },
     npc =
     {
