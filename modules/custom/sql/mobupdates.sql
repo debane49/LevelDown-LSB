@@ -530,3 +530,6 @@ UPDATE mob_groups SET HP = 145000, minLevel = 122, maxLevel = 122 WHERE name = '
 UPDATE mob_groups SET HP = 145000, minLevel = 122, maxLevel = 122 WHERE name = 'Ningishzida' AND zoneid = 254;
 UPDATE mob_groups SET HP = 145000, minLevel = 122, maxLevel = 122 WHERE name = 'Raja' AND zoneid = 254;
 UPDATE mob_groups SET HP = 145000, minLevel = 122, maxLevel = 122 WHERE name = 'Teugghia' AND zoneid = 254;
+
+-- correct apex jagil mod skills
+UPDATE mob_pools SET skill_list_id = 197 WHERE name = 'Apex_Jagil' AND poolid = 5393;
