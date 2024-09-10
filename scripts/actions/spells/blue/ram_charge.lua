@@ -27,17 +27,17 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.damageType = xi.damageType.BLUNT
     params.scattr = xi.skillchainType.FRAGMENTATION
     params.numhits = 1
-    params.multiplier = 1.0
+    params.multiplier = 3
     params.tp150 = 1.375
     params.tp300 = 1.75
     params.azuretp = 1.875
     params.duppercap = 75
-    params.str_wsc = 0.3
+    params.str_wsc = 0.2
     params.dex_wsc = 0.0
     params.vit_wsc = 0.0
     params.agi_wsc = 0.0
     params.int_wsc = 0.0
-    params.mnd_wsc = 0.5
+    params.mnd_wsc = 0.7
     params.chr_wsc = 0.0
 
     return xi.spells.blue.usePhysicalSpell(caster, target, spell, params)

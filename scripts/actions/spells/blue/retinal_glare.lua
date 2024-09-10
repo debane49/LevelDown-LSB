@@ -32,8 +32,8 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.dex_wsc = 0.0
     params.vit_wsc = 0.0
     params.agi_wsc = 0.0
-    params.int_wsc = 0.3
-    params.mnd_wsc = 0.1
+    params.int_wsc = 0.1
+    params.mnd_wsc = 0.7
     params.chr_wsc = 0.0
 
 

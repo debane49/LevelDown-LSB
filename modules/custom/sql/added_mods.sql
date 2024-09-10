@@ -1528,25 +1528,25 @@ INSERT INTO `item_mods` VALUES (23609, 384, 600); --arcadian braccae +3 -- HASTE
 INSERT INTO `item_mods` VALUES (23609, 27, -7); --arcadian braccae +3 -- ENMITY
 INSERT INTO `item_mods` VALUES (23609, 365, 7); --arcadian braccae +3 -- SNAP_SHOT
 INSERT INTO `item_mods` VALUES (23609, 841, 10); --arcadian braccae +3 -- ALL_WSDMG_FIRST_HIT
-INSERT INTO `item_mods` VALUES (20753, 1, 105); --epeolatry -- DEF
-INSERT INTO `item_mods` VALUES (20753, 2, 46); --epeolatry -- HP
-INSERT INTO `item_mods` VALUES (20753, 5, 42); --epeolatry -- MP
-INSERT INTO `item_mods` VALUES (20753, 8, 16); --epeolatry -- STR
-INSERT INTO `item_mods` VALUES (20753, 9, 19); --epeolatry -- DEX
-INSERT INTO `item_mods` VALUES (20753, 10, 23); --epeolatry -- VIT
-INSERT INTO `item_mods` VALUES (20753, 11, 19); --epeolatry -- AGI
-INSERT INTO `item_mods` VALUES (20753, 12, 24); --epeolatry -- INT
-INSERT INTO `item_mods` VALUES (20753, 14, 35); --epeolatry -- CHR
-INSERT INTO `item_mods` VALUES (20753, 25, 27); --epeolatry -- ACC
-INSERT INTO `item_mods` VALUES (20753, 23, 47); --epeolatry -- ATT
-INSERT INTO `item_mods` VALUES (20753, 30, 41); --epeolatry -- MACC
-INSERT INTO `item_mods` VALUES (20753, 68, 48); --epeolatry -- EVA
-INSERT INTO `item_mods` VALUES (20753, 31, 85); --epeolatry -- MEVA
-INSERT INTO `item_mods` VALUES (20753, 29, 6); --epeolatry -- MDEF
-INSERT INTO `item_mods` VALUES (20753, 119, 16); --epeolatry -- SINGING
-INSERT INTO `item_mods` VALUES (20753, 384, 600); --epeolatry -- HASTE_GEAR
-INSERT INTO `item_mods` VALUES (20753, 27, -8); --epeolatry -- ENMITY
-INSERT INTO `item_mods` VALUES (20753, 161, -500); --epeolatry -- DMGPHYS
+INSERT INTO `item_mods` VALUES (23072, 1, 105); --bihu_roundlet_+2 -- DEF
+INSERT INTO `item_mods` VALUES (23072, 2, 46); --bihu_roundlet_+2 -- HP
+INSERT INTO `item_mods` VALUES (23072, 5, 42); --bihu_roundlet_+2 -- MP
+INSERT INTO `item_mods` VALUES (23072, 8, 16); --bihu_roundlet_+2 -- STR
+INSERT INTO `item_mods` VALUES (23072, 9, 19); --bihu_roundlet_+2 -- DEX
+INSERT INTO `item_mods` VALUES (23072, 10, 23); --bihu_roundlet_+2 -- VIT
+INSERT INTO `item_mods` VALUES (23072, 11, 19); --bihu_roundlet_+2 -- AGI
+INSERT INTO `item_mods` VALUES (23072, 12, 24); --bihu_roundlet_+2 -- INT
+INSERT INTO `item_mods` VALUES (23072, 14, 35); --bihu_roundlet_+2 -- CHR
+INSERT INTO `item_mods` VALUES (23072, 25, 27); --bihu_roundlet_+2 -- ACC
+INSERT INTO `item_mods` VALUES (23072, 23, 47); --bihu_roundlet_+2 -- ATT
+INSERT INTO `item_mods` VALUES (23072, 30, 41); --bihu_roundlet_+2 -- MACC
+INSERT INTO `item_mods` VALUES (23072, 68, 48); --bihu_roundlet_+2 -- EVA
+INSERT INTO `item_mods` VALUES (23072, 31, 85); --bihu_roundlet_+2 -- MEVA
+INSERT INTO `item_mods` VALUES (23072, 29, 6); --bihu_roundlet_+2 -- MDEF
+INSERT INTO `item_mods` VALUES (23072, 119, 16); --bihu_roundlet_+2 -- SINGING
+INSERT INTO `item_mods` VALUES (23072, 384, 600); --bihu_roundlet_+2 -- HASTE_GEAR
+INSERT INTO `item_mods` VALUES (23072, 27, -8); --bihu_roundlet_+2 -- ENMITY
+INSERT INTO `item_mods` VALUES (23072, 161, -500); --bihu_roundlet_+2 -- DMGPHYS
 INSERT INTO `item_mods` VALUES (23407, 1, 115); --bihu roundlet +3 -- DEF
 INSERT INTO `item_mods` VALUES (23407, 2, 56); --bihu roundlet +3 -- HP
 INSERT INTO `item_mods` VALUES (23407, 5, 52); --bihu roundlet +3 -- MP

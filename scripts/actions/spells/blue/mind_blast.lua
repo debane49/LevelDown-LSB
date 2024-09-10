@@ -25,7 +25,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.attackType = xi.attackType.MAGICAL
     params.damageType = xi.damageType.THUNDER
     params.attribute = xi.mod.MND
-    params.multiplier = 2.08
+    params.multiplier = 1
     params.azureBonus = 0.5
     params.tMultiplier = 1.5
     params.duppercap = 69
@@ -34,7 +34,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.vit_wsc = 0.0
     params.agi_wsc = 0.0
     params.int_wsc = 0.0
-    params.mnd_wsc = 0.3
+    params.mnd_wsc = 0.7
     params.chr_wsc = 0.0
 
     params.addedEffect = xi.effect.PARALYSIS

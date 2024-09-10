@@ -27,7 +27,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.damageType = xi.damageType.PIERCING
     params.scattr = xi.skillchainType.COMPRESSION
     params.numhits = 1
-    params.multiplier = 1.75
+    params.multiplier = 1
     params.tp150 = 1.75
     params.tp300 = 1.75
     params.azuretp = 1.75
@@ -36,7 +36,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.dex_wsc = 0.0
     params.vit_wsc = 0.0
     params.agi_wsc = 0.0
-    params.int_wsc = 0.2
+    params.int_wsc = 0.7
     params.mnd_wsc = 0.0
     params.chr_wsc = 0.0
 

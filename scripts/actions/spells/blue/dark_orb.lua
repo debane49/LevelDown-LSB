@@ -28,7 +28,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.attribute = xi.mod.MND
     params.diff = 0
     params.multiplier = 1
-    params.tMultiplier = 4.0
+    params.tMultiplier = 1.0
     params.tp150 = 1.5
     params.tp300 = 2
     params.azuretp = 1
@@ -40,7 +40,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.int_wsc = 0.0
     params.mnd_wsc = 0.0
     params.chr_wsc = 0.0
-    params.lvlMod = 0.625
+    params.lvlMod = 0.5
 
     return xi.spells.blue.useMagicalSpell(caster, target, spell, params, true)
 end

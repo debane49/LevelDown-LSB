@@ -36,7 +36,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.scattr = xi.skillchainType.COMPRESSION
     params.scattr2 = xi.skillchainType.REVERBERATION
     params.numhits = 1
-    params.multiplier = 1.5
+    params.multiplier = 1
     params.tp150 = 1.5
     params.tp300 = 1.5
     params.azuretp = 1.5
@@ -45,7 +45,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.dex_wsc = 0.2
     params.vit_wsc = 0.0
     params.agi_wsc = 0.0
-    params.int_wsc = 0.2
+    params.int_wsc = 0.7
     params.mnd_wsc = 0.0
     params.chr_wsc = 0.0
 

@@ -1,3 +1,7 @@
+UPDATE `mob_groups` SET respawntime = 3600 WHERE name = 'Mother_Globe'         AND groupid =   9;
+UPDATE `mob_groups` SET respawntime = 3600 WHERE name = 'Faust'                AND groupid =   6;
+UPDATE `mob_groups` SET respawntime = 3600 WHERE name = 'Zipacna'              AND groupid =  16;
+
 UPDATE `mob_groups` SET minLevel =  90, maxLevel =  90, HP =  75000, MP =    0 WHERE name = 'Mother_Globe'         AND groupid =   9;
 UPDATE `mob_groups` SET minLevel =  85, maxLevel =  85, HP =      0, MP =    0 WHERE name = 'Slave_Globe'          AND groupid =  10;
 UPDATE `mob_groups` SET minLevel =  85, maxLevel =  85, HP =      0, MP =    0 WHERE name = 'Slave_Globe'          AND groupid =  10;

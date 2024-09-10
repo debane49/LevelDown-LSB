@@ -25,8 +25,8 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.damageType = xi.damageType.WIND
     params.diff = 0 -- no stat increases magic accuracy
     params.skillType = xi.skill.BLUE_MAGIC
-    params.hpMod = 6
-    params.lvlMod = 0.750
+    params.hpMod = 3
+    params.lvlMod = 1
 
     local results = xi.spells.blue.useBreathSpell(caster, target, spell, params, true)
     local damage = results[1]

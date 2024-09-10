@@ -12,6 +12,10 @@ local page1 = {}
 local page2 = {}
 local page3 = {}
 local page4 = {}
+local page5 = {}
+local page6 = {}
+local page7 = {}
+
 
 local delaySendMenu = function(player)
     player:timer(50, function(playerArg)
@@ -292,7 +296,11 @@ page5 =
          end
     },
 }
-
+page6 =
+{
+        {
+        'Receive Free Relic 109 Armor.',
+         function(player)
 local freeaf =
 {
 [ 1] = {reward = {27663,27807,27943,28090,28223}}, -- war
@@ -318,6 +326,30 @@ local freeaf =
 [21] = {reward = {27786,27926,28066,28206,28346}}, -- geo
 [22] = {reward = {27787,27927,28067,28207,28347}}, -- run
 }
+              if player:getFreeSlotsCount() < 5 then
+                 player:printToPlayer('Please check your inventory and try again!')
+                 return
+              else
+                  player:printToPlayer(string.format('Congratulations %s, You have received a free Reforged 109 Armor set',player:getName()),  xi.msg.channel.SYSTEM_3)
+                  local lvl = player:getMainLvl()
+                  local job = player:getMainJob()  
+                        for k, v in pairs(freeaf) do
+                             if job == k then
+                                npcUtil.giveItem(player, v.reward)
+                             end
+                        end
+                                player:setCharVar('FreeAFArmor', 2)
+              end
+         end
+        },
+        {
+        'Let me think about it!',
+         function(player)
+         end
+        },
+}
+
+
     local Reja = zone:insertDynamicEntity({
 
         -- NPC or MOB
@@ -340,39 +372,39 @@ local freeaf =
        player:getCharVar('FreeRelic') ~= 2 and
        player:getCharVar('FreeRelic') ~= 3 then
        player:setCharVar('FreeRelic', 1)
-       player:printToPlayer('Congradulations on reaching Rank 10, as a reward you may choose one', 0, npc:getPacketName())
+       player:printToPlayer('Congratulations on reaching Rank 10, as a reward you may choose one', 0, npc:getPacketName())
        player:printToPlayer('free Lvl 99 Relic. Choose wisely! Refunds or exchanges will not be offered!', 0, npc:getPacketName())
        player:printToPlayer('For those jobs that cannot obtain Relic. Choose wisely! An alternative has been provided!', 0, npc:getPacketName())
     end
-      if player:getCharVar('FreeRelic') == 1 then
-          menu.options = page1
-          delaySendMenu(player)
-      end
-      local lvl = player:getMainLvl()
-      local job = player:getMainJob()
-      local varName = '[AF] Free - ' .. job
-
       local lvl = player:getMainLvl()
       local job = player:getMainJob()    
       if lvl == 99 and
             player:getCharVar('FreeAFArmor') ~= 2 then
             player:setCharVar('FreeAFArmor', 1)
-      end           
-           if player:getCharVar('FreeAFArmor') == 1 and lvl == 99 then
-              if player:getFreeSlotsCount() < 5 then
-                 player:printToPlayer('Please check your inventory and try again!')
-                 return
-              else
-                 player:printToPlayer('As an achievement award for reaching level 99, We give you, your first Reforged Artifact Armor...', 0, npc:getPacketName())
-            			for k, v in pairs(freeaf) do
-                             if job == k then
-                                npcUtil.giveItem(player, v.reward)
-                             end
-                        end
-                                player:setCharVar('FreeAFArmor', 2)
-              end
+      end   
+      if player:getCharVar('FreeRelic') == 1 then
+          menu.options = page1
+          delaySendMenu(player)
+      elseif player:getCharVar('FreeAFArmor') == 1 and lvl == 99 then
+              player:printToPlayer('Congratulations on reaching Level 99, as a reward you can obtain a free set of 109 Reforged Armor.', 0, npc:getPacketName())
+              player:printToPlayer('The free set is based on the job you are currently on which must be level 99.', 0, npc:getPacketName())
+              player:printToPlayer('If you do not want the armor on your current job, please see me again when you have leveled the job you want the armor on to 99.', 0, npc:getPacketName())
+                    player:timer(250, function(playerArg)
+                    menu.options = page6
+                    delaySendMenu(playerArg)
+                    end)
            end
-  end,
+        if player:getCharVar('FreeRelic') == 0 or
+           player:getCharVar('FreeAFArmor') == 0 then
+           player:printToPlayer('I am here to distribute your Free Relic Weapon or Free Reforged 109 armor. ', 0, npc:getPacketName())
+           player:printToPlayer('Please see me when you have obtained rank 10 for your free Relic Weapon or . ', 0, npc:getPacketName())
+           player:printToPlayer('when you have obtained Level 99 to receive you free Reforged Armor. ', 0, npc:getPacketName())
+        elseif 
+           player:getCharVar('FreeRelic') >= 2 and
+           player:getCharVar('FreeAFArmor') >= 2 then
+           player:printToPlayer('Leave me be! i am all out of free rewards for you!', 0, npc:getPacketName())
+        end
+    end,
     })
     utils.unused(Reja)
 end)

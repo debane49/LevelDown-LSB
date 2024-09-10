@@ -27,7 +27,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.diff = 0
     params.bonus = 50 
     params.numhits = 1
-    params.tmultiplier = 5
+    params.tmultiplier = 2
     params.tp150 = 1.5
     params.tp300 = 1.5
     params.azuretp = 1.5
@@ -37,7 +37,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.vit_wsc = 0.0
     params.agi_wsc = 0.0
     params.int_wsc = 0.0
-    params.mnd_wsc = 4.0
+    params.mnd_wsc = 0.7
     params.chr_wsc = 0.0
 
 

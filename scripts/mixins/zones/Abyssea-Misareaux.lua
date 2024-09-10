@@ -4,5 +4,5 @@ mixins =
     require('scripts/mixins/drop_lights'),
     require('scripts/mixins/spawn_pyxis'),
     require('scripts/mixins/drop_resistance_credits'),
-    require('drop_heavy_metal_pouches'),
+    require('scripts/mixins/drop_heavy_metal_pouches'),
 }

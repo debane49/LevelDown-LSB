@@ -1,6 +1,7 @@
 -----------------------------------
 -- func: getstats
 -- desc: prints stats of cursor target into chatlog, for debugging.
+require('scripts/globals/paragon')
 -----------------------------------
 local commandObj = {}
 
@@ -103,6 +104,40 @@ player:printToPlayer(string.format('--------------------------------------------
         player:printToPlayer(string.format('Battletime: %i seconds. Check you rage timer!!!', target:getBattleTime()), xi.msg.channel.SYSTEM_3)
         -- Todo: check if raged and/or how long mobs ragetimer is.
     end
+
+
+    local jobNameByNum = {}
+      for k, v in pairs(xi.job) do
+          jobNameByNum[v] = k
+      end
+    local modNameByNume = {}
+      for k, v in pairs(xi.mod) do
+          modNameByNume[v] = k
+      end
+
+if target:getCharVar('[ParagonModTier1]'..jobNameByNum[target:getMainJob()]) > 0 then
+
+player:printToPlayer(string.format('-------------------------------------------------------------------------------------------'),  xi.msg.channel.SYSTEM_3)
+
+player:printToPlayer(string.format('%s -- Paragon Applied Mods ----------------------------------------------------------------', target:getName()), xi.msg.channel.SYSTEM_3)
+
+player:printToPlayer(string.format('------These mods listed below are already applied in the stats above-----------------------'),  xi.msg.channel.SYSTEM_3)
+
+player:printToPlayer(string.format('Tier 1 - Applied Mod %s Power + %s',modNameByNume[paragonExModa],paragonPowera),  xi.msg.channel.SYSTEM_3)
+
+if target:getCharVar('[ParagonModTier2]'..jobNameByNum[target:getMainJob()]) > 0 then
+player:printToPlayer(string.format('Tier 2 - Applied Mod %s Power + %s',modNameByNume[paragonExModb],paragonPowerb),  xi.msg.channel.SYSTEM_3)
+end
+if target:getCharVar('[ParagonModTier3]'..jobNameByNum[target:getMainJob()]) > 0 then
+player:printToPlayer(string.format('Tier 3 - Applied Mod %s Power + %s',modNameByNume[paragonExModc],paragonPowerc),  xi.msg.channel.SYSTEM_3)
+end
+if target:getCharVar('[ParagonModTier4]'..jobNameByNum[target:getMainJob()]) > 0 then
+player:printToPlayer(string.format('Tier 4 - Applied Mod %s Power + %s',modNameByNume[paragonExModd],paragonPowerd),  xi.msg.channel.SYSTEM_3)
+end
+if target:getCharVar('[ParagonModTier5]'..jobNameByNum[target:getMainJob()]) > 0 then
+player:printToPlayer(string.format('Tier 5 - Applied Mod %s Power + %s',modNameByNume[paragonExMode],paragonPowere),  xi.msg.channel.SYSTEM_3)
+end
+end
 
 --player:printToPlayer(string.format('Attack Per: [%i]', target:getMod(xi.mod.FOOD_ATTP)), xi.msg.channel.SYSTEM_3)
 
