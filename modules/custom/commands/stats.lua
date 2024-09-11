@@ -18,7 +18,70 @@ commandObj.onTrigger = function(player)
     for k, v in pairs(xi.job) do
         jobNameByNum[v] = k
     end
-
+    local modNameByNum = {}
+      for k, v in pairs(xi.mod) do
+          modNameByNum[v] = k
+      end
+local function getModa(target)
+    local paragonModa  = 0
+        local number = tostring(target:getCharVar('[ParagonModTier1]'..jobNameByNum[target:getMainJob()]))
+        if tonumber(number) > 0 then
+          local result = {}
+            for i = 1, #number, 1 do
+	            table.insert(result, tonumber(number:sub(i, i)))
+            end
+                paragonModa = result[5]..result[6]
+        end
+return paragonModa
+end
+local function getModb(target)
+    local paragonModb  = 0
+        local number = tostring(target:getCharVar('[ParagonModTier2]'..jobNameByNum[target:getMainJob()]))
+        if tonumber(number) > 0 then
+          local result = {}
+            for i = 1, #number, 1 do
+	            table.insert(result, tonumber(number:sub(i, i)))
+            end
+               paragonModb = result[5]..result[6]
+        end
+return paragonModb
+end
+local function getModc(target)
+    local paragonModc  = 0
+        local number = tostring(target:getCharVar('[ParagonModTier3]'..jobNameByNum[target:getMainJob()]))
+        if tonumber(number) > 0 then
+          local result = {}
+            for i = 1, #number, 1 do
+	            table.insert(result, tonumber(number:sub(i, i)))
+            end
+                paragonModc = result[5]..result[6]
+        end
+return paragonModc
+end
+local function getModd(target)
+    local paragonModd  = 0
+        local number = tostring(target:getCharVar('[ParagonModTier4]'..jobNameByNum[target:getMainJob()]))
+        if tonumber(number) > 0 then
+          local result = {}
+            for i = 1, #number, 1 do
+	            table.insert(result, tonumber(number:sub(i, i)))
+            end
+                paragonModd = result[5]..result[6]
+        end
+return paragonModd
+end
+local function getMode(target)
+    local paragonMode  = 0
+        local number = tostring(target:getCharVar('[ParagonModTier5]'..jobNameByNum[target:getMainJob()]))
+        if tonumber(number) > 0 then
+          local result = {}
+            for i = 1, #number, 1 do
+	            table.insert(result, tonumber(number:sub(i, i)))
+            end
+                paragonMode = result[5]..result[6]
+        end
+return paragonMode
+end
     local target = player:getCursorTarget()
     if target == nil then
         player:printToPlayer('Target something first.')
@@ -105,16 +168,6 @@ player:printToPlayer(string.format('--------------------------------------------
         -- Todo: check if raged and/or how long mobs ragetimer is.
     end
 
-
-    local jobNameByNum = {}
-      for k, v in pairs(xi.job) do
-          jobNameByNum[v] = k
-      end
-    local modNameByNume = {}
-      for k, v in pairs(xi.mod) do
-          modNameByNume[v] = k
-      end
-
 if target:getCharVar('[ParagonModTier1]'..jobNameByNum[target:getMainJob()]) > 0 then
 
 player:printToPlayer(string.format('-------------------------------------------------------------------------------------------'),  xi.msg.channel.SYSTEM_3)
@@ -123,19 +176,19 @@ player:printToPlayer(string.format('%s -- Paragon Applied Mods -----------------
 
 player:printToPlayer(string.format('------These mods listed below are already applied in the stats above-----------------------'),  xi.msg.channel.SYSTEM_3)
 
-player:printToPlayer(string.format('Tier 1 - Applied Mod %s Power + %s',modNameByNume[paragonExModa],paragonPowera),  xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Tier 1 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModa(target))],5),  xi.msg.channel.SYSTEM_3)
 
 if target:getCharVar('[ParagonModTier2]'..jobNameByNum[target:getMainJob()]) > 0 then
-player:printToPlayer(string.format('Tier 2 - Applied Mod %s Power + %s',modNameByNume[paragonExModb],paragonPowerb),  xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Tier 2 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModb(target))],5),  xi.msg.channel.SYSTEM_3)
 end
 if target:getCharVar('[ParagonModTier3]'..jobNameByNum[target:getMainJob()]) > 0 then
-player:printToPlayer(string.format('Tier 3 - Applied Mod %s Power + %s',modNameByNume[paragonExModc],paragonPowerc),  xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Tier 3 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModc(target))],5),  xi.msg.channel.SYSTEM_3)
 end
 if target:getCharVar('[ParagonModTier4]'..jobNameByNum[target:getMainJob()]) > 0 then
-player:printToPlayer(string.format('Tier 4 - Applied Mod %s Power + %s',modNameByNume[paragonExModd],paragonPowerd),  xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Tier 4 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModd(target))],5),  xi.msg.channel.SYSTEM_3)
 end
 if target:getCharVar('[ParagonModTier5]'..jobNameByNum[target:getMainJob()]) > 0 then
-player:printToPlayer(string.format('Tier 5 - Applied Mod %s Power + %s',modNameByNume[paragonExMode],paragonPowere),  xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Tier 5 - Applied Mod %s Power + %s',modNameByNum[tonumber(getMode(target))],5),  xi.msg.channel.SYSTEM_3)
 end
 end
 
