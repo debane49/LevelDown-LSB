@@ -533,3 +533,6 @@ UPDATE mob_groups SET HP = 145000, minLevel = 122, maxLevel = 122 WHERE name = '
 
 -- correct apex jagil mod skills
 UPDATE mob_pools SET skill_list_id = 197 WHERE name = 'Apex_Jagil' AND poolid = 5393;
+
+-- correct fistule to be targetable
+UPDATE mob_pools SET entityFlags = 647 WHERE name = 'Fistule' AND poolid = 1348;

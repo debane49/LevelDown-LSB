@@ -172,7 +172,7 @@ local homepointData =
     [ 35] = { group = 4, fee = 1, dest = {      -52,       1,      16,   0, xi.zone.UPPER_JEUNO            }, page =  page54, verb = 'Teleport where? (Upper Jeuno)' }, -- Upper Jeuno #3
     [ 36] = { group = 4, fee = 1, dest = {      -99,       0,    -183,   0, xi.zone.LOWER_JEUNO            }, page =  page55, verb = 'Teleport where? (Lower Jeuno)' }, -- Lower Jeuno #1
     [ 37] = { group = 4, fee = 1, dest = {       18,      -1,      54,   0, xi.zone.LOWER_JEUNO            }, page =  page55, verb = 'Teleport where? (Lower Jeuno)' }, -- Lower Jeuno #2
-    [ 39] = { group = 4, fee = 1, dest = {       37,       0,       9,   0, xi.zone.PORT_JEUNO             }, page =  page56, verb = 'Teleport where? (Port Jeuno)' }, -- Port Jeuno #1
+    [ 38] = { group = 4, fee = 1, dest = {       37,       0,       9,   0, xi.zone.PORT_JEUNO             }, page =  page56, verb = 'Teleport where? (Port Jeuno)' }, -- Port Jeuno #1
     [ 39] = { group = 4, fee = 1, dest = {     -155,      -1,      -4,   0, xi.zone.PORT_JEUNO             }, page =  page56, verb = 'Teleport where? (Port Jeuno)' }, -- Port Jeuno #2
     [ 40] = { group = 0, fee = 1, dest = {       78,     -13,     -94,   0, xi.zone.KAZHAM                 }, page =  page80, verb = 'Teleport where? (Kazham)' }, -- Kazham #1
     [ 41] = { group = 0, fee = 1, dest = {      -13,     -15,      87,   0, xi.zone.MHAURA                 }, page =  page68, verb = 'Teleport where? (Mhaura)' }, -- Mhaura #1
