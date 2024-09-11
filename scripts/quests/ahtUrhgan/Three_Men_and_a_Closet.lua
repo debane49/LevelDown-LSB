@@ -6,7 +6,6 @@
 -- Ekhu Pesshyadha !pos -13.043 0.999 103.423 50
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.AHT_URHGAN, xi.quest.id.ahtUrhgan.THREE_MEN_AND_A_CLOSET)
 
 quest.reward =
@@ -118,17 +117,14 @@ quest.sections =
 
         [xi.zone.WAJAOM_WOODLANDS] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if
-                        prevZone == xi.zone.AHT_URHGAN_WHITEGATE and
-                        quest:getVar(player, 'Prog') == 0
-                    then
-                        return 510
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if
+                    prevZone == xi.zone.AHT_URHGAN_WHITEGATE and
+                    quest:getVar(player, 'Prog') == 0
+                then
+                    return 510
+                end
+            end,
 
             onEventFinish =
             {

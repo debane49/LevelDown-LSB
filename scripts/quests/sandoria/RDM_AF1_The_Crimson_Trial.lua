@@ -9,7 +9,6 @@
 local davoiID = zones[xi.zone.DAVOI]
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.SANDORIA, xi.quest.id.sandoria.THE_CRIMSON_TRIAL)
 
 quest.reward =
@@ -104,17 +103,14 @@ quest.sections =
                 end,
             },
 
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if
-                        not player:hasKeyItem(xi.ki.ORCISH_DRIED_FOOD) and
-                        not GetMobByID(davoiID.mob.PURPLEFLASH_BRUKDOK):isSpawned()
-                    then
-                        SpawnMob(davoiID.mob.PURPLEFLASH_BRUKDOK) -- Spawned by Quest: The Crimson Trial upon entering the zone
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if
+                    not player:hasKeyItem(xi.ki.ORCISH_DRIED_FOOD) and
+                    not GetMobByID(davoiID.mob.PURPLEFLASH_BRUKDOK):isSpawned()
+                then
+                    SpawnMob(davoiID.mob.PURPLEFLASH_BRUKDOK) -- Spawned by Quest: The Crimson Trial upon entering the zone
+                end
+            end,
         },
 
         [xi.zone.SOUTHERN_SAN_DORIA] =

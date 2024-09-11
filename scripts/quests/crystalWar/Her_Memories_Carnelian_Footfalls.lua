@@ -10,7 +10,6 @@
 require('scripts/missions/wotg/helpers')
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.CRYSTAL_WAR, xi.quest.id.crystalWar.HER_MEMORIES_CARNELIAN_FOOTFALLS)
 
 quest.reward =
@@ -38,17 +37,14 @@ quest.sections =
                 end,
             },
 
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if
-                        prevZone == xi.zone.EAST_RONFAURE_S and
-                        quest:getVar(player, 'Prog') == 0
-                    then
-                        return 170
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if
+                    prevZone == xi.zone.EAST_RONFAURE_S and
+                    quest:getVar(player, 'Prog') == 0
+                then
+                    return 170
+                end
+            end,
 
             onEventFinish =
             {
@@ -125,17 +121,14 @@ quest.sections =
                 end,
             },
 
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if
-                        prevZone == xi.zone.SOUTHERN_SAN_DORIA_S and
-                        quest:getVar(player, 'Prog') == 1
-                    then
-                        return 12
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if
+                    prevZone == xi.zone.SOUTHERN_SAN_DORIA_S and
+                    quest:getVar(player, 'Prog') == 1
+                then
+                    return 12
+                end
+            end,
 
             onEventFinish =
             {

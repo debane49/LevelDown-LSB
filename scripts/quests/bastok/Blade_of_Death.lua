@@ -6,7 +6,6 @@
 -- qm2    : !pos 206 -60 -101 196
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.BASTOK, xi.quest.id.bastok.BLADE_OF_DEATH)
 
 quest.reward =
@@ -47,17 +46,14 @@ quest.sections =
 
         [xi.zone.ZERUHN_MINES] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if
-                        prevZone == xi.zone.PALBOROUGH_MINES and
-                        not player:hasItem(xi.item.CHAOSBRINGER)
-                    then
-                        return 131
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if
+                    prevZone == xi.zone.PALBOROUGH_MINES and
+                    not player:hasItem(xi.item.CHAOSBRINGER)
+                then
+                    return 131
+                end
+            end,
 
             onEventFinish =
             {

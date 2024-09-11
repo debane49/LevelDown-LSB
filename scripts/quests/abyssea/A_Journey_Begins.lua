@@ -5,7 +5,6 @@
 -- Joachim : !pos -52.844 0 -9.978 246
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.ABYSSEA, xi.quest.id.abyssea.A_JOURNEY_BEGINS)
 
 quest.reward =
@@ -33,14 +32,11 @@ quest.sections =
                 end,
             },
 
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if quest:getVar(player, 'Prog') == 0 then
-                        return 324
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if quest:getVar(player, 'Prog') == 0 then
+                    return 324
+                end
+            end,
 
             onEventFinish =
             {

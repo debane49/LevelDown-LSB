@@ -11,7 +11,6 @@
 -- Two-leaf Mandy Bud  : !additem 4368
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.OTHER_AREAS, xi.quest.id.otherAreas.MONSTROSITY)
 
 quest.reward = {}
@@ -166,12 +165,9 @@ quest.sections =
 
         [xi.zone.FERETORY] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    return 2
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                return 2
+            end,
 
             onEventUpdate =
             {

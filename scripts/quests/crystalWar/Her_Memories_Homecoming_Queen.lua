@@ -12,7 +12,6 @@
 require('scripts/missions/wotg/helpers')
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.CRYSTAL_WAR, xi.quest.id.crystalWar.HER_MEMORIES_HOMECOMING_QUEEN)
 
 quest.reward =
@@ -65,14 +64,11 @@ quest.sections =
 
         [xi.zone.SOUTHERN_SAN_DORIA] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if prevZone == xi.zone.EAST_RONFAURE then
-                        return 957
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if prevZone == xi.zone.EAST_RONFAURE then
+                    return 957
+                end
+            end,
 
             onEventFinish =
             {

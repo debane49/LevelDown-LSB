@@ -4,7 +4,6 @@
 -- !addquest 8 176
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.ABYSSEA, xi.quest.id.abyssea.A_BEAKED_BLUSTERER)
 
 quest.reward = {}
@@ -43,12 +42,9 @@ quest.sections =
 
         [xi.zone.SOUTH_GUSTABERG] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    return 1
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                return 1
+            end,
 
             onEventUpdate =
             {

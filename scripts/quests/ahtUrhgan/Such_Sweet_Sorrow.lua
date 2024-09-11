@@ -5,7 +5,6 @@
 -- Dabhuh: !pos 97.939 0 -91.530 50
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.AHT_URHGAN, xi.quest.id.ahtUrhgan.SUCH_SWEET_SORROW)
 
 quest.reward =
@@ -24,14 +23,11 @@ quest.sections =
         {
             ['Dabhuh'] = quest:progressEvent(582, { text_table = 0 }),
 
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if quest:getVar(player, 'Option') == 2 then
-                        return { 956, 0 }
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if quest:getVar(player, 'Option') == 2 then
+                    return { 956, 0 }
+                end
+            end,
 
             onEventFinish =
             {
@@ -49,14 +45,11 @@ quest.sections =
 
         [xi.zone.CAEDARVA_MIRE] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if quest:getVar(player, 'Option') == 1 then
-                        return 29
-                    end
+            onZoneIn = function(player, prevZone)
+                if quest:getVar(player, 'Option') == 1 then
+                    return 29
                 end
-            },
+            end,
 
             onEventFinish =
             {

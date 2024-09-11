@@ -44,16 +44,12 @@ mission.sections =
 
         [xi.zone.LA_VAULE_S] =
         {
-            --[[
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if player:getMissionStatus(mission.areaId) == 2 then
-                        return 6
-                    end
-                end,
-            },
-            ]]--
+            onZoneIn = function(player, prevZone)
+                if player:getMissionStatus(mission.areaId) == 2 then
+                    return 6
+                end
+            end,
+
             onEventFinish =
             {
                 -- Completed BCNM
@@ -64,29 +60,6 @@ mission.sections =
                     end
                 end,
 
-               -- [6] = function(player, csid, option, npc)
-               --     mission:complete(player)
-               -- end,
-            },
-        },
-    },
-    -- 2: Final CS
-    {
-        check = function(player, currentMission, missionStatus, vars)
-            return currentMission == mission.missionId and missionStatus == 2
-        end,
-
-        [xi.zone.LA_VAULE_S] =
-        {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                        return 6
-                end,
-            },
-
-            onEventFinish =
-            {
                 [6] = function(player, csid, option, npc)
                     mission:complete(player)
                 end,

@@ -9,7 +9,6 @@
 -- Corroded Door  : !pos -385.602 21.970 456.359 90
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.CRYSTAL_WAR, xi.quest.id.crystalWar.LIGHT_IN_THE_DARKNESS)
 
 quest.reward =
@@ -150,14 +149,11 @@ quest.sections =
 
         [xi.zone.PASHHOW_MARSHLANDS_S] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if prevZone == xi.zone.GRAUBERG_S then
-                        return 901
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if prevZone == xi.zone.GRAUBERG_S then
+                    return 901
+                end
+            end,
 
             onEventFinish =
             {
@@ -203,12 +199,9 @@ quest.sections =
 
         [xi.zone.PASHHOW_MARSHLANDS_S] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    return 902
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                return 902
+            end,
 
             onEventFinish =
             {

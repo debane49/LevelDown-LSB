@@ -5,7 +5,6 @@
 -- Moogle : (Mog House, Home Nation)
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.OTHER_AREAS, xi.quest.id.otherAreas.GIVE_A_MOOGLE_A_BREAK)
 
 quest.reward =
@@ -31,7 +30,7 @@ quest.sections[1] =
     end
 }
 
----@type TQuestZoneSection
+---@type ZoneSection
 local questAvailable =
 {
     ['Moogle'] =
@@ -60,7 +59,7 @@ quest.sections[2] =
     end
 }
 
----@type TQuestZoneSection
+---@type ZoneSection
 local questAccepted =
 {
     ['Moogle'] =

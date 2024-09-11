@@ -5,7 +5,6 @@
 -- Rholont : !pos -168 -2 56 80
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.CRYSTAL_WAR, xi.quest.id.crystalWar.BONDS_THAT_NEVER_DIE)
 
 quest.reward =
@@ -95,14 +94,11 @@ quest.sections =
                 end,
             },
 
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if quest:getVar(player, 'Prog') == 4 then
-                        return 215
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if quest:getVar(player, 'Prog') == 4 then
+                    return 215
+                end
+            end,
 
             onEventFinish =
             {

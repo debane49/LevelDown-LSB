@@ -6,7 +6,6 @@
 -- Biyaada:   !pos -65.802 -6.999 69.273 48
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.AHT_URHGAN, xi.quest.id.ahtUrhgan.SAGA_OF_THE_SKYSERPENT)
 
 quest.reward =
@@ -87,14 +86,11 @@ quest.sections =
 
         [xi.zone.WAJAOM_WOODLANDS] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if quest:getVar(player, 'Prog') == 1 then
-                        return 12
-                    end
+            onZoneIn = function(player, prevZone)
+                if quest:getVar(player, 'Prog') == 1 then
+                    return 12
                 end
-            },
+            end,
 
             onEventFinish =
             {

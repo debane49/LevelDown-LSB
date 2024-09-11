@@ -4,8 +4,7 @@
 require('scripts/globals/interaction/actions/action')
 require('scripts/globals/interaction/actions/message')
 
----@class TInteractionSequence : TInteractionAction
----@field __nextAction any
+---@class TSequence : TAction
 Sequence = Action:new(Action.Type.Sequence)
 
 -- Parse out a sequence from a table of actions.
@@ -16,13 +15,15 @@ Sequence = Action:new(Action.Type.Sequence)
 --      * send message 11470, and wait 1 second
 --      * send message 11471 and face 82, and wait 2 seconds
 --      * face 115
+---@param unparsedSequence any
+---@return TSequence
 function Sequence:new(unparsedSequence)
     local obj = {}
     setmetatable(obj, self)
     self.__index = self
 
     if not unparsedSequence or #unparsedSequence == 0 then
-        return nil
+        return obj
     end
 
     local dummyFirst = { }
@@ -30,7 +31,7 @@ function Sequence:new(unparsedSequence)
     local id = nil
     for _, entry in ipairs(unparsedSequence) do
         if entry.text then
-            ---@type TInteractionMessage
+            ---@type TMessage
             local newLast = Message:new(entry.text)
             last.__nextAction = newLast
             last = newLast

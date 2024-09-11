@@ -5,7 +5,6 @@
 -- Joachim : !pos -52.844 0 -9.978 246
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.ABYSSEA, xi.quest.id.abyssea.THE_TRUTH_BECKONS)
 
 quest.reward = {}
@@ -47,47 +46,47 @@ quest.sections =
 
         [xi.zone.ABYSSEA_KONSCHTAT] =
         {
-            onZoneIn = { handleOnZoneIn },
+            onZoneIn = handleOnZoneIn,
         },
 
         [xi.zone.ABYSSEA_LA_THEINE] =
         {
-            onZoneIn = { handleOnZoneIn },
+            onZoneIn = handleOnZoneIn,
         },
 
         [xi.zone.ABYSSEA_TAHRONGI] =
         {
-            onZoneIn = { handleOnZoneIn },
+            onZoneIn = handleOnZoneIn,
         },
 
         [xi.zone.ABYSSEA_ATTOHWA] =
         {
-            onZoneIn = { handleOnZoneIn },
+            onZoneIn = handleOnZoneIn,
         },
 
         [xi.zone.ABYSSEA_MISAREAUX] =
         {
-            onZoneIn = { handleOnZoneIn },
+            onZoneIn = handleOnZoneIn,
         },
 
         [xi.zone.ABYSSEA_VUNKERL] =
         {
-            onZoneIn = { handleOnZoneIn },
+            onZoneIn = handleOnZoneIn,
         },
 
         [xi.zone.ABYSSEA_ALTEPA] =
         {
-            onZoneIn = { handleOnZoneIn },
+            onZoneIn = handleOnZoneIn,
         },
 
         [xi.zone.ABYSSEA_ULEGUERAND] =
         {
-            onZoneIn = { handleOnZoneIn },
+            onZoneIn = handleOnZoneIn,
         },
 
         [xi.zone.ABYSSEA_GRAUBERG]  =
         {
-            onZoneIn = { handleOnZoneIn },
+            onZoneIn = handleOnZoneIn,
         },
     },
 }

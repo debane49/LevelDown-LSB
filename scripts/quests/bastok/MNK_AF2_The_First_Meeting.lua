@@ -8,7 +8,6 @@
 local davoiID = zones[xi.zone.DAVOI]
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.BASTOK, xi.quest.id.bastok.THE_FIRST_MEETING)
 
 quest.reward =
@@ -91,17 +90,14 @@ quest.sections =
 
         [xi.zone.FEIYIN] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if
-                        prevZone == xi.zone.QUBIA_ARENA and
-                        not player:hasKeyItem(xi.ki.LETTER_FROM_DALZAKK)
-                    then
-                        return 16
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if
+                    prevZone == xi.zone.QUBIA_ARENA and
+                    not player:hasKeyItem(xi.ki.LETTER_FROM_DALZAKK)
+                then
+                    return 16
+                end
+            end,
 
             onEventFinish =
             {

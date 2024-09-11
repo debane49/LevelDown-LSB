@@ -72,17 +72,48 @@ mission.sections =
         [xi.zone.SOUTHERN_SAN_DORIA_S] =
         {
             ['Lion_Springs'] = mission:progressEvent(70, 1, 0, 2964, 0, 66453367, 8366690, 4095, 131140),
+
+            onZoneIn = function(player, prevZone)
+                local missionStatus = player:getMissionStatus(mission.areaId)
+
+                if missionStatus == 3 then
+                    return mission:progressEvent(152)
+                elseif missionStatus == 4 then
+                    return mission:progressEvent(153)
+                end
+            end,
+
+            onEventUpdate =
+            {
+                [152] = function(player, csid, option, npc)
+                    if option == 1 then
+                        player:updateEvent(1, 0, 1756, 0, 66453367, 8366690, 4095, 131140)
+                    end
+                end,
+
+                [153] = function(player, csid, option, npc)
+                    if option == 1 then
+                        player:updateEvent(1, 0, 1756, 0, 66451386, 11124900, 4095, 131140)
+                    end
+                end,
+            },
+
             onEventFinish =
             {
                 [70] = function(player, csid, option, npc)
-                       player:startEvent(152)
+                    player:setMissionStatus(mission.areaId, 3)
+                    player:setPos(100.801, 1, 103.211, 31, xi.zone.SOUTHERN_SAN_DORIA_S)
                 end,
+
                 [152] = function(player, csid, option, npc)
-                       player:startEvent(153)
+                    player:setMissionStatus(mission.areaId, 4)
+                    player:setPos(100.801, 1, 103.211, 31, xi.zone.SOUTHERN_SAN_DORIA_S)
                 end,
+
                 [153] = function(player, csid, option, npc)
-                    mission:complete(player)
-                    player:delKeyItem(xi.ki.MAYAKOV_SHOW_TICKET)
+                    if mission:complete(player) then
+                        player:delKeyItem(xi.ki.MAYAKOV_SHOW_TICKET)
+                    end
                 end,
             },
         },

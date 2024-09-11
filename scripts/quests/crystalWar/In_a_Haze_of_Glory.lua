@@ -7,7 +7,6 @@
 -- Wooden Crates : !pos -0.717 3.347 -99.535 164
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.CRYSTAL_WAR, xi.quest.id.crystalWar.IN_A_HAZE_OF_GLORY)
 
 quest.reward =
@@ -79,14 +78,11 @@ quest.sections =
                 end,
             },
 
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if quest:getVar(player, 'Prog') == 2 then
-                        return 33
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if quest:getVar(player, 'Prog') == 2 then
+                    return 33
+                end
+            end,
 
             onEventFinish =
             {

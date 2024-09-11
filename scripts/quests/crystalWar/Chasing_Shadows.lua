@@ -11,7 +11,6 @@
 local pastBatalliaID = zones[xi.zone.BATALLIA_DOWNS_S]
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.CRYSTAL_WAR, xi.quest.id.crystalWar.CHASING_SHADOWS)
 
 quest.reward =
@@ -86,17 +85,14 @@ quest.sections =
                 end,
             },
 
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if
-                        prevZone == xi.zone.BEAUCEDINE_GLACIER_S and
-                        quest:getVar(player, 'Prog') == 0
-                    then
-                        return 30
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if
+                    prevZone == xi.zone.BEAUCEDINE_GLACIER_S and
+                    quest:getVar(player, 'Prog') == 0
+                then
+                    return 30
+                end
+            end,
 
             onEventFinish =
             {
@@ -155,17 +151,14 @@ quest.sections =
                 end,
             },
 
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if
-                        prevZone == xi.zone.BEAUCEDINE_GLACIER_S and
-                        quest:getVar(player, 'Prog') == 5
-                    then
-                        return 114
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if
+                    prevZone == xi.zone.BEAUCEDINE_GLACIER_S and
+                    quest:getVar(player, 'Prog') == 5
+                then
+                    return 114
+                end
+            end,
 
             onEventFinish =
             {

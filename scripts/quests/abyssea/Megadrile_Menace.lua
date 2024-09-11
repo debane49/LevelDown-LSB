@@ -6,7 +6,6 @@
 local tahrongiID = zones[xi.zone.TAHRONGI_CANYON]
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.ABYSSEA, xi.quest.id.abyssea.MEGADRILE_MENACE)
 
 quest.reward = { }
@@ -47,12 +46,9 @@ quest.sections =
 
         [xi.zone.LA_THEINE_PLATEAU] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    return 39
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                return 39
+            end,
 
             onEventUpdate =
             {

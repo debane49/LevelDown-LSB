@@ -7,7 +7,6 @@
 local middleDelkfuttsID = zones[xi.zone.MIDDLE_DELKFUTTS_TOWER]
 -----------------------------------
 
----@type TQuest
 local quest = Quest:new(xi.questLog.BASTOK, xi.quest.id.bastok.BLADE_OF_EVIL)
 
 quest.reward =
@@ -30,14 +29,11 @@ quest.sections =
 
         [xi.zone.BEADEAUX] =
         {
-            onZoneIn =
-            {
-                function(player, prevZone)
-                    if prevZone == xi.zone.PASHHOW_MARSHLANDS then
-                        return 122
-                    end
-                end,
-            },
+            onZoneIn = function(player, prevZone)
+                if prevZone == xi.zone.PASHHOW_MARSHLANDS then
+                    return 122
+                end
+            end,
 
             onEventFinish =
             {
