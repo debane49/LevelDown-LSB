@@ -176,19 +176,19 @@ player:printToPlayer(string.format('%s -- Paragon Applied Mods -----------------
 
 player:printToPlayer(string.format('------These mods listed below are already applied in the stats above-----------------------'),  xi.msg.channel.SYSTEM_3)
 
-player:printToPlayer(string.format('Tier 1 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModa(target))],5),  xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Tier 1 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModa(target)-10)],5),  xi.msg.channel.SYSTEM_3)
 
 if target:getCharVar('[ParagonModTier2]'..jobNameByNum[target:getMainJob()]) > 0 then
-player:printToPlayer(string.format('Tier 2 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModb(target))],5),  xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Tier 2 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModb(target)-10)],5),  xi.msg.channel.SYSTEM_3)
 end
 if target:getCharVar('[ParagonModTier3]'..jobNameByNum[target:getMainJob()]) > 0 then
-player:printToPlayer(string.format('Tier 3 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModc(target))],5),  xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Tier 3 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModc(target)-10)],5),  xi.msg.channel.SYSTEM_3)
 end
 if target:getCharVar('[ParagonModTier4]'..jobNameByNum[target:getMainJob()]) > 0 then
-player:printToPlayer(string.format('Tier 4 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModd(target))],5),  xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Tier 4 - Applied Mod %s Power + %s',modNameByNum[tonumber(getModd(target)-10)],5),  xi.msg.channel.SYSTEM_3)
 end
 if target:getCharVar('[ParagonModTier5]'..jobNameByNum[target:getMainJob()]) > 0 then
-player:printToPlayer(string.format('Tier 5 - Applied Mod %s Power + %s',modNameByNum[tonumber(getMode(target))],5),  xi.msg.channel.SYSTEM_3)
+player:printToPlayer(string.format('Tier 5 - Applied Mod %s Power + %s',modNameByNum[tonumber(getMode(target)-10)],5),  xi.msg.channel.SYSTEM_3)
 end
 end
 
