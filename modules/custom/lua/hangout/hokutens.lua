@@ -338,6 +338,10 @@ page8 =
 25839,1000, -- fancy shorts
 23810,1000, -- knit cap
 23811,1000, -- knit cap +1
+23871,1000, -- hebenus_gilet
+23872,1000, -- hebenus_boxers
+23873,1000, -- hebenus_top
+23874,1000, -- hebenus_shorts
 }
 
 m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize', function(zone)

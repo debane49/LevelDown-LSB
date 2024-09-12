@@ -321,10 +321,11 @@ local freeaf =
 [16] = {reward = {27678,27822,27958,28105,28238}}, -- blu
 [17] = {reward = {27679,27823,27959,28106,28239}}, -- cor
 [18] = {reward = {27680,27824,27960,28107,28240}}, -- pup
-[19] = {reward = {27681,27825,27961,28108,28241}}, -- dnc
+[19] = {reward = {27681,27825,27961,28108,28241}}, -- dnc male 1      
 [20] = {reward = {27683,27827,27963,28110,28243}}, -- sch
 [21] = {reward = {27786,27926,28066,28206,28346}}, -- geo
 [22] = {reward = {27787,27927,28067,28207,28347}}, -- run
+-- [23] = {reward = {27682,27826,27962,28109,28242}}, -- dnc female 0 
 }
               if player:getFreeSlotsCount() < 5 then
                  player:printToPlayer('Please check your inventory and try again!')
@@ -332,10 +333,18 @@ local freeaf =
               else
                   player:printToPlayer(string.format('Congratulations %s, You have received a free Reforged 109 Armor set',player:getName()),  xi.msg.channel.SYSTEM_3)
                   local lvl = player:getMainLvl()
-                  local job = player:getMainJob()  
+                  local job = player:getMainJob()
+                  local gender = player:getGender()
                         for k, v in pairs(freeaf) do
-                             if job == k then
-                                npcUtil.giveItem(player, v.reward)
+                             if job == k and k == 19 then
+                                if gender == 0 then
+
+                                   npcUtil.giveItem(player, {27682,27826,27962,28109,28242})
+                                else
+                                   npcUtil.giveItem(player, v.reward)
+                                end
+                             elseif job == k and k ~= 19 then
+                                    npcUtil.giveItem(player, v.reward)
                              end
                         end
                                 player:setCharVar('FreeAFArmor', 2)

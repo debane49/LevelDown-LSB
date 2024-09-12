@@ -51,6 +51,7 @@ m:addOverride("xi.zones.Nashmau.npcs.Rararoon.onTrigger", function(player, npc)
 9044,88920, -- Auto-Repair Kit III
 9073,88920, -- Arcanic Cell II
 9045,88920, -- Mana Tank III
+9885,88920, -- Magniplug I
 9035,100776, -- Tranquilizer II
 9038,100776, -- Shock Absorber II
 9041,100776, -- Coiler II
@@ -87,6 +88,9 @@ m:addOverride("xi.zones.Nashmau.npcs.Rararoon.onTrigger", function(player, npc)
 3313,118560, -- Vivi-Valve
 2329,118560, -- Smoke Screen
 3314,118560, -- Disruptor
+9880,118560, -- tension spring v
+9883,118560, -- styabilizer v
+9881,118560, -- loudspeaker v
 2413,185250, -- Coiler
 9233,185250, -- Mana Channeler II
 2414,185250, -- Steam Jacket
@@ -101,6 +105,7 @@ m:addOverride("xi.zones.Nashmau.npcs.Rararoon.onTrigger", function(player, npc)
 9234,321100, -- Optic Fiber II
 2415,750880, -- Turbo Charger II
 2416,750880, -- Vivi-Valve II
+
     }
     xi.shop.general(player, stock)
 

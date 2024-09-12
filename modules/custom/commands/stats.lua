@@ -168,7 +168,8 @@ player:printToPlayer(string.format('--------------------------------------------
         -- Todo: check if raged and/or how long mobs ragetimer is.
     end
 
-if target:getCharVar('[ParagonModTier1]'..jobNameByNum[target:getMainJob()]) > 0 then
+if target:getCharVar('[ParagonModTier1]'..jobNameByNum[target:getMainJob()]) > 0 and
+   target:getCharVar('[ParagonMod]Active') == 1 then
 
 player:printToPlayer(string.format('-------------------------------------------------------------------------------------------'),  xi.msg.channel.SYSTEM_3)
 

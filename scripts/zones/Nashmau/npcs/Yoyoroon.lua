@@ -67,6 +67,7 @@ entity.onTrigger = function(player, npc)
         9230, 82992,    -- Speedloader II
         9067, 82992,    -- Repeater
         9043, 82992,    -- Stealth Screen II
+        9886, 112632,   -- Magniplug II
         2322, 118560,   -- Attuner
         3307, 118560,   -- Heat Capacitor
         2323, 118560,   -- Tactical Processor
@@ -83,6 +84,7 @@ entity.onTrigger = function(player, npc)
         3313, 118560,   -- Vivi-Valve
         2329, 118560,   -- Smoke Screen
         3314, 118560,   -- Disruptor
+
     }
 
     player:showText(npc, ID.text.YOYOROON_SHOP_DIALOG)

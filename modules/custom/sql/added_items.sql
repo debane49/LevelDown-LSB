@@ -20,6 +20,14 @@ INSERT INTO `item_basic` VALUES (22053,0,'ethereal_club','ethereal_club',1,63552
 INSERT INTO `item_basic` VALUES (21873,0,'ethereal_spear','ethereal_spear',1,63552,0,1,0);
 INSERT INTO `item_basic` VALUES (22165,0,'ethereal_gun','ethereal_gun',1,63552,0,1,0);
 
+INSERT INTO `item_basic` VALUES (23873,0,'hebenus_top','hebenus_top',1,63552,0,1,0);
+INSERT INTO `item_basic` VALUES (23871,0,'hebenus_gilet','hebenus_gilet',1,63552,0,1,0);
+INSERT INTO `item_basic` VALUES (23872,0,'hebenus_boxers','hebenus_boxers',1,63552,0,1,0);
+INSERT INTO `item_basic` VALUES (23874,0,'hebenus_shorts','hebenus_shorts',1,63552,0,1,0);
+
+
+
+
 INSERT INTO `item_equipment` VALUES (23822,'diamond_somen',1,0,4194303,485,0,0,16,0,0,0); -- head 16
 INSERT INTO `item_equipment` VALUES (23823,'diamond_haramaki',1,0,4194303,485,0,0,32,0,0,0); -- body 32
 INSERT INTO `item_equipment` VALUES (23824,'diamond_kote',1,0,4194303,485,0,0,64,0,0,0); -- hands 64
@@ -57,6 +65,11 @@ INSERT INTO `item_equipment` VALUES (21873,'ethereal_spear',1,0,4194303,933,0,0,
 INSERT INTO `item_equipment` VALUES (20931,'celestial_spear',1,0,4194303,777,0,0,1,0,0,0);
 INSERT INTO `item_equipment` VALUES (22165,'ethereal_gun',1,0,4194303,155,0,0,4,0,0,0);
 INSERT INTO `item_equipment` VALUES (22146,'ethereal_bow',1,0,4194303,154,0,0,4,0,0,0);
+
+INSERT INTO `item_equipment` VALUES (23873,'hebenus_top',1,0,4194303,496,0,0,32,64,0,0);
+INSERT INTO `item_equipment` VALUES (23871,'hebenus_gilet',1,0,4194303,495,0,0,32,64,0,0);
+INSERT INTO `item_equipment` VALUES (23872,'hebenus_boxers',1,0,4194303,495,0,0,128,256,0,0);
+INSERT INTO `item_equipment` VALUES (23874,'hebenus_shorts',1,0,4194303,496,0,0,128,256,0,0);
 
 INSERT INTO `item_weapon` VALUES (20931,'celestial_spear',8,0,0,0,0,1,1,396,1,0);
 INSERT INTO `item_weapon` VALUES (20593,'hedron_dagger',2,0,0,0,0,1,1,150,1,0);
