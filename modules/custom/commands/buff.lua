@@ -16,6 +16,7 @@ local power        = 50
 local regainPower  = 25
 local refreshPower = 10
 local regenPower   = 10
+local expPower     = 500
             local jobNameByNum = {}
                 for k, v in pairs(xi.job) do
                     jobNameByNum[v] = k
@@ -25,16 +26,19 @@ local regenPower   = 10
       regainPower  = 25
       refreshPower = 10
       regenPower   = 10
+      expPower     = 350
    elseif player:getCharVar('[ParagonQuest]'..jobNameByNum[player:getMainJob()]) == 20 then
       power        = 25
       regainPower  = 15
       refreshPower = 7
       regenPower   = 7
+      expPower     = 250
    elseif player:getCharVar('[ParagonQuest]'..jobNameByNum[player:getMainJob()]) == 30 then
       power        = 15
       regainPower  = 7
       refreshPower = 3
       regenPower   = 3
+      expPower     = 100
    end
 -- player:printToPlayer(string.format('%s %s %s %s',power,regainPower,refreshPower,regenPower))
 
@@ -48,7 +52,7 @@ local regenPower   = 10
         if player:hasStatusEffect(xi.effect.DEDICATION) then
            return
            else
-           player:addStatusEffect(xi.effect.DEDICATION, 500, 0, 0, 0, 30000) -- max 30000 or server crash
+           player:addStatusEffect(xi.effect.DEDICATION, expPower, 0, 0, 0, 30000) -- max 30000 or server crash
         end
     -- Add bonus mods to the player..
     player:addMod(xi.mod.RACC, power)

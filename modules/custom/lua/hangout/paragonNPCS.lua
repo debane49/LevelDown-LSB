@@ -96,7 +96,84 @@ page2 =
             playerArg:injectActionPacket(playerArg:getID(), 4, 509, 0, 0, 185, 10, 1)
             playerArg:setLevel(1)
             playerArg:setCharVar('[ParagonQuest]'..jobNameByNum[playerArg:getMainJob()], paragonTierQuest)
-        end,
+
+            local buffOff = function(playerArg)
+                    playerArg:setCharVar('Buff', 0)
+                    playerArg:setCharVar('BuffLvl', 0)
+                    playerArg:setCharVar('BuffJob', 0)
+                            local power        = 50
+                            local regainPower  = 25
+                            local refreshPower = 10
+                            local regenPower   = 10
+                            local jobNameByNum = {}
+                                for k, v in pairs(xi.job) do
+                                    jobNameByNum[v] = k
+                                end
+   if playerArg:getCharVar('[ParagonQuest]'..jobNameByNum[playerArg:getMainJob()]) == 10 then
+      power        = 35
+      regainPower  = 25
+      refreshPower = 10
+      regenPower   = 10
+   elseif playerArg:getCharVar('[ParagonQuest]'..jobNameByNum[playerArg:getMainJob()]) == 20 then
+      power        = 25
+      regainPower  = 15
+      refreshPower = 7
+      regenPower   = 7
+   elseif playerArg:getCharVar('[ParagonQuest]'..jobNameByNum[playerArg:getMainJob()]) == 30 then
+      power        = 15
+      regainPower  = 7
+      refreshPower = 3
+      regenPower   = 3
+   end
+
+    playerArg:setCharVar('Buff', 0)
+    playerArg:setCharVar('BuffLvl', 0)
+    playerArg:setCharVar('BuffJob', 0)
+    -- Remove bonus effects..
+    playerArg:delStatusEffect(xi.effect.REGAIN)
+    playerArg:delStatusEffect(xi.effect.DEDICATION)
+    playerArg:delStatusEffect(xi.effect.REFRESH)
+    playerArg:delStatusEffect(xi.effect.REGEN)
+    -- Remove bonus mods..
+    playerArg:delMod(xi.mod.ATT, power)
+    playerArg:delMod(xi.mod.RACC, power)
+    playerArg:delMod(xi.mod.RATT, power)
+    playerArg:delMod(xi.mod.ACC, power)
+    playerArg:delMod(xi.mod.MATT, power)
+    playerArg:delMod(xi.mod.MACC, power)
+    playerArg:delMod(xi.mod.RDEF, power)
+    playerArg:delMod(xi.mod.DEF, power)
+    playerArg:delMod(xi.mod.MDEF, power)
+end
+
+local buffOffCap = function(playerArg)
+    playerArg:setCharVar('Buff', 0)
+    playerArg:setCharVar('BuffLvl', 0)
+    playerArg:setCharVar('BuffJob', 0)
+    playerArg:delStatusEffect(xi.effect.COMMITMENT)
+end
+                      if playerArg:getCharVar('BuffLvl') < playerArg:getMainLvl() and
+                         playerArg:getCharVar('Buff') == 1 then
+                         playerArg:setCharVar('BuffLvl', playerArg:getMainLvl())
+                      end
+                      if playerArg:getCharVar('BuffLvl') == 99 and
+                         playerArg:getCharVar('Buff') == 1 then
+                                playerArg:printToplayerArg('Buff disabled.')
+                                buffOff(playerArg)
+                      end
+                      if playerArg:getCharVar('BuffJob') ~= playerArg:getMainJob() and
+                         playerArg:getCharVar('Buff') == 1 then
+                                playerArg:printToplayerArg('Buff disabled.')
+                                buffOff(playerArg)
+                      end
+                      if playerArg:getCharVar('BuffJob') ~= playerArg:getMainJob() and
+                         playerArg:getCharVar('Buff') == 2 then
+                                playerArg:printToplayerArg('Buff disabled.')
+                                buffOffCap(playerArg)
+                      end
+
+
+         end,
     },
     {
         'No',
@@ -695,12 +772,12 @@ end
         onTrigger = function(player, npc)
         completedParagonChallenges(player)
         local completed = player:getLocalVar('[ParagonQuest]Completed')
-        player:printToPlayer(string.format('%s', completed))
+     --   player:printToPlayer(string.format('%s', completed))
 
         if completed >= 10 and completed <= 24 and player:getCharVar('[ParagonReward]') == 0 then
-            player:addCurrency('login_points', 3500) -- ????
+            npcUtil.giveItem(player, 26117) -- Crepuscular earring
             player:setCharVar('[ParagonReward]', 1)
-            player:printToPlayer(string.format('%s has been awarded 3500 Login Points.',player:getName()),  xi.msg.channel.SYSTEM_3)
+            player:printToPlayer(string.format('%s has been awarded Crepuscular Earring.',player:getName()),  xi.msg.channel.SYSTEM_3)
         elseif completed >= 25 and completed <= 49 and player:getCharVar('[ParagonReward]') == 1 then
                            menu.options = page9
                            delaySendMenu(player)

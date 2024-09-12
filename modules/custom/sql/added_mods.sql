@@ -3950,3 +3950,11 @@ INSERT INTO `item_mods` VALUES (27532, 162, -100); -- zwozo earring -- breath dm
 INSERT INTO `item_mods` VALUES (27533, 25, 10); -- zwozo earring +1 -- acc
 INSERT INTO `item_mods` VALUES (27533, 225, 5); -- zwozo earring +1 -- bird killer
 INSERT INTO `item_mods` VALUES (27533, 162, -200); -- zwozo earring +1 -- breath dmg taken 
+
+INSERT INTO `item_mods` VALUES (26117, 25,  10); -- Crepuscular earring -- acc
+INSERT INTO `item_mods` VALUES (26117, 26,  10); -- Crepuscular earring -- racc
+INSERT INTO `item_mods` VALUES (26117, 30,  10); -- Crepuscular earring -- macc
+INSERT INTO `item_mods` VALUES (26117, 73,   5); -- Crepuscular earring -- store tp
+INSERT INTO `item_mods_pet` VALUES (26117, 991, 10, 0); -- Crepuscular earring -- Increases pet physical accuracy, ranged accuracy, and evasion
+INSERT INTO `item_mods_pet` VALUES (26117, 994, 10, 0); -- Crepuscular earring -- Increases pet magic accuracy and evasion
+INSERT INTO `item_mods_pet` VALUES (26117, 73,  5,  0); -- Crepuscular earring -- Increases pet TP bonus 
