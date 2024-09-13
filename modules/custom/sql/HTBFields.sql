@@ -641,7 +641,7 @@ INSERT INTO mob_droplist VALUES(3937,1,4,400,26000,100); -- Consummation Torque
 UPDATE mob_groups SET poolid = 5106 WHERE name = 'Promathia_htbf';
 
 -- insert mob ability
-INSERT INTO `mob_skills` VALUES (1712,1183,'bugle_call',1,10.0,2000,1500,4,4,0,0,0,0,0); -- imp -- bugal call
-INSERT INTO `mob_skills` VALUES (1980,1197,'boreas_mantle',0,7.0,2000,1500,1,4,0,0,0,0,0); -- phantom puk
+-- INSERT INTO `mob_skills` VALUES (1712,1183,'bugle_call',1,10.0,2000,1500,4,4,0,0,0,0,0); -- imp -- bugal call
+-- INSERT INTO `mob_skills` VALUES (1980,1197,'boreas_mantle',0,7.0,2000,1500,1,4,0,0,0,0,0); -- phantom puk
 INSERT INTO `mob_skills` VALUES (3290,3034,'bowels_of_agony',0,7.0,2000,0,4,0,0,0,0,0,0); -- Bowels of Agony - Shadow Lord
 INSERT INTO `mob_skill_lists` VALUES ('ShadowLord', 225, 3290);
