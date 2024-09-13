@@ -260,6 +260,7 @@ page16 =
             5988,     500,   -- Instant Protect
             5989,     500,   -- Instant Shell
             5990,     500,   -- Instant Stoneskin
+            1550,     500,   -- Ark Pentasphere
 }
 page17 =
 {

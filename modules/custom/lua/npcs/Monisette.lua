@@ -26,7 +26,7 @@ local afRArmorPlusOne =
 [9] = { trade = {28091, {4072, 8}, 2476, 8726}, reward = 28112}, -- anchorites hose +1
 [10] = { trade = {28224, {4073, 8}, 2476, 8728}, reward = 28245}, -- anchorites gaiters +1
 [11] = { trade = {27665, {4069, 8}, 1132, 8720}, reward = 27686}, -- theophany cap +1
-[12] = { trade = {27809, {4070, 8}, 1132, 8722}, reward = 27809}, -- theophany briault
+[12] = { trade = {27809, {4070, 8}, 1132, 8722}, reward = 27830}, -- theophany briault +1 
 [13] = { trade = {27945, {4071, 8}, 1132, 8724}, reward = 27966}, -- theophany mitts +1
 [14] = { trade = {28092, {4072, 8}, 1132, 8726}, reward = 28113}, -- theophany pantaloons +1
 [15] = { trade = {28225, {4073, 8}, 1132, 8728}, reward = 28246}, -- theophany duckbills +1
