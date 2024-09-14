@@ -13,7 +13,7 @@ local content = Battlefield:new({
     index            = 4,
     entryNpc         = 'MS_Entrance',
     exitNpc          = 'Moon_Spiral',
-    requiredKeyItems = { xi.ki.MOONLIT_PATH_PHANTOM_GEM },
+    requiredKeyItems = { xi.ki.MOONLIT_PATH_PHANTOM_GEM, keep = false   },
     allowTrusts      = true,
 })
 

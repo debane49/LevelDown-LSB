@@ -4,6 +4,8 @@
 -- Spawns Isgebind
 -- !pos 175 -113 472 253
 -----------------------------------
+local ID = zones[xi.zone.ABYSSEA_ULEGUERAND]
+-----------------------------------
 ---@type TNpcEntity
 local entity = {}
 

@@ -22,7 +22,7 @@ entity.onMobSpawn = function(mob)
     mob:addMod(xi.mod.SILENCE_MEVA, 20)
     mob:addMod(xi.mod.GRAVITY_MEVA, 20)
     mob:addMod(xi.mod.LULLABY_MEVA, 30)
-    mob:setLocalVar('[rage]timer', 3600) -- 60 minutes
+    mob:setLocalVar('[rage]timer', 900) -- 15 minutes
 end
 
 entity.onMobRoam = function(mob)
@@ -32,19 +32,19 @@ entity.onMobFight = function(mob, target)
     local hpp = mob:getHPP()
     local useChainspell = false
 
-    if hpp < 90 and mob:getLocalVar('chainspell89') == 0 then
+    if hpp < 85 and mob:getLocalVar('chainspell89') == 0 then
         mob:setLocalVar('chainspell89', 1)
         useChainspell = true
-    elseif hpp < 70 and mob:getLocalVar('chainspell69') == 0 then
+    elseif hpp < 65 and mob:getLocalVar('chainspell69') == 0 then
         mob:setLocalVar('chainspell69', 1)
         useChainspell = true
-    elseif hpp < 50 and mob:getLocalVar('chainspell49') == 0 then
+    elseif hpp < 45 and mob:getLocalVar('chainspell49') == 0 then
         mob:setLocalVar('chainspell49', 1)
         useChainspell = true
-    elseif hpp < 30 and mob:getLocalVar('chainspell29') == 0 then
+    elseif hpp < 25 and mob:getLocalVar('chainspell29') == 0 then
         mob:setLocalVar('chainspell29', 1)
         useChainspell = true
-    elseif hpp < 10 and mob:getLocalVar('chainspell9') == 0 then
+    elseif hpp < 5 and mob:getLocalVar('chainspell9') == 0 then
         mob:setLocalVar('chainspell9', 1)
         useChainspell = true
     end

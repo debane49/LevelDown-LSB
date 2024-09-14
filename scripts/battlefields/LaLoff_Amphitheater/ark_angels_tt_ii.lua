@@ -14,7 +14,7 @@ local content = Battlefield:new({
     index                 = 7,
     entryNpc              = 'qm1_2',
     exitNpc               = 'qm2',
-    requiredKeyItems      = { xi.ki.PHANTOM_GEM_OF_COWARDICE },
+    requiredKeyItems      = { xi.ki.PHANTOM_GEM_OF_COWARDICE, keep = false   },
 })
 
 content.groups =

@@ -67,6 +67,7 @@ custom/lua/Supremes.lua
 custom/lua/three_mage_door_open.lua
 custom/lua/remove_limbus_lockout.lua
 custom/lua/Adoulin_blockage.lua
+custom/lua/persist_nm_time_of_deaths.lua
 
 
 

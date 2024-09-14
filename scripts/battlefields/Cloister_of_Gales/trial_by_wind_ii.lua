@@ -13,7 +13,7 @@ local content = Battlefield:new({
     index            = 5,
     entryNpc         = 'WP_Entrance',
     exitNpc          = 'Wind_Protocrystal',
-    requiredKeyItems = { xi.ki.AVATAR_PHANTOM_GEM },
+    requiredKeyItems = { xi.ki.AVATAR_PHANTOM_GEM, keep = false   },
     allowTrusts      = true,
 })
 

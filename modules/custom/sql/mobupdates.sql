@@ -536,3 +536,30 @@ UPDATE mob_pools SET skill_list_id = 197 WHERE name = 'Apex_Jagil' AND poolid = 
 
 -- correct fistule to be targetable
 UPDATE mob_pools SET entityFlags = 647 WHERE name = 'Fistule' AND poolid = 1348;
+
+-- new skill list for Chillwing Hwitti
+INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 50003, 1709); -- abrasive_tantara
+INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 50003, 1710); -- deafening_tantara
+INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 50003, 2004); -- stifling tantara
+INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 50003, 2003); -- stifling tantara
+UPDATE mob_pools SET skill_list_id = 50003 WHERE poolid = 720 AND name = 'Chillwing_Hwitti';
+-- add howl to Sarameya
+INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 314, 1079); -- howl
+-- add loot to Ironclad_Executioner
+INSERT INTO mob_droplist VALUES(3938, 0,0,1000,11361,500); -- Pluviale
+INSERT INTO mob_droplist VALUES(3938, 0,0,1000,19256,500); -- Charis Feather
+INSERT INTO mob_droplist VALUES(3938, 1,1, 750,19255,375); -- Mavi Tathlum
+INSERT INTO mob_droplist VALUES(3938, 1,1, 750,11750,375); -- Creed Baudrier
+INSERT INTO mob_droplist VALUES(3938, 1,2,1000,3219,500); -- Coin of Wieldance
+INSERT INTO mob_droplist VALUES(3938, 1,2,1000,3218,500); -- Stone of Wieldance
+UPDATE mob_groups SET dropid = 3938 WHERE groupid = 46 AND name = 'Ironclad_Executioner';
+UPDATE mob_pools SET entityFlags = 1159 WHERE poolid = 1159 AND name = 'Ironclad_Executioner';
+
+-- mob skills for Ovni
+INSERT INTO mob_skills VALUES(1374,1026,'torrential_torment',1,20.0,2000,1500,4,0,0,0,0,0,0); -- torrential_torment
+INSERT INTO mob_skills VALUES(1377,1029,'flourescene',0,7.0,2000,1500,1,0,0,0,0,0,0) -- flourescene
+
+-- add skills into Ovni list
+INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 824, 1374); -- torrential torment
+INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 824, 1377); -- flourescene - boost
+INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 824, 694); -- invincible
