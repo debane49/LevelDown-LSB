@@ -1,7 +1,7 @@
 --										  Abyssea - ALL NORMAL MOBS +30 LVLs
 UPDATE mob_groups SET minLevel = minLevel + 40, maxLevel = maxLevel +45 WHERE zoneid IN (15,45,132,215,216,217,218,253,254) AND spawntype != 128;
 UPDATE mob_groups SET minLevel = minLevel + 40, maxLevel = maxLevel +45 WHERE zoneid IN (15,45,132,215,216,217,218,253,254) AND spawntype = 128;
---						Mob Pools settings						--
+--						Mob Pools settings		
 UPDATE mob_pools SET aggro = 1 WHERE name = "Apex_Eft";
 UPDATE mob_pools SET aggro = 1 WHERE name = "Apex_Toad";
 UPDATE mob_pools SET aggro = 1 WHERE name = "Apex_Mandragora";
@@ -14,8 +14,8 @@ UPDATE mob_pools SET aggro = 1 WHERE name = "Locus_Wivre";
 UPDATE mob_pools SET links = 1 WHERE name = "Locus_Wivre";
 UPDATE mob_pools SET aggro = 1 WHERE name = "Locus_Colibri";
 UPDATE mob_pools SET aggro = 1 WHERE name = "Locus_Hypnos_Eft";
---						Mob Group settings						--
---							Zone 190						--
+--						Mob Group settings	
+--							Zone 190			
 UPDATE mob_groups SET HP = 17000 WHERE name = "Locus_Spartoi_Sorcerer";
 UPDATE mob_groups SET HP = 17000 WHERE name = "Locus_Spartoi_Warrior";
 UPDATE mob_groups SET HP = 17000 WHERE name = "Locus_Cutlass_Scorpion";
@@ -29,21 +29,21 @@ UPDATE mob_groups SET HP = 17000 WHERE name = "Locus_Bight_Rarab";
 UPDATE mob_groups SET HP = 17000 WHERE name = "Locus_Camelopard";
 UPDATE mob_groups SET HP = 17000 WHERE name = "Locus_Hypnos_Eft";
 UPDATE mob_groups SET HP = 17000 WHERE name = "Locus_Ghost_Crab";
---						Mob Family settings						--
+--						Mob Family settings
 UPDATE mob_family_system SET mobradius = 1.0 WHERE familyID = 77;
 UPDATE mob_family_system SET mobradius = 3.0 WHERE familyID = 188;
 --                      Mob Respawn Time
-UPDATE mob_groups SET respawntime = 180 WHERE respawntime = 60; --All
-UPDATE mob_groups SET respawntime = 180 WHERE respawntime = 300; --All
-UPDATE mob_groups SET respawntime = 180 WHERE respawntime = 330; --All
-UPDATE mob_groups SET respawntime = 180 WHERE respawntime = 480; --All
-UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 600; --All
-UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 660; --All
-UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 720; --All
-UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 792; --All
-UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 900; --All
-UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 924; --All
-UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 960; --All
+UPDATE mob_groups SET respawntime = 180 WHERE respawntime = 60; -- All
+UPDATE mob_groups SET respawntime = 180 WHERE respawntime = 300; -- All
+UPDATE mob_groups SET respawntime = 180 WHERE respawntime = 330; -- All
+UPDATE mob_groups SET respawntime = 180 WHERE respawntime = 480; -- All
+UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 600; -- All
+UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 660; -- All
+UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 720; -- All
+UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 792; -- All
+UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 900; -- All
+UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 924; -- All
+UPDATE mob_groups SET respawntime = 420 WHERE respawntime = 960; -- All
 --                      Zone 178
 UPDATE mob_groups SET respawntime = 180 WHERE respawntime = 420 AND zoneid = 178;
 UPDATE mob_groups SET respawntime = 180 WHERE respawntime = 600 AND zoneid = 178;
@@ -544,7 +544,7 @@ INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 50003, 2004); -- stifling
 INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 50003, 2003); -- stifling tantara
 UPDATE mob_pools SET skill_list_id = 50003 WHERE poolid = 720 AND name = 'Chillwing_Hwitti';
 -- add howl to Sarameya
-INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 314, 1079); -- howl
+INSERT INTO mob_skill_lists VALUES('Sarameya', 314, 1079); -- howl
 -- add loot to Ironclad_Executioner
 INSERT INTO mob_droplist VALUES(3938, 0,0,1000,11361,500); -- Pluviale
 INSERT INTO mob_droplist VALUES(3938, 0,0,1000,19256,500); -- Charis Feather
@@ -557,9 +557,9 @@ UPDATE mob_pools SET entityFlags = 1159 WHERE poolid = 1159 AND name = 'Ironclad
 
 -- mob skills for Ovni
 INSERT INTO mob_skills VALUES(1374,1026,'torrential_torment',1,20.0,2000,1500,4,0,0,0,0,0,0); -- torrential_torment
-INSERT INTO mob_skills VALUES(1377,1029,'flourescene',0,7.0,2000,1500,1,0,0,0,0,0,0) -- flourescene
+INSERT INTO mob_skills VALUES(1377,1029,'flourescene',0,7.0,2000,1500,1,0,0,0,0,0,0); -- flourescene
 
 -- add skills into Ovni list
-INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 824, 1374); -- torrential torment
-INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 824, 1377); -- flourescene - boost
-INSERT INTO mob_skill_lists VALUES('Chillwing Hwitti', 824, 694); -- invincible
+INSERT INTO mob_skill_lists VALUES('torrential_torment', 824, 1374); -- torrential torment
+INSERT INTO mob_skill_lists VALUES('flourescene', 824, 1377); -- flourescene - boost
+INSERT INTO mob_skill_lists VALUES('invincible', 824, 694); -- invincible
