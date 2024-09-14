@@ -26,7 +26,7 @@ xi.settings.login =
     MAINT_MODE = 0,
 
     -- Logging of user IP address to database (true/false)
-    LOG_USER_IP = false,
+    LOG_USER_IP = true,
 
     -- Allow account creation via the loader (true/false)
     ACCOUNT_CREATION = true,
