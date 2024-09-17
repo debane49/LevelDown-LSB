@@ -173,19 +173,19 @@ local jobAFTable =
             },
             [21] = -- Geo
             {
-               [52] = { 14089},  -- 
-               [54] = { 13961},  -- 
-               [56] = { 12511},  -- 
-               [58] = { 14214},  -- 
-               [60] = { 12638},  -- 
+               [52] = { 16143},  --
+               [54] = { 14583},  --
+               [56] = { 15007},  --
+               [58] = { 16314},  --
+               [60] = { 15751},  --
             },
             [22] = -- Run
             {
-               [52] = { 14089},  -- 
-               [54] = { 13961},  -- 
-               [56] = { 12511},  -- 
-               [58] = { 14214},  -- 
-               [60] = { 12638},  -- 
+               [52] = { 16143},  --
+               [54] = { 14583},  --
+               [56] = { 15007},  --
+               [58] = { 16314},  --
+               [60] = { 15751},  --
             },
 }
 
@@ -206,11 +206,10 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
         end
     end
 
+            if mlvl == 52 or mlvl == 54 or mlvl == 56 or mlvl == 58 or mlvl == 60 then
+                local itemData = jobAFTable[job][mlvl]
+                local itemId = itemData[1]
 
-    local itemData = jobAFTable[job][levelMilestones]
-    local itemId   = itemData[1]
-
-            if player:getMainJob() == job and player:getJobLevel(player:getMainJob()) == levelMilestones then
                if job == 19 and gender == 0 then
                           if player:getFreeSlotsCount() < 1 then
                              player:printToPlayer('Your inventory is full and the armor has been sent to your delivery box!',xi.msg.channel.SYSTEM_3)

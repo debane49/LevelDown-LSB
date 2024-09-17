@@ -312,10 +312,24 @@ commandObj.onTrigger = function(player)
         {
             -- AF1
             21460,1000, -- Mantre bell
+            16143,45000,  --
+            14583,45000,  --
+            15007,45000,  --
+            16314,45000,  --
+            15751,45000,  --
         }
         xi.shop.general(player, stock);
     elseif(player:getMainJob() == xi.job.RUN) then -- RUN
-        error(player, "he FBI want's to know your location!! RUN is Broken, don't get banned!!!");
+        local stock =
+        {
+            -- AF1
+            16143,45000,  --
+            14583,45000,  --
+            15007,45000,  --
+            16314,45000,  --
+            15751,45000,  --
+        }
+        xi.shop.general(player, stock);
 		return;
     end
 end
