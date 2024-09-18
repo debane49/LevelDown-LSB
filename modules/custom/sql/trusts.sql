@@ -393,3 +393,13 @@ INSERT INTO `mob_spell_lists` VALUES ('TRUST_Matsui-P',435,337,75,255); -- Suito
 INSERT INTO `mob_spell_lists` VALUES ('TRUST_Matsui-P',435,338,12,255); -- Utsusemi: Ichi
 INSERT INTO `mob_spell_lists` VALUES ('TRUST_Matsui-P',435,339,37,255); -- Utsusemi: Ni
 INSERT INTO `mob_spell_lists` VALUES ('TRUST_Matsui-P',435,340,99,255); -- Utsusemi: San
+
+--
+-- General - TRUST_Ullegore
+-- 
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3624);
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3625);
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3626);
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3627);
+UPDATE mob_pools SET sJob = 8 WHERE poolid = 5987 and name = 'ullegore';
+UPDATE mob_groups SET MP = 5000 WHERE groupid = 73 and name = 'Ullegore';

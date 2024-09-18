@@ -1689,6 +1689,14 @@ page67 =
          end
     },
     {
+        'Spell: Gessho',
+         function(player)
+           player:setLocalVar('NMSTrustSpell', 918)
+           menu.options = page36
+            delaySendMenu(player)
+         end
+    },
+    {
         'Spell: Trust Ulima',
          function(player)
            player:setLocalVar('NMSTrustSpell', 914)

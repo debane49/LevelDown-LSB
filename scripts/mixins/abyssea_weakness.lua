@@ -30,19 +30,27 @@ g_mixins.abyssea_weakness = function(mob)
 
         mob:addListener('MAGIC_TAKE', 'ABYSSEA_MAGIC_PROC_CHECK', function(target, caster, spell)
             if target:canChangeState() then
-                if spell:getID() == target:getLocalVar('[YellowWeakness]') then
+              if target:getLocalVar('[AbysseaYellowProc]') == 0 then
+                if spell:getID() > 0 then -- == target:getLocalVar('[YellowWeakness]') then
                     xi.abyssea.procMonster(target, caster, xi.abyssea.triggerType.YELLOW)
                 end
+              end
             end
         end)
 
         mob:addListener('WEAPONSKILL_TAKE', 'ABYSSEA_WS_PROC_CHECK', function(target, user, wsid)
             if target:canChangeState() then
-                if wsid == target:getLocalVar('[RedWeakness]') then
-                    xi.abyssea.procMonster(target, user, xi.abyssea.triggerType.RED)
-                elseif wsid == target:getLocalVar('[BlueWeakness]') then
-                    xi.abyssea.procMonster(target, user, xi.abyssea.triggerType.BLUE)
-                end
+               if user:isPC() then
+                  if target:getLocalVar('[AbysseaRedProc]') == 0 and
+                     target:getLocalVar('[AbysseaBlueProc]') == 0 then
+                    if wsid > 0 then
+                       xi.abyssea.procMonster(target, user, xi.abyssea.triggerType.RED)
+                        target:timer(600, function(targetArg)
+                            xi.abyssea.procMonster(targetArg, user, xi.abyssea.triggerType.BLUE)
+                        end)
+                    end
+                  end
+               end
             end
         end)
 
