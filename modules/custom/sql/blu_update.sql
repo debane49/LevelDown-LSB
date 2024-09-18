@@ -169,3 +169,7 @@ INSERT INTO `mob_skills` VALUES (3072, 169,'crashing_thunder',1,25.0,2000,1500,4
 INSERT INTO `mob_skills` VALUES (2741,2485,'entomb'          ,1,25.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (2742,2486,'tenebral_crush'  ,1,25.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (3131, 227,'sweeping_gouge'  ,1,18.0,2000,1500,4,0,0,0,0,0,0); 
+
+UPDATE spell_list SET element = 7 WHERE spellid = 593; -- magic fruit light element
+UPDATE spell_list SET element = 3 WHERE spellid = 581; -- healing breeze wind elemnt 
+UPDATE spell_list SET element = 7 WHERE spellid = 549; -- pollen light element
