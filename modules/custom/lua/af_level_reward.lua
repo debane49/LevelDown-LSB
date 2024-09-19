@@ -197,6 +197,12 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
     local sbjob = player:getSubJob()
     local slvl = player:getJobLevel(sbjob)
           player:capAllSkills()
+
+            local jobNameByNum = {}
+                for k, v in pairs(xi.job) do
+                    jobNameByNum[v] = k
+                end
+  if player:getCharVar('[ParagonQuest]'..jobNameByNum[player:getSubJob()]) == 0 then
     if slvl < 50 then
         if slvl < mlvl then
             if slvl >= mlvl - 5 then
@@ -205,6 +211,7 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
             end
         end
     end
+  end
 
             if mlvl == 52 or mlvl == 54 or mlvl == 56 or mlvl == 58 or mlvl == 60 then
                 local itemData = jobAFTable[job][mlvl]

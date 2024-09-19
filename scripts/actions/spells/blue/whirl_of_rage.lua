@@ -41,8 +41,14 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.mnd_wsc = 0.7
     params.chr_wsc = 0.0
     params.ignorefstrcap = true -- Whirl of Rage doesn't have an fSTR cap
+    params.effect = xi.effect.STUN
 
-    return xi.spells.blue.usePhysicalSpell(caster, target, spell, params)
+    local power    = 1
+    local tick     = 0
+    local duration = 5
+    local damage   = xi.spells.blue.usePhysicalSpell(caster, target, spell, params)
+    xi.spells.blue.usePhysicalSpellAddedEffect(caster, target, spell, params, damage, power, tick, duration)
+    return damage
 end
 
 return spellObject
