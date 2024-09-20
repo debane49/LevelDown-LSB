@@ -343,7 +343,9 @@ xi.paragon.onEffectLose = function(target, effect)
         target:setCharVar('[ParagonMod]Active',0)
         target:timer(250, function(targetArg)
         targetArg:addStatusEffectEx(xi.effect.PARAGON, xi.effect.PARAGON, 10, 3, 0)
-        targetArg:setPos(targetArg:getXPos(), targetArg:getYPos(), targetArg:getZPos(), targetArg:getRotPos(), targetArg:getZoneID())
+                if not target:isInMogHouse() then
+                   targetArg:setPos(targetArg:getXPos(), targetArg:getYPos(), targetArg:getZPos(), targetArg:getRotPos(), targetArg:getZoneID())
+                end
         end)
     elseif target:getCharVar('[ParagonMod]Active') == 2 then
         delParagonEffectTier1(target)
@@ -351,12 +353,16 @@ xi.paragon.onEffectLose = function(target, effect)
         delParagonEffectTier3(target)
         delParagonEffectTier4(target)
         delParagonEffectTier5(target)
-        targetArg:setPos(targetArg:getXPos(), targetArg:getYPos(), targetArg:getZPos(), targetArg:getRotPos(), targetArg:getZoneID())
+                if not target:isInMogHouse() then
+                   targetArg:setPos(targetArg:getXPos(), targetArg:getYPos(), targetArg:getZPos(), targetArg:getRotPos(), targetArg:getZoneID())
+                end
     else
         target:setCharVar('[ParagonMod]Active',0)
         target:timer(250, function(targetArg)
         targetArg:addStatusEffectEx(xi.effect.PARAGON, xi.effect.PARAGON, 10, 3, 0)
-        targetArg:setPos(targetArg:getXPos(), targetArg:getYPos(), targetArg:getZPos(), targetArg:getRotPos(), targetArg:getZoneID())
+                if not target:isInMogHouse() then
+                   targetArg:setPos(targetArg:getXPos(), targetArg:getYPos(), targetArg:getZPos(), targetArg:getRotPos(), targetArg:getZoneID())
+                end
         end)
     end
 end
