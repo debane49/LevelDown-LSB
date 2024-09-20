@@ -376,44 +376,59 @@ local freeaf =
      end,
 
   onTrigger = function(player, npc)
-    if player:getRank(player:getNation()) == 10 and
-       player:getCharVar('NaMiSkipComp') == 0 and
-       player:getCharVar('FreeRelic') ~= 2 and
-       player:getCharVar('FreeRelic') ~= 3 then
-       player:setCharVar('FreeRelic', 1)
-       player:printToPlayer('Congratulations on reaching Rank 10, as a reward you may choose one', 0, npc:getPacketName())
-       player:printToPlayer('free Lvl 99 Relic. Choose wisely! Refunds or exchanges will not be offered!', 0, npc:getPacketName())
-       player:printToPlayer('For those jobs that cannot obtain Relic. Choose wisely! An alternative has been provided!', 0, npc:getPacketName())
-    end
-      local lvl = player:getMainLvl()
-      local job = player:getMainJob()    
-      if lvl == 99 and
-            player:getCharVar('FreeAFArmor') ~= 2 then
-            player:setCharVar('FreeAFArmor', 1)
-      end   
-      if player:getCharVar('FreeRelic') == 1 then
-          menu.options = page1
-          delaySendMenu(player)
-      elseif player:getCharVar('FreeAFArmor') == 1 and lvl == 99 then
-              player:printToPlayer('Congratulations on reaching Level 99, as a reward you can obtain a free set of 109 Reforged Armor.', 0, npc:getPacketName())
-              player:printToPlayer('The free set is based on the job you are currently on which must be level 99.', 0, npc:getPacketName())
-              player:printToPlayer('If you do not want the armor on your current job, please see me again when you have leveled the job you want the armor on to 99.', 0, npc:getPacketName())
-                    player:timer(250, function(playerArg)
-                    menu.options = page6
-                    delaySendMenu(playerArg)
-                    end)
-           end
-        if player:getCharVar('FreeRelic') == 0 or
-           player:getCharVar('FreeAFArmor') == 0 then
-           player:printToPlayer('I am here to distribute your Free Relic Weapon or Free Reforged 109 armor. ', 0, npc:getPacketName())
-           player:printToPlayer('Please see me when you have obtained rank 10 for your free Relic Weapon or . ', 0, npc:getPacketName())
-           player:printToPlayer('when you have obtained Level 99 to receive you free Reforged Armor. ', 0, npc:getPacketName())
-        elseif 
-           player:getCharVar('FreeRelic') >= 2 and
-           player:getCharVar('FreeAFArmor') >= 2 then
-           player:printToPlayer('Leave me be! i am all out of free rewards for you!', 0, npc:getPacketName())
+    if not player:hasItem(xi.item.KUPO_SHIELD) then
+      local rankCheck = {}
+        for i = 49, 56 do
+            if player:getSkillRank(i) == 10 then
+               table.insert(rankCheck, i)
+            end
         end
-    end,
+        local craftRanks = 0
+              for _, rank in pairs(rankCheck)  do
+                  craftRanks = craftRanks + 1
+              end
+                    if craftRanks >= 4 then
+                       player:printToPlayer('Congratulations on getting 4 Crafts to Rank 10!. ', 0, npc:getPacketName())
+                       player:printToPlayer('As a reward, we offer you, your very own Kupo Shield!. ', 0, npc:getPacketName())
+                       player:timer(500, function(playerArg)
+                            npcUtil.giveItem(playerArg, xi.item.KUPO_SHIELD)
+                       end)
+                    end
+    end
+          if player:getCharVar('FreeRelic') == 0 or
+             player:getCharVar('FreeAFArmor') == 0 then
+                if player:getRank(player:getNation()) == 10 and
+                   player:getCharVar('NaMiSkipComp') == 0 and
+                   player:getCharVar('FreeRelic') ~= 2 and
+                   player:getCharVar('FreeRelic') ~= 3 then
+                   player:setCharVar('FreeRelic', 1)
+                   player:printToPlayer('Congratulations on reaching Rank 10, as a reward you may choose one', 0, npc:getPacketName())
+                   player:printToPlayer('free Lvl 99 Relic. Choose wisely! Refunds or exchanges will not be offered!', 0, npc:getPacketName())
+                   player:printToPlayer('For those jobs that cannot obtain Relic. Choose wisely! An alternative has been provided!', 0, npc:getPacketName())
+                   player:timer(250, function(playerArg)
+                         menu.options = page1
+                         delaySendMenu(playerArg)
+                   end)
+                elseif player:getMainLvl() == 99 and
+                       player:getCharVar('FreeAFArmor') ~= 2 then
+                       player:setCharVar('FreeAFArmor', 1)
+                       player:printToPlayer('Congratulations on reaching Level 99, as a reward you can obtain a free set of 109 Reforged Armor.', 0, npc:getPacketName())
+                       player:printToPlayer('The free set is based on the job you are currently on which must be level 99.', 0, npc:getPacketName())
+                       player:printToPlayer('If you do not want the armor on your current job, please see me again when you have leveled the job you want the armor on to 99.', 0, npc:getPacketName())
+                       player:timer(250, function(playerArg)
+                             menu.options = page6
+                             delaySendMenu(playerArg)
+                       end)
+                else
+                       player:printToPlayer('I am here to distribute your Free Relic Weapon or Free Reforged 109 armor. ', 0, npc:getPacketName())
+                       player:printToPlayer('Please see me when you have obtained rank 10 for your free Relic Weapon or . ', 0, npc:getPacketName())
+                       player:printToPlayer('when you have obtained Level 99 to receive you free Reforged Armor. ', 0, npc:getPacketName())
+                end
+          elseif player:getCharVar('FreeRelic') >= 2 and
+                 player:getCharVar('FreeAFArmor') >= 2 then
+                 player:printToPlayer('Leave me be! i am all out of free rewards for you!', 0, npc:getPacketName())
+          end
+  end,  
     })
     utils.unused(Reja)
 end)

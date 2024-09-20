@@ -27,7 +27,9 @@ local delaySendMenu = function(player)
 end
     local function addRemoveParagon(player)
         if player:hasStatusEffect(xi.effect.PARAGON) then
-           player:delStatusEffect(xi.effect.PARAGON) 
+           player:delStatusEffect(xi.effect.PARAGON)
+        else
+           player:addStatusEffectEx(xi.effect.PARAGON, xi.effect.PARAGON, 10, 3, 0)
         end
     end
 menu =
@@ -96,7 +98,6 @@ page2 =
             playerArg:injectActionPacket(playerArg:getID(), 4, 509, 0, 0, 185, 10, 1)
             playerArg:setLevel(1)
             playerArg:setCharVar('[ParagonQuest]'..jobNameByNum[playerArg:getMainJob()], paragonTierQuest)
-
             local buffOff = function(playerArg)
                     playerArg:setCharVar('Buff', 0)
                     playerArg:setCharVar('BuffLvl', 0)
@@ -406,9 +407,9 @@ page6 =
             playerArg:setCharVar('[ParagonQuest]'..jobNameByNum[playerArg:getMainJob()], 0)
             playerArg:setCharVar('[ParagonChoice]', 0)
             addRemoveParagon(playerArg)
-            playerArg:timer(300, function(playerArgX)
-            playerArgX:setPos(playerArgX:getXPos(), playerArgX:getYPos(), playerArgX:getZPos(), playerArgX:getRotPos(), playerArgX:getZoneID())
-            end)
+            -- playerArg:timer(2000, function(playerArgX)
+            -- playerArgX:setPos(playerArgX:getXPos(), playerArgX:getYPos(), playerArgX:getZPos(), playerArgX:getRotPos(), playerArgX:getZoneID())
+            -- end)
         end
         end,
     },

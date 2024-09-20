@@ -256,9 +256,11 @@ local function delParagonEffectTier5(target, effect)
       for k, v in pairs(xi.job) do
           jobNameByNum[v] = k
       end
+    if paragonExMode ~= nil then
      if target:getCharVar('[ParagonModTier5]'..jobNameByNum[target:getMainJob()]) > 0 then
         target:delMod(paragonExMode,paragonPowere)
      end
+    end
    -- target:printToPlayer(string.format("remove %s %s ",paragonExMode,paragonPowere))
 end
 local function delParagonEffectTier4(target, effect)
@@ -267,9 +269,11 @@ local function delParagonEffectTier4(target, effect)
           jobNameByNum[v] = k
       end
    -- target:printToPlayer(string.format("remove %s %s ",paragonExMode,paragonPowere))
+    if paragonExModd ~= nil then
      if target:getCharVar('[ParagonModTier4]'..jobNameByNum[target:getMainJob()]) > 0 then
         target:delMod(paragonExModd,paragonPowerd)
      end
+    end
 end
 local function delParagonEffectTier3(target, effect)
     local jobNameByNum = {}
@@ -277,18 +281,22 @@ local function delParagonEffectTier3(target, effect)
           jobNameByNum[v] = k
       end
    -- target:printToPlayer(string.format("remove %s %s ",paragonExModd,paragonPowerd))
+    if paragonExModc ~= nil then
      if target:getCharVar('[ParagonModTier3]'..jobNameByNum[target:getMainJob()]) > 0 then
         target:delMod(paragonExModc,paragonPowerc)
      end
+    end
 end
 local function delParagonEffectTier2(target, effect)
     local jobNameByNum = {}
       for k, v in pairs(xi.job) do
           jobNameByNum[v] = k
       end
+    if paragonExModb ~= nil then
      if target:getCharVar('[ParagonModTier2]'..jobNameByNum[target:getMainJob()]) > 0 then
         target:delMod(paragonExModb,paragonPowerb)
      end
+    end
    -- target:printToPlayer(string.format("remove %s %s ",paragonExModb,paragonPowerb))
 end
 local function delParagonEffectTier1(target, effect)
@@ -296,9 +304,11 @@ local function delParagonEffectTier1(target, effect)
       for k, v in pairs(xi.job) do
           jobNameByNum[v] = k
       end
+    if paragonExModa ~= nil then
      if target:getCharVar('[ParagonModTier1]'..jobNameByNum[target:getMainJob()]) > 0 then
         target:delMod(paragonExModa,paragonPowera)
      end
+    end
    -- target:printToPlayer(string.format("remove %s %s ",paragonExModa,paragonPowera))
 end
 
@@ -333,6 +343,7 @@ xi.paragon.onEffectLose = function(target, effect)
         target:setCharVar('[ParagonMod]Active',0)
         target:timer(250, function(targetArg)
         targetArg:addStatusEffectEx(xi.effect.PARAGON, xi.effect.PARAGON, 10, 3, 0)
+        targetArg:setPos(targetArg:getXPos(), targetArg:getYPos(), targetArg:getZPos(), targetArg:getRotPos(), targetArg:getZoneID())
         end)
     elseif target:getCharVar('[ParagonMod]Active') == 2 then
         delParagonEffectTier1(target)
@@ -340,10 +351,12 @@ xi.paragon.onEffectLose = function(target, effect)
         delParagonEffectTier3(target)
         delParagonEffectTier4(target)
         delParagonEffectTier5(target)
+        targetArg:setPos(targetArg:getXPos(), targetArg:getYPos(), targetArg:getZPos(), targetArg:getRotPos(), targetArg:getZoneID())
     else
         target:setCharVar('[ParagonMod]Active',0)
         target:timer(250, function(targetArg)
         targetArg:addStatusEffectEx(xi.effect.PARAGON, xi.effect.PARAGON, 10, 3, 0)
+        targetArg:setPos(targetArg:getXPos(), targetArg:getYPos(), targetArg:getZPos(), targetArg:getRotPos(), targetArg:getZoneID())
         end)
     end
 end

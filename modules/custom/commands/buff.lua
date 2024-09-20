@@ -52,7 +52,7 @@ local expPower     = 500
         if player:hasStatusEffect(xi.effect.DEDICATION) then
            return
            else
-           player:addStatusEffect(xi.effect.DEDICATION, expPower, 0, 0, 0, 30000) -- max 30000 or server crash
+           player:addStatusEffect(xi.effect.DEDICATION, expPower, 3, 0, 0, 30000) -- max 30000 or server crash
         end
     -- Add bonus mods to the player..
     player:addMod(xi.mod.RACC, power)
