@@ -196,7 +196,7 @@ m:addOverride('xi.player.onPlayerLevelUp', function(player, option, id)
     local mlvl = player:getJobLevel(job)
     local sbjob = player:getSubJob()
     local slvl = player:getJobLevel(sbjob)
-          player:capAllSkills()
+      --    player:capAllSkills()
 
             local jobNameByNum = {}
                 for k, v in pairs(xi.job) do

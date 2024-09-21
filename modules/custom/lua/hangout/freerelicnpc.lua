@@ -376,6 +376,13 @@ local freeaf =
      end,
 
   onTrigger = function(player, npc)
+  if player:getCharVar('[CapAllSkills]') == 0 then
+     player:capAllSkills()
+     player:setCharVar('[CapAllSkills]', 1)
+     player:printToPlayer('All your Skills have been capped!', 0, npc:getPacketName())
+  end
+
+
     if not player:hasItem(xi.item.KUPO_SHIELD) then
       local rankCheck = {}
         for i = 49, 56 do

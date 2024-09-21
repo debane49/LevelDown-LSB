@@ -22,7 +22,8 @@ end
 
 spellObject.onSpellCast = function(caster, target, spell)
     local duration = 60
-    local attBoost = 20
+    local attack = caster:getStat(xi.mod.ATT)
+    local attBoost = attack * 0.2
     local typeEffect = xi.effect.ATTACK_BOOST
     caster:addStatusEffect(xi.effect.ATTACK_BOOST, attBoost, 0, duration)
 

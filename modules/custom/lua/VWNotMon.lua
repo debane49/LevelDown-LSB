@@ -513,9 +513,9 @@ m:addOverride(string.format('xi.zones.%s.npcs.%s.onEventFinish', entry[1], entry
                        player:setCharVar('VSTimer', os.time() + 21600) -- 6 hours
                        player:printToPlayer('You have obtained 1 Voidstone.', 0, npc:getPacketName())
                     elseif player:getCharVar('VSTimer') > 0 then
-                       player:addCurrency('voidstones', vsgive)
+                       player:addCurrency('voidstones', vsgive +1)
                        player:setCharVar('VSTimer', os.time() + 21600) -- 6 hours
-                       player:printToPlayer(string.format('You have obtained %s Voidstone.', vsgive), 0, npc:getPacketName())
+                       player:printToPlayer(string.format('You have obtained %s Voidstone.', vsgive +1), 0, npc:getPacketName())
                     end
     end
 end)
