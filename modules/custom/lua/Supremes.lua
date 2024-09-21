@@ -11,7 +11,7 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobDeath', function(m
     super(mob, player, optParams)
 
  local rand = math.random(1, 100)
- if rand <= 1 and
+ if rand <= 15 and
     GetServerVariable('[SNM]Behemoth') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
@@ -295,9 +295,8 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobDeath', function(m
     })
     -- Use the mob object as you normally would
     mob:setSpawn(-267.4501, -19.6128, 64.5873, 29)
-    mob:setDropID(0) -- No loot!
+    mob:setDropID(3939)
     mob:setSpellList(0)
-    mob:setMobMod(xi.mobMod.NO_DROPS, 1)
        SetServerVariable('[SNM]Behemoth', 1)
     mob:spawn()
  end
@@ -307,7 +306,7 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobDeath', funct
     super(mob, player, optParams)
 
  local rand = math.random(1, 100)
- if rand <= 10 and
+ if rand <= 30 and
        GetServerVariable('[SNM]Behemoth') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
@@ -588,9 +587,8 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobDeath', funct
     })
     -- Use the mob object as you normally would
     mob:setSpawn(-267.4501, -19.6128, 64.5873, 29)
-    mob:setDropID(0) -- No loot!
+    mob:setDropID(3939)
     mob:setSpellList(0)
-    mob:setMobMod(xi.mobMod.NO_DROPS, 1)
    SetServerVariable('[SNM]Behemoth', 1)
     mob:spawn()
  end    
@@ -600,7 +598,7 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Fafnir.onMobDeath', function(mob, play
     super(mob, player, optParams)
       
  local rand = math.random(1, 100)
- if rand <= 1 and
+ if rand <= 15 and
    GetServerVariable('[SNM]Dragon') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
@@ -877,9 +875,8 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Fafnir.onMobDeath', function(mob, play
     })
     -- Use the mob object as you normally would
     mob:setSpawn(89.9643, 6.7294, 41.3521, 127)
-    mob:setDropID(0) -- No loot!
+    mob:setDropID(3940)
     mob:setSpellList(292)
-    mob:setMobMod(xi.mobMod.NO_DROPS, 1)
     SetServerVariable('[SNM]Dragon', 1)
     mob:spawn()
  end 
@@ -888,7 +885,7 @@ end)
 m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
  local rand = math.random(1, 100)
- if rand <= 10 and
+ if rand <= 30 and
    GetServerVariable('[SNM]Dragon') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
@@ -1165,9 +1162,8 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobDeath', function(mob, pla
     })
     -- Use the mob object as you normally would
     mob:setSpawn(89.9643, 6.7294, 41.3521, 127)
-    mob:setDropID(0) -- No loot!
+    mob:setDropID(3940) 
     mob:setSpellList(292)
-    mob:setMobMod(xi.mobMod.NO_DROPS, 1)
     SetServerVariable('[SNM]Dragon', 1)
     mob:spawn()
  end  
@@ -1176,7 +1172,7 @@ end)
 m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
  local rand = math.random(1, 100)
- if rand <= 1 and
+ if rand <= 15 and
    GetServerVariable('[SNM]Turtle') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
@@ -1451,9 +1447,8 @@ m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobDeath', function
     })
     -- Use the mob object as you normally would
     mob:setSpawn(6.4430, 0.6940, 21.6073, 84)
-    mob:setDropID(0) -- No loot!
+    mob:setDropID(3941)
     mob:setSpellList(256)
-    mob:setMobMod(xi.mobMod.NO_DROPS, 1)
     SetServerVariable('[SNM]Turtle', 1)
     mob:spawn()
  end    
@@ -1462,7 +1457,7 @@ end)
 m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Aspidochelone.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
  local rand = math.random(1, 100)
- if rand <= 10 and
+ if rand <= 30 and
    GetServerVariable('[SNM]Turtle') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
@@ -1737,9 +1732,8 @@ m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Aspidochelone.onMobDeath', functi
     })
     -- Use the mob object as you normally would
     mob:setSpawn(6.4430, 0.6940, 21.6073, 84)
-    mob:setDropID(0) -- No loot!
+    mob:setDropID(3941) 
     mob:setSpellList(256)
-    mob:setMobMod(xi.mobMod.NO_DROPS, 1)
     SetServerVariable('[SNM]Turtle', 1)
     mob:spawn()
  end 

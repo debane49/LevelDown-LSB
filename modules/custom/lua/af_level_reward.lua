@@ -6,7 +6,7 @@ require('scripts/globals/mobs')
 require('scripts/globals/player')
 require('scripts/enum/job_names')
 -----------------------------------
-local m = Module:new('af level reward')
+local m = Module:new('af_level_reward')
 
 local jobAFTable =
 {

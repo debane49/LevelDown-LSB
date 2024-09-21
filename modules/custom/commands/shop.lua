@@ -337,6 +337,9 @@ page19 =
             3457,     1500000,   -- Revelatory Juju
             3458,     1500000,   -- Undying Juju
             3459,     1500000,   -- Heralds Juju
+            3341,      500000,   -- Beastly Shank
+            3342,     1500000,   -- Savory Shank
+
 }
 
 page20 =
