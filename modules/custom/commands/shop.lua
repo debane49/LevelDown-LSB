@@ -339,6 +339,11 @@ page19 =
             3459,     1500000,   -- Heralds Juju
             3341,      500000,   -- Beastly Shank
             3342,     1500000,   -- Savory Shank
+            3339,      500000,   -- honey wine
+            3340,     1500000,   -- cup of sweet tea
+            3343,      500000,   -- clump of blue pondweed
+            3344,     1500000,   -- clump of red pondweed
+
 
 }
 

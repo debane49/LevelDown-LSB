@@ -613,12 +613,12 @@ INSERT INTO `mob_pools` VALUES (40018,'Omega_HTBF','Omega',54,0x0000350400000000
 INSERT INTO `mob_pools` VALUES (40017,'Ultima_HTBF','Ultima',54,0x0000330400000000000000000000000000000000,1,1,6,240,100,0,1,1,0,34,22528,32,2635,1691,13,0,0,0,0,728,54);
 UPDATE mob_groups SET poolid = 40017, dropid = 3937,HP = 155000,  MP = 9999, minLevel = 120, maxLevel = 125, name = 'Ultima_HTBF' WHERE groupid = 9 AND name = 'Ultima_HTBF'; 
 UPDATE mob_groups SET poolid = 40018,               HP = 155000,  MP = 9999, minLevel = 120, maxLevel = 125, name = 'Omega_HTBF' WHERE groupid = 8 AND name = 'Omega_HTBF'; 
-UPDATE mob_spawn_points SET mobname = 'Omega_HTBF', groupid = 8,          pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908406; 
-UPDATE mob_spawn_points SET mobname = 'Omega_HTBF', groupid = 8,          pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908408; 
-UPDATE mob_spawn_points SET mobname = 'Omega_HTBF', groupid = 8,          pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908410; 
-UPDATE mob_spawn_points SET mobname = 'Ultima_HTBF', groupid = 9,         pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908407;
-UPDATE mob_spawn_points SET mobname = 'Ultima_HTBF', groupid = 9,         pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908409;
-UPDATE mob_spawn_points SET mobname = 'Ultima_HTBF', groupid = 9,         pos_x = 0.1016,     pos_y = -151.3476,  pos_z = 170.1908,  pos_rot =  61 WHERE mobid = 16908411;
+UPDATE mob_spawn_points SET mobname = 'Omega_HTBF', groupid = 8,          pos_x = -639.8127,  pos_y = -231.3477,  pos_z =  510.5845,  pos_rot = 191 WHERE mobid = 16908406; 
+UPDATE mob_spawn_points SET mobname = 'Omega_HTBF', groupid = 8,          pos_x =    0.0241,  pos_y = -151.3476,  pos_z =  150.8623,  pos_rot = 184 WHERE mobid = 16908408; 
+UPDATE mob_spawn_points SET mobname = 'Omega_HTBF', groupid = 8,          pos_x =  640.0577,  pos_y =  -71.3477,  pos_z = -209.3274,  pos_rot = 187 WHERE mobid = 16908410; 
+UPDATE mob_spawn_points SET mobname = 'Ultima_HTBF', groupid = 9,         pos_x = -779.9949,  pos_y = -103.3476,  pos_z =  -71.6040,  pos_rot =  63 WHERE mobid = 16908407;
+UPDATE mob_spawn_points SET mobname = 'Ultima_HTBF', groupid = 9,         pos_x = -139.9194,  pos_y =  -23.3476,  pos_z = -430.0629,  pos_rot =  66 WHERE mobid = 16908409;
+UPDATE mob_spawn_points SET mobname = 'Ultima_HTBF', groupid = 9,         pos_x =  499.9628,  pos_y =   56.6524,  pos_z = -790.0623,  pos_rot =  64 WHERE mobid = 16908411;
 INSERT INTO mob_droplist VALUES(3937,0,0,1000,4073,1000); -- Rem Tale Ch 10
 INSERT INTO mob_droplist VALUES(3937,1,1,500,4073,500); -- Rem Tale Ch 10
 INSERT INTO mob_droplist VALUES(3937,1,2,1000,8719,200); -- Maliyakaleya Coral
