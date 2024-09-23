@@ -1,18 +1,19 @@
 -----------------------------------
 -- ID: 6392
 -- Bead Pouch
--- Give Escha Silt
+-- Bead Pouch awards 5-10 beads on use.
 -----------------------------------
+---@type TItem
 local itemObject = {}
 
-itemObject.onItemCheck = function(target)
-    return xi.itemUtils.itemBoxOnItemCheck(target)
+itemObject.onItemCheck = function(target, item, param, caster)
+    return 0
 end
 
 itemObject.onItemUse = function(target)
     local amount = math.random(5, 10)
-    target:addCurrency('escha_silt', amount)
-    target:printToPlayer(string.format("You obtained %s Escha Silt", amount),xi.msg.channel.SYSTEM_3)
+    target:messageCombat(target, xi.item.BEAD_POUCH, amount, xi.msg.combat.USE_OBTAIN_ESCHA_BEAD)
+    target:addCurrency('escha_beads', amount)
 end
 
 return itemObject
