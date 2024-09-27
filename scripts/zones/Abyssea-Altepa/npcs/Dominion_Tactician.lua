@@ -1,8 +1,8 @@
 -----------------------------------
--- Area: Abyssea - Grauberg
+-- Area: Abyssea - Altepa
 --  NPC: Dominion Tactician
 -----------------------------------
-local ID = zones[xi.zone.ABYSSEA_GRAUBERG]
+local ID = zones[xi.zone.ABYSSEA_ALTEPA]
 -----------------------------------
 ---@type TNpcEntity
 local entity = {}
@@ -29,17 +29,14 @@ local tacticianItems =
     [itemType.ITEM] =
     {
     --  Sel      Item                       Cost
-        [ 1] = { xi.item.UNKAI_DOMARU,     1500 },
-        [ 2] = { xi.item.IGA_NINGI,        1500 },
-        [ 3] = { xi.item.LANCERS_PLACKART, 1500 },
-        [ 4] = { xi.item.CALLERS_DOUBLET,  1500 },
-        [ 5] = { xi.item.MAVI_MINTAN,      1500 },
-        [ 6] = { xi.item.NAVARCHS_FRAC,    1500 },
-        [ 7] = { xi.item.CIRQUE_FARSETTO,  1500 },
-        [ 8] = { xi.item.CHARIS_CASAQUE,   1500 },
-        [ 9] = { xi.item.SAVANTS_GOWN,     1500 },
-        [10] = { xi.item.INCRESCENT_SHADE,  300 },
-        [11] = { xi.item.DECRESCENT_SHADE,  300 },
+        [ 1] = { xi.item.RAVAGERS_LORICA,  1500 },
+        [ 2] = { xi.item.TANTRA_CYCLAS,    1500 },
+        [ 3] = { xi.item.ORISON_BLIAUD,    1500 },
+        [ 4] = { xi.item.GOETIA_COAT,      1500 },
+        [ 5] = { xi.item.ESTOQUEURS_SAYON, 1500 },
+        [ 6] = { xi.item.RAIDERS_VEST,     1500 },
+        [ 7] = { xi.item.INCRESCENT_SHADE,  300 },
+        [ 8] = { xi.item.DECRESCENT_SHADE,  300 },
     },
 
     [itemType.TEMP] =
@@ -54,10 +51,10 @@ local tacticianItems =
 
     [itemType.AUGMENTED] =
     {
-    --  Sel     Item                 Cost  Possible Augments { Augment ID, Minimum, Maximum }
-        [1] = { xi.item.YATAGHAN,   2500, { { 45, 1,  8 }, { 328, 2, 6 }, { 187, 2, 6 }, { 787, 3, 8 }, { 1028, 2, 6 } } }, -- TODO: Should Aug 45 (DMG+) also apply Sub DMG?
-        [2] = { xi.item.DOOM_TABAR, 2500, { { 45, 4, 12 }, { 786, 3, 7 }, { 512, 3, 8 }, { 250, 3, 6 }, { 1040, 2, 8 } } },
-        [3] = { xi.item.YUKITSUGU,  2500, { { 45, 5, 14 }, { 177, 3, 6 }, { 332, 2, 6 }, { 788, 3, 7 }, { 1060, 2, 8 } } },
+    --  Sel     Item                  Cost  Possible Augments { Augment ID, Minimum, Maximum }
+        [1] = { xi.item.FIRMAMENT,    2500, { { 45, 0,  8 }, { 517, 0, 7 }, { 1033, 1, 4 }, {  187, 0, 7 }, { 787, 2, 7 } } }, -- TODO: Should Aug 45 (DMG+) also apply Sub DMG?
+        [2] = { xi.item.GUISARME,     2500, { { 45, 4, 14 }, { 512, 2, 7 }, {  177, 2, 5 }, { 1052, 1, 7 }, { 788, 2, 6 } } },
+        [3] = { xi.item.RIBAULDEQUIN, 2500, { { 45, 1,  6 }, {  40, 1, 5 }, {  178, 0, 5 }, { 1078, 0, 7 }, { 784, 2, 7 } } },
     },
 
     [itemType.ESCHELON] =

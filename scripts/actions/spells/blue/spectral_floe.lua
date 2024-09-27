@@ -23,7 +23,10 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.attackType = xi.attackType.MAGICAL
     params.damageType = xi.damageType.ICE
     params.attribute = xi.mod.INT
-    params.multiplier = 1.36
+    params.diff = 1
+    params.multiplier = 4.0
+    params.tMultiplier = 4.0
+    params.tphitslanded = 1
     params.duppercap = 99
     params.str_wsc = 0.0
     params.dex_wsc = 0.0
@@ -36,9 +39,10 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.addedEffect = xi.effect.TERROR
     local power = 5
     local tick = 0
+    local duration = 5
 
     local damage = xi.spells.blue.useMagicalSpell(caster, target, spell, params)
-    xi.spells.blue.useMagicalSpellAddedeffect(caster, target, spell, params, power, tick)
+    xi.spells.blue.useMagicalSpellAddedEffect(caster, target, spell, params, power, tick, duration)
 
     return damage
 end

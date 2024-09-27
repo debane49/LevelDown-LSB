@@ -102,7 +102,7 @@ entity.onTrigger = function(player, npc)
 end
 
 entity.onEventUpdate = function(player, csid, option, npc)
-
+print(csid, option)
 end
 
 entity.onEventFinish = function(player, csid, option, npc)
@@ -117,7 +117,7 @@ entity.onEventFinish = function(player, csid, option, npc)
   if cancel == 0 then -- bail out 
      return
   else
-        if itemCost >= bayldTotal then
+        if itemCost >= bayldTotal +1 then
            player:printToPlayer('You do not posses enough Bayld to make this purchase!', 0, 'Craggy Bluff')
            return
         else

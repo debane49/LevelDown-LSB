@@ -23,7 +23,10 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.attackType = xi.attackType.MAGICAL
     params.damageType = xi.damageType.LIGHTNING
     params.attribute = xi.mod.DEX
-    params.multiplier = 3
+    params.multiplier = 4
+    params.diff = 1
+    params.tMultiplier = 4.0
+    params.tphitslanded = 1
     params.duppercap = 99
     params.str_wsc = 0.0
     params.dex_wsc = 0.7
@@ -36,9 +39,10 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.addedEffect = xi.effect.STUN
     local power = 5
     local tick = 0
+    local duration = 5
 
     local damage = xi.spells.blue.useMagicalSpell(caster, target, spell, params)
-    xi.spells.blue.useMagicalSpellAddedeffect(caster, target, spell, params, power, tick)
+    xi.spells.blue.useMagicalSpellAddedEffect(caster, target, spell, params, power, tick, duration)
 
     return damage
 end

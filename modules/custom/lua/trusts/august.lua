@@ -1,5 +1,6 @@
 -----------------------------------
 -- Trust: august
+-- Authored by Neckbeard
 -----------------------------------
 require('modules/module_utils')
 require('scripts/globals/trust')
