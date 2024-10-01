@@ -122,6 +122,7 @@ commandObj.onTrigger = function(player)
         local stock =
         {
             -- AF1
+            16607,1000,  -- Chaosbringer
             11995,35000, -- Chaos Torque
             16798,35000, -- Raven Scythe
             12516,45000, -- Chaos Burgeonet
@@ -178,6 +179,7 @@ commandObj.onTrigger = function(player)
     elseif(player:getMainJob() == xi.job.SAM) then -- SAM
         local stock =
         {
+            17809,1000,  -- Mumeito
             11999,35000, -- Myochin Torque
             17812,35000, -- Magoroku
             13868,45000, -- Myochin Kabuto

@@ -358,8 +358,8 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize', function(zone)
         onTrade = function(player, npc, trade)
         end,
         onTrigger = function(player, npc)
-                menu.options = page1
-                delaySendMenu(player)
+        --        menu.options = page1
+        --        delaySendMenu(player)
         end,
     })
 end)
