@@ -219,6 +219,9 @@ CCharEntity::CCharEntity()
     PRecastContainer       = std::make_unique<CCharRecastContainer>(this);
     PLatentEffectContainer = new CLatentEffectContainer(this);
 
+    requestedWarp       = false;
+    requestedZoneChange = false;
+
     retriggerLatents = false;
 
     resetPetZoningInfo();
@@ -2016,7 +2019,7 @@ void CCharEntity::OnRangedAttack(CRangeState& state, action_t& action)
         if (slot == SLOT_RANGED)
         {
             auto attackType = (state.IsRapidShot()) ? PHYSICAL_ATTACK_TYPE::RAPID_SHOT : PHYSICAL_ATTACK_TYPE::RANGED;
-            totalDamage     = attackutils::CheckForDamageMultiplier(this, PItem, totalDamage, attackType, true);
+            totalDamage     = attackutils::CheckForDamageMultiplier(this, PItem, totalDamage, attackType, slot, true);
         }
         actionTarget.param =
             battleutils::TakePhysicalDamage(this, PTarget, PHYSICAL_ATTACK_TYPE::RANGED, totalDamage, false, slot, realHits, nullptr, true, true);
@@ -2204,7 +2207,7 @@ void CCharEntity::OnDeathTimer()
 {
     TracyZoneScoped;
     charutils::SetCharVar(this, "expLost", 0);
-    charutils::HomePoint(this);
+    charutils::HomePoint(this, true);
 }
 
 void CCharEntity::OnRaise()
