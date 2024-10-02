@@ -202,7 +202,7 @@ INSERT INTO mob_droplist VALUES(3926,0,0,1000,4069,1000); -- Rem's Tale Ch. 6
 INSERT INTO mob_droplist VALUES(3926,1,1,500,4069,250); -- Rem's Tale Ch. 6
 INSERT INTO mob_droplist VALUES(3926,1,2,1000,20707,333); -- Medeina Kilij
 INSERT INTO mob_droplist VALUES(3926,1,2,1000,21412,333); -- Capitoline Strap
-INSERT INTO mob_droplist VALUES(3926,1,2,1000,25600,3334); -- Ma'iitsoh Haube
+INSERT INTO mob_droplist VALUES(3926,1,2,1000,25600,334); -- Ma'iitsoh Haube
 INSERT INTO mob_droplist VALUES(3926,1,3,1000,26969,500); -- Vrikodara Jupon
 INSERT INTO mob_droplist VALUES(3926,1,3,1000,27608,500); -- Lupine Cape
 INSERT INTO mob_droplist VALUES(3926,1,4,1000,8720,200); -- Maliyakaleya Coral
@@ -562,7 +562,7 @@ INSERT INTO mob_droplist VALUES(3935,0,0,1000,4073,1000); -- Rem Tale Ch 10
 INSERT INTO mob_droplist VALUES(3935,1,1,500,4073,500); -- Rem Tale Ch 10
 INSERT INTO mob_droplist VALUES(3935,1,2,1000,8719,333); -- Maliyakaleya Coral
 INSERT INTO mob_droplist VALUES(3935,1,2,1000,8725,333); -- Exalted Log
-INSERT INTO mob_droplist VALUES(3935,1,2,1000,8727,3334); -- Sif's Lock
+INSERT INTO mob_droplist VALUES(3935,1,2,1000,8727,334); -- Sif's Lock
 INSERT INTO mob_droplist VALUES(3935,1,3,750,21368,250); -- Bestas Bane
 INSERT INTO mob_droplist VALUES(3935,1,3,750,21381,250); -- Seraphicaller
 INSERT INTO mob_droplist VALUES(3935,1,3,750,21452,250); -- Divinator

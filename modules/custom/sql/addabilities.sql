@@ -19,3 +19,7 @@ UPDATE abilities SET recastTime = "0" WHERE name = "sulpor";
 UPDATE abilities SET recastTime = "0" WHERE name = "unda";
 UPDATE abilities SET recastTime = "0" WHERE name = "lux";
 UPDATE abilities SET recastTime = "0" WHERE name = "tenebrae";
+UPDATE abilities SET recastTime = "300" WHERE name = "call_wyvern";
+UPDATE abilities SET recastTime = "300" WHERE name = "activate";
+UPDATE abilities SET recastTime = "600" WHERE name = "random_deal";
+UPDATE abilities SET recastTime = "600" WHERE name = "bestial_loyalty";
