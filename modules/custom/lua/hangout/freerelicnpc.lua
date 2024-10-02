@@ -402,8 +402,8 @@ local freeaf =
                        end)
                     end
     end
-          if player:getCharVar('FreeRelic') == 0 or
-             player:getCharVar('FreeAFArmor') == 0 then
+          if player:getCharVar('FreeRelic') < 2 or
+             player:getCharVar('FreeAFArmor') < 2 then
                 if player:getRank(player:getNation()) == 10 and
                    player:getCharVar('NaMiSkipComp') == 0 and
                    player:getCharVar('FreeRelic') ~= 2 and

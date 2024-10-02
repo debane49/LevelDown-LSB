@@ -198,8 +198,6 @@ namespace charutils
     void SaveChatFilterFlags(CCharEntity* PChar);              // save the character's chat filters
     void SaveLanguages(CCharEntity* PChar);                    // save the character's language preference
     void SaveCharNation(CCharEntity* PChar);                   // save the character's nation of allegiance
-    void SaveCharFace(CCharEntity* PChar);                     // save the character's face
-    void SaveCharRace(CCharEntity* PChar);                     // save the character's Race
     void SaveCampaignAllegiance(CCharEntity* PChar);           // save the character's campaign allegiance
     void SaveCharMoghancement(CCharEntity* PChar);             // save the character's current moghancement
     void SaveCharSkills(CCharEntity* PChar, uint8 skillID);    // save the character's skills
@@ -283,6 +281,8 @@ namespace charutils
     uint32 getCharIdFromName(std::string const& name);
 
     void forceSynthCritFail(std::string sourceFunction, CCharEntity* PChar);
+
+    void removeCharFromZone(CCharEntity* PChar);
 }; // namespace charutils
 
 #endif // _CHARUTILS_H

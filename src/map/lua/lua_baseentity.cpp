@@ -2459,8 +2459,12 @@ void CLuaBaseEntity::leaveGame()
         return;
     }
 
-    auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
-    charutils::ForceLogout(PChar);
+    auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity);
+    if (PChar)
+    {
+        // Because we can't detect if this is happening in the middle of an effect wearing off or not, this can be processed after player tick in CZoneEntities::ZoneServer
+        PChar->status = STATUS_TYPE::SHUTDOWN;
+    }
 }
 
 /************************************************************************
@@ -5321,48 +5325,6 @@ void CLuaBaseEntity::setModelId(uint16 modelId, sol::object const& slotObj)
         m_PBaseEntity->SetModelId(modelId);
     }
     m_PBaseEntity->updatemask |= UPDATE_LOOK;
-}
-
-/************************************************************************
- *  Function: setFace()
- *  Purpose : displays teh players face id
- *  Example : player:setFace()
- *  Notes   : Humanoid entities can be passed a slot to change the modelid of that equipment
- ************************************************************************/
-
-void CLuaBaseEntity::setFace(uint8 face)
-{
-    if (m_PBaseEntity->objtype != TYPE_PC)
-    {
-        ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
-        return;
-    }
-
-    auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
-
-    PChar->look.face = face;
-    charutils::SaveCharFace(PChar);
-}
-
-/************************************************************************
- *  Function: setRace()
- *  Purpose : displays teh players race id
- *  Example : player:setRace()
- *  Notes   : Humanoid entities can be passed a slot to change the modelid of that equipment
- ************************************************************************/
-
-void CLuaBaseEntity::setRace(uint8 race)
-{
-    if (m_PBaseEntity->objtype != TYPE_PC)
-    {
-        ShowWarning("Invalid entity type calling function (%s).", m_PBaseEntity->getName());
-        return;
-    }
-
-    auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
-
-    PChar->look.race = race;
-    charutils::SaveCharRace(PChar);
 }
 
 /************************************************************************
@@ -9888,7 +9850,7 @@ void CLuaBaseEntity::capSkill(uint8 skill)
             PChar->delModifier(Mod::ACC, PChar->GetSkill(skill));
         }
         */
-        uint16 maxSkill                   = 10 * battleutils::GetMaxSkill((SKILLTYPE)skill, PChar->GetMJob(), 99);
+        uint16 maxSkill                   = 10 * battleutils::GetMaxSkill((SKILLTYPE)skill, PChar->GetMJob(), PChar->GetMLevel());
         PChar->RealSkills.skill[skill]    = maxSkill; // set to capped
         PChar->WorkingSkills.skill[skill] = maxSkill / 10;
         PChar->WorkingSkills.skill[skill] |= 0x8000; // set blue capped flag
@@ -9922,7 +9884,7 @@ void CLuaBaseEntity::capAllSkills()
 
     auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
 
-    for (uint8 i = 1; i < 46; ++i)
+    for (uint8 i = 1; i < 45; ++i)
     {
         const char* Query = "INSERT INTO char_skills "
                             "SET "
@@ -18188,8 +18150,6 @@ void CLuaBaseEntity::Register()
 
     // Player Appearance
     SOL_REGISTER("getRace", CLuaBaseEntity::getRace);
-    SOL_REGISTER("setFace", CLuaBaseEntity::setFace);
-    SOL_REGISTER("setRace", CLuaBaseEntity::setRace);
     SOL_REGISTER("getGender", CLuaBaseEntity::getGender);
     SOL_REGISTER("getName", CLuaBaseEntity::getName);
     SOL_REGISTER("getPacketName", CLuaBaseEntity::getPacketName);

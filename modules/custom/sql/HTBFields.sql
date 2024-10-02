@@ -65,7 +65,7 @@ INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507, 213, 65, 255); -- B
 INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507,  79, 65, 255); -- Slow II
 INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507,  80, 65, 255); -- Paralyze II
 INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507, 104, 65, 255); -- Enthunder
-INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507, 167, 65, 255); -- Thunder IV
+--INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507, 167, 65, 255); -- Thunder IV
 INSERT INTO mob_spell_lists VALUES ('Ramuh_Prime_HTBF', 507, 168, 65, 255); -- Thunder V
 INSERT INTO mob_pools VALUES (40001, 'Ramuh_Prime_HTBF', 'Ramuh_Prime', 320, 0x00001e0300000000000000000000000000000000, 1, 4, 12, 240, 100, 0, 1, 1, 1, 18, 0, 0, 0, 3, 0, 0, 507, 0, 0, 43, 43);  
 UPDATE mob_spawn_points SET pos_X =  504.0446, pos_y =   41.7271, pos_z = -367.8477,  pos_rot =  97 WHERE mobid = 17604639;

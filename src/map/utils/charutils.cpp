@@ -4979,7 +4979,7 @@ namespace charutils
             // Should this user be awarded imperial standing..
             if (PChar->StatusEffectContainer->HasStatusEffect(EFFECT_SANCTION) && (region >= REGION_TYPE::WEST_AHT_URHGAN && region <= REGION_TYPE::ALZADAAL))
             {
-                charutils::AddPoints(PChar, "imperial_standing", (int32)(exp * 0.2f));
+                charutils::AddPoints(PChar, "imperial_standing", (int32)(exp * 0.1f));
                 PChar->pushPacket(new CConquestPacket(PChar));
             }
 
@@ -5533,41 +5533,6 @@ namespace charutils
                             "WHERE charid = %u";
 
         _sql->Query(Query, PChar->profile.nation, PChar->id);
-    }
-
-
-    /************************************************************************
-     *                                                                       *
-     *  Save character's face changes                                      *
-     *                                                                       *
-     ************************************************************************/
-
-    void SaveCharFace(CCharEntity* PChar)
-    {
-        TracyZoneScoped;
-
-        const char* Query = "UPDATE char_look "
-                            "SET face = %u "
-                            "WHERE charid = %u";
-
-        _sql->Query(Query, PChar->look.face, PChar->id);
-    }
-
-    /************************************************************************
-     *                                                                       *
-     *  Save character's race changes                                      *
-     *                                                                       *
-     ************************************************************************/
-
-    void SaveCharRace(CCharEntity* PChar)
-    {
-        TracyZoneScoped;
-
-        const char* Query = "UPDATE char_look "
-                            "SET race = %u "
-                            "WHERE charid = %u";
-
-        _sql->Query(Query, PChar->look.race, PChar->id);
     }
 
     /************************************************************************
@@ -6565,6 +6530,8 @@ namespace charutils
         }
 
         PChar->pushPacket(new CServerIPPacket(PChar, type, ipp));
+
+        removeCharFromZone(PChar);
     }
 
     void ForceLogout(CCharEntity* PChar)
@@ -7182,6 +7149,110 @@ namespace charutils
         synthutils::doSynthFail(PChar);
 
         PChar->CraftContainer->Clean(); // Clean to reset m_ItemCount to 0
+    }
+
+    void removeCharFromZone(CCharEntity* PChar)
+    {
+        map_session_data_t* PSession = nullptr;
+
+        for (auto session : map_session_list)
+        {
+            if (session.second->charID == PChar->id)
+            {
+                PSession = session.second;
+                break;
+            }
+        }
+
+        // Store old blowfish, recalculate expected new blowfish
+        if (PSession)
+        {
+            PSession->blowfish.status = BLOWFISH_PENDING_ZONE;
+        }
+
+        PChar->TradePending.clean();
+        PChar->InvitePending.clean();
+        PChar->PWideScanTarget = nullptr;
+
+        if (PChar->animation == ANIMATION_ATTACK)
+        {
+            PChar->animation = ANIMATION_NONE;
+            PChar->updatemask |= UPDATE_HP;
+        }
+
+        if (!PChar->PTrusts.empty())
+        {
+            PChar->ClearTrusts();
+        }
+
+        if (PChar->status == STATUS_TYPE::SHUTDOWN)
+        {
+            if (PChar->PParty != nullptr)
+            {
+                if (PChar->PParty->m_PAlliance != nullptr)
+                {
+                    if (PChar->PParty->GetLeader() == PChar)
+                    {
+                        if (PChar->PParty->HasOnlyOneMember())
+                        {
+                            if (PChar->PParty->m_PAlliance->hasOnlyOneParty())
+                            {
+                                PChar->PParty->m_PAlliance->dissolveAlliance();
+                            }
+                            else
+                            {
+                                PChar->PParty->m_PAlliance->removeParty(PChar->PParty);
+                            }
+                        }
+                        else
+                        { // party leader logged off - will pass party lead
+                            PChar->PParty->RemoveMember(PChar);
+                        }
+                    }
+                    else
+                    { // not party leader - just drop from party
+                        PChar->PParty->RemoveMember(PChar);
+                    }
+                }
+                else
+                {
+                    // normal party - just drop group
+                    PChar->PParty->RemoveMember(PChar);
+                }
+            }
+
+            if (PChar->shouldPetPersistThroughZoning())
+            {
+                PChar->setPetZoningInfo();
+            }
+            else
+            {
+                PChar->resetPetZoningInfo();
+            }
+
+            PSession->shuttingDown = 1;
+            _sql->Query("UPDATE char_stats SET zoning = 0 WHERE charid = %u", PChar->id);
+        }
+        else
+        {
+            PSession->shuttingDown = 2;
+            _sql->Query("UPDATE char_stats SET zoning = 1 WHERE charid = %u", PChar->id);
+            charutils::CheckEquipLogic(PChar, SCRIPT_CHANGEZONE, PChar->getZone());
+        }
+
+        if (PChar->loc.zone != nullptr)
+        {
+            PChar->loc.zone->DecreaseZoneCounter(PChar);
+        }
+
+        PChar->StatusEffectContainer->SaveStatusEffects(PSession->shuttingDown == 1);
+        PChar->PersistData();
+        charutils::SavePlayTime(PChar);
+        charutils::SaveCharStats(PChar);
+        charutils::SaveCharExp(PChar, PChar->GetMJob());
+        charutils::SaveEminenceData(PChar);
+
+        PChar->status = STATUS_TYPE::DISAPPEAR;
     }
 
 }; // namespace charutils
