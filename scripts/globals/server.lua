@@ -1,5 +1,6 @@
 -----------------------------------
 require('scripts/events/handler')
+require('scripts/globals/mog_tablets')
 -----------------------------------
 xi = xi or {}
 xi.server = xi.server or {}
@@ -13,6 +14,15 @@ xi.server.onJSTMidnight = function()
 end
 
 xi.server.onTimeServerTick = function()
+--[[
+            if GetServerVariable('[MOGTABLET]Event') == 0 and
+               GetServerVariable('[MOGTABLET]Timer') <= os.time() then -- 1 hour - 86400 is 24 hours
+               SetServerVariable('[MOGTABLET]Event', 1)
+               xi.mogTablet.disperseTabletsAnnouncement()
+               xi.mogTablet.startEvent()
+            end
+]]--
+xi.events.harvestFestival.Ullegore(player)
 end
 
 -- Message for use with SmallPacket0x04B

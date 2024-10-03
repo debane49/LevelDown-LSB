@@ -15,11 +15,11 @@ local ID = zones[xi.zone.PORT_JEUNO]
 local m = Module:new("Monisette")
 local afRArmorPlusOne =
 {
-[1] = { trade = {27663, {4069, 8}, 1537, 8720}, reward = 27684}, -- pummelers mask +1
-[2] = { trade = {27807, {4070, 8}, 1537, 8722}, reward = 27828}, -- pummelers lorica +1
-[3] = { trade = {27943, {4071, 8}, 1537, 8724}, reward = 27964}, -- pummelers mufflers +1
-[4] = { trade = {28090, {4072, 8}, 1537, 8726}, reward = 28111}, -- pummelers cuisses +1
-[5] = { trade = {28223, {4073, 8}, 1537, 8728}, reward = 28244}, -- pummelers calligae +1
+[1] = { trade = {27663, {4069, 8}, 862, 8720}, reward = 27684}, -- pummelers mask +1
+[2] = { trade = {27807, {4070, 8}, 862, 8722}, reward = 27828}, -- pummelers lorica +1
+[3] = { trade = {27943, {4071, 8}, 862, 8724}, reward = 27964}, -- pummelers mufflers +1
+[4] = { trade = {28090, {4072, 8}, 862, 8726}, reward = 28111}, -- pummelers cuisses +1
+[5] = { trade = {28223, {4073, 8}, 862, 8728}, reward = 28244}, -- pummelers calligae +1
 [6] = { trade = {27665, {4069, 8}, 2476, 8720}, reward = 27685}, -- anchorites crown +1
 [7] = { trade = {27808, {4070, 8}, 2476, 8722}, reward = 27829}, -- anchorites cyclas +1
 [8] = { trade = {27944, {4071, 8}, 2476, 8724}, reward = 27965}, -- anchorites gloves +1
@@ -55,11 +55,11 @@ local afRArmorPlusOne =
 [38] = { trade = {27950, {4071, 8}, 758, 8724}, reward = 27971}, -- ignominy gauntlets +1
 [39] = { trade = {28097, {4072, 8}, 758, 8726}, reward = 28118}, -- ignominy flanchard +1
 [40] = { trade = {28230, {4073, 8}, 758, 8728}, reward = 28251}, -- ignominy sollerets +1
-[41] = { trade = {27671, {4069, 8}, 1537, 8720}, reward = 27692}, -- totemic helm +1
-[42] = { trade = {27815, {4070, 8}, 1537, 8722}, reward = 27836}, -- totemic jackcoat +1
-[43] = { trade = {27951, {4071, 8}, 1537, 8724}, reward = 27972}, -- totemic gloves +1
-[44] = { trade = {28098, {4072, 8}, 1537, 8726}, reward = 28119}, -- totemic trousers +1
-[45] = { trade = {28231, {4073, 8}, 1537, 8728}, reward = 28252}, -- totemic gaiters +1
+[41] = { trade = {27671, {4069, 8}, 862, 8720}, reward = 27692}, -- totemic helm +1
+[42] = { trade = {27815, {4070, 8}, 862, 8722}, reward = 27836}, -- totemic jackcoat +1
+[43] = { trade = {27951, {4071, 8}, 862, 8724}, reward = 27972}, -- totemic gloves +1
+[44] = { trade = {28098, {4072, 8}, 862, 8726}, reward = 28119}, -- totemic trousers +1
+[45] = { trade = {28231, {4073, 8}, 862, 8728}, reward = 28252}, -- totemic gaiters +1
 [46] = { trade = {27672, {4069, 8}, 1132, 8720}, reward = 27693}, -- brioso roundlet +1
 [47] = { trade = {27816, {4070, 8}, 1132, 8722}, reward = 27837}, -- brioso justaucorps +1
 [48] = { trade = {27952, {4071, 8}, 1132, 8724}, reward = 27973}, -- brioso cuffs +1
