@@ -1069,7 +1069,7 @@ local function AllAnnouncement(player)
             local ID = zones[zoneId]
             local zone = GetZone(zoneId)
             for _, player in pairs(zone:getPlayers()) do
-            player:printToPlayer('The Demon King Ullegore has appeared and is stealing all the candy, Beat him like a pinata to get the candy back!',xi.msg.channel.SYSTEM_3)
+            player:printToPlayer('The Demon King Ullegore has appeared and is stealing all the candy, Find him and beat him like a pinata to get the candy back!',xi.msg.channel.SYSTEM_3)
             end
         ]], zoneId))
     end
