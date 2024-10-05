@@ -11,7 +11,7 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobDeath', function(m
     super(mob, player, optParams)
 
  local rand = math.random(1, 100)
- if rand <= 15 and
+ if rand <= 25 and
     GetServerVariable('[SNM]Behemoth') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
@@ -306,7 +306,7 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobDeath', funct
     super(mob, player, optParams)
 
  local rand = math.random(1, 100)
- if rand <= 30 and
+ if rand <= 45 and
        GetServerVariable('[SNM]Behemoth') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
@@ -598,7 +598,7 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Fafnir.onMobDeath', function(mob, play
     super(mob, player, optParams)
       
  local rand = math.random(1, 100)
- if rand <= 15 and
+ if rand <= 25 and
    GetServerVariable('[SNM]Dragon') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
@@ -885,7 +885,7 @@ end)
 m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
  local rand = math.random(1, 100)
- if rand <= 30 and
+ if rand <= 45 and
    GetServerVariable('[SNM]Dragon') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
@@ -1172,7 +1172,7 @@ end)
 m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
  local rand = math.random(1, 100)
- if rand <= 15 and
+ if rand <= 25 and
    GetServerVariable('[SNM]Turtle') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
@@ -1457,7 +1457,7 @@ end)
 m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Aspidochelone.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
  local rand = math.random(1, 100)
- if rand <= 30 and
+ if rand <= 45 and
    GetServerVariable('[SNM]Turtle') == 0 then
   local zoneOrInstanceObj = player:getZone()
   local instance = player:getInstance()
