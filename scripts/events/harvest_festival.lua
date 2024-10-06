@@ -825,6 +825,19 @@ xi.events.harvestFestival.generateEntities = function()
                     releaseIdOnDisappear = true,
 
          onTrade = function(player, npc, trade)
+                -- reset daily points after midnight
+                if player:getCharVar('[Halloween]DailyTime') < os.time() and
+                   player:getCharVar('[Halloween]DailyTime') > 0 then
+                   player:setCharVar('[Halloween]DailyPoints', 0)
+                   player:setCharVar('[Halloween]DailyTime', getVanaMidnight()) -- Current time + Remaining minutes in the hour in seconds (Day Change)
+                end
+                -- apply daily timer for midnight if none exists
+                if player:getCharVar('[Halloween]DailyTime') == nil or 0 then
+                   player:setCharVar('[Halloween]DailyTime', getVanaMidnight()) -- Current time + Remaining minutes in the hour in seconds (Day Change)
+                end
+                ------ Set a 500 login point limit , resets midnight
+                if player:getCharVar('[Halloween]DailyPoints') < 500 and
+                   player:getCharVar('[Halloween]DailyTime') > os.time() then
                     local candyPoints = {
                         [6187] = 1,  -- Candy ID 6187 gives 1 point
                         [6188] = 3,  -- Candy ID 6188 gives 5 points
@@ -838,10 +851,10 @@ xi.events.harvestFestival.generateEntities = function()
                                 totalPoints = totalPoints + (count * points)  -- Calculate points based on item-specific values
                             end
                         end
-
                     if totalPoints > 0 then
                         -- Add the login points to the player's currency
                         player:addCurrency('Login_points', totalPoints)
+                        player:setCharVar('[Halloween]DailyPoints', player:getCharVar('[Halloween]DailyPoints') + totalPoints)
                         player:tradeComplete()
                         -- Get the new total amount of login points
                         local newAmount = player:getCurrency('Login_points')
@@ -851,6 +864,9 @@ xi.events.harvestFestival.generateEntities = function()
                     else
                         player:printToPlayer('You need to trade The correct type of candy to receive login points!', xi.msg.channel.SYSTEM_3, '')
                     end
+                elseif player:getCharVar('[Halloween]DailyPoints') >= 500 then
+                       player:printToPlayer('You have received the maximum amount of login points you can received today!', xi.msg.channel.SYSTEM_3, '')
+                end
          end,
          onTrigger = function(player, npc)
                 local candyItems =
@@ -890,10 +906,15 @@ xi.events.harvestFestival.generateEntities = function()
                     [6189] = { -- Metal Slime Candy
                         {item = 11482, cost = 5, name = "Eyepatch"},
 						{item = 25606, cost = 5, name = "Agent Hood"},
-						{item = 26975, cost = 5, name = "Agent Coat"},
+						{item = 26974, cost = 5, name = "Agent Coat"},
                         {item = 27296, cost = 5, name = "Agent Pants"},
 						{item = 27111, cost = 5, name = "Agent Cuffs"},
 						{item = 27467, cost = 5, name = "Agent Boots"},
+						{item = 25607, cost = 5, name = "Starlet Flower"},
+						{item = 26975, cost = 5, name = "Starlet Jabot"},
+						{item = 27112, cost = 5, name = "Starlet Gloves"},
+						{item = 27297, cost = 5, name = "Starlet Skirt"},
+						{item = 27468, cost = 5, name = "Starlet Boots"},
                         {item = 26799, cost = 5, name = "Behe. Masque +1"},
 						{item = 25658, cost = 5, name = "Wyrm. Masque +1"},
 						{item = 26955, cost = 10, name = "Behe. Suit +1"},
@@ -1064,26 +1085,14 @@ local zoneNames = {
 -- New costume IDs list
 local costumeIds = {3661, 260, 261, 263, 281, 368, 1136, 1727, 1728, 1801, 1799, 1841, 2032, 2244, 2372, 2565, 2616}
 
-local function AllAnnouncement(player)
-    for _, zoneId in pairs(xi.zone) do
-        SendLuaFuncStringToZone(zoneId, string.format([[
-            local zoneId = %i
-            local ID = zones[zoneId]
-            local zone = GetZone(zoneId)
-            for _, player in pairs(zone:getPlayers()) do
-            player:printToPlayer('The Demon King Ullegore has appeared and is stealing all the candy, Find him and beat him like a pinata to get the candy back!',xi.msg.channel.SYSTEM_3)
-            end
-        ]], zoneId))
-    end
-end
-
+-------------------------------------------------------------------------------------------
 ----------------------------------- Ullegore ----------------------------------------------
+-------------------------------------------------------------------------------------------
 if GetServerVariable('[Halloween]EventRestart') == nil then
    SetServerVariable('[Halloween]EventRestart', os.time() + 1800)
 end
 
                 if GetServerVariable('[Halloween]EventRestart') <= os.time() then
-                        AllAnnouncement(player)
                         SetServerVariable('[Halloween]EventRestart', os.time() + 1800) -- 30 minutes
                         -- Randomly select one of the predefined city zones
                             local spawnLocation = cityZones[math.random(#cityZones)]
@@ -1106,32 +1115,33 @@ end
                             allegiance = 0,
                             widescan = 1,
                             onMobSpawn = function(mob, playerArg, optParams)
-
-
-                        local zoneNamez = mob:getZone():getID()
-                            local zoneMask = 0
-                            if zoneMask == 0 then
-                                for _, zoneString in pairs(zoneNames) do
-                                    if zoneNamez == _ then
-                                       zoneMask = zoneString
-                                    end
-                                end
-                            end
-                            local players = mob:getZone():getPlayers()
-                            
-                                for _, member in pairs(players) do
-                                       member:printToPlayer(string.format('Ullegore is lurking in %s !', zoneMask),xi.msg.channel.SYSTEM_3)
-                                end
-                                mob:setMobLevel(10)  -- Set mob level
-                                mob:setMobMod(xi.mobMod.ROAM_DISTANCE, 50)
-                                mob:setMobMod(xi.mobMod.NO_AGGRO, 1)
-                                mob:addMod(xi.mod.REGEN, 1000)
-                                mob:addMod(xi.mod.MAGIC_DAMAGE, -800)
-                                mob:addMod(xi.mod.ACC, -1000)
-                                mob:addMod(xi.mod.EVA, -500)
-                                mob:addMod(xi.mod.DEF, -500)
-                                mob:setUnkillable(true)
-                                mob:setLocalVar('UllegoreDespawn', os.time() + 600) -- Set despawn timer to 10 minutes (600 seconds)
+                                    -- Annoucement to everyone in every zone of his spawn and location
+                                    local zoneNamez = mob:getZone():getID()
+                                        local zoneMask = 0
+                                        if zoneMask == 0 then
+                                            for _, zoneString in pairs(zoneNames) do
+                                                if zoneNamez == _ then
+                                                   zoneMask = zoneString
+                                                end
+                                            end
+                                        end
+                                        for i = 1, 299 do
+                                            local zonex = GetZone(i):getPlayers()
+                                                 for _, member in pairs(zonex) do
+                                                   member:printToPlayer('The Demon King Ullegore has appeared and is stealing all the candy! Find him and beat him like',xi.msg.channel.SYSTEM_3)
+                                                   member:printToPlayer(string.format('a pinata to get the candy back! Ullegore has been spotted lurking in %s !',zoneMask),xi.msg.channel.SYSTEM_3)
+                                                 end
+                                        end
+                                            mob:setMobLevel(10)  -- Set mob level
+                                            mob:setMobMod(xi.mobMod.ROAM_DISTANCE, 50)
+                                            mob:setMobMod(xi.mobMod.NO_AGGRO, 1)
+                                            mob:addMod(xi.mod.REGEN, 1000)
+                                            mob:addMod(xi.mod.MAGIC_DAMAGE, -800)
+                                            mob:addMod(xi.mod.ACC, -1000)
+                                            mob:addMod(xi.mod.EVA, -500)
+                                            mob:addMod(xi.mod.DEF, -500)
+                                            mob:setUnkillable(true)
+                                            mob:setLocalVar('UllegoreDespawn', os.time() + 600) -- Set despawn timer to 10 minutes (600 seconds)
                             end,
                             onMobFight = function(mob, target)
                                 if mob:getLocalVar('UllegoreDespawn') <= os.time() then
@@ -1144,25 +1154,28 @@ end
                                 end
                             end,
                             onMobDespawn = function(mob, playerArg, optParams)
-                        local zoneNamez = mob:getZone():getID()
-                            local zoneMask = 0
-                            if zoneMask == 0 then
-                                for _, zoneString in pairs(zoneNames) do
-                                    if zoneNamez == _ then
-                                       zoneMask = zoneString
-                                    end
-                                end
-                            end
-                                local players = mob:getZone():getPlayers()
-                                for _, member in pairs(players) do
-                                member:printToPlayer('Ullegore has fled ' .. zoneMask .. ' and slinked back into the shadows..... For now.', xi.msg.channel.SYSTEM_3)
-                                end
-                                -- Remove costume effect from all affected players
-                                for _, player in pairs(affectedPlayers) do
-                                    player:setCostume2(0)  -- Remove costume
-                                    player:printToPlayer('The curse has been lifted from you and you have been transformed back into yourself.', xi.msg.channel.SYSTEM_3)
-                                end
-                                affectedPlayers = {}  -- Clear the table
+                                    local zoneNamex = mob:getZone():getID()
+                                        local zoneMaska = 0
+                                        if zoneMaska == 0 then
+                                            for _, zoneString in pairs(zoneNames) do
+                                                if zoneNamex == _ then
+                                                   zoneMaska = zoneString
+                                                end
+                                            end
+                                        end
+                                            for i = 1, 299 do
+                                                local zoney = GetZone(i):getPlayers()
+                                                 for _, member in pairs(zoney) do
+                                                        member:printToPlayer('Ullegore has fled ' .. zoneMaska .. ' and slinked back into the shadows..... For now.', xi.msg.channel.SYSTEM_3)
+                                                 end
+                                            end
+                                            -- Remove costume effect from all affected players
+                                            for _, player in pairs(affectedPlayers) do
+                                                player:setCostume2(0)  -- Remove costume
+                                                player:delStatusEffect(xi.effect.AMNESIA)
+                                                player:printToPlayer('The curse has been lifted from you and you have been transformed back into yourself.', xi.msg.channel.SYSTEM_3)
+                                            end
+                                            affectedPlayers = {}  -- Clear the table
                             end,
                             releaseIdOnDisappear = true,
                             specialSpawnAnimation = true,
@@ -1173,12 +1186,8 @@ end
                         mob:setMobMod(xi.mobMod.NO_DROPS, 1)
                         mob:setClaimable(false)
                         mob:spawn()
-
-                        mob:setLocalVar('DespawnTime', os.time()) -- Despawn after 10 minutes (600 seconds)
-                        mob:setLocalVar('Killed', 0) -- Initialize 'Killed' variable
-
                         mob:addListener('TICK', 'MOB_DESPAWN_CHECK', function(mob)
-                            if mob:getLocalVar('DespawnTime') + 600 <= os.time() then
+                            if mob:getLocalVar('UllegoreDespawn') <= os.time() then
                                 DespawnMob(mob:getID())
                             end
                         end)
@@ -1188,10 +1197,11 @@ end
                             -- Check if the attacker already has a costume applied
                             if not affectedPlayers[attacker:getID()] then
                                 -- Randomly select a costume ID
-                                local costumeId = costumeIds[math.random(#costumeIds)]
+                                local costumeId = costumeIds[math.random(1, #costumeIds)]
             
                                 -- Apply the selected costume effect to the attacker
                                 attacker:setCostume2(costumeId)
+                                attacker:addStatusEffect(xi.effect.AMNESIA,10,3,600)
 
                                 -- Add attacker to affected players list
                                 affectedPlayers[attacker:getID()] = attacker
@@ -1200,12 +1210,12 @@ end
                             -- Handle item drops
                             local rand = math.random(1, 100)
                             local itemToDrop = nil
-                            if rand <= drops[1].rate then
-                                itemToDrop = drops[1].reward
+                            if rand <= drops[3].rate then
+                                itemToDrop = drops[3].reward
                             elseif rand <= drops[2].rate then
                                 itemToDrop = drops[2].reward
-                            elseif rand <= drops[3].rate then
-                                itemToDrop = drops[3].reward
+                            elseif rand <= drops[1].rate then
+                                itemToDrop = drops[1].reward
                             end
                             if itemToDrop then
                                 npcUtil.giveItem(attacker, { { itemToDrop, 1 } })
@@ -1213,8 +1223,6 @@ end
                         end)
                 end
 end
-
-
 
 event:setStartFunction(function()
     xi.events.harvestFestival.setMusic(harvestFestivalMusic)

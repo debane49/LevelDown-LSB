@@ -11,28 +11,17 @@ commandObj.cmdprops =
 
 -- Forward declarations (required)
 local menu  = {}
-local page1 = {}
-local page2 = {}
-local page3 = {}
-local page4 = {}
-local page5 = {}
-local page6 = {}
-local page7 = {}
-local page8 = {}
-local page9 = {}
-local page10 = {}
-local page11 = {}
-local page12 = {}
-local page13 = {}
-local page14 = {}
-local page15 = {}
-local page16 = {}
-local page17 = {}
-local page18 = {}
-local page19 = {}
-local page20 = {}
-
-
+local select1 = {}
+local select2 = {}
+local medicine = {}
+local ammuniction = {}
+local ninjitsu = {}
+local food = {}
+local scrolls = {}
+local keys = {}
+local crystals = {}
+local dyna = {}
+local corsair = {}
 
 local delaySendMenu = function(player)
     player:timer(50, function(playerArg)
@@ -46,7 +35,7 @@ menu =
     options = {},
 }
 
-page1 =
+select1 =
 {
     {
         'Nothing for now.',
@@ -56,76 +45,76 @@ page1 =
     {
         'Medicine',
          function(player)
-            menu.options = xi.shop.general(player, page12)
+            menu.options = xi.shop.general(player, medicine)
          end
     },
     {
         'Ammunition',
          function(player)
-            menu.options = xi.shop.general(player, page13)
+            menu.options = xi.shop.general(player, ammunition)
          end
     },
     {
         'Ninjutsu Tools',
          function(player)
-            menu.options = xi.shop.general(player, page14)
+            menu.options = xi.shop.general(player, ninjitsu)
          end
     },
     {
         'Food Stuff',
          function(player)
-            menu.options = xi.shop.general(player, page15)
+            menu.options = xi.shop.general(player, food)
          end
     },
     {
         'Scrolls',
          function(player)
-            menu.options = xi.shop.general(player, page16)
+            menu.options = xi.shop.general(player, scrolls)
          end
     },
     {
         'Keys',
          function(player)
-            menu.options = xi.shop.general(player, page17)
+            menu.options = xi.shop.general(player, keys)
          end
     },
         {
         'Next Page',
          function(player)
-            menu.options = page2
+            menu.options = select2
             delaySendMenu(player)
          end
     },
 }
-page2 =
+select2 =
 {
         {
         'Crystals',
          function(player)
-            menu.options = xi.shop.general(player, page18)
+            menu.options = xi.shop.general(player, crystals)
          end
         },
         {
         'Dyna Pops',
          function(player)
-            menu.options = xi.shop.general(player, page19)
+            menu.options = xi.shop.general(player, dyna)
          end
         },
         {
         'Corsair',
          function(player)
-            menu.options = xi.shop.general(player, page20)
+            menu.options = xi.shop.general(player, corsair)
          end
         },
          {
         'Previous Page',
          function(player)
-           menu.options = page1
+           menu.options = select1
            delaySendMenu(player)
          end
          },
 }
-page12 =
+medicine =
     {
             4112,     300,   -- Potion
             4116,     600,   -- Hi-Potion
@@ -145,7 +134,7 @@ page12 =
             4153,     500,   -- Antacid
     }
 
-page13 =
+ammunition =
 {
             4219,     400,   -- Stone Quiver
             4220,     680,   -- Bone Quiver
@@ -184,7 +173,7 @@ page13 =
             6302,    7000,   -- Fuma Shuriken Pouch
             6303,    9900,   -- Iga Shuriken Pouch
 }
-page14 =
+ninjitsu =
 {
     
             5308,    3000,   -- Toolbag (Uchi)
@@ -202,7 +191,7 @@ page14 =
             5417,    3000,   -- Toolbag (Sanjaku-Tenugui)
             5734,    5000,   -- Toolbag (Soshi)
 }
-page15 =
+food =
 {
             4378,      60,   -- Selbina Milk
             4299,     100,   -- Orange au Lait
@@ -252,7 +241,7 @@ page15 =
             5727,   15000,   -- Zaru Soba
             4466,     450,   -- Spicy Cracker
 }
-page16 =
+scrolls =
 {
             4181,     500,   -- Instant Warp
             4182,     500,   -- Instant Reraise
@@ -262,7 +251,7 @@ page16 =
             5990,     500,   -- Instant Stoneskin
             1550,     500,   -- Ark Pentasphere
 }
-page17 =
+keys =
 {
             1024,    2500,   -- Ghelsba Chest Key
             1025,    2500,   -- Palborough Chest Key
@@ -306,7 +295,7 @@ page17 =
             1063,    5000,   -- Newton Coffer Key
             1064,    2500,   -- Pso'Xja Chest Key
 }
-page18 =
+crystals =
 {
             4096,     100,   -- Fire Crystal
             4097,     100,   -- Ice Crystal
@@ -325,7 +314,7 @@ page18 =
             4110,     1000,   -- Light Cluster
             4111,     1000,   -- Dark Cluster
 }
-page19 =
+dyna =
 {
             3353,     1000000,   -- Barbaric Bijou
             3354,     1000000,   -- Steelwell Bijou
@@ -347,7 +336,7 @@ page19 =
 
 }
 
-page20 =
+corsair =
 {
         2176,    48,    -- Fire Card
         2177,    48,    -- Ice Card
@@ -453,7 +442,7 @@ page20 = {
 
 
 commandObj.onTrigger = function(player)
-     menu.options = page1
+     menu.options = select1
      delaySendMenu(player)
 end
 
