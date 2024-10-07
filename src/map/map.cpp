@@ -847,6 +847,15 @@ int32 parse(int8* buff, size_t* buffsize, sockaddr_in* from, map_session_data_t*
     uint16 SmallPD_Type = 0;
     uint16 SmallPD_Code = ref<uint16>(buff, 0);
 
+    // TODO: figure out what exactly the client sends when you're not in a CS. there's no C2S packets being sent via the client,
+    // and yet we receive something here. It doesnt look like a valid packet, as it has no size and the type is 0x001 which is not valid.
+    if (map_session_data->blowfish.status != BLOWFISH_PENDING_ZONE && map_session_data->blowfish.status != BLOWFISH_WAITING)
+    {
+        // Update the time we last got a char sync packet
+        // The client can spam some other packets when trying to zone, preventing timely session deletions
+        map_session_data->last_update = time(nullptr);
+    }
+
     for (int8* SmallPD_ptr = PacketData_Begin; SmallPD_ptr + (ref<uint8>(SmallPD_ptr, 1) & 0xFE) * 2 <= PacketData_End && (ref<uint8>(SmallPD_ptr, 1) & 0xFE);
          SmallPD_ptr       = SmallPD_ptr + SmallPD_Size * 2)
     {
