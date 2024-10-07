@@ -11,14 +11,18 @@ commandObj.cmdprops =
 
 -- Forward declarations (required)
 local menu  = {}
-local select1 = {}
-local select2 = {}
+local selecta = {}
+local selectb = {}
+local selectc = {}
 local medicine = {}
-local ammuniction = {}
+local ammunition = {}
+local ammunitiona = {}
 local ninjitsu = {}
 local food = {}
+local fooda = {}
 local scrolls = {}
 local keys = {}
+local keysa = {}
 local crystals = {}
 local dyna = {}
 local corsair = {}
@@ -35,7 +39,7 @@ menu =
     options = {},
 }
 
-select1 =
+selecta =
 {
     {
         'Nothing for now.',
@@ -49,7 +53,13 @@ select1 =
          end
     },
     {
-        'Ammunition',
+        'Ammunition Page1',
+         function(player)
+            menu.options = xi.shop.general(player, ammunition)
+         end
+    },
+    {
+        'Ammunition Page2',
          function(player)
             menu.options = xi.shop.general(player, ammunition)
          end
@@ -61,9 +71,25 @@ select1 =
          end
     },
     {
-        'Food Stuff',
+        'Next Page',
+         function(player)
+            menu.options = selectb
+            delaySendMenu(player)
+         end
+    },
+}
+selectb =
+{
+    {
+        'Food Page1',
          function(player)
             menu.options = xi.shop.general(player, food)
+         end
+    },
+    {
+        'Food Page2',
+         function(player)
+            menu.options = xi.shop.general(player, fooda)
          end
     },
     {
@@ -73,46 +99,59 @@ select1 =
          end
     },
     {
-        'Keys',
+        'Keys Page1',
          function(player)
             menu.options = xi.shop.general(player, keys)
          end
     },
-        {
+    {
+        'Keys Page2',
+         function(player)
+            menu.options = xi.shop.general(player, keysa)
+         end
+    },
+    {
+        'Previous Page',
+         function(player)
+           menu.options = selecta
+           delaySendMenu(player)
+         end
+    },
+    {
         'Next Page',
          function(player)
-            menu.options = select2
+            menu.options = selectc
             delaySendMenu(player)
          end
     },
 }
-select2 =
+selectc =
 {
-        {
+    {
         'Crystals',
          function(player)
             menu.options = xi.shop.general(player, crystals)
          end
-        },
-        {
+    },
+    {
         'Dyna Pops',
          function(player)
             menu.options = xi.shop.general(player, dyna)
          end
-        },
-        {
+    },
+    {
         'Corsair',
          function(player)
             menu.options = xi.shop.general(player, corsair)
          end
-        },
-         {
+    },
+    {
         'Previous Page',
          function(player)
-           menu.options = select1
+           menu.options = selectb
            delaySendMenu(player)
          end
-         },
+    },
 }
 medicine =
     {
@@ -133,9 +172,8 @@ medicine =
             4172,    1000,   -- Reraiser
             4153,     500,   -- Antacid
     }
-
 ammunition =
-{
+    {
             4219,     400,   -- Stone Quiver
             4220,     680,   -- Bone Quiver
             4225,    1200,   -- Iron Quiver
@@ -154,6 +192,9 @@ ammunition =
             5339,    2100,   -- Bloody Bolt Quiver
             5338,    2100,   -- Venom Bolt Quiver
             5336,    2400,   -- Holy Bolt Quiver
+    }
+ammunitiona =
+    {
             4228,    3500,   -- Mythril Bolt Quiver
             4229,    5580,   -- Darksteel Bolt Quiver
             5820,    9460,   -- Darkling Bolt Quiver
@@ -172,10 +213,9 @@ ammunition =
             6298,    4640,   -- Manji Shuriken Pouch
             6302,    7000,   -- Fuma Shuriken Pouch
             6303,    9900,   -- Iga Shuriken Pouch
-}
+    }
 ninjitsu =
-{
-    
+    {  
             5308,    3000,   -- Toolbag (Uchi)
             5309,    3000,   -- Toolbag (Tsurara)
             5310,    3000,   -- Toolbag (Kawahori-Ogi)
@@ -190,9 +230,9 @@ ninjitsu =
             5319,    3000,   -- Toolbag (Shinobi-Tabi)
             5417,    3000,   -- Toolbag (Sanjaku-Tenugui)
             5734,    5000,   -- Toolbag (Soshi)
-}
+    }
 food =
-{
+    {
             4378,      60,   -- Selbina Milk
             4299,     100,   -- Orange au Lait
             5703,     100,   -- Uleguerand Milk
@@ -217,6 +257,9 @@ food =
             5178,    4000,   -- Dorado Sushi
             5721,    1500,   -- Crab Sushi
             5775,     500,   -- Chocolate Crepe
+    }
+fooda =
+    {
             5766,    1000,   -- Butter Crepe
             4413,     320,   -- Apple Pie
             4421,     800,   -- Melon Pie
@@ -240,9 +283,9 @@ food =
             5547,   15000,   -- Beef Stewpot
             5727,   15000,   -- Zaru Soba
             4466,     450,   -- Spicy Cracker
-}
+    }
 scrolls =
-{
+    {
             4181,     500,   -- Instant Warp
             4182,     500,   -- Instant Reraise
             5428,     500,   -- Instant Retrace
@@ -250,9 +293,9 @@ scrolls =
             5989,     500,   -- Instant Shell
             5990,     500,   -- Instant Stoneskin
             1550,     500,   -- Ark Pentasphere
-}
+    }
 keys =
-{
+    {
             1024,    2500,   -- Ghelsba Chest Key
             1025,    2500,   -- Palborough Chest Key
             1026,    2500,   -- Giddeus Chest Key
@@ -272,6 +315,9 @@ keys =
             1040,    2500,   -- Nest Chest Key
             1041,    2500,   -- Garlaige Chest Key
             1043,    5000,   -- Beadeaux Coffer Key
+    }
+keysa =
+    {
             1042,    5000,   -- Davoi Coffer Key
             1044,    5000,   -- Oztroja Coffer Key
             1045,    5000,   -- Nest Coffer Key
@@ -294,9 +340,9 @@ keys =
             1062,    2500,   -- Oldton Chest Key
             1063,    5000,   -- Newton Coffer Key
             1064,    2500,   -- Pso'Xja Chest Key
-}
+    }
 crystals =
-{
+    {
             4096,     100,   -- Fire Crystal
             4097,     100,   -- Ice Crystal
             4098,     100,   -- Wind Crystal
@@ -313,9 +359,9 @@ crystals =
             4109,     500,   -- Water Cluster
             4110,     1000,   -- Light Cluster
             4111,     1000,   -- Dark Cluster
-}
+    }
 dyna =
-{
+    {
             3353,     1000000,   -- Barbaric Bijou
             3354,     1000000,   -- Steelwell Bijou
             3355,     1000000,   -- Divine Bijou
@@ -332,122 +378,21 @@ dyna =
             3340,     1500000,   -- cup of sweet tea
             3343,      500000,   -- clump of blue pondweed
             3344,     1500000,   -- clump of red pondweed
-
-
-}
-
+    }
 corsair =
-{
-        2176,    48,    -- Fire Card
-        2177,    48,    -- Ice Card
-        2178,    48,    -- Wind Card
-        2179,    48,    -- Earth Card
-        2180,    48,    -- Thunder Card
-        2181,    48,    -- Water Card
-        2182,    48,    -- Light Card
-        2183,    48,    -- Dark Card
-        2974,    50,    -- Trump Card
-}
-
---[[page19 = {
-		10049,   1000,   --♪raptor
-		10050,   1000,   --♪tiger
-		10051,   1000,   --♪crab
-		10052,   1000,   --♪red_crab
-		10053,   1000,   --♪bomb
-		10054,   1000,   --♪ram
-		10055,   1000,   --♪morbol
-		10056,   1000,   --♪crawler
-		10057,   1000,   --♪fenrir
-		10058,   1000,   --♪beetle
-		10059,   1000,   --♪moogle
-		10060,   1000,   --♪magic_pot
-		10061,   1000,   --♪tulfaire
-		10062,   1000,   --♪warmachine
-		10063,   1000,   --♪xzomit
-		10064,   1000,   --♪hippogryph
-		10065,   1000,   --♪spectral_chair
-		10066,   1000,   --♪spheroid
-		10067,   1000,   --♪omega
-		10068,   1000,   --♪coeurl
-		10069,   1000,   --♪goobbue
-		10070,   1000,   --♪raaz
-		10071,   1000,   --♪levitus
-		10072,   1000,   --♪adamantoise
-		10073,   1000,   --♪dhalmel
-		10074,   1000,   --♪doll
-		10075,   1000,   --♪red_raptor
-		10076,   1000,   --♪golden_bomb
-		10077,   1000,   --♪buffalo
-		10078,   1000,   --♪wivre
-		10079,   1000,   --♪iron_giant
-		10080,   1000,   --♪byakko
-		10081,   1000,   --♪noble_chocobo
-		10082,   1000,   --♪ixion
-		10083,   1000,   --♪phuabo
-}
-page20 = {
-        4146,   500,  --REVITALIZER                         = 4146,
-        4202,   500,  --DAEDALUS_WING                       = 4202,
-        4206,   500,  --BOTTLE_OF_CATHOLICON                = 4206,
-        4254,   50000,  --MEGALIXIR                           = 4254,
-        4255,   500,  --PINCH_OF_MANA_POWDER                = 4255,
-        5322,   500,  --FLASK_OF_HEALING_POWDER             = 5322,
-        5393,   500,  --BOTTLE_OF_MONARCHS_DRINK            = 5393,
-        5394,   500,  --BOTTLE_OF_GNOSTICS_DRINK            = 5394,
-        5395,   500,  --BOTTLE_OF_CLERICS_DRINK             = 5395,
-        5397,   500,  --BOTTLE_OF_SPRINTERS_DRINK           = 5397,
-        5439,   500,  --BOTTLE_OF_VICARS_DRINK              = 5439,
-        5440,   500,  --DUSTY_WING                          = 5440,
-        5433,   500,  --DUSTY_ELIXIR                        = 5433,
-        5435,   500,  --BOTTLE_OF_FANATICS_DRINK            = 5434,
-        5435,   500,  --BOTTLE_OF_FOOLS_DRINK               = 5435,
-        5786,   500,  --PETRIFY_SCREEN                      = 5876,
-        5824,   500,  --LUCID_POTION_I                      = 5824,
-        5825,   500,  --LUCID_POTION_II                     = 5825,
-        5826,   500,  --LUCID_POTION_III                    = 5826,
-        5827,   500,  --LUCID_ETHER_I                       = 5827,
-        5828,   500,  --LUCID_ETHER_II                      = 5828,
-        5829,   500,  --LUCID_ETHER_III                     = 5829,
-        5830,   500,  --LUCID_ELIXIR_I                      = 5830,
-        5831,   500,  --LUCID_ELIXIR_II                     = 5831,
-        5832,   500,  --FLASK_OF_HEALING_MIST               = 5832,
-        5833,   500,  --FLASK_OF_MANA_MIST                  = 5833,
-        5834,   500,  --PAIR_OF_LUCID_WINGS_I               = 5834,
-        5835,   500,  --TUBE_OF_HEALING_SALVE_I             = 5835,
-        5836,   500,  --TUBE_OF_HEALING_SALVE_II            = 5836,
-        5837,   500,  --TUBE_OF_CLEAR_SALVE_I               = 5837,
-        5838,   500,  --TUBE_OF_CLEAR_SALVE_II              = 5838,
-        5839,   500,  --BOTTLE_OF_STALWARTS_TONIC           = 5839,
-        5840,   500,  --BOTTLE_OF_STALWARTS_GAMBIR          = 5840,
-        5841,   500,  --BOTTLE_OF_ASCETICS_TONIC            = 5841,
-        5842,   500,  --BOTTLE_OF_ASCETICS_GAMBIR           = 5842,
-        5843,   500,  --BOTTLE_OF_CHAMPIONS_TONIC           = 5843,
-        5844,   500,  --BOTTLE_OF_CHAMPIONS_GAMBIR          = 5844,
-        5845,   500,  --BOTTLE_OF_FANATICS_TONIC            = 5845,
-        5846,   500,  --BOTTLE_OF_FOOLS_TONIC               = 5846,
-        5847,   500,  --PINCH_OF_FANATICS_POWDER            = 5847,
-        5848,   500,  --PINCH_OF_FOOLS_POWDER               = 5848,
-        5849,   500,  --BOTTLE_OF_BERSERKERS_DRINK          = 5849,
-        5850,   500,  --BOTTLE_OF_SWIFTSHOT_DRINK           = 5850,
-        5851,   500,  --BOTTLE_OF_BERSERKERS_TONIC          = 5851,
-        5852,   500,  --BOTTLE_OF_SWIFTSHOT_TONIC           = 5852,
-        5853,   1000000,  --PRIMEVAL_BREW                       = 5853,
-        5877,   500,  --TERROR_SCREEN                       = 5877,
-        5878,   500,  --AMNESIA_SCREEN                      = 5878,
-        5879,   500,  --DOOM_SCREEN                         = 5879,
-        5880,   500,  --POISON_SCREEN                       = 5880,
-} 
-]]--
-
-
+    {
+            2176,    48,    -- Fire Card
+            2177,    48,    -- Ice Card
+            2178,    48,    -- Wind Card
+            2179,    48,    -- Earth Card
+            2180,    48,    -- Thunder Card
+            2181,    48,    -- Water Card
+            2182,    48,    -- Light Card
+            2183,    48,    -- Dark Card
+            2974,    50,    -- Trump Card
+    }
 commandObj.onTrigger = function(player)
-     menu.options = select1
+     menu.options = selecta
      delaySendMenu(player)
 end
-
 return commandObj
-
-
-
-
