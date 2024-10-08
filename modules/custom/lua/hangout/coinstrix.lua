@@ -344,7 +344,7 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize',function(zone)
                                 player:printToPlayer('Come back after sorting your inventory.',0xD)
                            return
                         else
-                            npcUtil.giveItem(1449,countGil)
+                            npcUtil.giveItem(player, {{1449,countGil}})
                             player:setCharVar('Whiteshell',storedwhiteshell - countGil)
                             player:printToPlayer(string.format('Heres ya go...%s T. Whiteshell(s)',countGil),0,'Coinstrix')
                             player:printToPlayer(string.format('Here ya go! That leaves ya with %s T. Whiteshell(s) left!',storedwhiteshell-countGil),0,'Coinstrix')
@@ -372,7 +372,7 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize',function(zone)
                                 player:printToPlayer('Come back after sorting your inventory.',0xD)
                                 return
                             else
-                                npcUtil.giveItem(1452,countGil)
+                                npcUtil.giveItem(player, {{1452,countGil}})
                                 player:setCharVar('Bronzepiece',storedbronzepiece - countGil)
                                 player:printToPlayer(string.format('Heres ya go...%s O. Bronzepiece(s)',countGil),0,'Coinstrix')
                                 player:printToPlayer(string.format('Here ya go! That leaves ya with %s O. Bronzepiece(s) left!',storedbronzepiece-countGil),0,'Coinstrix')
@@ -400,7 +400,7 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize',function(zone)
                                 player:printToPlayer('Come back after sorting your inventory.',0xD)
                                 return
                             else
-                                npcUtil.giveItem(1455,countGil)
+                                npcUtil.giveItem(player, {{1455,countGil}})
                                 player:setCharVar('Byne', storedonebyne - countGil)
                                 player:printToPlayer(string.format('Heres ya go...%s One Byne Bill(s)',countGil),0,'Coinstrix')
                                 player:printToPlayer(string.format('Here ya go! That leaves ya with %s One Byne Bill(s) left!',storedonebyne-countGil),0,'Coinstrix')
@@ -439,7 +439,7 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize',function(zone)
                                 player:printToPlayer('Come back after sorting your inventory.',0xD)
                             return
                         else
-                            npcUtil.giveItem(1450,countGil)
+                            npcUtil.giveItem(player, {{1450,countGil}})
                             player:setCharVar('Jadeshell',storejadeshell - countGil)
                             player:printToPlayer(string.format('Heres ya go...%s L. Jadeshell(s)',countGil),0,'Coinstrix')
                             player:printToPlayer(string.format('Here ya go! That leaves ya with %s L. Jadeshell(s) left!',storejadeshell-countGil),0,'Coinstrix')
@@ -467,7 +467,7 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize',function(zone)
                                 player:printToPlayer('Come back after sorting your inventory.',0xD)
                                 return
                             else
-                                player:addItem(1453,countGil)
+                                player:addItem(player, {{1453,countGil}})
                                 npcUtil.giveCharVar('Silverpiece', storedsilverpiece - countGil)
                                 player:printToPlayer(string.format('Heres ya go...%s M. Silverpiece(s)',countGil),0,'Coinstrix')
                                 player:printToPlayer(string.format('Here ya go! That leaves ya with %s M. Silverpiece(s) left!',storedsilverpiece-countGil),0,'Coinstrix')
@@ -495,7 +495,7 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize',function(zone)
                                 player:printToPlayer('Come back after sorting your inventory.',0xD)
                             return
                             else
-                                npcUtil.giveItem(1456,countGil)
+                                npcUtil.giveItem(player, {{1456,countGil}})
                                 player:setCharVar('HundredByne', storedhundredbyne - countGil)
                                 player:printToPlayer(string.format('Heres ya go...%s One Hundred Byne Bill(s)',countGil),0,'Coinstrix')
                                 player:printToPlayer(string.format('Here ya go! That leaves ya with %s One Hundred Byne Bill(s) left!',storedhundredbyne-countGil),0,'Coinstrix')
@@ -541,7 +541,7 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize',function(zone)
                                 player:printToPlayer('Come back after sorting your inventory.',0xD)
                                 return
                             else
-                                npcUtil.giveItem(1451, countGil)
+                                npcUtil.giveItem(player, {{1451, countGil}})
                                 player:setCharVar('Stripshell',storedstripeshell - countGil)
                                 player:printToPlayer(string.format('Heres ya go...%s R. Stripeshell(s)',countGil),0,'Coinstrix')
                                 player:printToPlayer(string.format('Here ya go! That leaves ya with %s R. Stripeshell(s) left!',storedstripeshell-countGil),0,'Coinstrix')
@@ -569,7 +569,7 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize',function(zone)
                                 player:printToPlayer('Come back after sorting your inventory.',0xD)
                                 return
                             else
-                                npcUtil.giveItem(1454, countGil)
+                                npcUtil.giveItem(player, {{1454, countGil}})
                                 player:setCharVar('Goldpiece',storedgoldpiece - countGil)
                                 player:printToPlayer(string.format('Heres ya go...%s R. Goldpiece(s)',countGil),0,'Coinstrix')
                                 player:printToPlayer(string.format('Here ya go! That leaves ya with %s R. Goldpiece(s) left!',storedgoldpiece-countGil),0,'Coinstrix')
@@ -597,7 +597,7 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize',function(zone)
                                 player:printToPlayer('Come back after sorting your inventory.',0xD)
                             return
                             else
-                                npcUtil.giveItem(1457,countGil)
+                                npcUtil.giveItem(player, {{1457,countGil}})
                                 player:setCharVar('TenThouByne', storedtenkbyne - countGil)
                                 player:printToPlayer(string.format('Heres ya go...%s Ten Thousand Byne Bill(s)',countGil),0,'Coinstrix')
                                 player:printToPlayer(string.format('Here ya go! That leaves ya with %s Ten Thousand Byne Bill(s) left!',storedtenkbyne-countGil),0,'Coinstrix')

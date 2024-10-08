@@ -6002,6 +6002,24 @@ xi.magian.trials =
         },
     },
 
+    [3589] =
+    {
+        previousTrial = 3126,
+        requiredItem  =
+        {
+            itemId = xi.item.DEATH_PENALTY_95,
+        },
+
+        textOffset  = 1329,
+        tradeItem   = xi.item.MULCIBARS_SCORIA,
+        numRequired = 3,
+
+        rewardItem =
+        {
+            itemId = xi.item.DEATH_PENALTY_99,
+        },
+    },
+
     [3591] =
     {
         previousTrial = 3128,
@@ -6290,6 +6308,24 @@ xi.magian.trials =
         },
     },
 
+    [3639] =
+    {
+        previousTrial = 3589,
+        requiredItem  =
+        {
+            itemId = xi.item.DEATH_PENALTY_99,
+        },
+
+        textOffset  = 1329,
+        tradeItem   = xi.item.MULCIBARS_SCORIA,
+        numRequired = 150,
+
+        rewardItem =
+        {
+            itemId = xi.item.DEATH_PENALTY_99_II,
+        },
+    },
+
     [3641] =
     {
         previousTrial = 3591,
@@ -6305,6 +6341,24 @@ xi.magian.trials =
         rewardItem =
         {
             itemId = xi.item.GJALLARHORN_99_II,
+        },
+    },
+
+    [3765] =
+    {
+        previousTrial = 3639,
+        requiredItem  =
+        {
+            itemId = xi.item.DEATH_PENALTY_99_II,
+        },
+
+        textOffset  = 1329,
+        tradeItem   = xi.item.MULCIBARS_SCORIA,
+        numRequired = 150,
+
+        rewardItem =
+        {
+            itemId = xi.item.DEATH_PENALTY_119,
         },
     },
 

@@ -49,6 +49,8 @@ local prizes =
         ['price'] = 100,
         ['items'] =
         {
+--- Alway active ----------------------------------------
+ 8711, -- copper aman voucher
 
 --- Month 1 ---------------------------------------------
 10124, -- cipher of luzafs alter ego
@@ -154,6 +156,8 @@ local prizes =
 27112, -- Starlet Gloves
 27297, -- Starlet Skirt
 27468, -- Starlet Boots
+25715, -- Korrigan Suite
+25639, -- Korrigan Masque
 --[[
 --- Month 2 ---------------------------------------------
 
@@ -189,6 +193,8 @@ local prizes =
 14986, -- ochimusha kote
 13250, -- sonic belt +1
 15737, -- sarutobi kyahan
+ 3676, -- celestial globe
+ 4254, -- Megalixir
 
 --- Month 1 ---------------------------------------------
 20713, -- Excalipoor

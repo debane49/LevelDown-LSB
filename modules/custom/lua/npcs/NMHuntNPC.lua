@@ -190,7 +190,7 @@ page2 =
           if totalkillc >= 100 and
              player:getCharVar('FreeRelic') ~= 2 and
              player:getCharVar('FreeRelic') ~= 3 and
-             player:getCharVar('NaMiSkipComp') == 1 then
+             player:getCharVar('NaMiSkipComp') >= 1 then
                     menu.options = page11
                     delaySendMenu(player)
           else

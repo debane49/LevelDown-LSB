@@ -5481,4 +5481,13 @@ INSERT INTO `item_mods` VALUES (23603, 115, 23); --vitiation tights +3 -- ELEM
 INSERT INTO `item_mods` VALUES (23603, 344, 30); --vitiation tights +3 -- SPIKES_DMG
 INSERT INTO `item_mods` VALUES (23603, 161, -500); --vitiation tights +3 -- DMGPHYS
 INSERT INTO `item_mods` VALUES (23603, 384, 500); --vitiation tights +3 -- HASTE_GEAR
-
+-- Triska Scyth NQ
+INSERT INTO `item_mods` VALUES (20898, 23,   20); --Triska Scyth -- ATT
+INSERT INTO `item_mods` VALUES (20898, 384, 100); --Triska Scyth -- haste
+INSERT INTO `item_mods` VALUES (20898, 165,   9); --Triska Scyth -- crit hit rate
+INSERT INTO `item_mods` VALUES (20898, 421,   5); --Triska Scyth -- crit hit dmg
+-- Triska Scyth +1
+INSERT INTO `item_mods` VALUES (20899, 23,   21); --Triska Scyth -- ATT
+INSERT INTO `item_mods` VALUES (20899, 384, 200); --Triska Scyth -- haste
+INSERT INTO `item_mods` VALUES (20899, 165,  10); --Triska Scyth -- crit hit rate
+INSERT INTO `item_mods` VALUES (20899, 421,   6); --Triska Scyth -- crit hit dmg

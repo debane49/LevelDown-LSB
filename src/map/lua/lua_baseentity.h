@@ -272,8 +272,6 @@ public:
 
     // Player Appearance
     uint8  getRace();
-    void   setFace(uint8 face);
-    void   setRace(uint8 race);
     uint8  getGender();
     auto   getName() -> std::string;
     auto   getPacketName() -> std::string;

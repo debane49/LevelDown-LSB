@@ -960,9 +960,9 @@ xi.events.harvestFestival.generateEntities = function()
                                                 function(player)
                                                         if player:getItemCount(currencyId) >= itemData.cost then
                                                            player:delItem(currencyId, itemData.cost)
-                                                           player:addItem(itemData.item)
+                                                           npcUtil.giveItem(player, itemData.item)
                                                            -- Notify player of purchase
-                                                           player:printToPlayer(string.format('You have received a %s.', itemData.name), xi.msg.channel.SYSTEM_3, '')
+                                                           player:printToPlayer('Here is your item.... Sucker...',0, 'Candy Merchant')
                                                         else
                                                            player:printToPlayer('You don\'t have enough candy!', xi.msg.channel.SYSTEM_3, '')
                                                         end
@@ -1171,7 +1171,7 @@ end
                                             end
                                             -- Remove costume effect from all affected players
                                             for _, player in pairs(affectedPlayers) do
-                                                player:setCostume2(0)  -- Remove costume
+                                               -- player:setCostume2(0)  -- Remove costume
                                                 player:delStatusEffect(xi.effect.AMNESIA)
                                                 player:printToPlayer('The curse has been lifted from you and you have been transformed back into yourself.', xi.msg.channel.SYSTEM_3)
                                             end
@@ -1200,7 +1200,7 @@ end
                                 local costumeId = costumeIds[math.random(1, #costumeIds)]
             
                                 -- Apply the selected costume effect to the attacker
-                                attacker:setCostume2(costumeId)
+                              --  attacker:setCostume2(costumeId)
                                 attacker:addStatusEffect(xi.effect.AMNESIA,10,3,600)
 
                                 -- Add attacker to affected players list

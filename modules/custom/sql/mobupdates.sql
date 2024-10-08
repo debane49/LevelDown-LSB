@@ -565,3 +565,6 @@ INSERT INTO mob_skills VALUES(1377,1029,'flourescene',0,7.0,2000,1500,1,0,0,0,0,
 INSERT INTO mob_skill_lists VALUES('torrential_torment', 824, 1374); -- torrential torment
 INSERT INTO mob_skill_lists VALUES('flourescene', 824, 1377); -- flourescene - boost
 INSERT INTO mob_skill_lists VALUES('invincible', 824, 694); -- invincible
+
+-- add Epona ring to Rani drop list
+INSERT INTO mob_droplist VALUES(2076,1,1,300,11651,1000);

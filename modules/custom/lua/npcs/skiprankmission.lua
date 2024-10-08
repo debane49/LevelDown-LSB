@@ -34,6 +34,31 @@ local m = Module:new("skiprankmission")
         player:addKeyItem(452) -- Cerulean Crystal
     end
 
+    local function skip_asa (player)
+    local missionASA = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+    for i = 1, #missionASA do
+        player:addMission(11, missionASA[i])
+        player:completeMission(3, missionASA[i])
+    end
+        player:addMission(3, 31) -- A_SHANTOTTO_ASCENSION_FIN
+    end
+
+    local function skip_soa (player)
+    local missionSOA = {0, 1, 3, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 26, 27, 29,
+                       30 ,31, 34, 35, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 55, 56, 57,
+                       58, 59, 61, 62, 63, 66, 67, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 84,
+                       85, 86, 87, 88, 89, 90 ,91 ,92 ,93, 94, 95, 96, 98, 99, 100, 101, 102, 103, 104, 105, 107, 108, 109, 110,
+                       111, 112, 113, 114, 116, 117, 118, 120, 121, 123, 125, 129}
+    for i = 1, #missionSOA do
+        player:addMission(12, missionSOA[i])
+        player:completeMission(12, missionSOA[i])
+    end
+        player:addMission(12, 130) -- THE_LIGHT_WITHIN
+        player:addKeyItem(2280) -- HABITUAL_BEHAVIOR_BAROMETER
+    end
+
+
+
     local function skip_toau (player)
     local missionTOAU = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
                        30 ,31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47}
@@ -133,6 +158,7 @@ local m = Module:new("skiprankmission")
 
 local menu  = {}
 local page1 = {}
+local page2 = {}
 local delaySendMenu = function(player)
       player:timer(50, function(playerArg)
         playerArg:customMenu(menu)
@@ -153,28 +179,156 @@ page1 =
         end,
     },
     {
-        'Of Course!',
+        'Skip Nation',
          function(player)
-         local playnat = player:getNation()
-          player:printToPlayer('Epstein didnt kill himself!!!!!!!', 0, 'SkippySkipSkip')
-                player:setCharVar('NaMiSkip', 0)
-                player:setCharVar('NaMiSkipy', 0)
-                player:setCharVar('NaMiSkipper', 0)
-                player:setCharVar('NaMiSkipComp',1)
-                if playnat == 0 then
-                    skip_srank(player)
-                elseif playnat == 1 then
-                    skip_brank(player)
-                elseif playnat == 2 then
-                    skip_wrank(player)
-                end
-                skip_roz(player)
-                skip_cop(player)
-                skip_toau(player)
-                skip_wotg(player)
-                skip_rov(player)
-
+                if player:getCharVar('NaMiSkipNat') == 1 then
+                   player:printToPlayer('You have already skipped these missions!', 0, 'SkippySkipSkip')
+                else
+                 local playnat = player:getNation()        
+                  player:printToPlayer('Skipping your Nations missions!', 0, 'SkippySkipSkip')
+                        player:setCharVar('NaMiSkip', 0)
+                        player:setCharVar('NaMiSkipy', 0)
+                        player:setCharVar('NaMiSkipper', 0)
+                        player:setCharVar('NaMiSkipComp',1)
+                        player:setCharVar('NaMiSkipNat',1)
+                        if playnat == 0 then
+                            skip_srank(player)
+                        elseif playnat == 1 then
+                            skip_brank(player)
+                        elseif playnat == 2 then
+                            skip_wrank(player)
+                        end
+                 end
          end,
+    },
+    {
+        'Skip RoZ',
+        function(player)
+                if player:getCharVar('NaMiSkipRoz') == 1 then
+                   player:printToPlayer('You have already skipped these missions!', 0, 'SkippySkipSkip')
+                else
+                  player:printToPlayer('Skipping Missions for Rize of Zilart', 0, 'SkippySkipSkip')
+                        player:setCharVar('NaMiSkip', 0)
+                        player:setCharVar('NaMiSkipy', 0)
+                        player:setCharVar('NaMiSkipper', 0)
+                        player:setCharVar('NaMiSkipComp',1)
+                        player:setCharVar('NaMiSkipRoz',1)
+                        skip_roz(player)
+                end
+        end,
+    },
+    {
+        'Skip CoP',
+        function(player)
+                if player:getCharVar('NaMiSkipCop') == 1 then
+                   player:printToPlayer('You have already skipped these missions!', 0, 'SkippySkipSkip')
+                else
+                  player:printToPlayer('Skipping Missions for Chains of Promethia', 0, 'SkippySkipSkip')
+                        player:setCharVar('NaMiSkip', 0)
+                        player:setCharVar('NaMiSkipy', 0)
+                        player:setCharVar('NaMiSkipper', 0)
+                        player:setCharVar('NaMiSkipComp',1)
+                        player:setCharVar('NaMiSkipCop',1)
+                        skip_cop(player)
+                end
+        end,
+    },
+    {
+        'Next Page',
+        function(player)
+                menu.options = page2
+                delaySendMenu(player)
+        end,
+    },
+}
+page2 =
+{
+    {
+        'Skip ToAu',
+        function(player)
+                if player:getCharVar('NaMiSkipToau') == 1 then
+                   player:printToPlayer('You have already skipped these missions!', 0, 'SkippySkipSkip')
+                else
+                  player:printToPlayer('Skipping Missions for Treasures of Aht Urhgan', 0, 'SkippySkipSkip')
+                        player:setCharVar('NaMiSkip', 0)
+                        player:setCharVar('NaMiSkipy', 0)
+                        player:setCharVar('NaMiSkipper', 0)
+                        player:setCharVar('NaMiSkipComp',1)
+                        player:setCharVar('NaMiSkipToau',1)
+                        skip_toau(player)
+                end
+        end,
+    },
+    {
+        'Skip WoTg',
+        function(player)
+                if player:getCharVar('NaMiSkipWotg') == 1 then
+                   player:printToPlayer('You have already skipped these missions!', 0, 'SkippySkipSkip')
+                else
+                  player:printToPlayer('Skipping Missions for Wings fo the Goddess', 0, 'SkippySkipSkip')
+                        player:setCharVar('NaMiSkip', 0)
+                        player:setCharVar('NaMiSkipy', 0)
+                        player:setCharVar('NaMiSkipper', 0)
+                        player:setCharVar('NaMiSkipComp',1)
+                        player:setCharVar('NaMiSkipWotg',1)
+                        skip_wotg(player)
+                end
+        end,
+    },
+    {
+        'Skip RoV',
+        function(player)
+                if player:getCharVar('NaMiSkipRov') == 1 then
+                   player:printToPlayer('You have already skipped these missions!', 0, 'SkippySkipSkip')
+                else
+                  player:printToPlayer('Skipping Missions for Rhapsodies of Vanadiel', 0, 'SkippySkipSkip')
+                        player:setCharVar('NaMiSkip', 0)
+                        player:setCharVar('NaMiSkipy', 0)
+                        player:setCharVar('NaMiSkipper', 0)
+                        player:setCharVar('NaMiSkipComp',1)
+                        player:setCharVar('NaMiSkipRov',1)
+                        skip_rov(player)
+                end
+        end,
+    },
+    {
+        'Skip SoA',
+        function(player)
+                if player:getCharVar('NaMiSkipSoa') == 1 then
+                   player:printToPlayer('You have already skipped these missions!', 0, 'SkippySkipSkip')
+                else
+                  player:printToPlayer('Skipping Missions for Seekers of Adoulin', 0, 'SkippySkipSkip')
+                        player:setCharVar('NaMiSkip', 0)
+                        player:setCharVar('NaMiSkipy', 0)
+                        player:setCharVar('NaMiSkipper', 0)
+                        player:setCharVar('NaMiSkipComp',1)
+                        player:setCharVar('NaMiSkipSoa',1)
+                        skip_soa(player)
+                end
+        end,
+    },
+    {
+        'Skip AsA',
+        function(player)
+                if player:getCharVar('NaMiSkipAsa') == 1 then
+                   player:printToPlayer('You have already skipped these missions!', 0, 'SkippySkipSkip')
+                else
+                   player:printToPlayer('Skipping Missions for A Shantotto Ascension', 0, 'SkippySkipSkip')
+                        player:setCharVar('NaMiSkip', 0)
+                        player:setCharVar('NaMiSkipy', 0)
+                        player:setCharVar('NaMiSkipper', 0)
+                        player:setCharVar('NaMiSkipComp',1)
+                        player:setCharVar('NaMiSkipAsa',1)
+                        skip_asa(player)
+                end
+        end,
+    },
+    {
+        'Back',
+        function(player)
+                menu.options = page1
+                delaySendMenu(player)
+        end,
     },
 }
 
