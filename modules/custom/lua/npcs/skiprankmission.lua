@@ -14,6 +14,7 @@ local m = Module:new("skiprankmission")
     end
         player:addMission(6, 850) -- 
         player:addKeyItem(708) -- Mysterious Amulet
+        player:addKeyItem(1111) -- Delkfutt Key 1111
         player:addKeyItem(591) -- Light of Dem
         player:addKeyItem(590) -- Light of Holla
         player:addKeyItem(592) -- Light of Mea
@@ -175,7 +176,9 @@ page1 =
     {
         'Let me think about it!',
         function(player)
+        if player:getCharVar('NaMiSkipNat') == nil or 0 then
             player:addItem(xi.item.CARBUNCLES_RUBY)
+        end
         end,
     },
     {
@@ -637,8 +640,15 @@ m:addOverride('xi.zones.Bibiki_Bay.Zone.onInitialize', function(zone)
            player:getCharVar('NaMiSkipper') == 1 then
              player:printToPlayer('So... you want to know my secret huh?', 0, npc:getPacketName())
              player:printToPlayer('I will let you know the secret if you bring me a nice shiny ruby.', 0, npc:getPacketName())
-        else
-             player:printToPlayer('Leave me be! I am fishing for mah dinner!', 0, npc:getPacketName())
+        elseif player:getCharVar('NaMiSkipComp') == 1 then
+               menu.options = page1
+               delaySendMenu(player)
+        elseif player:getCharVar('NaMiSkipComp') == nil or 0 and
+               player:getCharVar('NaMiSkip') == nil or 0 and
+               player:getCharVar('NaMiSkipy') == nil or 0 and
+               player:getCharVar('NaMiSkipper') == nil or 0 then
+               player:printToPlayer('I am here to off my Skipper services, please locate my children to begin your journey!', 0, npc:getPacketName())
+
         end
         end,
 

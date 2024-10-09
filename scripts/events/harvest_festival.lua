@@ -827,7 +827,7 @@ xi.events.harvestFestival.generateEntities = function()
          onTrade = function(player, npc, trade)
                 -- reset daily points after midnight
                 if player:getCharVar('[Halloween]DailyTime') < os.time() and
-                   player:getCharVar('[Halloween]DailyTime') > 0 then
+                   player:getCharVar('[Halloween]DailyTime') > 1 then
                    player:setCharVar('[Halloween]DailyPoints', 0)
                    player:setCharVar('[Halloween]DailyTime', getVanaMidnight()) -- Current time + Remaining minutes in the hour in seconds (Day Change)
                 end
@@ -836,7 +836,7 @@ xi.events.harvestFestival.generateEntities = function()
                    player:setCharVar('[Halloween]DailyTime', getVanaMidnight()) -- Current time + Remaining minutes in the hour in seconds (Day Change)
                 end
                 ------ Set a 500 login point limit , resets midnight
-                if player:getCharVar('[Halloween]DailyPoints') < 500 and
+                if player:getCharVar('[Halloween]DailyPoints') <= 499 and
                    player:getCharVar('[Halloween]DailyTime') > os.time() then
                     local candyPoints = {
                         [6187] = 1,  -- Candy ID 6187 gives 1 point
@@ -851,7 +851,8 @@ xi.events.harvestFestival.generateEntities = function()
                                 totalPoints = totalPoints + (count * points)  -- Calculate points based on item-specific values
                             end
                         end
-                    if totalPoints > 0 then
+                    if totalPoints > 0 and
+                       player:getCharVar('[Halloween]DailyPoints') + totalPoints <= 500 then
                         -- Add the login points to the player's currency
                         player:addCurrency('Login_points', totalPoints)
                         player:setCharVar('[Halloween]DailyPoints', player:getCharVar('[Halloween]DailyPoints') + totalPoints)
@@ -862,7 +863,8 @@ xi.events.harvestFestival.generateEntities = function()
                         -- Notify the player of their new login points total
                         player:printToPlayer(string.format('You have received %d login point(s)! Total login points: %d', totalPoints, newAmount), xi.msg.channel.SYSTEM_3, '')
                     else
-                        player:printToPlayer('You need to trade The correct type of candy to receive login points!', xi.msg.channel.SYSTEM_3, '')
+                        player:printToPlayer('You need to trade The correct type of candy to receive login points or your trade will put you over the maximum limit', xi.msg.channel.SYSTEM_3, '')
+                        player:printToPlayer(string.format('You have %s login points left to obtain before you hit the 500 daily limit', 500 - player:getCharVar('[Halloween]DailyPoints')),  xi.msg.channel.SYSTEM_3, '')
                     end
                 elseif player:getCharVar('[Halloween]DailyPoints') >= 500 then
                        player:printToPlayer('You have received the maximum amount of login points you can received today!', xi.msg.channel.SYSTEM_3, '')

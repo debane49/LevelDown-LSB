@@ -6344,24 +6344,6 @@ xi.magian.trials =
         },
     },
 
-    [3765] =
-    {
-        previousTrial = 3639,
-        requiredItem  =
-        {
-            itemId = xi.item.DEATH_PENALTY_99_II,
-        },
-
-        textOffset  = 1329,
-        tradeItem   = xi.item.MULCIBARS_SCORIA,
-        numRequired = 150,
-
-        rewardItem =
-        {
-            itemId = xi.item.DEATH_PENALTY_119,
-        },
-    },
-
     [4156] = -- Ravager's mask -> Ravager's mask +1
     {
         previousTrial = 0,
