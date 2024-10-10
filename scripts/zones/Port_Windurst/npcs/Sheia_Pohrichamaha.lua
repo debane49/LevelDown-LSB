@@ -12,7 +12,7 @@ entity.onTrade = function(player, npc, trade)
 end
 
 entity.onTrigger = function(player, npc)
-    if GetRegionOwner(xi.region.FAUREGANDI) ~= xi.nation.WINDURST then
+    if GetRegionOwner(xi.region.FAUREGANDI) == nil then -- ~= xi.nation.WINDURST then
         player:showText(npc, ID.text.SHEIAPOHRICHAMAHA_CLOSED_DIALOG)
     else
         local stock =

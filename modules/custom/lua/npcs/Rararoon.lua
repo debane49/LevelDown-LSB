@@ -21,12 +21,6 @@ end)
 m:addOverride("xi.zones.Nashmau.npcs.Rararoon.onTrigger", function(player, npc)
     local stock =
     {
-2241,29640, -- Tension Spring II
-2244,29640, -- Scanner
-2245,29640, -- Loudspeaker II
-2249,29640, -- Accelerator II
-2253,29640, -- Armor Plate II
-2257,29640, -- Stabilizer II
 2261,29640, -- Mana Jammer II
 2412,41496, -- Hammermill
 9068,41496, -- Barrier Module
@@ -35,13 +29,7 @@ m:addOverride("xi.zones.Nashmau.npcs.Rararoon.onTrigger", function(player, npc)
 9072,41496, -- Arcanic Cell
 2269,41496, -- Mana Tank II
 9032,53352, -- Strobe II
-9033,65208, -- Tension Spring III
-9034,65208, -- Loudspeaker III
 9066,65208, -- Amplifier
-9037,65208, -- Accelerator III
-9036,65208, -- Scope II
-9039,65208, -- Armor Plate III
-9040,65208, -- Stabilizer III
 9042,65208, -- Mana Jammer III
 9065,82992, -- Inhibitor II
 9230,82992, -- Speedloader II
@@ -91,6 +79,8 @@ m:addOverride("xi.zones.Nashmau.npcs.Rararoon.onTrigger", function(player, npc)
 9880,118560, -- tension spring v
 9883,118560, -- styabilizer v
 9881,118560, -- loudspeaker v
+9882,112632, -- Tranquilizer IV
+9884,112632, -- Scope IV
 2413,185250, -- Coiler
 9233,185250, -- Mana Channeler II
 2414,185250, -- Steam Jacket
@@ -105,6 +95,7 @@ m:addOverride("xi.zones.Nashmau.npcs.Rararoon.onTrigger", function(player, npc)
 9234,321100, -- Optic Fiber II
 2415,750880, -- Turbo Charger II
 2416,750880, -- Vivi-Valve II
+9888,750880, -- Arcanoclutch II
 
     }
     xi.shop.general(player, stock)
