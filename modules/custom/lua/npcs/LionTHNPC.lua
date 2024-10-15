@@ -19,6 +19,18 @@ local itemz =
 m:addOverride('xi.zones.Lower_Jeuno.Zone.onInitialize', function(zone)
     -- Call the zone's original function for onInitialize
     super(zone)
+
+    local function thLevel(player)
+      local thAdd = 0
+        if player:getMainLvl() >= 90 then
+           thAdd = thAdd +3
+        elseif player:getMainLvl() >= 45 and player:getMainLvl() <= 89 then
+           thAdd = thAdd +2
+        elseif player:getMainLvl() >= 15 and player:getMainLvl() <= 44 then
+           thAdd = thAdd +1
+        end
+      return thAdd
+    end
     local Lion = zone:insertDynamicEntity({
 
         -- NPC or MOB
@@ -49,7 +61,7 @@ m:addOverride('xi.zones.Lower_Jeuno.Zone.onInitialize', function(zone)
                                        player:confirmTrade()
                                        player:setCharVar('LionTH', thvalue + v.reward)
                                        player:setCharVar(v.var, 1)
-                                       player:printToPlayer(string.format('Thank you for the %s, My current Treasure Hunter is now %s', retItem, thvalue + v.reward), 0, npc:getPacketName())
+                                       player:printToPlayer(string.format('Thank you for the %s, My current Treasure Hunter is now %s', retItem, thvalue + v.reward + thLevel(player)), 0, npc:getPacketName())
                                 end break
                             end
                         end
@@ -111,11 +123,11 @@ m:addOverride('xi.zones.Lower_Jeuno.Zone.onInitialize', function(zone)
                 player:printToPlayer('Thiefs Knife, Sandung Dagger, White Rarab Cap +1, Assassins Armlet +1.', 0, npc:getPacketName())
                 player:printToPlayer('Plunderers Armlet +1, Gorney Ring and a Chaac Belt.', 0, npc:getPacketName())
              elseif player:getCharVar('LionTH') >= 1  and player:getCharVar('LionTH') <= 13 then
-                    player:printToPlayer(string.format('I am on my way to becoming a legend, My current Treasure Hunter is %s,', player:getCharVar('LionTH')), 0, npc:getPacketName())
+                    player:printToPlayer(string.format('I am on my way to becoming a legend, My current Treasure Hunter is %s,', player:getCharVar('LionTH') + thLevel(player)), 0, npc:getPacketName())
                     player:printToPlayer(string.format('I still hunting for the following items;'), 0, npc:getPacketName())
                     player:printToPlayer(string.format('%s %s %s %s %s %s %s ',Sandung, ThiefsK, WhiteRa, Assassi, Plunder, GorneyR, ChaacB), 0, npc:getPacketName())
              elseif player:getCharVar('LionTH') == 14 then
-                    player:printToPlayer(string.format('You have made me a better Thief, My current Treasure Hunter is %s,', player:getCharVar('LionTH')), 0, npc:getPacketName())
+                    player:printToPlayer(string.format('You have made me a better Thief, My current Treasure Hunter is %s,', player:getCharVar('LionTH') + thLevel(player)), 0, npc:getPacketName())
                     player:printToPlayer(string.format('I do not belive i can exceed my curent limits', player:getCharVar('LionTH')), 0, npc:getPacketName())
                     player:setCharVar('[LTH]_Sandung', 0)
                     player:setCharVar('[LTH]_ThiefsK', 0)

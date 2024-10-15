@@ -31,12 +31,13 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     local duration = 180
     local power = 30
+    local apower = caster:getStat(xi.mod.ATT) *.3
     local typeEffect = xi.effect.MAGIC_ATK_BOOST
     local typeEffectone = xi.effect.ATTACK_BOOST
     if not caster:addStatusEffect(typeEffect, power, 0, duration) then
         spell:setMsg(xi.msg.basic.MAGIC_NO_EFFECT)
     end
-    if not caster:addStatusEffect(typeEffectone, power, 0, duration) then
+    if not caster:addStatusEffect(typeEffectone, apower, 0, duration) then
         spell:setMsg(xi.msg.basic.MAGIC_NO_EFFECT)
     end
 

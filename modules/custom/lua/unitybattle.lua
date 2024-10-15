@@ -115,7 +115,7 @@ local coffer =
 {'shedus_coffer'},
 {'glazemanes_coffer'},
 {'carousing_celines_coffer'},
-{'bambroxs_coffer'},
+{'wyvernhunter_bambroxs_coffer'},
 }
 
 
@@ -764,7 +764,7 @@ end)
 ----------------------bambroxs_coffer-------------------------------
 -----------------------------------------------------------------------
 
-m:addOverride("xi.items.bambroxs_coffer.onItemUse", function(target)
+m:addOverride("xi.items.wyvernhunter_bambroxs_coffer.onItemUse", function(target)
     local lootone =
     {
         {   10, 22120   }, -- Imati

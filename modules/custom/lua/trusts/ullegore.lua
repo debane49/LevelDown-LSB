@@ -34,7 +34,7 @@ m:addOverride("xi.actions.spells.trust.ullegore.onMobSpawn", function(mob)
 
     mob:addListener('WEAPONSKILL_USE',  'MEMENTO_MORI_ABILITY', function(mobArg, target, wsid, tp, action)
                         if wsid == 3624 then
-                                mob:timer(30, function(mobArg)
+                                mobArg:timer(30, function(mobArg)
                                 mobArg:castSpell(219) -- comet
                                 end)
                         end

@@ -110,6 +110,27 @@ local atmnpcinfo =
 {'Batallia_Downs_[S]',       'Atmacite_Refiner',    25},
 {'Wajaom_Woodlands',         'Atmacite_Refiner',    24},
 }
+local atmaPurveyor =
+{
+{'Aht_Urhgan_Whitegate',   'Voidwatch_Purveyor', 'imperial_standing', 968},
+{'Al_Zahbi',               'Voidwatch_Purveyor', 'imperial_standing', 291}, -- 292
+{'Bastok_Markets_[S]',     'Voidwatch_Purveyor', 'allied_notes',       81},
+{'Bastok_Mines',           'Voidwatch_Purveyor', 'bastok_cp',         288},
+{'Lower_Jeuno',            'Voidwatch_Purveyor', 'conquest_points', 10109},
+{'Nashmau',                'Voidwatch_Purveyor', 'imperial_standing',  37},
+{'Northern_San_dOria',     'Voidwatch_Purveyor', 'sandoria_cp',       877},
+{'Port_Bastok',            'Voidwatch_Purveyor', 'bastok_cp',           9},
+{'Port_Jeuno',             'Voidwatch_Purveyor', 'conquest_points',   351},
+{'Port_Windurst',          'Voidwatch_Purveyor', 'windurst_cp',       875},
+-- {'RuLude_Gardens',         'Voidwatch_Purveyor', 'conquest_points',      }, do not have capture of event
+{'Southern_San_dOria_[S]', 'Voidwatch_Purveyor', 'allied_notes',      664},
+{'Southern_San_dOria',     'Voidwatch_Purveyor', 'sandoria_cp',       975}, -- 976
+{'Upper_Jeuno',            'Voidwatch_Purveyor', 'conquest_points', 10213},
+{'Windurst_Waters_[S]',    'Voidwatch_Purveyor', 'allied_notes',       48},
+{'Windurst_Waters',        'Voidwatch_Purveyor', 'windurst_cp',      1034},
+{'Windurst_Woods',         'Voidwatch_Purveyor', 'windurst_cp',       836},
+{'Bastok_Markets',         'Voidwatch_Purveyor', 'bastok_cp',          10},
+}
 
 local atmparam =
 {
@@ -369,7 +390,9 @@ end
 for _, entry in pairs(zname) do
     ensureTable(string.format('xi.zones.%s.npcs.Planar_Rift', entry[1]))
 end
-
+for _, entry in pairs(atmaPurveyor) do
+    ensureTable(string.format('xi.zones.%s.npcs.Voidwatch_Purveyor', entry[1]))
+end
 -----------------------------------
 require("modules/module_utils")
 require("scripts/globals/npc_util")
@@ -468,11 +491,68 @@ end)
 m:addOverride(string.format("xi.zones.%s.mobs.%s.onMobDespawn", entry[2], entry[1]), function(mob, npc)
 end)
 end
+-----------------------------------------------------------------------------------------------------
+-----------------Voidwatch Purveyor NPCS-------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+for _, entry in pairs(atmaPurveyor) do
+m:addOverride(string.format('xi.zones.%s.npcs.%s.onTrigger', entry[1], entry[2]),  function(player, npc)
+local amount = 0
+                if amount == 0 then 
+                   if entry[3] == 'conquest_points' then
+                      if player:getNation() == 0 then
+                         amount = player:getCurrency('sandoria_cp')
+                         elseif player:getNation() == 1 then
+                                amount = player:getCurrency('bastok_cp')
+                         elseif player:getNation() == 2 then
+                                amount = player:getCurrency('windurst_cp')
+                         end
+                   else
+                       player:getCurrency(entry[3])
+                   end
+                   player:startEvent(entry[4], 0, amount)
+                end
+end)
 
+m:addOverride(string.format('xi.zones.%s.npcs.%s.onEventFinish', entry[1], entry[2]),  function(player, csid, option, npc)
+local quantity      = bit.band(bit.rshift(option, 22), 0xFFFF)
+local itemRequested = bit.band(bit.rshift(option, 16), 0xF)
+local items = {3434, 3435, 3436, 3437, 3450}
+local stock = {}
+        for itemID = 1, 5 do
+            table.insert(stock, items[itemID])
+        end
+            for itemSelected, item in pairs(stock) do
+                if itemRequested == itemSelected then
+                   npcUtil.giveItem(player, {{ item, quantity}})
+                   if entry[3] == 'conquest_points' then
+                      if player:getNation() == 0 then
+                         player:delCurrency('sandoria_cp', 2000 * quantity)
+                         elseif player:getNation() == 1 then
+                                player:delCurrency('bastok_cp', 2000 * quantity)
+                         elseif player:getNation() == 2 then
+                                player:delCurrency('windurst_cp', 2000 * quantity)
+                         end
+                   else
+                                player:delCurrency(entry[3], 2000 * quantity)
+                   end
+                end
+            end
+end)
+end
 -----------------------------------------------------------------------------------------------------
 -----------------Voidwatch Officer NPCS--------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 for _, entry in pairs(npcinfo) do
+
+m:addOverride(string.format('xi.zones.%s.npcs.%s.onTrade', entry[1], entry[2]),  function(player, npc, trade)
+  local amount   = trade:getItemCount()
+    if npcUtil.tradeHas(trade, {{3450, amount}}) then
+       player:tradeComplete()
+       player:addCurrency('voidstones', amount)
+       player:printToPlayer(string.format('You have obtained %s Voidstones.', amount), 0, npc:getPacketName())
+    end
+end)
+
 m:addOverride(string.format('xi.zones.%s.npcs.%s.onTrigger', entry[1], entry[2]),  function(player, npc)
     if not player:hasKeyItem(entry[4]) then
           npcUtil.giveKeyItem(player, entry[4])

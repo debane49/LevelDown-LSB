@@ -1,7 +1,7 @@
 -- Supreme Behemoth
 INSERT INTO mob_droplist VALUES (3939, 0, 0, 1000,  4078, 333); -- Moonbow Cloth
-INSERT INTO mob_droplist VALUES (3939, 0, 0, 1000,  4078, 333); -- Moonbow Leather
-INSERT INTO mob_droplist VALUES (3939, 0, 0, 1000,  4078, 333); -- Moonbow Steel
+INSERT INTO mob_droplist VALUES (3939, 0, 0, 1000,  4079, 333); -- Moonbow Leather
+INSERT INTO mob_droplist VALUES (3939, 0, 0, 1000,  4077, 333); -- Moonbow Steel
 INSERT INTO mob_droplist VALUES (3939, 1, 1,  500, 26944, 125); -- Tartarus Platemail
 INSERT INTO mob_droplist VALUES (3939, 1, 1,  500, 20618, 125); -- Sandung
 INSERT INTO mob_droplist VALUES (3939, 1, 2,  200, 23726,  50); -- Volte Gaiters
