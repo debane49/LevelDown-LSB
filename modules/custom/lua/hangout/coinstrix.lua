@@ -1,166 +1,944 @@
 -------------------------------
 require("modules/module_utils")
 -------------------------------
-
 local m = Module:new("coinstrix")
-local menu  = {}
-local page1 = {}
-local page2 = {}
-local page3 = {}
-local page4 = {}
-local tradeChoice       = {}
-local withdraw          = {}
-local withdraw2         = {}
-local withdraw3         = {}
 
-
-local delaySendMenu = function(player)
-    player:timer(50,function(playerArg)
-        playerArg:customMenu(menu)
-    end)
-end
-
-menu =
-{
-    title  = 'What would you to like to do?',
-    options = {}
-}
-
-page1 =
-{
-    {
-        'Convert Single to 100 Piece',
-        function(player)
-            player:printToPlayer('Trade 100 Singles for a Hundred Piece.',0,'Coinstrix')
-        end
-    },
-    {
-        'Convert 100 to 10,000',
-        function(player)
-            player:printToPlayer('Trade 100 Hundred Pieces for a 10,000 Piece.',0,'Coinstrix')
-        end
-    },
-    {
-        'List Stored Currency',
-        function(playerArg)
-            menu.options = page2
-            delaySendMenu(playerArg)
-        end
-    },
-    {
-        'Nothing',
-        function(player)
-        end
-    }
-}
-page2 =
-{
-    {
-        'T. Whiteshells',
-        function(player)
-            player:printToPlayer(string.format('You currently have %s T. Whiteshell(s) stored.',player:getCharVar('Whiteshell')),0,'Coinstrix')
-        end
-    },
-    {
-        'O. Bronzepiece',
-        function(player)
-            player:printToPlayer(string.format('You currently have %s O. Bronzepiece(s) stored.',player:getCharVar('Bronzepiece')),0,'Coinstrix')
-        end
-    },
-    {
-        'One Byne Bill',
-        function(player)
-            player:printToPlayer(string.format('You cuurently have %s One Byne Bill(s) stored.',player:getCharVar('Byne')),0,'Coinstrix')
-        end
-    },
-    {
-        'Next Page',
-        function(playerArg)
-            menu.options = page3
-            delaySendMenu(playerArg)
-        end
-    },
-    {
-        'Go Back',
-        function(playerArg)
-            menu.options = page1
-            delaySendMenu(playerArg)
-        end
-    }
-}
-page3 =
-{
-    {
-        'L. Jadeshell',
-        function(player)
-            player:printToPlayer(string.format('You currently have %s L. Jadeshell(s) stored.',player:getCharVar('Jadeshell')),0,'Coinstrix')
-        end
-    },
-    {
-        'M. Silverpiece',
-        function(player)
-            player:printToPlayer(string.format('You currently have %s M. Silverpiece(s) stored.',player:getCharVar('Silverpiece')),0,'Coinstrix')
-        end
-    },
-    {
-        'Hundred Byne Bill',
-        function(player)
-            player:printToPlayer(string.format('You currently have %s Hundred Byne Bill(s) stored.',player:getCharVar('HundredByne')),0,'Coinstrix')
-        end
-    },
-    {
-        'Next Page',
-        function(playerArg)
-            menu.options = page4
-            delaySendMenu(playerArg)
-        end
-    },
-    {
-        'Go Back',
-        function(playerArg)
-            menu.options = page2
-            delaySendMenu(playerArg)
-        end
-    }
-}
-page4 =
-{
-    {
-        'R. Stripeshell',
-        function(player)
-            player:printToPlayer(string.format('You currently have %s R. Stripeshell(s) stored.',player:getCharVar('Stripeshell')),0,'Coinstrix')
-        end
-    },
-    {
-        'R. Goldpiece',
-        function(player)
-            player:printToPlayer(string.format('You currently have %s R. Goldpiece(s) stored.',player:getCharVar('Goldpiece')),0,'Coinstrix')
-        end
-    },
-    {
-        'Ten Thousand Byne Bill',
-        function(player)
-            player:printToPlayer(string.format('You currently have %s Ten Thousand Byne Bill(s) stored.',player:getCharVar('TenkByne')),0,'Coinstrix')
-        end
-    },
-    {
-        'Go Back',
-        function(playerArg)
-            menu.options = page3
-            delaySendMenu(playerArg)
-        end
-    },
-    {
-        'Main Menu',
-        function(playerArg)
-            menu.options = page1
-            delaySendMenu(playerArg)
-        end
-    }
-}
 
 m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize',function(zone)
     super(zone)
+
+local function delaySendMenu(player, menuToSend)
+    player:timer(50, function(playerArg)
+        playerArg:customMenu(menuToSend)
+    end)
+end
+
+    local function itemStorage(player, npc, trade)
+      local valueTable = {}
+         local valueVar = {'Whiteshell', 'Jadeshell', 'Stripeshell', 'Bronzepiece', 'Silverpiece', 'Goldpiece', 'Byne', 'HundredByne', 'TenkByne'}
+         for i = 1, 9 do
+               local itemID     = 1448 + i
+               local charVar    = valueVar[i]
+               table.insert(valueTable, {itemID, charVar})
+               --print(itemID,charVar)
+         end
+      local tradedItems = {}
+        for slotId = 0, 8 do
+            local item = trade:getItem(slotId)
+            if item then
+               local itemId = item:getID()
+               local quantity = trade:getSlotQty(slotId)
+               table.insert(tradedItems, {itemId, quantity})
+               --print(itemId,quantity)
+            end
+        end
+        for _, itemTraded in pairs(tradedItems) do
+            for _, tableValue in pairs(valueTable) do
+                if itemTraded[1] ~= tableValue[1] then
+                   player:printToPlayer('You are trying to trade unauthorized items.', 0, 'Coinstrix')
+                   return
+                elseif itemTraded[1] == tableValue[1] then
+                       -- print(itemTraded[2], tableValue[2])
+                       player:setCharVar(tableValue[2], player:getCharVar(tableValue[2]) + itemTraded[2])
+                       player:tradeComplete()
+                end
+            end
+        end
+      player:printToPlayer('Your Current balance of stored Dynamis Currency is:',  xi.msg.channel.SYSTEM_3)
+      player:printToPlayer(string.format('[%s] Tukuku Whiteshell [%s] Lungo-nango Jadeshell [%s] Rimilala Stripeshell', player:getCharVar(valueVar[1]), player:getCharVar(valueVar[2]), player:getCharVar(valueVar[3])),  xi.msg.channel.SYSTEM_3)
+      player:printToPlayer(string.format('[%s] Ordelle Bronzepiece [%s] Montiont Silverpiece [%s] Ranperre Goldpiece', player:getCharVar(valueVar[4]), player:getCharVar(valueVar[5]), player:getCharVar(valueVar[6])),  xi.msg.channel.SYSTEM_3)
+      player:printToPlayer(string.format('[%s] One Byne Bill [%s] One Hundred Byne Bill [%s] Ten Thousand Byne Bill', player:getCharVar(valueVar[7]), player:getCharVar(valueVar[8]), player:getCharVar(valueVar[9])),  xi.msg.channel.SYSTEM_3)
+    end
+
+local function withdrawMainMenu(player, page, trade)
+    local gilAmount = trade:getGil()
+    local withdrawMenu     = {{'Tukuku Whiteshell','Whiteshell', 1449}, {'Lungo-nango Jadeshell','Jadeshell', 1450}, {'Rimilala Stripeshell','Stripeshell', 1451}, {'Ordelle Bronzepiece','Bronzepiece', 1452}, {'Montiont Silverpiece','Silverpiece', 1453}, {'Ranperre Goldpiece','Goldpiece', 1454}, {'One Byne Bill','Byne', 1455}, {'One Hundred Byne Bill','HundredByne', 1456}, {'Ten Thousand Byne Bill','TenkByne', 1457}} 
+    local linesPerPage = 3
+    page = page or 1
+    local startIndex = (page - 1) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #withdrawMenu)
+    local options = {}
+    for i = startIndex, endIndex, 1 do
+        local withdraw = withdrawMenu[i][1]
+        table.insert(options, {
+            string.format('%s [%s]', withdraw, player:getCharVar(withdrawMenu[i][2])),
+            function(player)
+              if player:getCharVar(withdrawMenu[i][2]) < gilAmount then
+                    player:printToPlayer('You do not have enough of this item to withdraw based on the gil traded.', 0, 'Coinstrix')
+              else
+                if player:getFreeSlotsCount() < math.ceil(gilAmount / 99) then
+                    player:printToPlayer('You cannot withdraw that amount. Please check your inventory and try again.', 0, 'Coinstrix')
+                    return
+                else
+                        player:setCharVar(withdrawMenu[i][2], player:getCharVar(withdrawMenu[i][2]) - gilAmount)
+                        npcUtil.giveItem(player,{{withdrawMenu[i][3], gilAmount}})
+                        player:tradeComplete()
+                end
+              end
+            end
+        })
+    end
+    -- Pagination options
+    if page > 1 then
+        table.insert(options, {
+            'Previous Page',
+            function(player)
+                withdrawMainMenu(player, page - 1)
+            end
+        })
+    end
+    if endIndex < #withdrawMenu then
+        table.insert(options, {
+            'Next Page',
+            function(player)
+                withdrawMainMenu(player, page + 1)
+            end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'What would you like to withdraw!',
+        options = options
+    })
+end
+
+local function upgradeToThoMainMenu(player, page)
+    local upgradeToThoMenu     = {{'Rimilala Stripeshell','Stripeshell', 1451}, {'Ranperre Goldpiece','Goldpiece', 1454}, {'Ten Thousand Byne Bill','TenkByne', 1457}} 
+    local originalCurrency     = {{'Lungo-nango Jadeshell','Jadeshell', 1450}, {'Montiont Silverpiece','Silverpiece', 1453},{'One Hundred Byne Bill','HundredByne', 1456}} 
+    local linesPerPage = 3
+    page = page or 1
+    local startIndex = (page - 2) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #upgradeToThoMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local upgradeToTho = upgradeToThoMenu[i][1]
+        table.insert(options, {
+            string.format('%s [%s]', upgradeToTho, player:getCharVar(upgradeToThoMenu[i][2])),
+            function(player)
+             local upgradeCurrency = 0
+                if upgradeCurrency == 0 then
+                  for i = 1, #originalCurrency do
+                    if player:getLocalVar(originalCurrency[i][2]) > 0 then
+                       upgradeCurrency = originalCurrency[i][2]
+                    end
+                  end
+                end
+                if string.find(upgradeToTho, 'Stripeshell') then
+                   player:setCharVar('Stripeshell', player:getCharVar('Stripeshell') +1)
+                   player:setCharVar(upgradeCurrency, player:getCharVar(upgradeCurrency) - 100)
+                   player:printToPlayer('You have succesfully upgraded your currency to a Rimilala Stripeshell.', 0, 'Coinstrix')
+                elseif string.find(upgradeToTho, 'Goldpiece') then
+                    player:setCharVar('Goldpiece', player:getCharVar('Goldpiece') +1)
+                    player:setCharVar(upgradeCurrency, player:getCharVar(upgradeCurrency) - 100)
+                    player:printToPlayer('You have succesfully upgraded your currency to a Ranperre Goldpiece.', 0, 'Coinstrix')
+                elseif string.find(upgradeToTho, 'Thousand') then
+                    player:setCharVar('TenkByne', player:getCharVar('TenkByne') +1)
+                    player:setCharVar(upgradeCurrency, player:getCharVar(upgradeCurrency) - 100)
+                    player:printToPlayer('You have succesfully upgraded your currency to a Ten Thousand Byne Bill.', 0, 'Coinstrix')                       
+                end
+        end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'Upgrade To?',
+        options = options
+    })
+end
+
+local function upgradeToHunMainMenu(player, page)
+    local upgradeToHunMenu     = {{'Lungo-nango Jadeshell','Jadeshell', 1450}, {'Montiont Silverpiece','Silverpiece', 1453},{'One Hundred Byne Bill','HundredByne', 1456}} 
+    local originalCurrency     = {{'Tukuku Whiteshell','Whiteshell', 1449}, {'Ordelle Bronzepiece','Bronzepiece', 1452}, {'One Byne Bill','Byne', 1455}} 
+    local linesPerPage = 3
+    page = page or 1
+    local startIndex = (page - 1) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #upgradeToHunMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local upgradeToHun = upgradeToHunMenu[i][1]
+        table.insert(options, {
+            string.format('%s [%s]', upgradeToHun, player:getCharVar(upgradeToHunMenu[i][2])),
+            function(player)
+             local upgradeCurrency = 0
+                if upgradeCurrency == 0 then
+                  for i = 1, #originalCurrency do
+                    if player:getLocalVar(originalCurrency[i][2]) > 0 then
+                       upgradeCurrency = originalCurrency[i][2]
+                    end
+                  end
+                end
+                if string.find(upgradeToHun, 'Jadeshell') then
+                   player:setCharVar('Jadeshell', player:getCharVar('Jadeshell') +1)
+                   player:setCharVar(upgradeCurrency, player:getCharVar(upgradeCurrency) - 100)
+                   player:printToPlayer('You have succesfully upgraded your currency to a Lungo-nango Jadeshell.', 0, 'Coinstrix')
+                elseif string.find(upgradeToHun, 'Silverpiece') then
+                    player:setCharVar('Silverpiece', player:getCharVar('Silverpiece') +1)
+                    player:setCharVar(upgradeCurrency, player:getCharVar(upgradeCurrency) - 100)
+                    player:printToPlayer('You have succesfully upgraded your currency to a Montiont Silverpiece.', 0, 'Coinstrix')
+                elseif string.find(upgradeToHun, 'Hundred') then
+                    player:setCharVar('HundredByne', player:getCharVar('HundredByne') +1)
+                    player:setCharVar(upgradeCurrency, player:getCharVar(upgradeCurrency) - 100)
+                    player:printToPlayer('You have succesfully upgraded your currency to a One Hundred Byne Bill.', 0, 'Coinstrix')                       
+                end
+        end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'Upgrade To?!',
+        options = options
+    })
+end
+
+local function upgradeMainMenu(player, page)
+    local upgradeMenu     = {{'Tukuku Whiteshell','Whiteshell', 1449}, {'Lungo-nango Jadeshell','Jadeshell', 1450}, {'Ordelle Bronzepiece','Bronzepiece', 1452}, {'Montiont Silverpiece','Silverpiece', 1453}, {'One Byne Bill','Byne', 1455}, {'One Hundred Byne Bill','HundredByne', 1456}} 
+    local linesPerPage = 4
+    page = page or 1
+    local startIndex = (page - 1) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #upgradeMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local upgrade = upgradeMenu[i][1]
+        table.insert(options, {
+            string.format('%s [%s]', upgrade, player:getCharVar(upgradeMenu[i][2])),
+            function(player)
+                if string.find(upgrade, 'Whiteshell') then
+                   if player:getCharVar(upgradeMenu[i][2]) >= 100 then
+                      player:setLocalVar(upgradeMenu[i][2], 100)
+                      upgradeToHunMainMenu(player, page)
+                   else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                   end
+                elseif string.find(upgrade, 'Jadeshell') then
+                   if player:getCharVar(upgradeMenu[i][2]) >= 100 then
+                      player:setLocalVar(upgradeMenu[i][2], 100)
+                      upgradeToThoMainMenu(player, page)
+                   else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                   end
+                elseif string.find(upgrade, 'Bronzepiece') then
+                   if player:getCharVar(upgradeMenu[i][2]) >= 100 then
+                      player:setLocalVar(upgradeMenu[i][2], 100)
+                      upgradeToHunMainMenu(player, page)
+                   else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                   end
+                elseif string.find(upgrade, 'Silverpiece') then
+                   if player:getCharVar(upgradeMenu[i][2]) >= 100 then
+                      player:setLocalVar(upgradeMenu[i][2], 100)
+                      upgradeToThoMainMenu(player, page)
+                   else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                   end
+                elseif string.find(upgrade, 'One Byne Bill') then
+                   if player:getCharVar(upgradeMenu[i][2]) >= 100 then
+                      player:setLocalVar(upgradeMenu[i][2], 100)
+                      upgradeToHunMainMenu(player, page)
+                   else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                   end
+                elseif string.find(upgrade, 'Hundred') then
+                   if player:getCharVar(upgradeMenu[i][2]) >= 100 then
+                      player:setLocalVar(upgradeMenu[i][2], 100)
+                      upgradeToThoMainMenu(player, page)
+                   else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                   end
+                end
+
+        end
+        })
+    end
+    -- Pagination options
+    if page > 1 then
+        table.insert(options, {
+            'Previous Page',
+            function(player)
+                upgradeMainMenu(player, page - 1)
+            end
+        })
+    end
+    if endIndex < #upgradeMenu then
+        table.insert(options, {
+            'Next Page',
+            function(player)
+                upgradeMainMenu(player, page + 1)
+            end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'Upgrade?',
+        options = options
+    })
+end
+
+local function downgradeToSinMainMenu(player, page)
+    local downgradeToSinMenu     = {{'Tukuku Whiteshell','Whiteshell', 1449}, {'Ordelle Bronzepiece','Bronzepiece', 1452}, {'One Byne Bill','Byne', 1455}}
+    local originalCurrency       = {{'Lungo-nango Jadeshell','Jadeshell', 1450}, {'Montiont Silverpiece','Silverpiece', 1453},{'One Hundred Byne Bill','HundredByne', 1456}} 
+    local linesPerPage = 3
+    page = page or 1
+    local startIndex = (page - 1) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #downgradeToSinMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local downgradeToSin = downgradeToSinMenu[i][1]
+        --local balance = player:getCharVar(egg.var)
+        table.insert(options, {
+            string.format('%s [%s]', downgradeToSin, player:getCharVar(downgradeToSinMenu[i][2])),
+            function(player)
+             local downgradeCurrency = 0
+                if downgradeCurrency == 0 then
+                  for i = 1, #originalCurrency do
+                    if player:getLocalVar(originalCurrency[i][2]) > 0 then
+                       downgradeCurrency = originalCurrency[i][2]
+                    end
+                  end
+                end
+                if string.find(downgradeToSin, 'Whiteshell') then
+                   player:setCharVar('Whiteshell', player:getCharVar('Whiteshell') +100)
+                   player:setCharVar(downgradeCurrency, player:getCharVar(downgradeCurrency) - 1)
+                   player:printToPlayer('You have succesfully downgraded your currency to 100 Tukuku Whiteshells.', 0, 'Coinstrix')
+                elseif string.find(downgradeToSin, 'Bronzepiece') then
+                    player:setCharVar('Bronzepiece', player:getCharVar('Bronzepiece') +100)
+                    player:setCharVar(downgradeCurrency, player:getCharVar(downgradeCurrency) - 1)
+                    player:printToPlayer('You have succesfully downgraded your currency to 100 Ordelle Bronzepieces.', 0, 'Coinstrix')
+                elseif string.find(downgradeToSin, 'Byne') then
+                    player:setCharVar('Byne', player:getCharVar('Byne') +100)
+                    player:setCharVar(downgradeCurrency, player:getCharVar(downgradeCurrency) - 1)
+                    player:printToPlayer('You have succesfully downgraded your currency to 100 One Byne Bills.', 0, 'Coinstrix')                       
+                end
+        end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'Downgrade To?',
+        options = options
+    })
+
+end
+
+local function downgradeToHunMainMenu(player, page)
+    local downgradeToHunMenu     = {{'Lungo-nango Jadeshell','Jadeshell', 1450}, {'Montiont Silverpiece','Silverpiece', 1453}, {'One Hundred Byne Bill','HundredByne', 1456}}
+    local originalCurrency       = {{'Rimilala Stripeshell','Stripeshell', 1451}, {'Ranperre Goldpiece','Goldpiece', 1454}, {'Ten Thousand Byne Bill','TenkByne', 1457}} 
+    local linesPerPage = 3
+    page = page or 1
+    local startIndex = (page - 2) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #downgradeToHunMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local downgradeToHun = downgradeToHunMenu[i][1]
+        --local balance = player:getCharVar(egg.var)
+        table.insert(options, {
+            string.format('%s [%s]', downgradeToHun, player:getCharVar(downgradeToHunMenu[i][2])),
+            function(player)
+             local downgradeCurrency = 0
+                if downgradeCurrency == 0 then
+                  for i = 1, #originalCurrency do
+                    if player:getLocalVar(originalCurrency[i][2]) > 0 then
+                       downgradeCurrency = originalCurrency[i][2]
+                    end
+                  end
+                end
+                if string.find(downgradeToHun, 'Jadeshell') then
+                   player:setCharVar('Jadeshell', player:getCharVar('Jadeshell') +100)
+                   player:setCharVar(downgradeCurrency, player:getCharVar(downgradeCurrency) - 1)
+                   player:printToPlayer('You have succesfully downgraded your currency to 100 Lungo-nango Jadeshells.', 0, 'Coinstrix')
+                elseif string.find(downgradeToHun, 'Silverpiece') then
+                    player:setCharVar('Silverpiece', player:getCharVar('Silverpiece') +100)
+                    player:setCharVar(downgradeCurrency, player:getCharVar(downgradeCurrency) - 1)
+                    player:printToPlayer('You have succesfully downgraded your currency to 100 Montiont Silverpieces.', 0, 'Coinstrix')
+                elseif string.find(downgradeToHun, 'Byne') then
+                    player:setCharVar('HundredByne', player:getCharVar('HundredByne') +100)
+                    player:setCharVar(downgradeCurrency, player:getCharVar(downgradeCurrency) - 1)
+                    player:printToPlayer('You have succesfully downgraded your currency to 100 One Hundred Byne Bills.', 0, 'Coinstrix')                       
+                end
+        end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'Downgrade To?',
+        options = options
+    })
+
+end
+
+local function downgradeMainMenu(player, page)
+    local downgradeMenu     = {{'Lungo-nango Jadeshell','Jadeshell', 1450}, {'Rimilala Stripeshell','Stripeshell', 1451}, {'Montiont Silverpiece','Silverpiece', 1453}, {'Ranperre Goldpiece','Goldpiece', 1454}, {'One Hundred Byne Bill','HundredByne', 1456}, {'Ten Thousand Byne Bill','TenkByne', 1457}} 
+    local linesPerPage = 3
+    page = page or 1
+    local startIndex = (page - 1) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #downgradeMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local downgrade = downgradeMenu[i][1]
+        table.insert(options, {
+            string.format('%s [%s]', downgrade, player:getCharVar(downgradeMenu[i][2])),
+            function(player)
+                if string.find(downgrade, 'Jadeshell') then
+                   if player:getCharVar(downgradeMenu[i][2]) >= 1 then
+                      player:setLocalVar(downgradeMenu[i][2], 1)
+                      downgradeToSinMainMenu(player, page)
+                   else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                   end
+                elseif string.find(downgrade, 'Stripeshell') then
+                    if player:getCharVar(downgradeMenu[i][2]) >= 1 then
+                      player:setLocalVar(downgradeMenu[i][2], 1)
+                      downgradeToHunMainMenu(player, page)
+                    else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                    end
+                elseif string.find(downgrade, 'Silverpiece') then
+                    if player:getCharVar(downgradeMenu[i][2]) >= 1 then
+                      player:setLocalVar(downgradeMenu[i][2], 1)
+                      downgradeToSinMainMenu(player, page)
+                    else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                    end
+                elseif string.find(downgrade, 'Goldpiece') then
+                    if player:getCharVar(downgradeMenu[i][2]) >= 1 then
+                      player:setLocalVar(downgradeMenu[i][2], 1)
+                      downgradeToHunMainMenu(player, page)
+                    else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                    end
+                elseif string.find(downgrade, 'Hundred') then
+                    if player:getCharVar(downgradeMenu[i][2]) >= 1 then
+                      player:setLocalVar(downgradeMenu[i][2], 1)
+                      downgradeToSinMainMenu(player, page)
+                    else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                    end
+                elseif string.find(downgrade, 'Thousand') then
+                    if player:getCharVar(downgradeMenu[i][2]) >= 1 then
+                      player:setLocalVar(downgradeMenu[i][2], 1)
+                      downgradeToHunMainMenu(player, page)
+                    else
+                      player:printToPlayer('You do not have enough of this item to upgrade to.', 0, 'Coinstrix')
+                    end
+                end
+
+        end
+        })
+    end
+    -- Pagination options
+    if page > 1 then
+        table.insert(options, {
+            'Previous Page',
+            function(player)
+                downgradeMainMenu(player, page - 1)
+            end
+        })
+    end
+    if endIndex < #downgradeMenu then
+        table.insert(options, {
+            'Next Page',
+            function(player)
+                downgradeMainMenu(player, page + 1)
+            end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'Downgrade?',
+        options = options
+    })
+
+end
+
+local function convertQuantityMenu(player, page)
+    local convertQtyMenu     = {1, 5, 10, 25, 50 ,75}
+    local convertitem        = {{'Tukuku Whiteshell','Whiteshell', '1449'}, {'Lungo-nango Jadeshell','Jadeshell', '1450'}, {'Rimilala Stripeshell','Stripeshell', '1451'}, {'Ordelle Bronzepiece','Bronzepiece', '1452'}, {'Montiont Silverpiece','Silverpiece', '1453'}, {'Ranperre Goldpiece','Goldpiece', '1454'}, {'One Byne Bill','Byne', '1455'}, {'One Hundred Byne Bill','HundredByne', '1456'}, {'Ten Thousand Byne Bill','TenkByne', '1457'}} 
+    local linesPerPage = 6
+    page = page or 1
+    local startIndex = (page - 1) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #convertQtyMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local convertQty = convertQtyMenu[i]
+        table.insert(options, {
+            string.format('%s', convertQty),
+            function(player)
+             local convertCurrency = 0
+             local convertitems    = 0
+             local convertName     = 0 
+                if convertCurrency == 0 then
+                  for i = 1, #convertitem do
+                    if player:getLocalVar(convertitem[i][2]) > 0 then
+                       convertCurrency = convertitem[i][2]
+                       convertName     = convertitem[i][1]
+                    end
+                  end
+                end
+                if convertitems == 0 then
+                  for i = 1, #convertitem do
+                    if player:getLocalVar(convertitem[i][3]) > 0 then
+                       convertitems    = convertitem[i][2]
+                    end
+                  end
+                end
+            if convertQty == 1 then
+                if player:getCharVar(convertitems) >= 1 then
+                   player:setCharVar(convertCurrency, player:getCharVar(convertCurrency) +1 ) -- add currency
+                   player:setCharVar(convertitems, player:getCharVar(convertitems) -1 ) -- subtact currency
+                   player:printToPlayer(string.format('You have converted you currency to %s.',convertName), 0, 'Coinstrix')
+                else
+                   player:printToPlayer('You do not have enough of this currency to convert.', 0, 'Coinstrix')
+                end
+            elseif convertQty == 5 then
+                if player:getCharVar(convertitems) >= 5 then
+                   player:setCharVar(convertCurrency, player:getCharVar(convertCurrency) + 5 ) -- add currency
+                   player:setCharVar(convertitems, player:getCharVar(convertitems) - 5 ) -- subtact currency
+                   player:printToPlayer(string.format('You have converted you currency to %s.',convertName), 0, 'Coinstrix')
+                else
+                   player:printToPlayer('You do not have enough of this currency to convert.', 0, 'Coinstrix')
+                end
+            elseif convertQty == 10 then
+                if player:getCharVar(convertitems) >= 10 then
+                   player:setCharVar(convertCurrency, player:getCharVar(convertCurrency) + 10 ) -- add currency
+                   player:setCharVar(convertitems, player:getCharVar(convertitems) - 10 ) -- subtact currency
+                   player:printToPlayer(string.format('You have converted you currency to %s.',convertName), 0, 'Coinstrix')
+                else
+                   player:printToPlayer('You do not have enough of this currency to convert.', 0, 'Coinstrix')
+                end
+            elseif convertQty == 25 then
+                if player:getCharVar(convertitems) >= 25 then
+                   player:setCharVar(convertCurrency, player:getCharVar(convertCurrency) + 25 ) -- add currency
+                   player:setCharVar(convertitems, player:getCharVar(convertitems) - 25 ) -- subtact currency
+                   player:printToPlayer(string.format('You have converted you currency to %s.',convertName), 0, 'Coinstrix')
+                else
+                   player:printToPlayer('You do not have enough of this currency to convert.', 0, 'Coinstrix')
+                end
+            elseif convertQty == 50 then
+                if player:getCharVar(convertitems) >= 50 then
+                   player:setCharVar(convertCurrency, player:getCharVar(convertCurrency) + 50 ) -- add currency
+                   player:setCharVar(convertitems, player:getCharVar(convertitems) - 50 ) -- subtact currency
+                   player:printToPlayer(string.format('You have converted you currency to %s.',convertName), 0, 'Coinstrix')
+                else
+                   player:printToPlayer('You do not have enough of this currency to convert.', 0, 'Coinstrix')
+                end
+            elseif convertQty == 75 then
+                if player:getCharVar(convertitems) >= 75 then
+                   player:setCharVar(convertCurrency, player:getCharVar(convertCurrency) + 75 ) -- add currency
+                   player:setCharVar(convertitems, player:getCharVar(convertitems) - 75 ) -- subtact currency
+                   player:printToPlayer(string.format('You have converted you currency to %s.',convertName), 0, 'Coinstrix')
+                else
+                   player:printToPlayer('You do not have enough of this currency to convert.', 0, 'Coinstrix')
+                end
+            end
+        end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'How many do you want to Convert!',
+        options = options
+    })
+
+end
+
+local function convertThoMainMenu(player, page)
+    local convertThoMenu     = {{'Rimilala Stripeshell','Stripeshell', 1451}, {'Ranperre Goldpiece','Goldpiece', 1454}, {'Ten Thousand Byne Bill','TenkByne', 1457}} 
+    local linesPerPage = 3
+    page = page or 1
+    local startIndex = (page - 1) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #convertThoMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local convertTho = convertThoMenu[i][1]
+        table.insert(options, {
+            string.format('%s [%s]', convertTho, player:getCharVar(convertThoMenu[i][2])),
+            function(player)
+             local exchangeCurrency = 0
+                if exchangeCurrency == 0 then
+                  for i = 1, #convertThoMenu do
+                    if player:getLocalVar(tostring(convertThoMenu[i][3])) > 0 then
+                       exchangeCurrency = player:getLocalVar(tostring(convertThoMenu[i][3]))
+                    end
+                  end
+                end
+                if string.find(convertTho, 'Rimilala Stripeshell') then
+                      player:setLocalVar('Stripeshell',exchangeCurrency)
+                      convertQuantityMenu(player, page)
+                elseif string.find(convertTho, 'Ranperre Goldpiece') then
+                      player:setLocalVar('Goldpiece',exchangeCurrency)
+                      convertQuantityMenu(player, page)
+                elseif string.find(convertTho, 'Ten Thousand Byne Bill') then
+                      player:setLocalVar('TenkByne',exchangeCurrency)
+                      convertQuantityMenu(player, page)
+                end
+        end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'What would you like to do!',
+        options = options
+    })
+
+end
+
+local function convertHunMainMenu(player, page)
+    local convertHunMenu     = {{'Lungo-nango Jadeshell','Jadeshell', 1450}, {'Montiont Silverpiece','Silverpiece', 1453}, {'One Hundred Byne Bill','HundredByne', 1456}} 
+    local linesPerPage = 3
+    page = page or 1
+    local startIndex = (page - 1) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #convertHunMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local convertHun = convertHunMenu[i][1]
+        table.insert(options, {
+            string.format('%s [%s]', convertHun, player:getCharVar(convertHunMenu[i][2])),
+            function(player)
+             local exchangeCurrency = 0
+                if exchangeCurrency == 0 then
+                  for i = 1, #convertHunMenu do
+                    if player:getLocalVar(tostring(convertHunMenu[i][3])) > 0 then
+                       exchangeCurrency = player:getLocalVar(tostring(convertHunMenu[i][3]))
+                    end
+                  end
+                end
+                if string.find(convertHun, 'Lungo-nango Jadeshell') then
+                      player:setLocalVar('Jadeshell',exchangeCurrency)
+                      convertQuantityMenu(player, page)
+                elseif string.find(convertHun, 'Montiont Silverpiece') then
+                      player:setLocalVar('Silverpiece',exchangeCurrency)
+                      convertQuantityMenu(player, page)
+                elseif string.find(convertHun, 'One Hundred Byne Bill') then
+                      player:setLocalVar('HundredByne',exchangeCurrency)
+                      convertQuantityMenu(player, page)
+                end
+        end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'What would you like to do!',
+        options = options
+    })
+
+end
+
+local function convertSinMainMenu(player, page)
+    local convertSinMenu     = {{'Tukuku Whiteshell','Whiteshell', 1449}, {'Ordelle Bronzepiece','Bronzepiece', 1452}, {'One Byne Bill','Byne', 1455}} 
+    local linesPerPage = 3
+    page = page or 1
+    local startIndex = (page - 1) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #convertSinMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local convertSin = convertSinMenu[i][1]
+        table.insert(options, {
+            string.format('%s [%s]', convertSin, player:getCharVar(convertSinMenu[i][2])),
+            function(player)
+             local exchangeCurrency = 0
+                if exchangeCurrency == 0 then
+                  for i = 1, #convertSinMenu do
+                    if player:getLocalVar(tostring(convertSinMenu[i][3])) > 0 then
+                       exchangeCurrency = player:getLocalVar(tostring(convertSinMenu[i][3]))
+                    end
+                  end
+                end
+                if string.find(convertSin, 'Tukuku Whiteshell') then
+                      player:setLocalVar('Whiteshell',exchangeCurrency)
+                      convertQuantityMenu(player, page)
+                elseif string.find(convertSin, 'Ordelle Bronzepiece') then
+                      player:setLocalVar('Bronzepiece',exchangeCurrency)
+                      convertQuantityMenu(player, page)
+                elseif string.find(convertSin, 'One Byne Bill') then
+                      player:setLocalVar('Byne',exchangeCurrency)
+                      convertQuantityMenu(player, page)
+                end
+        end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'What would you like to do!',
+        options = options
+    })
+
+end
+
+local function convertMainMenu(player, page)
+    local convertMenu     = {{'Tukuku Whiteshell','Whiteshell', 1449}, {'Lungo-nango Jadeshell','Jadeshell', 1450}, {'Rimilala Stripeshell','Stripeshell', 1451}, {'Ordelle Bronzepiece','Bronzepiece', 1452}, {'Montiont Silverpiece','Silverpiece', 1453}, {'Ranperre Goldpiece','Goldpiece', 1454}, {'One Byne Bill','Byne', 1455}, {'One Hundred Byne Bill','HundredByne', 1456}, {'Ten Thousand Byne Bill','TenkByne', 1457}} 
+    local linesPerPage = 3
+    page = page or 1
+    local startIndex = (page - 1) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #convertMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local convert = convertMenu[i][1]
+        table.insert(options, {
+            string.format('%s [%s]', convert, player:getCharVar(convertMenu[i][2])),
+            function(player)
+                if string.find(convert, 'Tukuku Whiteshell') then
+                   if player:getCharVar('Whiteshell') >= 1 then
+                      player:setLocalVar('1449', player:getCharVar('Whiteshell'))
+                      convertSinMainMenu(player, page)
+                   else
+                           player:printToPlayer('You do not have enough of this item to convert.', 0, 'Coinstrix')
+                   end
+                elseif string.find(convert, 'Jadeshell') then
+                       if player:getCharVar('Jadeshell') >= 1 then
+                          player:setLocalVar('1450', player:getCharVar('Jadeshell'))
+                          convertHunMainMenu(player, page)
+                       else
+                          player:printToPlayer('You do not have enough of this item to convert.', 0, 'Coinstrix')
+                       end
+                elseif string.find(convert, 'Stripeshell') then
+                       if player:getCharVar('Stripeshell') >= 1 then
+                          player:setLocalVar('1451', player:getCharVar('Stripeshell'))
+                          convertThoMainMenu(player, page)
+                       else
+                          player:printToPlayer('You do not have enough of this item to convert.', 0, 'Coinstrix')
+                       end
+                elseif string.find(convert, 'Bronzepiece') then
+                       if player:getCharVar('Bronzepiece') >= 1 then
+                          player:setLocalVar('1452', player:getCharVar('Bronzepiece'))
+                          convertSinMainMenu(player, page - 1)
+                       else
+                          player:printToPlayer('You do not have enough of this item to convert.', 0, 'Coinstrix')
+                       end
+                elseif string.find(convert, 'Silverpiece') then
+                       if player:getCharVar('Silverpiece') >= 1 then
+                          player:setLocalVar('1453', player:getCharVar('Silverpiece'))
+                          convertHunMainMenu(player, page - 1)
+                       else
+                          player:printToPlayer('You do not have enough of this item to convert.', 0, 'Coinstrix')
+                       end
+                elseif string.find(convert, 'Goldpiece') then
+                       if player:getCharVar('Goldpiece') >= 1 then
+                          player:setLocalVar('1454', player:getCharVar('Goldpiece'))
+                          convertThoMainMenu(player, page - 1)
+                       else
+                          player:printToPlayer('You do not have enough of this item to convert.', 0, 'Coinstrix')
+                       end
+                elseif string.find(convert, 'One Byne Bill') then
+                       if player:getCharVar('Byne') >= 1 then
+                          player:setLocalVar('1455', player:getCharVar('Byne'))
+                          convertSinMainMenu(player, page - 2)
+                       else
+                          player:printToPlayer('You do not have enough of this item to convert.', 0, 'Coinstrix')
+                       end
+                elseif string.find(convert, 'Hundred') then
+                       if player:getCharVar('HundredByne') >= 1 then
+                          player:setLocalVar('1456', player:getCharVar('HundredByne'))
+                          convertHunMainMenu(player, page - 2)
+                       else
+                          player:printToPlayer('You do not have enough of this item to convert.', 0, 'Coinstrix')
+                       end
+                elseif string.find(convert, 'Thousand') then
+                       if player:getCharVar('TenkByne') >= 1 then
+                          player:setLocalVar('1457', player:getCharVar('TenkByne'))
+                          convertThoMainMenu(player, page - 2)
+                       else
+                          player:printToPlayer('You do not have enough of this item to convert.', 0, 'Coinstrix')
+                       end
+                end
+        end
+        })
+    end
+    -- Pagination options
+    if page > 1 then
+        table.insert(options, {
+            'Previous Page',
+            function(player)
+                convertMainMenu(player, page - 1)
+            end
+        })
+    end
+    if endIndex < #convertMenu then
+        table.insert(options, {
+            'Next Page',
+            function(player)
+                convertMainMenu(player, page + 1)
+            end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'What would you like to do!',
+        options = options
+    })
+
+end
+
+local function forgottenMenu(player, page)
+    local forgottenMenu     = {{'Forgotten Thought', 3493}, {'Forgotten Hope', 3494}, {'Forgotten Touch', 3495}, {'Forgotten Journey', 3496}, {'Forgotten Step', 3497}}
+    local exchangeVar       = {'Whiteshell', 'Bronzepiece', 'Byne'}
+    local linesPerPage = 7
+    page = page or 1
+    local startIndex = (page - 2) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #forgottenMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local forgotten = forgottenMenu[i][1]
+        table.insert(options, {
+            string.format('%s', forgotten),
+            function(player)
+             local exchangeCurrency = 0
+                if exchangeCurrency == 0 then
+                  for i = 1, #exchangeVar do
+                    if player:getLocalVar(exchangeVar[i]) > 0 then
+                       exchangeCurrency = exchangeVar[i]
+                    end
+                  end
+                end
+                -- need to remove variable on exit out without choosing
+               if options[1] then
+                    if player:getLocalVar(exchangeCurrency) > 0 then
+                        player:setCharVar(exchangeCurrency, player:getCharVar(exchangeCurrency) - 10)
+                        npcUtil.giveItem(player,{{forgottenMenu[i][2], 1}})
+                        player:setLocalVar(exchangeCurrency, 0)
+                    end
+               elseif options[2] then
+                    if player:getLocalVar(exchangeCurrency) > 0 then
+                        player:setCharVar(exchangeCurrency, player:getCharVar(exchangeCurrency) - 10)
+                        npcUtil.giveItem(player,{{forgottenMenu[i][2], 1}})
+                        player:setLocalVar(exchangeCurrency, 0)
+                    end
+               elseif otpions[3] then
+                    if player:getLocalVar(exchangeCurrency) > 0 then
+                        player:setCharVar(exchangeCurrency, player:getCharVar(exchangeCurrency) - 10)
+                        npcUtil.giveItem(player,{{forgottenMenu[i][2], 1}})
+                        player:setLocalVar(exchangeCurrency, 0)
+                    end
+               elseif options[4] then
+                    if player:getLocalVar(exchangeCurrency) > 0 then
+                        player:setCharVar(exchangeCurrency, player:getCharVar(exchangeCurrency) - 10)
+                        npcUtil.giveItem(player,{{forgottenMenu[i][2], 1}})
+                        player:setLocalVar(exchangeCurrency, 0)
+                    end
+               elseif options[5] then
+                    if player:getLocalVar(exchangeCurrency) > 0 then
+                        player:setCharVar(exchangeCurrency, player:getCharVar(exchangeCurrency) - 10)
+                        npcUtil.giveItem(player,{{forgottenMenu[i][2], 1}})
+                        player:setLocalVar(exchangeCurrency, 0)
+                    end
+               end
+        end
+        })
+    end
+    delaySendMenu(player, {
+        title = 'Pick your Forgotten Item!',
+        options = options
+    })
+end
+
+local function exchangeMainMenu(player, page)
+    local exchangeMenu = {{'Tukuku Whiteshell','Whiteshell', 1449}, {'Ordelle Bronzepiece','Bronzepiece', 1452}, {'One Byne Bill','Byne', 1455}} 
+    local linesPerPage = 3
+    page = page or 1
+    local startIndex = (page - 2) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #exchangeMenu)
+    local options = {}
+    for i = startIndex, endIndex do
+        local exchange = exchangeMenu[i][1]
+        table.insert(options, {
+            string.format('%s [%s]', exchange, player:getCharVar(exchangeMenu[i][2])),
+            function(player)
+
+                if string.find(exchange, 'Tukuku Whiteshell') then
+                   if player:getCharVar('Whiteshell') >= 10 then
+                      player:setLocalVar('Whiteshell', 10)
+                      player:setLocalVar('Bronzepiece',  0)
+                      player:setLocalVar('Byne',  0)
+                      forgottenMenu(player, page)
+                   else
+                           player:printToPlayer('You do not have enough of this item to exchange to forgotten items.', 0, 'Coinstrix')
+                   end
+                elseif string.find(exchange, 'Ordelle Bronzepiece') then
+                       if player:getCharVar('Bronzepiece') >= 10 then
+                          player:setLocalVar('Bronzepiece', 10)
+                          player:setLocalVar('Whiteshell',  0)
+                          player:setLocalVar('Byne',  0)
+                          forgottenMenu(player, page)
+                       else
+                           player:printToPlayer('You do not have enough of this item to exchange to forgotten items.', 0, 'Coinstrix')
+                       end
+                elseif string.find(exchange, 'One Byne Bill') then
+                       if player:getCharVar('Byne') >= 10 then
+                          player:setLocalVar('Byne', 10)
+                          player:setLocalVar('Whiteshell',  0)
+                          player:setLocalVar('Bronzepiece',  0)
+                          forgottenMenu(player, page)
+                       else
+                              player:printToPlayer('You do not have enough of this item to exchange to forgotten items.', 0, 'Coinstrix')
+                       end
+                else
+                    player:printToPlayer('You do not have enough of this item to exchange to forgotten items.', 0, 'Coinstrix')
+                    player:setLocalVar('Whiteshell',  0)
+                    player:setLocalVar('Bronzepiece',  0)
+                    player:setLocalVar('Byne',  0)
+                end                
+        end
+        })
+    end
+    delaySendMenu(player, {
+        title = 'Forgotten Item Exchange (Cost: 10 Currency)',
+        options = options
+    })
+end
+
+local function createMainMenu(player, page)
+    local mainMenu     = {'Nothing for now!', 'Current Balance', 'Upgrade Currency', 'Downgrade Currency', 'Convert Currency', 'Exchange Currency'} 
+    local linesPerPage = 5
+    page = page or 1
+    local startIndex = (page - 1) * linesPerPage + 1
+    local endIndex = math.min(startIndex + linesPerPage - 1, #mainMenu)
+    local options = {}
+
+    for i = startIndex, endIndex do
+        local menus = mainMenu[i]
+        table.insert(options, {
+            string.format('%s', menus),
+            function(player)
+            if menus == 'Nothing for now!' then
+               return
+            elseif menus == 'Current Balance' then -- completed
+                   player:printToPlayer('Your Current balance of stored Dynamis Currency is:',  xi.msg.channel.SYSTEM_3)
+                   player:printToPlayer(string.format('[%s] Tukuku Whiteshell [%s] Lungo-nango Jadeshell [%s] Rimilala Stripeshell', player:getCharVar('Whiteshell'), player:getCharVar('Jadeshell'), player:getCharVar('Stripeshell')),  xi.msg.channel.SYSTEM_3)
+                   player:printToPlayer(string.format('[%s] Ordelle Bronzepiece [%s] Montiont Silverpiece [%s] Ranperre Goldpiece', player:getCharVar('Bronzepiece'), player:getCharVar('Silverpiece'), player:getCharVar('Goldpiece')),  xi.msg.channel.SYSTEM_3)
+                   player:printToPlayer(string.format('[%s] One Byne Bill [%s] One Hundred Byne Bill [%s] Ten Thousand Byne Bill', player:getCharVar('Byne'), player:getCharVar('HundredByne'), player:getCharVar('TenkByne')),  xi.msg.channel.SYSTEM_3)
+            elseif menus == 'Upgrade Currency' then -- complete
+                   upgradeMainMenu(player, page)
+            elseif menus == 'Downgrade Currency' then -- complete
+                   downgradeMainMenu(player, page)
+            elseif menus == 'Convert Currency' then -- complete
+                   convertMainMenu(player, page)
+            elseif menus == 'Exchange Currency' then -- completed
+                   exchangeMainMenu(player, page)
+            end
+        end
+        })
+    end
+    -- Pagination options
+    if page > 1 then
+        table.insert(options, {
+            'Previous Page',
+            function(player)
+                createMainMenu(player, page - 1)
+            end
+        })
+    end
+    if endIndex < #mainMenu then
+        table.insert(options, {
+            'Next Page',
+            function(player)
+                createMainMenu(player, page + 1)
+            end
+        })
+    end
+
+    delaySendMenu(player, {
+        title = 'What would you like to do!',
+        options = options
+    })
+end
 
     local coinstrix = zone:insertDynamicEntity({
         objtype = xi.objType.NPC,
@@ -173,465 +951,21 @@ m:addOverride('xi.zones.Mog_Garden.Zone.onInitialize',function(zone)
         widescan = 1,
 
         onTrade = function(player, npc, trade)
-
-            local count             = trade:getItemCount()
-            local countGil          = trade:getItemQty(65535)
-            local stacks            = math.floor(countGil / 99)
-            local remainder         = countGil % 99
-            local slotsNeeded       = stacks
-            local storedwhiteshell  = player:getCharVar('Whiteshell')
-            local storedjadeshell   = player:getCharVar('Jadeshell')
-            local storedstripeshell = player:getCharVar('Stripeshell')
-            local storedbronzepiece = player:getCharVar('Bronzepiece')
-            local storedsilverpiece = player:getCharVar('Silverpiece')
-            local storedgoldpiece   = player:getCharVar('Goldpiece')
-            local storedonebyne     = player:getCharVar('Byne')
-            local storedhundredbyne = player:getCharVar('HundredByne')
-            local storedtenkbyne    = player:getCharVar('TenThouByne')
-
-            tradeChoice =
-            {
-                {
-                    'Store',
-                    function(player)
-                        if trade:hasItemQty(xi.item.TUKUKU_WHITESHELL,count) then
-                            local total = player:getCharVar('Whiteshell') + count
-                        if total >= 1 then
-                            player:setCharVar('Whiteshell',total)
-                            player:tradeComplete()
-                        end
-
-                        player:printToPlayer(string.format('Okies...Me hold on to %s T. Whiteshell(s) for ya!',count),0,'Coinstrix')
-                        player:printToPlayer(string.format('That makes %s Tukuku Whiteshell(s) that I got stored.',storedwhiteshell+count),0,'Coinstrix')
-                    elseif trade:hasItemQty(xi.item.LUNGO_NANGO_JADESHELL,count) then
-                        local total = player:getCharVar('Jadeshell') + count
-                        if total >= 1 then
-                            player:setCharVar('Jadeshell',total)
-                            player:tradeComplete()
-                        end
-
-                        player:printToPlayer(string.format('Okies...Me hold on to %s L. Jadeshell(s) for ya!',count),0,'Coinstrix')
-                        player:printToPlayer(string.format('That makes %s L. Whiteshell(s) that I got stored.',storedjadeshell+count),0,'Coinstrix')
-                    elseif trade:hasItemQty(xi.item.RIMILALA_STRIPESHELL,count) then
-                        local total = player:getCharVar('Stripeshell')+count
-                        if total >= 1 then
-                            player:setCharVar('Stripshell',total)
-                            player:tradeComplete()
-                        end
-
-                        player:printToPlayer(string.format('Okies...Me hold on to %s R. Stripeshell(s) for ya!',count),0,'Coinstrix')
-                        player:printToPlayer(string.format('That makes %s R. Stripeshell(s) that I got stored.',storedstripeshell+count),0,'Coinstrix')
-                    elseif trade:hasItemQty(xi.item.ORDELLE_BRONZEPIECE,count) then
-                        local total = player:getCharVar('Bronzepiece') + count
-                        if total >= 1 then
-                            player:setCharVar('Bronzepiece', total)
-                            player:tradeComplete()
-                        end
-
-                        player:printToPlayer(string.format('Okies...Me hold on top %s O. Bronzepiece(s) for ya!',count),0,'Coinstrix')
-                        player:printToPlayer(string.format('That makes %s O. Bronzepiece(s) that I got Stored.',storedbronzepiece+count),0,'Coinstrix')
-                    elseif trade:hasItemQty(xi.item.MONTIONT_SILVERPIECE,count) then
-                        local total = player:getCharVar('Silverpiece') + count
-                        if total >= 1 then
-                            player:setCharVar('Silverpiece',total)
-                            player:tradeComplete()
-                        end
-
-                        player:printToPlayer(string.format('Okies...Me hold on top %s M. Silverpiece(s) for ya!',count),0,'Coinstrix')
-                        player:printToPlayer(string.format('That makes %s M. Silverpiece(s) that I got Stored.',storedsilverpiece+count),0,'Coinstrix')
-                    elseif trade:hasItemQty(xi.item.RANPERRE_GOLDPIECE, count) then
-                        local total = player:getCharVar('Goldpiece') + count
-                        if total >= 1 then
-                            player:setCharVar('Goldpiece',total)
-                            player:tradeComplete()
-                        end
-
-                        player:printToPlayer(string.format('Okies...Me hold on top %s R. Goldpiece(s) for ya!',count),0,'Coinstrix')
-                        player:printToPlayer(string.format('That makes %s R. Goldpiece(s) that I got Stored.',storedgoldpiece+count),0,'Coinstrix')
-                    elseif trade:hasItemQty(xi.item.ONE_BYNE_BILL,count) then
-                        local total = player:getCharVar('Byne') + count
-                        if total >= 1 then
-                            player:setCharVar('Byne',total)
-                            player:tradeComplete()
-                        end
-
-                        player:printToPlayer(string.format('Okies...Me hold on top %s One Byne Bill(s) for ya!',count),0,'Coinstrix')
-                        player:printToPlayer(string.format('That makes %s One Byne Bill(s) that I got Stored.',storedonebyne+count),0,'Coinstrix')
-                    elseif trade:hasItemQty(xi.item.ONE_HUNDRED_BYNE_BILL,count) then
-                        local total = player:getCharVar('HundredByne') + count
-                        if total >= 1 then
-                            player:setCharVar('HundredByne',total)
-                            player:tradeComplete()
-                        end
-
-                    player:printToPlayer(string.format('Okies...Me hold on top %s One Hundred Byne Bill(s) for ya!',count),0,'Coinstrix')
-                    player:printToPlayer(string.format('That makes %s One Hundred Byne Bill(s) that I got Stored.', storedhundredbyne+count),0,'Coinstrix')
-                elseif trade:hasItemQty(xi.item.TEN_THOUSAND_BYNE_BILL,count) then
-                    local total = player:getCharVar('TenThouByne') + count
-                    if total >= 1 then
-                        player:setCharVar('TenThouByne',total)
-                        player:tradeComplete()
-                    end
-
-                    player:printToPlayer(string.format('Okies...Me hold on top %s Ten Thousand Byne Bill(s) for ya!',count),0,'Coinstrix')
-                    player:printToPlayer(string.format('That makes %s Ten Thousand Byne Bill(s) that I got Stored.',storedtenkbyne+count),0,'Coinstrix')
+            local gilAmount = trade:getGil()
+            player:resetLocalVars()
+                if npcUtil.tradeHasExactly(trade, {{xi.item.GIL,gilAmount }}) then
+                    withdrawMainMenu(player, page, trade) -- completed
+                else
+                    itemStorage(player, npc, trade) -- completed
                 end
-            end
-            },
-            {
-                'Convert',
-                function(player)
-                    local tradeQty = trade:getItemCount()
-                    local tradeableItems =
-                    {
-                        [1] = {trade = {{1449,tradeQty}},reward = 1450}, -- T. Whiteshell         > L. Jadeshell
-                        [2] = {trade = {{1450,tradeQty}},reward = 1451}, -- L. Jadeshell          > R. Stripeshell
-                        [3] = {trade = {{1452,tradeQty}},reward = 1453}, -- O. Bronzepiece        > O. Bronzepiece
-                        [4] = {trade = {{1453,tradeQty}},reward = 1454}, -- M. Silverpiece        > R. Silverpiece
-                        [5] = {trade = {{1455,tradeQty}},reward = 1456}, -- One Byne Bill         > One Hundred Byne Bill
-                        [6] = {trade = {{1456,tradeQty}},reward = 1457}  -- One Hundred Byne Bill > Ten Thousand Byne Bill
-                    }
-                    local tradedItem       = 0
-                    local reward           = 0
-                    local currencyExchange = 0
-                    if tradedItem == 0 then
-                        for k, v in pairs(tradeableItems) do
-                            if npcUtil.tradeHasExactly(trade, v.trade) then
-                                tradedItem       = v.trade
-                                reward           = v.reward
-                                currencyExchange = math.floor(reward*1)
-                            end
-                        end
-                    end
-
-                    if not npcUtil.tradeHasExactly(trade,tradedItem) or tradeQty ~= 100 then
-                        player:printToPlayer('Methinks you tryna scams me! Thats not what I told ya to gets!',0,'Coinstrix')
-                    else
-                        if tradeQty == 100 then
-                            player:tradeComplete()
-                            npcUtil.giveItem(player,currencyExchange)
-                            player:printToPlayer('Here ya go!',0,'Coinstrix')
-                        end
-                    end
-                end
-            },
-            {
-                'Withdraw',
-                function(playerArg)
-                    if npcUtil.tradeHas(trade,xi.item.GIL) then -- Check if the player traded gil
-                    menu.options = withdraw
-                    delaySendMenu(playerArg)
-                    else -- Rejects next menu if no gil was traded. Reduces redundancy in code later
-                        player:printToPlayer('Please trade me the amount of currency you want to withdraw in Gil to select this option!',0,'Coinstrix')
-                    end
-                end
-            },
-        }
-
-        withdraw =
-        {
-            {
-                'T. Whiteshell(s)',
-                function(player)
-                    if remainder > 0 then
-                        slotsNeeded = slotsNeeded + 2
-                    end
-
-                    if countGil <= storedwhiteshell then
-                        if countGil >= 1 then
-                            if player:getFreeSlotsCount() < slotsNeeded then
-                                player:printToPlayer('Whadaya think ya doing? Ya got no room!.',0,'Coinstrix')
-                                player:printToPlayer('Come back after sorting your inventory.',0xD)
-                           return
-                        else
-                            npcUtil.giveItem(player, {{1449,countGil}})
-                            player:setCharVar('Whiteshell',storedwhiteshell - countGil)
-                            player:printToPlayer(string.format('Heres ya go...%s T. Whiteshell(s)',countGil),0,'Coinstrix')
-                            player:printToPlayer(string.format('Here ya go! That leaves ya with %s T. Whiteshell(s) left!',storedwhiteshell-countGil),0,'Coinstrix')
-                        end
-                    end
-                    else
-                        player:printToPlayer('Whadaya think  this is? A gobbie charity?',0,'Coinstrix')
-                        player:printToPlayer(string.format('Yous only gots %s T. Whiteshell(s) left!',storedwhiteshell),0,"Coinstrix")
-                        menu.options = withdraw
-                        delaySendMenu(player)
-                    end
-                end
-            },
-            {
-                'O. Bronzepiece(s)',
-                function(player)
-                    if remainder > 0 then
-                        slotsNeeded = slotsNeeded + 2
-                    end
-
-                    if countGil <= storedbronzepiece then
-                        if countGil >= 1 then
-                            if player:getFreeSlotsCount() < slotsNeeded then
-                                player:printToPlayer('Whadaya think ya doing? Ya got no room!.',0,'Coinstrix')
-                                player:printToPlayer('Come back after sorting your inventory.',0xD)
-                                return
-                            else
-                                npcUtil.giveItem(player, {{1452,countGil}})
-                                player:setCharVar('Bronzepiece',storedbronzepiece - countGil)
-                                player:printToPlayer(string.format('Heres ya go...%s O. Bronzepiece(s)',countGil),0,'Coinstrix')
-                                player:printToPlayer(string.format('Here ya go! That leaves ya with %s O. Bronzepiece(s) left!',storedbronzepiece-countGil),0,'Coinstrix')
-                            end
-                        end
-                    else
-                        player:printToPlayer('Whadaya think  this is? A gobbie charity?',0,'Coinstrix')
-                        player:printToPlayer(string.format('Yous only gots %s O. Bronzepiece(s) left!',storedbronzepiece),0,"Coinstrix")
-                        menu.options = withdraw
-                        delaySendMenu(player)
-                    end
-                 end
-            },
-            {
-                'One Byne Bill(s)',
-                function(player)
-                    if remainder > 0 then
-                        slotsNeeded = slotsNeeded + 2
-                    end
-
-                    if countGil <= player:getCharVar('whiteshell') then
-                        if countGil >= 1 then
-                            if player:getFreeSlotsCount() < slotsNeeded then
-                                player:printToPlayer('Whadaya think ya doing? Ya got no room!.',0,'Coinstrix')
-                                player:printToPlayer('Come back after sorting your inventory.',0xD)
-                                return
-                            else
-                                npcUtil.giveItem(player, {{1455,countGil}})
-                                player:setCharVar('Byne', storedonebyne - countGil)
-                                player:printToPlayer(string.format('Heres ya go...%s One Byne Bill(s)',countGil),0,'Coinstrix')
-                                player:printToPlayer(string.format('Here ya go! That leaves ya with %s One Byne Bill(s) left!',storedonebyne-countGil),0,'Coinstrix')
-                            end
-                        end
-                    else
-                        player:printToPlayer('Whadaya think  this is? A gobbie charity?',0,'Coinstrix')
-                        player:printToPlayer(string.format('Yous only gots %s One Byne Bill(s) left!',storedonebyne),0,"Coinstrix")
-                        menu.options = withdraw
-                        delaySendMenu(player)
-                    end
-                end
-            },
-            {
-                'Next Page',
-                function(playerArg)
-                    menu.options = withdraw2
-                    delaySendMenu(playerArg)
-                end
-            },
-        }
-
-        withdraw2 =
-        {
-            {
-                'L. Jadeshell(s)',
-                function(player)
-                    if remainder > 0 then
-                        slotsNeeded = slotsNeeded + 2
-                    end
-
-                    if countGil < storejadeshell then
-                        if countGil >= 1 then
-                            if player:getFreeSlotsCount() < slotsNeeded then
-                                player:printToPlayer('Whadaya think ya doing? Ya got no room!.',0,'Coinstrix')
-                                player:printToPlayer('Come back after sorting your inventory.',0xD)
-                            return
-                        else
-                            npcUtil.giveItem(player, {{1450,countGil}})
-                            player:setCharVar('Jadeshell',storejadeshell - countGil)
-                            player:printToPlayer(string.format('Heres ya go...%s L. Jadeshell(s)',countGil),0,'Coinstrix')
-                            player:printToPlayer(string.format('Here ya go! That leaves ya with %s L. Jadeshell(s) left!',storejadeshell-countGil),0,'Coinstrix')
-                        end
-                    end
-                    else
-                        player:printToPlayer('Whadaya think  this is? A gobbie charity?',0,'Coinstrix')
-                        player:printToPlayer(string.format('Yous only gots %s L. Jadeshell(s) left!',storejadeshell),0,"Coinstrix")
-                        menu.options = withdraw2
-                        delaySendMenu(player)
-                    end
-                end
-            },
-            {
-                'M. Silverpiece(s)',
-                function(player)
-                    if remainder > 0 then
-                        slotsNeeded = slotsNeeded + 2
-                    end
-
-                    if countGil <= storedsilverpiece then
-                        if countGil >= 1 then
-                            if player:getFreeSlotsCount() < slotsNeeded then
-                                player:printToPlayer('Whadaya think ya doing? Ya got no room!.',0,'Coinstrix')
-                                player:printToPlayer('Come back after sorting your inventory.',0xD)
-                                return
-                            else
-                                player:addItem(player, {{1453,countGil}})
-                                npcUtil.giveCharVar('Silverpiece', storedsilverpiece - countGil)
-                                player:printToPlayer(string.format('Heres ya go...%s M. Silverpiece(s)',countGil),0,'Coinstrix')
-                                player:printToPlayer(string.format('Here ya go! That leaves ya with %s M. Silverpiece(s) left!',storedsilverpiece-countGil),0,'Coinstrix')
-                            end
-                        end
-                    else
-                        player:printToPlayer('Whadaya think  this is? A gobbie charity?',0,'Coinstrix')
-                        player:printToPlayer(string.format('Yous only gots %s M. Silverpiece(s) left!',storedsilverpiece),0,"Coinstrix")
-                        menu.options = withdraw2
-                        delaySendMenu(player)
-                    end
-                end
-            },
-            {
-                'One Hundred Byne Bill(s)',
-                function(player)
-                    if remainder > 0 then
-                        slotsNeeded = slotsNeeded + 2
-                    end
-
-                    if countGil <= storedhundredbyne then
-                        if countGil >= 1 then
-                            if player:getFreeSlotsCount() < slotsNeeded then
-                                player:printToPlayer('Whadaya think ya doing? Ya got no room!.',0,'Coinstrix')
-                                player:printToPlayer('Come back after sorting your inventory.',0xD)
-                            return
-                            else
-                                npcUtil.giveItem(player, {{1456,countGil}})
-                                player:setCharVar('HundredByne', storedhundredbyne - countGil)
-                                player:printToPlayer(string.format('Heres ya go...%s One Hundred Byne Bill(s)',countGil),0,'Coinstrix')
-                                player:printToPlayer(string.format('Here ya go! That leaves ya with %s One Hundred Byne Bill(s) left!',storedhundredbyne-countGil),0,'Coinstrix')
-                            end
-                        end
-                    else
-                        player:printToPlayer('Whadaya think  this is? A gobbie charity?',0,'Coinstrix')
-                        player:printToPlayer(string.format('Yous only gots %s One Hundred Byne Bill(s) left!',storedhundredbyne),0,"Coinstrix")
-                        menu.options = withdraw2
-                        delaySendMenu(player)
-                    end
-                end
-            },
-            {
-                'Next Page',
-                function(playerArg)
-                    menu.options = withdraw3
-                    delaySendMenu(playerArg)
-                end
-            },
-            {
-                'Go Back.',
-                function(playerArg)
-                    menu.options = withdraw
-                    delaySendMenu(playerArg)
-                end
-            },
-        }
-
-        withdraw3 =
-        {
-            {
-                'R. Stripeshell(s)',
-                function(player)
-                    if remainder > 0 then
-                        slotsNeeded = slotsNeeded + 2
-                    end
-
-                    if countGil <= storedstripeshell then
-                        if countGil >= 1 then
-                            if player:getFreeSlotsCount() < slotsNeeded then
-                                player:printToPlayer('Whadaya think ya doing? Ya got no room!.',0,'Coinstrix')
-                                player:printToPlayer('Come back after sorting your inventory.',0xD)
-                                return
-                            else
-                                npcUtil.giveItem(player, {{1451, countGil}})
-                                player:setCharVar('Stripshell',storedstripeshell - countGil)
-                                player:printToPlayer(string.format('Heres ya go...%s R. Stripeshell(s)',countGil),0,'Coinstrix')
-                                player:printToPlayer(string.format('Here ya go! That leaves ya with %s R. Stripeshell(s) left!',storedstripeshell-countGil),0,'Coinstrix')
-                            end
-                        end
-                    else
-                        player:printToPlayer('Whadaya think  this is? A gobbie charity?',0,'Coinstrix')
-                        player:printToPlayer(string.format('Yous only gots %s R. Stripeshell(s) left!',storedstripeshell),0,"Coinstrix")
-                        menu.options = withdraw3
-                        delaySendMenu(player)
-                    end
-                end
-            },
-            {
-                'R. Goldpiece(s)',
-                function(player)
-                    if remainder > 0 then
-                        slotsNeeded = slotsNeeded + 2
-                    end
-
-                    if countGil <= storedgoldpiece then
-                        if countGil >= 1 then
-                            if player:getFreeSlotsCount() < slotsNeeded then
-                                player:printToPlayer('Whadaya think ya doing? Ya got no room!.',0,'Coinstrix')
-                                player:printToPlayer('Come back after sorting your inventory.',0xD)
-                                return
-                            else
-                                npcUtil.giveItem(player, {{1454, countGil}})
-                                player:setCharVar('Goldpiece',storedgoldpiece - countGil)
-                                player:printToPlayer(string.format('Heres ya go...%s R. Goldpiece(s)',countGil),0,'Coinstrix')
-                                player:printToPlayer(string.format('Here ya go! That leaves ya with %s R. Goldpiece(s) left!',storedgoldpiece-countGil),0,'Coinstrix')
-                            end
-                        end
-                    else
-                        player:printToPlayer('Whadaya think  this is? A gobbie charity?',0,'Coinstrix')
-                        player:printToPlayer(string.format('Yous only gots %s R. Goldpiece(s) left!',storedgoldpiece),0,"Coinstrix")
-                        menu.options = withdraw3
-                        delaySendMenu(player)
-                    end
-                end
-            },
-            {
-                'Ten Thousand Byne Bill(s)',
-                function(player)
-                    if remainder > 0 then
-                        slotsNeeded = slotsNeeded + 2
-                    end
-
-                    if countGil <= storedtenkbyne then
-                        if countGil >= 1 then
-                            if player:getFreeSlotsCount() < slotsNeeded then
-                                player:printToPlayer('Whadaya think ya doing? Ya got no room!.',0,'Coinstrix')
-                                player:printToPlayer('Come back after sorting your inventory.',0xD)
-                            return
-                            else
-                                npcUtil.giveItem(player, {{1457,countGil}})
-                                player:setCharVar('TenThouByne', storedtenkbyne - countGil)
-                                player:printToPlayer(string.format('Heres ya go...%s Ten Thousand Byne Bill(s)',countGil),0,'Coinstrix')
-                                player:printToPlayer(string.format('Here ya go! That leaves ya with %s Ten Thousand Byne Bill(s) left!',storedtenkbyne-countGil),0,'Coinstrix')
-                            end
-                        end
-                    else
-                        player:printToPlayer('Whadaya think  this is? A gobbie charity?',0,'Coinstrix')
-                        player:printToPlayer(string.format('Yous only gots %s Ten Thousand Byne Bill(s) left!',storedtenkbyne),0,"Coinstrix")
-                        menu.options = withdraw3
-                        delaySendMenu(player)
-                    end
-                end
-            },
-            {
-                'Go Back.',
-                function(playerArg)
-                    menu.options = page4
-                    delaySendMenu(playerArg)
-                end
-            },
-         }
-
-        player:printToPlayer('Whadaya wanna do?',0,'Coinstrix')
-        menu.options = tradeChoice
-        delaySendMenu(player)
-
-
-
-    end,
+            delaySendMenu(player)
+        end,
 
       onTrigger = function(player,npc)
-         player:printToPlayer('Coinstrix gots whats ya needs!',0,'Coinstrix')
-         menu.options = page1
-         delaySendMenu(player)
+            player:printToPlayer('Coinstrix gots whats ya needs!',0,'Coinstrix')
+            player:resetLocalVars()
+            createMainMenu(player, page) -- completed
+            delaySendMenu(player)
       end,
     })
    utils.unused(coinstrix)
