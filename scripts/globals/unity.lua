@@ -119,6 +119,7 @@ function xi.unity.onTrade(player, npc, trade, eventid)
 end
 
 function xi.unity.onTrigger(player, npc)
+player:printToPlayer(string.format('Update %s %s',csid, option ))
     local zoneId             = player:getZoneID()
     local hasAllForOne       = player:hasEminenceRecord(5)
     local allForOneCompleted = player:getEminenceCompleted(5)
@@ -140,11 +141,12 @@ function xi.unity.onTrigger(player, npc)
     elseif not allForOneCompleted then
         player:startEvent(zoneEventIds[zoneId][3])
     else
-        player:startEvent(zoneEventIds[zoneId][4], 0, player:getUnityLeader(), accolades, remainingLimit, 0, 0, 0, 0)
+        player:startEvent(zoneEventIds[zoneId][4], 0, player:getUnityLeader(), accolades, remainingLimit, 89653249, 33554431, 33554431, 33554431) -- Updated last 4 parameters to unlock all unity warps
     end
 end
 
 function xi.unity.onEventUpdate(player, csid, option, npc)
+player:printToPlayer(string.format('Update %s %s',csid, option ))
     local zoneId               = player:getZoneID()
     local ID                   = zones[zoneId]
     local accolades            = player:getCurrency('unity_accolades')

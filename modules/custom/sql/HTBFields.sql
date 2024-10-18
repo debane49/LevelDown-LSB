@@ -346,8 +346,8 @@ INSERT INTO mob_droplist VALUES(3933,1,2,1000,21181,250); -- Venabulum
 INSERT INTO mob_droplist VALUES(3933,1,3,1000,28174,225); -- Theurgists Slacks
 INSERT INTO mob_droplist VALUES(3933,1,3,1000,28312,225); -- Scamps Sollerets
 INSERT INTO mob_droplist VALUES(3933,1,3,1000,28616,200); -- Fravashi Mantle
-INSERT INTO mob_droplist VALUES(3932,0,0,1000,4072,1000); -- Rem Tale Ch 8
-INSERT INTO mob_droplist VALUES(3932,0,0,250,4072,1000); -- Rem Tale Ch 8
+INSERT INTO mob_droplist VALUES(3932,0,0,1000,4071,1000); -- Rem Tale Ch 8
+INSERT INTO mob_droplist VALUES(3932,0,0,250,4071,1000); -- Rem Tale Ch 8
 INSERT INTO mob_droplist VALUES(3932,1,1,1000,8710,375); -- Buried Vestige
 INSERT INTO mob_droplist VALUES(3932,1,1,1000,8723,375); -- Beryllium Ore
 INSERT INTO mob_droplist VALUES(3932,1,2,1000,20997,250); -- Raimitsukane

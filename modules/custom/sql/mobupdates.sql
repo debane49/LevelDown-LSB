@@ -3,6 +3,8 @@ UPDATE mob_groups SET minLevel = minLevel + 40, maxLevel = maxLevel +45 WHERE zo
 UPDATE mob_groups SET minLevel = minLevel + 40, maxLevel = maxLevel +45 WHERE zoneid IN (15,45,132,215,216,217,218,253,254) AND spawntype = 128;
 --                      Dynamis NM timed spawn
 UPDATE mob_groups SET spawntype = 0, respawntime = 5400 WHERE zoneid IN (39,40,41,42,119,134,135,185,186,187,188) AND spawntype = 32;
+--                      LoO
+UPDATE mob_groups SET spawntype = 0, respawntime = 600, HP = 78000, minLevel = 110, maxLevel = 110 WHERE name = 'Lord_of_Onzozo' AND spawntype = 32;
 --						Mob Pools settings		
 UPDATE mob_pools SET aggro = 1 WHERE name = "Apex_Eft";
 UPDATE mob_pools SET aggro = 1 WHERE name = "Apex_Toad";

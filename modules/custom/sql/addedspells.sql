@@ -16,3 +16,14 @@ INSERT INTO `spell_list` VALUES (881,'aspir_iii',   0x00000066000000000000000000
 INSERT INTO `spell_list` VALUES (894,'refresh_iii',0x00000000630000000000000000000000000000000000,6,29,7,0,1,3,80,7000,29000,0,0,118,2000,0,0,1.00,0,0,0,204,NULL);
 INSERT INTO `spell_list` VALUES (882,'distract_iii',0x00000000630000000000000000000000000000000000,2,154,2,0,4,35,84,4000,6000,0,0,934,4000,0,0,1.00,0,0,0,204,NULL);
 INSERT INTO `spell_list` VALUES (883,'frazzle_iii',0x00000000630000000000000000000000000000000000,2,155,8,0,4,35,90,4000,6000,0,0,936,4000,0,0,1.00,0,0,0,204,NULL);
+-- DRK
+UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-acc';
+UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-agi';
+UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-attri';
+UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-chr';
+UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-dex';
+UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-int';
+UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-mnd';
+UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-str';
+UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-tp';
+UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-vit';
