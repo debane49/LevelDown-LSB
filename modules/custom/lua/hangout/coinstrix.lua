@@ -34,10 +34,10 @@ end
         end
         for _, itemTraded in pairs(tradedItems) do
             for _, tableValue in pairs(valueTable) do
-                if itemTraded[1] ~= tableValue[1] then
+               --[[ if itemTraded[1] ~= tableValue[1] then
                    player:printToPlayer('You are trying to trade unauthorized items.', 0, 'Coinstrix')
                    return
-                elseif itemTraded[1] == tableValue[1] then
+                else ]]if itemTraded[1] == tableValue[1] then
                        -- print(itemTraded[2], tableValue[2])
                        player:setCharVar(tableValue[2], player:getCharVar(tableValue[2]) + itemTraded[2])
                        player:tradeComplete()
@@ -51,7 +51,6 @@ end
     end
 
 local function withdrawMainMenu(player, page, trade)
-    local gilAmount = trade:getGil()
     local withdrawMenu     = {{'Tukuku Whiteshell','Whiteshell', 1449}, {'Lungo-nango Jadeshell','Jadeshell', 1450}, {'Rimilala Stripeshell','Stripeshell', 1451}, {'Ordelle Bronzepiece','Bronzepiece', 1452}, {'Montiont Silverpiece','Silverpiece', 1453}, {'Ranperre Goldpiece','Goldpiece', 1454}, {'One Byne Bill','Byne', 1455}, {'One Hundred Byne Bill','HundredByne', 1456}, {'Ten Thousand Byne Bill','TenkByne', 1457}} 
     local linesPerPage = 3
     page = page or 1
@@ -63,6 +62,7 @@ local function withdrawMainMenu(player, page, trade)
         table.insert(options, {
             string.format('%s [%s]', withdraw, player:getCharVar(withdrawMenu[i][2])),
             function(player)
+                local gilAmount = player:getLocalVar('GilTraded')
               if player:getCharVar(withdrawMenu[i][2]) < gilAmount then
                     player:printToPlayer('You do not have enough of this item to withdraw based on the gil traded.', 0, 'Coinstrix')
               else
@@ -951,9 +951,10 @@ end
         widescan = 1,
 
         onTrade = function(player, npc, trade)
-            local gilAmount = trade:getGil()
+        local amount = trade:getGil()
             player:resetLocalVars()
-                if npcUtil.tradeHasExactly(trade, {{xi.item.GIL,gilAmount }}) then
+                if npcUtil.tradeHasExactly(trade, {{xi.item.GIL,amount }}) then
+                    player:setLocalVar('GilTraded',trade:getGil())
                     withdrawMainMenu(player, page, trade) -- completed
                 else
                     itemStorage(player, npc, trade) -- completed
