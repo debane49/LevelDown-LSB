@@ -8,7 +8,7 @@ spellObject.onMagicCastingCheck = function(caster, target, spell)
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
-    local power    = 10
+    local power    = 1
     local duration = 180
     local handSlot = caster:getEquipID(xi.slot.HANDS)
 
