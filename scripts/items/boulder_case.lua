@@ -1,7 +1,7 @@
 -----------------------------------
 -- ID: 6182
--- Boulder case
--- Breaks up a Boulder case
+-- Boulder Case
+-- Breaks up a Boulder Case
 -----------------------------------
 ---@type TItem
 local itemObject = {}
