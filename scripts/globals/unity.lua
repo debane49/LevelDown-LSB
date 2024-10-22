@@ -119,7 +119,6 @@ function xi.unity.onTrade(player, npc, trade, eventid)
 end
 
 function xi.unity.onTrigger(player, npc)
-player:printToPlayer(string.format('Update %s %s',csid, option ))
     local zoneId             = player:getZoneID()
     local hasAllForOne       = player:hasEminenceRecord(5)
     local allForOneCompleted = player:getEminenceCompleted(5)
@@ -146,7 +145,6 @@ player:printToPlayer(string.format('Update %s %s',csid, option ))
 end
 
 function xi.unity.onEventUpdate(player, csid, option, npc)
-player:printToPlayer(string.format('Update %s %s',csid, option ))
     local zoneId               = player:getZoneID()
     local ID                   = zones[zoneId]
     local accolades            = player:getCurrency('unity_accolades')

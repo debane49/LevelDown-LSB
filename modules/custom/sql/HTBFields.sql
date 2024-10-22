@@ -280,8 +280,8 @@ INSERT INTO mob_skill_lists VALUES ('Diabolos_Prime_HTBF', 40002, 1908); -- Nigh
 UPDATE mob_skills SET mob_anim_id = 918 WHERE mob_skill_id = 1908;
 UPDATE mob_skills SET mob_anim_id = 1127 WHERE mob_skill_id = 1907;
 UPDATE mob_skills SET mob_anim_id = 1129 WHERE mob_skill_id = 1910;
-INSERT INTO mob_skills VALUES(582, 1128, 'cacodemonia', 2, 13.5, 2000, 1500, 4, 0, 0, 0, 0, 0, 0);
-INSERT INTO mob_skills VALUES(3554, 2535, 'night_terror', 2, 13.5, 2000, 1500, 4, 0, 0, 0, 0, 0, 0);
+INSERT INTO mob_skills VALUES(582, 1128, 'cacodemonia', 2,0.0, 13.5, 2000, 1500, 4, 0, 0, 0, 0, 0, 0);
+INSERT INTO mob_skills VALUES(3554, 2535, 'night_terror', 2,0.0, 13.5, 2000, 1500, 4, 0, 0, 0, 0, 0, 0);
 INSERT INTO mob_spell_lists VALUES('Diabolos_Prime_HTBF', 515, 232, 1, 255); -- bio iii
 INSERT INTO mob_spell_lists VALUES('Diabolos_Prime_HTBF', 515, 246, 1, 255); -- drain ii
 INSERT INTO mob_spell_lists VALUES('Diabolos_Prime_HTBF', 515, 248, 1, 255); -- aspir ii
@@ -643,5 +643,5 @@ UPDATE mob_groups SET poolid = 5106 WHERE name = 'Promathia_htbf';
 -- insert mob ability
 -- INSERT INTO `mob_skills` VALUES (1712,1183,'bugle_call',1,10.0,2000,1500,4,4,0,0,0,0,0); -- imp -- bugal call
 -- INSERT INTO `mob_skills` VALUES (1980,1197,'boreas_mantle',0,7.0,2000,1500,1,4,0,0,0,0,0); -- phantom puk
-INSERT INTO `mob_skills` VALUES (3290,3034,'bowels_of_agony',0,7.0,2000,0,4,0,0,0,0,0,0); -- Bowels of Agony - Shadow Lord
+INSERT INTO `mob_skills` VALUES (3290,3034,'bowels_of_agony',0,0.0,7.0,2000,0,4,0,0,0,0,0,0); -- Bowels of Agony - Shadow Lord
 INSERT INTO `mob_skill_lists` VALUES ('ShadowLord', 225, 3290);

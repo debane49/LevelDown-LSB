@@ -33,10 +33,10 @@ INSERT INTO `mob_skill_lists` VALUES ('TRUST_Halver',1087,120);  -- Impulse Driv
 --
 -- Bart / Lion II
 --
-REPLACE INTO `mob_skills` VALUES (2891, 2029, 'grapeshot', 4, 7.0, 2000, 0, 4, 0, 0, 0, 3, 2, 0);
-REPLACE INTO `mob_skills` VALUES (2892, 2030, 'pirate_pummel', 0, 7.0, 2000, 0, 4, 0, 0, 0, 9, 0, 0);
-REPLACE INTO `mob_skills` VALUES (2893, 2031, 'powder_keg', 4, 7.0, 2000, 0, 4, 0, 0, 0, 5, 1, 0);
-REPLACE INTO `mob_skills` VALUES (2894, 2032, 'walk_the_plank', 1, 7.0, 2000, 0, 4, 0, 0, 0, 11, 0, 0);
+REPLACE INTO `mob_skills` VALUES (2891, 2029, 'grapeshot', 4, 0.0,7.0, 2000, 0, 4, 0, 0, 0, 3, 2, 0);
+REPLACE INTO `mob_skills` VALUES (2892, 2030, 'pirate_pummel', 0, 0.0,7.0, 2000, 0, 4, 0, 0, 0, 9, 0, 0);
+REPLACE INTO `mob_skills` VALUES (2893, 2031, 'powder_keg', 4, 0.0,7.0, 2000, 0, 4, 0, 0, 0, 5, 1, 0);
+REPLACE INTO `mob_skills` VALUES (2894, 2032, 'walk_the_plank', 1, 0.0,7.0, 2000, 0, 4, 0, 0, 0, 11, 0, 0);
 
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Lion_II',1124,2891);
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Lion_II',1124,2892);
@@ -268,10 +268,6 @@ INSERT INTO `mob_skill_lists` VALUES ('August_Skills',1099,3653);
 INSERT INTO `mob_skill_lists` VALUES ('August_Skills',1099,3654);
 INSERT INTO `mob_skill_lists` VALUES ('August_Skills',1099,3655);
 
--- Mob Skills Mumor II
-INSERT INTO `mob_skills` VALUES (2904, 450, 'final_eternal_heart', 0, 7.0, 2000, 0, 4, 0, 0, 0, 0, 0, 0);
-INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II', 1130, 2904);
-
 -- Mob Spells Ingrid
 DELETE FROM `mob_spell_lists` WHERE spell_list_id = "333";
 INSERT INTO `mob_spell_lists` VALUES ('TRUST_Ingrid', 333, 2, 11, 255);
@@ -348,13 +344,13 @@ INSERT INTO `mob_skill_lists` VALUES ('TRUST_Lhe_Lhangavo',1079,1034); -- Asuran
 -- 
 INSERT INTO `mob_pools` VALUES (6003,'matsui-p','Matsui-P',153,0x0000310c00000000000000000000000000000000,13,4,1,240,100,0,0,0,0,0,0,32,0,3,0,0,435,0,0,1148,355);
 INSERT INTO spell_list VALUES (1003, 'matsui-p', 0x01010101010101010101010101010101010101010101, 8, 0, 7, 0, 1, 0, 0, 3000, 24000, 0, 0, 939, 1500, 0, 0, 1.00, 0, 0, 0, 0, NULL);
-INSERT INTO `mob_skills` VALUES (128,151,'blade_rin',0,7.0,2000,0,4,0,0,0,1,0,0);
-INSERT INTO `mob_skills` VALUES (129,152,'blade_retsu',0,7.0,2000,0,4,0,0,0,4,0,0);
-INSERT INTO `mob_skills` VALUES (133,156,'blade_ei',0,7.0,2000,0,4,0,0,0,2,0,0);
-INSERT INTO `mob_skills` VALUES (135,158,'blade_ten',0,7.0,2000,0,4,0,0,0,9,0,0);
-INSERT INTO `mob_skills` VALUES (138,162,'blade_kamu',0,7.0,2000,0,4,0,0,0,12,2,0);
-INSERT INTO `mob_skills` VALUES (141,164,'blade_shun',0,7.0,2000,0,4,0,0,0,11,8,0);
-INSERT INTO `mob_skills` VALUES (140,163,'blade_hi',0,7.0,2000,0,4,0,0,0,14,9,0);
+INSERT INTO `mob_skills` VALUES (128,151,'blade_rin',0,0.0,7.0,2000,0,4,0,0,0,1,0,0);
+INSERT INTO `mob_skills` VALUES (129,152,'blade_retsu',0,0.0,7.0,2000,0,4,0,0,0,4,0,0);
+INSERT INTO `mob_skills` VALUES (133,156,'blade_ei',0,0.0,7.0,2000,0,4,0,0,0,2,0,0);
+INSERT INTO `mob_skills` VALUES (135,158,'blade_ten',0,0.0,7.0,2000,0,4,0,0,0,9,0,0);
+INSERT INTO `mob_skills` VALUES (138,162,'blade_kamu',0,0.0,7.0,2000,0,4,0,0,0,12,2,0);
+INSERT INTO `mob_skills` VALUES (141,164,'blade_shun',0,0.0,7.0,2000,0,4,0,0,0,11,8,0);
+INSERT INTO `mob_skills` VALUES (140,163,'blade_hi',0,0.0,7.0,2000,0,4,0,0,0,14,9,0);
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Matsui-P',1148,140); -- Blade Hi
 DELETE FROM `mob_spell_lists` WHERE spell_list_id = "435";
 INSERT INTO `mob_spell_lists` VALUES ('TRUST_Matsui-P',435,144,26,255); -- Fire
@@ -397,9 +393,29 @@ INSERT INTO `mob_spell_lists` VALUES ('TRUST_Matsui-P',435,340,99,255); -- Utsus
 --
 -- General - TRUST_Ullegore
 -- 
-INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3624);
-INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3625);
-INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3626);
-INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3627);
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3624); -- memento_mori
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3625); -- silence_seal
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3626); -- envoutement
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ullegore',1102,3627); -- bored_to_tears
 UPDATE mob_pools SET sJob = 8 WHERE poolid = 5987 and name = 'ullegore';
 UPDATE mob_groups SET MP = 5000 WHERE groupid = 73 and name = 'Ullegore';
+
+--
+-- General - TRUST_Mumor_II
+--
+INSERT INTO `mob_skills` VALUES (3638, 2038, 'lovely_miracle_waltz',  0, 0.0,7.0, 2000, 0, 4, 0, 0, 0,  3, 4, 8);
+INSERT INTO `mob_skills` VALUES (3640, 2040, 'super_crusher_jig',     0, 0.0,7.0, 2000, 0, 4, 0, 0, 0,  9, 5, 0);
+INSERT INTO `mob_skills` VALUES (3639, 2039, 'neo_crystal_jig',       0, 0.0,7.0, 2000, 0, 4, 0, 0, 0, 11, 1, 0);
+-- INSERT INTO `mob_skills` VALUES (4109, 2542, 'firesday_night_fever',  0, 0.0,7.0, 2000, 0, 4, 0, 0, 0,  0, 0, 0);
+INSERT INTO `mob_skills` VALUES (4108, 2042, 'eternal_vana_illusion', 0, 0.0,7.0, 2000, 0, 4, 0, 0, 0, 11, 0, 0);
+INSERT INTO `mob_skills` VALUES (4110, 2592, 'shining_summer_samba',  0, 0.0,7.0, 2000, 0, 4, 0, 0, 0,  3, 1, 0);
+INSERT INTO `mob_skills` VALUES (4111, 2041, 'final_eternal_heart',   1,10.0,7.0, 2000, 0, 4, 0, 0, 0, 12, 0, 0); -- is this correct id#
+
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,3638); -- Lovely Miracle Waltz 
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,3640); -- Super Crusher Jig 
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,3639); -- Neo Crystal Jig
+-- INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,4109); -- Firesday Night Fever 
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,4108); -- Eternal Vana Illusion
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,4110); -- Shining Epilogue 
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,2904); -- Final Eternal Heart
+UPDATE mob_pools SET spellList = 424 WHERE poolid = 5946 AND name = mumor;

@@ -89,7 +89,6 @@ INSERT INTO `item_weapon` VALUES (21873,'ethereal_spear',8,0,0,0,0,1,1,480,1,0);
 INSERT INTO `item_weapon` VALUES (22165,'ethereal_gun',26,0,0,0,0,1,1,600,1,0);
 
 INSERT INTO `item_usable` VALUES (6311,'decimating_bullet_pouch',1,1,55,0,0,0,0,0);
-INSERT INTO `item_usable` VALUES (6182,'boulder_case',1,1,55,0,0,0,0,0);
 
 -- Fix animators so you can equip oils
 UPDATE item_weapon SET subskill = 10 WHERE itemId = 22260;
