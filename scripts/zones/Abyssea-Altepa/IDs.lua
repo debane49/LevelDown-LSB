@@ -78,6 +78,8 @@ zones[xi.zone.ABYSSEA_ALTEPA] =
     mob =
     {
         RANI_OFFSET         = GetFirstID('Rani'),
+        RANI_OFFSET_1       = GetFirstID('Rani') +4,
+        RANI_OFFSET_2       = GetFirstID('Rani') +8,
         ORTHUS_OFFSET       = GetFirstID('Orthrus'),
         DRAGUA_OFFSET       = GetFirstID('Dragua'),
         BENNU_OFFSET        = GetFirstID('Bennu'),

@@ -507,7 +507,7 @@ local amount = 0
                                 amount = player:getCurrency('windurst_cp')
                          end
                    else
-                       player:getCurrency(entry[3])
+                       amount = player:getCurrency(entry[3])
                    end
                    player:startEvent(entry[4], 0, amount)
                 end

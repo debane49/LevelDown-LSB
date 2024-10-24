@@ -570,3 +570,6 @@ INSERT INTO mob_skill_lists VALUES('invincible', 824, 694); -- invincible
 
 -- add Epona ring to Rani drop list
 INSERT INTO mob_droplist VALUES(2076,1,1,300,11651,1000);
+UPDATE mob_spawn_points SET pos_x = -815.1406, pos_y = -9.8131, pos_z = -376.9443, pos_rot = 14 WHERE mobid = 17670559;
+UPDATE mob_spawn_points SET pos_x = -804.3063, pos_y = -7.9862, pos_z = -365.7767, pos_rot = 39 WHERE mobid = 17670551;
+UPDATE mob_spawn_points SET pos_x = -825.7000, pos_y = -9.1779, pos_z = -388.5070, pos_rot =  7 WHERE mobid = 17670555;

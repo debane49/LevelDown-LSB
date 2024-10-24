@@ -37,6 +37,7 @@ player:printToPlayer('!oldccfix - Adds all valid spells EXCEPT TRUSTS to the giv
 player:printToPlayer('!nmhuntone # - Displays the NMHunt kill count per tier, replace # with tier 1 - 3', 3, xi.msg.channel.system_3)
 player:printToPlayer('!nmhunttwo # - Displays the NMHunt kill count per tier, replace # with tier 4 - 6', 3, xi.msg.channel.system_3)
 player:printToPlayer('!addallportals - Gives players all portals Abyssea, Escha zones, Adoulin Waypoints.', 3, xi.msg.channel.system_3)
+player:printToPlayer('!travel <autotranslate city> - Teleport player to spcified city!.', 3, xi.msg.channel.system_3)
 
 end
 

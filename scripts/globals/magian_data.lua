@@ -9952,7 +9952,7 @@ xi.magian.trials =
             itemId = xi.item.UTILIS_SHIELD,
         },
 
-        textOffset  = 1134,
+        textOffset  = 1136,
         tradeItem   = xi.item.IRON_PLATE,
         numRequired = 50,
 
@@ -9978,7 +9978,7 @@ xi.magian.trials =
             },
         },
 
-        textOffset  = 1136,
+        textOffset  = 1138,
         tradeItem   = xi.item.COLORLESS_SOUL,
         numRequired = 75,
 

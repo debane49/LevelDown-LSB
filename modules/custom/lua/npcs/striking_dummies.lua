@@ -36,6 +36,19 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
         end,
 
         onMobEngage = function(mob1, target)
+        local RoEAactive = {16,17,18,19,20,21,22,23,29,696,697,698}
+         for i = 1, #RoEAactive do
+          if target:hasEminenceRecord(RoEAactive[i]) == true then
+             mob1:addMod(xi.mod.UDMGPHYS, -10000)
+             mob1:addMod(xi.mod.UDMGBREATH, -10000)
+             mob1:addMod(xi.mod.UDMGMAGIC, -10000)
+               target:disengage()
+               mob1:disengage()
+               mob1:resetEnmity(target)
+             target:printToPlayer('You have a RoE Deal Damage Quest active that needs to be disabled to use these test dummys')
+             return
+          end
+         end
             mob1:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob1)
             if not target:isEngaged() then
                mob1:disengage()
@@ -46,10 +59,14 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
 
         onMobDisengage = function(mob1)
             mob1:setPos(359, -12.5101, -414.0013, 192)
+             mob1:delMod(xi.mod.UDMGPHYS, -10000)
+             mob1:delMod(xi.mod.UDMGBREATH, -10000)
+             mob1:delMod(xi.mod.UDMGMAGIC, -10000)
             mob1:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob1, target)
+
             mob1:setHP(mob1:getMaxHP())
             mob1:setMobLevel(target:getAverageItemLevel())
             mob1:setMobMod(xi.mobMod.CHARMABLE, 0)
@@ -93,6 +110,19 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
         end,
 
         onMobEngage = function(mob2, target)
+        local RoEAactive = {16,17,18,19,20,21,22,23,29,696,697,698}
+         for i = 1, #RoEAactive do
+          if target:hasEminenceRecord(RoEAactive[i]) == true then
+             mob2:addMod(xi.mod.UDMGPHYS, -10000)
+             mob2:addMod(xi.mod.UDMGBREATH, -10000)
+             mob2:addMod(xi.mod.UDMGMAGIC, -10000)
+               target:disengage()
+               mob2:disengage()
+               mob2:resetEnmity(target)
+             target:printToPlayer('You have a RoE Deal Damage Quest active that needs to be disabled to use these test dummys')
+             return
+          end
+         end
             mob2:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob2)
             if not target:isEngaged() then
                mob2:disengage()
@@ -103,10 +133,14 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
 
         onMobDisengage = function(mob2)
             mob2:setPos(361, -12.5101, -414.0013, 192)
+             mob2:delMod(xi.mod.UDMGPHYS, -10000)
+             mob2:delMod(xi.mod.UDMGBREATH, -10000)
+             mob2:delMod(xi.mod.UDMGMAGIC, -10000)
             mob2:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob2, target)
+
             mob2:setHP(mob2:getMaxHP())
             mob2:setMobLevel(target:getAverageItemLevel())
             mob2:setMobMod(xi.mobMod.CHARMABLE, 0)
@@ -150,6 +184,19 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
         end,
 
         onMobEngage = function(mob3, target)
+        local RoEAactive = {16,17,18,19,20,21,22,23,29,696,697,698}
+         for i = 1, #RoEAactive do
+          if target:hasEminenceRecord(RoEAactive[i]) == true then
+             mob3:addMod(xi.mod.UDMGPHYS, -10000)
+             mob3:addMod(xi.mod.UDMGBREATH, -10000)
+             mob3:addMod(xi.mod.UDMGMAGIC, -10000)
+               target:disengage()
+               mob3:disengage()
+               mob3:resetEnmity(target)
+             target:printToPlayer('You have a RoE Deal Damage Quest active that needs to be disabled to use these test dummys')
+             return
+          end
+         end
             mob3:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob3)
             if not target:isEngaged() then
                mob3:disengage()
@@ -160,10 +207,14 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
 
         onMobDisengage = function(mob3)
             mob3:setPos(357, -12.5101, -414.0013, 192)
+             mob3:delMod(xi.mod.UDMGPHYS, -10000)
+             mob3:delMod(xi.mod.UDMGBREATH, -10000)
+             mob3:delMod(xi.mod.UDMGMAGIC, -10000)
             mob3:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob3, target)
+
             mob3:setHP(mob3:getMaxHP())
             mob3:setMobLevel(target:getAverageItemLevel())
             mob3:setMobMod(xi.mobMod.CHARMABLE, 0)
@@ -206,6 +257,19 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
         end,
 
         onMobEngage = function(mob4, target)
+        local RoEAactive = {16,17,18,19,20,21,22,23,29,696,697,698}
+         for i = 1, #RoEAactive do
+          if target:hasEminenceRecord(RoEAactive[i]) == true then
+             mob4:addMod(xi.mod.UDMGPHYS, -10000)
+             mob4:addMod(xi.mod.UDMGBREATH, -10000)
+             mob4:addMod(xi.mod.UDMGMAGIC, -10000)
+               target:disengage()
+               mob4:disengage()
+               mob4:resetEnmity(target)
+             target:printToPlayer('You have a RoE Deal Damage Quest active that needs to be disabled to use these test dummys')
+             return
+          end
+         end
             mob4:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob4)
             if not target:isEngaged() then
                mob4:disengage()
@@ -216,10 +280,14 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
 
         onMobDisengage = function(mob4)
             mob4:setPos(359, -12.5101, -386.4066, 64)
+             mob4:delMod(xi.mod.UDMGPHYS, -10000)
+             mob4:delMod(xi.mod.UDMGBREATH, -10000)
+             mob4:delMod(xi.mod.UDMGMAGIC, -10000)
             mob4:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob4, target)
+
             mob4:setHP(mob4:getMaxHP())
             mob4:setMobLevel(target:getAverageItemLevel())
             mob4:setMobMod(xi.mobMod.CHARMABLE, 0)
@@ -261,6 +329,19 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
         end,
 
         onMobEngage = function(mob5, target)
+        local RoEAactive = {16,17,18,19,20,21,22,23,29,696,697,698}
+         for i = 1, #RoEAactive do
+          if target:hasEminenceRecord(RoEAactive[i]) == true then
+             mob5:addMod(xi.mod.UDMGPHYS, -10000)
+             mob5:addMod(xi.mod.UDMGBREATH, -10000)
+             mob5:addMod(xi.mod.UDMGMAGIC, -10000)
+               target:disengage()
+               mob5:disengage()
+               mob5:resetEnmity(target)
+             target:printToPlayer('You have a RoE Deal Damage Quest active that needs to be disabled to use these test dummys')
+             return
+          end
+         end
             mob5:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob5)
             if not target:isEngaged() then
                mob5:disengage()
@@ -271,10 +352,14 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
 
         onMobDisengage = function(mob5)
             mob5:setPos(361, -12.5101, -386.4066, 64)
+             mob5:delMod(xi.mod.UDMGPHYS, -10000)
+             mob5:delMod(xi.mod.UDMGBREATH, -10000)
+             mob5:delMod(xi.mod.UDMGMAGIC, -10000)
             mob5:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob5, target)
+
             mob5:setHP(mob5:getMaxHP())
             mob5:setMobLevel(target:getAverageItemLevel())
             mob5:setMobMod(xi.mobMod.CHARMABLE, 0)
@@ -316,6 +401,19 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
         end,
 
         onMobEngage = function(mob6, target)
+        local RoEAactive = {16,17,18,19,20,21,22,23,29,696,697,698}
+         for i = 1, #RoEAactive do
+          if target:hasEminenceRecord(RoEAactive[i]) == true then
+             mob6:addMod(xi.mod.UDMGPHYS, -10000)
+             mob6:addMod(xi.mod.UDMGBREATH, -10000)
+             mob6:addMod(xi.mod.UDMGMAGIC, -10000)
+               target:disengage()
+               mob6:disengage()
+               mob6:resetEnmity(target)
+             target:printToPlayer('You have a RoE Deal Damage Quest active that needs to be disabled to use these test dummys')
+             return
+          end
+         end
             mob6:addListener('COMBAT_TICK', 'DUMMY_DISENGAGED', function(mob6)
             if not target:isEngaged() then
                mob6:disengage()
@@ -326,10 +424,14 @@ m:addOverride('xi.zones.Rala_Waterways.Zone.onInitialize', function(zone)
 
         onMobDisengage = function(mob6)
             mob6:setPos(357, -12.5101, -386.4066, 64)
+             mob6:delMod(xi.mod.UDMGPHYS, -10000)
+             mob6:delMod(xi.mod.UDMGBREATH, -10000)
+             mob6:delMod(xi.mod.UDMGMAGIC, -10000)
             mob6:removeListener('DUMMY_DISENGAGED')
         end,
 
         onMobFight = function(mob6, target)
+
             mob6:setHP(mob6:getMaxHP())
             mob6:setMobLevel(target:getAverageItemLevel())
             mob6:setMobMod(xi.mobMod.CHARMABLE, 0)

@@ -73,7 +73,7 @@ INSERT INTO `item_equipment` VALUES (23874,'hebenus_shorts',1,0,4194303,496,0,0,
 
 INSERT INTO `item_weapon` VALUES (20931,'celestial_spear',8,0,0,0,0,1,1,396,1,0);
 INSERT INTO `item_weapon` VALUES (20593,'hedron_dagger',2,0,0,0,0,1,1,150,1,0);
-INSERT INTO `item_weapon` VALUES (21520,'ethereal_fists',1,0,0,0,0,4,1,96,1,0);
+INSERT INTO `item_weapon` VALUES (21520,'ethereal_fists',1,0,0,0,0,4,1,576,1,0);
 INSERT INTO `item_weapon` VALUES (21624,'ethereal_sword',3,0,0,0,0,2,1,240,1,0);
 INSERT INTO `item_weapon` VALUES (21771,'ethereal_great_axe',6,0,0,0,0,2,1,540,1,0);
 INSERT INTO `item_weapon` VALUES (21838,'ethereal_scythe',7,0,0,0,0,2,1,480,1,0);

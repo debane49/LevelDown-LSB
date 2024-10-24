@@ -27,3 +27,9 @@ UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-m
 UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-str';
 UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-tp';
 UPDATE spell_list SET castTime = 500, animationTime = 500 WHERE name = 'absorb-vit';
+UPDATE spell_list SET jobs = 0x00006300000000000000000000000000000000000000 WHERE spellid = 358 AND name = 'hastega';
+UPDATE spell_list SET jobs = 0x00000000000000000000000063000000000000000000 WHERE spellid = 340 AND name = 'utsusemi_san';
+UPDATE spell_list SET jobs = 0x00000000000000000000000063000000000000000000 WHERE spellid = 342 AND name = 'jubaku_ni';
+UPDATE spell_list SET jobs = 0x00000000000000000000000063000000000000000000 WHERE spellid = 346 AND name = 'hojo_san';
+UPDATE spell_list SET jobs = 0x00000000000000000000000063000000000000000000 WHERE spellid = 349 AND name = 'kurayami_san';
+UPDATE spell_list SET jobs = 0x00000000000000000000000063000000000000000000 WHERE spellid = 351 AND name = 'dokumori_ni';
