@@ -5,7 +5,7 @@ local commandObj = {}
 
 commandObj.cmdprops =
 {
-    permission = 0,
+    permission = 5,
     parameters = ''
 }
 
@@ -42,7 +42,7 @@ menu =
 selecta =
 {
     {
-        'Nothing for now.',
+        'Nothing for now',
         function(player)
         end
     },
@@ -245,7 +245,7 @@ food =
             4376,     120,   -- Meat Jerky
             4371,     184,   -- Grilled Hare
             4381,     720,   -- Meat Mithkabob
-            4456,     550,   -- Boiled Crab / Temporarily(?) removed by SE June 2021
+            4456,     550,   -- Boiled Crab
             4398,    1080,   -- Fish Mithkabob
             5166,    1500,   -- Coeurl Sub
             4538,     900,   -- Roast Pipira

@@ -349,6 +349,7 @@ commandObj.onTrigger = function(player, area)
         Pig:setSpawn(X, Y, Z, Rot, zonez)
     	Pig:setDropID(0) -- No drops from loot pool in sql
 		Pig:setMobMod(xi.mobMod.NO_DROPS, 1)
+        Pig:setCallForHelpBlocked(true)
 		Pig:spawn()
   end
 	    utils.unused(Pig)
@@ -516,6 +517,7 @@ for i = 1, 21 do
         Pig:setSpawn(X, Y, Z, Rot, zonez)
     	Pig:setDropID(0) -- No drops from loot pool in sql
 		Pig:setMobMod(xi.mobMod.NO_DROPS, 1)
+        Pig:setCallForHelpBlocked(true)
 		Pig:spawn()
   end
 	    utils.unused(Pig)
@@ -683,6 +685,7 @@ elseif area == 3 then
         Pig:setSpawn(X, Y, Z, Rot, zonez)
     	Pig:setDropID(0) -- No drops from loot pool in sql
 		Pig:setMobMod(xi.mobMod.NO_DROPS, 1)
+        Pig:setCallForHelpBlocked(true)
 		Pig:spawn()
  end
 	    utils.unused(Pig)
