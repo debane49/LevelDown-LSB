@@ -2118,11 +2118,6 @@ INSERT INTO `item_mods` VALUES (27517,1,9);      -- DEF
 INSERT INTO `item_mods` VALUES (27517,2,30);      -- HP
 INSERT INTO `item_mods` VALUES (27517,289,10);      -- SUBTLE_BLOW
 INSERT INTO `item_mods` VALUES (27517,370,2);      -- REGEN
--- Bathy Choker +1
-INSERT INTO `item_mods` VALUES (27518,1,10);      -- DEF
-INSERT INTO `item_mods` VALUES (27518,2,35);      -- HP
-INSERT INTO `item_mods` VALUES (27518,289,11);      -- SUBTLE_BLOW
-INSERT INTO `item_mods` VALUES (27518,370,3);      -- REGEN
 -- Cornelia's belt
 INSERT INTO `item_mods` VALUES (26365,1,10);      -- DEF: 10
 INSERT INTO `item_mods` VALUES (26365,8,10);      -- STR: 10
@@ -2304,19 +2299,9 @@ INSERT INTO `item_mods` VALUES (20761, 1016, 10); -- aettir -- SWIPE
 INSERT INTO `item_mods` VALUES (20761, 840, 10); -- aettir -- ALL_WSDMG_ALL_HITS
 INSERT INTO `item_mods` VALUES (20761, 190, -500); -- aettir -- DMGPHYS_II
 -- Arasy Knife
-INSERT INTO `item_mods` VALUES (21554, 9, 6); -- DEX
-INSERT INTO `item_mods` VALUES (21554, 11, 6); -- AGI
-INSERT INTO `item_mods` VALUES (21554, 14, 6); -- CHR
-INSERT INTO `item_mods` VALUES (21554, 25, 10); -- ACC
 INSERT INTO `item_mods` VALUES (21554, 68, 22); -- EVA
-INSERT INTO `item_mods` VALUES (21554, 165, 2); -- CRITHITRATE
 -- Arasy Knife +1
-INSERT INTO `item_mods` VALUES (21555, 9, 11); -- DEX
-INSERT INTO `item_mods` VALUES (21555, 11, 11); -- AGI
-INSERT INTO `item_mods` VALUES (21555, 14, 11); -- CHR
-INSERT INTO `item_mods` VALUES (21555, 25, 15); -- ACC
 INSERT INTO `item_mods` VALUES (21555, 68, 27); -- EVA
-INSERT INTO `item_mods` VALUES (21555, 165, 3); -- CRITHITRATE
 -- Cama. Harp
 INSERT INTO `item_mods` VALUES (21408, 120, 10); -- Cama. Harp -- STRING
 -- Epeolatry 119 
@@ -2438,7 +2423,6 @@ INSERT INTO `item_mods` VALUES (21699, 8, 7); --nibiru faussar -- STR
 INSERT INTO `item_mods` VALUES (21699, 9, 7); --nibiru faussar -- DEX
 INSERT INTO `item_mods` VALUES (21699, 23, 10); --nibiru faussar -- ATT
 INSERT INTO `item_mods` VALUES (21699, 375, 10); --nibiru faussar -- CURE_POTENCY_RCVD
-INSERT INTO `item_mods` VALUES (21699, 832, 1); --nibiru faussar -- AQUAVEIL_COUNT
 -- Raicho
 INSERT INTO `item_mods` VALUES (20980, 8, 13); -- Raicho -- STR
 INSERT INTO `item_mods` VALUES (20980, 11, 13); -- Raicho -- AGI
@@ -3555,32 +3539,8 @@ INSERT INTO `item_mods` VALUES (23777,165,7);    -- CRITHITRATE: 7
 INSERT INTO `item_mods` VALUES (23777,368,3);   -- REGAIN: 3
 INSERT INTO `item_mods` VALUES (23777,384,500);  -- HASTE_GEAR: 500
 INSERT INTO `item_mods` VALUES (23777,1080,8);  -- DAMAGE_LIMIT: 8
-INSERT INTO `item_mods_pet` VALUES (23777, 25, 50, 0);   -- pet ACC
-INSERT INTO `item_mods_pet` VALUES (23777, 26, 50, 0);   -- pet RACC
-INSERT INTO `item_mods_pet` VALUES (23777, 30, 50, 0);   -- pet MACC
 -- Gleti's Boots
-INSERT INTO `item_mods` VALUES (23784,1,119);    -- DEF: 119
-INSERT INTO `item_mods` VALUES (23784,2,57);     -- HP: 57
-INSERT INTO `item_mods` VALUES (23784,8,28);     -- STR: 28
-INSERT INTO `item_mods` VALUES (23784,9,29);     -- DEX: 29
-INSERT INTO `item_mods` VALUES (23784,10,26);    -- VIT: 26
-INSERT INTO `item_mods` VALUES (23784,11,33);    -- AGI: 33
-INSERT INTO `item_mods` VALUES (23784,13,12);    -- MND: 12
-INSERT INTO `item_mods` VALUES (23784,14,26);    -- CHR: 26
-INSERT INTO `item_mods` VALUES (23784,23,40);    -- ATT: 40
-INSERT INTO `item_mods` VALUES (23784,25,40);    -- ACC: 40
-INSERT INTO `item_mods` VALUES (23784,29,13);    -- MDEF: 13
-INSERT INTO `item_mods` VALUES (23784,30,40);    -- MACC: 40
-INSERT INTO `item_mods` VALUES (23784,31,112);   -- MEVA: 112
-INSERT INTO `item_mods` VALUES (23784,68,110);   -- EVA: 110
-INSERT INTO `item_mods` VALUES (23784,161,-500); -- DMGPHYS: -500
-INSERT INTO `item_mods` VALUES (23784,165,4);    -- CRITHITRATE: 4
-INSERT INTO `item_mods` VALUES (23784,368,2);   -- REGAIN: 2
-INSERT INTO `item_mods` VALUES (23784,384,300);  -- HASTE_GEAR: 300
 INSERT INTO `item_mods` VALUES (23784,1080,5);  -- DAMAGE_LIMIT: 5
-INSERT INTO `item_mods_pet` VALUES (23784, 25, 50, 0);   -- pet ACC
-INSERT INTO `item_mods_pet` VALUES (23784, 26, 50, 0);   -- pet RACC
-INSERT INTO `item_mods_pet` VALUES (23784, 30, 50, 0);   -- pet MACC
 INSERT INTO `item_mods_pet` VALUES (23784, 1040, 1, 1);   -- pet AVATAR_LVL_BONUS
 INSERT INTO `item_mods_pet` VALUES (23784, 1044, 1, 3);   -- pet AUTOMATON_LVL_BONUS
 INSERT INTO `item_mods_pet` VALUES (23784, 1043, 1, 2);   -- pet WYVERN_LVL_BONUS
@@ -3606,9 +3566,6 @@ INSERT INTO `item_mods` VALUES (23763,368,30);   -- REGAIN: 30
 INSERT INTO `item_mods` VALUES (23763,384,300);  -- HASTE_GEAR: 300
 INSERT INTO `item_mods` VALUES (23763,491,10);  -- Waltz potency +10%
 INSERT INTO `item_mods` VALUES (23763,1080,9);  -- DAMAGE_LIMIT: 9
-INSERT INTO `item_mods_pet` VALUES (23763, 25, 50, 0);   -- pet ACC
-INSERT INTO `item_mods_pet` VALUES (23763, 26, 50, 0);   -- pet RACC
-INSERT INTO `item_mods_pet` VALUES (23763, 30, 50, 0);   -- pet MACC
 -- Gleti's Gauntlets 
 INSERT INTO `item_mods` VALUES (23770,1,138);    -- DEF: 138
 INSERT INTO `item_mods` VALUES (23770,2,68);     -- HP: 68
@@ -3629,10 +3586,6 @@ INSERT INTO `item_mods` VALUES (23770,165,6);    -- CRITHITRATE: 6
 INSERT INTO `item_mods` VALUES (23770,384,300);  -- HASTE_GEAR: 300
 INSERT INTO `item_mods` VALUES (23770,368,2);   -- REGAIN: 2
 INSERT INTO `item_mods` VALUES (23770,1080,7);  -- DAMAGE_LIMIT: 7
-INSERT INTO `item_mods_pet` VALUES (23770, 25, 50, 0);   -- pet ACC
-INSERT INTO `item_mods_pet` VALUES (23770, 26, 50, 0);   -- pet RACC
-INSERT INTO `item_mods_pet` VALUES (23770, 30, 50, 0);   -- pet MACC
-INSERT INTO `item_mods_pet` VALUES (23770, 160, -800, 0);   -- pet DMG
 -- Gleti's Mask 
 INSERT INTO `item_mods` VALUES (23756,1,152);    -- DEF: 152
 INSERT INTO `item_mods` VALUES (23756,2,68);     -- HP: 68
@@ -3655,9 +3608,6 @@ INSERT INTO `item_mods` VALUES (23756,165,5);    -- CRITHITRATE: 5
 INSERT INTO `item_mods` VALUES (23756,368,2);   -- REGAIN: 2
 INSERT INTO `item_mods` VALUES (23756,384,600);  -- HASTE_GEAR: 600
 INSERT INTO `item_mods` VALUES (23756,1080,6);  -- DAMAGE_LIMIT: 6
-INSERT INTO `item_mods_pet` VALUES (23756, 25, 50, 0);   -- pet ACC
-INSERT INTO `item_mods_pet` VALUES (23756, 26, 50, 0);   -- pet RACC
-INSERT INTO `item_mods_pet` VALUES (23756, 30, 50, 0);   -- pet MACC
 -- Glyphic bracers +3 
 INSERT INTO `item_mods` VALUES (23546, 1, 101); -- glyphic bracers +3 -- DEF
 INSERT INTO `item_mods` VALUES (23546, 2, 38); -- glyphic bracers +3 -- HP

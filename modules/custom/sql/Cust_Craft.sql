@@ -1,7 +1,3 @@
-
-
--- (`ID`, `Desynth`, `KeyItem`, `Wood`, `Smith`, `Gold`, `Cloth`, `Leather`, `Bone`, `Alchemy`, `Cook`, `Crystal`, `HQCrystal`, `Ingredient1`, `Ingredient2`, `Ingredient3`, `Ingredient4`, `Ingredient5`, `Ingredient6`, `Ingredient7`, `Ingredient8`, `Result`, `ResultHQ1`, `ResultHQ2`, `ResultHQ3`, `ResultQty`, `ResultHQ1Qty`, `ResultHQ2Qty`, `ResultHQ3Qty`, `ResultName`)
-
 INSERT INTO `synth_recipes` VALUES (80000, 0, 1994, 0, 0, 110, 0, 0, 0, 0, 0, 4103, 4245, 8926, 28542, 0, 0, 0, 0, 0, 0, 27578, 27579, 27579, 27579, 1, 1, 1, 1, 'Fenrir Ring');
 INSERT INTO `synth_recipes` VALUES (80001, 0, 1994, 0, 0, 110, 0, 0, 0, 0, 0, 4103, 4245, 8926, 28543, 0, 0, 0, 0, 0, 0, 27578, 27579, 27579, 27579, 1, 1, 1, 1, 'Fenrir Ring');
 INSERT INTO `synth_recipes` VALUES (80002, 0, 1994, 0, 0, 110, 0, 0, 0, 0, 0, 4097, 4239, 8924, 28542, 0, 0, 0, 0, 0, 0, 27574, 27575, 27575, 27575, 1, 1, 1, 1, 'Shiva Ring');
@@ -18,9 +14,7 @@ INSERT INTO `synth_recipes` VALUES (80012, 0, 1994, 0, 0, 110, 0, 0, 0, 0, 0, 40
 INSERT INTO `synth_recipes` VALUES (80013, 0, 1994, 0, 0, 110, 0, 0, 0, 0, 0, 4098, 4240, 8922, 28543, 0, 0, 0, 0, 0, 0, 27572, 27573, 27573, 27573, 1, 1, 1, 1, 'Garuda Ring');
 INSERT INTO `synth_recipes` VALUES (80014, 0, 1994, 0, 0, 110, 0, 0, 0, 0, 0, 4102, 4244, 8925, 28542, 0, 0, 0, 0, 0, 0, 27576, 27577, 27577, 27577, 1, 1, 1, 1, 'Carbuncle Ring');
 INSERT INTO `synth_recipes` VALUES (80015, 0, 1994, 0, 0, 110, 0, 0, 0, 0, 0, 4102, 4244, 8925, 28543, 0, 0, 0, 0, 0, 0, 27576, 27577, 27577, 27577, 1, 1, 1, 1, 'Carbuncle Ring');
-
 -- New Adds 10_14_2023
-
 INSERT INTO `synth_recipes` VALUES (80027, 0, 1998, 0, 111, 0, 0, 0, 0, 0, 0, 4102, 4244, 9062, 9773, 9845, 9856, 0, 0, 0, 0, 22287, 22287, 22287, 22287, 99, 99, 99, 99, 'scouts_bolt');
 INSERT INTO `synth_recipes` VALUES (80016, 0, 1983, 0, 75, 0, 75, 0, 0, 111, 0, 4102, 4244, 9006, 9062, 9247, 9833, 9844, 9845, 9845, 9867, 21667, 21668, 21669, 21669, 1, 1, 1, 1, 'futhark_claymore, peord_claymore, morgelai');
 INSERT INTO `synth_recipes` VALUES (80017, 0, 1983, 75, 0, 0, 75, 0, 0, 111, 0, 4102, 4244, 9006, 9062, 9245, 9836, 9844, 9845, 9845, 9859, 21876, 21877, 21878, 21878, 1, 1, 1, 1, 'wyrm_lance, pteroslaver_lance, aram');
@@ -44,13 +38,12 @@ INSERT INTO `synth_recipes` VALUES (80032, 0, 2005, 0, 111, 0, 75, 75, 0, 0, 0, 
 INSERT INTO `synth_recipes` VALUES (80033, 0, 2014, 75, 0, 75, 111, 0, 0, 0, 0, 4102, 4244, 9062, 9064, 9245, 9840, 9844, 9845, 9845, 9848, 22033, 22034, 22035, 22035, 1, 1, 1, 1, 'clerics_wand, piety_wand, asclepius');
 INSERT INTO `synth_recipes` VALUES (80034, 0, 2014, 75, 0, 75, 111, 0, 0, 0, 0, 4102, 4244, 9062, 9064, 9245, 9840, 9844, 9845, 9845, 9866, 22036, 22037, 22038, 22038, 1, 1, 1, 1, 'bagua_wand, sifang_wand, bhima');
 INSERT INTO `synth_recipes` VALUES (80038, 0, 2029, 75, 0, 75, 0, 0, 111, 0, 0, 4102, 4244, 9062, 9064, 9245, 9837, 9844, 9845, 9845, 9853, 21823, 21824, 21825, 21825, 1, 1, 1, 1, 'abyss_scythe, fallens_scythe, father_time');
-
 -- new items add 6_6_2024
 INSERT INTO `synth_recipes` VALUES (80039, 0, 0, 0, 0, 0, 0, 0, 0, 0, 65, 4096, 4238,  630,  638,  936, 4378, 4509,    0,    0,    0,  4430,  4522,  4522,  4522, 1, 1, 1, 1, 'pumpkin_soup, jack-o-soup');
 INSERT INTO `synth_recipes` VALUES (80040, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 4098, 4240, 17546, 17548, 17550, 17552, 17554, 17556, 17558, 17560, 18633, 18633, 18633, 18633, 1, 1, 1, 1, 'Chatoyant staff');
 INSERT INTO `synth_recipes` VALUES (80041, 0, 0,  80, 0, 0, 0, 0, 0, 0, 0, 4098, 4240, 17545, 17547, 17549, 17551, 17553, 17555, 17557, 17559, 18632, 18632, 18632, 18632, 1, 1, 1, 1, 'iridal_staff');
 -- new items add 10_28_2024
-INSERT INTO `synth_recipes` VALUES (80042, 0, 0, 0, 0, 0, 0, 118, 0, 0, 0, 4099, 4241, 765, 8739, 9003, 0, 0, 0, 0, 0, 26333, 26334, 26334, 26334, 1, 1, 1, 1, 'ioskeha_belt','ioskeha_belt_+1' );
+INSERT INTO `synth_recipes` VALUES (80042, 0, 0, 0, 0, 0, 0, 118, 0, 0, 0, 4099, 4241, 765, 8739, 9003, 0, 0, 0, 0, 0, 26333, 26334, 26334, 26334, 1, 1, 1, 1, 'ioskeha_belt ioskeha_belt_+1' );
 
 
 

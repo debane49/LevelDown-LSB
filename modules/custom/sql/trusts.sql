@@ -418,4 +418,4 @@ INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,3639); -- Neo Crysta
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,4108); -- Eternal Vana Illusion
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,4110); -- Shining Epilogue 
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,2904); -- Final Eternal Heart
-UPDATE mob_pools SET spellList = 424 WHERE poolid = 5946 AND name = mumor;
+UPDATE mob_pools SET spellList = 424 WHERE poolid = 5946 AND name = 'mumor';
