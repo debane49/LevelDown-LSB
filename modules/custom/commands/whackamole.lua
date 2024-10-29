@@ -96,7 +96,7 @@ player:printToArea('GM: Help us stop them, We have 10 minutes before they disapp
                damageType == xi.damageType.NONE then
                attacker:setTP(0)
                local rand = math.random(1,20)
-               local randz = math.random(1, 540)
+               local randz = math.random(1, 240)
                     if rand == 5 then
                        npcUtil.giveItem(attacker, { { xi.item.GIL, math.random(100, 1000) } })
                     end

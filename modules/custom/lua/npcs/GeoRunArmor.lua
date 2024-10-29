@@ -66,9 +66,9 @@ Feet	Sorcerer's Sabots	15135	Rem's Tale Ch.5 x10	4068	L. Jadeshell x2	1450	Spark
 -- Relic to reforged stage 1 Geo (NQ relic to reforged 109 relic)
     [ 6] = { trade = {15075, 1470, 844, {1450, 2}, {4064, 10}}, reward =  26664}, -- Bagua Galero
     [ 7] = { trade = {15090, 1470, 837, {1450, 2}, {4065, 10}}, reward =  26840}, -- Bagua Tunic
-    [ 8] = { trade = {15105, 1470, 1110,{1450, 2}, {4068, 10}}, reward =  27016}, -- Bagua Mitaines
+    [ 8] = { trade = {15105, 1470, 1110,{1450, 2}, {4066, 10}}, reward =  27016}, -- Bagua Mitaines
     [ 9] = { trade = {15120, 1470, 836, {1450, 2}, {4067, 10}}, reward =  27192}, -- Bagua Pants
-    [10] = { trade = {15135, 1470, 1311,{1450, 2}, {4066, 10}}, reward =  27368}, -- Bagua Sandals
+    [10] = { trade = {15135, 1470, 1311,{1450, 2}, {4068, 10}}, reward =  27368}, -- Bagua Sandals
 
 -- Empy to reforged Empy stage 1 Geo ( +2 emp to reforged 109 emp)
     [11] = { trade = {11067, 2927, 844,  {4064,  5}}, reward = 26780}, -- Azimuth Hood
