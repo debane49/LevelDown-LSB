@@ -133,7 +133,7 @@ local function handleSinglePhysicalHit(mob, target, hitdamage, hitslanded, final
         end
 
         if hitdamage > 0 and not isBlockedWithShieldMastery then
-            target:tryHitInterrupt(mob)
+         --   target:tryHitInterrupt(mob)
         end
 
         -- update the hitslanded and finaldmg
