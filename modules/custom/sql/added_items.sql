@@ -25,9 +25,6 @@ INSERT INTO `item_basic` VALUES (23871,0,'hebenus_gilet','hebenus_gilet',1,63552
 INSERT INTO `item_basic` VALUES (23872,0,'hebenus_boxers','hebenus_boxers',1,63552,0,1,0);
 INSERT INTO `item_basic` VALUES (23874,0,'hebenus_shorts','hebenus_shorts',1,63552,0,1,0);
 
-
-
-
 INSERT INTO `item_equipment` VALUES (23822,'diamond_somen',1,0,4194303,485,0,0,16,0,0,0); -- head 16
 INSERT INTO `item_equipment` VALUES (23823,'diamond_haramaki',1,0,4194303,485,0,0,32,0,0,0); -- body 32
 INSERT INTO `item_equipment` VALUES (23824,'diamond_kote',1,0,4194303,485,0,0,64,0,0,0); -- hands 64
@@ -95,3 +92,9 @@ UPDATE item_weapon SET subskill = 10 WHERE itemId = 22260;
 UPDATE item_weapon SET subskill = 10 WHERE itemId = 21458;
 UPDATE item_weapon SET subskill = 10 WHERE itemId = 21459;
 UPDATE item_weapon SET subskill = 10 WHERE itemId = 22261;
+--  Suits
+UPDATE item_equipment SET rslot = 448 and ilevel = 128 WHERE itemId = 26963; -- Onca Suit
+UPDATE item_equipment SET rslot = 448 WHERE itemId = 26954; -- Behemoth Suit
+UPDATE item_equipment SET rslot = 448 WHERE itemId = 26955; -- Behemoth Suit +1
+UPDATE item_equipment SET rslot = 448 WHERE itemId = 25756; -- Wyrmkind Suit
+UPDATE item_equipment SET rslot = 448 WHERE itemId = 25757; -- Wyrmkind Suit +1
