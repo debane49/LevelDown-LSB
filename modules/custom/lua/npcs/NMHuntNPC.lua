@@ -1502,7 +1502,7 @@ page26 = -- Trusts page 2
     {
         'Cipher Of Arciela II',
          function(player)
-           player:setLocalVar('NMSTrust', 10184)
+           player:setLocalVar('NMSTrustSpell', 1017)
            menu.options = page36
             delaySendMenu(player)
          end
