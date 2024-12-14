@@ -93,7 +93,7 @@ player:printToArea('GM: Help us stop them, We have 10 minutes before they disapp
                 end
              end
             if attackType == xi.attackType.PHYSICAL and
-               damageType == xi.damageType.NONE and
+               damageType == xi.damageType.NONE or
                damageType == xi.damageType.HTH then
                attacker:setTP(0)
                local rand = math.random(1,20)

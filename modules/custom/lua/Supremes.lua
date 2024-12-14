@@ -6,9 +6,22 @@ mixins = { require('scripts/mixins/rage') }
 -----------------------------------
 local m = Module:new('Supremes')
 
+m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobSpawn', function(mob)
+    super(mob)
+    local zone = mob:getZone()
+    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
+    if filteredEntities ~= nil then
+       SetServerVariable('[SNM]Behemoth',0)
+    end
+end)
 
 m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
+    local zone = player:getZone()
+    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
+    if filteredEntities ~= nil then
+       SetServerVariable('[SNM]Behemoth',0)
+    end
 
  local rand = math.random(1, 100)
  if rand <= 25 and
@@ -73,7 +86,7 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobDeath', function(m
         mob:setMod(xi.mod.POISONRES, 100) 
         mob:setMod(xi.mod.PARALYZERES, 100) 
         mob:setMod(xi.mod.LULLABYRES, 0) 
-        mob:setMod(xi.mod.FASTCAST, 100) 
+        mob:setMod(xi.mod.FASTCAST, 75) 
         mob:addStatusEffect(xi.effect.BLAZE_SPIKES, 100, 0, 0)
         mob:addStatusEffect(xi.effect.REGEN, 350, 3, 0)
         mob:addStatusEffect(xi.effect.REGAIN, 50, 3, 0)
@@ -161,12 +174,12 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobDeath', function(m
             { xi.mod.PIERCE_SDT, xi.day.LIGHTSDAY     },
             { xi.mod.IMPACT_SDT, xi.day.DARKSDAY      },
         }
-        local blah = 0
-        local blaha = 0
+        
+        
             local dayOfWeek = VanadielDayOfTheWeek()
                 for k, v in pairs(elements) do
                     if dayOfWeek == v[2] then
-                       mob:setMod(v[1], 0)
+                       mob:setMod(v[1], 1000)
                     end
                 end
         end,
@@ -240,7 +253,7 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobDeath', function(m
         if spell:getID() == 218 or 219 then
         spell:setAoE(xi.magic.aoe.RADIAL)
         spell:setFlag(xi.magic.spellFlag.HIT_ALL)
-        spell:setRadius(30)
+        spell:setRadius(20)
         spell:setAnimation(280)
         spell:setMPCost(1)
         end
@@ -302,6 +315,15 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobDeath', function(m
  end
 end)
 
+m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobSpawn', function(mob)
+    super(mob)
+    local zone = mob:getZone()
+    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
+    if filteredEntities ~= nil then
+       SetServerVariable('[SNM]Behemoth',0)
+    end
+end)
+
 m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
 
@@ -319,8 +341,6 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobDeath', funct
         objtype = xi.objType.MOB,
         name = 'Supreme Behemoth',
       look = '0000320b00000000000000000000000000000000', -- behemoth 17297440 & 17297441
-    --  look = '0000480900000000000000000000000000000000', -- aspid turntle 17301538 & 17301537
-    --    look = '0000630200000000000000000000000000000000', -- faf dragon 17408018 & 17408019
         x = -267.4501,
         y = -19.6128,
         z = 64.5873,
@@ -370,7 +390,7 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobDeath', funct
         mob:setMod(xi.mod.POISONRES, 100) 
         mob:setMod(xi.mod.PARALYZERES, 100) 
         mob:setMod(xi.mod.LULLABYRES, 0) 
-        mob:setMod(xi.mod.FASTCAST, 100) 
+        mob:setMod(xi.mod.FASTCAST, 75) 
         mob:addStatusEffect(xi.effect.BLAZE_SPIKES, 100, 0, 0)
         mob:addStatusEffect(xi.effect.REGEN, 350, 3, 0)
         mob:addStatusEffect(xi.effect.REGAIN, 50, 3, 0)
@@ -458,12 +478,12 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobDeath', funct
             { xi.mod.PIERCE_SDT, xi.day.LIGHTSDAY     },
             { xi.mod.IMPACT_SDT, xi.day.DARKSDAY      },
         }
-        local blah = 0
-        local blaha = 0
+        
+        
             local dayOfWeek = VanadielDayOfTheWeek()
                 for k, v in pairs(elements) do
                     if dayOfWeek == v[2] then
-                       mob:setMod(v[1], 0)
+                       mob:setMod(v[1], 1000)
                     end
                 end
         end,
@@ -538,7 +558,7 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobDeath', funct
         if spell:getID() == 218 or 219 then
         spell:setAoE(xi.magic.aoe.RADIAL)
         spell:setFlag(xi.magic.spellFlag.HIT_ALL)
-        spell:setRadius(30)
+        spell:setRadius(20)
         spell:setAnimation(280)
         spell:setMPCost(1)
         end
@@ -594,7 +614,16 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobDeath', funct
  end    
 end)
 
-m:addOverride('xi.zones.Dragons_Aery.mobs.Fafnir.onMobDeath', function(mob, player, optParams)
+m:addOverride('xi.zones.Dragons_Aery.mobs.Fafnir.onMobSpawn', function(mob)
+    super(mob)
+    local zone = mob:getZone()
+    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
+    if filteredEntities ~= nil then
+       SetServerVariable('[SNM]Dragon',0)
+    end
+end)
+
+m:addOverride('xi.zones.Dragons_Aery.mobs..onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
       
  local rand = math.random(1, 100)
@@ -660,7 +689,7 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Fafnir.onMobDeath', function(mob, play
         mob:setMod(xi.mod.POISONRES, 100) 
         mob:setMod(xi.mod.PARALYZERES, 100) 
         mob:setMod(xi.mod.LULLABYRES, 0) 
-        mob:setMod(xi.mod.FASTCAST, 100) 
+        mob:setMod(xi.mod.FASTCAST, 75) 
         mob:addStatusEffect(xi.effect.SHOCK_SPIKES, 100, 0, 0)
         mob:addStatusEffect(xi.effect.REGEN, 350, 3, 0)
         mob:addStatusEffect(xi.effect.REGAIN, 50, 3, 0)
@@ -748,12 +777,12 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Fafnir.onMobDeath', function(mob, play
             { xi.mod.PIERCE_SDT, xi.day.EARTHSDAY     },
             { xi.mod.IMPACT_SDT, xi.day.FIRESDAY      },
         }
-        local blah = 0
-        local blaha = 0
+        
+        
             local dayOfWeek = VanadielDayOfTheWeek()
                 for k, v in pairs(elements) do
                     if dayOfWeek == v[2] then
-                       mob:setMod(v[1], 0)
+                       mob:setMod(v[1], 1000)
                     end
                 end
         end,
@@ -827,7 +856,7 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Fafnir.onMobDeath', function(mob, play
         if spell:getID() == 367 or 252 then
         spell:setAoE(xi.magic.aoe.RADIAL)
         spell:setFlag(xi.magic.spellFlag.HIT_ALL)
-        spell:setRadius(30)
+        spell:setRadius(20)
         --spell:setAnimation(280)
         spell:setMPCost(1)
         end
@@ -880,6 +909,15 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Fafnir.onMobDeath', function(mob, play
     SetServerVariable('[SNM]Dragon', 1)
     mob:spawn()
  end 
+end)
+
+m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobSpawn', function(mob)
+    super(mob)
+    local zone = mob:getZone()
+    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
+    if filteredEntities ~= nil then
+       SetServerVariable('[SNM]Dragon',0)
+    end
 end)
 
 m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobDeath', function(mob, player, optParams)
@@ -947,7 +985,7 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobDeath', function(mob, pla
         mob:setMod(xi.mod.POISONRES, 100) 
         mob:setMod(xi.mod.PARALYZERES, 100) 
         mob:setMod(xi.mod.LULLABYRES, 0) 
-        mob:setMod(xi.mod.FASTCAST, 100) 
+        mob:setMod(xi.mod.FASTCAST, 75) 
         mob:addStatusEffect(xi.effect.SHOCK_SPIKES, 100, 0, 0)
         mob:addStatusEffect(xi.effect.REGEN, 350, 3, 0)
         mob:addStatusEffect(xi.effect.REGAIN, 50, 3, 0)
@@ -1035,12 +1073,12 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobDeath', function(mob, pla
             { xi.mod.PIERCE_SDT, xi.day.EARTHSDAY     },
             { xi.mod.IMPACT_SDT, xi.day.FIRESDAY      },
         }
-        local blah = 0
-        local blaha = 0
+        
+        
             local dayOfWeek = VanadielDayOfTheWeek()
                 for k, v in pairs(elements) do
                     if dayOfWeek == v[2] then
-                       mob:setMod(v[1], 0)
+                       mob:setMod(v[1], 1000)
                     end
                 end
         end,
@@ -1114,7 +1152,7 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobDeath', function(mob, pla
         if spell:getID() == 367 or 252 then
         spell:setAoE(xi.magic.aoe.RADIAL)
         spell:setFlag(xi.magic.spellFlag.HIT_ALL)
-        spell:setRadius(30)
+        spell:setRadius(20)
         --spell:setAnimation(280)
         spell:setMPCost(1)
         end
@@ -1167,6 +1205,15 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobDeath', function(mob, pla
     SetServerVariable('[SNM]Dragon', 1)
     mob:spawn()
  end  
+end)
+
+m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobSpawn', function(mob)
+    super(mob)
+    local zone = mob:getZone()
+    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
+    if filteredEntities ~= nil then
+       SetServerVariable('[SNM]Turtle',0)
+    end
 end)
 
 m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobDeath', function(mob, player, optParams)
@@ -1233,7 +1280,7 @@ m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobDeath', function
         mob:setMod(xi.mod.POISONRES, 100) 
         mob:setMod(xi.mod.PARALYZERES, 100) 
         mob:setMod(xi.mod.LULLABYRES, 0) 
-        mob:setMod(xi.mod.FASTCAST, 100) 
+        mob:setMod(xi.mod.FASTCAST, 75) 
         mob:addStatusEffect(xi.effect.ICE_SPIKES, 100, 0, 0)
         mob:addStatusEffect(xi.effect.REGEN, 350, 3, 0)
         mob:addStatusEffect(xi.effect.REGAIN, 50, 3, 0)
@@ -1321,12 +1368,12 @@ m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobDeath', function
             { xi.mod.PIERCE_SDT, xi.day.WINDSDAY      },
             { xi.mod.IMPACT_SDT, xi.day.EARTHSDAY     },
         }
-        local blah = 0
-        local blaha = 0
+        
+        
             local dayOfWeek = VanadielDayOfTheWeek()
                 for k, v in pairs(elements) do
                     if dayOfWeek == v[2] then
-                       mob:setMod(v[1], 0)
+                       mob:setMod(v[1], 1000)
                     end
                 end
         end,
@@ -1400,7 +1447,7 @@ m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobDeath', function
         if spell:getID() == 173 or 214 then
         spell:setAoE(xi.magic.aoe.RADIAL)
         spell:setFlag(xi.magic.spellFlag.HIT_ALL)
-        spell:setRadius(30)
+        spell:setRadius(20)
         spell:setMPCost(1)
         end
         end,
@@ -1452,6 +1499,15 @@ m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobDeath', function
     SetServerVariable('[SNM]Turtle', 1)
     mob:spawn()
  end    
+end)
+
+m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Aspidochelone.onMobSpawn', function(mob)
+    super(mob)
+    local zone = mob:getZone()
+    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
+    if filteredEntities ~= nil then
+       SetServerVariable('[SNM]Turtle',0)
+    end
 end)
 
 m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Aspidochelone.onMobDeath', function(mob, player, optParams)
@@ -1518,7 +1574,7 @@ m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Aspidochelone.onMobDeath', functi
         mob:setMod(xi.mod.POISONRES, 100) 
         mob:setMod(xi.mod.PARALYZERES, 100) 
         mob:setMod(xi.mod.LULLABYRES, 0) 
-        mob:setMod(xi.mod.FASTCAST, 100) 
+        mob:setMod(xi.mod.FASTCAST, 75) 
         mob:addStatusEffect(xi.effect.ICE_SPIKES, 100, 0, 0)
         mob:addStatusEffect(xi.effect.REGEN, 350, 3, 0)
         mob:addStatusEffect(xi.effect.REGAIN, 50, 3, 0)
@@ -1606,12 +1662,12 @@ m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Aspidochelone.onMobDeath', functi
             { xi.mod.PIERCE_SDT, xi.day.WINDSDAY      },
             { xi.mod.IMPACT_SDT, xi.day.EARTHSDAY     },
         }
-        local blah = 0
-        local blaha = 0
+        
+        
             local dayOfWeek = VanadielDayOfTheWeek()
                 for k, v in pairs(elements) do
                     if dayOfWeek == v[2] then
-                       mob:setMod(v[1], 0)
+                       mob:setMod(v[1], 1000)
                     end
                 end
         end,
@@ -1685,7 +1741,7 @@ m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Aspidochelone.onMobDeath', functi
         if spell:getID() == 173 or 214 then
         spell:setAoE(xi.magic.aoe.RADIAL)
         spell:setFlag(xi.magic.spellFlag.HIT_ALL)
-        spell:setRadius(30)
+        spell:setRadius(20)
         spell:setMPCost(1)
         end
         end,
