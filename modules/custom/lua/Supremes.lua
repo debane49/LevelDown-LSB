@@ -623,7 +623,7 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Fafnir.onMobSpawn', function(mob)
     end
 end)
 
-m:addOverride('xi.zones.Dragons_Aery.mobs..onMobDeath', function(mob, player, optParams)
+m:addOverride('xi.zones.Dragons_Aery.mobs.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
       
  local rand = math.random(1, 100)
