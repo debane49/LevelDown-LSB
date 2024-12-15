@@ -8,11 +8,13 @@ local m = Module:new('Supremes')
 
 m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobSpawn', function(mob)
     super(mob)
+    --[[
     local zone = mob:getZone()
     local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
     if filteredEntities ~= nil then
        SetServerVariable('[SNM]Behemoth',0)
     end
+    ]]--
 end)
 
 m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobDeath', function(mob, player, optParams)
@@ -315,15 +317,6 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobDeath', function(m
  end
 end)
 
-m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobSpawn', function(mob)
-    super(mob)
-    local zone = mob:getZone()
-    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
-    if filteredEntities ~= nil then
-       SetServerVariable('[SNM]Behemoth',0)
-    end
-end)
-
 m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
 
@@ -614,15 +607,6 @@ m:addOverride('xi.zones.Behemoths_Dominion.mobs.King_Behemoth.onMobDeath', funct
  end    
 end)
 
-m:addOverride('xi.zones.Dragons_Aery.mobs.Fafnir.onMobSpawn', function(mob)
-    super(mob)
-    local zone = mob:getZone()
-    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
-    if filteredEntities ~= nil then
-       SetServerVariable('[SNM]Dragon',0)
-    end
-end)
-
 m:addOverride('xi.zones.Dragons_Aery.mobs.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
       
@@ -909,15 +893,6 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.onMobDeath', function(mob, player, opt
     SetServerVariable('[SNM]Dragon', 1)
     mob:spawn()
  end 
-end)
-
-m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobSpawn', function(mob)
-    super(mob)
-    local zone = mob:getZone()
-    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
-    if filteredEntities ~= nil then
-       SetServerVariable('[SNM]Dragon',0)
-    end
 end)
 
 m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobDeath', function(mob, player, optParams)
@@ -1207,15 +1182,6 @@ m:addOverride('xi.zones.Dragons_Aery.mobs.Nidhogg.onMobDeath', function(mob, pla
  end  
 end)
 
-m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobSpawn', function(mob)
-    super(mob)
-    local zone = mob:getZone()
-    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
-    if filteredEntities ~= nil then
-       SetServerVariable('[SNM]Turtle',0)
-    end
-end)
-
 m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
  local rand = math.random(1, 100)
@@ -1499,15 +1465,6 @@ m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Adamantoise.onMobDeath', function
     SetServerVariable('[SNM]Turtle', 1)
     mob:spawn()
  end    
-end)
-
-m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Aspidochelone.onMobSpawn', function(mob)
-    super(mob)
-    local zone = mob:getZone()
-    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
-    if filteredEntities ~= nil then
-       SetServerVariable('[SNM]Turtle',0)
-    end
 end)
 
 m:addOverride('xi.zones.Valley_of_Sorrows.mobs.Aspidochelone.onMobDeath', function(mob, player, optParams)
