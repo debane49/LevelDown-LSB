@@ -24,6 +24,7 @@ local keysa = {}
 local crystals = {}
 local dyna = {}
 local corsair = {}
+local provenance = {}
 
 local delaySendMenu = function(player)
     player:timer(50, function(playerArg)
@@ -402,7 +403,32 @@ corsair =
             2974,    50,    -- Trump Card
     }
 
-
+provenance =
+{
+    {
+        'Yes',
+         function(player)
+            if player:getCharVar('Provenance_Time') < os.time() or
+               player:getGMLevel() > 0 then
+               player:injectActionPacket(player:getID(), 6, 643, 0, 0, 0, 10, 1)
+               -- Delay warp using a timer
+               player:timer(1500, function()
+               -- Warp the player to provenance
+               player:setCharVar('Provenance_Time', os.time() + 7200)
+               player:setPos(-277.2205,0.1694,-790.0978,204,222)
+               end)
+            else
+               player:printToPlayer('You can only enter this area once ever 2 hours!',xi.msg.channel.SYSTEM_3)
+            end
+         end
+    },
+    {
+        'No',
+         function(player)
+            return
+         end
+    },
+}
     local campFirea = zone:insertDynamicEntity({
         objtype = xi.objType.NPC,
         name = 'campFirea',
@@ -491,7 +517,7 @@ corsair =
 
        local well = zone:insertDynamicEntity({
         objtype = xi.objType.NPC,
-        name = 'well',
+        name = 'Well to Heaven',
         look = 2334,
         x         = 321.4053,
         y         = -3.0538,
@@ -501,10 +527,27 @@ corsair =
         onTrade = function(player, npc, trade)
         end,
         onTrigger = function(player, npc)
+           if player:getGMLevel() < 1 then
+                if player:getCharVar('[VWNM]TKills') ~= 66 then
+                   player:printToPlayer("You must defeat all 66 VWNM's to enjoy this content!", 0, npc:getPacketName())
+                else
+                   player:timer(1500, function()
+                       player:printToPlayer("Welcome to the entrance to Provenance! Do you wish to Enter?'", 0, npc:getPacketName())
+                       menu.options = provenance
+                       delaySendMenu(player)
+                   end)
+                end
+           else
+               player:timer(1500, function()
+                   player:printToPlayer("Welcome to the entrance to Provenance! Do you wish to Enter?'", 0, npc:getPacketName())
+                   menu.options = provenance
+                   delaySendMenu(player)
+               end)
+           end
         end,
     })
     well:hideName(true)
-    well:setUntargetable(true)
+    well:setUntargetable(false)
     utils.unused(well)
     local newnpcAHa = zone:insertDynamicEntity({
         objtype = xi.objType.NPC,

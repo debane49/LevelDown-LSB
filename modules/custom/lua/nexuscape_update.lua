@@ -31,7 +31,8 @@ local function player_hate()
         if leader:hasStatusEffect(xi.effect.BATTLEFIELD) or
            player_hate() == true or
            leader:isEngaged() or
-           target:getID() == leader:getID() then
+           target:getID() == leader:getID() or
+           leader:getZone() == 222 then -- update to not allow nexus cap to transport player to Provenance
                     result = xi.msg.basic.ITEM_UNABLE_TO_USE_PARTY_LEADER
         else
                     result = 0

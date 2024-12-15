@@ -169,8 +169,9 @@ for _,  entry in pairs(provenanceMobs) do
             end,   
 
             onMobDeath  =  function(mob,   playerArg,   optParams)
-                local rand = math.random(1, 5)
-                    npcUtil.giveItem(playerArg, { { 3499, rand } })
+                local rand = math.random(1, 2)
+                local item = math.random(3498,3499) -- riftross, riftcinder
+                    npcUtil.giveItem(playerArg, { { item, rand } })
 		            mob:setRespawnTime(180) -- 3 minutes
             end,  
         specialSpawnAnimation  =  false,

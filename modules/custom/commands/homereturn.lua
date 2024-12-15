@@ -29,24 +29,29 @@ commandObj.onTrigger = function(player, target)
         local ro = player:getCharVar('[MogRot]')
         local zo = player:getCharVar('[MogZID]')
         local targ = player
-   if player:getCharVar('[MoghTele]') > os.time() then
-    player:injectActionPacket(player:getID(), 6, 643, 0, 0, 0, 10, 1)
-    -- Delay warp using a timer
-    player:timer(1000, function()
-           player:setPos(xx, yy, zz, ro, zo)
-           player:setCharVar('[MogPosXa]', 0)
-           player:setCharVar('[MogPosXb]', 0)
-           player:setCharVar('[MogPosYa]', 0)
-           player:setCharVar('[MogPosYb]', 0)
-           player:setCharVar('[MogPosZa]', 0)
-           player:setCharVar('[MogPosZb]', 0)
-           player:setCharVar('[MogRot]', 0)
-           player:setCharVar('[MogZID]', 0)
-           player:setCharVar('[MoghTele]', 0)
-           end)
-    elseif player:getCharVar('[MoghTele]') < os.time() then
-           player:printToPlayer('You time to return has expired!')
-   end
+    if zo == 222 then
+       player:printToPlayer('The Provenance zone is off limits to !homereturn')
+       return
+    else
+       if player:getCharVar('[MoghTele]') > os.time() then
+        player:injectActionPacket(player:getID(), 6, 643, 0, 0, 0, 10, 1)
+        -- Delay warp using a timer
+        player:timer(1000, function()
+               player:setPos(xx, yy, zz, ro, zo)
+               player:setCharVar('[MogPosXa]', 0)
+               player:setCharVar('[MogPosXb]', 0)
+               player:setCharVar('[MogPosYa]', 0)
+               player:setCharVar('[MogPosYb]', 0)
+               player:setCharVar('[MogPosZa]', 0)
+               player:setCharVar('[MogPosZb]', 0)
+               player:setCharVar('[MogRot]', 0)
+               player:setCharVar('[MogZID]', 0)
+               player:setCharVar('[MoghTele]', 0)
+               end)
+        elseif player:getCharVar('[MoghTele]') < os.time() then
+               player:printToPlayer('You time to return has expired!')
+       end
+    end
 end
 
 return commandObj
