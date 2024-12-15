@@ -99,8 +99,19 @@ UPDATE mob_skills SET primary_sc = 1 WHERE mob_skill_name = 'sickle_slash';
 UPDATE mob_skills SET primary_sc = 1 WHERE mob_skill_name = 'pecking_flurry';
 -- UPDATE mob_skills SET primary_sc = 11, secondary_sc = 4 WHERE mob_skill_name = 'rhinowrecker';
 -- aoe
-UPDATE mob_skills SET mob_skill_aoe = 1, mob_skill_aoe_radius = 5  WHERE mob_skill_name = 'walk_the_plank';
-UPDATE mob_skills SET mob_skill_aoe = 4, mob_skill_aoe_radius = 5  WHERE mob_skill_name = 'grapeshot';
-UPDATE mob_skills SET mob_skill_aoe = 4, mob_skill_aoe_radius = 5  WHERE mob_skill_name = 'powder_keg';
-UPDATE spell_list SET AOE = 1  WHERE name = 'meteor';
-UPDATE spell_list SET AOE = 1  WHERE name = 'meteor_ii';
+UPDATE mob_skills SET mob_skill_aoe = 1, mob_skill_aoe_radius = 5 WHERE mob_skill_name = 'walk_the_plank';
+UPDATE mob_skills SET mob_skill_aoe = 4, mob_skill_aoe_radius = 5 WHERE mob_skill_name = 'grapeshot';
+UPDATE mob_skills SET mob_skill_aoe = 4, mob_skill_aoe_radius = 5 WHERE mob_skill_name = 'powder_keg';
+UPDATE spell_list SET AOE = 1 WHERE name = 'meteor';
+UPDATE spell_list SET AOE = 1 WHERE name = 'meteor_ii';
+UPDATE pet_skills SET pet_skill_aoe = 1, pet_skill_distance = 10.0 WHERE pet_skill_name = 'meteor_strike';
+UPDATE pet_skills SET pet_skill_aoe = 1, pet_skill_distance = 10.0 WHERE pet_skill_name = 'geocrush';
+UPDATE pet_skills SET pet_skill_aoe = 1, pet_skill_distance = 10.0 WHERE pet_skill_name = 'grand_fall';
+UPDATE pet_skills SET pet_skill_aoe = 1, pet_skill_distance = 10.0 WHERE pet_skill_name = 'wind_blade';
+UPDATE pet_skills SET pet_skill_aoe = 1, pet_skill_distance = 10.0 WHERE pet_skill_name = 'heavenly_strike';
+UPDATE pet_skills SET pet_skill_aoe = 1, pet_skill_distance = 10.0 WHERE pet_skill_name = 'thunderstorm';
+UPDATE pet_skills SET pet_skill_aoe = 1, pet_skill_distance = 10.0 WHERE pet_skill_name = 'holy_mist';
+UPDATE pet_skills SET pet_skill_aoe = 1, pet_skill_distance = 10.0 WHERE pet_skill_name = 'level_X_holy';
+UPDATE pet_skills SET pet_skill_aoe = 1, pet_skill_distance = 10.0 WHERE pet_skill_name = 'lunar_bay';
+UPDATE pet_skills SET pet_skill_aoe = 1, pet_skill_distance = 10.0 WHERE pet_skill_name = 'night_terror';
+
