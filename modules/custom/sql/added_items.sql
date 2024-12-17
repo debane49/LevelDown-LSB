@@ -86,9 +86,8 @@ UPDATE item_weapon SET subskill = 10 WHERE itemId = 22260;
 UPDATE item_weapon SET subskill = 10 WHERE itemId = 21458;
 UPDATE item_weapon SET subskill = 10 WHERE itemId = 21459;
 UPDATE item_weapon SET subskill = 10 WHERE itemId = 22261;
---  Suits
+
 UPDATE item_equipment SET rslot = 448 and ilevel = 119 WHERE itemId = 26963; -- Onca Suit
 UPDATE item_equipment SET rslot = 448 WHERE itemId = 26954; -- Behemoth Suit
 UPDATE item_equipment SET rslot = 448 WHERE itemId = 26955; -- Behemoth Suit +1
 UPDATE item_equipment SET rslot = 448 WHERE itemId = 25756; -- Wyrmkind Suit
-UPDATE item_equipment SET rslot = 448 WHERE itemId = 25757; -- Wyrmkind Suit +1
