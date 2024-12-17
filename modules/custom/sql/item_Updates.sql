@@ -28,7 +28,7 @@ UPDATE mob_droplist SET itemrate = 500 WHERE itemid IN (
 UPDATE mob_droplist SET itemRate = 350 WHERE dropId = 193 and itemRate = 20; -- Flask Of Romaeve Spring Water drop rate correction
 -- Void Walker
 -- Yildegan, Orcus, Blobdingnag, Krabkatoa, Dawon, Lord Ruthven, Verthandi
-DELETE FROM mob_droplist WHERE dropid >= 3180 AND dropid <= 3186;
+DELETE FROM mob_droplist WHERE dropId >= 3180 AND dropId <= 3186;
 UPDATE mob_groups SET dropid = 4001 WHERE name = 'Ground_Guzzler';
 UPDATE mob_groups SET dropid = 4001 WHERE name = 'Globster';
 UPDATE mob_groups SET dropid = 4001 WHERE name = 'Quagmire_Pugil';
