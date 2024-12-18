@@ -1,6 +1,7 @@
 -----------------------------------
 require('scripts/globals/npc_util')
 require('scripts/globals/utils')
+--[[
 require('scripts/globals/worldboss/worldbosspos')
 require('scripts/globals/worldboss/de_bahamut')
 require('scripts/globals/worldboss/de_agathos')
@@ -22,6 +23,7 @@ require('scripts/globals/worldboss/de_quetzalcoatl')
 require('scripts/globals/worldboss/de_uptala')
 require('scripts/globals/worldboss/de_aminon')
 require('scripts/globals/worldboss/de_putraxia')
+]]--
 -----------------------------------
 xi = xi or {}
 xi.worldboss = xi.worldboss or {}
