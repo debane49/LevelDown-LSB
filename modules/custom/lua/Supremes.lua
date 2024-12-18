@@ -19,11 +19,6 @@ end)
 
 m:addOverride('xi.zones.Behemoths_Dominion.mobs.Behemoth.onMobDeath', function(mob, player, optParams)
     super(mob, player, optParams)
-    local zone = player:getZone()
-    local filteredEntities = zone:queryEntitiesByName('DE_Supreme.*')
-    if filteredEntities ~= nil then
-       SetServerVariable('[SNM]Behemoth',0)
-    end
 
  local rand = math.random(1, 100)
  if rand <= 25 and
