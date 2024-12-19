@@ -234,8 +234,8 @@ xi.voidwalker.npcOnTrigger = function(player, npc)
           if player:getCharVar('[VW]AssaiDialog') == 0 then
              for i = 1, #vwKeyItems do
                  player:delKeyItem(vwKeyItems[i], silent)
-                 player:setCharVar('[VW]AssaiDialog', 1)
             end
+                 player:setCharVar('[VW]AssaiDialog', 1)
          end
 
     local currentKIS = getCurrentKIsBitsFromPlayer(player)
