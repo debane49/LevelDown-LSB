@@ -70,6 +70,7 @@
 #include "entities/baseentity.h"
 #include "entities/charentity.h"
 #include "entities/mobentity.h"
+#include "fishingcontest.h"
 #include "instance.h"
 #include "items/item_puppet.h"
 #include "map.h"
@@ -98,7 +99,6 @@
 
 #include "utils/battleutils.h"
 #include "utils/charutils.h"
-#include "utils/fishingcontest.h"
 #include "utils/instanceutils.h"
 #include "utils/itemutils.h"
 #include "utils/mobutils.h"
@@ -119,14 +119,14 @@ void ReportErrorToPlayer(CBaseEntity* PEntity, std::string const& message = "") 
                 {
                     auto        channel = MESSAGE_NS_SHOUT;
                     std::string breaker = "================";
-                    PChar->pushPacket(new CChatMessagePacket(PChar, channel, breaker.c_str()));
-                    PChar->pushPacket(new CChatMessagePacket(PChar, channel, "!!! Lua error !!!"));
+                    PChar->pushPacket<CChatMessagePacket>(PChar, channel, breaker.c_str());
+                    PChar->pushPacket<CChatMessagePacket>(PChar, channel, "!!! Lua error !!!");
                     for (auto const& part : split(message, "\n"))
                     {
                         auto str = replace(part, "\t", "    ");
-                        PChar->pushPacket(new CChatMessagePacket(PChar, channel, str.c_str()));
+                        PChar->pushPacket<CChatMessagePacket>(PChar, channel, str.c_str());
                     }
-                    PChar->pushPacket(new CChatMessagePacket(PChar, channel, breaker.c_str()));
+                    PChar->pushPacket<CChatMessagePacket>(PChar, channel, breaker.c_str());
                 }
             }
         }
@@ -182,6 +182,7 @@ namespace luautils
         lua.set_function("PlayerHasValidSession", &luautils::PlayerHasValidSession);
         lua.set_function("GetPlayerIDByName", &luautils::GetPlayerIDByName);
         lua.set_function("SendToJailOffline", &luautils::SendToJailOffline);
+        lua.set_function("DrawIn", &luautils::DrawIn);
         lua.set_function("GetSystemTime", &luautils::GetSystemTime);
         lua.set_function("JstMidnight", &luautils::JstMidnight);
         lua.set_function("JstWeekday", &luautils::JstWeekday);
@@ -1769,6 +1770,20 @@ namespace luautils
         _sql->Query("UPDATE chars SET pos_x=%f, pos_y=%f, pos_z=%f, pos_rot=%u, pos_zone=%d, moghouse=0 WHERE charid=%u", posX, posY, posZ, rot, ZONEID::ZONE_MORDION_GAOL, playerId);
     }
 
+    void DrawIn(CLuaBaseEntity* PLuaBaseEntity, sol::table const& table, float offset, float degrees)
+    {
+        TracyZoneScoped;
+        if (auto* PBattleEntity = dynamic_cast<CBattleEntity*>(PLuaBaseEntity->GetBaseEntity()))
+        {
+            position_t pos;
+            pos.x        = table.get<float>("x");
+            pos.y        = table.get<float>("y");
+            pos.z        = table.get<float>("z");
+            pos.rotation = table.get<uint8>("rot");
+            battleutils::DrawIn(PBattleEntity, pos, offset, degrees);
+        }
+    }
+
     /************************************************************************
      *                                                                       *
      *  Load the value of the TextID variable of the specified zone          *
@@ -2239,7 +2254,7 @@ namespace luautils
         if (PChar->currentEvent->scriptFile.find("/bcnms/") > 0 && PChar->health.hp <= 0)
         { // for some reason the event doesnt enforce death afterwards
             PChar->animation = ANIMATION_DEATH;
-            PChar->pushPacket(new CRaiseTractorMenuPacket(PChar, TYPE_HOMEPOINT));
+            PChar->pushPacket<CRaiseTractorMenuPacket>(PChar, TYPE_HOMEPOINT);
             PChar->updatemask |= UPDATE_HP;
         }
 
@@ -3249,37 +3264,6 @@ namespace luautils
         {
             sol::error err = result;
             ShowError("luautils::onMobUnfollow: %s", err.what());
-        }
-    }
-
-    void OnMobDrawIn(CBaseEntity* PMob, CBaseEntity* PTarget)
-    {
-        TracyZoneScoped;
-
-        if (PTarget == nullptr || PMob == nullptr)
-        {
-            return;
-        }
-
-        auto filename = fmt::format("./scripts/zones/{}/mobs/{}.lua", PMob->loc.zone->getName(), PMob->getName());
-
-        if (PTarget->objtype == TYPE_PC)
-        {
-            ((CCharEntity*)PTarget)->eventPreparation->targetEntity = PMob;
-            ((CCharEntity*)PTarget)->eventPreparation->scriptFile   = filename;
-        }
-
-        sol::function onMobDrawIn = getEntityCachedFunction(PMob, "onMobDrawIn");
-        if (!onMobDrawIn.valid())
-        {
-            return;
-        }
-
-        auto result = onMobDrawIn(CLuaBaseEntity(PMob), CLuaBaseEntity(PTarget));
-        if (!result.valid())
-        {
-            sol::error err = result;
-            ShowError("luautils::onMobDrawIn: %s", err.what());
         }
     }
 
