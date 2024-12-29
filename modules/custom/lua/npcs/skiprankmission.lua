@@ -80,6 +80,7 @@ local m = Module:new("skiprankmission")
         player:addKeyItem(900) -- FL Wildcat Badge
         player:addKeyItem(909) -- CAPTAIN Wildcat Badge
         player:addKeyItem(812) -- Astral Compass
+        player:addKeyItem(781) -- Boarding_permit
 
     end
 

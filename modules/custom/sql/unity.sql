@@ -355,28 +355,28 @@ UPDATE mob_spawn_points SET pos_x = 67.3455,   pos_y = 15.7928,  pos_z = 17.9266
 UPDATE mob_spawn_points SET pos_x = 225.8966,  pos_y = -0.0012,  pos_z = -17.926,   pos_rot = 86  WHERE mobid = 17428836;
 UPDATE mob_spawn_points SET pos_x = -104.7059, pos_y = 10.4736,  pos_z = -305.9233, pos_rot = 210 WHERE mobid = 17498570;
 UPDATE mob_spawn_points SET pos_x = -295.1029, pos_y = 50.7456,  pos_z = -284.6609, pos_rot = 146 WHERE mobid = 17498573;
-UPDATE mob_spawn_points SET pos_x = 336.0055,  pos_y = -7.4057,  pos_z = 115.0614,  pos_rot = 20  WHERE mobid = 17236249;
+UPDATE mob_spawn_points SET pos_x = 336.0055,  pos_y = -7.4057,  pos_z = 115.0614,  pos_rot = 20  WHERE mobid = 17236244;
 UPDATE mob_spawn_points SET pos_x = 43.0514,   pos_y = -15.4242, pos_z = 152.1795,  pos_rot = 58  WHERE mobid = 17613131;
 UPDATE mob_spawn_points SET pos_x = -43.3948,  pos_y = 4,        pos_z = 237.5962,  pos_rot = 136 WHERE mobid = 17617177;
 UPDATE mob_spawn_points SET pos_x = 297.0752,  pos_y = -15.1473, pos_z = -521.7518, pos_rot = 149 WHERE mobid = 17203701;
 UPDATE mob_spawn_points SET pos_x = 72.4534,   pos_y = 0,        pos_z = -60.6653,  pos_rot = 240 WHERE mobid = 17461480;
 UPDATE mob_spawn_points SET pos_x = -165.8325, pos_y = 7.5335,   pos_z = 45.7184,   pos_rot = 27  WHERE mobid = 17240439;
 UPDATE mob_spawn_points SET pos_x = -162.1593, pos_y = 8.6582,   pos_z = -83.8012,  pos_rot = 110 WHERE mobid = 17404353;
-UPDATE mob_spawn_points SET pos_x = 114.1965,  pos_y = 8.0891,   pos_z = -241.3589, pos_rot = 249 WHERE mobid = 17195577;
+UPDATE mob_spawn_points SET pos_x = 114.1965,  pos_y = 8.0891,   pos_z = -241.3589, pos_rot = 249 WHERE mobid = 17195572;
 UPDATE mob_spawn_points SET pos_x = -388.1252, pos_y = -2.0017,  pos_z = -521.2667, pos_rot = 138 WHERE mobid = 17289676;
 UPDATE mob_spawn_points SET pos_x = -521.9607, pos_y = 0,        pos_z = -83.8695,  pos_rot = 200 WHERE mobid = 17289677;
 UPDATE mob_spawn_points SET pos_x = -165.4397, pos_y = -24.9134, pos_z = -165.3081, pos_rot = 212 WHERE mobid = 17207726; -- no poolid 5372
 UPDATE mob_spawn_points SET pos_x = 308.8474,  pos_y = 8.6,      pos_z = 150.7462,  pos_rot = 81  WHERE mobid = 17207727; -- no poolid 5372
 UPDATE mob_spawn_points SET pos_x = -519.7849, pos_y = -23.76,   pos_z = 368.8091,  pos_rot = 81  WHERE mobid = 17207728; -- no poolid 5372
 UPDATE mob_spawn_points SET pos_x = -280.9936, pos_y = -13.0989, pos_z = 261.0756,  pos_rot = 60  WHERE mobid = 17027506;
-UPDATE mob_spawn_points SET pos_x = -483.435,  pos_y = -40.1687, pos_z = -128.2889, pos_rot = 191 WHERE mobid = 17257000;
-UPDATE mob_spawn_points SET pos_x = -5.9033,   pos_y = 8.0065,   pos_z = 38.0089,   pos_rot = 248 WHERE mobid = 17257001;
-UPDATE mob_spawn_points SET pos_x = 162.5455,  pos_y = -16.371,  pos_z = -165.4647, pos_rot = 210 WHERE mobid = 17257002;
+UPDATE mob_spawn_points SET pos_x = -483.435,  pos_y = -40.1687, pos_z = -128.2889, pos_rot = 191 WHERE mobid = 17256995;
+UPDATE mob_spawn_points SET pos_x = -5.9033,   pos_y = 8.0065,   pos_z = 38.0089,   pos_rot = 248 WHERE mobid = 17256996;
+UPDATE mob_spawn_points SET pos_x = 162.5455,  pos_y = -16.371,  pos_z = -165.4647, pos_rot = 210 WHERE mobid = 17256997;
 UPDATE mob_spawn_points SET pos_x = 670.1172,  pos_y = -9.035,   pos_z = 487.9516,  pos_rot = 114 WHERE mobid = 17101232;
 UPDATE mob_spawn_points SET pos_x = 825.5544,  pos_y = -9.8122,  pos_z = 409.876,   pos_rot = 174 WHERE mobid = 17101234;
-UPDATE mob_spawn_points SET pos_x = -319.9891, pos_y = 47.9607,  pos_z = 561.5193,  pos_rot = 228 WHERE mobid = 17220101; -- no poolid 5277
-UPDATE mob_spawn_points SET pos_x = -149.008,  pos_y = -16.785,  pos_z = -140.9161, pos_rot = 90  WHERE mobid = 17220102; -- no poolid 5277
-UPDATE mob_spawn_points SET pos_x = 49.8688,   pos_y = 9.1953,   pos_z = 40.3896,   pos_rot = 249 WHERE mobid = 17220103; -- no poolid 5277
+UPDATE mob_spawn_points SET pos_x = -319.9891, pos_y = 47.9607,  pos_z = 561.5193,  pos_rot = 228 WHERE mobid = 17220096; -- no poolid 5277
+UPDATE mob_spawn_points SET pos_x = -149.008,  pos_y = -16.785,  pos_z = -140.9161, pos_rot = 90  WHERE mobid = 17220097; -- no poolid 5277
+UPDATE mob_spawn_points SET pos_x = 49.8688,   pos_y = 9.1953,   pos_z = 40.3896,   pos_rot = 249 WHERE mobid = 17220098; -- no poolid 5277
 UPDATE mob_spawn_points SET pos_x = -675.9573, pos_y = -32.0679, pos_z = -483.9466, pos_rot = 160 WHERE mobid = 17228265;
 UPDATE mob_spawn_points SET pos_x = 199.2137,  pos_y = 8,        pos_z = 44.0585,   pos_rot = 211 WHERE mobid = 17228267;
 UPDATE mob_spawn_points SET pos_x = -410.4434, pos_y = 16.35,    pos_z = -416.9798, pos_rot = 234 WHERE mobid = 17281512; -- no poolid 630

@@ -409,6 +409,13 @@ UPDATE mob_groups SET dropid = 3878 WHERE name =  'Vanasarvik'AND groupid =  55;
 UPDATE mob_groups SET dropid = 3857 WHERE name =  'Virvatuli'AND groupid =  42;
 UPDATE mob_groups SET dropid = 3877 WHERE name =  'Yalungur'AND groupid =  69;
 UPDATE mob_groups SET dropid = 3861 WHERE name =  'Yatagarasu'AND groupid =  57;
-
 UPDATE mob_pools SET roamflag = 0 WHERE name =  'Agathos'AND poolid =  4701;
+
+INSERT INTO `mob_skills` VALUES (2511,1775,'corpse_breath',4,20.0,7.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (2825,1985,'louring_skies',1,20.0,7.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO mob_skill_lists VALUES ('Gwynn_ap_Nudd', 40000, 2511);
+INSERT INTO mob_skill_lists VALUES ('Gwynn_ap_Nudd', 40000, 2825);
+UPDATE mob_pools SET skill_list_id = 30000 WHERE name = 'Gwynn_ap_Nudd';
+UPDATE mob_pools SET skill_list_id = 30000 WHERE name = 'Gwynn_Ap_Nudd';
+
 

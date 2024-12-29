@@ -1036,7 +1036,7 @@ local EGtrade =
 [41] = { trade = {1499, 1492, 1500, 1503, 1502, 1488, 1508, 27538}, reward = 27538, aug1 =  80, aug1MAX =  4}, --LEMPOAU Lempo earring
 [42] = { trade = {1507, 1495, 1505, 1488, 1508, 15965, {1492, 2}},  reward = 15965, aug1 =  49, aug1MAX =  4}, --ETHERAU Ethereal earring
 [43] = { trade = {1495, 1488, 1508, 15964, {1502, 2}, {1499, 2}},   reward = 15964, aug1 = 132, aug1MAX =  4}, --HOLLOAU Hollow Earring
-[44] = { trade = {1500, 1494, 1501, 1492, 1508, 15962, {1488, 2}},  reward = 15963, aug1 = 138, aug1MAX =  1}, --MAGNEAU Magnetic Earring
+[44] = { trade = {1500, 1494, 1501, 1492, 1508, 15963, {1488, 2}},  reward = 15963, aug1 = 138, aug1MAX =  1}, --MAGNEAU Magnetic Earring
 [45] = { trade = {1506, 1496, 1508, 15962, {1507, 2}, {1488, 2}},   reward = 15962, aug1 =  80, aug1MAX =  4}, --STATIAU Static Earring
 [46] = { trade = {1501, 1497, 1506, 1508, 26219, {1488, 3}},        reward = 26219, aug1 = 323, aug1MAX =  9}, --NAJASAU Najis loop
 [47] = { trade = {1499, 1513, 1493, 15810, {1488, 2}, {1508, 2}},   reward = 15810, aug1 = 340, aug1MAX =  9}, --LUZAFAU Luzafs ring
