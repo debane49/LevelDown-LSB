@@ -201,13 +201,13 @@ content.groups =
             'Lightsteel_Quadav',
         },
 
-        mods =
+        mods = -- Supposedly weak to piercing and magic. Strong against Slash, Impact and H2h
         {
             [xi.mod.PIERCE_SDT] = 2000,
             [xi.mod.UDMGMAGIC ] = 2000,
-            [xi.mod.IMPACT_SDT] = 100,
-            [xi.mod.HTH_SDT   ] = 100,
-            [xi.mod.SLASH_SDT ] = 100,
+            [xi.mod.IMPACT_SDT] = -2000,
+            [xi.mod.HTH_SDT   ] = -2000,
+            [xi.mod.SLASH_SDT ] = -2000,
         },
 
         isParty    = true,
@@ -238,7 +238,7 @@ content.groups =
         {
             [xi.mod.IMPACT_SDT] = 2000,
             [xi.mod.HTH_SDT   ] = 2000,
-            [xi.mod.UDMGMAGIC ] = 100,
+            [xi.mod.UDMGMAGIC ] = -2000,
         },
 
         isParty    = true,
