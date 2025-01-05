@@ -1,6 +1,6 @@
 -----------------------------------
 -- Spell: Magic Barrier
--- Restores Grants a Magic Shield effect.
+-- Grants a Magic Shield effect.
 -- Spell cost: 29 MP
 -- Monster Type: Demons
 -- Spell Type: Magical (Dark)
@@ -20,11 +20,12 @@ end
 
 spellObject.onSpellCast = function(caster, target, spell)
     local typeEffect = xi.effect.MAGIC_SHIELD
-    local blueSkill = utils.clamp(caster:getSkillLevel(xi.skill.BLUE_MAGIC), 0, 500)
-    local power = (blueSkill / 3) * 2
+    local power = 4
     local duration = xi.spells.blue.calculateDurationWithDiffusion(caster, 300)
-
-    if not target:addStatusEffect(typeEffect, power, 0, duration, 0, 0, 2) then
+    if target:hasStatusEffect(xi.effect.STONESKIN) then
+       return spell:setMsg(xi.msg.basic.MAGIC_NO_EFFECT)
+    end
+    if not caster:addStatusEffect(typeEffect, 4, 3, duration,2) then
         spell:setMsg(xi.msg.basic.MAGIC_NO_EFFECT)
     end
 
@@ -32,3 +33,6 @@ spellObject.onSpellCast = function(caster, target, spell)
 end
 
 return spellObject
+
+-- addStatusEffect(effectID, power, tick, duration, subType, subPower, tier, SourceType, SourceTypeParam)
+-- hasStatusEffect(uint16 StatusID, sol::object const& SubType);

@@ -24,6 +24,9 @@ spellObject.onSpellCast = function(caster, target, spell)
     local blueSkill = utils.clamp(caster:getSkillLevel(xi.skill.BLUE_MAGIC), 0, 500)
     local power = (blueSkill / 3) * 2
     local duration = xi.spells.blue.calculateDurationWithDiffusion(caster, 300)
+    if target:hasStatusEffect(xi.effect.MAGIC_SHIELD, 2) then
+       target:delStatusEffect(xi.effect.MAGIC_SHIELD, 2)
+    end
 
     if not target:addStatusEffect(xi.effect.STONESKIN, power, 0, duration, 0, 0, 2) then
         spell:setMsg(xi.msg.basic.MAGIC_NO_EFFECT)

@@ -15,6 +15,9 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
+    if target:hasStatusEffect(xi.effect.MAGIC_SHIELD, 2) then
+       target:delStatusEffect(xi.effect.MAGIC_SHIELD, 2)
+    end
     xi.job_utils.paladin.useRampart(player, target, ability)
 end
 
