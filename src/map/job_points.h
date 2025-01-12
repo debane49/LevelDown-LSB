@@ -390,7 +390,6 @@ public:
 
     void AddJobPoints(uint8 jobID, uint16 amount);// Add jobpoints to a players specififed job 
     void DelJobPoints(uint8 jobID, int16 amount); // Del jobpoints to a players specified job
-    // Add job points to a specified job
 
     JobPoints_t*    GetJobPointsByType(JOBPOINT_TYPE jpType);
     JobPointType_t* GetJobPointType(JOBPOINT_TYPE jpType);
