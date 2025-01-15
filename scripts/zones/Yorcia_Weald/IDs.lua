@@ -30,9 +30,11 @@ zones[xi.zone.YORCIA_WEALD] =
     },
     mob =
     {
+        REIVE_MOB_OFFSET = GetFirstID('Gnarled_Rampart'),
     },
     npc =
     {
+        REIVE_COLLISION_OFFSET = GetFirstID('_7b0'),
     },
 }
 

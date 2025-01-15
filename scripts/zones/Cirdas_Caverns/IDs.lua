@@ -21,9 +21,11 @@ zones[xi.zone.CIRDAS_CAVERNS] =
     },
     mob =
     {
+        REIVE_MOB_OFFSET = GetFirstID('Knotted_Root'),
     },
     npc =
     {
+        REIVE_COLLISION_OFFSET = GetFirstID('_pim'),
     },
 }
 
