@@ -1255,7 +1255,8 @@ void CCharEntity::OnCastFinished(CMagicState& state, action_t& action)
             }
 
             // Immanence will create or extend a skillchain for elemental spells
-            if (actionTarget.param >= 0 &&
+            if (PTarget->health.hp > 0 &&
+                actionTarget.param >= 0 &&
                 PSpell->dealsDamage() &&
                 PSpell->getSpellGroup() == SPELLGROUP_BLACK &&
                 (StatusEffectContainer->HasStatusEffect(EFFECT_IMMANENCE)))
@@ -1382,11 +1383,14 @@ void CCharEntity::OnCastInterrupted(CMagicState& state, action_t& action, MSGBAS
     TracyZoneScoped;
     CBattleEntity::OnCastInterrupted(state, action, msg, blockedCast);
 
-    auto message = state.GetErrorMsg();
-
-    if (message && action.actiontype != ACTION_MAGIC_INTERRUPT) // Interrupt is handled elsewhere
+    if (state.HasErrorMsg())
     {
-        pushPacket(std::move(message));
+        auto message = state.GetErrorMsg();
+
+        if (message && action.actiontype != ACTION_MAGIC_INTERRUPT) // Interrupt is handled elsewhere
+        {
+            pushPacket(std::move(message));
+        }
     }
 }
 
@@ -1504,7 +1508,8 @@ void CCharEntity::OnWeaponSkillFinished(CWeaponSkillState& state, action_t& acti
                 if ((actionTarget.reaction & REACTION::MISS) == REACTION::NONE)
                 {
                     int wspoints = settings::get<uint8>("map.WS_POINTS_BASE");
-                    if (PWeaponSkill->getPrimarySkillchain() != 0)
+
+                    if (PBattleTarget->health.hp > 0 && PWeaponSkill->getPrimarySkillchain() != 0)
                     {
                         // NOTE: GetSkillChainEffect is INSIDE this if statement because it
                         //  ALTERS the state of the resonance, which misses and non-elemental skills should NOT do.
@@ -1702,11 +1707,13 @@ void CCharEntity::OnAbility(CAbilityState& state, action_t& action)
                 {
                     StatusEffectContainer->DelStatusEffectsByFlag(EFFECTFLAG_DETECTABLE);
                 }
+                StatusEffectContainer->DelStatusEffect(EFFECT_ILLUSION);
             }
             else if (PAbility->getID() != ABILITY_TRICK_ATTACK)
             {
                 // remove invisible only
                 StatusEffectContainer->DelStatusEffectsByFlag(EFFECTFLAG_INVISIBLE);
+                StatusEffectContainer->DelStatusEffect(EFFECT_ILLUSION);
             }
         }
 
@@ -2282,6 +2289,7 @@ void CCharEntity::OnRangedAttack(CRangeState& state, action_t& action)
             StatusEffectContainer->DelStatusEffect(EFFECT_SNEAK);
             StatusEffectContainer->DelStatusEffect(EFFECT_INVISIBLE);
             StatusEffectContainer->DelStatusEffect(EFFECT_DEODORIZE);
+            StatusEffectContainer->DelStatusEffect(EFFECT_ILLUSION);
         }
     }
     else

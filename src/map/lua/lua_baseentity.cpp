@@ -5503,21 +5503,26 @@ uint8 CLuaBaseEntity::getAnimationSub()
  *  Function: setAnimationSub()
  *  Purpose : Returns animation sub for an entity or updates if var supplied
  *  Example :
- *  Notes   :
+ *  Notes   : sendUpdate is true by default (false is the edge case.)
  ************************************************************************/
 
-void CLuaBaseEntity::setAnimationSub(uint8 animationsub)
+void CLuaBaseEntity::setAnimationSub(uint8 animationsub, sol::object const& sendUpdate)
 {
     if (m_PBaseEntity->animationsub != animationsub)
     {
+        bool sendPacket = (sendUpdate != sol::lua_nil) ? sendUpdate.as<bool>() : true;
+
         m_PBaseEntity->animationsub = animationsub;
 
         if (m_PBaseEntity->objtype == TYPE_PC)
         {
             auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
-            PChar->pushPacket<CCharUpdatePacket>(PChar);
+            if (sendPacket)
+            {
+                PChar->pushPacket<CCharUpdatePacket>(PChar);
+            }
         }
-        else
+        else if (sendPacket)
         {
             m_PBaseEntity->loc.zone->UpdateEntityPacket(m_PBaseEntity, ENTITY_UPDATE, UPDATE_COMBAT);
         }
@@ -6016,30 +6021,70 @@ bool CLuaBaseEntity::canUseMisc(uint16 misc)
 
 /************************************************************************
  *  Function: getSpeed()
- *  Purpose : Sets a player's speed or returns their current speed
+ *  Purpose : Gets a player's current speed
  *  Example : player:getSpeed()
  *  Notes   :
  ************************************************************************/
 
 uint8 CLuaBaseEntity::getSpeed()
 {
-    return m_PBaseEntity->speed;
+    return m_PBaseEntity->GetSpeed();
 }
 
 /************************************************************************
- *  Function: setSpeed()
- *  Purpose : Sets a player's speed or returns their current speed
- *  Example : player:setSpeed(40)
+ *  Function: getBaseSpeed()
+ *  Purpose : Gets a player's base speed
+ *  Example : player:getBaseSpeed()
  *  Notes   :
  ************************************************************************/
 
-void CLuaBaseEntity::setSpeed(uint8 speedVal)
+uint8 CLuaBaseEntity::getBaseSpeed()
+{
+    return m_PBaseEntity->baseSpeed;
+}
+
+/************************************************************************
+ *  Function: setBaseSpeed()
+ *  Purpose : Sets a player's base speed
+ *  Example : player:setBaseSpeed(40)
+ *  Notes   :
+ ************************************************************************/
+
+void CLuaBaseEntity::setBaseSpeed(uint8 speedVal)
 {
     auto speed = std::min<uint8>(speedVal, 255);
 
-    if (m_PBaseEntity->speed != speed)
+    if (m_PBaseEntity->baseSpeed != speed)
     {
-        m_PBaseEntity->speed = speed;
+        m_PBaseEntity->baseSpeed = speed;
+        m_PBaseEntity->UpdateSpeed();
+
+        if (m_PBaseEntity->objtype == TYPE_PC)
+        {
+            auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
+            PChar->pushPacket<CCharUpdatePacket>(PChar);
+        }
+        else
+        {
+            m_PBaseEntity->loc.zone->UpdateEntityPacket(m_PBaseEntity, ENTITY_UPDATE, UPDATE_POS);
+        }
+    }
+}
+
+/************************************************************************
+ *  Function: setAnimationSpeed()
+ *  Purpose : Sets a player's animation speed
+ *  Example : player:setAnimationSpeed(40)
+ *  Notes   :
+ ************************************************************************/
+
+void CLuaBaseEntity::setAnimationSpeed(uint8 speedVal)
+{
+    auto speed = std::min<uint8>(speedVal, 255);
+
+    if (m_PBaseEntity->animationSpeed != speed)
+    {
+        m_PBaseEntity->animationSpeed = speed;
 
         if (m_PBaseEntity->objtype == TYPE_PC)
         {
@@ -9804,6 +9849,27 @@ void CLuaBaseEntity::setMP(int32 value)
 }
 
 /************************************************************************
+ *  Function: setMaxMP()
+ *  Purpose : Sets the Maximum Mana Points of an Entity
+ *  Example : player:setMaxMP(100)
+ *  Notes   :
+ ************************************************************************/
+
+void CLuaBaseEntity::setMaxMP(int32 value)
+{
+    if (m_PBaseEntity->objtype == TYPE_NPC)
+    {
+        ShowWarning("Invalid Entity (NPC: %s) calling function.", m_PBaseEntity->getName());
+        return;
+    }
+
+    auto* PBattle = static_cast<CBattleEntity*>(m_PBaseEntity);
+
+    PBattle->health.maxmp = std::max(0, value);
+    PBattle->UpdateHealth();
+}
+
+/************************************************************************
  *  Function: restoreMP()
  *  Purpose : Restores Mana Points to a player
  *  Example : player:restoreMP(player:getMaxHP() - player:getHP())
@@ -10006,7 +10072,7 @@ void CLuaBaseEntity::capAllSkills()
 
     auto* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
 
-    for (uint8 i = 1; i < 45; ++i)
+    for (uint8 i = SKILL_HAND_TO_HAND; i <= SKILL_HANDBELL; ++i) // For SKILL_HAND_TO_HAND (1) - SKILL_HANDBELL (46)
     {
         const char* Query = "INSERT INTO char_skills "
                             "SET "
@@ -12848,7 +12914,7 @@ void CLuaBaseEntity::updateClaim(sol::object const& entity)
 
 /************************************************************************
  *  Function: hasEnmity()
- *  Purpose : Check if a an entity is on any mob's enmity list
+ *  Purpose : Check if a an entity is on any mob's enmity list or is supertanked by
  *  Example : if player:hasEnmity() then
  *  Notes   :
  ************************************************************************/
@@ -12861,7 +12927,7 @@ bool CLuaBaseEntity::hasEnmity()
         return false;
     }
 
-    return static_cast<CBattleEntity*>(m_PBaseEntity)->PNotorietyContainer->hasEnmity();
+    return static_cast<CBattleEntity*>(m_PBaseEntity)->hasEnmityEXPENSIVE();
 }
 
 /************************************************************************
@@ -16409,7 +16475,7 @@ void CLuaBaseEntity::spawn(sol::object const& despawnSec, sol::object const& res
 
 /************************************************************************
  *  Function: isSpawned()
- *  Purpose : Returns true if a Mob is already spawned
+ *  Purpose : Returns true if a Mob or NPC is spawned or visible
  *  Example : if mob:isSpawned() then
  *  Notes   :
  ************************************************************************/
@@ -16422,9 +16488,13 @@ bool CLuaBaseEntity::isSpawned()
     {
         return static_cast<CMobEntity*>(m_PBaseEntity)->PAI->IsSpawned();
     }
+    else if (CNpcEntity* PNpcEntity = dynamic_cast<CNpcEntity*>(m_PBaseEntity))
+    {
+        return PNpcEntity->status != STATUS_TYPE::DISAPPEAR;
+    }
     else
     {
-        ShowError("CLuaBaseEntity::isSpawned() called on entity that is not a PMobEntity.");
+        ShowError("CLuaBaseEntity::isSpawned() called on entity that is not a CMobEntity or CNpcEntity.");
     }
     return false;
 }
@@ -18687,7 +18757,9 @@ void CLuaBaseEntity::Register()
     SOL_REGISTER("canUseMisc", CLuaBaseEntity::canUseMisc);
 
     SOL_REGISTER("getSpeed", CLuaBaseEntity::getSpeed);
-    SOL_REGISTER("setSpeed", CLuaBaseEntity::setSpeed);
+    SOL_REGISTER("getBaseSpeed", CLuaBaseEntity::getBaseSpeed);
+    SOL_REGISTER("setBaseSpeed", CLuaBaseEntity::setBaseSpeed);
+    SOL_REGISTER("setAnimationSpeed", CLuaBaseEntity::setAnimationSpeed);
 
     SOL_REGISTER("getPlaytime", CLuaBaseEntity::getPlaytime);
     SOL_REGISTER("getTimeCreated", CLuaBaseEntity::getTimeCreated);
@@ -18845,6 +18917,7 @@ void CLuaBaseEntity::Register()
     SOL_REGISTER("getBaseMP", CLuaBaseEntity::getBaseMP);
     SOL_REGISTER("addMP", CLuaBaseEntity::addMP);
     SOL_REGISTER("setMP", CLuaBaseEntity::setMP);
+    SOL_REGISTER("setMaxMP", CLuaBaseEntity::setMaxMP);
     SOL_REGISTER("restoreMP", CLuaBaseEntity::restoreMP);
     SOL_REGISTER("delMP", CLuaBaseEntity::delMP);
 

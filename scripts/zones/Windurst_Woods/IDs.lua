@@ -101,6 +101,9 @@ zones[xi.zone.WINDURST_WOODS] =
             [17764464] = 56, -- Nhobi Zalkia
             [17764465] = 57, -- Millerovieunet
         },
+        AMIMI   = GetFirstID('Amimi'),
+        SARIALE = GetFirstID('Sariale'),
+        ORLAINE = GetFirstID('Orlaine'),
     },
 }
 

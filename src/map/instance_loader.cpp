@@ -135,8 +135,8 @@ CInstance* CInstanceLoader::LoadInstance()
             PMob->m_ModelRadius = (float)_sql->GetIntData(24);
 
             PMob->baseSpeed      = (uint8)_sql->GetIntData(25);
-            PMob->speed          = (uint8)_sql->GetIntData(25);
             PMob->animationSpeed = (uint8)_sql->GetIntData(25);
+            PMob->UpdateSpeed();
 
             PMob->strRank = (uint8)_sql->GetIntData(26);
             PMob->dexRank = (uint8)_sql->GetIntData(27);
@@ -216,7 +216,7 @@ CInstance* CInstanceLoader::LoadInstance()
             PMob->setMobMod(MOBMOD_CHARMABLE, _sql->GetUIntData(74));
 
             // Overwrite base family charmables depending on mob type. Disallowed mobs which should be charmable
-            // can be set in mob_spawn_mods or in their onInitialize
+            // can be set in in their onInitialize
             if (PMob->m_Type & MOBTYPE_EVENT || PMob->m_Type & MOBTYPE_FISHED || PMob->m_Type & MOBTYPE_BATTLEFIELD || PMob->m_Type & MOBTYPE_NOTORIOUS)
             {
                 PMob->setMobMod(MOBMOD_CHARMABLE, 0);
@@ -259,11 +259,11 @@ CInstance* CInstanceLoader::LoadInstance()
 
                 PNpc->m_TargID = _sql->GetUIntData(6) >> 16; // "quite likely"
 
-                PNpc->baseSpeed      = (uint8)_sql->GetIntData(8);
-                PNpc->speed          = (uint8)_sql->GetIntData(7);
+                PNpc->baseSpeed      = (uint8)_sql->GetIntData(7);
                 PNpc->animationSpeed = (uint8)_sql->GetIntData(8);
-                PNpc->animation      = (uint8)_sql->GetIntData(9);
-                PNpc->animationsub   = (uint8)_sql->GetIntData(10);
+                PNpc->UpdateSpeed();
+                PNpc->animation    = (uint8)_sql->GetIntData(9);
+                PNpc->animationsub = (uint8)_sql->GetIntData(10);
 
                 PNpc->namevis = (uint8)_sql->GetIntData(11);
                 PNpc->status  = static_cast<STATUS_TYPE>(_sql->GetIntData(12));

@@ -1202,8 +1202,9 @@ function CBaseEntity:getAnimationSub()
 end
 
 ---@param animationsub integer
+---@param sendUpdate boolean?
 ---@return nil
-function CBaseEntity:setAnimationSub(animationsub)
+function CBaseEntity:setAnimationSub(animationsub, sendUpdate)
 end
 
 ---@nodiscard
@@ -1341,9 +1342,19 @@ end
 function CBaseEntity:getSpeed()
 end
 
+---@nodiscard
+---@return integer
+function CBaseEntity:getBaseSpeed()
+end
+
 ---@param speedVal integer
 ---@return nil
-function CBaseEntity:setSpeed(speedVal)
+function CBaseEntity:setBaseSpeed(speedVal)
+end
+
+---@param speedVal integer
+---@return nil
+function CBaseEntity:setAnimationSpeed(speedVal)
 end
 
 ---@nodiscard
@@ -1818,19 +1829,19 @@ end
 function CBaseEntity:getJobPointLevel(jpType)
 end
 
----@param jobId integer
+---@param jobID integer
 ---@param amount integer
 ---@return nil
 function CBaseEntity:addJobPoints(jobID, amount)
 end
 
----@param jobId integer
+---@param jobID integer
 ---@param amount integer
 ---@return nil
 function CBaseEntity:delJobPoints(jobID, amount)
 end
 
----@param jobId integer
+---@param jobID integer
 ---@return integer
 function CBaseEntity:getJobPoints(jobID)
 end
@@ -2053,6 +2064,11 @@ end
 ---@param value integer
 ---@return nil
 function CBaseEntity:setMP(value)
+end
+
+---@param value integer
+---@return nil
+function CBaseEntity:setMaxMP(value)
 end
 
 ---@param amount integer
@@ -3814,8 +3830,10 @@ function CBaseEntity:hasTPMoves()
 end
 
 ---@param PLuaBaseEntity CBaseEntity
+---@param offset integer
+---@param degrees integer
 ---@return nil
-function CBaseEntity:drawIn(PLuaBaseEntity)
+function CBaseEntity:drawIn(PLuaBaseEntity, offset, degrees)
 end
 
 ---@return nil
