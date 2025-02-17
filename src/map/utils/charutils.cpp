@@ -4697,8 +4697,8 @@ namespace charutils
         if (PChar->StatusEffectContainer->GetStatusEffect(EFFECT_COMMITMENT) && PChar->loc.zone->GetRegionID() != REGION_TYPE::ABYSSEA)
         {
             CStatusEffect* commitment = PChar->StatusEffectContainer->GetStatusEffect(EFFECT_COMMITMENT);
-            int16          percentage = commitment->GetPower();
-            int16          cap        = commitment->GetSubPower();
+            int32          percentage = commitment->GetPower();
+            int32          cap        = commitment->GetSubPower();
             rawBonus += std::clamp<int32>(((capacityPoints * percentage) / 100), 0, cap);
             commitment->SetSubPower(cap -= rawBonus);
 
@@ -5928,8 +5928,8 @@ namespace charutils
         if (PChar->StatusEffectContainer->GetStatusEffect(EFFECT_DEDICATION) && PChar->loc.zone->GetRegionID() != REGION_TYPE::ABYSSEA)
         {
             CStatusEffect* dedication = PChar->StatusEffectContainer->GetStatusEffect(EFFECT_DEDICATION);
-            int16          percentage = dedication->GetPower();
-            int16          cap        = dedication->GetSubPower();
+            int32          percentage = dedication->GetPower();
+            int32          cap        = dedication->GetSubPower();
             bonus += std::clamp<int32>((int32)((exp * percentage) / 100), 0, cap);
             dedication->SetSubPower(cap -= bonus);
 
