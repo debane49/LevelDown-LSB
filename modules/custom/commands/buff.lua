@@ -114,7 +114,7 @@ end
 
 
 local buffOnCap = function(player)
-    player:addStatusEffect(xi.effect.COMMITMENT, 40, 0, 0, 0, 30000)
+    player:addStatusEffect(xi.effect.COMMITMENT, 200, 0, 0, 0, 30000)
     player:setCharVar('BuffLvl', player:getMainLvl())
     player:setCharVar('BuffJob', player:getMainJob())
     player:setCharVar('Buff', 2)
